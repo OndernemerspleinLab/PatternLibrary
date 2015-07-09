@@ -1,0 +1,69 @@
+{
+  "name": "patternlab-node",
+  "description": "Pattern Lab is a collection of tools to help you create atomic design systems. This is the node command line interface (CLI).",
+  "version": "0.9.1",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.0.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-connect": "^0.9.0",
+    "mustache": "^1.0.0",
+    "matchdep": "^0.3.0",
+    "fs-extra": "^0.14.0",
+    "diveSync": "^0.2.1",
+    "html-entities": "^1.1.1",
+    "glob": "^4.3.5"
+  },
+  "keywords": [
+    "Pattern Lab",
+    "Atomic Web Design",
+    "Node",
+    "Grunt",
+    "Javascript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pattern-lab/patternlab-node.git"
+  },
+  "author": {
+    "name": "Brian Muenzenmeyer"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "grunt travis --verbose"
+  },
+  "engines": {
+    "node": ">=0.1"
+  },
+  "gitHead": "8d52aa904ebd53542252165cff8523cf2751da4f",
+  "bugs": {
+    "url": "https://github.com/pattern-lab/patternlab-node/issues"
+  },
+  "homepage": "https://github.com/pattern-lab/patternlab-node",
+  "_id": "patternlab-node@0.9.1",
+  "_shasum": "0cb5425d5079fce1d7c82383501a98a53be1c067",
+  "_from": "patternlab-node@*",
+  "_npmVersion": "2.5.1",
+  "_nodeVersion": "0.12.0",
+  "_npmUser": {
+    "name": "bmuenzenmeyer",
+    "email": "brian.muenzenmeyer@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "bmuenzenmeyer",
+      "email": "brian.muenzenmeyer@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "0cb5425d5079fce1d7c82383501a98a53be1c067",
+    "tarball": "http://registry.npmjs.org/patternlab-node/-/patternlab-node-0.9.1.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/patternlab-node/-/patternlab-node-0.9.1.tgz"
+}
