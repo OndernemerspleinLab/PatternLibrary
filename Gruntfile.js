@@ -85,6 +85,7 @@ module.exports = function(grunt) {
 			build: {
 				options: {
 					sourceMap: true,
+					sourceMapContents: true,
 					style: 'expanded',
 					precision: 8
 				},
@@ -95,6 +96,26 @@ module.exports = function(grunt) {
 					'./public/styleguide/css/styleguide-specific.css': './public/styleguide/css/styleguide-specific.scss'
 				}
 			}
+		},
+		postcss: {
+			build: {
+				options: {
+					map: {
+						inline: false,
+						prev: './source/css/'
+					},
+					processors: [
+						require("pixrem")(),
+						require("autoprefixer-core")({ browsers: ['> 5% in NL', 'last 2 versions']}),
+					]
+				},
+				files: {
+					'./source/css/style.css': './source/css/style.css',
+					'./public/styleguide/css/static.css': './public/styleguide/css/static.css',
+					'./public/styleguide/css/styleguide.css': './public/styleguide/css/styleguide.css',
+					'./public/styleguide/css/styleguide-specific.css': './public/styleguide/css/styleguide-specific.css',
+				},
+			},
 		},
 		nodeunit: {
 			all: ['test/*_tests.js']
@@ -118,12 +139,14 @@ module.exports = function(grunt) {
 	//load the patternlab task
 	grunt.task.loadTasks('./builder/');
 
+	grunt.registerTask('styles', ['sass', 'postcss']);
+
 	//if you choose to use scss, or any preprocessor, you can add it here
-	grunt.registerTask('default', ['clean', 'concat', 'patternlab', 'sass', 'copy']);
+	grunt.registerTask('default', ['clean', 'concat', 'patternlab', 'styles', 'copy']);
 
 	//travis CI task
-	grunt.registerTask('travis', ['clean', 'concat', 'patternlab', 'sass', 'copy', 'nodeunit']);
+	grunt.registerTask('travis', ['clean', 'concat', 'patternlab', 'styles', 'copy', 'nodeunit']);
 
-	grunt.registerTask('serve', ['clean', 'concat', 'patternlab', 'sass', 'copy', 'connect', 'watch']);
+	grunt.registerTask('serve', ['clean', 'concat', 'patternlab', 'styles', 'copy', 'connect', 'watch']);
 
 };

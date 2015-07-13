@@ -13,6 +13,7 @@
 /* Breakpoints */
 .demo {
   overflow: hidden;
+  margin-bottom: 16px;
   margin-bottom: 1rem; }
 
 .demo .gi, .demo .demo-block {
@@ -77,5 +78,4 @@
 
 .sg-label {
   line-height: 1; }
-
 /*# sourceMappingURL=styleguide-specific.css.map */

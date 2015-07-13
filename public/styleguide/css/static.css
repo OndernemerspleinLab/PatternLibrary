@@ -6,8 +6,6 @@ gray: #808080;
 */
 /************Reset**************/
 * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 html, body, div, object, iframe, fieldset {
@@ -138,8 +136,6 @@ input[type=search] {
 
 .grid:target {
   -webkit-animation: fadeout 5s 1 ease-out;
-  -moz-animation: fadeout 5s 1 ease-out;
-  -o-animation: fadeout 5s 1 ease-out;
   animation: fadeout 5s 1 ease-out; }
 
 .grid > h2 {
@@ -150,8 +146,6 @@ input[type=search] {
 
 .grid > section:target {
   -webkit-animation: fadeout 5s 1 ease-out;
-  -moz-animation: fadeout 5s 1 ease-out;
-  -o-animation: fadeout 5s 1 ease-out;
   animation: fadeout 5s 1 ease-out; }
 
 .grid ul {
@@ -322,10 +316,6 @@ input[type=search] {
 
 .posts ol > li .tags a, .permalink {
   color: #ccc;
-  -webkit-transition: color 0.3s ease-out;
-  -moz-transition: color 0.3s ease-out;
-  -ms-transition: color 0.3s ease-out;
-  -o-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out; }
 
 .posts ol > li:hover .tags a, .posts ol > li:hover .permalink {
@@ -372,5 +362,4 @@ input[type=search] {
 
 .top:before {
   content: '▲'; }
-
 /*# sourceMappingURL=static.css.map */
