@@ -243,7 +243,9 @@
          "atoms-video": "/patterns/00-atoms-07-media-00-video/00-atoms-07-media-00-video.html",
          "atoms-audio": "/patterns/00-atoms-07-media-01-audio/00-atoms-07-media-01-audio.html",
          "molecules-byline-author-only": "/patterns/01-molecules-00-text-00-byline-author-only/01-molecules-00-text-00-byline-author-only.html",
+         "molecules-byline-author": "/patterns/01-molecules-00-text-00-byline-author/01-molecules-00-text-00-byline-author.html",
          "molecules-byline-author-time": "/patterns/01-molecules-00-text-01-byline-author-time/01-molecules-00-text-01-byline-author-time.html",
+         "molecules-byline-time": "/patterns/01-molecules-00-text-01-byline-time/01-molecules-00-text-01-byline-time.html",
          "molecules-address": "/patterns/01-molecules-00-text-02-address/01-molecules-00-text-02-address.html",
          "molecules-heading-group": "/patterns/01-molecules-00-text-03-heading-group/01-molecules-00-text-03-heading-group.html",
          "molecules-blockquote-with-citation": "/patterns/01-molecules-00-text-04-blockquote-with-citation/01-molecules-00-text-04-blockquote-with-citation.html",
@@ -269,9 +271,14 @@
          "molecules-pagination": "/patterns/01-molecules-05-navigation-03-pagination/01-molecules-05-navigation-03-pagination.html",
          "molecules-tabs": "/patterns/01-molecules-05-navigation-04-tabs/01-molecules-05-navigation-04-tabs.html",
          "molecules-social-share": "/patterns/01-molecules-06-components-00-social-share/01-molecules-06-components-00-social-share.html",
-         "molecules-accordion": "/patterns/01-molecules-06-components-01-accordion/01-molecules-06-components-01-accordion.html",
+         "molecules-accordion": "/patterns/01-molecules-06-components-02-accordion/01-molecules-06-components-02-accordion.html",
+         "molecules-social-follow": "/patterns/01-molecules-06-components-01-social-follow/01-molecules-06-components-01-social-follow.html",
          "molecules-single-comment": "/patterns/01-molecules-06-components-02-single-comment/01-molecules-06-components-02-single-comment.html",
          "molecules-alert": "/patterns/01-molecules-07-messaging-00-alert/01-molecules-07-messaging-00-alert.html",
+         "molecules-logo": "/patterns/01-molecules-08-branding-00-logo/01-molecules-08-branding-00-logo.html",
+         "molecules-payoff": "/patterns/01-molecules-08-branding-01-payoff/01-molecules-08-branding-01-payoff.html",
+         "molecules-brandbar": "/patterns/01-molecules-08-branding-02-brandbar/01-molecules-08-branding-02-brandbar.html",
+         "molecules-partnerlogos": "/patterns/01-molecules-08-branding-03-partnerlogos/01-molecules-08-branding-03-partnerlogos.html",
          "organisms-header": "/patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html",
          "organisms-footer": "/patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html",
          "organisms-article-body": "/patterns/02-organisms-01-article-00-article-body/02-organisms-01-article-00-article-body.html",
@@ -1285,7 +1292,7 @@
          "lineageIndex": [],
          "lineageR": [
             "{\"lineagePattern\":\"molecules-headline-byline\",\"lineagePath\":\"../../patterns/01-molecules-02-blocks-01-headline-byline/01-molecules-02-blocks-01-headline-byline.html\"}",
-            "{\"lineagePattern\":\"organisms-recent-tweets\",\"lineagePath\":\"../../patterns/02-organisms-04-sections-01-recent-tweets/02-organisms-04-sections-01-recent-tweets.html\"}"
+            "{\"lineagePattern\":\"organisms-recent-tweets\",\"lineagePath\":\"../../patterns/02-organisms-03-sections-01-recent-tweets/02-organisms-03-sections-01-recent-tweets.html\"}"
          ],
          "lineageRIndex": [
             "molecules-headline-byline",
@@ -1803,6 +1810,25 @@
          "patternState": ""
       },
       {
+         "fileName": "00-byline-author",
+         "subdir": "01-molecules/00-text",
+         "name": "01-molecules-00-text-00-byline-author",
+         "data": null,
+         "patternName": "byline-author",
+         "patternLink": "01-molecules-00-text-00-byline-author/01-molecules-00-text-00-byline-author.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "text",
+         "flatPatternPath": "01-molecules-00-text",
+         "key": "molecules-byline-author",
+         "template": "<div class=\"byline\">Geplaatst door: Kamer van Koophandel</div>",
+         "patternPartial": "<div class=\"byline\">Geplaatst door: Kamer van Koophandel</div>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "patternState": ""
+      },
+      {
          "fileName": "01-byline-author-time",
          "subdir": "01-molecules/00-text",
          "name": "01-molecules-00-text-01-byline-author-time",
@@ -1823,6 +1849,25 @@
          "lineageRIndex": [
             "templates-article"
          ],
+         "patternState": ""
+      },
+      {
+         "fileName": "01-byline-time",
+         "subdir": "01-molecules/00-text",
+         "name": "01-molecules-00-text-01-byline-time",
+         "data": null,
+         "patternName": "byline-time",
+         "patternLink": "01-molecules-00-text-01-byline-time/01-molecules-00-text-01-byline-time.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "text",
+         "flatPatternPath": "01-molecules-00-text",
+         "key": "molecules-byline-time",
+         "template": "<div class=\"byline\">Laatste update: <time datetime=\"2015-07-14T10:32+00:00\">14 juli 2015</time></div>",
+         "patternPartial": "<div class=\"byline\">Laatste update: <time datetime=\"2015-07-14T10:32+00:00\">14 juli 2015</time></div>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
          "patternState": ""
       },
       {
@@ -2020,7 +2065,7 @@
             "atoms-square"
          ],
          "lineageR": [
-            "{\"lineagePattern\":\"organisms-latest-posts\",\"lineagePath\":\"../../patterns/02-organisms-04-sections-00-latest-posts/02-organisms-04-sections-00-latest-posts.html\"}",
+            "{\"lineagePattern\":\"organisms-latest-posts\",\"lineagePath\":\"../../patterns/02-organisms-03-sections-00-latest-posts/02-organisms-03-sections-00-latest-posts.html\"}",
             "{\"lineagePattern\":\"templates-homepage\",\"lineagePath\":\"../../patterns/03-templates-00-homepage/03-templates-00-homepage.html\"}",
             "{\"lineagePattern\":\"pages-blog\",\"lineagePath\":\"../../patterns/04-pages-01-blog/04-pages-01-blog.html\"}"
          ],
@@ -2143,7 +2188,7 @@
             "atoms-landscape-4x3"
          ],
          "lineageR": [
-            "{\"lineagePattern\":\"organisms-carousel\",\"lineagePath\":\"../../patterns/02-organisms-03-components-00-carousel/02-organisms-03-components-00-carousel.html\"}"
+            "{\"lineagePattern\":\"organisms-carousel\",\"lineagePath\":\"../../patterns/02-organisms-02-components-00-carousel/02-organisms-02-components-00-carousel.html\"}"
          ],
          "lineageRIndex": [
             "organisms-carousel"
@@ -2295,8 +2340,12 @@
          "patternPartial": "<ul class=\"breadcrumbs\">\r\n\t<li><a href=\"#\">Grandparent</a></li>\r\n\t<li><a href=\"#\">Parent</a></li>\r\n\t<li><a href=\"#\">Child</a></li>\r\n\t<li><a href=\"#\">Grandchild</a></li>\r\n\t<li><a href=\"#\">Great-Grandchild</a></li>\r\n</ul>",
          "lineage": [],
          "lineageIndex": [],
-         "lineageR": [],
-         "lineageRIndex": [],
+         "lineageR": [
+            "{\"lineagePattern\":\"molecules-brandbar\",\"lineagePath\":\"../../patterns/01-molecules-08-branding-02-brandbar/01-molecules-08-branding-02-brandbar.html\"}"
+         ],
+         "lineageRIndex": [
+            "molecules-brandbar"
+         ],
          "patternState": ""
       },
       {
@@ -2388,6 +2437,44 @@
          "patternState": ""
       },
       {
+         "fileName": "01-social-follow",
+         "subdir": "01-molecules/06-components",
+         "name": "01-molecules-06-components-01-social-follow",
+         "data": null,
+         "patternName": "social-follow",
+         "patternLink": "01-molecules-06-components-01-social-follow/01-molecules-06-components-01-social-follow.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "components",
+         "flatPatternPath": "01-molecules-06-components",
+         "key": "molecules-social-follow",
+         "template": "<ul class=\"social social--follow\">\r\n\t<li><a href=\"http://twitter.com/OP_Nederland\" class=\"twitter\" title=\"Volg ons op Twitter\"><span>Twitter</span></a></li>\r\n\t<li><a href=\"https://nl.linkedin.com/company/ondernemersplein-nl\" class=\"linkedin\" title=\"Volg ons op LinkedIn\"><span>LinkedIn</span></a></li>\r\n\t<li><a href=\"https://plus.google.com/115566178692151570584/posts\" class=\"googleplus\" title=\"Volg ons op Google+\"><span>Google+</span></a></li>\r\n\t<li><a href=\"https://www.youtube.com/user/ondernemerspleinnl\" class=\"youtube\" title=\"Bekijk ons YouTube kanaal\"><span>YouTube</span></a></li>\r\n</ul>",
+         "patternPartial": "<ul class=\"social social--follow\">\r\n\t<li><a href=\"http://twitter.com/OP_Nederland\" class=\"twitter\" title=\"Volg ons op Twitter\"><span>Twitter</span></a></li>\r\n\t<li><a href=\"https://nl.linkedin.com/company/ondernemersplein-nl\" class=\"linkedin\" title=\"Volg ons op LinkedIn\"><span>LinkedIn</span></a></li>\r\n\t<li><a href=\"https://plus.google.com/115566178692151570584/posts\" class=\"googleplus\" title=\"Volg ons op Google+\"><span>Google+</span></a></li>\r\n\t<li><a href=\"https://www.youtube.com/user/ondernemerspleinnl\" class=\"youtube\" title=\"Bekijk ons YouTube kanaal\"><span>YouTube</span></a></li>\r\n</ul>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "patternState": ""
+      },
+      {
+         "fileName": "02-accordion",
+         "subdir": "01-molecules/06-components",
+         "name": "01-molecules-06-components-02-accordion",
+         "data": null,
+         "patternName": "accordion",
+         "patternLink": "01-molecules-06-components-02-accordion/01-molecules-06-components-02-accordion.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "components",
+         "flatPatternPath": "01-molecules-06-components",
+         "key": "molecules-accordion",
+         "template": "<div class=\"accordion\">\r\n\t<ul>\r\n\t\t<li>\r\n\t\t\t<a href=\"#\" class=\"acc-handle\">Accordion 1</a>\r\n\t\t\t<div class=\"acc-panel\">\r\n\t\t\t</div>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t\t<a href=\"#\" class=\"acc-handle\">Accordion 2</a>\r\n\t\t\t<div class=\"acc-panel\">\r\n\t\t\t</div>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t\t<a href=\"#\" class=\"acc-handle\">Accordion 3</a>\r\n\t\t\t<div class=\"acc-panel\">\r\n\t\t\t</div>\r\n\t\t</li>\r\n\t</ul>\r\n</div>",
+         "patternPartial": "<div class=\"accordion\">\r\n\t<ul>\r\n\t\t<li>\r\n\t\t\t<a href=\"#\" class=\"acc-handle\">Accordion 1</a>\r\n\t\t\t<div class=\"acc-panel\">\r\n\t\t\t</div>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t\t<a href=\"#\" class=\"acc-handle\">Accordion 2</a>\r\n\t\t\t<div class=\"acc-panel\">\r\n\t\t\t</div>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t\t<a href=\"#\" class=\"acc-handle\">Accordion 3</a>\r\n\t\t\t<div class=\"acc-panel\">\r\n\t\t\t</div>\r\n\t\t</li>\r\n\t</ul>\r\n</div>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "patternState": ""
+      },
+      {
          "fileName": "02-single-comment",
          "subdir": "01-molecules/06-components",
          "name": "01-molecules-06-components-02-single-comment",
@@ -2435,6 +2522,86 @@
          "lineageRIndex": [
             "templates-homepage"
          ],
+         "patternState": ""
+      },
+      {
+         "fileName": "00-logo",
+         "subdir": "01-molecules/08-branding",
+         "name": "01-molecules-08-branding-00-logo",
+         "data": null,
+         "patternName": "logo",
+         "patternLink": "01-molecules-08-branding-00-logo/01-molecules-08-branding-00-logo.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "branding",
+         "flatPatternPath": "01-molecules-08-branding",
+         "key": "molecules-logo",
+         "template": "<div class=\"logo\">\r\n\t<a class=\"logo-link\" title=\"Ga naar homepage\" href=\"/\">\r\n\t\t<!-- atom: line -->\r\n\t\t<span class=\"textLine\">\r\n\t\t\to<span class=\"highlight--blue\">n</span>dernemers\r\n\t\t</span> <span class=\"textLine\">p<span class=\"highlight--blue\">l</span>ein</span>\r\n\t</a>\r\n</div>\r\n\r\n<!-- atom: highlight\r\n<span class=\"highlight--blue\">l</span> -->",
+         "patternPartial": "<div class=\"logo\">\r\n\t<a class=\"logo-link\" title=\"Ga naar homepage\" href=\"/\">\r\n\t\t<!-- atom: line -->\r\n\t\t<span class=\"textLine\">\r\n\t\t\to<span class=\"highlight--blue\">n</span>dernemers\r\n\t\t</span> <span class=\"textLine\">p<span class=\"highlight--blue\">l</span>ein</span>\r\n\t</a>\r\n</div>\r\n\r\n<!-- atom: highlight\r\n<span class=\"highlight--blue\">l</span> -->",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "patternState": ""
+      },
+      {
+         "fileName": "01-payoff",
+         "subdir": "01-molecules/08-branding",
+         "name": "01-molecules-08-branding-01-payoff",
+         "data": null,
+         "patternName": "payoff",
+         "patternLink": "01-molecules-08-branding-01-payoff/01-molecules-08-branding-01-payoff.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "branding",
+         "flatPatternPath": "01-molecules-08-branding",
+         "key": "molecules-payoff",
+         "template": "<div class=\"payOff\">\r\n\tVan de overheid. Voor ondernemers.\r\n</div>",
+         "patternPartial": "<div class=\"payOff\">\r\n\tVan de overheid. Voor ondernemers.\r\n</div>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "patternState": ""
+      },
+      {
+         "fileName": "02-brandbar",
+         "subdir": "01-molecules/08-branding",
+         "name": "01-molecules-08-branding-02-brandbar",
+         "data": null,
+         "patternName": "brandbar",
+         "patternLink": "01-molecules-08-branding-02-brandbar/01-molecules-08-branding-02-brandbar.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "branding",
+         "flatPatternPath": "01-molecules-08-branding",
+         "key": "molecules-brandbar",
+         "template": "<div class=\"brandBar\">\r\n\t<!--{{> molecules-breadcrumbs }}-->\r\n</div>",
+         "patternPartial": "<div class=\"brandBar\">\r\n\t<!--<ul class=\"breadcrumbs\">\r\n\t<li><a href=\"#\">Grandparent</a></li>\r\n\t<li><a href=\"#\">Parent</a></li>\r\n\t<li><a href=\"#\">Child</a></li>\r\n\t<li><a href=\"#\">Grandchild</a></li>\r\n\t<li><a href=\"#\">Great-Grandchild</a></li>\r\n</ul>-->\r\n</div>",
+         "lineage": [
+            "{\"lineagePattern\":\"molecules-breadcrumbs\",\"lineagePath\":\"../../patterns/01-molecules-05-navigation-02-breadcrumbs/01-molecules-05-navigation-02-breadcrumbs.html\"}"
+         ],
+         "lineageIndex": [
+            "molecules-breadcrumbs"
+         ],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "patternState": ""
+      },
+      {
+         "fileName": "03-partnerlogos",
+         "subdir": "01-molecules/08-branding",
+         "name": "01-molecules-08-branding-03-partnerlogos",
+         "data": null,
+         "patternName": "partnerlogos",
+         "patternLink": "01-molecules-08-branding-03-partnerlogos/01-molecules-08-branding-03-partnerlogos.html",
+         "patternGroup": "molecules",
+         "patternSubGroup": "branding",
+         "flatPatternPath": "01-molecules-08-branding",
+         "key": "molecules-partnerlogos",
+         "template": "<p>Informatie op de website wordt u aangeboden door (semi-) overheidspartijen zoals:</p>\r\n<ul class=\"partner-logos\">\r\n\t<li><a href=\"#kvk\"><img src=\"http://placehold.it/59x50?text=KvK\" alt=\"Kamer van Koophandel\"></a></li>\r\n\t<li><img src=\"http://placehold.it/50x50?text=avb\" alt=\"Antwoord voor bedrijven\"></li>\r\n\t<li><a href=\"#rvo\"><img src=\"http://placehold.it/133x50?text=rvo\" alt=\"Rijksdienst voor Ondernemend Nederland\"></a></li>\r\n\t<li><a href=\"#rdw\"><img src=\"http://placehold.it/143x50?text=RDW\" alt=\"RDW\"></a></li>\r\n\t<li><a href=\"#bd\"><img src=\"http://placehold.it/89x50?text=BD\" alt=\"Belastingdienst\"></a></li>\r\n\t<li><a href=\"#cbs\"><img src=\"http://placehold.it/33x50?text=CBS\" alt=\"CBS\"></a></li>\r\n\t<li><a href=\"#uwv\"><img src=\"http://placehold.it/162x50?text=UWV\" alt=\"UWV\"></a></li>\r\n</ul>",
+         "patternPartial": "<p>Informatie op de website wordt u aangeboden door (semi-) overheidspartijen zoals:</p>\r\n<ul class=\"partner-logos\">\r\n\t<li><a href=\"#kvk\"><img src=\"http://placehold.it/59x50?text=KvK\" alt=\"Kamer van Koophandel\"></a></li>\r\n\t<li><img src=\"http://placehold.it/50x50?text=avb\" alt=\"Antwoord voor bedrijven\"></li>\r\n\t<li><a href=\"#rvo\"><img src=\"http://placehold.it/133x50?text=rvo\" alt=\"Rijksdienst voor Ondernemend Nederland\"></a></li>\r\n\t<li><a href=\"#rdw\"><img src=\"http://placehold.it/143x50?text=RDW\" alt=\"RDW\"></a></li>\r\n\t<li><a href=\"#bd\"><img src=\"http://placehold.it/89x50?text=BD\" alt=\"Belastingdienst\"></a></li>\r\n\t<li><a href=\"#cbs\"><img src=\"http://placehold.it/33x50?text=CBS\" alt=\"CBS\"></a></li>\r\n\t<li><a href=\"#uwv\"><img src=\"http://placehold.it/162x50?text=UWV\" alt=\"UWV\"></a></li>\r\n</ul>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
          "patternState": ""
       },
       {
@@ -2571,6 +2738,29 @@
       },
       {
          "fileName": "00-carousel",
+         "subdir": "02-organisms/02-components",
+         "name": "02-organisms-02-components-00-carousel",
+         "data": null,
+         "patternName": "carousel",
+         "patternLink": "02-organisms-02-components-00-carousel/02-organisms-02-components-00-carousel.html",
+         "patternGroup": "organisms",
+         "patternSubGroup": "components",
+         "flatPatternPath": "02-organisms-02-components",
+         "key": "organisms-carousel",
+         "template": "<div class=\"carousel-list-carousel\">\r\n\t<div class=\"carousel-container\">\r\n\t\t{{> molecules-inset-block }} \r\n\t<div>\r\n\t<div class=\"carousel-controls\">\r\n\t\t<a href=\"#\" class=\"carousel-prev\">&larr;</a>\r\n\t\t<div class=\"carousel-pagination\">1/5</div>\r\n\t\t<a href=\"#\" class=\"carousel-next\">&rarr;</a>\r\n\t</div>\r\n</div>",
+         "patternPartial": "<div class=\"carousel-list-carousel\">\r\n\t<div class=\"carousel-container\">\r\n<div class=\"block block-inset\">\r\n    <a href=\"#\" class=\"inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_4x3.png\" alt=\"4x3 Image\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t</div>\r\n\t</a>\r\n</div>\t<div>\r\n\t<div class=\"carousel-controls\">\r\n\t\t<a href=\"#\" class=\"carousel-prev\">&larr;</a>\r\n\t\t<div class=\"carousel-pagination\">1/5</div>\r\n\t\t<a href=\"#\" class=\"carousel-next\">&rarr;</a>\r\n\t</div>\r\n</div>",
+         "lineage": [
+            "{\"lineagePattern\":\"molecules-inset-block\",\"lineagePath\":\"../../patterns/01-molecules-02-blocks-05-inset-block/01-molecules-02-blocks-05-inset-block.html\"}"
+         ],
+         "lineageIndex": [
+            "molecules-inset-block"
+         ],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "patternState": ""
+      },
+      {
+         "fileName": "00-carousel",
          "subdir": "02-organisms/03-components",
          "name": "02-organisms-03-components-00-carousel",
          "data": null,
@@ -2590,6 +2780,89 @@
          ],
          "lineageR": [],
          "lineageRIndex": [],
+         "patternState": ""
+      },
+      {
+         "fileName": "00-latest-posts",
+         "subdir": "02-organisms/03-sections",
+         "name": "02-organisms-03-sections-00-latest-posts",
+         "data": null,
+         "patternName": "latest-posts",
+         "patternLink": "02-organisms-03-sections-00-latest-posts/02-organisms-03-sections-00-latest-posts.html",
+         "patternGroup": "organisms",
+         "patternSubGroup": "sections",
+         "flatPatternPath": "02-organisms-03-sections",
+         "key": "organisms-latest-posts",
+         "template": "<section class=\"section latest-posts\">\r\n\t<h2 class=\"section-title\">Latest Posts</h2>\r\n\t<ul class=\"post-list\">\r\n\t\t<li>{{> molecules-media-block }}</li>\r\n\t\t<li>{{> molecules-media-block }}</li>\r\n\t\t<li>{{> molecules-media-block }}</li>\r\n\t\t<li>{{> molecules-media-block }}</li>\r\n\t\t<li>{{> molecules-media-block }}</li>\r\n\t</ul>\r\n\t<a href=\"#\" class=\"text-btn\">View more posts</a>\r\n</section>",
+         "patternPartial": "<section class=\"section latest-posts\">\r\n\t<h2 class=\"section-title\">Latest Posts</h2>\r\n\t<ul class=\"post-list\">\r\n\t\t<li><div class=\"block block-thumb\">\r\n    <a href=\"#\" class=\"b-inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_square.png\" alt=\"Square Thumbnail\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\t\t</div>\r\n\t</a>\r\n</div></li>\r\n\t\t<li><div class=\"block block-thumb\">\r\n    <a href=\"#\" class=\"b-inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_square.png\" alt=\"Square Thumbnail\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\t\t</div>\r\n\t</a>\r\n</div></li>\r\n\t\t<li><div class=\"block block-thumb\">\r\n    <a href=\"#\" class=\"b-inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_square.png\" alt=\"Square Thumbnail\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\t\t</div>\r\n\t</a>\r\n</div></li>\r\n\t\t<li><div class=\"block block-thumb\">\r\n    <a href=\"#\" class=\"b-inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_square.png\" alt=\"Square Thumbnail\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\t\t</div>\r\n\t</a>\r\n</div></li>\r\n\t\t<li><div class=\"block block-thumb\">\r\n    <a href=\"#\" class=\"b-inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_square.png\" alt=\"Square Thumbnail\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\t\t</div>\r\n\t</a>\r\n</div></li>\r\n\t</ul>\r\n\t<a href=\"#\" class=\"text-btn\">View more posts</a>\r\n</section>",
+         "lineage": [
+            "{\"lineagePattern\":\"molecules-media-block\",\"lineagePath\":\"../../patterns/01-molecules-02-blocks-00-media-block/01-molecules-02-blocks-00-media-block.html\"}"
+         ],
+         "lineageIndex": [
+            "molecules-media-block"
+         ],
+         "lineageR": [
+            "{\"lineagePattern\":\"templates-blog\",\"lineagePath\":\"../../patterns/03-templates-01-blog/03-templates-01-blog.html\"}"
+         ],
+         "lineageRIndex": [
+            "templates-blog"
+         ],
+         "patternState": ""
+      },
+      {
+         "fileName": "01-recent-tweets",
+         "subdir": "02-organisms/03-sections",
+         "name": "02-organisms-03-sections-01-recent-tweets",
+         "data": null,
+         "patternName": "recent-tweets",
+         "patternLink": "02-organisms-03-sections-01-recent-tweets/02-organisms-03-sections-01-recent-tweets.html",
+         "patternGroup": "organisms",
+         "patternSubGroup": "sections",
+         "flatPatternPath": "02-organisms-03-sections",
+         "key": "organisms-recent-tweets",
+         "template": "<section class=\"section related-posts\">\r\n\t<h3 class=\"section-title\">Recent Tweets</h3>\r\n\t<ul class=\"headline-list\">\r\n\t\t<li><h4><a href=\"#\">Headline Lorem ipsum dolor sit amet</a></h4> {{> atoms-time }}</li>\r\n\t\t<li><h4><a href=\"#\">Laborum, molestiae, rerum, dolores eveniet </a></h4> {{> atoms-time }}</li>\r\n\t\t<li><h4><a href=\"#\">quae est fugit distinctio iure odit minus non ipsum </a></h4> {{> atoms-time }}</li>\r\n\t\t<li><h4><a href=\"#\">dolorum deserunt omnis voluptates voluptatum</a></h4> {{> atoms-time }}</li>\r\n\t\t<li><h4><a href=\"#\">nventore dignissimos vel molestiae, rerum, dolore</a></h4> {{> atoms-time }}</li>\r\n\t\t<li><h4><a href=\"#\"></a></h4></li>\r\n\t</ul>\r\n\t<a href=\"#\" class=\"text-btn\">Follow us on Twitter</a>\r\n</section>",
+         "patternPartial": "<section class=\"section related-posts\">\r\n\t<h3 class=\"section-title\">Recent Tweets</h3>\r\n\t<ul class=\"headline-list\">\r\n\t\t<li><h4><a href=\"#\">Headline Lorem ipsum dolor sit amet</a></h4> <time datetime=\"2013-04-06T12:32+00:00\">2 weeks ago</time></li>\r\n\t\t<li><h4><a href=\"#\">Laborum, molestiae, rerum, dolores eveniet </a></h4> <time datetime=\"2013-04-06T12:32+00:00\">2 weeks ago</time></li>\r\n\t\t<li><h4><a href=\"#\">quae est fugit distinctio iure odit minus non ipsum </a></h4> <time datetime=\"2013-04-06T12:32+00:00\">2 weeks ago</time></li>\r\n\t\t<li><h4><a href=\"#\">dolorum deserunt omnis voluptates voluptatum</a></h4> <time datetime=\"2013-04-06T12:32+00:00\">2 weeks ago</time></li>\r\n\t\t<li><h4><a href=\"#\">nventore dignissimos vel molestiae, rerum, dolore</a></h4> <time datetime=\"2013-04-06T12:32+00:00\">2 weeks ago</time></li>\r\n\t\t<li><h4><a href=\"#\"></a></h4></li>\r\n\t</ul>\r\n\t<a href=\"#\" class=\"text-btn\">Follow us on Twitter</a>\r\n</section>",
+         "lineage": [
+            "{\"lineagePattern\":\"atoms-time\",\"lineagePath\":\"../../patterns/00-atoms-01-text-06-time/00-atoms-01-text-06-time.html\"}"
+         ],
+         "lineageIndex": [
+            "atoms-time"
+         ],
+         "lineageR": [
+            "{\"lineagePattern\":\"templates-homepage\",\"lineagePath\":\"../../patterns/03-templates-00-homepage/03-templates-00-homepage.html\"}",
+            "{\"lineagePattern\":\"templates-blog\",\"lineagePath\":\"../../patterns/03-templates-01-blog/03-templates-01-blog.html\"}",
+            "{\"lineagePattern\":\"templates-article\",\"lineagePath\":\"../../patterns/03-templates-02-article/03-templates-02-article.html\"}",
+            "{\"lineagePattern\":\"pages-blog\",\"lineagePath\":\"../../patterns/04-pages-01-blog/04-pages-01-blog.html\"}"
+         ],
+         "lineageRIndex": [
+            "templates-homepage",
+            "templates-blog",
+            "templates-article",
+            "pages-blog"
+         ],
+         "patternState": ""
+      },
+      {
+         "fileName": "02-related-posts",
+         "subdir": "02-organisms/03-sections",
+         "name": "02-organisms-03-sections-02-related-posts",
+         "data": null,
+         "patternName": "related-posts",
+         "patternLink": "02-organisms-03-sections-02-related-posts/02-organisms-03-sections-02-related-posts.html",
+         "patternGroup": "organisms",
+         "patternSubGroup": "sections",
+         "flatPatternPath": "02-organisms-03-sections",
+         "key": "organisms-related-posts",
+         "template": "<section class=\"section related-posts\">\r\n\t<h3 class=\"section-title\">Related Posts</h3>\r\n\t<ul class=\"headline-list\">\r\n\t\t<li><h4><a href=\"#\">Headline Lorem ipsum dolor sit amet</a></h4></li>\r\n\t\t<li><h4><a href=\"#\">Laborum, molestiae, rerum, dolores eveniet </a></h4></li>\r\n\t\t<li><h4><a href=\"#\">quae est fugit distinctio iure odit minus non ipsum </a></h4></li>\r\n\t\t<li><h4><a href=\"#\">dolorum deserunt omnis voluptates voluptatum</a></h4></li>\r\n\t\t<li><h4><a href=\"#\">nventore dignissimos vel molestiae, rerum, dolore</a></h4></li>\r\n\t\t<li><h4><a href=\"#\"></a></h4></li>\r\n\t</ul>\r\n</section>",
+         "patternPartial": "<section class=\"section related-posts\">\r\n\t<h3 class=\"section-title\">Related Posts</h3>\r\n\t<ul class=\"headline-list\">\r\n\t\t<li><h4><a href=\"#\">Headline Lorem ipsum dolor sit amet</a></h4></li>\r\n\t\t<li><h4><a href=\"#\">Laborum, molestiae, rerum, dolores eveniet </a></h4></li>\r\n\t\t<li><h4><a href=\"#\">quae est fugit distinctio iure odit minus non ipsum </a></h4></li>\r\n\t\t<li><h4><a href=\"#\">dolorum deserunt omnis voluptates voluptatum</a></h4></li>\r\n\t\t<li><h4><a href=\"#\">nventore dignissimos vel molestiae, rerum, dolore</a></h4></li>\r\n\t\t<li><h4><a href=\"#\"></a></h4></li>\r\n\t</ul>\r\n</section>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [
+            "{\"lineagePattern\":\"templates-article\",\"lineagePath\":\"../../patterns/03-templates-02-article/03-templates-02-article.html\"}"
+         ],
+         "lineageRIndex": [
+            "templates-article"
+         ],
          "patternState": ""
       },
       {
@@ -2693,6 +2966,7 @@
             "{\"lineagePattern\":\"molecules-alert\",\"lineagePath\":\"../../patterns/01-molecules-07-messaging-00-alert/01-molecules-07-messaging-00-alert.html\"}",
             "{\"lineagePattern\":\"molecules-block-hero\",\"lineagePath\":\"../../patterns/01-molecules-02-blocks-02-block-hero/01-molecules-02-blocks-02-block-hero.html\"}",
             "{\"lineagePattern\":\"molecules-media-block\",\"lineagePath\":\"../../patterns/01-molecules-02-blocks-00-media-block/01-molecules-02-blocks-00-media-block.html\"}",
+            "{\"lineagePattern\":\"organisms-recent-tweets\",\"lineagePath\":\"../../patterns/02-organisms-03-sections-01-recent-tweets/02-organisms-03-sections-01-recent-tweets.html\"}",
             "{\"lineagePattern\":\"organisms-recent-tweets\",\"lineagePath\":\"../../patterns/02-organisms-04-sections-01-recent-tweets/02-organisms-04-sections-01-recent-tweets.html\"}",
             "{\"lineagePattern\":\"organisms-footer\",\"lineagePath\":\"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html\"}"
          ],
@@ -2730,8 +3004,10 @@
          "patternPartial": "<div class=\"page\" id=\"page\">\r\n<!-- Begin .header -->\r\n<header class=\"header cf\" role=\"banner\">\r\n<a href=\"/\"><img src=\"../../images/logo.png\" class=\"logo\" alt=\"Logo Alt Text\" /></a>\t<a href=\"#\" class=\"nav-toggle nav-toggle-search icon-search\"><span class=\"is-vishidden\">Search</span></a>\r\n\t<a href=\"#\" class=\"nav-toggle nav-toggle-menu icon-menu\"><span class=\"is-vishidden\">Menu</span></a>\r\n<nav id=\"nav\" class=\"nav\">\r\n\t<ul>\r\n\t\t<li><a href=\"&#x2F;patterns&#x2F;04-pages-00-homepage&#x2F;04-pages-00-homepage.html\">Home</a></li>\r\n\t\t<li><a href=\"#\">About</a></li>\r\n\t\t<li><a href=\"&#x2F;patterns&#x2F;04-pages-01-blog&#x2F;04-pages-01-blog.html\">Blog</a></li>\r\n\t\t<li><a href=\"#\">Contact</a></li>\r\n\t</ul>\r\n</nav><!--end .nav-->\r\n<form action=\"#\" method=\"post\" class=\"inline-form search-form\">           \r\n    <fieldset>\r\n\t    <legend class=\"is-vishidden\">Search</legend>\r\n\t    <label for=\"search-field\" class=\"is-vishidden\">Search</label>\r\n\t    <input type=\"search\" placeholder=\"Search\" id=\"search-field\" class=\"search-field\" />\r\n\t    <button class=\"search-submit\">\r\n\t    \t<span class=\"icon-search\" aria-hidden=\"true\"></span>\r\n\t    \t<span class=\"is-vishidden\">Search</span>\r\n\t    </button>\r\n    </fieldset>\r\n</form></header>\r\n<!-- End .header -->\r\n\t<div role=\"main\">\r\n\t\t<h1 class=\"section-title\">Our Outdoor Blog</h1>\r\n\t\t<div class=\"l-two-col\">\r\n\t\t\t<div class=\"l-main\">\r\n<section class=\"section latest-posts\">\r\n\t<h2 class=\"section-title\">Latest Posts</h2>\r\n\t<ul class=\"post-list\">\r\n\t\t<li><div class=\"block block-thumb\">\r\n    <a href=\"#\" class=\"b-inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_square.png\" alt=\"Square Thumbnail\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\t\t</div>\r\n\t</a>\r\n</div></li>\r\n\t\t<li><div class=\"block block-thumb\">\r\n    <a href=\"#\" class=\"b-inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_square.png\" alt=\"Square Thumbnail\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\t\t</div>\r\n\t</a>\r\n</div></li>\r\n\t\t<li><div class=\"block block-thumb\">\r\n    <a href=\"#\" class=\"b-inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_square.png\" alt=\"Square Thumbnail\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\t\t</div>\r\n\t</a>\r\n</div></li>\r\n\t\t<li><div class=\"block block-thumb\">\r\n    <a href=\"#\" class=\"b-inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_square.png\" alt=\"Square Thumbnail\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\t\t</div>\r\n\t</a>\r\n</div></li>\r\n\t\t<li><div class=\"block block-thumb\">\r\n    <a href=\"#\" class=\"b-inner\">\r\n\t\t<div class=\"b-thumb\">\r\n<img src=\"..&#x2F;..&#x2F;images&#x2F;fpo_square.png\" alt=\"Square Thumbnail\" />\t\t</div>\r\n\t\t<div class=\"b-text\">\r\n\t\t\t<h2 class=\"headline\">Lorem ipsum dolor sit (37 characters)</h2>\r\n\t\t\t<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\r\n\t\t</div>\r\n\t</a>\r\n</div></li>\r\n\t</ul>\r\n\t<a href=\"#\" class=\"text-btn\">View more posts</a>\r\n</section><ol class=\"pagination\">\r\n\t<li class=\"current\"><a href=\"#\">1</a></li>\r\n\t<li><a href=\"#\">2</a></li>\r\n\t<li><a href=\"#\">3</a></li>\r\n\t<li><a href=\"#\">4</a></li>\r\n\t<li><a href=\"#\">5</a></li>\r\n\t<li><a href=\"#\">6</a></li>\r\n\t<li><a href=\"#\">7</a></li>\r\n</ol>\t\t\t</div><!--end l-main-->\r\n\r\n\t\t\t<div class=\"l-sidebar\">\r\n<section class=\"section related-posts\">\r\n\t<h3 class=\"section-title\">Recent Tweets</h3>\r\n\t<ul class=\"headline-list\">\r\n\t\t<li><h4><a href=\"#\">Headline Lorem ipsum dolor sit amet</a></h4> <time datetime=\"2013-04-06T12:32+00:00\">2 weeks ago</time></li>\r\n\t\t<li><h4><a href=\"#\">Laborum, molestiae, rerum, dolores eveniet </a></h4> <time datetime=\"2013-04-06T12:32+00:00\">2 weeks ago</time></li>\r\n\t\t<li><h4><a href=\"#\">quae est fugit distinctio iure odit minus non ipsum </a></h4> <time datetime=\"2013-04-06T12:32+00:00\">2 weeks ago</time></li>\r\n\t\t<li><h4><a href=\"#\">dolorum deserunt omnis voluptates voluptatum</a></h4> <time datetime=\"2013-04-06T12:32+00:00\">2 weeks ago</time></li>\r\n\t\t<li><h4><a href=\"#\">nventore dignissimos vel molestiae, rerum, dolore</a></h4> <time datetime=\"2013-04-06T12:32+00:00\">2 weeks ago</time></li>\r\n\t\t<li><h4><a href=\"#\"></a></h4></li>\r\n\t</ul>\r\n\t<a href=\"#\" class=\"text-btn\">Follow us on Twitter</a>\r\n</section>\t\t\t</div><!--end l-sidebar-->\r\n\t\t</div><!--end two-col-->\r\n\t</div><!--End role=main-->\r\n<!-- Begin Footer -->\r\n<footer class=\"footer\" role=\"contentinfo\">\r\n\t<div class=\"lc\">\r\n\t\t<p class=\"copyright\">&copy; 2013 Company Name. All rights reserved.</p>\r\n\t</div>\r\n</footer>\r\n<!-- End Footer --></div>",
          "lineage": [
             "{\"lineagePattern\":\"organisms-header\",\"lineagePath\":\"../../patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html\"}",
+            "{\"lineagePattern\":\"organisms-latest-posts\",\"lineagePath\":\"../../patterns/02-organisms-03-sections-00-latest-posts/02-organisms-03-sections-00-latest-posts.html\"}",
             "{\"lineagePattern\":\"organisms-latest-posts\",\"lineagePath\":\"../../patterns/02-organisms-04-sections-00-latest-posts/02-organisms-04-sections-00-latest-posts.html\"}",
             "{\"lineagePattern\":\"molecules-pagination\",\"lineagePath\":\"../../patterns/01-molecules-05-navigation-03-pagination/01-molecules-05-navigation-03-pagination.html\"}",
+            "{\"lineagePattern\":\"organisms-recent-tweets\",\"lineagePath\":\"../../patterns/02-organisms-03-sections-01-recent-tweets/02-organisms-03-sections-01-recent-tweets.html\"}",
             "{\"lineagePattern\":\"organisms-recent-tweets\",\"lineagePath\":\"../../patterns/02-organisms-04-sections-01-recent-tweets/02-organisms-04-sections-01-recent-tweets.html\"}",
             "{\"lineagePattern\":\"organisms-footer\",\"lineagePath\":\"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html\"}"
          ],
@@ -2765,7 +3041,9 @@
             "{\"lineagePattern\":\"organisms-article-body\",\"lineagePath\":\"../../patterns/02-organisms-01-article-00-article-body/02-organisms-01-article-00-article-body.html\"}",
             "{\"lineagePattern\":\"molecules-social-share\",\"lineagePath\":\"../../patterns/01-molecules-06-components-00-social-share/01-molecules-06-components-00-social-share.html\"}",
             "{\"lineagePattern\":\"organisms-comment-thread\",\"lineagePath\":\"../../patterns/02-organisms-02-comments-00-comment-thread/02-organisms-02-comments-00-comment-thread.html\"}",
+            "{\"lineagePattern\":\"organisms-related-posts\",\"lineagePath\":\"../../patterns/02-organisms-03-sections-02-related-posts/02-organisms-03-sections-02-related-posts.html\"}",
             "{\"lineagePattern\":\"organisms-related-posts\",\"lineagePath\":\"../../patterns/02-organisms-04-sections-02-related-posts/02-organisms-04-sections-02-related-posts.html\"}",
+            "{\"lineagePattern\":\"organisms-recent-tweets\",\"lineagePath\":\"../../patterns/02-organisms-03-sections-01-recent-tweets/02-organisms-03-sections-01-recent-tweets.html\"}",
             "{\"lineagePattern\":\"organisms-recent-tweets\",\"lineagePath\":\"../../patterns/02-organisms-04-sections-01-recent-tweets/02-organisms-04-sections-01-recent-tweets.html\"}",
             "{\"lineagePattern\":\"organisms-footer\",\"lineagePath\":\"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html\"}"
          ],
@@ -2946,9 +3224,14 @@
                "organisms-article-body": "/patterns/02-organisms-01-article-00-article-body/02-organisms-01-article-00-article-body.html",
                "organisms-footer": "/patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html",
                "organisms-header": "/patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html",
+               "molecules-partnerlogos": "/patterns/01-molecules-08-branding-03-partnerlogos/01-molecules-08-branding-03-partnerlogos.html",
+               "molecules-brandbar": "/patterns/01-molecules-08-branding-02-brandbar/01-molecules-08-branding-02-brandbar.html",
+               "molecules-payoff": "/patterns/01-molecules-08-branding-01-payoff/01-molecules-08-branding-01-payoff.html",
+               "molecules-logo": "/patterns/01-molecules-08-branding-00-logo/01-molecules-08-branding-00-logo.html",
                "molecules-alert": "/patterns/01-molecules-07-messaging-00-alert/01-molecules-07-messaging-00-alert.html",
                "molecules-single-comment": "/patterns/01-molecules-06-components-02-single-comment/01-molecules-06-components-02-single-comment.html",
-               "molecules-accordion": "/patterns/01-molecules-06-components-01-accordion/01-molecules-06-components-01-accordion.html",
+               "molecules-social-follow": "/patterns/01-molecules-06-components-01-social-follow/01-molecules-06-components-01-social-follow.html",
+               "molecules-accordion": "/patterns/01-molecules-06-components-02-accordion/01-molecules-06-components-02-accordion.html",
                "molecules-social-share": "/patterns/01-molecules-06-components-00-social-share/01-molecules-06-components-00-social-share.html",
                "molecules-tabs": "/patterns/01-molecules-05-navigation-04-tabs/01-molecules-05-navigation-04-tabs.html",
                "molecules-pagination": "/patterns/01-molecules-05-navigation-03-pagination/01-molecules-05-navigation-03-pagination.html",
@@ -2974,7 +3257,9 @@
                "molecules-blockquote-with-citation": "/patterns/01-molecules-00-text-04-blockquote-with-citation/01-molecules-00-text-04-blockquote-with-citation.html",
                "molecules-heading-group": "/patterns/01-molecules-00-text-03-heading-group/01-molecules-00-text-03-heading-group.html",
                "molecules-address": "/patterns/01-molecules-00-text-02-address/01-molecules-00-text-02-address.html",
+               "molecules-byline-time": "/patterns/01-molecules-00-text-01-byline-time/01-molecules-00-text-01-byline-time.html",
                "molecules-byline-author-time": "/patterns/01-molecules-00-text-01-byline-author-time/01-molecules-00-text-01-byline-author-time.html",
+               "molecules-byline-author": "/patterns/01-molecules-00-text-00-byline-author/01-molecules-00-text-00-byline-author.html",
                "molecules-byline-author-only": "/patterns/01-molecules-00-text-00-byline-author-only/01-molecules-00-text-00-byline-author-only.html",
                "atoms-audio": "/patterns/00-atoms-07-media-01-audio/00-atoms-07-media-01-audio.html",
                "atoms-video": "/patterns/00-atoms-07-media-00-video/00-atoms-07-media-00-video.html",
@@ -3184,9 +3469,14 @@
                "organisms-article-body": "/patterns/02-organisms-01-article-00-article-body/02-organisms-01-article-00-article-body.html",
                "organisms-footer": "/patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html",
                "organisms-header": "/patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html",
+               "molecules-partnerlogos": "/patterns/01-molecules-08-branding-03-partnerlogos/01-molecules-08-branding-03-partnerlogos.html",
+               "molecules-brandbar": "/patterns/01-molecules-08-branding-02-brandbar/01-molecules-08-branding-02-brandbar.html",
+               "molecules-payoff": "/patterns/01-molecules-08-branding-01-payoff/01-molecules-08-branding-01-payoff.html",
+               "molecules-logo": "/patterns/01-molecules-08-branding-00-logo/01-molecules-08-branding-00-logo.html",
                "molecules-alert": "/patterns/01-molecules-07-messaging-00-alert/01-molecules-07-messaging-00-alert.html",
                "molecules-single-comment": "/patterns/01-molecules-06-components-02-single-comment/01-molecules-06-components-02-single-comment.html",
-               "molecules-accordion": "/patterns/01-molecules-06-components-01-accordion/01-molecules-06-components-01-accordion.html",
+               "molecules-social-follow": "/patterns/01-molecules-06-components-01-social-follow/01-molecules-06-components-01-social-follow.html",
+               "molecules-accordion": "/patterns/01-molecules-06-components-02-accordion/01-molecules-06-components-02-accordion.html",
                "molecules-social-share": "/patterns/01-molecules-06-components-00-social-share/01-molecules-06-components-00-social-share.html",
                "molecules-tabs": "/patterns/01-molecules-05-navigation-04-tabs/01-molecules-05-navigation-04-tabs.html",
                "molecules-pagination": "/patterns/01-molecules-05-navigation-03-pagination/01-molecules-05-navigation-03-pagination.html",
@@ -3212,7 +3502,9 @@
                "molecules-blockquote-with-citation": "/patterns/01-molecules-00-text-04-blockquote-with-citation/01-molecules-00-text-04-blockquote-with-citation.html",
                "molecules-heading-group": "/patterns/01-molecules-00-text-03-heading-group/01-molecules-00-text-03-heading-group.html",
                "molecules-address": "/patterns/01-molecules-00-text-02-address/01-molecules-00-text-02-address.html",
+               "molecules-byline-time": "/patterns/01-molecules-00-text-01-byline-time/01-molecules-00-text-01-byline-time.html",
                "molecules-byline-author-time": "/patterns/01-molecules-00-text-01-byline-author-time/01-molecules-00-text-01-byline-author-time.html",
+               "molecules-byline-author": "/patterns/01-molecules-00-text-00-byline-author/01-molecules-00-text-00-byline-author.html",
                "molecules-byline-author-only": "/patterns/01-molecules-00-text-00-byline-author-only/01-molecules-00-text-00-byline-author-only.html",
                "atoms-audio": "/patterns/00-atoms-07-media-01-audio/00-atoms-07-media-01-audio.html",
                "atoms-video": "/patterns/00-atoms-07-media-00-video/00-atoms-07-media-00-video.html",
@@ -3372,9 +3664,14 @@
                "organisms-article-body": "/patterns/02-organisms-01-article-00-article-body/02-organisms-01-article-00-article-body.html",
                "organisms-footer": "/patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html",
                "organisms-header": "/patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html",
+               "molecules-partnerlogos": "/patterns/01-molecules-08-branding-03-partnerlogos/01-molecules-08-branding-03-partnerlogos.html",
+               "molecules-brandbar": "/patterns/01-molecules-08-branding-02-brandbar/01-molecules-08-branding-02-brandbar.html",
+               "molecules-payoff": "/patterns/01-molecules-08-branding-01-payoff/01-molecules-08-branding-01-payoff.html",
+               "molecules-logo": "/patterns/01-molecules-08-branding-00-logo/01-molecules-08-branding-00-logo.html",
                "molecules-alert": "/patterns/01-molecules-07-messaging-00-alert/01-molecules-07-messaging-00-alert.html",
                "molecules-single-comment": "/patterns/01-molecules-06-components-02-single-comment/01-molecules-06-components-02-single-comment.html",
-               "molecules-accordion": "/patterns/01-molecules-06-components-01-accordion/01-molecules-06-components-01-accordion.html",
+               "molecules-social-follow": "/patterns/01-molecules-06-components-01-social-follow/01-molecules-06-components-01-social-follow.html",
+               "molecules-accordion": "/patterns/01-molecules-06-components-02-accordion/01-molecules-06-components-02-accordion.html",
                "molecules-social-share": "/patterns/01-molecules-06-components-00-social-share/01-molecules-06-components-00-social-share.html",
                "molecules-tabs": "/patterns/01-molecules-05-navigation-04-tabs/01-molecules-05-navigation-04-tabs.html",
                "molecules-pagination": "/patterns/01-molecules-05-navigation-03-pagination/01-molecules-05-navigation-03-pagination.html",
@@ -3400,7 +3697,9 @@
                "molecules-blockquote-with-citation": "/patterns/01-molecules-00-text-04-blockquote-with-citation/01-molecules-00-text-04-blockquote-with-citation.html",
                "molecules-heading-group": "/patterns/01-molecules-00-text-03-heading-group/01-molecules-00-text-03-heading-group.html",
                "molecules-address": "/patterns/01-molecules-00-text-02-address/01-molecules-00-text-02-address.html",
+               "molecules-byline-time": "/patterns/01-molecules-00-text-01-byline-time/01-molecules-00-text-01-byline-time.html",
                "molecules-byline-author-time": "/patterns/01-molecules-00-text-01-byline-author-time/01-molecules-00-text-01-byline-author-time.html",
+               "molecules-byline-author": "/patterns/01-molecules-00-text-00-byline-author/01-molecules-00-text-00-byline-author.html",
                "molecules-byline-author-only": "/patterns/01-molecules-00-text-00-byline-author-only/01-molecules-00-text-00-byline-author-only.html",
                "atoms-audio": "/patterns/00-atoms-07-media-01-audio/00-atoms-07-media-01-audio.html",
                "atoms-video": "/patterns/00-atoms-07-media-00-video/00-atoms-07-media-00-video.html",
@@ -3451,6 +3750,7 @@
             "{\"lineagePattern\":\"organisms-header\",\"lineagePath\":\"../../patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html\"}",
             "{\"lineagePattern\":\"molecules-media-block\",\"lineagePath\":\"../../patterns/01-molecules-02-blocks-00-media-block/01-molecules-02-blocks-00-media-block.html\"}",
             "{\"lineagePattern\":\"molecules-pagination\",\"lineagePath\":\"../../patterns/01-molecules-05-navigation-03-pagination/01-molecules-05-navigation-03-pagination.html\"}",
+            "{\"lineagePattern\":\"organisms-recent-tweets\",\"lineagePath\":\"../../patterns/02-organisms-03-sections-01-recent-tweets/02-organisms-03-sections-01-recent-tweets.html\"}",
             "{\"lineagePattern\":\"organisms-recent-tweets\",\"lineagePath\":\"../../patterns/02-organisms-04-sections-01-recent-tweets/02-organisms-04-sections-01-recent-tweets.html\"}",
             "{\"lineagePattern\":\"organisms-footer\",\"lineagePath\":\"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html\"}"
          ],
@@ -3510,9 +3810,14 @@
                "organisms-article-body": "/patterns/02-organisms-01-article-00-article-body/02-organisms-01-article-00-article-body.html",
                "organisms-footer": "/patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html",
                "organisms-header": "/patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html",
+               "molecules-partnerlogos": "/patterns/01-molecules-08-branding-03-partnerlogos/01-molecules-08-branding-03-partnerlogos.html",
+               "molecules-brandbar": "/patterns/01-molecules-08-branding-02-brandbar/01-molecules-08-branding-02-brandbar.html",
+               "molecules-payoff": "/patterns/01-molecules-08-branding-01-payoff/01-molecules-08-branding-01-payoff.html",
+               "molecules-logo": "/patterns/01-molecules-08-branding-00-logo/01-molecules-08-branding-00-logo.html",
                "molecules-alert": "/patterns/01-molecules-07-messaging-00-alert/01-molecules-07-messaging-00-alert.html",
                "molecules-single-comment": "/patterns/01-molecules-06-components-02-single-comment/01-molecules-06-components-02-single-comment.html",
-               "molecules-accordion": "/patterns/01-molecules-06-components-01-accordion/01-molecules-06-components-01-accordion.html",
+               "molecules-social-follow": "/patterns/01-molecules-06-components-01-social-follow/01-molecules-06-components-01-social-follow.html",
+               "molecules-accordion": "/patterns/01-molecules-06-components-02-accordion/01-molecules-06-components-02-accordion.html",
                "molecules-social-share": "/patterns/01-molecules-06-components-00-social-share/01-molecules-06-components-00-social-share.html",
                "molecules-tabs": "/patterns/01-molecules-05-navigation-04-tabs/01-molecules-05-navigation-04-tabs.html",
                "molecules-pagination": "/patterns/01-molecules-05-navigation-03-pagination/01-molecules-05-navigation-03-pagination.html",
@@ -3538,7 +3843,9 @@
                "molecules-blockquote-with-citation": "/patterns/01-molecules-00-text-04-blockquote-with-citation/01-molecules-00-text-04-blockquote-with-citation.html",
                "molecules-heading-group": "/patterns/01-molecules-00-text-03-heading-group/01-molecules-00-text-03-heading-group.html",
                "molecules-address": "/patterns/01-molecules-00-text-02-address/01-molecules-00-text-02-address.html",
+               "molecules-byline-time": "/patterns/01-molecules-00-text-01-byline-time/01-molecules-00-text-01-byline-time.html",
                "molecules-byline-author-time": "/patterns/01-molecules-00-text-01-byline-author-time/01-molecules-00-text-01-byline-author-time.html",
+               "molecules-byline-author": "/patterns/01-molecules-00-text-00-byline-author/01-molecules-00-text-00-byline-author.html",
                "molecules-byline-author-only": "/patterns/01-molecules-00-text-00-byline-author-only/01-molecules-00-text-00-byline-author-only.html",
                "atoms-audio": "/patterns/00-atoms-07-media-01-audio/00-atoms-07-media-01-audio.html",
                "atoms-video": "/patterns/00-atoms-07-media-00-video/00-atoms-07-media-00-video.html",
@@ -3633,7 +3940,9 @@
       "atoms-video": "<video width=\"640\" height=\"360\" controls=\"\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE_html5.mp4\" type=\"video/mp4\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.webm\" type=\"video/webm\">\r\n\t<source src=\"http://clips.vorwaerts-gmbh.de/VfE.ogv\" type=\"video/ogg\">\r\n\t<img src=\"\" width=\"640\" height=\"360\" alt=\"Big Buck Bunny\" title=\"No video playback capabilities, please download\">\r\n</video>",
       "atoms-audio": "<audio controls=\"controls\">  \r\n   <source src=\"#\" />  \r\n   <source src=\"#\" />  \r\n</audio>",
       "molecules-byline-author-only": "<div class=\"byline\">by {{ author.first-name }} {{ author.last-name }}</div>",
+      "molecules-byline-author": "<div class=\"byline\">Geplaatst door: Kamer van Koophandel</div>",
       "molecules-byline-author-time": "<div class=\"byline\">by {{ author.first-name }} {{ author.last-name }} on <time datetime=\"2013-04-06T12:32+00:00\">June 3rd</time></div>",
+      "molecules-byline-time": "<div class=\"byline\">Laatste update: <time datetime=\"2015-07-14T10:32+00:00\">14 juli 2015</time></div>",
       "molecules-address": "<div class=\"vcard\">\r\n\t<div class=\"org\">Company Name</div>\r\n\t<div class=\"adr\">\r\n\t\t<div class=\"street-address\">1234 Main St.</div>\r\n\t\t<span class=\"locality\">Anywhere</span>,\r\n\t\t<span class=\"postal-code\">101010</span>,\r\n\t\t<abbr class=\"region\" title=\"California\">CA</abbr>\r\n\t\t<div class=\"country-name\">U.S.A</div>\r\n\t</div>\r\n\t<div class=\"tel\">+1.888.123.4567</div>\r\n</div>",
       "molecules-heading-group": "<div class=\"hgroup\">\r\n   \t<h2>This is the heading group's main heading</h2>\r\n   \t<h3>This is the heading group's subheading</h3>\r\n</div>",
       "molecules-blockquote-with-citation": "<blockquote>\r\n   \t<p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation. </p>\r\n\t<cite class=\"citation\">Quote Source</cite>\r\n</blockquote>",
@@ -3660,8 +3969,13 @@
       "molecules-tabs": "<div class=\"tabs\">\r\n\t<ul class=\"tab-list\">\r\n\t\t<li><a href=\"#\" class=\"active\">Tab 1</a></li>\r\n\t\t<li><a href=\"#\">Tab 2</a></li>\r\n\t\t<li><a href=\"#\">Tab 3</a></li>\r\n\t</ul>\r\n</div>",
       "molecules-social-share": "<div class=\"social-share\">\r\n\t<ul class=\"social-share-list\">\r\n\t\t<li><a href=\"#\">Like</a></li>\r\n\t\t<li><a href=\"#\">Tweet</a></li>\r\n\t\t<li><a href=\"#\">Email</a></li>\r\n\t\t<li><a href=\"#\">Comment</a></li>\r\n\t</ul>\r\n</div>",
       "molecules-accordion": "<div class=\"accordion\">\r\n\t<ul>\r\n\t\t<li>\r\n\t\t\t<a href=\"#\" class=\"acc-handle\">Accordion 1</a>\r\n\t\t\t<div class=\"acc-panel\">\r\n\t\t\t</div>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t\t<a href=\"#\" class=\"acc-handle\">Accordion 2</a>\r\n\t\t\t<div class=\"acc-panel\">\r\n\t\t\t</div>\r\n\t\t</li>\r\n\t\t<li>\r\n\t\t\t<a href=\"#\" class=\"acc-handle\">Accordion 3</a>\r\n\t\t\t<div class=\"acc-panel\">\r\n\t\t\t</div>\r\n\t\t</li>\r\n\t</ul>\r\n</div>",
+      "molecules-social-follow": "<ul class=\"social social--follow\">\r\n\t<li><a href=\"http://twitter.com/OP_Nederland\" class=\"twitter\" title=\"Volg ons op Twitter\"><span>Twitter</span></a></li>\r\n\t<li><a href=\"https://nl.linkedin.com/company/ondernemersplein-nl\" class=\"linkedin\" title=\"Volg ons op LinkedIn\"><span>LinkedIn</span></a></li>\r\n\t<li><a href=\"https://plus.google.com/115566178692151570584/posts\" class=\"googleplus\" title=\"Volg ons op Google+\"><span>Google+</span></a></li>\r\n\t<li><a href=\"https://www.youtube.com/user/ondernemerspleinnl\" class=\"youtube\" title=\"Bekijk ons YouTube kanaal\"><span>YouTube</span></a></li>\r\n</ul>",
       "molecules-single-comment": "<li class=\"comment-container\">\r\n\t<div class=\"comment-meta\">\r\n\t\t{{> atoms-avatar }}\r\n\t\t<h4 class=\"comment-name\"><a href=\"#\">{{name.first}} {{name.last}}</a></h4>\r\n\t</div>\r\n\t<div class=\"comment-text\">\r\n\t\t<p>{{description}}</p>\r\n\t</div>\r\n</li>",
       "molecules-alert": "<div class=\"alert alert-{{ alertClass }}\">\r\n  {{ excerpt.short }}\r\n</div>",
+      "molecules-logo": "<div class=\"logo\">\r\n\t<a class=\"logo-link\" title=\"Ga naar homepage\" href=\"/\">\r\n\t\t<!-- atom: line -->\r\n\t\t<span class=\"textLine\">\r\n\t\t\to<span class=\"highlight--blue\">n</span>dernemers\r\n\t\t</span> <span class=\"textLine\">p<span class=\"highlight--blue\">l</span>ein</span>\r\n\t</a>\r\n</div>\r\n\r\n<!-- atom: highlight\r\n<span class=\"highlight--blue\">l</span> -->",
+      "molecules-payoff": "<div class=\"payOff\">\r\n\tVan de overheid. Voor ondernemers.\r\n</div>",
+      "molecules-brandbar": "<div class=\"brandBar\">\r\n\t<!--{{> molecules-breadcrumbs }}-->\r\n</div>",
+      "molecules-partnerlogos": "<p>Informatie op de website wordt u aangeboden door (semi-) overheidspartijen zoals:</p>\r\n<ul class=\"partner-logos\">\r\n\t<li><a href=\"#kvk\"><img src=\"http://placehold.it/59x50?text=KvK\" alt=\"Kamer van Koophandel\"></a></li>\r\n\t<li><img src=\"http://placehold.it/50x50?text=avb\" alt=\"Antwoord voor bedrijven\"></li>\r\n\t<li><a href=\"#rvo\"><img src=\"http://placehold.it/133x50?text=rvo\" alt=\"Rijksdienst voor Ondernemend Nederland\"></a></li>\r\n\t<li><a href=\"#rdw\"><img src=\"http://placehold.it/143x50?text=RDW\" alt=\"RDW\"></a></li>\r\n\t<li><a href=\"#bd\"><img src=\"http://placehold.it/89x50?text=BD\" alt=\"Belastingdienst\"></a></li>\r\n\t<li><a href=\"#cbs\"><img src=\"http://placehold.it/33x50?text=CBS\" alt=\"CBS\"></a></li>\r\n\t<li><a href=\"#uwv\"><img src=\"http://placehold.it/162x50?text=UWV\" alt=\"UWV\"></a></li>\r\n</ul>",
       "organisms-header": "<!-- Begin .header -->\r\n<header class=\"header cf\" role=\"banner\">\r\n\t{{> atoms-logo }}\r\n\t<a href=\"#\" class=\"nav-toggle nav-toggle-search icon-search\"><span class=\"is-vishidden\">Search</span></a>\r\n\t<a href=\"#\" class=\"nav-toggle nav-toggle-menu icon-menu\"><span class=\"is-vishidden\">Menu</span></a>\r\n\t{{> molecules-primary-nav }}\r\n\t{{> molecules-search }}\r\n</header>\r\n<!-- End .header -->\r\n",
       "organisms-footer": "<!-- Begin Footer -->\r\n<footer class=\"footer\" role=\"contentinfo\">\r\n\t<div class=\"lc\">\r\n\t\t<p class=\"copyright\">&copy; 2013 Company Name. All rights reserved.</p>\r\n\t</div>\r\n</footer>\r\n<!-- End Footer -->",
       "organisms-article-body": "<p class=\"intro\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla sem a urna porttitor fringilla. Nulla eget justo felis. </p>\r\n\r\n<p><a href=\"#\">Aliquam erat volutpat.</a> Mauris vulputate scelerisque feugiat. Cras a erat a diam venenatis aliquam. Sed tempus, purus ac pretium varius, risus orci sagittis purus, quis auctor libero magna nec magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas eros dolor, rutrum eu sollicitudin eu, commodo at leo. Suspendisse potenti. Sed eu nibh sit amet quam auctor feugiat vel et risus. Maecenas eu urna adipiscing neque dictum mollis suscipit in augue. Praesent pulvinar condimentum sagittis. Maecenas laoreet neque non eros consectetur fringilla. Donec vitae risus leo, vitae pharetra ipsum. Sed placerat eros eget elit iaculis semper. Aliquam congue blandit orci ac pretium.</p>\r\n\r\n{{> atoms-landscape-16x9 }} \r\n\r\n<p>Aliquam ultrices cursus mauris, eget volutpat justo mattis nec. Sed a orci turpis. Aliquam aliquet placerat dui, consectetur tincidunt leo tristique et. Vivamus enim nisi, blandit a venenatis quis, convallis et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris libero sapien, placerat in sodales eu, tempor quis dui. Vivamus egestas faucibus pulvinar. Maecenas eget diam nunc. Phasellus at sem eros, ac suscipit neque. Phasellus sollicitudin libero a odio dignissim scelerisque. Aliquam purus nulla, tempor eget ullamcorper quis, rhoncus non dui.\r\n</p>\r\n\r\n{{> atoms-blockquote }} \r\n\r\n<p>Cras at fringilla ipsum. Donec nec libero eget est blandit dignissim a eu ante. Morbi augue nulla, luctus eu sagittis vel, malesuada ut felis. Aliquam erat volutpat. Morbi malesuada augue ac massa hendrerit fermentum. Integer scelerisque lacus a dolor convallis lobortis. Curabitur mollis ante in massa ultricies dignissim.\r\n</p>\r\n\r\n{{> atoms-unordered }} \r\n\r\n{{> atoms-ordered }}\r\n\r\n<p>Donec posuere fringilla nunc, vitae venenatis diam scelerisque vel. Nullam vitae mauris magna. Mauris et diam quis justo volutpat tincidunt congue nec magna. Curabitur vitae orci elit. Ut mollis massa id magna vestibulum consequat. Proin rutrum lectus justo, sit amet tincidunt est. Vivamus vitae lacinia risus.\r\n</p>\r\n\r\n{{> molecules-pullquote }}\r\n\r\n<p>Donec venenatis imperdiet tortor, vitae blandit odio interdum ut. Integer orci metus, lobortis id lacinia eget, rutrum vitae justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In pretium fermentum justo nec pharetra. Maecenas eget dapibus justo. Ut quis est risus. Nullam et eros at odio commodo venenatis quis et augue. Sed sed augue at tortor porttitor hendrerit nec ut nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin sollicitudin enim consectetur mi commodo quis cursus ante pretium. Nunc gravida cursus nisi in gravida. Suspendisse eget tortor sed urna consequat tincidunt. Etiam eget convallis lectus. Suspendisse cursus rutrum massa ac faucibus.\r\n</p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, suscipit repellendus nulla accusantium deserunt sed explicabo voluptate sapiente ratione inventore molestiae nihil earum repellat quia odit vitae perspiciatis aliquam amet?</p>",
@@ -4032,9 +4346,19 @@
                      "patternName": "Byline author only"
                   },
                   {
+                     "patternPath": "01-molecules-00-text-00-byline-author/01-molecules-00-text-00-byline-author.html",
+                     "patternPartial": "molecules-byline-author",
+                     "patternName": "Byline author"
+                  },
+                  {
                      "patternPath": "01-molecules-00-text-01-byline-author-time/01-molecules-00-text-01-byline-author-time.html",
                      "patternPartial": "molecules-byline-author-time",
                      "patternName": "Byline author time"
+                  },
+                  {
+                     "patternPath": "01-molecules-00-text-01-byline-time/01-molecules-00-text-01-byline-time.html",
+                     "patternPartial": "molecules-byline-time",
+                     "patternName": "Byline time"
                   },
                   {
                      "patternPath": "01-molecules-00-text-02-address/01-molecules-00-text-02-address.html",
@@ -4069,7 +4393,9 @@
                ],
                "navSubItemsIndex": [
                   "byline author only",
+                  "byline author",
                   "byline author time",
+                  "byline time",
                   "address",
                   "heading group",
                   "blockquote with citation",
@@ -4277,6 +4603,16 @@
                      "patternName": "Accordion"
                   },
                   {
+                     "patternPath": "01-molecules-06-components-01-social-follow/01-molecules-06-components-01-social-follow.html",
+                     "patternPartial": "molecules-social-follow",
+                     "patternName": "Social follow"
+                  },
+                  {
+                     "patternPath": "01-molecules-06-components-02-accordion/01-molecules-06-components-02-accordion.html",
+                     "patternPartial": "molecules-accordion",
+                     "patternName": "Accordion"
+                  },
+                  {
                      "patternPath": "01-molecules-06-components-02-single-comment/01-molecules-06-components-02-single-comment.html",
                      "patternPartial": "molecules-single-comment",
                      "patternName": "Single comment"
@@ -4289,6 +4625,8 @@
                ],
                "navSubItemsIndex": [
                   "social share",
+                  "accordion",
+                  "social follow",
                   "accordion",
                   "single comment",
                   "View All"
@@ -4313,6 +4651,44 @@
                   "alert",
                   "View All"
                ]
+            },
+            {
+               "sectionNameLC": "branding",
+               "sectionNameUC": "Branding",
+               "navSubItems": [
+                  {
+                     "patternPath": "01-molecules-08-branding-00-logo/01-molecules-08-branding-00-logo.html",
+                     "patternPartial": "molecules-logo",
+                     "patternName": "Logo"
+                  },
+                  {
+                     "patternPath": "01-molecules-08-branding-01-payoff/01-molecules-08-branding-01-payoff.html",
+                     "patternPartial": "molecules-payoff",
+                     "patternName": "Payoff"
+                  },
+                  {
+                     "patternPath": "01-molecules-08-branding-02-brandbar/01-molecules-08-branding-02-brandbar.html",
+                     "patternPartial": "molecules-brandbar",
+                     "patternName": "Brandbar"
+                  },
+                  {
+                     "patternPath": "01-molecules-08-branding-03-partnerlogos/01-molecules-08-branding-03-partnerlogos.html",
+                     "patternPartial": "molecules-partnerlogos",
+                     "patternName": "Partnerlogos"
+                  },
+                  {
+                     "patternPath": "01-molecules-08-branding/index.html",
+                     "patternPartial": "viewall-molecules-branding",
+                     "patternName": "View All"
+                  }
+               ],
+               "navSubItemsIndex": [
+                  "logo",
+                  "payoff",
+                  "brandbar",
+                  "partnerlogos",
+                  "View All"
+               ]
             }
          ],
          "navItemsIndex": [
@@ -4323,7 +4699,8 @@
             "forms",
             "navigation",
             "components",
-            "messaging"
+            "messaging",
+            "branding"
          ],
          "patternItems": [],
          "patternItemsIndex": []
@@ -4403,6 +4780,11 @@
                "sectionNameUC": "Components",
                "navSubItems": [
                   {
+                     "patternPath": "02-organisms-02-components-00-carousel/02-organisms-02-components-00-carousel.html",
+                     "patternPartial": "organisms-carousel",
+                     "patternName": "Carousel"
+                  },
+                  {
                      "patternPath": "02-organisms-03-components-00-carousel/02-organisms-03-components-00-carousel.html",
                      "patternPartial": "organisms-carousel",
                      "patternName": "Carousel"
@@ -4415,6 +4797,7 @@
                ],
                "navSubItemsIndex": [
                   "carousel",
+                  "carousel",
                   "View All"
                ]
             },
@@ -4422,6 +4805,21 @@
                "sectionNameLC": "sections",
                "sectionNameUC": "Sections",
                "navSubItems": [
+                  {
+                     "patternPath": "02-organisms-03-sections-00-latest-posts/02-organisms-03-sections-00-latest-posts.html",
+                     "patternPartial": "organisms-latest-posts",
+                     "patternName": "Latest posts"
+                  },
+                  {
+                     "patternPath": "02-organisms-03-sections-01-recent-tweets/02-organisms-03-sections-01-recent-tweets.html",
+                     "patternPartial": "organisms-recent-tweets",
+                     "patternName": "Recent tweets"
+                  },
+                  {
+                     "patternPath": "02-organisms-03-sections-02-related-posts/02-organisms-03-sections-02-related-posts.html",
+                     "patternPartial": "organisms-related-posts",
+                     "patternName": "Related posts"
+                  },
                   {
                      "patternPath": "02-organisms-04-sections-00-latest-posts/02-organisms-04-sections-00-latest-posts.html",
                      "patternPartial": "organisms-latest-posts",
@@ -4444,6 +4842,9 @@
                   }
                ],
                "navSubItemsIndex": [
+                  "latest posts",
+                  "recent tweets",
+                  "related posts",
                   "latest posts",
                   "recent tweets",
                   "related posts",
@@ -4563,7 +4964,9 @@
       },
       "molecules": {
          "byline-author-only": "01-molecules/00-text/00-byline-author-only",
+         "byline-author": "01-molecules/00-text/00-byline-author",
          "byline-author-time": "01-molecules/00-text/01-byline-author-time",
+         "byline-time": "01-molecules/00-text/01-byline-time",
          "address": "01-molecules/00-text/02-address",
          "heading-group": "01-molecules/00-text/03-heading-group",
          "blockquote-with-citation": "01-molecules/00-text/04-blockquote-with-citation",
@@ -4589,9 +4992,14 @@
          "pagination": "01-molecules/05-navigation/03-pagination",
          "tabs": "01-molecules/05-navigation/04-tabs",
          "social-share": "01-molecules/06-components/00-social-share",
-         "accordion": "01-molecules/06-components/01-accordion",
+         "accordion": "01-molecules/06-components/02-accordion",
+         "social-follow": "01-molecules/06-components/01-social-follow",
          "single-comment": "01-molecules/06-components/02-single-comment",
-         "alert": "01-molecules/07-messaging/00-alert"
+         "alert": "01-molecules/07-messaging/00-alert",
+         "logo": "01-molecules/08-branding/00-logo",
+         "payoff": "01-molecules/08-branding/01-payoff",
+         "brandbar": "01-molecules/08-branding/02-brandbar",
+         "partnerlogos": "01-molecules/08-branding/03-partnerlogos"
       },
       "organisms": {
          "header": "02-organisms/00-global/00-header",
@@ -4634,7 +5042,8 @@
          "forms": "01-molecules-04-forms",
          "navigation": "01-molecules-05-navigation",
          "components": "01-molecules-06-components",
-         "messaging": "01-molecules-07-messaging"
+         "messaging": "01-molecules-07-messaging",
+         "branding": "01-molecules-08-branding"
       },
       "organisms": {
          "global": "02-organisms-00-global",
