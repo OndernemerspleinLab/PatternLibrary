@@ -149,4 +149,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('serve', ['clean', 'concat', 'patternlab', 'styles', 'copy', 'connect', 'watch']);
 
+	// git subtree push --prefix public/ origin gh-pages
 };
