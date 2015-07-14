@@ -7,13 +7,13 @@
     $TABLE OF CONTENTS
 \*------------------------------------*/
 /**
- * VARIABLES..............................Declarations of Sass variables 
+ * VARIABLES..............................Declarations of Sass variables
  * .....Colors
  * .....Typography
  * .....Layout
  * .....Defaults
  * .....Breakpoints
- * MIXINS.................................Sass mixins 
+ * MIXINS.................................Sass mixins
  * RESET..................................Set reset defaults
  * GLOBAL CLASSES.........................Set reset defaults
  * GLOBAL ELEMENTS........................Establish global styles
@@ -61,7 +61,8 @@
     $LAYOUT
 \*------------------------------------*/
 @import "scss/objects/layout";
-
+@import "scss/base/mediaQueries";
+@import "scss/base/grid";
 
 /*------------------------------------*\
     $PAGE STRUCTURE

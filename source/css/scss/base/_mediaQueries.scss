@@ -34,13 +34,13 @@ $mediaQueries: (
 	@return mapDeepGet($mediaQueries, $name $type);
 }
 
-@mixin mqLargerThan($name) {
+@mixin mqGreaterThan($name) {
 	@media #{getMediaQuery($name, larger)} {
 		@content;
 	}
 };
 
-@mixin mqSmallerThan($name) {
+@mixin mqLesserThan($name) {
 	@media #{getMediaQuery($name, smaller)} {
 		@content;
 	}
