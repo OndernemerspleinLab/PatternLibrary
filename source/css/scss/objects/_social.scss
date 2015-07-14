@@ -19,6 +19,7 @@
 	height: 34px;
 	width: 34px;
 	text-decoration: none;
+
 	&:before {
 		@include icon;
 		content: "";
@@ -45,9 +46,13 @@
 .social {
 	overflow: hidden;
 
+
 	li {
 		display: inline-block;
-		margin-right: $space-half;
+		margin-right: $pad;
+		&:last-child {
+			margin-right: $pad-half;
+		}
 	}
 
 	a {
@@ -113,47 +118,49 @@
 			}
 		}
 	}
-}
 
-// Social Share
+	// Social Share
+	&--share {
 
-.social--share {
+	}
 
-}
-
-// Social Follow
-
-.social--follow {
-
-	a {
-		height: 24px;
-		width: 24px;
-		&:before {
+	// Social Follow
+	&--follow {
+		@include mqGreaterThan(medium) {
+			text-align: right;
+		}
+		padding: $pad-half;
+		a {
 			height: 24px;
 			width: 24px;
-			font-size: 26px;
-			color: mapDeepGet($colors, hemelblauw light);
-			background-color: mapDeepGet($colors, hemelblauw darkest);
-		}
-		&:hover, &:active {
 			&:before {
-				color: mapDeepGet($colors, wit);
-				background-color: mapDeepGet($colors, hemelblauw default);
-			}
-		}
-		&.twitter,
-		&.linkedin,
-		&.facebook,
-		&.googleplus,
-		&.youtube {
-			&:before {
+				height: 24px;
+				width: 24px;
+				font-size: 26px;
+				color: mapDeepGet($colors, hemelblauw light);
 				background-color: mapDeepGet($colors, hemelblauw darkest);
 			}
 			&:hover, &:active {
 				&:before {
+					color: mapDeepGet($colors, wit);
 					background-color: mapDeepGet($colors, hemelblauw default);
+				}
+			}
+			&.twitter,
+			&.linkedin,
+			&.facebook,
+			&.googleplus,
+			&.youtube {
+				&:before {
+					background-color: mapDeepGet($colors, hemelblauw darkest);
+				}
+				&:hover, &:active {
+					&:before {
+						background-color: mapDeepGet($colors, hemelblauw default);
+					}
 				}
 			}
 		}
 	}
+
 }

@@ -2,22 +2,41 @@
     $MIXINS
 \*------------------------------------*/
 
-/* CSS Transition
-	Usage: @include transition(width,0.3s,ease-out);
- */
-@mixin transition($transition-property, $transition-time, $method) {
-	-webkit-transition: $transition-property $transition-time $method;
-	-moz-transition: $transition-property $transition-time $method;
-	-ms-transition: $transition-property $transition-time $method;
-	-o-transition: $transition-property $transition-time $method;
-	transition: $transition-property $transition-time $method;
-}
+// ACCESSIBILITY
+// Places an item out of sight while keeping it available for screenreaders.
+// Focusable elements such as links and inputs are placed back in sight on focus,
+// for keyboard users.
 
-/* Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  
-	Usage: @include font-size(1, large);
-*/
-@mixin font-size( $decimal-size, $keyword: null ) {
-  @if $keyword{ font-size: $keyword; }
-  @else { font-size: $decimal-size * $base-font-multiplier * 16px;}
-  font-size: $decimal-size * 1rem;
+@mixin accHide {
+	position:absolute;
+	left:-999em;
+	top:0;
+	height: 1px;
+	overflow: hidden;
+	&:focus {
+		left:1em;
+		height: auto;
+	}
+}
+@mixin accShow {
+	position:relative;
+	left:0;
+	top:0;
+	height: auto;
+	&:focus {
+		left:0;
+	}
+}
+@mixin hideText {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow:hidden;
+	@if $lte-ie8 {
+		text-indent: 1000em;
+	}
+}
+@mixin showText {
+	text-indent:0;
+	white-space:normal;
+	overflow:auto;
 }

@@ -1,11 +1,4 @@
-@function mapDeepGet($map, $keys) {
-  $result: $map;
-  @each $key in $keys {
-    $result: map-get($result, $key);
-  }
-
-  @return $result;
-}
+// MEDIAQUERIES
 
 $mediaQueries: (
 	extraSmall: (

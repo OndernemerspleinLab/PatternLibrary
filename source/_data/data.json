@@ -1,5 +1,5 @@
 {
-	"title" : "Pattern Lab",
+	"title" : "Ondernemersplein Lab",
 	"htmlClass": "pl",
 	"bodyClass": "body",
 	"img": {
@@ -74,7 +74,8 @@
 	"seconds" : "31",
 	"author" : {
 		"first-name": "Author",
-		"last-name": "Name"
+		"last-name": "Name",
+		"partner" : "Kamer van Koophandel"
 	},
 	"hero": true,
 	"emergency" : false,
@@ -89,5 +90,6 @@
 		{ },
 		{ },
 		{ }
-	]
+	],
+	"payOff" : "Van de overheid. Voor ondernemers."
 }

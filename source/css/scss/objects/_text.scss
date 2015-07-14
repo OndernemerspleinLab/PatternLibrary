@@ -5,14 +5,14 @@
 
 //Intro text
 .intro {
-	font-size: $font-size-slightly-larger;
-	font-weight: bold;
+	font-size: $font-size-large;
+	font-family: $fontItalic;
 }
 
 //Pullquote
 .pullquote {
-	font-family: $font-secondary;
-	font-size: $font-size-large;
+	font-family: $fontItalic;
+	font-size: $font-size-slightly-larger;
 }
 
 //Text Passages
@@ -22,7 +22,7 @@
 	}
 
 	ul {
-		list-style: disc;
+		list-style: square;
 		margin: 0 0 $space 1.2em;
 
 		ul {
@@ -62,7 +62,7 @@
 
 .eyebrow-image {
 	position: relative;
-	
+
 	img {
 		position: relative;
 		z-index: 0;

@@ -1,0 +1,16 @@
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+
+@function mapDeepGet($map, $keys) {
+	$result: $map;
+	@each $key in $keys {
+		$result: map-get($result,$key);
+	}
+	@return $result;
+}
+// voorbeeld gebruik:
+// a {
+//	 color: mapDeepGet($colors, blue light);
+//	 background-color: mapDeepGet($colors, paars);
+// }

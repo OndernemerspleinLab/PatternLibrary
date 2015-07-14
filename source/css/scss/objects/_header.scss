@@ -1,40 +1,53 @@
 .header {
-	background: $white;
-	padding: 0;
-	border-bottom: 1px solid #dbdbdb;
+
+}
+
+.brandBar {
+	background: mapDeepGet($colors, hemelblauw default);
+	min-height: 66px;
+	border-bottom: 10px solid mapDeepGet($colors, hemelblauw light);
+}
+
+// logo styling -> _header-logo.scss
+
+// Pay-off
+.payOff {
 	@extend .lc;
-}
-
-.logo {
-	float: left;
-	max-width: 8rem;
-	margin: 0.4rem;
-
-	@media all and (min-width: $bp-med) {
-		max-width: 9rem;
-	}
-}
-
-.nav-toggle {
-	float: right;
-	display: block;
-	padding: 0.9rem 1rem 0.7rem;
-	font-size: 1.3rem;
-	line-height: 1;
-	border-left: 1px solid #dbdbdb;
-
-	@media all and (min-width: $bp-med) {
+	padding: $pad $pad-half;
+	.brandBar & {
+		color: mapDeepGet($colors, wit);
 		display: none;
 	}
 }
 
-.search-form {
-	overflow: hidden;
-	max-height: 0;
+// Kruimelpad
+.breadcrumbs {
+	@extend .lc;
 
-	@media all and (min-width: $bp-med) {
-		float: right;
-		max-height: none;
-		margin: 0.65em 0.5em 0 0;
+	li {
+		display: inline-block;
+		.brandBar & {
+			color: mapDeepGet($colors, wit);
+		}
+		&:before {
+			content: ">";
+			display: inline-block;
+			padding-right: $pad;
+		}
+		&:first-child:before {
+			content: "";
+			padding-right: 0;
+		}
+	}
+
+	a {
+		display: inline-block;
+		padding: $pad-half $pad $pad-half 0;
+		.brandBar & {
+			color: mapDeepGet($colors, wit);
+		}
+		&:hover, &:active {
+			text-decoration: underline;
+		}
 	}
 }

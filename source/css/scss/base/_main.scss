@@ -4,3 +4,22 @@ body {
 	-webkit-text-size-adjust: 100%;
 	color: $gray-dark;
 }
+
+b, strong {
+	font: 100%/1.5 $fontBold;
+}
+
+em {
+	font: 100%/1.5 $fontItalic;
+}
+
+b em, strong em {
+	font: 100%/1.5 $fontBoldItalic;
+}
+
+.textLine {
+	display: block;
+}
+.highlight--blue {
+	color: mapDeepGet($colors, hemelblauw default);
+}

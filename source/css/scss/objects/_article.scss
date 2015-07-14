@@ -11,11 +11,6 @@
 	margin-bottom: $space-half;
 }
 
-/* Wordpress Caption */
-.wp-caption-text {
-	font-style: italic;
-}
-
 // Review Summary
 .review-summary {
 	.grade {
@@ -26,27 +21,5 @@
 
 	.summary-text {
 		margin-left: 5em;
-	}
-}
-
-//Social Share
-.social-share {
-	overflow: hidden;
-	margin-bottom: $space;
-
-	li {
-		float: left;
-		margin-right: $space-quarter;
-	}
-
-	a {
-		background: $gray-dark;
-		color: $white;
-		display: block;
-		padding: $pad-half;
-
-		&:hover {
-			background: $gray;
-		}
 	}
 }

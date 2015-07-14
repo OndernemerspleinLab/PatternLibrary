@@ -4,43 +4,73 @@
 .footer {
 	clear: both;
 	overflow: hidden;
-	background: $gray-dark-2;
-	color: $white;
+	color: mapDeepGet($colors, hemelblauw darkest);
 	line-height: 1.2;
 
-	.lc {
-		padding: $pad $pad 0;
-	}
-
-
 	a {
-		color: $gray-light;
+		color: mapDeepGet($colors, hemelblauw darkest);
 	}
-
-	
 }
 
-//Footer Nav
-.nav-footer {
-	margin: (-$pad) (-$pad) $space;
+.footerBar {
+	background: mapDeepGet($colors, hemelblauw light);
+	min-height: 50px;
+	border-bottom: 0;
+
+	// overrule!
+	.column {
+		margin: 0;
+	}
+}
+
+// Footer Nav
+.footer-navigation {
+	//@extend .lc;
+	padding: $pad-half;
 
 	li {
-		border-bottom: 1px solid $gray-dark;
-
-		@media all and (min-width: $bp-med) {
-			border: 0;
-			float: left;
-		}
+		display: inline-block;
 	}
 
 	a {
 		display: block;
-		padding: $pad;
+		padding: $pad-half $pad $pad-half 0;
+		&:hover, &:active {
+			text-decoration: underline;
+		}
+	}
+	.divider {
+		display: inline-block;
+		padding: $pad-half $pad $pad-half 0;
+	}
+}
+
+
+// Footer Content
+.footer-content-wrapper {
+	background: mapDeepGet($colors, hemelblauw lightest);
+}
+.footer-content {
+	//@extend .lc;
+	padding: $pad-half;
+	text-align: center;
+
+	p {
+		margin-top: 1em;
 	}
 }
 
 .copyright {
-	@media all and (min-width: $bp-med) {
-			float: right;
+
+}
+
+.partner-logos {
+	li {
+		display: inline;
+		margin-left: 1em;
+
+		&:first-child {
+			margin-left: 0;
 		}
+	}
 }

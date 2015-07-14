@@ -1,8 +1,3 @@
-/*
-
-*/
-
-
 /*------------------------------------*\
     $TABLE OF CONTENTS
 \*------------------------------------*/
@@ -29,15 +24,13 @@
  * TOC To Be Continued
  */
 
-
-
+@import "scss/generic/fontface";
+@import "scss/generic/fontsize";
+@import "scss/generic/colors";
 @import "scss/generic/variables";
+@import "scss/generic/utils";
 @import "scss/generic/mixins";
 @import "scss/generic/reset";
-
-
-
-
 
 /*------------------------------------*\
     $GLOBAL ELEMENTS
@@ -53,16 +46,13 @@
 @import "scss/base/tables";
 @import "scss/base/animation";
 
-
-
-
-
 /*------------------------------------*\
     $LAYOUT
 \*------------------------------------*/
 @import "scss/objects/layout";
 @import "scss/base/mediaQueries";
 @import "scss/base/grid";
+@import "scss/base/zindex";
 
 /*------------------------------------*\
     $PAGE STRUCTURE
@@ -72,13 +62,10 @@
 @import "scss/objects/main";
 @import "scss/objects/footer";
 
-
-
 /*------------------------------------*\
     $TEXT Styles
 \*------------------------------------*/
 @import "scss/objects/text";
-
 
 /*------------------------------------*\
     $COMPONENTS
@@ -92,6 +79,6 @@
 @import "scss/objects/tabs";
 @import "scss/objects/sections";
 @import "scss/objects/article";
-@import "scss/objects/comments";
-
-
+//@import "scss/objects/comments";
+@import "scss/objects/header-logo";
+@import "scss/objects/social";
