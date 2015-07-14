@@ -1,0 +1,42 @@
+$zIndex: (
+	(name: overlay),
+	(name: stickyBar),
+	(
+		name: menuBar,
+		subZIndex: (
+			(name: title),
+			(name: test)
+		),
+	)
+);
+
+@function getZIndex($names) {
+	$list: $zIndex;
+
+	@each $name in $names {
+		$match: null;
+		$i: 1;
+
+		@while not $match and $i <= length($list) {
+			$item: nth($list, $i);
+
+			@if map-get($item, name) == $name {
+				$match: $i + 1;
+				@if map-has-key($item, subZIndex) {
+				  $list: map-get($item, subZIndex);
+				} @else {
+				  $list: ();
+				}
+			}
+			$i: $i + 1;
+		}
+
+  	}
+	@return $match;
+}
+
+// a {
+// 	z-index: getZIndex(overlay);
+// 	z-index: getZIndex(menuBar title);
+// 	z-index: getZIndex(menuBar);
+// }
