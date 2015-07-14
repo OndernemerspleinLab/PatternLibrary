@@ -32,12 +32,14 @@
 	
 </head>
 <body class="sg-single-pattern">	
-	<!-- Start of Pattern --><ul class="social social--follow">
-	<li><a href="http://twitter.com/OP_Nederland" class="twitter" title="Volg ons op Twitter"><span>Twitter</span></a></li>
-	<li><a href="https://nl.linkedin.com/company/ondernemersplein-nl" class="linkedin" title="Volg ons op LinkedIn"><span>LinkedIn</span></a></li>
-	<li><a href="https://plus.google.com/115566178692151570584/posts" class="googleplus" title="Volg ons op Google+"><span>Google+</span></a></li>
-	<li><a href="https://www.youtube.com/user/ondernemerspleinnl" class="youtube" title="Bekijk ons YouTube kanaal"><span>YouTube</span></a></li>
-</ul>	<!-- End of Pattern -->
+	<!-- Start of Pattern --><div class="column column--third">
+	<ul class="social social--follow">
+		<li><a href="http://twitter.com/OP_Nederland" class="twitter" title="Volg ons op Twitter"><span>Twitter</span></a></li>
+		<li><a href="https://nl.linkedin.com/company/ondernemersplein-nl" class="linkedin" title="Volg ons op LinkedIn"><span>LinkedIn</span></a></li>
+		<li><a href="https://plus.google.com/115566178692151570584/posts" class="googleplus" title="Volg ons op Google+"><span>Google+</span></a></li>
+		<li><a href="https://www.youtube.com/user/ondernemerspleinnl" class="youtube" title="Bekijk ons YouTube kanaal"><span>YouTube</span></a></li>
+	</ul>
+</div>	<!-- End of Pattern -->
 	
 	<!--
 		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
@@ -49,7 +51,7 @@
 		// handle injection of items from PHP
 		var patternPartial = "molecules-social-follow";
 		var lineage = [];
-		var lineageR = [];
+		var lineageR = [{"lineagePattern":"organisms-footer","lineagePath":"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html"}];
 		var patternState = ""
 		var cssEnabled = false; //TODO
 	</script>

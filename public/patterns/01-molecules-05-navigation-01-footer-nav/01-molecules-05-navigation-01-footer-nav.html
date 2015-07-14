@@ -32,12 +32,17 @@
 	
 </head>
 <body class="sg-single-pattern">	
-	<!-- Start of Pattern --><ul class="nav-footer">
-	<li><a href="&#x2F;patterns&#x2F;04-pages-00-homepage&#x2F;04-pages-00-homepage.html">Home</a></li>
-	<li><a href="#">About</a></li>
-	<li><a href="&#x2F;patterns&#x2F;04-pages-01-blog&#x2F;04-pages-01-blog.html">Blog</a></li>
-	<li><a href="#">Contact</a></li>
-</ul>	<!-- End of Pattern -->
+	<!-- Start of Pattern --><div class="column column--twoThird">
+	<ul class="footer-navigation">
+		<li><a href="#about">Over ons</a></li>
+		<li><a href="#contact">Contact</a></li>
+		<li><a href="#idee">Uw idee</a></li>
+		<li class="divider">|</li>
+		<li><a href="#disclaimer">Disclaimer</a></li>
+		<li><a href="#cookies">Cookies &amp; Privacy</a></li>
+		<li><a href="#sitemap">Sitemap</a></li>
+	</ul>
+</div>	<!-- End of Pattern -->
 	
 	<!--
 		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
@@ -49,7 +54,7 @@
 		// handle injection of items from PHP
 		var patternPartial = "molecules-footer-nav";
 		var lineage = [];
-		var lineageR = [];
+		var lineageR = [{"lineagePattern":"organisms-footer","lineagePath":"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html"}];
 		var patternState = ""
 		var cssEnabled = false; //TODO
 	</script>

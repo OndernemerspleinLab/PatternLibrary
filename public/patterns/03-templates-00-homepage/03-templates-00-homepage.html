@@ -33,31 +33,25 @@
 </head>
 <body class="sg-single-pattern">	
 	<!-- Start of Pattern --><div class="page" id="page">
-<!-- Begin .header -->
+<!-- Begin Header -->
 <header class="header cf" role="banner">
-<a href="/"><img src="../../images/logo.png" class="logo" alt="Logo Alt Text" /></a>	<a href="#" class="nav-toggle nav-toggle-search icon-search"><span class="is-vishidden">Search</span></a>
-	<a href="#" class="nav-toggle nav-toggle-menu icon-menu"><span class="is-vishidden">Menu</span></a>
-<nav id="nav" class="nav">
-	<ul>
-		<li><a href="&#x2F;patterns&#x2F;04-pages-00-homepage&#x2F;04-pages-00-homepage.html">Home</a></li>
-		<li><a href="#">About</a></li>
-		<li><a href="&#x2F;patterns&#x2F;04-pages-01-blog&#x2F;04-pages-01-blog.html">Blog</a></li>
-		<li><a href="#">Contact</a></li>
-	</ul>
-</nav><!--end .nav-->
-<form action="#" method="post" class="inline-form search-form">           
-    <fieldset>
-	    <legend class="is-vishidden">Search</legend>
-	    <label for="search-field" class="is-vishidden">Search</label>
-	    <input type="search" placeholder="Search" id="search-field" class="search-field" />
-	    <button class="search-submit">
-	    	<span class="icon-search" aria-hidden="true"></span>
-	    	<span class="is-vishidden">Search</span>
-	    </button>
-    </fieldset>
-</form></header>
-<!-- End .header -->
-	<div role="main">
+<div class="logo">
+	<a class="logo-link" title="Ga naar homepage" href="/">
+		<span class="textLine">
+			o<span class="highlight--blue">n</span>dernemers
+		</span> <span class="textLine">p<span class="highlight--blue">l</span>ein</span>
+	</a>
+</div>	<div class="brandBar">
+<div class="payOff">
+	Van de overheid. Voor ondernemers.
+</div><ul class="breadcrumbs">
+	<li><a href="#">Home</a></li>
+	<li><a href="#">Alles over ondernemen</a></li>
+	<li><a href="#">Marketing</a></li>
+	<li>Marktonderzoek</li>
+</ul>	</div>
+</header>
+<!-- End Header -->	<div role="main">
 <div class="block block-hero">
 	<a href="#" class="inner">
 		<div class="b-thumb">
@@ -154,9 +148,43 @@
 		</div><!--end .l-two-col-->
 	</div><!--End role=main-->
 <!-- Begin Footer -->
-<footer class="footer" role="contentinfo">
-	<div class="lc">
-		<p class="copyright">&copy; 2013 Company Name. All rights reserved.</p>
+<footer class="footer ">
+	<div class="footerBar">
+		<div class="layoutContainer gridContainer">
+<div class="column column--twoThird">
+	<ul class="footer-navigation">
+		<li><a href="#about">Over ons</a></li>
+		<li><a href="#contact">Contact</a></li>
+		<li><a href="#idee">Uw idee</a></li>
+		<li class="divider">|</li>
+		<li><a href="#disclaimer">Disclaimer</a></li>
+		<li><a href="#cookies">Cookies &amp; Privacy</a></li>
+		<li><a href="#sitemap">Sitemap</a></li>
+	</ul>
+</div><div class="column column--third">
+	<ul class="social social--follow">
+		<li><a href="http://twitter.com/OP_Nederland" class="twitter" title="Volg ons op Twitter"><span>Twitter</span></a></li>
+		<li><a href="https://nl.linkedin.com/company/ondernemersplein-nl" class="linkedin" title="Volg ons op LinkedIn"><span>LinkedIn</span></a></li>
+		<li><a href="https://plus.google.com/115566178692151570584/posts" class="googleplus" title="Volg ons op Google+"><span>Google+</span></a></li>
+		<li><a href="https://www.youtube.com/user/ondernemerspleinnl" class="youtube" title="Bekijk ons YouTube kanaal"><span>YouTube</span></a></li>
+	</ul>
+</div>		</div>
+	</div>
+	<div class="footer-content-wrapper">
+		<div class="layoutContainer gridContainer">
+			<div class="column footer-content">
+<p>Informatie op de website wordt u aangeboden door (semi-) overheidspartijen zoals:</p>
+<ul class="partner-logos">
+	<li><a href="#kvk"><img src="http://placehold.it/59x50?text=KvK" alt="Kamer van Koophandel"></a></li>
+	<li><img src="http://placehold.it/50x50?text=avb" alt="Antwoord voor bedrijven"></li>
+	<li><a href="#rvo"><img src="http://placehold.it/133x50?text=rvo" alt="Rijksdienst voor Ondernemend Nederland"></a></li>
+	<li><a href="#rdw"><img src="http://placehold.it/143x50?text=RDW" alt="RDW"></a></li>
+	<li><a href="#bd"><img src="http://placehold.it/89x50?text=BD" alt="Belastingdienst"></a></li>
+	<li><a href="#cbs"><img src="http://placehold.it/33x50?text=CBS" alt="CBS"></a></li>
+	<li><a href="#uwv"><img src="http://placehold.it/162x50?text=UWV" alt="UWV"></a></li>
+</ul>				<p class="copyright">&copy; 2015 Ondernemersplein</p>
+			</div>
+		</div>
 	</div>
 </footer>
 <!-- End Footer --></div>	<!-- End of Pattern -->
@@ -170,7 +198,7 @@
 	<script>
 		// handle injection of items from PHP
 		var patternPartial = "templates-homepage";
-		var lineage = [{"lineagePattern":"organisms-header","lineagePath":"../../patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html"},{"lineagePattern":"molecules-alert","lineagePath":"../../patterns/01-molecules-07-messaging-00-alert/01-molecules-07-messaging-00-alert.html"},{"lineagePattern":"molecules-block-hero","lineagePath":"../../patterns/01-molecules-02-blocks-02-block-hero/01-molecules-02-blocks-02-block-hero.html"},{"lineagePattern":"molecules-media-block","lineagePath":"../../patterns/01-molecules-02-blocks-00-media-block/01-molecules-02-blocks-00-media-block.html"},{"lineagePattern":"organisms-recent-tweets","lineagePath":"../../patterns/02-organisms-03-sections-01-recent-tweets/02-organisms-03-sections-01-recent-tweets.html"},{"lineagePattern":"organisms-recent-tweets","lineagePath":"../../patterns/02-organisms-04-sections-01-recent-tweets/02-organisms-04-sections-01-recent-tweets.html"},{"lineagePattern":"organisms-footer","lineagePath":"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html"}];
+		var lineage = [{"lineagePattern":"organisms-header","lineagePath":"../../patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html"},{"lineagePattern":"molecules-alert","lineagePath":"../../patterns/01-molecules-07-messaging-00-alert/01-molecules-07-messaging-00-alert.html"},{"lineagePattern":"molecules-block-hero","lineagePath":"../../patterns/01-molecules-02-blocks-02-block-hero/01-molecules-02-blocks-02-block-hero.html"},{"lineagePattern":"molecules-media-block","lineagePath":"../../patterns/01-molecules-02-blocks-00-media-block/01-molecules-02-blocks-00-media-block.html"},{"lineagePattern":"organisms-recent-tweets","lineagePath":"../../patterns/02-organisms-03-sections-01-recent-tweets/02-organisms-03-sections-01-recent-tweets.html"},{"lineagePattern":"organisms-footer","lineagePath":"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html"}];
 		var lineageR = [{"lineagePattern":"pages-homepage","lineagePath":"../../patterns/04-pages-00-homepage/04-pages-00-homepage.html"},{"lineagePattern":"pages-homepage-emergency","lineagePath":"../../patterns/04-pages-00-homepage-emergency/04-pages-00-homepage-emergency.html"}];
 		var patternState = ""
 		var cssEnabled = false; //TODO

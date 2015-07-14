@@ -104,14 +104,17 @@ header, footer, nav, section, article, hgroup, figure {
 /* Floats */
 .right {
   float: right;
+  padding: 0 0 16px 16px;
   padding: 0 0 1rem 1rem; }
 
 .right-search {
   float: right;
+  padding: 0 0 16px 0;
   padding: 0 0 1rem 0; }
 
 .left {
   float: left;
+  padding: 0 16px 16px 0;
   padding: 0 1rem 1rem 0; }
 
 /* Text-Align */
@@ -194,6 +197,7 @@ h3, .gamma {
 
 /* Text-Related Elements */
 p {
+  margin-bottom: 16px;
   margin-bottom: 1rem; }
 
 /* Blockquote */
@@ -201,7 +205,9 @@ blockquote {
   font-style: italic;
   border-left: 1px solid #3e3e3e;
   color: #3e3e3e;
+  padding-left: 16px;
   padding-left: 1rem;
+  margin-bottom: 16px;
   margin-bottom: 1rem; }
 
 /* Horizontal Rule */
@@ -209,6 +215,7 @@ hr {
   border: 0;
   height: 2px;
   background: #eee;
+  margin: 32px 0;
   margin: 2rem 0; }
 
 abbr {
@@ -223,6 +230,7 @@ ol, ul {
 /* Definition Lists */
 dl {
   overflow: hidden;
+  margin: 0 0 16px;
   margin: 0 0 1rem; }
 
 dt {
@@ -239,11 +247,14 @@ img, video, object {
   height: auto; }
 
 iframe {
+  margin-bottom: 16px;
   margin-bottom: 1rem; }
 
 figure {
+  margin-bottom: 16px;
   margin-bottom: 1rem; }
   figure img {
+    margin-bottom: 4px;
     margin-bottom: 0.25rem; }
 
 figcaption {
@@ -252,6 +263,7 @@ figcaption {
 /*------------------------------------*    $FORMS
 \*------------------------------------*/
 form > div {
+  margin-bottom: 16px;
   margin-bottom: 1rem; }
 
 form ol, form ul {
@@ -265,6 +277,7 @@ fieldset {
 
 label {
   display: block;
+  padding-bottom: 4px;
   padding-bottom: 0.25rem; }
 
 button, input, select, textarea {
@@ -275,12 +288,14 @@ button, input, select, textarea {
 input, textarea {
   width: 100%;
   border: 1px solid #3e3e3e;
+  padding: 8px 10px;
   padding: 0.5rem 0.65rem; }
 
 input[type=text], input[type=search], input[type=url], input[type=number], textarea {
   -webkit-appearance: none; }
 
 button, input[type="submit"] {
+  padding: 8px;
   padding: 0.5rem;
   background: #333;
   border: 1px solid #3e3e3e;
@@ -300,6 +315,7 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 .field-container {
+  margin-bottom: 16px;
   margin-bottom: 1rem; }
 
 .inline-form fieldset, .inline-form .inline-container {
@@ -307,6 +323,7 @@ input[type="search"]::-webkit-search-decoration {
 
 .inline-form input[type=submit], .inline-form button, .inline-form .btn {
   font-size: 0.875em;
+  padding: 10px 20px;
   padding: 0.65rem 1.3rem;
   background: #333;
   position: absolute;
@@ -383,8 +400,10 @@ td {
 \*------------------------------------*/
 /* Layout Container */
 .lc, .payOff, .breadcrumbs, [role=main], .logo {
+  max-width: 1120px;
   max-width: 70rem;
   margin: 0 auto;
+  padding: 8px;
   padding: 0.5rem; }
 
 /*------------------------------------*    $TEMPLATES
@@ -411,10 +430,12 @@ td {
 /* Grid Container */
 .g {
   overflow: hidden;
+  margin: 0 -8px;
   margin: 0 -0.5rem; }
 
 /* Grid Item */
 .gi {
+  padding: 8px;
   padding: 0.5rem; }
   .gi img {
     display: block; }
@@ -553,38 +574,66 @@ td {
     text-align: right; }
 
 .layoutContainer {
+  max-width: 1120px;
   max-width: 70rem;
   margin-left: auto;
   margin-right: auto; }
 
 .gridContainer {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start; }
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
   .gridContainer--stretchItems {
-    align-items: stretch; }
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch; }
 
 .column {
+  margin: 16px;
   margin: 1rem;
-  flex: 1 1 100%; }
+  -webkit-flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%; }
   @media (min-width: 40em) {
     .column--half {
-      flex-basis: calc(50% - 2rem); } }
+      -webkit-flex-basis: calc(50% - 2rem);
+          -ms-flex-preferred-size: calc(50% - 2rem);
+              flex-basis: calc(50% - 2rem); } }
   .column--quarter {
-    flex-basis: calc(50% - 2rem); }
+    -webkit-flex-basis: calc(50% - 2rem);
+        -ms-flex-preferred-size: calc(50% - 2rem);
+            flex-basis: calc(50% - 2rem); }
     @media (min-width: 40em) {
       .column--quarter {
-        flex-basis: calc(25% - 2rem); } }
+        -webkit-flex-basis: calc(25% - 2rem);
+            -ms-flex-preferred-size: calc(25% - 2rem);
+                flex-basis: calc(25% - 2rem); } }
   @media (min-width: 40em) {
     .column--threeQuarter {
-      flex-basis: calc(75% - 2rem); } }
+      -webkit-flex-basis: calc(75% - 2rem);
+          -ms-flex-preferred-size: calc(75% - 2rem);
+              flex-basis: calc(75% - 2rem); } }
   @media (min-width: 40em) {
     .column--third {
-      flex-basis: calc(33.33333333% - 2rem); } }
+      -webkit-flex-basis: calc(33.33333333% - 2rem);
+          -ms-flex-preferred-size: calc(33.33333333% - 2rem);
+              flex-basis: calc(33.33333333% - 2rem); } }
   .column--twoThird {
-    flex-basis: calc(66.66666667% - 2rem); }
+    -webkit-flex-basis: calc(66.66666667% - 2rem);
+        -ms-flex-preferred-size: calc(66.66666667% - 2rem);
+            flex-basis: calc(66.66666667% - 2rem); }
 
 /*------------------------------------*    $PAGE STRUCTURE
 \*------------------------------------*/
@@ -594,6 +643,7 @@ td {
   border-bottom: 10px solid #B2D7EE; }
 
 .payOff {
+  padding: 16px 8px;
   padding: 1rem 0.5rem; }
   .brandBar .payOff {
     color: #FFFFFF;
@@ -606,6 +656,7 @@ td {
   .breadcrumbs li:before {
     content: ">";
     display: inline-block;
+    padding-right: 16px;
     padding-right: 1rem; }
   .breadcrumbs li:first-child:before {
     content: "";
@@ -613,6 +664,7 @@ td {
 
 .breadcrumbs a {
   display: inline-block;
+  padding: 8px 16px 8px 0;
   padding: 0.5rem 1rem 0.5rem 0; }
   .brandBar .breadcrumbs a {
     color: #FFFFFF; }
@@ -627,6 +679,7 @@ td {
   max-height: 0; }
   .nav a {
     display: block;
+    padding: 16px;
     padding: 1rem;
     border-top: 1px solid #eee; }
   .nav.active {
@@ -649,11 +702,13 @@ td {
     .pagination li:last-child {
       border: 0; }
   .pagination a {
+    padding: 16px;
     padding: 1rem; }
 
 /*------------------------------------*    $MAIN CONTENT AREA
 \*------------------------------------*/
 [role=main] {
+  padding: 8px 8px 32px;
   padding: 0.5rem 0.5rem 2rem;
   overflow: hidden; }
 
@@ -675,22 +730,26 @@ td {
     margin: 0; }
 
 .footer-navigation {
+  padding: 8px;
   padding: 0.5rem; }
   .footer-navigation li {
     display: inline-block; }
   .footer-navigation a {
     display: block;
+    padding: 8px 16px 8px 0;
     padding: 0.5rem 1rem 0.5rem 0; }
     .footer-navigation a:hover, .footer-navigation a:active {
       text-decoration: underline; }
   .footer-navigation .divider {
     display: inline-block;
+    padding: 8px 16px 8px 0;
     padding: 0.5rem 1rem 0.5rem 0; }
 
 .footer-content-wrapper {
   background: #e7f7fe; }
 
 .footer-content {
+  padding: 8px;
   padding: 0.5rem;
   text-align: center; }
   .footer-content p {
@@ -721,12 +780,14 @@ td {
 
 .text ul {
   list-style: square;
+  margin: 0 0 32px 1.2em;
   margin: 0 0 2rem 1.2em; }
   .text ul ul {
     margin-bottom: 0; }
 
 .text ol {
   list-style: decimal;
+  margin: 0 0 32px 1.2em;
   margin: 0 0 2rem 1.2em; }
   .text ol ol {
     margin-bottom: 0; }
@@ -737,7 +798,9 @@ td {
   font-weight: bold;
   background: #3e3e3e;
   color: #fff;
+  min-height: 72px;
   min-height: 4.5rem;
+  padding-top: 24px;
   padding-top: 1.5rem;
   text-align: center; }
 
@@ -747,6 +810,7 @@ td {
   color: #fff;
   padding: 0.2em;
   display: inline-block;
+  margin-bottom: 8px;
   margin-bottom: 0.5rem; }
 
 .eyebrow-image {
@@ -856,24 +920,26 @@ td {
   content: "\61";
   display: inline-block;
   -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 .icon-play:before {
+  font-size: 11px;
   font-size: 0.7rem;
   padding-left: 0.2em; }
 
 .icon-play-box {
   display: block;
+  margin-left: 32px;
   margin-left: 2rem; }
 
 .icon-play-box:before {
+  padding: 4px;
   padding: 0.25rem;
   background: #3e3e3e;
   color: #fff;
+  margin-left: -27px;
   margin-left: -1.7rem;
+  margin-right: 8px;
   margin-right: 0.5rem; }
 
 /*------------------------------------*    $BUTTONS
@@ -884,6 +950,7 @@ td {
   color: #fff;
   line-height: 1;
   font-weight: bold;
+  padding: 16px;
   padding: 1rem;
   border: 0;
   text-align: center; }
@@ -894,12 +961,15 @@ td {
     color: #bbb; }
 
 .btn-small {
+  padding: 8px;
   padding: 0.5rem; }
 
 .btn-large {
+  padding: 8px;
   padding: 0.5rem;
   text-transform: uppercase;
   background: #3e3e3e;
+  font-size: 22px;
   font-size: 1.4rem;
   font-weight: normal; }
 
@@ -909,6 +979,7 @@ td {
 /* Generic Placeholder Brick: REMOVE FOR PRODUCTION */
 .brick {
   background: #dcdddc;
+  padding: 32px;
   padding: 2rem;
   text-align: center;
   font-weight: bold;
@@ -925,6 +996,7 @@ td {
 
 /* Hero Block */
 .block-hero {
+  margin-bottom: 8px;
   margin-bottom: 0.5rem; }
   .block-hero .b-thumb img {
     display: block; }
@@ -968,6 +1040,7 @@ td {
 /* Block Headline Summary */
 .block-headline-summary a {
   display: block;
+  padding: 8px;
   padding: 0.5rem; }
 
 /* Block Inset */
@@ -981,6 +1054,7 @@ td {
 
 /* Hero Block */
 .block-inset {
+  margin-bottom: 8px;
   margin-bottom: 0.5rem;
   position: relative; }
   .block-inset .headline {
@@ -992,6 +1066,7 @@ td {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
+    padding: 8px;
     padding: 0.5rem; }
 
 /* Block Thumb with Summary */
@@ -1001,6 +1076,7 @@ td {
 
 .block-thumb-summary .b-text {
   margin-left: 50%;
+  padding: 8px;
   padding: 0.5rem; }
 
 .inline-list li {
@@ -1008,6 +1084,7 @@ td {
 
 /* Social List */
 .social-list li {
+  margin: 0 6px 32px 0;
   margin: 0 0.4rem 2rem 0; }
 
 .social-list a {
@@ -1015,17 +1092,20 @@ td {
 
 /* Headline List */
 .headline-list {
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
   .headline-list.flush {
     margin: 0; }
   .headline-list h4 {
     font-weight: normal; }
   .headline-list li {
+    padding: 4px 0;
     padding: 0.25rem 0;
     border-top: 1px solid #ddd; }
 
 /* Post List */
 .post-list li {
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
 
 /* Bullet List */
@@ -1034,6 +1114,7 @@ td {
   margin: 0 0 1em 1.2em;
   line-height: 1.3; }
   .bullet-list li {
+    margin-bottom: 32px;
     margin-bottom: 2rem; }
 
 /* Text List */
@@ -1041,6 +1122,7 @@ td {
   margin: 0 0 1em;
   line-height: 1.3; }
   .text-list li {
+    margin-bottom: 32px;
     margin-bottom: 2rem; }
 
 .tooltip-container {
@@ -1058,6 +1140,7 @@ td {
   top: 1.5em;
   left: 0;
   width: 18em;
+  padding: 16px;
   padding: 1rem;
   background: #fff;
   border: 1px solid #3e3e3e;
@@ -1075,6 +1158,7 @@ td {
       width: 30em; } }
 
 .accordion {
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
 
 .acc-handle {
@@ -1084,6 +1168,7 @@ td {
   font-weight: bold;
   display: block;
   position: relative;
+  padding: 8px;
   padding: 0.5rem;
   border-bottom: 1px solid #ddd; }
   .acc-handle:after {
@@ -1110,6 +1195,7 @@ td {
       border-right: 0; }
   .tabs a {
     display: block;
+    padding: 8px;
     padding: 0.5rem;
     background: #3e3e3e; }
     .tabs a:hover, .tabs a:focus {
@@ -1119,9 +1205,11 @@ td {
       color: #fff; }
 
 .section {
+  margin: 0 0 32px;
   margin: 0 0 2rem; }
 
 .section-title {
+  margin-bottom: 8px;
   margin-bottom: 0.5rem; }
 
 .article-header h1 {
@@ -1130,11 +1218,13 @@ td {
 .byline {
   font-size: 0.875em;
   font-style: italic;
+  margin-bottom: 8px;
   margin-bottom: 0.5rem; }
 
 .review-summary .grade {
   width: 4.5em;
   float: left;
+  margin: 0 8px 0 0;
   margin: 0 0.5rem 0 0; }
 
 .review-summary .summary-text {
@@ -1209,8 +1299,10 @@ td {
   overflow: hidden; }
   .social li {
     display: inline-block;
+    margin-right: 16px;
     margin-right: 1rem; }
     .social li:last-child {
+      margin-right: 8px;
       margin-right: 0.5rem; }
   .social a.twitter:before {
     content: "\74";
@@ -1240,6 +1332,7 @@ td {
   .social a.mail:before {
     content: "\2b"; }
   .social--follow {
+    padding: 8px;
     padding: 0.5rem; }
     @media (min-width: 30em) {
       .social--follow {
@@ -1272,5 +1365,4 @@ td {
       .social--follow a.googleplus:active:before,
       .social--follow a.youtube:hover:before, .social--follow a.youtube:active:before {
         background-color: #007BC8; }
-
 /*# sourceMappingURL=style.css.map */
