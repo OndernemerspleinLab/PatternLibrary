@@ -1,3 +1,15 @@
+html {
+	font-size: 100%;
+
+	@include mqGreaterThan(medium) {
+		font-size: 100%/16*17;
+	}
+
+	@include mqGreaterThan(extraLarge) {
+		font-size: 100%/16*18;
+	}
+}
+
 /* Text-Related Elements */
 p {
 	//margin-bottom: $space;
