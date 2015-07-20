@@ -19,20 +19,17 @@ body {
 }
 
 b, strong {
-	font: 100%/1.5 $fontBold;
+	font-weight: bold;
 }
 
 em {
-	font: 100%/1.5 $fontItalic;
-}
-
-b em, strong em {
-	font: 100%/1.5 $fontBoldItalic;
+	font-style: italic;
 }
 
 .textLine {
 	display: block;
 }
+
 .highlight--blue {
 	color: mapDeepGet($colors, hemelblauw default);
 }

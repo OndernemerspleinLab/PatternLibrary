@@ -6,7 +6,7 @@
 	margin: 0.5rem 1rem;
 
 	.logo-link {
-		font-family: $fontBold;
+		font-weight: bold;
 		color: $darkestGray;
 		display: inline-block;
 		font-size: 32px;
@@ -25,7 +25,7 @@
 				left: 90px;
 				z-index: 1;
 				font-size: 20px;
-				font-family: $font;
+				font-weight: normal;
 			}
 		}
 		&:focus {

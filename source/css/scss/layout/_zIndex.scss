@@ -30,7 +30,7 @@ $zIndex: (
 		@while not $match and $i <= length($list) {
 			$item: nth($list, $i);
 
-			@if saveMapGet($item, "name", $item); == $name {
+			@if saveMapGet($item, "name", $item) == $name {
 				$match: $i + 1;
 				$list: saveMapGet($item, "subZIndex", ());
 			}

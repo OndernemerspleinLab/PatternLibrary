@@ -5,7 +5,7 @@ p {
 
 /* Blockquote */
 blockquote {
-    font-family: $fontItalic;
+    font-style: italic;
     border-left: 1px solid $gray;
     color: $gray;
 	padding-left: $pad;
@@ -33,13 +33,13 @@ abbr {
 //Intro text
 .intro {
 	font-size: $font-size-large;
-	font-family: $fontItalic;
+    font-style: italic;
 }
 
 //Pullquote
 .pullquote {
-	font-family: $fontItalic;
 	font-size: $font-size-slightly-larger;
+    font-style: italic;
 }
 
 //Text Passages

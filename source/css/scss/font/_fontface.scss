@@ -1,33 +1,31 @@
 /* FONT-FACE */
 
 @font-face {
-	font-family: "RijksOverheidSansRegular";
+	font-family: "RijksOverheidSans";
 	src: url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.eot");
 	src: url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.eot?#iefix") format("embedded-opentype"),
 			url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.woff2") format("woff2"),
 			url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.woff") format("woff"),
 			url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.ttf") format("truetype"),
 			url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.svg#RijksOverheidSansRegular") format("svg");
-	// bold is to prevent automatic bolding by the browser, making ugly letters
-	font-weight: bold;
+	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: "RijksOverheidSansRegularItalic";
+	font-family: "RijksOverheidSans";
 	src: url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.eot");
 	src: url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.eot?#iefix") format("embedded-opentype"),
 			url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.woff2") format("woff2"),
 			url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.woff") format("woff"),
 			url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.ttf") format("truetype"),
 			url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.svg#RijksOverheidSansRegular") format("svg");
-	// bold is to prevent automatic bolding by the browser, making ugly letters
-	font-weight: bold;
+	font-weight: normal;
 	font-style: italic;
 }
 
 @font-face {
-	font-family: "RijksOverheidSansBold";
+	font-family: "RijksOverheidSans";
 	src: url("/fonts/rijksoverheidsansheading-bold_3_0-webfont.eot");
 	src: url("/fonts/rijksoverheidsansheading-bold_3_0-webfont.eot?#iefix") format("embedded-opentype"),
 			url("/fonts/rijksoverheidsansheading-bold_3_0-webfont.woff2") format("woff2"),
@@ -39,7 +37,7 @@
 }
 
 @font-face {
-	font-family: "RijksOverheidSansBoldItalic";
+	font-family: "RijksOverheidSans";
 	src: url("/fonts/rijksoverheidsanstext-bolditalic_3_0-webfont.eot");
 	src: url("/fonts/rijksoverheidsanstext-bolditalic_3_0-webfont.eot?#iefix") format("embedded-opentype"),
 			url("/fonts/rijksoverheidsanstext-bolditalic_3_0-webfont.woff2") format("woff2"),

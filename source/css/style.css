@@ -10,28 +10,28 @@ header, footer, nav, section, article, hgroup, figure {
 
 /* FONT-FACE */
 @font-face {
-  font-family: "RijksOverheidSansRegular";
+  font-family: "RijksOverheidSans";
   src: url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.eot");
   src: url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.woff2") format("woff2"), url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.woff") format("woff"), url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.ttf") format("truetype"), url("/fonts/rijksoverheidsanstext-regular_3_0-webfont.svg#RijksOverheidSansRegular") format("svg");
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal; }
 
 @font-face {
-  font-family: "RijksOverheidSansRegularItalic";
+  font-family: "RijksOverheidSans";
   src: url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.eot");
   src: url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.woff2") format("woff2"), url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.woff") format("woff"), url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.ttf") format("truetype"), url("/fonts/rijksoverheidsanstext-italic_3_0-webfont.svg#RijksOverheidSansRegular") format("svg");
-  font-weight: bold;
+  font-weight: normal;
   font-style: italic; }
 
 @font-face {
-  font-family: "RijksOverheidSansBold";
+  font-family: "RijksOverheidSans";
   src: url("/fonts/rijksoverheidsansheading-bold_3_0-webfont.eot");
   src: url("/fonts/rijksoverheidsansheading-bold_3_0-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/rijksoverheidsansheading-bold_3_0-webfont.woff2") format("woff2"), url("/fonts/rijksoverheidsansheading-bold_3_0-webfont.woff") format("woff"), url("/fonts/rijksoverheidsansheading-bold_3_0-webfont.ttf") format("truetype"), url("/fonts/rijksoverheidsansheading-bold_3_0-webfont.svg#RijksOverheidSansBold") format("svg");
   font-weight: bold;
   font-style: normal; }
 
 @font-face {
-  font-family: "RijksOverheidSansBoldItalic";
+  font-family: "RijksOverheidSans";
   src: url("/fonts/rijksoverheidsanstext-bolditalic_3_0-webfont.eot");
   src: url("/fonts/rijksoverheidsanstext-bolditalic_3_0-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/rijksoverheidsanstext-bolditalic_3_0-webfont.woff2") format("woff2"), url("/fonts/rijksoverheidsanstext-bolditalic_3_0-webfont.woff") format("woff"), url("/fonts/rijksoverheidsanstext-bolditalic_3_0-webfont.ttf") format("truetype"), url("/fonts/rijksoverheidsanstext-bolditalic_3_0-webfont.svg#RijksOverheidSansBold") format("svg");
   font-weight: bold;
@@ -130,60 +130,90 @@ header, footer, nav, section, article, hgroup, figure {
   content: "\61";
   display: inline-block;
   -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 .icon-play:before {
+  font-size: 11px;
   font-size: 0.7rem;
   padding-left: 0.2em; }
 
 .icon-play-box {
   display: block;
+  margin-left: 32px;
   margin-left: 2rem; }
 
 .icon-play-box:before {
+  padding: 4px;
   padding: 0.25rem;
   background: #3e3e3e;
   color: #fff;
+  margin-left: -27px;
   margin-left: -1.7rem;
+  margin-right: 8px;
   margin-right: 0.5rem; }
 
 /* GRID */
 .layoutContainer {
+  max-width: 1120px;
   max-width: 70rem;
   margin-left: auto;
   margin-right: auto; }
 
 .gridContainer {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start; }
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
   .gridContainer--stretchItems {
-    align-items: stretch; }
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch; }
 
 .column {
+  margin: 16px;
   margin: 1rem;
-  flex: 1 1 100%; }
+  -webkit-flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%; }
   @media (min-width: 40em) {
     .column--half {
-      flex-basis: calc(50% - 2rem); } }
+      -webkit-flex-basis: calc(50% - 2rem);
+          -ms-flex-preferred-size: calc(50% - 2rem);
+              flex-basis: calc(50% - 2rem); } }
   .column--quarter {
-    flex-basis: calc(50% - 2rem); }
+    -webkit-flex-basis: calc(50% - 2rem);
+        -ms-flex-preferred-size: calc(50% - 2rem);
+            flex-basis: calc(50% - 2rem); }
     @media (min-width: 40em) {
       .column--quarter {
-        flex-basis: calc(25% - 2rem); } }
+        -webkit-flex-basis: calc(25% - 2rem);
+            -ms-flex-preferred-size: calc(25% - 2rem);
+                flex-basis: calc(25% - 2rem); } }
   @media (min-width: 40em) {
     .column--threeQuarter {
-      flex-basis: calc(75% - 2rem); } }
+      -webkit-flex-basis: calc(75% - 2rem);
+          -ms-flex-preferred-size: calc(75% - 2rem);
+              flex-basis: calc(75% - 2rem); } }
   @media (min-width: 40em) {
     .column--third {
-      flex-basis: calc(33.33333333% - 2rem); } }
+      -webkit-flex-basis: calc(33.33333333% - 2rem);
+          -ms-flex-preferred-size: calc(33.33333333% - 2rem);
+              flex-basis: calc(33.33333333% - 2rem); } }
   .column--twoThird {
-    flex-basis: calc(66.66666667% - 2rem); }
+    -webkit-flex-basis: calc(66.66666667% - 2rem);
+        -ms-flex-preferred-size: calc(66.66666667% - 2rem);
+            flex-basis: calc(66.66666667% - 2rem); }
 
 /* Z-INDEX */
 /* LINKS */
@@ -202,6 +232,7 @@ ol, ul {
 
 dl {
   overflow: hidden;
+  margin: 0 0 32px;
   margin: 0 0 2rem; }
 
 dt {
@@ -215,17 +246,20 @@ dd {
 
 /* Headline List */
 .headline-list {
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
   .headline-list.flush {
     margin: 0; }
   .headline-list h4 {
     font-weight: normal; }
   .headline-list li {
+    padding: 4px 0;
     padding: 0.25rem 0;
     border-top: 1px solid #ddd; }
 
 /* Post List */
 .post-list li {
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
 
 /* Bullet List */
@@ -234,6 +268,7 @@ dd {
   margin: 0 0 1em 1.2em;
   line-height: 1.3; }
   .bullet-list li {
+    margin-bottom: 32px;
     margin-bottom: 2rem; }
 
 /* Text List */
@@ -241,6 +276,7 @@ dd {
   margin: 0 0 1em;
   line-height: 1.3; }
   .text-list li {
+    margin-bottom: 32px;
     margin-bottom: 2rem; }
 
 /* Headings */
@@ -275,6 +311,7 @@ h6 {
   color: #fff;
   line-height: 1;
   font-weight: bold;
+  padding: 16px;
   padding: 1rem;
   border: 0;
   text-align: center; }
@@ -285,17 +322,20 @@ h6 {
     color: #bbb; }
 
 .btn-small {
+  padding: 8px;
   padding: 0.5rem; }
 
 .btn-large {
+  padding: 8px;
   padding: 0.5rem;
   text-transform: uppercase;
   background: #3e3e3e;
+  font-size: 22px;
   font-size: 1.4rem;
   font-weight: normal; }
 
 .text-btn {
-  font-family: "RijksOverheidSansRegularItalic", "tahoma", sans-serif; }
+  font-style: italic; }
 
 /* TABLES */
 table {
@@ -316,10 +356,12 @@ td {
 /* Text-Related Elements */
 /* Blockquote */
 blockquote {
-  font-family: "RijksOverheidSansRegularItalic", "tahoma", sans-serif;
+  font-style: italic;
   border-left: 1px solid #3e3e3e;
   color: #3e3e3e;
+  padding-left: 16px;
   padding-left: 1rem;
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
 
 /* Horizontal Rule */
@@ -327,6 +369,7 @@ hr {
   border: 0;
   height: 2px;
   background: #eee;
+  margin: 32px 0;
   margin: 2rem 0; }
 
 abbr {
@@ -339,23 +382,25 @@ abbr {
 
 .intro {
   font-size: 1.4375em;
-  font-family: "RijksOverheidSansRegularItalic", "tahoma", sans-serif; }
+  font-style: italic; }
 
 .pullquote {
-  font-family: "RijksOverheidSansRegularItalic", "tahoma", sans-serif;
-  font-size: 1.0625em; }
+  font-size: 1.0625em;
+  font-style: italic; }
 
 .text a {
   text-decoration: underline; }
 
 .text ul {
   list-style: square;
+  margin: 0 0 32px 1.2em;
   margin: 0 0 2rem 1.2em; }
   .text ul ul {
     margin-bottom: 0; }
 
 .text ol {
   list-style: decimal;
+  margin: 0 0 32px 1.2em;
   margin: 0 0 2rem 1.2em; }
   .text ol ol {
     margin-bottom: 0; }
@@ -367,10 +412,12 @@ abbr {
   border-bottom: 10px solid #B2D7EE; }
 
 .payOff {
+  margin: 16px;
   margin: 1rem;
   text-align: right; }
 
 .breadcrumbs {
+  margin: 0 16px;
   margin: 0 1rem; }
   .breadcrumbs li {
     display: inline-block; }
@@ -379,12 +426,14 @@ abbr {
     .breadcrumbs li:before {
       content: ">";
       display: inline-block;
+      padding-right: 16px;
       padding-right: 1rem; }
     .breadcrumbs li:first-child:before {
       content: "";
       padding-right: 0; }
   .breadcrumbs a {
     display: inline-block;
+    padding: 8px 16px 8px 0;
     padding: 0.5rem 1rem 0.5rem 0;
     text-decoration: none; }
     .brandBar .breadcrumbs a {
@@ -395,9 +444,10 @@ abbr {
 .logo {
   display: block;
   position: relative;
+  margin: 8px 16px;
   margin: 0.5rem 1rem; }
   .logo .logo-link {
-    font-family: "RijksOverheidSansBold", "tahoma", sans-serif;
+    font-weight: bold;
     color: #3e3e3e;
     display: inline-block;
     font-size: 32px;
@@ -416,7 +466,7 @@ abbr {
         left: 90px;
         z-index: 1;
         font-size: 20px;
-        font-family: "RijksOverheidSansRegular", "tahoma", sans-serif; }
+        font-weight: normal; }
     .logo .logo-link:focus {
       outline: 1px dotted #3e3e3e; }
 
@@ -437,23 +487,27 @@ abbr {
     margin: 0; }
 
 .footer-navigation {
+  padding: 8px 16px;
   padding: 0.5rem 1rem; }
   .footer-navigation li {
     display: inline-block; }
   .footer-navigation a {
     display: block;
+    padding: 8px 16px 8px 0;
     padding: 0.5rem 1rem 0.5rem 0;
     text-decoration: none; }
     .footer-navigation a:hover, .footer-navigation a:active {
       text-decoration: underline; }
   .footer-navigation .divider {
     display: inline-block;
+    padding: 8px 16px 8px 0;
     padding: 0.5rem 1rem 0.5rem 0; }
 
 .footer-content-wrapper {
   background: #e7f7fe; }
 
 .footer-content {
+  padding: 8px;
   padding: 0.5rem;
   text-align: center; }
   .footer-content p {
@@ -509,8 +563,10 @@ abbr {
   overflow: hidden; }
   .social li {
     display: inline-block;
+    margin-right: 16px;
     margin-right: 1rem; }
     .social li:last-child {
+      margin-right: 8px;
       margin-right: 0.5rem; }
   .social a.twitter:before {
     content: "\74";
@@ -540,6 +596,7 @@ abbr {
   .social a.mail:before {
     content: "\2b"; }
   .social--follow {
+    padding: 8px 16px;
     padding: 0.5rem 1rem; }
     @media (min-width: 30em) {
       .social--follow {
@@ -583,6 +640,7 @@ abbr {
   max-height: 0; }
   .nav a {
     display: block;
+    padding: 16px;
     padding: 1rem;
     border-top: 1px solid #eee; }
   .nav.active {
@@ -605,17 +663,19 @@ abbr {
     .pagination li:last-child {
       border: 0; }
   .pagination a {
+    padding: 16px;
     padding: 1rem; }
 
 /*------------------------------------*    $MAIN CONTENT AREA
 \*------------------------------------*/
 [role=main] {
+  padding: 8px 8px 32px;
   padding: 0.5rem 0.5rem 2rem;
   overflow: hidden; }
 
 body {
   background: #fff;
-  font: 100%/1.5 "RijksOverheidSansRegular", "tahoma", sans-serif;
+  font: 100%/1.5 "RijksOverheidSans", "tahoma", sans-serif;
   -webkit-text-size-adjust: 100%;
   color: #333; }
   @media (max-width: 49.9375em) {
@@ -623,13 +683,10 @@ body {
       padding-left: 50px; } }
 
 b, strong {
-  font: 100%/1.5 "RijksOverheidSansBold", "tahoma", sans-serif; }
+  font-weight: bold; }
 
 em {
-  font: 100%/1.5 "RijksOverheidSansRegularItalic", "tahoma", sans-serif; }
-
-b em, strong em {
-  font: 100%/1.5 "RijksOverheidSansBoldItalic", "tahoma", sans-serif; }
+  font-style: italic; }
 
 .textLine {
   display: block; }
@@ -652,7 +709,8 @@ b em, strong em {
   background: #8fcae7 none repeat scroll 0% 0%;
   background-image: linear-gradient(#8fcae7, #76d2b6);
   z-index: 10;
-  transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
   transition: all 0.75s ease-in-out; }
   .menuBar.active {
     -webkit-transform: translate(240px, 0px);
@@ -695,7 +753,8 @@ b em, strong em {
   position: fixed;
   height: 100%;
   z-index: 10;
-  transform: translate(-240px, 0px);
+  -webkit-transform: translate(-240px, 0px);
+          transform: translate(-240px, 0px);
   transition: all 0.75s ease-in-out;
   background: #d9ebf7;
   overflow-y: visible;
@@ -704,7 +763,8 @@ b em, strong em {
   height: 100%; }
   @media (max-width: 49.9375em) {
     .menuBar-content {
-      transform: translate(-290px, 0px); } }
+      -webkit-transform: translate(-290px, 0px);
+              transform: translate(-290px, 0px); } }
   .menuBar-content.active {
     -webkit-transform: translate(0%, 0px);
     transform: translate(0%, 0px);
@@ -775,14 +835,17 @@ b em, strong em {
 /* Floats */
 .right {
   float: right;
+  padding: 0 0 16px 16px;
   padding: 0 0 1rem 1rem; }
 
 .right-search {
   float: right;
+  padding: 0 0 16px 0;
   padding: 0 0 1rem 0; }
 
 .left {
   float: left;
+  padding: 0 16px 16px 0;
   padding: 0 1rem 1rem 0; }
 
 /* Text-Align */
@@ -821,12 +884,13 @@ b em, strong em {
 /*------------------------------------*    $MAIN CONTENT AREA
 \*------------------------------------*/
 [role=main] {
+  padding: 8px 8px 32px;
   padding: 0.5rem 0.5rem 2rem;
   overflow: hidden; }
 
 body {
   background: #fff;
-  font: 100%/1.5 "RijksOverheidSansRegular", "tahoma", sans-serif;
+  font: 100%/1.5 "RijksOverheidSans", "tahoma", sans-serif;
   -webkit-text-size-adjust: 100%;
   color: #333; }
   @media (max-width: 49.9375em) {
@@ -834,13 +898,10 @@ body {
       padding-left: 50px; } }
 
 b, strong {
-  font: 100%/1.5 "RijksOverheidSansBold", "tahoma", sans-serif; }
+  font-weight: bold; }
 
 em {
-  font: 100%/1.5 "RijksOverheidSansRegularItalic", "tahoma", sans-serif; }
-
-b em, strong em {
-  font: 100%/1.5 "RijksOverheidSansBoldItalic", "tahoma", sans-serif; }
+  font-style: italic; }
 
 .textLine {
   display: block; }
@@ -856,11 +917,14 @@ img, video, object {
   height: auto; }
 
 iframe {
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
 
 figure {
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
   figure img {
+    margin-bottom: 4px;
     margin-bottom: 0.25rem; }
 
 figcaption {
@@ -869,6 +933,7 @@ figcaption {
 /*------------------------------------*    $FORMS
 \*------------------------------------*/
 form > div {
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
 
 form ol, form ul {
@@ -882,6 +947,7 @@ fieldset {
 
 label {
   display: block;
+  padding-bottom: 4px;
   padding-bottom: 0.25rem; }
 
 button, input, select, textarea {
@@ -892,12 +958,14 @@ button, input, select, textarea {
 input, textarea {
   width: 100%;
   border: 1px solid #3e3e3e;
+  padding: 8px 10px;
   padding: 0.5rem 0.65rem; }
 
 input[type=text], input[type=search], input[type=url], input[type=number], textarea {
   -webkit-appearance: none; }
 
 button, input[type="submit"] {
+  padding: 8px;
   padding: 0.5rem;
   background: #333;
   border: 1px solid #3e3e3e;
@@ -917,6 +985,7 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 .field-container {
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
 
 .inline-form fieldset, .inline-form .inline-container {
@@ -924,6 +993,7 @@ input[type="search"]::-webkit-search-decoration {
 
 .inline-form input[type=submit], .inline-form button, .inline-form .btn {
   font-size: 0.875em;
+  padding: 10px 20px;
   padding: 0.65rem 1.3rem;
   background: #333;
   position: absolute;
@@ -982,6 +1052,7 @@ input[type="search"]::-webkit-search-decoration {
 /* Generic Placeholder Brick: REMOVE FOR PRODUCTION */
 .brick {
   background: #dcdddc;
+  padding: 32px;
   padding: 2rem;
   text-align: center;
   font-weight: bold;
@@ -998,6 +1069,7 @@ input[type="search"]::-webkit-search-decoration {
 
 /* Hero Block */
 .block-hero {
+  margin-bottom: 8px;
   margin-bottom: 0.5rem; }
   .block-hero .b-thumb img {
     display: block; }
@@ -1041,6 +1113,7 @@ input[type="search"]::-webkit-search-decoration {
 /* Block Headline Summary */
 .block-headline-summary a {
   display: block;
+  padding: 8px;
   padding: 0.5rem; }
 
 /* Block Inset */
@@ -1054,6 +1127,7 @@ input[type="search"]::-webkit-search-decoration {
 
 /* Hero Block */
 .block-inset {
+  margin-bottom: 8px;
   margin-bottom: 0.5rem;
   position: relative; }
   .block-inset .headline {
@@ -1065,6 +1139,7 @@ input[type="search"]::-webkit-search-decoration {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
+    padding: 8px;
     padding: 0.5rem; }
 
 /* Block Thumb with Summary */
@@ -1074,6 +1149,7 @@ input[type="search"]::-webkit-search-decoration {
 
 .block-thumb-summary .b-text {
   margin-left: 50%;
+  padding: 8px;
   padding: 0.5rem; }
 
 .tooltip-container {
@@ -1091,6 +1167,7 @@ input[type="search"]::-webkit-search-decoration {
   top: 1.5em;
   left: 0;
   width: 18em;
+  padding: 16px;
   padding: 1rem;
   background: #fff;
   border: 1px solid #3e3e3e;
@@ -1108,6 +1185,7 @@ input[type="search"]::-webkit-search-decoration {
       width: 30em; } }
 
 .accordion {
+  margin-bottom: 32px;
   margin-bottom: 2rem; }
 
 .acc-handle {
@@ -1117,6 +1195,7 @@ input[type="search"]::-webkit-search-decoration {
   font-weight: bold;
   display: block;
   position: relative;
+  padding: 8px;
   padding: 0.5rem;
   border-bottom: 1px solid #ddd; }
   .acc-handle:after {
@@ -1143,6 +1222,7 @@ input[type="search"]::-webkit-search-decoration {
       border-right: 0; }
   .tabs a {
     display: block;
+    padding: 8px;
     padding: 0.5rem;
     background: #3e3e3e; }
     .tabs a:hover, .tabs a:focus {
@@ -1152,13 +1232,15 @@ input[type="search"]::-webkit-search-decoration {
       color: #fff; }
 
 .section {
+  margin: 0 0 32px;
   margin: 0 0 2rem; }
 
 .section-title {
+  margin-bottom: 8px;
   margin-bottom: 0.5rem; }
 
 .byline {
-  font-family: "RijksOverheidSansRegularItalic", "tahoma", sans-serif;
+  font-style: italic;
+  margin-bottom: 8px;
   margin-bottom: 0.5rem; }
-
 /*# sourceMappingURL=style.css.map */
