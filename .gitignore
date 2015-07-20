@@ -4,3 +4,5 @@ node_modules/
 .sass-cache/**
 /sass-cache
 Thumbs.db
+/source/css/style.css
+/source/css/style.css.map
