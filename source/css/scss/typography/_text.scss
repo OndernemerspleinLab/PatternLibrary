@@ -1,0 +1,68 @@
+/* Text-Related Elements */
+p {
+	//margin-bottom: $space;
+}
+
+/* Blockquote */
+blockquote {
+    font-family: $fontItalic;
+    border-left: 1px solid $gray;
+    color: $gray;
+	padding-left: $pad;
+	margin-bottom: $space;
+}
+
+/* Horizontal Rule */
+hr {
+	border: 0;
+    height: 2px;
+    background: $gray-light-2;
+    margin: $space-double 0;
+}
+
+abbr {
+    border-bottom: 1px dotted $gray;
+    cursor: help;
+}
+
+/* Global Font Classes */
+.font-secondary {
+	font-family: $font-secondary;
+}
+
+//Intro text
+.intro {
+	font-size: $font-size-large;
+	font-family: $fontItalic;
+}
+
+//Pullquote
+.pullquote {
+	font-family: $fontItalic;
+	font-size: $font-size-slightly-larger;
+}
+
+//Text Passages
+.text {
+	a {
+		text-decoration: underline;
+	}
+
+	ul {
+		list-style: square;
+		margin: 0 0 $space 1.2em;
+
+		ul {
+			margin-bottom: 0;
+		}
+	}
+
+	ol {
+		list-style: decimal;
+		margin: 0 0 $space 1.2em;
+
+		ol {
+			margin-bottom: 0;
+		}
+	}
+}

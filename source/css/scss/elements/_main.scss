@@ -1,0 +1,38 @@
+/*------------------------------------*\
+    $MAIN CONTENT AREA
+\*------------------------------------*/
+[role=main] {
+	padding: $pad-half $pad-half $pad-double;
+	overflow: hidden;
+	@extend .lc;
+	@extend .cf;
+}
+
+body {
+	background: $white;
+	font: 100%/1.5 $font;
+	-webkit-text-size-adjust: 100%;
+	color: $gray-dark;
+	@include mqLesserThan(extraLarge) {
+		padding-left: 50px;
+	}
+}
+
+b, strong {
+	font: 100%/1.5 $fontBold;
+}
+
+em {
+	font: 100%/1.5 $fontItalic;
+}
+
+b em, strong em {
+	font: 100%/1.5 $fontBoldItalic;
+}
+
+.textLine {
+	display: block;
+}
+.highlight--blue {
+	color: mapDeepGet($colors, hemelblauw default);
+}

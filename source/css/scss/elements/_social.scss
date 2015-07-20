@@ -1,0 +1,166 @@
+// SOCIAL MEDIA
+
+@mixin icon {
+	display: inline;
+	font-family: "icons";
+	font-weight: normal;
+	font-style: normal;
+	speak: none;
+	text-decoration: none;
+	text-transform: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	line-height: 1;
+}
+
+%sociallink_basis {
+	display: block;
+	height: 34px;
+	width: 34px;
+	text-decoration: none;
+
+	&:before {
+		@include icon;
+		content: "";
+		width: 34px;
+		height: 34px;
+		font-size: 32px;
+		padding: 3px;
+		line-height: 1.5;
+		background-color: mapDeepGet($colors, hemelblauw default);
+		color: mapDeepGet($colors, wit);
+	}
+	&:hover, &:active {
+		&:before {
+			background-color: mapDeepGet($colors, grijs darkest);
+		}
+	}
+	span {
+		@include accHide;
+	}
+}
+
+// Social Base
+
+.social {
+	overflow: hidden;
+
+
+	li {
+		display: inline-block;
+		margin-right: $pad;
+		&:last-child {
+			margin-right: $pad-half;
+		}
+	}
+
+	a {
+		@extend %sociallink_basis;
+		&.twitter {
+			&:before {
+				content: "\74";
+				background-color: mapDeepGet($colors, twitter);
+			}
+			&:hover, &:active {
+				&:before {
+					background-color: mapDeepGet($colors, grijs darkest);
+				}
+			}
+		}
+		&.facebook {
+			&:before {
+				content: "\66";
+				background-color: mapDeepGet($colors, facebook);
+			}
+			&:hover, &:active {
+				&:before {
+					background-color: mapDeepGet($colors, grijs darkest);
+				}
+			}
+		}
+		&.linkedin {
+			&:before {
+				content: "\69";
+				background-color: mapDeepGet($colors, linkedin);
+			}
+			&:hover, &:active {
+				&:before {
+					background-color: mapDeepGet($colors, grijs darkest);
+				}
+			}
+		}
+		&.googleplus {
+			&:before {
+				content: "\67";
+				background-color: mapDeepGet($colors, googleplus);
+			}
+			&:hover, &:active {
+				&:before {
+					background-color: mapDeepGet($colors, grijs darkest);
+				}
+			}
+		}
+		&.youtube {
+			&:before {
+				content: "\79";
+				background-color: mapDeepGet($colors, youtube);
+			}
+			&:hover, &:active {
+				&:before {
+					background-color: mapDeepGet($colors, grijs darkest);
+				}
+			}
+		}
+		&.mail {
+			&:before {
+				content: "\2b";
+			}
+		}
+	}
+
+	// Social Share
+	&--share {
+
+	}
+
+	// Social Follow
+	&--follow {
+		@include mqGreaterThan(medium) {
+			text-align: right;
+		}
+		padding: $pad-half $pad;
+		a {
+			height: 24px;
+			width: 24px;
+			&:before {
+				height: 24px;
+				width: 24px;
+				font-size: 26px;
+				color: mapDeepGet($colors, hemelblauw light);
+				background-color: mapDeepGet($colors, hemelblauw darkest);
+			}
+			&:hover, &:active {
+				&:before {
+					color: mapDeepGet($colors, wit);
+					background-color: mapDeepGet($colors, hemelblauw default);
+				}
+			}
+			&.twitter,
+			&.linkedin,
+			&.facebook,
+			&.googleplus,
+			&.youtube {
+				&:before {
+					background-color: mapDeepGet($colors, hemelblauw darkest);
+				}
+				&:hover, &:active {
+					&:before {
+						background-color: mapDeepGet($colors, hemelblauw default);
+					}
+				}
+			}
+		}
+	}
+
+}

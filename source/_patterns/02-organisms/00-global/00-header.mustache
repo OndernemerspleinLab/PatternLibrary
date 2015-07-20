@@ -1,9 +1,13 @@
 <!-- Begin Header -->
 <header class="header cf" role="banner">
-	{{> molecules-logo }}
-	<div class="brandBar">
+	<div class="layoutContainer gridContainer">
+		{{> molecules-logo }}
 		{{> molecules-payoff }}
-		{{> molecules-breadcrumbs }}
+	</div>
+	<div class="brandBar">
+		<div class="layoutContainer gridContainer">
+			{{> molecules-breadcrumbs }}
+		</div>
 	</div>
 </header>
 <!-- End Header -->

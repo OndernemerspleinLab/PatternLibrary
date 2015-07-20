@@ -1,0 +1,132 @@
+// MENU
+
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    left: 0;
+}
+
+.menuBar {
+	position: fixed;
+	width: 50px;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background: #8fcae7 none repeat scroll 0% 0%;
+	background-image: linear-gradient(#8fcae7, #76d2b6);
+	z-index: 10;
+	transform: translate(0px, 0px);
+	transition: all 0.75s ease-in-out;
+	&.active {
+		-webkit-transform: translate(240px, 0px);
+		transform: translate(240px, 0px);
+		transition: all 0.75s ease-in-out;
+	}
+}
+
+.menuBar-item {
+	height: 50px;
+	width: 50px;
+	background: #8fcae7;
+}
+.menuBar-button {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 12px 15px 13px;
+
+    &.active {
+    	background-color: #d9ebf7;
+    }
+    &.menuBar-button--menu {
+	    .bar {
+	    	display: block;
+		    width: 25px;
+		    margin-bottom: 5px;
+		    height: 4px;
+		    background-color: #005387;
+		    &:last-child {
+		    	margin-bottom: 0;
+		    }
+	    }
+	}
+    &.menuBar-button--search {
+		top: 60px;
+    }
+    &.menuBar-button--profile {
+    	top: 130px;
+    }
+    &.menuBar-button--share {
+    	top: 250px;
+    }
+    &.menuBar-button--feedback {
+    	top: 310px;
+    }
+    &.menuBar-button--enquete {
+    	top: 370px;
+    }
+}
+
+.menuBar-content {
+	position: fixed;
+	height: 100%;
+	z-index: 10;
+	transform: translate(-240px, 0px);
+	transition: all 0.75s ease-in-out;
+	@include mqLesserThan(extraLarge) {
+		transform: translate(-290px, 0px);
+	}
+	&.active {
+		-webkit-transform: translate(0%, 0px);
+		transform: translate(0%, 0px);
+		transition: all 0.75s ease-in-out;
+		@include mqLesserThan(extraLarge) {
+			-webkit-transform: translate(-50px, 0px);
+			transform: translate(-50px, 0px);
+		}
+	}
+	background: #d9ebf7;
+	overflow-y: visible;
+	overflow-x: hidden;
+	width: 240px;
+	height: 100%;
+
+	ul {
+	    margin: 0;
+	    padding: 0;
+	    list-style: none;
+	}
+	li {
+	    margin: 0;
+	    &:hover {
+	    	a {
+	    		background: #006bad;
+	    		color: white;
+	    	}
+	    }
+	}
+	a {
+	    padding: 5px 20px;
+	    color: #005387;
+	    text-decoration: none;
+	    display: block;
+	    &.homeLink {
+	    	font-family: 'RijksOverheidSansBold', 'tahoma', sans-serif;
+			padding: 20px;
+			font-size: 1.5em;
+	    }
+	}
+	p {
+		padding: 5px 20px;
+	}
+
+}
+
+.kopje {
+	padding: 10px 20px;
+	color: #3e3e3e;
+	font-family: 'RijksOverheidSansBold', 'tahoma', sans-serif;
+	text-transform: uppercase;
+}

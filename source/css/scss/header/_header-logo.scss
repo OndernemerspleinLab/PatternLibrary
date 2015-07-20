@@ -1,0 +1,35 @@
+// Logo Ondernemersplein
+
+.logo {
+	display: block;
+	position: relative;
+	margin: 0.5rem 1rem;
+
+	.logo-link {
+		font-family: $fontBold;
+		color: $darkestGray;
+		display: inline-block;
+		font-size: 32px;
+		line-height: .85;
+		text-decoration: none;
+		height: 55px;
+		&:hover, &:focus, &:active {
+			text-decoration: none;
+			color: $blue;
+			&:before {
+				content: "Home";
+				speak: none;
+				display: block;
+				position: absolute;
+				bottom: 6px;
+				left: 90px;
+				z-index: 1;
+				font-size: 20px;
+				font-family: $font;
+			}
+		}
+		&:focus {
+			outline: 1px dotted $darkestGray;
+		}
+	}
+}

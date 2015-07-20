@@ -1,23 +1,29 @@
-<div class="page" id="page">
-	{{> organisms-header }}
-	<div role="main">
-		<div class="l-two-col">
-			<div class="l-main">
-				<article class="article">
+<div class="container">
+	{{> organisms-sidebar }}
+	<div class="page" id="page">
+		{{> organisms-header }}
+		<div class="main">
+			<div class="layoutContainer gridContainer">
+				<div class="column column--twoThird">
 					<header class="article-header">
-						<h1>Article Headline Lorem ipsum dolor sit aweofij</h1>
-						{{> molecules-byline-author-time }}
+						<h1>Marktonderzoek doen</h1>
+						{{> molecules-byline-author }}
+						{{> molecules-byline-time }}
 					</header>
 					{{> organisms-article-body }}
-				</article><!--end .article-->
-				{{> molecules-social-share }}
-			</div><!--end l-main-->
-
-			<div class="l-sidebar">
-				{{> organisms-related-posts }}
-				{{> organisms-recent-tweets }}
-			</div><!--end l-sidebar-->
-		</div><!--end l-two-col-->
-	</div><!--End role=main-->
-	{{> organisms-footer }}
+					{{> molecules-social-share }}
+				</div>
+				<div class="column column--third">
+					<div class="contact">
+	        			<h2 class="contact-title echoHeading">Neem contact op met</h2>
+	        			<p class="contact-info echoHeading highlight--blue">een adviseur van de KvK</p>
+	        			<p class="contact-phone">
+	        				<span>Bel  (088) 585 2222</span>
+	                    </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{> organisms-footer }}
+	</div>
 </div>

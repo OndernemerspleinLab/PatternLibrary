@@ -1,84 +1,66 @@
-/*------------------------------------*\
-    $TABLE OF CONTENTS
-\*------------------------------------*/
-/**
- * VARIABLES..............................Declarations of Sass variables
- * .....Colors
- * .....Typography
- * .....Layout
- * .....Defaults
- * .....Breakpoints
- * MIXINS.................................Sass mixins
- * RESET..................................Set reset defaults
- * GLOBAL CLASSES.........................Set reset defaults
- * GLOBAL ELEMENTS........................Establish global styles
- * .....Main
- * .....Headings
- * .....Text-related elements (p, blockquote, lists)
- * .....Defaults
- * .....Breakpoints
- * TYPOGRAPHY------------------------------
- * MEDIA------------------------------
- * LAYOUT------------------------------
- * NAVIGATION------------------------------
- * TOC To Be Continued
- */
-
-@import "scss/generic/fontface";
-@import "scss/generic/fontsize";
-@import "scss/generic/colors";
-@import "scss/generic/variables";
-@import "scss/generic/utils";
-@import "scss/generic/mixins";
-@import "scss/generic/reset";
-
-/*------------------------------------*\
-    $GLOBAL ELEMENTS
-\*------------------------------------*/
-@import "scss/base/global-classes";
-@import "scss/base/main";
-@import "scss/base/links";
-@import "scss/base/headings";
-@import "scss/base/text";
-@import "scss/base/lists";
-@import "scss/base/media";
-@import "scss/base/forms";
-@import "scss/base/tables";
-@import "scss/base/animation";
-
-/*------------------------------------*\
-    $LAYOUT
-\*------------------------------------*/
-@import "scss/objects/layout";
+// Base: Functions, Mixins, e.d.
+@import "scss/base/utils";
+@import "scss/base/mixins";
 @import "scss/base/mediaQueries";
-@import "scss/base/grid";
-@import "scss/base/zindex";
+@import "scss/base/variables";
+@import "scss/base/reset";
+
+// Font & Colors
+@import "scss/typography/colors";
+@import "scss/font/fontface";
+@import "scss/font/icons";
+@import "scss/typography/fontsize";
+
+// Lay-out
+//@import "scss/layout/layout";
+@import "scss/layout/grid";
+@import "scss/layout/zindex";
+
+// Typography
+@import "scss/typography/links";
+@import "scss/typography/lists";
+@import "scss/typography/headings";
+@import "scss/typography/buttons";
+@import "scss/typography/tables";
+@import "scss/typography/text";
+
+// Main Elements
+@import "scss/header/header";
+@import "scss/header/header-logo";
+@import "scss/footer/footer";
+
+// Specific elements
+@import "scss/elements/social";
+
+// Pages
+
+
+
+// WEL OF NIET BEHOUDEN????
 
 /*------------------------------------*\
     $PAGE STRUCTURE
 \*------------------------------------*/
-@import "scss/objects/header";
-@import "scss/objects/nav";
-@import "scss/objects/main";
-@import "scss/objects/footer";
+@import "scss/elements/nav";
+@import "scss/elements/main";
+@import "scss/elements/menu";
 
 /*------------------------------------*\
-    $TEXT Styles
+    $GLOBAL ELEMENTS
 \*------------------------------------*/
-@import "scss/objects/text";
+@import "scss/elements/global-classes";
+@import "scss/elements/main";
+@import "scss/elements/media";
+@import "scss/elements/forms";
+@import "scss/elements/animation";
 
 /*------------------------------------*\
     $COMPONENTS
 \*------------------------------------*/
-@import "scss/objects/icons";
-@import "scss/objects/buttons";
-@import "scss/objects/blocks";
-@import "scss/objects/lists";
-@import "scss/objects/tooltip";
-@import "scss/objects/accordion";
-@import "scss/objects/tabs";
-@import "scss/objects/sections";
-@import "scss/objects/article";
-//@import "scss/objects/comments";
-@import "scss/objects/header-logo";
-@import "scss/objects/social";
+
+@import "scss/elements/blocks";
+@import "scss/elements/tooltip";
+@import "scss/elements/accordion";
+@import "scss/elements/tabs";
+@import "scss/elements/sections";
+@import "scss/elements/article";
