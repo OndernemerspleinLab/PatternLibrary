@@ -2,24 +2,24 @@
 
 $mediaQueries: (
 	extraSmall: (
-		larger: "(min-width: 10em)",
-		smaller: "(max-width: #{10em - (1/16)})"
+		greater: "(min-width: 10em)",
+		lesser: "(max-width: #{10em - (1/16)})"
 	),
 	small: (
-		larger: "(min-width: 20em)",
-		smaller: "(max-width: #{20em - (1/16)})"
+		greater: "(min-width: 20em)",
+		lesser: "(max-width: #{20em - (1/16)})"
 	),
 	medium: (
-		larger: "(min-width: 30em)",
-		smaller: "(max-width: #{30em - (1/16)})"
+		greater: "(min-width: 30em)",
+		lesser: "(max-width: #{30em - (1/16)})"
 	),
 	large: (
-		larger: "(min-width: 40em)",
-		smaller: "(max-width: #{40em - (1/16)})"
+		greater: "(min-width: 40em)",
+		lesser: "(max-width: #{40em - (1/16)})"
 	),
 	extraLarge: (
-		larger: "(min-width: 50em)",
-		smaller: "(max-width: #{50em - (1/16)})"
+		greater: "(min-width: 50em)",
+		lesser: "(max-width: #{50em - (1/16)})"
 	),
 );
 
@@ -28,20 +28,20 @@ $mediaQueries: (
 }
 
 @mixin mqGreaterThan($name) {
-	@media #{getMediaQuery($name, larger)} {
+	@media #{getMediaQuery($name, greater)} {
 		@content;
 	}
 };
 
 @mixin mqLesserThan($name) {
-	@media #{getMediaQuery($name, smaller)} {
+	@media #{getMediaQuery($name, lesser)} {
 		@content;
 	}
 };
 
 @mixin mqBetween($smallest, $largest) {
-	$smallestMq: getMediaQuery($smallest, larger);
-	$largestMq: getMediaQuery($largest, smaller);
+	$smallestMq: getMediaQuery($smallest, greater);
+	$largestMq: getMediaQuery($largest, lesser);
 
 	@media #{$smallestMq} and #{$largestMq} {
 		@content;

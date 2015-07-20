@@ -1,8 +1,8 @@
 /* Z-INDEX */
 
 $zIndex: (
-	(name: overlay),
-	(name: stickyBar),
+	overlay,
+	stickyBar,
 	(
 		name: menuBar,
 		subZIndex: (
@@ -11,6 +11,14 @@ $zIndex: (
 		),
 	)
 );
+
+@function saveMapGet($potentialMap, $name, $default: null) {
+	@if  type-of($potentialMap) == "map" {
+		@return map-get($potentialMap, $name);
+	} @else {
+		@return $default;
+	}
+}
 
 @function getZIndex($names) {
 	$list: $zIndex;
@@ -22,23 +30,27 @@ $zIndex: (
 		@while not $match and $i <= length($list) {
 			$item: nth($list, $i);
 
-			@if map-get($item, name) == $name {
+			@if saveMapGet($item, "name", $item); == $name {
 				$match: $i + 1;
-				@if map-has-key($item, subZIndex) {
-				  $list: map-get($item, subZIndex);
-				} @else {
-				  $list: ();
-				}
+				$list: saveMapGet($item, "subZIndex", ());
 			}
 			$i: $i + 1;
 		}
-
   	}
+
+  	@if not $match {
+  		@error "z-index “#{$names}” was not found";
+  	}
+
 	@return $match;
 }
 
+@mixin zIndex($names) {
+	z-index: getZIndex($names);
+}
+
 // a {
-// 	z-index: getZIndex(overlay);
-// 	z-index: getZIndex(menuBar title);
-// 	z-index: getZIndex(menuBar);
+// 	@include zIndex(overlay);
+// 	@include zIndex(menuBar title);
+// 	@include zIndex(menuBar);
 // }
