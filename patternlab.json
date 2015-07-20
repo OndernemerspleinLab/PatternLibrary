@@ -18,6 +18,7 @@
          "grunt-contrib-watch": "^0.6.1",
          "grunt-postcss": "^0.5.5",
          "grunt-sass": "^1.0.0",
+         "grunt-svgstore": "^0.5.0",
          "html-entities": "^1.1.1",
          "matchdep": "^0.3.0",
          "mustache": "^1.0.0",

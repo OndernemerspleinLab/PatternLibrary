@@ -117,8 +117,20 @@ module.exports = function(grunt) {
 				},
 			},
 		},
+		svgstore: {
+			options: {
+				prefix: 'icon-',
+				includedemo: true,
+				cleanup: true,
+			},
+			main: {
+				files: {
+					'./svg-out/icons.svg': './svg/**/*.svg',
+				},
+			},
+		},
 		nodeunit: {
-			all: ['test/*_tests.js']
+			all: ['test/*_tests.js'],
 		},
 		connect: {
 			app:{
@@ -127,10 +139,22 @@ module.exports = function(grunt) {
 					base: './public',
 					hostname: 'localhost',
 					open: true,
-					livereload: 35729
-				}
-			}
-		}
+					livereload: 35729,
+				},
+			},
+		},
+		buildcontrol: {
+			'gh-pages': {
+				options: {
+					dir: 'public',
+					commit: true,
+					push: true,
+		            message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%',
+					remote: 'origin',
+					branch: 'gh-pages',
+				},
+			},
+		},
 	});
 
 	// load all grunt tasks
@@ -144,8 +168,8 @@ module.exports = function(grunt) {
 	//if you choose to use scss, or any preprocessor, you can add it here
 	grunt.registerTask('default', ['clean', 'concat', 'patternlab', 'styles', 'copy']);
 
-	//travis CI task
-	grunt.registerTask('travis', ['clean', 'concat', 'patternlab', 'styles', 'copy', 'nodeunit']);
+	// Deploy to GitHub Pages
+	grunt.registerTask('deploy', ['default', 'buildcontrol:gh-pages']);
 
 	grunt.registerTask('serve', ['clean', 'concat', 'patternlab', 'styles', 'copy', 'connect', 'watch']);
 
