@@ -145,16 +145,16 @@ module.exports = function(grunt) {
 		},
 		webfont: {
 			options: {
-				relativeFontPath: "fonts/iconFont/",
+				relativeFontPath: "source/fonts/iconFont/",
 				engine: "node",
 				stylesheet: "scss",
-				template: "iconFontSource/template.css",
+				template: "source/iconFontSource/template.css",
 				htmlDemo: true,
-				htmlDemoTemplate: "iconFontSource/demoTemplate.html",
+				htmlDemoTemplate: "source/iconFontSource/demoTemplate.html",
 				rename: function (name) {
 					var nameArray = name.split("/");
 					nameArray.shift();
-					nameArray = _(nameArray).map(function (namePart) {
+					nameArray = nameArray.map(function (namePart) {
 						return namePart.replace(/-([A-z])/g, function(match, group1) {
 							return group1.toUpperCase();
 						});
@@ -165,13 +165,13 @@ module.exports = function(grunt) {
 					"baseClass": "icon",
 					"classPrefix": "icon-",
 					"mixinPrefix": "icon-",
-					"breakpoints": _.pick(grunt.file.readJSON(breakpointsSourceJsonPath), "blocks"),
+					"breakpoints": { "blocks": {}},
 				},
 			},
 			build: {
-				src: ['iconFontSource/**/*.svg'],
-				dest: ['css/scss/iconFont/'],
-				destCss: 'iconFontSource',
+				src: ['source/iconFontSource/**/*.svg'],
+				dest: 'source/css/scss/iconFont/',
+				destCss: 'source/iconFontSource',
 			}
 		},
 		buildcontrol: {
