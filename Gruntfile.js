@@ -143,6 +143,37 @@ module.exports = function(grunt) {
 				},
 			},
 		},
+		webfont: {
+			options: {
+				relativeFontPath: "fonts/iconFont/",
+				engine: "node",
+				stylesheet: "scss",
+				template: "iconFontSource/template.css",
+				htmlDemo: true,
+				htmlDemoTemplate: "iconFontSource/demoTemplate.html",
+				rename: function (name) {
+					var nameArray = name.split("/");
+					nameArray.shift();
+					nameArray = _(nameArray).map(function (namePart) {
+						return namePart.replace(/-([A-z])/g, function(match, group1) {
+							return group1.toUpperCase();
+						});
+					});
+					return nameArray.join("-");
+				},
+				templateOptions: {
+					"baseClass": "icon",
+					"classPrefix": "icon-",
+					"mixinPrefix": "icon-",
+					"breakpoints": _.pick(grunt.file.readJSON(breakpointsSourceJsonPath), "blocks"),
+				},
+			},
+			build: {
+				src: ['iconFontSource/**/*.svg'],
+				dest: ['css/scss/iconFont/'],
+				destCss: 'iconFontSource',
+			}
+		},
 		buildcontrol: {
 			'gh-pages': {
 				options: {
@@ -171,7 +202,7 @@ module.exports = function(grunt) {
 	// Deploy to GitHub Pages
 	grunt.registerTask('deploy', ['default', 'buildcontrol:gh-pages']);
 
-	grunt.registerTask('serve', ['clean', 'concat', 'patternlab', 'styles', 'copy', 'connect', 'watch']);
+	grunt.registerTask('serve', ['default', 'connect', 'watch']);
 
 	// git subtree push --prefix public/ origin gh-pages
 };
