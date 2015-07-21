@@ -12,7 +12,6 @@
 @import "scss/typography/fontsize";
 
 // Lay-out
-//@import "scss/layout/layout";
 @import "scss/layout/grid";
 @import "scss/layout/zindex";
 
@@ -32,16 +31,11 @@
 // Specific elements
 @import "scss/elements/social";
 
-// Pages
-
-
-
 // WEL OF NIET BEHOUDEN????
 
 /*------------------------------------*\
     $PAGE STRUCTURE
 \*------------------------------------*/
-@import "scss/elements/nav";
 @import "scss/elements/main";
 @import "scss/elements/menu";
 
@@ -52,15 +46,3 @@
 @import "scss/elements/main";
 @import "scss/elements/media";
 @import "scss/elements/forms";
-@import "scss/elements/animation";
-
-/*------------------------------------*\
-    $COMPONENTS
-\*------------------------------------*/
-
-@import "scss/elements/blocks";
-@import "scss/elements/tooltip";
-@import "scss/elements/accordion";
-@import "scss/elements/tabs";
-@import "scss/elements/sections";
-@import "scss/elements/article";
