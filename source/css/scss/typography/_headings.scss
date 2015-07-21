@@ -18,9 +18,3 @@ h5, .echoHeading {
 h6 {
 	font-size: mapDeepGet($fontsize, root);
 }
-
-/* Subheadings */
-.subheading {
-	font-family: $font-secondary;
-	font-weight: normal;
-}
