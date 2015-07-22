@@ -130,6 +130,7 @@ module.exports = function(grunt) {
 					parsedPath.ext = "";
 					parsedPath.base = parsedPath.name;
 					name = path.format(parsedPath);
+					name = name.replace("\\", "/");
 					name = name.replace(/^\/?source\/iconFontSource\//, "");
 					name = name.replace(/[^\/A-z\-_0-9]/g, "-");
 					return name;
