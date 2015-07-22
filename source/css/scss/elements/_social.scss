@@ -59,7 +59,7 @@
 		@extend %sociallink_basis;
 		&.twitter {
 			&:before {
-				content: "\74";
+				content: getIcon(social twitter);
 				background-color: mapDeepGet($colors, twitter);
 			}
 			&:hover, &:active {
@@ -70,7 +70,7 @@
 		}
 		&.facebook {
 			&:before {
-				content: "\66";
+				content: getIcon(social facebook);
 				background-color: mapDeepGet($colors, facebook);
 			}
 			&:hover, &:active {
@@ -81,7 +81,7 @@
 		}
 		&.linkedin {
 			&:before {
-				content: "\69";
+				content: getIcon(social linkedin);
 				background-color: mapDeepGet($colors, linkedin);
 			}
 			&:hover, &:active {
@@ -92,7 +92,7 @@
 		}
 		&.googleplus {
 			&:before {
-				content: "\67";
+				content: getIcon(social googleplus);
 				background-color: mapDeepGet($colors, googleplus);
 			}
 			&:hover, &:active {
@@ -103,7 +103,7 @@
 		}
 		&.youtube {
 			&:before {
-				content: "\79";
+				content: getIcon(social youtube);
 				background-color: mapDeepGet($colors, youtube);
 			}
 			&:hover, &:active {
@@ -114,7 +114,7 @@
 		}
 		&.mail {
 			&:before {
-				content: "\2b";
+				content: getIcon(source iconFontSource enveloppe);
 			}
 		}
 	}
