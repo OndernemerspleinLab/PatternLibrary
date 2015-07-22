@@ -8,5 +8,5 @@ Thumbs.db
 /source/css/style.css.map
 patternlab.json
 /source/css/scss/iconFont/
-source/iconFontSource/icons.html
-source/iconFontSource/_icons.scss
+/source/iconFontSource/icons.html
+/source/fonts/iconFont

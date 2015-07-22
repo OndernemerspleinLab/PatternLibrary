@@ -1,3 +1,4 @@
+var path = require("path");
 module.exports = function(grunt) {
 
 	// Project configuration.
@@ -6,36 +7,6 @@ module.exports = function(grunt) {
 		clean: {
 			options: { force: true },
 			files: ['./public/patterns']
-		},
-		concat: {
-			options: {
-				stripBanners: true,
-				banner: '/* \n * <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy") %> \n * \n * <%= pkg.author %>, and the web community.\n * Licensed under the <%= pkg.license %> license. \n * \n * Many thanks to Brad Frost and Dave Olsen for inspiration, encouragement, and advice. \n *\n */\n\n',
-			},
-			patternlab: {
-				src: './builder/patternlab.js',
-				dest: './builder/patternlab.js'
-			},
-			object_factory: {
-				src: './builder/object_factory.js',
-				dest: './builder/object_factory.js'
-			},
-			lineage: {
-				src: './builder/lineage_hunter.js',
-				dest: './builder/lineage_hunter.js'
-			},
-			media_hunter: {
-				src: './builder/media_hunter.js',
-				dest: './builder/media_hunter.js'
-			},
-			patternlab_grunt: {
-				src: './builder/patternlab_grunt.js',
-				dest: './builder/patternlab_grunt.js'
-			},
-			pattern_exporter: {
-				src: './builder/pattern_exporter.js',
-				dest: './builder/pattern_exporter.js'
-			}
 		},
 		copy: {
 			main: {
@@ -145,33 +116,37 @@ module.exports = function(grunt) {
 		},
 		webfont: {
 			options: {
-				relativeFontPath: "source/fonts/iconFont/",
+				hashes: false,
+				fontFilename: "icons-{hash}",
+				relativeFontPath: "../fonts/iconFont/",
 				engine: "node",
 				stylesheet: "scss",
 				template: "source/iconFontSource/template.css",
 				htmlDemo: true,
 				htmlDemoTemplate: "source/iconFontSource/demoTemplate.html",
+				types: ["eot", "woff", "ttf", "svg"],
 				rename: function (name) {
-					var nameArray = name.split("/");
-					nameArray.shift();
-					nameArray = nameArray.map(function (namePart) {
-						return namePart.replace(/-([A-z])/g, function(match, group1) {
-							return group1.toUpperCase();
-						});
-					});
-					return nameArray.join("-");
+					var parsedPath = path.parse(name);
+					parsedPath.ext = "";
+					parsedPath.base = parsedPath.name;
+					name = path.format(parsedPath);
+					name = name.replace(/^\/?source\/iconFontSource\//, "");
+					name = name.replace(/[^\/A-z\-_0-9]/g, "-");
+					return name;
 				},
 				templateOptions: {
+					"objectName": "$iconKeyCodes",
+					"functionName": "getIcon",
 					"baseClass": "icon",
 					"classPrefix": "icon-",
 					"mixinPrefix": "icon-",
-					"breakpoints": { "blocks": {}},
 				},
+				destHtml: 'source/iconFontSource/',
 			},
 			build: {
 				src: ['source/iconFontSource/**/*.svg'],
-				dest: 'source/css/scss/iconFont/',
-				destCss: 'source/iconFontSource',
+				dest: 'source/fonts/iconFont/',
+				destCss: 'source/css/scss/iconFont/',
 			}
 		},
 		buildcontrol: {
@@ -194,10 +169,10 @@ module.exports = function(grunt) {
 	//load the patternlab task
 	grunt.task.loadTasks('./builder/');
 
-	grunt.registerTask('styles', ['sass', 'postcss']);
+	grunt.registerTask('styles', ['webfont', 'sass', 'postcss']);
 
 	//if you choose to use scss, or any preprocessor, you can add it here
-	grunt.registerTask('default', ['clean', 'concat', 'patternlab', 'styles', 'copy']);
+	grunt.registerTask('default', ['clean', 'patternlab', 'styles', 'copy']);
 
 	// Deploy to GitHub Pages
 	grunt.registerTask('deploy', ['default', 'buildcontrol:gh-pages']);

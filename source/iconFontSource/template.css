@@ -23,62 +23,86 @@
 }
 <% } %>
 
-<%
-function loopBreakPoints(breakpoints, callback) {
-	_(breakpoints).each(function (breakpointType, breakpointTypeName) {
-		_(breakpointType.breakpoints).each(function (breakpoint) {
-			callback(camelCaseToHyphen(breakpointTypeName), breakpoint.name);
-		});
-	});
-}
-
-
-function camelCaseToHyphen(str) {
-	var strArray = str.split(""),
-		upperCaseRegex = /[A-Z]/;
-
-	strArray.forEach(function (character, i) {
-		if (i > 1 && character.match(upperCaseRegex)) {
-			strArray[i] = character.toLowerCase();
-			if (strArray[i - 1] !== "-" && strArray[i - 1] !== "_") {
-				strArray[i] = "-" + strArray[i];
-			}
-		}
-	});
-
-	return strArray.join("");
-}
-%>
-
 %<%= baseClass %> {
 	@include <%= baseClass %>;
 }
 
-<% loopBreakPoints(breakpoints, function (breakpointTypeName, breakpointName) { %>
-%<%= breakpointTypeName %>_<%= breakpointName %>_<%= baseClass %> {
-	@include mq-<%= breakpointTypeName %>(<%= breakpointName %>) {
-		@include <%= baseClass %>;
-	};
-}
-<% }); %>
+<%
+	function glyphsToPaths(glyphs, codepoints) {
+		return glyphs.map(function (glyph, glyphId) {
+			var glyphPath = glyph.split("/").concat(codepoints[glyphId]);
+			return glyphPath;
+		});
+	}
 
-/* Icons */
+	function reduceGlyphPath(memo, glyphPath) {
+		var key;
+		if  (glyphPath.length === 2) {
+			key = glyphPath[0];
+			value = glyphPath[1];
+			memo[key] = value;
+		} else if (glyphPath.length > 2) {
+			key = glyphPath.shift();
+			memo[key] = memo[key] || [];
+			memo[key].push(glyphPath);
+		}
 
-<% _(glyphs).each(function (glyph, glyphIdx) {%>
-@mixin <%= classPrefix %><%= glyph %> {
-	content:"\<%= codepoints[glyphIdx] %>";
-}
+		return memo;
+	}
 
-%<%= classPrefix %><%= glyph %> {
-	@extend %<%= baseClass %> !optional;
-	@include <%= classPrefix %><%= glyph %>;
-}
-	<% loopBreakPoints(breakpoints, function (breakpointTypeName, breakpointName) { %>
-%<%= breakpointTypeName %>_<%= breakpointName %>_<%= classPrefix %><%= glyph %> {
-	@extend %<%= breakpointTypeName %>_<%= breakpointName %>_<%= baseClass %> !optional;
-	@include mq-<%= breakpointTypeName %>(<%= breakpointName %>) {
-		@include <%= classPrefix %><%= glyph %>;
-	};
-}
-	<% }); %>
-<% }); %>
+	function reduceGlyphSubpaths(memo, group, groupName) {
+		if (_(group).isArray()) {
+			memo[groupName] = groupGlyphPaths(group);
+		} else {
+			memo[groupName] = group;
+		}
+
+		return memo;
+
+	}
+
+	function groupGlyphPaths(glyphPaths) {
+		var groups = _(glyphPaths).reduce(reduceGlyphPath, {});
+		groups = _(groups).reduce(reduceGlyphSubpaths, {});
+		return groups;
+	}
+
+	function groupGlyphs(glyphs, codepoints) {
+		var glyphPaths = glyphsToPaths(glyphs, codepoints);
+
+		return groupGlyphPaths(glyphPaths);
+	}
+
+	var glyphObject = groupGlyphs(glyphs, codepoints);
+%>
+
+<%
+	function toScssMap(glyphObject, indentation) {
+		indentation = indentation || "";
+		var oldIndentation = indentation;
+		indentation += "\t";
+
+		var scssMapItems = _(glyphObject).map(function (value, key) {
+			if (_(value).isObject()) {
+				value = toScssMap(value, indentation);
+			} else {
+				value = '"\\' + value + '"';
+			}
+
+			key = '"' + key + '"';
+
+			return [indentation, key, ": ", value].join("");
+		});
+		var scssMap = ["(\n", scssMapItems.join(",\n"), "\n", oldIndentation, ")"].join("");
+
+		return scssMap;
+	}
+
+	var iconScssMap = toScssMap(glyphObject);
+%>
+
+<%= objectName %>: <%= iconScssMap %>;
+
+@function <%= functionName %>($iconNames) {
+	@return mapDeepGet(<%= objectName %>, $iconNames);
+};
