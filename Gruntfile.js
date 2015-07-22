@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		clean: {
 			options: { force: true },
-			files: ['./public/patterns']
+			files: ['./public/patterns', './fonts/iconFont']
 		},
 		copy: {
 			main: {
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 				{ expand: true, cwd: './source/css/', src: '*.css', dest: './public/css/' },
 				{ expand: true, cwd: './source/images/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/' },
 				{ expand: true, cwd: './source/images/sample/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/sample/'},
-				{ expand: true, cwd: './source/fonts/', src: '*', dest: './public/fonts/'},
+				{ expand: true, cwd: './source/fonts/', src: '**', dest: './public/fonts/'},
 				{ expand: true, cwd: './source/_data/', src: 'annotations.js', dest: './public/data/' }
 				]
 			}
@@ -39,6 +39,13 @@ module.exports = function(grunt) {
 				},
 				files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
 				tasks: ['default']
+			},
+			iconFont: {
+				files: [
+					'source/iconFontSource/**/*.svg',
+					'source/iconFontSource/template.css',
+					'source/iconFontSource/demoTemplate.html',
+				]
 			},
 			all: {
 				options: {
