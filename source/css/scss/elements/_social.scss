@@ -110,6 +110,10 @@
 		margin: 0;
 		li {
 			padding: 0.45rem 0px;
+			margin-right: $pad-half;
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 		a {
 			height: 24px;
