@@ -12,11 +12,12 @@
 	&:before {
 		@include icon;
 		content: "";
+		display: inline-block;
 		width: 34px;
 		height: 34px;
-		font-size: 32px;
-		padding: 3px;
-		line-height: 1.5;
+		font-size: 30px;
+		line-height: 1.15;
+		text-align: center;
 	}
 	&:hover, &:active {
 		background-color: mapDeepGet($colors, grijs darkest);
@@ -90,6 +91,7 @@
 		&.mail {
 			&:before {
 				content: getIcon(enveloppe);
+				margin-top: -5px;
 			}
 		}
 	}
@@ -117,7 +119,7 @@
 			&:before {
 				height: 24px;
 				width: 24px;
-				font-size: 26px;
+				font-size: 19px;
 			}
 			&:hover, &:active {
 				color: mapDeepGet($colors, wit);
@@ -131,6 +133,11 @@
 				background-color: mapDeepGet($colors, hemelblauw darkest);
 				&:hover, &:active {
 					background-color: mapDeepGet($colors, hemelblauw default);
+				}
+			}
+			&.youtube {
+				&:before {
+					margin-top: 3px;
 				}
 			}
 		}
