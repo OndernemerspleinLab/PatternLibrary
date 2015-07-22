@@ -37,11 +37,6 @@ abbr {
     cursor: help;
 }
 
-/* Global Font Classes */
-.font-secondary {
-	font-family: $font-secondary;
-}
-
 //Intro text
 .intro {
 	font-size: $font-size-large;
@@ -67,4 +62,12 @@ abbr {
 	&--date {
 		float: right;
 	}
+}
+
+.textLine {
+	display: block;
+}
+
+.highlight--blue {
+	color: mapDeepGet($colors, hemelblauw default);
 }

@@ -1,24 +1,13 @@
 // SOCIAL MEDIA
 
-@mixin icon {
-	display: inline;
-	font-family: "icons";
-	font-weight: normal;
-	font-style: normal;
-	speak: none;
-	text-decoration: none;
-	text-transform: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	line-height: 1;
-}
-
 %sociallink_basis {
 	display: block;
 	height: 34px;
 	width: 34px;
 	text-decoration: none;
+	background-color: mapDeepGet($colors, hemelblauw default);
+	color: mapDeepGet($colors, wit);
+	overflow: hidden;
 
 	&:before {
 		@include icon;
@@ -28,13 +17,9 @@
 		font-size: 32px;
 		padding: 3px;
 		line-height: 1.5;
-		background-color: mapDeepGet($colors, hemelblauw default);
-		color: mapDeepGet($colors, wit);
 	}
 	&:hover, &:active {
-		&:before {
-			background-color: mapDeepGet($colors, grijs darkest);
-		}
+		background-color: mapDeepGet($colors, grijs darkest);
 	}
 	span {
 		@include accHide;
@@ -51,70 +36,60 @@
 		display: inline-block;
 		margin-right: $pad;
 		&:last-child {
-			margin-right: $pad-half;
+			margin-right: 0;
 		}
 	}
 
 	a {
 		@extend %sociallink_basis;
 		&.twitter {
+			background-color: mapDeepGet($colors, twitter);
 			&:before {
 				content: getIcon(social twitter);
-				background-color: mapDeepGet($colors, twitter);
 			}
 			&:hover, &:active {
-				&:before {
-					background-color: mapDeepGet($colors, grijs darkest);
-				}
+				background-color: mapDeepGet($colors, grijs darkest);
 			}
 		}
 		&.facebook {
+			background-color: mapDeepGet($colors, facebook);
 			&:before {
 				content: getIcon(social facebook);
-				background-color: mapDeepGet($colors, facebook);
 			}
 			&:hover, &:active {
-				&:before {
-					background-color: mapDeepGet($colors, grijs darkest);
-				}
+				background-color: mapDeepGet($colors, grijs darkest);
 			}
 		}
 		&.linkedin {
+			background-color: mapDeepGet($colors, linkedin);
 			&:before {
 				content: getIcon(social linkedin);
-				background-color: mapDeepGet($colors, linkedin);
 			}
 			&:hover, &:active {
-				&:before {
-					background-color: mapDeepGet($colors, grijs darkest);
-				}
+				background-color: mapDeepGet($colors, grijs darkest);
 			}
 		}
 		&.googleplus {
+			background-color: mapDeepGet($colors, googleplus);
 			&:before {
 				content: getIcon(social googleplus);
-				background-color: mapDeepGet($colors, googleplus);
 			}
 			&:hover, &:active {
-				&:before {
-					background-color: mapDeepGet($colors, grijs darkest);
-				}
+				background-color: mapDeepGet($colors, grijs darkest);
 			}
 		}
 		&.youtube {
+			background-color: mapDeepGet($colors, youtube);
 			&:before {
 				content: getIcon(social youtube);
-				background-color: mapDeepGet($colors, youtube);
 			}
 			&:hover, &:active {
-				&:before {
-					background-color: mapDeepGet($colors, grijs darkest);
-				}
+				background-color: mapDeepGet($colors, grijs darkest);
 			}
 		}
 		&.mail {
 			&:before {
-				content: getIcon(source iconFontSource enveloppe);
+				content: getIcon(enveloppe);
 			}
 		}
 	}
@@ -131,34 +106,31 @@
 		}
 		padding: $pad-half $pad;
 		margin: 0;
+		li {
+			padding: 0.45rem 0px;
+		}
 		a {
 			height: 24px;
 			width: 24px;
+			color: mapDeepGet($colors, hemelblauw light);
+			background-color: mapDeepGet($colors, hemelblauw darkest);
 			&:before {
 				height: 24px;
 				width: 24px;
 				font-size: 26px;
-				color: mapDeepGet($colors, hemelblauw light);
-				background-color: mapDeepGet($colors, hemelblauw darkest);
 			}
 			&:hover, &:active {
-				&:before {
-					color: mapDeepGet($colors, wit);
-					background-color: mapDeepGet($colors, hemelblauw default);
-				}
+				color: mapDeepGet($colors, wit);
+				background-color: mapDeepGet($colors, hemelblauw default);
 			}
 			&.twitter,
 			&.linkedin,
 			&.facebook,
 			&.googleplus,
 			&.youtube {
-				&:before {
-					background-color: mapDeepGet($colors, hemelblauw darkest);
-				}
+				background-color: mapDeepGet($colors, hemelblauw darkest);
 				&:hover, &:active {
-					&:before {
-						background-color: mapDeepGet($colors, hemelblauw default);
-					}
+					background-color: mapDeepGet($colors, hemelblauw default);
 				}
 			}
 		}

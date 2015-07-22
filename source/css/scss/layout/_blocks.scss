@@ -5,6 +5,10 @@
 	&--side {
 		margin-bottom: 1.5em;
 	}
+	&--blue {
+		background-color: mapDeepGet($colors, hemelblauw lightest);
+		padding: 0.5em;
+	}
 }
 .block-title {
 
