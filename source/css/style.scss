@@ -13,6 +13,7 @@
 
 // Lay-out
 @import "scss/layout/grid";
+@import "scss/layout/blocks";
 @import "scss/layout/zindex";
 
 // Typography
@@ -26,6 +27,7 @@
 // Main Elements
 @import "scss/header/header";
 @import "scss/header/header-logo";
+@import "scss/header/breadcrumbs";
 @import "scss/footer/footer";
 
 // Specific elements

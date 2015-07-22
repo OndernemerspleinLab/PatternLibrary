@@ -46,6 +46,8 @@ abbr {
 .intro {
 	font-size: $font-size-large;
     font-style: italic;
+    display: block;
+    clear: both;
 }
 
 //Pullquote
@@ -54,27 +56,15 @@ abbr {
     font-style: italic;
 }
 
-//Text Passages
-.text {
-	a {
-		text-decoration: underline;
+//Info text
+.infoText {
+	font-style: italic;
+	margin-bottom: 1em;
+
+	&--source {
+		float: left;
 	}
-
-	ul {
-		list-style: square;
-		margin: 0 0 $space 1.2em;
-
-		ul {
-			margin-bottom: 0;
-		}
-	}
-
-	ol {
-		list-style: decimal;
-		margin: 0 0 $space 1.2em;
-
-		ol {
-			margin-bottom: 0;
-		}
+	&--date {
+		float: right;
 	}
 }

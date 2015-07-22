@@ -61,31 +61,6 @@
 	text-align: left;
 }
 
-/* Display Classes */
-.hide-small {
-    @media all and (max-width: $bp-med) {
-        display: none;
-    }
-}
-
-.hide-med {
-    @media all and (min-width: $bp-med) and (max-width: $bp-large) {
-        display: none;
-    }
-}
-
-.hide-large {
-    @media all and (min-width: $bp-large) {
-        display: none;
-    }
-}
-
-.hide-large-2 {
-    @media all and (min-width:$bp-large-2) {
-        display: none;
-    }
-}
-
 //
 .valid {
 	color: mapDeepGet($colors, groen default);
@@ -94,9 +69,3 @@
 .error {
 	color: mapDeepGet($colors, rood default);
 }
-
-.info {
-
-}
-
-

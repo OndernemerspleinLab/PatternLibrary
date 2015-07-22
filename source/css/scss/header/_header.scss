@@ -15,36 +15,3 @@
 	margin: 1rem;
 	text-align: right;
 }
-
-// Kruimelpad
-.breadcrumbs {
-	margin: 0 1rem;
-
-	li {
-		display: inline-block;
-		.brandBar & {
-			color: mapDeepGet($colors, wit);
-		}
-		&:before {
-			content: ">";
-			display: inline-block;
-			padding-right: $pad;
-		}
-		&:first-child:before {
-			content: "";
-			padding-right: 0;
-		}
-	}
-
-	a {
-		display: inline-block;
-		padding: $pad-half $pad $pad-half 0;
-		text-decoration: none;
-		.brandBar & {
-			color: mapDeepGet($colors, wit);
-		}
-		&:hover, &:active {
-			text-decoration: underline;
-		}
-	}
-}

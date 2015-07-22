@@ -1,13 +1,6 @@
 /*------------------------------------*\
     $MAIN CONTENT AREA
 \*------------------------------------*/
-[role=main] {
-	padding: $pad-half $pad-half $pad-double;
-	overflow: hidden;
-	@extend .lc;
-	@extend .cf;
-}
-
 body {
 	background: $white;
 	font: 100%/1.5 $font;
@@ -16,14 +9,6 @@ body {
 	@include mqLesserThan(extraLarge) {
 		padding-left: 50px;
 	}
-}
-
-b, strong {
-	font-weight: bold;
-}
-
-em {
-	font-style: italic;
 }
 
 .textLine {

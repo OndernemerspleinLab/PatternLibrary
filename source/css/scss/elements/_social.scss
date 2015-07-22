@@ -45,7 +45,7 @@
 
 .social {
 	overflow: hidden;
-
+	padding-left: 0;
 
 	li {
 		display: inline-block;
@@ -130,6 +130,7 @@
 			text-align: right;
 		}
 		padding: $pad-half $pad;
+		margin: 0;
 		a {
 			height: 24px;
 			width: 24px;
