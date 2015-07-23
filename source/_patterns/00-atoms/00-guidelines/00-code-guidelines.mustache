@@ -1,0 +1,117 @@
+CODE GUIDELINES
+
+1) Class names
+
+.breadcrumbs (standaard)
+.breadcrumbs-list (subitem)
+.breadcrumbs-item (subitem)
+.breadcrumbs--footer (variant op standaard | gebruik: class = ".breadcrumbs .breadcrumbs--footer")
+
+.pageHeader (standaard meerdere woorden met camelCase)
+.pageHeader-link
+.pageHeader--home
+
+STATES
+.is-opened
+.is-closed
+.is-animating
+.is-selected
+.is-disabled
+
+JAVASCRIPT / ANGULAR
+.js-openClose / .js-openClose-content
+.js-accordion / .js-accordion--mobile
+
+ANGULAR ANIMATION CLASSES
+.ngAnimate-height
+.ngAnimate-scale
+.ngAnimate-opacity
+
+2) Mixin names
+
+Altijd camelCase!
+
+@mixin accShow
+@mixin showText
+
+3) Var names
+
+Altijd camelCase!
+
+$lightBlue
+%addSidePadding
+$blockMargin
+
+$colors: (
+	blue: (
+		light: #123,
+		dark: #456
+	),
+	red: #222
+);
+@function mapDeepGet($map, $keys) {
+	$result: $map;
+	@each $key in $keys {
+		$result: map-get($result,$key);
+	}
+	@return $result;
+}
+a {
+	color: mapDeepGet($colors, blue light);
+	background-color: mapDeepGet($colors, red);
+}
+
+4) Units
+
+rem		als ie 'vast' moet staan (alleen als de hele pagina schaalt)
+em		als ie mee moet schalen met het element zelf (bijv. "personeel >")
+%		met name voor breedtes (bijv. blokken)
+
+VIEWPORT
+vw 		breedte van browserscherm = 100vw
+vh		hoogte van het browserscherm = 100vh
+vmin
+vmax
+
+Voor de definitie van borders kan/mag wel gebruik worden gemaakt van pixels,
+omdat het strakke, voorspelbare lijnen moeten zijn.
+
+5) z-index
+
+Isaac maakt mixin
+
+6) boxSizing
+
+Standaard op 'border-box' (zie _reset.scss)
+
+7) Normalize
+
+Nieuwste versie (3.0.3) downloaden!
++ combineren met _reset.scss
+
+VERWERKT!!!
+
+8) Lay-out
+
+Standaard flexbox (geen Float, inlineBlock)
+
+9) Uitzoeken: Responsive images
+
+Toon aparte afbeelding per schermgrootte, alternatief voor wat we nu doen bij Subhome Personeel
+
+html5-picture-element
+
+10) Iconen
+
+Hoe om te gaan met iconen? Met name bij Thema's
+
+In iconFont of SVG's?
+Houdt rekening met requests/performance
+Beheer door redactie of definieren in CSS
+etc.
+
+Functionele iconen in iconFont en content gerelateerde iconen in SVG???
+
+11) Taal
+
+Gebruik Engels voor classnamen en commentaar binnen CSS en Javascript
