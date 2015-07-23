@@ -71,3 +71,10 @@ abbr {
 .highlight--blue {
 	color: mapDeepGet($colors, hemelblauw default);
 }
+
+.yellow-marker {
+	background-color: yellow;
+}
+.yellow-line {
+	border-bottom: 10px yellow solid;
+}
