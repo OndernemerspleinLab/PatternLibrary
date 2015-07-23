@@ -26,9 +26,11 @@ $space: 2rem;
 
 .column {
 	margin: $space/2;
-	flex: 1 1 100%;
+	//flex: 1 1 100%;
+	flex: 0 1 auto; // default
 
 	&--full {
+		flex-basis: 100%;
 	}
 
 	&--half {
