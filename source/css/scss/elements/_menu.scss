@@ -12,6 +12,7 @@
 	left: 0;
 	top: 0;
 	bottom: 0;
+	@include zIndex(menuBar);
 }
 
 .menuBar {
@@ -20,7 +21,6 @@
 	width: 50px;
 	background: #8fcae7 none repeat scroll 0% 0%;
 	background-image: linear-gradient(#8fcae7, #76d2b6);
-	z-index: 10;
 
 	&:before {
 		content: "";
@@ -31,6 +31,7 @@
 		bottom: 0;
 		right: 100%;
 		width: 2000px;
+		width: 100vw;
 	}
 }
 
@@ -100,10 +101,10 @@
 		width: 250px;
 	}
 	&:nth-child(3) {
-		width: 260px;
+		width: 300px;
 	}
 	&:nth-child(4) {
-		width: 270px;
+		width: 350px;
 	}
 
 	ul {
