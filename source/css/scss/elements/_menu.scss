@@ -38,22 +38,16 @@
 .menuBar-item {
 	height: 50px;
 	width: 50px;
-	background: #8fcae7;
 }
 .menuBar-button {
     display: inline-block;
     position: absolute;
     top: 0;
     left: 0;
-    padding: 15px 12px 15px 13px;
+    padding: 15px 0 15px 5px;
     background: none;
     border: none;
-    width: 40px;
-    height: 40px;
 
-    &.active {
-    	background-color: #d9ebf7;
-    }
     &.menuBar-button--menu {
 
 	}
@@ -67,11 +61,17 @@
     	top: 250px;
     }
     &.menuBar-button--feedback {
-    	top: 310px;
+    	top: 320px;
     }
     &.menuBar-button--enquete {
-    	top: 370px;
+    	top: 380px;
     }
+}
+// SVG Icon
+.menuBar-icon {
+	width: 40px;
+	height: 40px;
+	fill: mapDeepGet($colors, hemelblauw darkest);
 }
 
 .menuBar-content {
