@@ -16,6 +16,7 @@
     "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-rename": "0.0.3",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-postcss": "^0.5.5",
     "grunt-sass": "^1.0.0",
