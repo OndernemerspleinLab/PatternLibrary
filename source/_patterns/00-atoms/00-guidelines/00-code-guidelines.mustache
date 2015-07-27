@@ -1,117 +1,106 @@
-CODE GUIDELINES
+<style type="text/css">
+p { margin-bottom: 1em; }
+</style>
+<h1>Code Guidelines</h1>
 
-1) Class names
+<h2>1) Class names</h2>
 
-.breadcrumbs (standaard)
-.breadcrumbs-list (subitem)
-.breadcrumbs-item (subitem)
-.breadcrumbs--footer (variant op standaard | gebruik: class = ".breadcrumbs .breadcrumbs--footer")
+<p>.breadcrumbs (standaard)<br />
+.breadcrumbs-list (subitem)<br />
+.breadcrumbs-item (subitem)<br />
+.breadcrumbs--footer (variant op standaard | gebruik: class = ".breadcrumbs .breadcrumbs--footer")</p>
 
-.pageHeader (standaard meerdere woorden met camelCase)
-.pageHeader-link
-.pageHeader--home
+<p>.pageHeader (standaard meerdere woorden met camelCase)<br />
+.pageHeader-link<br />
+.pageHeader--home</p>
 
-STATES
-.is-opened
-.is-closed
-.is-animating
-.is-selected
-.is-disabled
+<h3>States</h3>
+<p>.is-opened<br />
+.is-closed<br />
+.is-animating<br />
+.is-selected<br />
+.is-disabled</p>
 
-JAVASCRIPT / ANGULAR
-.js-openClose / .js-openClose-content
-.js-accordion / .js-accordion--mobile
+<h3>Javascript / Angular</h3>
+<p>.js-openClose / .js-openClose-content<br />
+.js-accordion / .js-accordion--mobile</p>
 
-ANGULAR ANIMATION CLASSES
-.ngAnimate-height
-.ngAnimate-scale
-.ngAnimate-opacity
+<h3>Angular Animation Classes</h3>
+<p>.ngAnimate-height<br />
+.ngAnimate-scale<br />
+.ngAnimate-opacity</p>
 
-2) Mixin names
+<h2>2) Mixin names</h2>
 
-Altijd camelCase!
+<p><strong>Altijd camelCase!</strong></p>
 
-@mixin accShow
-@mixin showText
+<p>@mixin accShow<br />
+@mixin showText</p>
 
-3) Var names
+<h2>3) Var names</h2>
 
-Altijd camelCase!
+<p><strong>Altijd camelCase!</strong></p>
 
-$lightBlue
-%addSidePadding
-$blockMargin
+<p>$lightBlue<br />
+%addSidePadding<br />
+$blockMargin</p>
 
-$colors: (
-	blue: (
-		light: #123,
-		dark: #456
-	),
-	red: #222
-);
-@function mapDeepGet($map, $keys) {
-	$result: $map;
-	@each $key in $keys {
-		$result: map-get($result,$key);
-	}
-	@return $result;
-}
-a {
-	color: mapDeepGet($colors, blue light);
-	background-color: mapDeepGet($colors, red);
-}
+<h2>4) Units</h2>
 
-4) Units
-
-rem		als ie 'vast' moet staan (alleen als de hele pagina schaalt)
-em		als ie mee moet schalen met het element zelf (bijv. "personeel >")
-%		met name voor breedtes (bijv. blokken)
-
-VIEWPORT
-vw 		breedte van browserscherm = 100vw
-vh		hoogte van het browserscherm = 100vh
-vmin
+<p>
+rem - als ie 'vast' moet staan (alleen als de hele pagina schaalt)<br />
+em - als ie mee moet schalen met het element zelf (bijv. "personeel >")<br />
+% - met name voor breedtes (bijv. blokken)
+</p>
+<h3>Viewport</h3>
+<p>
+vw - breedte van browserscherm = 100vw<br />
+vh - hoogte van het browserscherm = 100vh<br />
+vmin<br />
 vmax
+</p>
 
-Voor de definitie van borders kan/mag wel gebruik worden gemaakt van pixels,
-omdat het strakke, voorspelbare lijnen moeten zijn.
+<p>Voor de definitie van borders kan/mag wel gebruik worden gemaakt van pixels,
+omdat het strakke, voorspelbare lijnen moeten zijn.</p>
 
-5) z-index
+<h2>5) z-index</h2>
 
-Isaac maakt mixin
+<p>Isaac maakt mixin</p>
 
-6) boxSizing
+<p><strong>VERWERKT!!!</strong></p>
 
-Standaard op 'border-box' (zie _reset.scss)
+<h2>6) boxSizing</h2>
 
-7) Normalize
+<p>Standaard op 'border-box' (zie <s>_reset.scss</s> _normalize.scss)</p>
 
-Nieuwste versie (3.0.3) downloaden!
-+ combineren met _reset.scss
+<h2>7) Normalize</h2>
 
-VERWERKT!!!
+<p>Nieuwste versie (3.0.3) downloaden!<br />
++ combineren met _reset.scss</p>
 
-8) Lay-out
+<p><strong>VERWERKT!!!</strong></p>
 
-Standaard flexbox (geen Float, inlineBlock)
+<h2>8) Lay-out</h2>
 
-9) Uitzoeken: Responsive images
+<p>Standaard flexbox (geen Float, inlineBlock)</p>
 
-Toon aparte afbeelding per schermgrootte, alternatief voor wat we nu doen bij Subhome Personeel
+<h2>9) Uitzoeken: Responsive images</h2>
 
-html5-picture-element
+<p>Toon aparte afbeelding per schermgrootte, alternatief voor wat we nu doen bij Subhome Personeel</p>
 
-10) Iconen
+<p>html5-picture-element</p>
 
-Hoe om te gaan met iconen? Met name bij Thema's
+<h2>10) Iconen</h2>
 
-In iconFont of SVG's?
-Houdt rekening met requests/performance
-Beheer door redactie of definieren in CSS
-etc.
+<p>Hoe om te gaan met iconen? Met name bij Thema's</p>
 
-Functionele iconen in iconFont en content gerelateerde iconen in SVG???
+<p>- In iconFont of SVG's?<br />
+- Houdt rekening met requests/performance<br />
+- Beheer door redactie of definieren in CSS<br />
+- etc.</p>
 
-11) Taal
+<p>Functionele iconen in iconFont en content gerelateerde iconen in SVG???</p>
 
-Gebruik Engels voor classnamen en commentaar binnen CSS en Javascript
+<h2>11) Taal</h2>
+
+<p>Gebruik Engels voor classnamen en commentaar binnen CSS en Javascript</p>
