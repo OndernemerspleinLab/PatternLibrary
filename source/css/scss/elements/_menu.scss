@@ -7,21 +7,30 @@
     left: 0;
 }
 
-.menuBar {
+.menuBarContainer {
 	position: fixed;
-	width: 50px;
 	left: 0;
 	top: 0;
+	bottom: 0;
+}
+
+.menuBar {
+	position: relative;
 	height: 100%;
+	width: 50px;
 	background: #8fcae7 none repeat scroll 0% 0%;
 	background-image: linear-gradient(#8fcae7, #76d2b6);
 	z-index: 10;
-	transform: translate(0px, 0px);
-	transition: all 0.75s ease-in-out;
-	&.active {
-		-webkit-transform: translate(240px, 0px);
-		transform: translate(240px, 0px);
-		transition: all 0.75s ease-in-out;
+
+	&:before {
+		content: "";
+		position: absolute;
+		display: block;
+		background: #d9ebf7;
+		top: 0;
+		bottom: 0;
+		right: 100%;
+		width: 2000px;
 	}
 }
 
@@ -36,6 +45,8 @@
     top: 0;
     left: 0;
     padding: 15px 12px 15px 13px;
+    background: none;
+    border: none;
 
     &.active {
     	background-color: #d9ebf7;
@@ -70,28 +81,30 @@
 }
 
 .menuBar-content {
-	position: fixed;
-	height: 100%;
+	position: absolute;
+	right: 100%;
+	top: 0;
+	bottom: 0;
 	z-index: 10;
-	transform: translate(-240px, 0px);
-	transition: all 0.75s ease-in-out;
 	@include mqLesserThan(extraLarge) {
 		transform: translate(-290px, 0px);
-	}
-	&.active {
-		-webkit-transform: translate(0%, 0px);
-		transform: translate(0%, 0px);
-		transition: all 0.75s ease-in-out;
-		@include mqLesserThan(extraLarge) {
-			-webkit-transform: translate(-50px, 0px);
-			transform: translate(-50px, 0px);
-		}
 	}
 	background: #d9ebf7;
 	overflow-y: visible;
 	overflow-x: hidden;
 	width: 240px;
 	height: 100%;
+
+	// For testing script
+	&:nth-child(2) {
+		width: 250px;
+	}
+	&:nth-child(3) {
+		width: 260px;
+	}
+	&:nth-child(4) {
+		width: 270px;
+	}
 
 	ul {
 	    margin: 0;

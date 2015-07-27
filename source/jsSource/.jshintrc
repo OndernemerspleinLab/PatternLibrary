@@ -1,0 +1,23 @@
+{
+	"esnext": true,
+	"curly": true,
+	"eqeqeq": true,
+	"forin": true,
+	"freeze": true,
+	"futurehostile": true,
+	"maxcomplexity": 10,
+	"maxdepth": 2,
+	"maxparams": 5,
+	"maxstatements": 10,
+	"noarg": true,
+	"nocomma": true,
+	"nonbsp": true,
+	"nonew": true,
+	"notypeof": true,
+	"shadow": "outer",
+	"undef": true,
+	"unused": true,
+	"varstmt": true,
+	"devel": true,
+	"browser": true
+}

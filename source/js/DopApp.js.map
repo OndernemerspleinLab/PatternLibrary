@@ -1,0 +1,1 @@
+{"version":3,"sources":["source/jsSource/DopApp.js"],"names":[],"mappings":";;;;;;;;uBAAoB,SAAS;;;;qBAEd,qBAAQ,MAAM,CAAC,QAAQ,EAAE,EAAE,CAAC","file":"source/jsSource/DopApp.js","sourcesContent":["import angular from 'angular';\n\nexport default angular.module(\"DopApp\", []);"]}

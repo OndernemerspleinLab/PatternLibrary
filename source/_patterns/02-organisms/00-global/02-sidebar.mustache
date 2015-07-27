@@ -1,127 +1,93 @@
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-	$(".menuBar-button--menu").click(function() {
-	  $("#menu").toggleClass("active");
-	  $(".menuBar-button--menu").toggleClass("active");
-	  $(".menuBar").toggleClass("active");
-	});
+<script type="text/ng-template" id="menuBar.html">
+    <div class="menuBar">
+        <div class="menuBar-item">
+            <button href="#" ng-click="viewModel.openClose.toggle('menu')" class="menuBar-button menuBar-button--menu" ng-class="{'is-opened': viewModel.openClose.isOpened('menu')}">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+        <div class="menuBar-item">
+            <button href="#" ng-click="console.log('search');viewModel.openClose.toggle('search')" class="menuBar-button menuBar-button--search" ng-class="{'is-opened': viewModel.openClose.isOpened('search')}">ZZZ</button>
+        </div>
+        <div class="menuBar-item">
+            <button href="#" ng-click="viewModel.openClose.toggle('profile')" class="menuBar-button menuBar-button--profile" ng-class="{'is-opened': viewModel.openClose.isOpened('profile')}">PPP</button>
+        </div>
+        <div class="menuBar-item">
+            <button href="#" ng-click="viewModel.openClose.toggle('share')" class="menuBar-button menuBar-button--share" ng-class="{'is-opened': viewModel.openClose.isOpened('share')}">SSS</button>
+        </div>
+        <div class="menuBar-item">
+            <button href="#" ng-click="viewModel.openClose.toggle('feedback')" class="menuBar-button menuBar-button--feedback" ng-class="{'is-opened': viewModel.openClose.isOpened('feedback')}">FFF</button>
+        </div>
+        <div class="menuBar-item">
+            <button href="#" ng-click="viewModel.openClose.toggle('enquete')" class="menuBar-button menuBar-button--enquete" ng-class="{'is-opened': viewModel.openClose.isOpened('enquete')}">????</button>
+        </div>
+    </div>
 
-	$(".menuBar-button--search").click(function() {
-	  $("#search").toggleClass("active");
-	  $(".menuBar-button--search").toggleClass("active");
-	  $(".menuBar").toggleClass("active");
-	});
+    <div id="menu" class="menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('menu')">
+        <ul>
+            <li><a href="#" class="homeLink">Home</a></li>
+        </ul>
+        <span class="kopje textLine">Onderwerpen</span>
+        <ul>
+            <li><a href="#">Personeel</a></li>
+            <li><a href="#">Bedrijf starten</a></li>
+            <li><a href="#">Handelsregister</a></li>
+            <li><a href="#">Administratie</a></li>
+            <li><a href="#">Geldzaken</a></li>
+            <li><a href="#">Belastingen</a></li>
+            <li><a href="#">Internationaal ondernemen</a></li>
+            <li><a href="#">Innovatie en productontwikkeling</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Huisvesting</a></li>
+            <li><a href="#">Bedrijf organiseren</a></li>
+            <li><a href="#">Bedrijf beschermen</a></li>
+            <li><a href="#">Freelance en zzp</a></li>
+            <li><a href="#">Bedrijf stoppen of verkopen</a></li>
+            <li><a href="#">Duurzaam ondernemen</a></li>
+        </ul>
+        <span class="kopje textLine">Direct naar</span>
+        <ul>
+            <li><a href="#">Wetten en regels</a></li>
+            <li><a href="#">Wetswijzigingen</a></li>
+            <li><a href="#">Subsidies</a></li>
+            <li><a href="#">Direct regelen</a></li>
+            <li><a href="#">Branche-informatie</a></li>
+            <li><a href="#">Regio-informatie</a></li>
+            <li><a href="#">Webinars en video's</a></li>
+            <li><a href="#">Evenementen</a></li>
+        </ul>
+        <span class="kopje textLine">Ondernemersplein</span>
+        <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Uw idee ter verbetering</a></li>
+            <li><a href="#">Over ons</a></li>
+        </ul>
+    </div>
+    <div id="search" class="menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('search')">
+        <span class="kopje textLine">Zoeken</span>
+        <p>Hier komt het zoekformulier</p>
+    </div>
+    <div id="profile" class="menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('profile')">
+        <span class="kopje textLine">Uw profiel</span>
+        <p>Hier kan de gebruiker zijn profiel instellen en beheren!</p>
+    </div>
+    <div id="share" class="menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('share')">
+        <span class="kopje textLine">Deel deze pagina via</span>
+        <p>Facebook | Twitter | LinkedIn | Google+ | E-mail</p>
+    </div>
+    <div id="feedback" class="menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('feedback')">
+        <span class="kopje textLine">Geef uw mening</span>
+        <p>Heeft deze informatie u geholpen?</p>
+        <p>Ja / Nee</p>
+    </div>
+    <div id="enquete" class="menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('enquete')">
+        <span class="kopje textLine">Enquete</span>
+        <p>Hier komt de korte enquete</p>
+    </div>
 
-	$(".menuBar-button--profile").click(function() {
-	  $("#profile").toggleClass("active");
-	  $(".menuBar-button--profile").toggleClass("active");
-	  $(".menuBar").toggleClass("active");
-	});
-
-	$(".menuBar-button--share").click(function() {
-	  $("#share").toggleClass("active");
-	  $(".menuBar-button--share").toggleClass("active");
-	  $(".menuBar").toggleClass("active");
-	});
-
-	$(".menuBar-button--feedback").click(function() {
-	  $("#feedback").toggleClass("active");
-	  $(".menuBar-button--feedback").toggleClass("active");
-	  $(".menuBar").toggleClass("active");
-	});
-
-	$(".menuBar-button--enquete").click(function() {
-	  $("#enquete").toggleClass("active");
-	  $(".menuBar-button--enquete").toggleClass("active");
-	  $(".menuBar").toggleClass("active");
-	});
-});
 </script>
 
-<div class="menuBar">
-	<div class="menuBar-item">
-		<a href="#" class="menuBar-button menuBar-button--menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </a>
-	</div>
-	<div class="menuBar-item">
-		<a href="#" class="menuBar-button menuBar-button--search">ZZZ</a>
-	</div>
-	<div class="menuBar-item">
-		<a href="#" class="menuBar-button menuBar-button--profile">PPP</a>
-	</div>
-	<div class="menuBar-item">
-		<a href="#" class="menuBar-button menuBar-button--share">SSS</a>
-	</div>
-	<div class="menuBar-item">
-		<a href="#" class="menuBar-button menuBar-button--feedback">FFF</a>
-	</div>
-	<div class="menuBar-item">
-		<a href="#" class="menuBar-button menuBar-button--enquete">????</a>
-	</div>
-</div>
+<div class="menuBarContainer ngAnimate-menuBar" menu-bar>
 
-<div id="menu" class="menuBar-content">
-	<ul>
-        <li><a href="#" class="homeLink">Home</a></li>
-    </ul>
-	<span class="kopje textLine">Onderwerpen</span>
-    <ul>
-        <li><a href="#">Personeel</a></li>
-        <li><a href="#">Bedrijf starten</a></li>
-        <li><a href="#">Handelsregister</a></li>
-        <li><a href="#">Administratie</a></li>
-        <li><a href="#">Geldzaken</a></li>
-        <li><a href="#">Belastingen</a></li>
-        <li><a href="#">Internationaal ondernemen</a></li>
-        <li><a href="#">Innovatie en productontwikkeling</a></li>
-        <li><a href="#">Marketing</a></li>
-        <li><a href="#">Huisvesting</a></li>
-        <li><a href="#">Bedrijf organiseren</a></li>
-        <li><a href="#">Bedrijf beschermen</a></li>
-        <li><a href="#">Freelance en zzp</a></li>
-        <li><a href="#">Bedrijf stoppen of verkopen</a></li>
-        <li><a href="#">Duurzaam ondernemen</a></li>
-    </ul>
-    <span class="kopje textLine">Direct naar</span>
-    <ul>
-        <li><a href="#">Wetten en regels</a></li>
-        <li><a href="#">Wetswijzigingen</a></li>
-        <li><a href="#">Subsidies</a></li>
-        <li><a href="#">Direct regelen</a></li>
-        <li><a href="#">Branche-informatie</a></li>
-        <li><a href="#">Regio-informatie</a></li>
-        <li><a href="#">Webinars en video's</a></li>
-        <li><a href="#">Evenementen</a></li>
-    </ul>
-    <span class="kopje textLine">Ondernemersplein</span>
-    <ul>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Uw idee ter verbetering</a></li>
-        <li><a href="#">Over ons</a></li>
-    </ul>
-</div>
-<div id="search" class="menuBar-content">
-	<span class="kopje textLine">Zoeken</span>
-	<p>Hier komt het zoekformulier</p>
-</div>
-<div id="profile" class="menuBar-content">
-	<span class="kopje textLine">Uw profiel</span>
-	<p>Hier kan de gebruiker zijn profiel instellen en beheren!</p>
-</div>
-<div id="share" class="menuBar-content">
-	<span class="kopje textLine">Deel deze pagina via</span>
-	<p>Facebook | Twitter | LinkedIn | Google+ | E-mail</p>
-</div>
-<div id="feedback" class="menuBar-content">
-	<span class="kopje textLine">Geef uw mening</span>
-	<p>Heeft deze informatie u geholpen?</p>
-	<p>Ja / Nee</p>
-</div>
-<div id="enquete" class="menuBar-content">
-	<span class="kopje textLine">Enquete</span>
-	<p>Hier komt de korte enquete</p>
 </div>

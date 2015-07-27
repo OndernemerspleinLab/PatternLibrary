@@ -1,0 +1,4 @@
+// For specificity so ng-hide can be overridden
+.is-animating.is-animating {
+	display: block !important;
+}

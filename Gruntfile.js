@@ -8,10 +8,27 @@ module.exports = function(grunt) {
 			options: { force: true },
 			files: ['./public/patterns', './fonts/iconFont']
 		},
+
+		babel: {
+			options: {
+				stage: 0,
+				sourceMap: true,
+			},
+			development: {
+				cwd: './source/jsSource/',
+				src: '*.js',
+				dest: './source/js/',
+				expand: true,
+			}
+		},
 		copy: {
+			script: {
+				files: [
+				{ expand: true, cwd: './source/jsSource/', src: '**/*.js', dest: './public/js/'},
+				]
+			},
 			main: {
 				files: [
-				{ expand: true, cwd: './source/js/', src: '*', dest: './public/js/'},
 				{ expand: true, cwd: './source/css/', src: '*.css', dest: './public/css/' },
 				{ expand: true, cwd: './source/images/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/' },
 				{ expand: true, cwd: './source/images/sample/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/sample/'},
@@ -40,7 +57,17 @@ module.exports = function(grunt) {
 				files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
 				tasks: ['default']
 			},
+			js: { //scss can be watched if you like
+				options: {
+					livereload: true
+				},
+				files: ['source/jsSource/**/*.js'],
+				tasks: ['copy:script']
+			},
 			iconFont: {
+				options: {
+					livereload: true
+				},
 				files: [
 					'source/iconFontSource/**/*.svg',
 					'source/iconFontSource/template.css',
@@ -97,13 +124,13 @@ module.exports = function(grunt) {
 		},
 		svgstore: {
 			options: {
-				prefix: 'icon-',
+				prefix: 'figures-',
 				includedemo: true,
 				cleanup: true,
 			},
 			main: {
 				files: {
-					'./svg-out/icons.svg': './svg/**/*.svg',
+					'./source/_patterns/00-atoms/01-global/figures.mustache': './source/svgSource/**/*.svg',
 				},
 			},
 		},
@@ -180,7 +207,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('styles', ['webfont', 'sass', 'postcss']);
 
 	//if you choose to use scss, or any preprocessor, you can add it here
-	grunt.registerTask('default', ['clean', 'patternlab', 'styles', 'copy']);
+	grunt.registerTask('default', ['clean', 'patternlab', 'svgstore', 'styles', 'copy']);
 
 	// Deploy to GitHub Pages
 	grunt.registerTask('deploy', ['default', 'buildcontrol:gh-pages']);
