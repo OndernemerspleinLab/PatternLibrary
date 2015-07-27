@@ -134,13 +134,22 @@ module.exports = function(grunt) {
 		svgstore: {
 			options: {
 				prefix: 'figures-',
-				includedemo: true,
+				includedemo: grunt.file.read('./source/svgSource/template.html'),
 				cleanup: true,
 			},
 			main: {
 				files: {
 					'./source/_patterns/00-atoms/04-images/figures.mustache': './source/svgSource/**/*.svg',
 				},
+			},
+		},
+
+		rename: {
+			svgFigures: {
+				files: {
+					'./source/_patterns/00-atoms/04-images/01-figures-demo.mustache':
+							'./source/_patterns/00-atoms/04-images/figures.mustache-demo.html',
+				}
 			},
 		},
 		nodeunit: {
@@ -215,7 +224,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('styles', ['webfont', 'sass', 'postcss']);
 	grunt.registerTask('copyToPublic', ['copy:main', 'copy:script']);
-	grunt.registerTask('svgFigures', ['svgstore']);
+	grunt.registerTask('svgFigures', ['svgstore', 'rename:svgFigures']);
 
 	//if you choose to use scss, or any preprocessor, you can add it here
 	grunt.registerTask('default', ['clean', 'svgFigures', 'patternlab', 'styles', 'copyToPublic']);
