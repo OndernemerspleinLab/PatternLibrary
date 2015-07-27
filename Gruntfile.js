@@ -124,13 +124,13 @@ module.exports = function(grunt) {
 		},
 		svgstore: {
 			options: {
-				prefix: 'icon-',
+				prefix: 'figures-',
 				includedemo: true,
 				cleanup: true,
 			},
 			main: {
 				files: {
-					'./svg-out/icons.svg': './svg/**/*.svg',
+					'./source/_patterns/00-atoms/01-global/figures.mustache': './source/svgSource/**/*.svg',
 				},
 			},
 		},
@@ -207,7 +207,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('styles', ['webfont', 'sass', 'postcss']);
 
 	//if you choose to use scss, or any preprocessor, you can add it here
-	grunt.registerTask('default', ['clean', 'patternlab', 'styles', 'copy']);
+	grunt.registerTask('default', ['clean', 'patternlab', 'svgstore', 'styles', 'copy']);
 
 	// Deploy to GitHub Pages
 	grunt.registerTask('deploy', ['default', 'buildcontrol:gh-pages']);

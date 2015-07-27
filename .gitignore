@@ -11,3 +11,5 @@ patternlab.json
 /source/iconFontSource/icons.html
 /source/fonts/iconFont
 jspm_packages
+/source/_patterns/00-atoms/01-global/figures.mustache
+/source/_patterns/00-atoms/01-global/figures.mustache-demo.html
