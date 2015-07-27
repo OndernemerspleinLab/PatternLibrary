@@ -4,6 +4,50 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		watch: {
+			scss: { //scss can be watched if you like
+				options: {
+					livereload: true
+				},
+				files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
+				tasks: ['default']
+			},
+			js: { //scss can be watched if you like
+				options: {
+					livereload: true
+				},
+				files: ['source/jsSource/**/*.js'],
+				tasks: ['copy:script']
+			},
+			svgFigures: { //scss can be watched if you like
+				options: {
+					livereload: true
+				},
+				files: ['source/svgSource/**/*.svg'],
+				tasks: ['default'],
+			},
+			iconFont: {
+				options: {
+					livereload: true
+				},
+				files: [
+					'source/iconFontSource/**/*.svg',
+					'source/iconFontSource/template.css',
+					'source/iconFontSource/demoTemplate.html',
+				]
+			},
+			all: {
+				options: {
+					livereload: true
+				},
+				files: [
+				'source/_patterns/**/*.mustache',
+				'source/_patterns/**/*.json',
+				'source/_data/*.json'
+				],
+				tasks: ['default']
+			}
+		},
 		clean: {
 			options: { force: true },
 			files: ['./public/patterns', './fonts/iconFont']
@@ -22,6 +66,8 @@ module.exports = function(grunt) {
 			}
 		},
 		copy: {
+			svgDemo: {
+			},
 			script: {
 				files: [
 				{ expand: true, cwd: './source/jsSource/', src: '**/*.js', dest: './public/js/'},
@@ -48,43 +94,6 @@ module.exports = function(grunt) {
 				"node": true
 			},
 			patternlab: ['Gruntfile.js', './builder/lib/patternlab.js']
-		},
-		watch: {
-			scss: { //scss can be watched if you like
-				options: {
-					livereload: true
-				},
-				files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
-				tasks: ['default']
-			},
-			js: { //scss can be watched if you like
-				options: {
-					livereload: true
-				},
-				files: ['source/jsSource/**/*.js'],
-				tasks: ['copy:script']
-			},
-			iconFont: {
-				options: {
-					livereload: true
-				},
-				files: [
-					'source/iconFontSource/**/*.svg',
-					'source/iconFontSource/template.css',
-					'source/iconFontSource/demoTemplate.html',
-				]
-			},
-			all: {
-				options: {
-					livereload: true
-				},
-				files: [
-				'source/_patterns/**/*.mustache',
-				'source/_patterns/**/*.json',
-				'source/_data/*.json'
-				],
-				tasks: ['default']
-			}
 		},
 		sass: {
 			build: {
@@ -205,9 +214,11 @@ module.exports = function(grunt) {
 	grunt.task.loadTasks('./builder/');
 
 	grunt.registerTask('styles', ['webfont', 'sass', 'postcss']);
+	grunt.registerTask('copyToPublic', ['copy:main', 'copy:script']);
+	grunt.registerTask('svgFigures', ['svgstore']);
 
 	//if you choose to use scss, or any preprocessor, you can add it here
-	grunt.registerTask('default', ['clean', 'patternlab', 'svgstore', 'styles', 'copy']);
+	grunt.registerTask('default', ['clean', 'svgFigures', 'patternlab', 'styles', 'copyToPublic']);
 
 	// Deploy to GitHub Pages
 	grunt.registerTask('deploy', ['default', 'buildcontrol:gh-pages']);
