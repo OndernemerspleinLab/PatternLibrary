@@ -139,7 +139,7 @@ module.exports = function(grunt) {
 			},
 			main: {
 				files: {
-					'./source/_patterns/00-atoms/01-global/figures.mustache': './source/svgSource/**/*.svg',
+					'./source/_patterns/00-atoms/04-images/figures.mustache': './source/svgSource/**/*.svg',
 				},
 			},
 		},
