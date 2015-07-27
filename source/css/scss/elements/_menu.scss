@@ -72,6 +72,8 @@
 	width: 40px;
 	height: 40px;
 	fill: mapDeepGet($colors, hemelblauw darkest);
+	stroke: mapDeepGet($colors, hemelblauw default);
+	stroke-width: 1px;
 }
 
 .menuBar-content {
