@@ -35,36 +35,34 @@
 	}
 }
 
-.menuBar-item {
-	height: 50px;
-	width: 50px;
-}
 .menuBar-button {
     display: inline-block;
     position: absolute;
-    top: 0;
+    top: 15px;
     left: 0;
-    padding: 15px 0 15px 5px;
     background: none;
     border: none;
+    width: 50px;
+    height: 50px;
+    padding: 0;
 
     &.menuBar-button--menu {
 
 	}
     &.menuBar-button--search {
-		top: 60px;
+		top: 75px;
     }
     &.menuBar-button--profile {
-    	top: 130px;
+    	top: 145px;
     }
     &.menuBar-button--share {
-    	top: 250px;
+    	top: 265px;
     }
     &.menuBar-button--feedback {
-    	top: 320px;
+    	top: 335px;
     }
     &.menuBar-button--enquete {
-    	top: 380px;
+    	top: 405px;
     }
 }
 // SVG Icon
@@ -72,8 +70,17 @@
 	width: 40px;
 	height: 40px;
 	fill: mapDeepGet($colors, hemelblauw darkest);
-	stroke: mapDeepGet($colors, wit);
-	stroke-width: 1px;
+	transition: all .2s ease-in-out;
+}
+button:hover {
+	.menuBar-icon {
+		//stroke: mapDeepGet($colors, wit);
+		//stroke-width: 1px;
+		//fill-opacity:0.1;
+		//stroke-opacity:0.9;
+		fill: mapDeepGet($colors, zwart);
+		transform: scale(1.1);
+	}
 }
 
 .menuBar-content {
