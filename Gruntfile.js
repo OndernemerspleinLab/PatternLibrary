@@ -47,6 +47,20 @@ module.exports = function(grunt) {
 				'source/_data/*.json'
 				],
 				tasks: ['default']
+			},
+			images: {
+				options: {
+					livereload: true
+				},
+				files: [
+					'./source/images/**/*.png',
+					'./source/images/**/*.jpg',
+					'./source/images/**/*.gif',
+					'./source/images/**/*.jpeg',
+					'./source/images/**/*.svg',
+				],
+				tasks: ['copy:images'],
+
 			}
 		},
 		clean: {
@@ -79,10 +93,13 @@ module.exports = function(grunt) {
 					{ expand: true, cwd: './source/css/', src: '*.css', dest: './public/css/' },
 				]
 			},
+			images: {
+				files: [
+					{ expand: true, cwd: './source/images/', src: ['**/*.png', '**/*.jpg', '**/*.gif', '**/*.jpeg', '**/*.svg'], dest: './public/images/' },
+				]
+			},
 			main: {
 				files: [
-					{ expand: true, cwd: './source/images/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/' },
-					{ expand: true, cwd: './source/images/sample/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/sample/'},
 					{ expand: true, cwd: './source/fonts/', src: '**', dest: './public/fonts/'},
 					{ expand: true, cwd: './source/_data/', src: 'annotations.js', dest: './public/data/' }
 				]
@@ -229,7 +246,7 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('styles', ['webfont', 'sass', 'postcss', 'copy:style']);
 	grunt.registerTask('scripts', ['copy:script']);
-	grunt.registerTask('copyToPublic', ['copy:main']);
+	grunt.registerTask('copyToPublic', ['copy:main', 'copy:images']);
 	grunt.registerTask('svgFigures', ['svgstore', 'rename:svgFigures']);
 
 	//if you choose to use scss, or any preprocessor, you can add it here
