@@ -71,16 +71,20 @@ module.exports = function(grunt) {
 			},
 			script: {
 				files: [
-				{ expand: true, cwd: './source/jsSource/', src: '**/*.js', dest: './public/js/'},
+					{ expand: true, cwd: './source/jsSource/', src: '**/*.js', dest: './public/js/'},
+				]
+			},
+			style: {
+				files: [
+					{ expand: true, cwd: './source/css/', src: '*.css', dest: './public/css/' },
 				]
 			},
 			main: {
 				files: [
-				{ expand: true, cwd: './source/css/', src: '*.css', dest: './public/css/' },
-				{ expand: true, cwd: './source/images/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/' },
-				{ expand: true, cwd: './source/images/sample/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/sample/'},
-				{ expand: true, cwd: './source/fonts/', src: '**', dest: './public/fonts/'},
-				{ expand: true, cwd: './source/_data/', src: 'annotations.js', dest: './public/data/' }
+					{ expand: true, cwd: './source/images/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/' },
+					{ expand: true, cwd: './source/images/sample/', src: ['*.png', '*.jpg', '*.gif', '*.jpeg'], dest: './public/images/sample/'},
+					{ expand: true, cwd: './source/fonts/', src: '**', dest: './public/fonts/'},
+					{ expand: true, cwd: './source/_data/', src: 'annotations.js', dest: './public/data/' }
 				]
 			}
 		},
@@ -223,7 +227,7 @@ module.exports = function(grunt) {
 	//load the patternlab task
 	grunt.task.loadTasks('./builder/');
 
-	grunt.registerTask('styles', ['webfont', 'sass', 'postcss']);
+	grunt.registerTask('styles', ['webfont', 'sass', 'postcss', 'copy:style']);
 	grunt.registerTask('scripts', ['copy:script']);
 	grunt.registerTask('copyToPublic', ['copy:main']);
 	grunt.registerTask('svgFigures', ['svgstore', 'rename:svgFigures']);
