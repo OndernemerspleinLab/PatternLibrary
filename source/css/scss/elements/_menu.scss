@@ -80,7 +80,7 @@ button:hover {
 		//stroke-opacity:0.9;
 		//fill: mapDeepGet($colors, zwart);
 		filter: url(http://localhost:9001/styleguide/images/svg-filters.svg#shadow);
-		//filter: url(#svg-filters-shadow);
+		fill: url(http://localhost:9001/styleguide/images/svg-filters.svg#gradient);
 		transform: scale(1.1);
 	}
 }
