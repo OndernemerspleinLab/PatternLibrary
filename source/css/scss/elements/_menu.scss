@@ -79,8 +79,8 @@ button:hover {
 		//fill-opacity:0.1;
 		//stroke-opacity:0.9;
 		//fill: mapDeepGet($colors, zwart);
-		filter: url(http://localhost:9001/styleguide/images/svg-filters.svg#shadow);
-		fill: url(http://localhost:9001/styleguide/images/svg-filters.svg#gradient);
+		//filter: url(../../images/svg-filters.svg#shadow);
+		fill: url(../../images/svg-filters.svg#gradient);
 		transform: scale(1.1);
 	}
 }
