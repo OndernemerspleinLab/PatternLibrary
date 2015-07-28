@@ -4,6 +4,7 @@ import Immutable from 'immutable';
 
 var serviceNames = [
 	"$http",
+	"$animate",
 	"$rootScope",
 	"$q",
 	"$timeout"

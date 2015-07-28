@@ -1,66 +1,39 @@
 import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
+import {checkClassDecorator} from 'utils/animationUtils';
 
 const duration = 800;
-const ngAnimate = "is-animating";
 const easing = [200, 20];
+const openedClass = "is-opened";
 
-DopApp.animation('.ngAnimate-menuBar', ($timeout) => ({
-	addClass: ($element, className, done, {openedElement}) => {
-		$timeout(() => {
-			// const width = options.openedElement.clientWidth;
-			const width = getComputedStyle(openedElement).getPropertyValue("width");
-			openedElement.classList.add(ngAnimate);
-			console.log(width);
-			done();
-			Velocity($element, {
-				translateX: width,
-			}, {
-				duration,
-				easing,
-				queue: false,
-				complete: () => {
-					openedElement.classList.remove(ngAnimate);
-					done();
-				}
-			});
-		});
-	},
+const getWidth = element => getComputedStyle(element).getPropertyValue("width");
 
-	removeClass: ($element, className, done, {closedElement}) => {
-		closedElement.classList.add(ngAnimate);
-		console.log(closedElement.className);
-		$timeout(() => {
-			Velocity($element, {
-				translateX: "0px",
-			}, {
-				duration,
-				easing,
-				queue: false,
-				complete: () => {
-					closedElement.classList.remove(ngAnimate);
-					done();
-				}
-			});
-		});
-	},
+const animateTranslateX = ($element, translateX, complete) => {
+	Velocity($element, "stop");
+	Velocity($element, {
+		translateX,
+	}, {
+		duration,
+		easing,
+		complete
+	});
+};
+
+DopApp.animation('.ngAnimate-menuBar', () => ({
+	addClass: checkClassDecorator(openedClass, ($element, className, done, {openedElement}) => {
+		const width = getWidth(openedElement);
+		animateTranslateX($element, width, done);
+	}),
+
+	removeClass: checkClassDecorator(openedClass, ($element, className, done) => {
+		const width = "0px";
+		animateTranslateX($element, width, done);
+	}),
 
 	animate: ($element, from, to, done, {openedElement}) => {
-		console.log("animate");
-		$timeout(() => {
-			const width = getComputedStyle(openedElement).getPropertyValue("width");
-			console.log(width);
-			Velocity($element, {
-				translateX: width,
-			}, {
-				duration,
-				easing,
-				queue: false,
-				complete: () => {
-					openedElement.classList.remove(ngAnimate);
-					done();
-				}
-			});
-		});
+		const width = getWidth(openedElement);
+		console.log(width, openedElement.id);
+		animateTranslateX($element, width, done);
+
 	},
 }));
