@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="svgFilters">
+	<defs>
+		<filter id="shadow" x="0" y="0" width="200%" height="200%">
+			<feOffset result="offOut" in="SourceAlpha" dx="8" dy="8" />
+			<feGaussianBlur result="blurOut" in="offOut" stdDeviation="4" />
+			<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+		</filter>
+		<linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ca005d" stop-opacity="1" />
+            <stop offset="60%" stop-color="#42145f" stop-opacity="1" />
+        </linearGradient>
+	</defs>
+	<ellipse cx="200" cy="70" rx="85" ry="55" filter="url(#shadow)" fill="url(#gradient)" />
+</svg>

@@ -11,3 +11,6 @@ body {
 	}
 }
 
+.hide-svg {
+	@include accHide;
+}

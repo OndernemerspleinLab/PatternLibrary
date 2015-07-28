@@ -78,7 +78,9 @@ button:hover {
 		//stroke-width: 1px;
 		//fill-opacity:0.1;
 		//stroke-opacity:0.9;
-		fill: mapDeepGet($colors, zwart);
+		//fill: mapDeepGet($colors, zwart);
+		filter: url(http://localhost:9001/styleguide/images/svg-filters.svg#shadow);
+		//filter: url(#svg-filters-shadow);
 		transform: scale(1.1);
 	}
 }
