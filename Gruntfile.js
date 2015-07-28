@@ -53,11 +53,11 @@ module.exports = function(grunt) {
 					livereload: true
 				},
 				files: [
-					'./source/images/**/*.png',
-					'./source/images/**/*.jpg',
-					'./source/images/**/*.gif',
-					'./source/images/**/*.jpeg',
-					'./source/images/**/*.svg',
+					'source/images/**/*.png',
+					'source/images/**/*.jpg',
+					'source/images/**/*.gif',
+					'source/images/**/*.jpeg',
+					'source/images/**/*.svg',
 				],
 				tasks: ['copy:images'],
 
