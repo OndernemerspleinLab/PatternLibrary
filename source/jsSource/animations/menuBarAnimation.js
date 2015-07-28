@@ -18,6 +18,7 @@ DopApp.animation('.ngAnimate-menuBar', ($timeout) => ({
 			}, {
 				duration,
 				easing,
+				queue: false,
 				complete: () => {
 					openedElement.classList.remove(ngAnimate);
 					done();
@@ -35,6 +36,7 @@ DopApp.animation('.ngAnimate-menuBar', ($timeout) => ({
 			}, {
 				duration,
 				easing,
+				queue: false,
 				complete: () => {
 					closedElement.classList.remove(ngAnimate);
 					done();
@@ -54,6 +56,7 @@ DopApp.animation('.ngAnimate-menuBar', ($timeout) => ({
 			}, {
 				duration,
 				easing,
+				queue: false,
 				complete: () => {
 					openedElement.classList.remove(ngAnimate);
 					done();
