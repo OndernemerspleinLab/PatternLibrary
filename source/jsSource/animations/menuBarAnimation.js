@@ -48,7 +48,6 @@ DopApp.animation('.ngAnimate-menuBar', ($timeout) => ({
 	animate: ($element, from, to, done, {openedElement}) => {
 		console.log("animate");
 		$timeout(() => {
-			// const width = openedElement.clientWidth;
 			const width = getComputedStyle(openedElement).getPropertyValue("width");
 			console.log(width);
 			Velocity($element, {
