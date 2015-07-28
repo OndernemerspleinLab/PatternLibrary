@@ -10,14 +10,14 @@ module.exports = function(grunt) {
 					livereload: true
 				},
 				files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
-				tasks: ['default']
+				tasks: ['styles'],
 			},
 			js: { //scss can be watched if you like
 				options: {
 					livereload: true
 				},
 				files: ['source/jsSource/**/*.js'],
-				tasks: ['copy:script']
+				tasks: ['scripts'],
 			},
 			svgFigures: { //scss can be watched if you like
 				options: {
@@ -34,7 +34,8 @@ module.exports = function(grunt) {
 					'source/iconFontSource/**/*.svg',
 					'source/iconFontSource/template.css',
 					'source/iconFontSource/demoTemplate.html',
-				]
+				],
+				tasks: ['styles'],
 			},
 			all: {
 				options: {
@@ -223,11 +224,12 @@ module.exports = function(grunt) {
 	grunt.task.loadTasks('./builder/');
 
 	grunt.registerTask('styles', ['webfont', 'sass', 'postcss']);
-	grunt.registerTask('copyToPublic', ['copy:main', 'copy:script']);
+	grunt.registerTask('scripts', ['copy:script']);
+	grunt.registerTask('copyToPublic', ['copy:main']);
 	grunt.registerTask('svgFigures', ['svgstore', 'rename:svgFigures']);
 
 	//if you choose to use scss, or any preprocessor, you can add it here
-	grunt.registerTask('default', ['clean', 'svgFigures', 'patternlab', 'styles', 'copyToPublic']);
+	grunt.registerTask('default', ['clean', 'svgFigures', 'patternlab', 'styles', 'scripts', 'copyToPublic']);
 
 	// Deploy to GitHub Pages
 	grunt.registerTask('deploy', ['default', 'buildcontrol:gh-pages']);
