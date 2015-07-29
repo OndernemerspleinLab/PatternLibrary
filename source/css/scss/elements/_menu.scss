@@ -19,14 +19,14 @@
 	position: relative;
 	height: 100%;
 	width: 50px;
-	background: #8fcae7 none repeat scroll 0% 0%;
-	background-image: linear-gradient(#8fcae7, #76d2b6);
+	background: mapDeepGet($colors, blauw lichtblauwRH) none repeat scroll 0% 0%;
+	background-image: linear-gradient(mapDeepGet($colors, blauw lichtblauwRH), mapDeepGet($colors, groen mintgroenRH));
 
 	&:before {
 		content: "";
 		position: absolute;
 		display: block;
-		background: #d9ebf7;
+		background: mapDeepGet($colors, hemelblauw lightest);
 		top: 0;
 		bottom: 0;
 		right: 100%;
@@ -64,7 +64,15 @@
     &.menuBar-button--enquete {
     	top: 405px;
     }
+
+    &.is-opened {
+    	.menuBar-icon {
+    		fill: mapDeepGet($colors, zwart);
+    		transform: scale(1.1);
+    	}
+	}
 }
+
 // SVG Icon
 .menuBar-icon {
 	width: 40px;
@@ -78,9 +86,9 @@ button:hover {
 		//stroke-width: 1px;
 		//fill-opacity:0.1;
 		//stroke-opacity:0.9;
-		//fill: mapDeepGet($colors, zwart);
+		fill: mapDeepGet($colors, zwart);
 		//filter: url(../../images/svg-filters.svg#shadow);
-		fill: url("../../images/svg-filters.svg#gradient");
+		//fill: url("../../images/svg-filters.svg#gradient");
 		transform: scale(1.1);
 	}
 }
@@ -94,7 +102,7 @@ button:hover {
 	@include mqLesserThan(extraLarge) {
 		transform: translate(-290px, 0px);
 	}
-	background: #d9ebf7;
+	background: mapDeepGet($colors, hemelblauw lightest);
 	overflow-y: visible;
 	overflow-x: hidden;
 	width: 240px;
@@ -108,7 +116,16 @@ button:hover {
 		width: 300px;
 	}
 	&:nth-child(4) {
-		width: 350px;
+		width: 500px;
+	}
+	&:nth-child(5) {
+		width: 300px;
+	}
+	&:nth-child(6) {
+		width: 450px;
+	}
+	&:nth-child(7) {
+		width: 450px;
 	}
 
 	ul {
@@ -116,35 +133,45 @@ button:hover {
 	    padding: 0;
 	    list-style: none;
 	}
+	.linkList {
+		li {
+		    &:hover {
+		    	background: mapDeepGet($colors, hemelblauw default);
+		    	a {
+		    		color: mapDeepGet($colors, wit);
+		    	}
+		    }
+		}
+    }
 	li {
 	    margin: 0;
-	    &:hover {
-	    	a {
-	    		background: #006bad;
-	    		color: white;
-	    	}
-	    }
+	    padding: 5px 20px;
 	}
 	a {
-	    padding: 5px 20px;
-	    color: #005387;
+	    color: mapDeepGet($colors, hemelblauw darkest);
 	    text-decoration: none;
 	    display: block;
-	    &.homeLink {
-	    	font-family: 'RijksOverheidSansBold', 'tahoma', sans-serif;
-			padding: 20px;
-			font-size: 1.5em;
-	    }
 	}
 	p {
 		padding: 5px 20px;
 	}
 
 }
+.menuBar--title {
+	font-weight: bold;
+	padding: 20px 20px 10px 20px;
+	font-size: 1.5em;
 
-.kopje {
+	a {
+		padding: 0;
+		&:hover, &:active {
+	    	text-decoration: underline;
+		}
+	}
+}
+.menuBar--subTitle {
 	padding: 10px 20px;
-	color: #3e3e3e;
-	font-family: 'RijksOverheidSansBold', 'tahoma', sans-serif;
+	color: mapDeepGet($colors, grijs darkest);
+	font-weight: bold;
 	text-transform: uppercase;
 }

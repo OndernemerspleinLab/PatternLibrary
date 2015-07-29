@@ -46,11 +46,9 @@
     </div>
 
     <div id="menu" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('menu')">
-        <ul>
-            <li><a href="#" class="homeLink">Home</a></li>
-        </ul>
-        <span class="kopje textLine">Onderwerpen</span>
-        <ul>
+        <p class="menuBar--title"><a href="#">Home</a></p>
+        <span class="menuBar--subTitle textLine">Onderwerpen</span>
+        <ul class="linkList">
             <li><a href="#">Personeel</a></li>
             <li><a href="#">Bedrijf starten</a></li>
             <li><a href="#">Handelsregister</a></li>
@@ -67,8 +65,8 @@
             <li><a href="#">Bedrijf stoppen of verkopen</a></li>
             <li><a href="#">Duurzaam ondernemen</a></li>
         </ul>
-        <span class="kopje textLine">Direct naar</span>
-        <ul>
+        <span class="menuBar--subTitle textLine">Direct naar</span>
+        <ul class="linkList">
             <li><a href="#">Wetten en regels</a></li>
             <li><a href="#">Wetswijzigingen</a></li>
             <li><a href="#">Subsidies</a></li>
@@ -78,33 +76,70 @@
             <li><a href="#">Webinars en video’s</a></li>
             <li><a href="#">Evenementen</a></li>
         </ul>
-        <span class="kopje textLine">Ondernemersplein</span>
-        <ul>
+        <span class="menuBar--subTitle textLine">Ondernemersplein</span>
+        <ul class="linkList">
             <li><a href="#">Contact</a></li>
             <li><a href="#">Uw idee ter verbetering</a></li>
             <li><a href="#">Over ons</a></li>
         </ul>
     </div>
     <div id="search" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('search')">
-        <span class="kopje textLine">Zoeken</span>
-        <p>Hier komt het zoekformulier</p>
+        <p class="menuBar--title">Zoeken</p>
+        <p>
+            <input id="text" type="text" placeholder="Waar bent u naar op zoek?">
+        </p>
+        <p class="menuBar--subTitle textLine">Meest gezocht</p>
+        <ul class="linkList">
+            <li><a href="#">ondernemersplan</a></li>
+            <li><a href="#">bedrijf starten</a></li>
+            <li><a href="#">belastingaangifte</a></li>
+        </ul>
     </div>
     <div id="profile" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('profile')">
-        <span class="kopje textLine">Uw profiel</span>
+        <p class="menuBar--title">Informatie op maat</p>
         <p>Hier kan de gebruiker zijn profiel instellen en beheren!</p>
+        <p class="menuBar--subTitle textLine">Uw favorieten</p>
+        <ul>
+            <li>Branche(s)</li>
+            <li>Regio(s)</li>
+            <li>Opgeslagen paginas</li>
+        </ul>
+        <p class="menuBar--subTitle textLine">Mogelijk voor u interessant</p>
+        <ul class="linkList">
+            <li><a href="#">ondernemersplan</a></li>
+            <li><a href="#">bedrijf starten</a></li>
+            <li><a href="#">belastingaangifte</a></li>
+        </ul>
+        <p class="menuBar--subTitle textLine">Uw berichtenbox</p>
+        <p>Koppel uw Berichtenbox aan Ondernemersplein.nl en kijk hier of er nieuwe berichten voor u zijn.</p>
     </div>
     <div id="share" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('share')">
-        <span class="kopje textLine">Deel deze pagina via</span>
-        <p>Facebook | Twitter | LinkedIn | Google+ | E-mail</p>
+        <p class="menuBar--title">Deel deze pagina</p>
+        {{> molecules-social-share }}
     </div>
     <div id="feedback" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('feedback')">
-        <span class="kopje textLine">Geef uw mening</span>
-        <p>Heeft deze informatie u geholpen?</p>
-        <p>Ja / Nee</p>
+        <p class="menuBar--title">Geef uw mening</p>
+        <form action="#" style="padding: 0 20px;">
+            <fieldset class="options">
+                <legend>Heeft deze informatie u geholpen?</legend>
+                <ul>
+                    <li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked">Ja</label></li>
+                    <li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio">Nee</label></li>
+                </ul>
+                <div class="field-container">
+                    <label for="textarea">Wat vindt u goed op deze pagina (maximaal 1000 tekens)?</label>
+                    <textarea id="textarea" rows="3" cols="48" placeholder=""></textarea>
+                </div>
+            </fieldset>
+        </form>
+        <p>Annuleer | Verstuur</p>
     </div>
     <div id="enquete" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('enquete')">
-        <span class="kopje textLine">Enquete</span>
-        <p>Hier komt de korte enquete</p>
+        <p class="menuBar--title">Enquete</p>
+        <p>
+            Wilt u ons helpen onze website te verbeteren? Vul dan de vragenlijst in!
+        </p>
+        <p>Ja / Nee / Herinner mij over 10 paginas</p>
     </div>
 
 </script>
