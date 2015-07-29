@@ -1,0 +1,77 @@
+// COLORS
+
+$colors: (
+	hemelblauw: (
+		default: #007BC8,
+		darkest: #005387,
+		dark: #005B94,
+		light: #B2D7EE,
+		lightest: #e7f7fe
+	),
+	blauw: (
+		lichtblauwRH: #8fcae7,
+		tekstlinkRH: #154273
+	),
+	robijnrood: (
+		default: #ca005d,
+		lighter: #efb2ce,
+		lightest: #f7d9e7
+	),
+	mosgroen: (
+		default: #777c00,
+		lighter: #d6d7b2,
+		lightest: #ebebd9
+	),
+	groen: (
+		default: #39870c,
+		lighter: #c3dbb6,
+		lightest: #e1eddb,
+		mintgroenRH: #76d2b6
+	),
+	paars: (
+		default: #42145f,
+		lighter: #c6b8cf,
+		lightest: #e3dce7
+	),
+	rood: (
+		default: #d52b1e,
+		lighter: #f2bfbb,
+		lightest: #f9dfdd
+	),
+	grijs: (
+		darkest: #3e3e3e,
+		medium: #a3a3a3,
+		lightest: #f3f3f3
+	),
+	zwart: #000000,
+	wit: #FFFFFF,
+	facebook: #3B5998,
+	twitter: #5EA9DD,
+	linkedin: #0274B3,
+	googleplus: #DA4835,
+	youtube: #CC181E
+);
+
+// HSL codes!!!
+
+// BLUES
+// ----------------------------> white -----> black ------> combines with
+$darkestBlue: #005387;		//  8.12:1       2.59:1        white only
+$darkerBlue: #005b94;		//	7.18:1       2.92:1        white only
+$darkBlue: #006bad;			//	5.67:1       3.71:1        white only
+$blue: #007bc8;      	    //	4.5:1        4.67:1        both 		// Rijkshuisstijl: Hemelblauw
+$mediumBlue: #1693e0;		//  3.34:1       6.28:1        black only
+$lightMediumBlue: #23a4f3;	// 	2.74:1       7.68:1        black only
+$lightBlue: #b2d7ee;		//	1.49:1       14.08:1       black only	// Rijkshuisstijl: Hemelblauw Licht
+$lighterBlue: #d9ebf7;		//	1.22:1       17.18:1       black only	// Rijkshuisstijl: Hemelblauw Lichtst
+$lightestBlue: #e7f7fe;		//  1.1:1 		 19.13:1 	   black only
+
+// GRAYS
+// ----------------------------> white -----> black ------> combines with
+$darkestGray: #3e3e3e;		//	10.7:1       1.96:1        white only
+$darkerGray: #575757;		//	7.23:1       2.91:1        white only
+$darkGray: #8a8a8a;			//	3.45:1       6.08:1        black only
+$mediumGray: #a3a3a3;		//	2.52:1       8.33:1        black only
+$lightGray: #d9d9d9;		//	1.41:1       14.88:1       black only
+$lighterGray: #e5e5e5;		//	1.26:1       16.67:1       black only
+$lightestGray: #f3f3f3;		//	1.11:1       18.93:1       black only   // Rijkshuisstijl: Achtergrond

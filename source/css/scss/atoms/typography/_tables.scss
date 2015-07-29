@@ -1,0 +1,17 @@
+/* TABLES */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 1px solid mapDeepGet($colors, grijs medium);
+	width: 100%;
+}
+th {
+	text-align: left;
+	border: 1px solid mapDeepGet($colors, grijs medium);
+	padding: 0.2em;
+}
+td {
+	border: 1px solid mapDeepGet($colors, grijs medium);
+	padding: 0.2em;
+}
