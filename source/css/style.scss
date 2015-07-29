@@ -16,6 +16,9 @@
 @import "scss/molecules/layout/blocks";
 @import "scss/molecules/layout/zindex";
 
+@import "scss/base/main";
+@import "scss/base/global-classes";
+
 // Typography
 @import "scss/atoms/typography/links";
 @import "scss/atoms/typography/lists";
@@ -23,30 +26,18 @@
 @import "scss/atoms/typography/buttons";
 @import "scss/atoms/typography/tables";
 @import "scss/atoms/typography/text";
+@import "scss/atoms/media";
+@import "scss/atoms/forms";
 
 // Main Elements
 @import "scss/organisms/header/header";
 @import "scss/organisms/header/header-logo";
 @import "scss/organisms/header/breadcrumbs";
 @import "scss/organisms/footer/footer";
+@import "scss/organisms/menu";
 
 // Specific elements
 @import "scss/molecules/social";
 
-/*------------------------------------*\
-    $PAGE STRUCTURE
-\*------------------------------------*/
-@import "scss/base/main";
-@import "scss/organisms/menu";
-
-/*------------------------------------*\
-    $GLOBAL ELEMENTS
-\*------------------------------------*/
-@import "scss/base/global-classes";
-@import "scss/atoms/media";
-@import "scss/atoms/forms";
-
-/*------------------------------------*\
-    $STATE CLASSES
-\*------------------------------------*/
+// State
 @import "scss/state/baseState";
