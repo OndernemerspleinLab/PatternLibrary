@@ -3,15 +3,15 @@
 \*------------------------------------*/
 
 /* Clearfix */
-.cf {
+.clearfix {
     *zoom: 1;
 }
-.cf:before, .cf:after {
+.clearfix:before, .clearfix:after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
 
-.cf:after {
+.clearfix:after {
     clear: both;
 }
 

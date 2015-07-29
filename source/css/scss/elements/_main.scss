@@ -2,13 +2,17 @@
     $MAIN CONTENT AREA
 \*------------------------------------*/
 body {
-	background: $white;
-	font: 100%/1.5 $font;
+	background: mapDeepGet($colors, wit);
+	font: 100%/1.5 RijksOverheidSans, Tahoma;
 	-webkit-text-size-adjust: 100%;
-	color: $gray-dark;
+	color: mapDeepGet($colors, grijs darkest);
 	@include mqLesserThan(extraLarge) {
 		padding-left: 50px;
 	}
+}
+
+.font-secondary {
+	font-family: Tahoma;
 }
 
 .hide-svg {

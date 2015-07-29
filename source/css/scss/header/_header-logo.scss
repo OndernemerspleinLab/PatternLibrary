@@ -7,7 +7,7 @@
 
 	.logo-link {
 		font-weight: bold;
-		color: $darkestGray;
+		color: mapDeepGet($colors, grijs darkest);
 		display: inline-block;
 		font-size: 32px;
 		line-height: .85;
@@ -15,7 +15,7 @@
 		height: 55px;
 		&:hover, &:focus, &:active {
 			text-decoration: none;
-			color: $blue;
+			color: mapDeepGet($colors, hemelblauw default);
 			&:before {
 				content: "Home";
 				speak: none;
@@ -29,7 +29,7 @@
 			}
 		}
 		&:focus {
-			outline: 1px dotted $darkestGray;
+			outline: 1px dotted mapDeepGet($colors, grijs darkest);
 		}
 	}
 }

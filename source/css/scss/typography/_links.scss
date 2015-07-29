@@ -1,11 +1,11 @@
 /* LINKS */
 
 a {
-	color: $gray-dark;
+	color: mapDeepGet($colors, grijs darkest);
 	text-decoration: underline;
 	outline: 0;
 
 	&:hover, &:focus {
-		color: $gray;
+		color: mapDeepGet($colors, blauw tekstlinkRH);
 	}
 }

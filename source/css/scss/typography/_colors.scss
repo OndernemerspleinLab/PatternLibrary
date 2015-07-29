@@ -8,6 +8,10 @@ $colors: (
 		light: #B2D7EE,
 		lightest: #e7f7fe
 	),
+	blauw: (
+		lichtblauwRH: #8fcae7,
+		tekstlinkRH: #154273
+	),
 	robijnrood: (
 		default: #ca005d,
 		lighter: #efb2ce,
@@ -18,6 +22,12 @@ $colors: (
 		lighter: #d6d7b2,
 		lightest: #ebebd9
 	),
+	groen: (
+		default: #39870c,
+		lighter: #c3dbb6,
+		lightest: #e1eddb,
+		mintgroenRH: #76d2b6
+	),
 	paars: (
 		default: #42145f,
 		lighter: #c6b8cf,
@@ -27,11 +37,6 @@ $colors: (
 		default: #d52b1e,
 		lighter: #f2bfbb,
 		lightest: #f9dfdd
-	),
-	groen: (
-		default: #39870c,
-		lighter: #c3dbb6,
-		lightest: #e1eddb
 	),
 	grijs: (
 		darkest: #3e3e3e,
@@ -48,18 +53,6 @@ $colors: (
 );
 
 // HSL codes!!!
-
-//Colors
-$gray : #3e3e3e;
-$gray-light : #f9f9f9;
-$gray-light-2 : #eee;
-$gray-light-3 : #ddd;
-$gray-light-4 : #bbb;
-$gray-med : #666;
-$gray-dark : #333;
-$gray-dark-2 : #131313;
-$white : #fff;
-$black : #000;
 
 // BLUES
 // ----------------------------> white -----> black ------> combines with
@@ -82,6 +75,3 @@ $mediumGray: #a3a3a3;		//	2.52:1       8.33:1        black only
 $lightGray: #d9d9d9;		//	1.41:1       14.88:1       black only
 $lighterGray: #e5e5e5;		//	1.26:1       16.67:1       black only
 $lightestGray: #f3f3f3;		//	1.11:1       18.93:1       black only   // Rijkshuisstijl: Achtergrond
-
-$dim : rgba(0,0,0,0.5);
-$dimmer : rgba(0,0,0,0.8);

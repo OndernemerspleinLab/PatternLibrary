@@ -18,8 +18,8 @@ p {
 /* Blockquote */
 blockquote {
     font-style: italic;
-    border-left: 1px solid $gray;
-    color: $gray;
+    border-left: 1px solid mapDeepGet($colors, grijs medium);
+    color: mapDeepGet($colors, grijs medium);
 	padding-left: $pad;
 	margin-bottom: $space;
 }
@@ -28,18 +28,18 @@ blockquote {
 hr {
 	border: 0;
     height: 2px;
-    background: $gray-light-2;
+    background: mapDeepGet($colors, grijs lightest);
     margin: $space-double 0;
 }
 
 abbr {
-    border-bottom: 1px dotted $gray;
+    border-bottom: 1px dotted mapDeepGet($colors, grijs medium);
     cursor: help;
 }
 
 //Intro text
 .intro {
-	font-size: $font-size-large;
+	font-size: mapDeepGet($fontsize, echoHeading);
     font-style: italic;
     display: block;
     clear: both;
@@ -47,7 +47,7 @@ abbr {
 
 //Pullquote
 .pullquote {
-	font-size: $font-size-slightly-larger;
+	font-size: mapDeepGet($fontsize, large);
     font-style: italic;
 }
 
@@ -72,6 +72,7 @@ abbr {
 	color: mapDeepGet($colors, hemelblauw default);
 }
 
+// Only for development purposes!
 .yellow-marker {
 	background-color: yellow;
 }
