@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="DopApp">
+  <head id="patternlab-head">
+    <title>Pattern Lab Sub-type Style Guide</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css" media="all" />
+    <link rel="stylesheet" href="../../css/style.css" media="all" />
+    <style>
+      .menuBarContainer {
+        position: relative !important;
+        height: 100vh !important;
+      }
+    </style>
+  </head>
+  <body class="sg-pattern-list">
+
+    <!-- View All Patterns in a Pattern Sub-Type -->
+    <div class="sg-main" role="main">
+
+      <!-- Patterns -->
+      <div id="sg-patterns">
+          <div class="sg-pattern">
+            <h2 class="sg-pattern-head" ><a href="../../patterns/02-organisms-02-blocks-00-promoblok&#x2F;02-organisms-02-blocks-00-promoblok.html" class="patternLink" data-patternpartial="">promoblok</a></h2>
+            <div class="sg-pattern-body">
+              <div class="column column--third">
+	<div class="block block--border">
+		<h3><span class="yellow-marker">Promoblok</span></h3>
+		<p>Handmatige koppeling van een X aantal promoblokken mogelijk</p>
+		<a href="#promolink">Call 2 Action link</a>
+	</div>
+</div>
+              <div class="sg-code" style="display: none">
+                <h3 class="sg-code-head">HTML</h3>
+                <pre class="sg-code-html">
+                  <code>
+                    &lt;div class=&quot;column column--third&quot;&gt;
+	&lt;div class=&quot;block block--border&quot;&gt;
+		&lt;h3&gt;&lt;span class=&quot;yellow-marker&quot;&gt;Promoblok&lt;&#x2F;span&gt;&lt;&#x2F;h3&gt;
+		&lt;p&gt;Handmatige koppeling van een X aantal promoblokken mogelijk&lt;&#x2F;p&gt;
+		&lt;a href=&quot;#promolink&quot;&gt;Call 2 Action link&lt;&#x2F;a&gt;
+	&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="sg-pattern">
+            <h2 class="sg-pattern-head" ><a href="../../patterns/02-organisms-02-blocks-01-contactblok&#x2F;02-organisms-02-blocks-01-contactblok.html" class="patternLink" data-patternpartial="">contactblok</a></h2>
+            <div class="sg-pattern-body">
+              <div class="block block--side block--blue contact">
+	<h2 class="block-title echoHeading"><span class="yellow-marker">Neem contact op met</span></h2>
+	<p class="contact-info echoHeading highlight--blue">een adviseur van de KvK</p>
+	<p class="contact-phone">
+		<span>Bel (088) 585 2222</span>
+    </p>
+</div>
+              <div class="sg-code" style="display: none">
+                <h3 class="sg-code-head">HTML</h3>
+                <pre class="sg-code-html">
+                  <code>
+                    &lt;div class=&quot;block block--side block--blue contact&quot;&gt;
+	&lt;h2 class=&quot;block-title echoHeading&quot;&gt;&lt;span class=&quot;yellow-marker&quot;&gt;Neem contact op met&lt;&#x2F;span&gt;&lt;&#x2F;h2&gt;
+	&lt;p class=&quot;contact-info echoHeading highlight--blue&quot;&gt;een adviseur van de KvK&lt;&#x2F;p&gt;
+	&lt;p class=&quot;contact-phone&quot;&gt;
+		&lt;span&gt;Bel (088) 585 2222&lt;&#x2F;span&gt;
+    &lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+      </div> <!--end #sg-patterns-->
+
+    </div><!--end .sg-main-->
+
+    <!-- JS to hook everything together and do annotations -->
+    <script>
+      // handle injection of items from PHP
+      var patternPartial = "viewall-organisms-blocks";
+      var lineage = "";
+    </script>
+    <script src="../../styleguide/js/vendor/jwerty.js"></script>
+    <script src="../../styleguide/js/postmessage.js"></script>
+    <script src="../../data/annotations.js"></script>
+    <script src="../../styleguide/js/annotations-pattern.js"></script>
+    <script src="../../styleguide/js/code-pattern.js"></script>
+
+    <script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
+    <script type="text/javascript" src="../../js/config.js"></script>
+    <script type="text/javascript" src="../../js/global.js"></script>
+    <script>
+      (function () {
+        console.log("DOM fully loaded and parsed");
+        if (location.pathname.split("/")[1] !== "PatternLibrary") {
+          return;
+        }
+
+        var links = [].slice.call(document.getElementsByTagName("a"));
+
+        links.forEach(function (link) {
+          link.href = link.getAttribute("href").replace(/^\//, "/PatternLibrary/  ");
+        });
+      }());
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,1 @@
+module.exports = require("npm:immutable@3.7.4/dist/immutable");

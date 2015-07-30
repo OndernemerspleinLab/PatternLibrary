@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="DopApp">
   <head id="patternlab-head">
     <title>Pattern Lab Sub-type Style Guide</title>
     <meta charset="UTF-8">
@@ -7,34 +7,40 @@
     <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
     <link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css" media="all" />
     <link rel="stylesheet" href="../../css/style.css" media="all" />
+    <style>
+      .menuBarContainer {
+        position: relative !important;
+        height: 100vh !important;
+      }
+    </style>
   </head>
   <body class="sg-pattern-list">
-    
+
     <!-- View All Patterns in a Pattern Sub-Type -->
     <div class="sg-main" role="main">
-      
+
       <!-- Patterns -->
       <div id="sg-patterns">
           <div class="sg-pattern">
             <h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-06-components-00-social-share&#x2F;01-molecules-06-components-00-social-share.html" class="patternLink" data-patternpartial="">social-share</a></h2>
             <div class="sg-pattern-body">
               <ul class="social social--share">
-	<li><a href="#twitter" class="twitter"><span>Twitter</span></a></li>
-	<li><a href="#facebook" class="facebook"><span>Facebook</span></a></li>
-	<li><a href="#linkedin" class="linkedin"><span>LinkedIn</span></a></li>
-	<li><a href="#googleplus" class="googleplus"><span>Google+</span></a></li>
-	<li><a href="#mail" class="mail"><span>E-mail</span></a></li>
+	<li><a href="#twitter" class="twitter" title="Delen via Twitter"><span>Twitter</span></a></li>
+	<li><a href="#facebook" class="facebook" title="Delen via Facebook"><span>Facebook</span></a></li>
+	<li><a href="#linkedin" class="linkedin" title="Delen via LinkedIn"><span>LinkedIn</span></a></li>
+	<li><a href="#googleplus" class="googleplus" title="Delen via Google+"><span>Google+</span></a></li>
+	<li><a href="#mail" class="mail" title="Delen via E-mail"><span>E-mail</span></a></li>
 </ul>
               <div class="sg-code" style="display: none">
                 <h3 class="sg-code-head">HTML</h3>
                 <pre class="sg-code-html">
                   <code>
                     &lt;ul class=&quot;social social--share&quot;&gt;
-	&lt;li&gt;&lt;a href=&quot;#twitter&quot; class=&quot;twitter&quot;&gt;&lt;span&gt;Twitter&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-	&lt;li&gt;&lt;a href=&quot;#facebook&quot; class=&quot;facebook&quot;&gt;&lt;span&gt;Facebook&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-	&lt;li&gt;&lt;a href=&quot;#linkedin&quot; class=&quot;linkedin&quot;&gt;&lt;span&gt;LinkedIn&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-	&lt;li&gt;&lt;a href=&quot;#googleplus&quot; class=&quot;googleplus&quot;&gt;&lt;span&gt;Google+&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-	&lt;li&gt;&lt;a href=&quot;#mail&quot; class=&quot;mail&quot;&gt;&lt;span&gt;E-mail&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+	&lt;li&gt;&lt;a href=&quot;#twitter&quot; class=&quot;twitter&quot; title=&quot;Delen via Twitter&quot;&gt;&lt;span&gt;Twitter&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+	&lt;li&gt;&lt;a href=&quot;#facebook&quot; class=&quot;facebook&quot; title=&quot;Delen via Facebook&quot;&gt;&lt;span&gt;Facebook&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+	&lt;li&gt;&lt;a href=&quot;#linkedin&quot; class=&quot;linkedin&quot; title=&quot;Delen via LinkedIn&quot;&gt;&lt;span&gt;LinkedIn&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+	&lt;li&gt;&lt;a href=&quot;#googleplus&quot; class=&quot;googleplus&quot; title=&quot;Delen via Google+&quot;&gt;&lt;span&gt;Google+&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+	&lt;li&gt;&lt;a href=&quot;#mail&quot; class=&quot;mail&quot; title=&quot;Delen via E-mail&quot;&gt;&lt;span&gt;E-mail&lt;&#x2F;span&gt;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
                   </code>
                 </pre>
@@ -70,9 +76,9 @@
             </div>
           </div>
       </div> <!--end #sg-patterns-->
-  
+
     </div><!--end .sg-main-->
-    
+
     <!-- JS to hook everything together and do annotations -->
     <script>
       // handle injection of items from PHP
@@ -84,6 +90,24 @@
     <script src="../../data/annotations.js"></script>
     <script src="../../styleguide/js/annotations-pattern.js"></script>
     <script src="../../styleguide/js/code-pattern.js"></script>
-    
+
+    <script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
+    <script type="text/javascript" src="../../js/config.js"></script>
+    <script type="text/javascript" src="../../js/global.js"></script>
+    <script>
+      (function () {
+        console.log("DOM fully loaded and parsed");
+        if (location.pathname.split("/")[1] !== "PatternLibrary") {
+          return;
+        }
+
+        var links = [].slice.call(document.getElementsByTagName("a"));
+
+        links.forEach(function (link) {
+          link.href = link.getAttribute("href").replace(/^\//, "/PatternLibrary/  ");
+        });
+      }());
+    </script>
+
   </body>
 </html>

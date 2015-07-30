@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="DopApp">
 <head>
 	<title>Pattern Lab Pattern</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width" />
-	
+
 	<!-- never cache patterns -->
 	<meta http-equiv="cache-control" content="max-age=0" />
 	<meta http-equiv="cache-control" content="no-cache" />
@@ -13,34 +13,34 @@
 	<meta http-equiv="pragma" content="no-cache" />
 
 	<!--
-		Styleguide CSS is included for 
+		Styleguide CSS is included for
 	-->
 	<link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all">
 	<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css" media="all" />
-	
+
 	<!--
 		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
 		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
 	-->
 	<link rel="stylesheet" href="../../css/style.css" media="all" />
-	
+
 	<style>
 		.has-comment, .has-comment a {
-			cursor: help !important; 
+			cursor: help !important;
 		}
 	</style>
-	
+
 </head>
-<body class="sg-single-pattern">	
+<body class="sg-single-pattern">
 	<!-- Start of Pattern --><div class="column column--half payOff">
 	<p>Van de overheid. Voor ondernemers.</p>
 </div>	<!-- End of Pattern -->
-	
+
 	<!--
 		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
 		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
 	-->
-	
+
 	<!-- DO NOT MODIFY -->
 	<script>
 		// handle injection of items from PHP
@@ -50,11 +50,11 @@
 		var patternState = ""
 		var cssEnabled = false; //TODO
 	</script>
-	
+
 	<script type="text/html" id="sg-pattern-html">
 
 	</script>
-	
+
 	<script type="text/html" id="sg-pattern-css">
 
 	</script>
@@ -64,6 +64,23 @@
 	<script src="../../styleguide/js/annotations-pattern.js"></script>
 	<script src="../../styleguide/js/code-pattern.js"></script>
 	<!-- /DO NOT MODIFY -->
-	
+
+	<script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
+	<script type="text/javascript" src="../../js/config.js"></script>
+	<script type="text/javascript" src="../../js/global.js"></script>
+	<script>
+		(function () {
+			console.log("DOM fully loaded and parsed");
+			if (location.pathname.split("/")[1] !== "PatternLibrary") {
+				return;
+			}
+
+			var links = [].slice.call(document.getElementsByTagName("a"));
+
+			links.forEach(function (link) {
+				link.href = link.getAttribute("href").replace(/^\//, "/PatternLibrary/	");
+			});
+		}());
+	</script>
 </body>
 </html>

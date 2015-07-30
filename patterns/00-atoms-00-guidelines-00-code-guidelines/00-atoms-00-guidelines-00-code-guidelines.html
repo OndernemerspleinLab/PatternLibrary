@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html ng-app="DopApp">
+<head>
+	<title>Pattern Lab Pattern</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
+
+	<!-- never cache patterns -->
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+
+	<!--
+		Styleguide CSS is included for
+	-->
+	<link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all">
+	<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css" media="all" />
+
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+	<link rel="stylesheet" href="../../css/style.css" media="all" />
+
+	<style>
+		.has-comment, .has-comment a {
+			cursor: help !important;
+		}
+	</style>
+
+</head>
+<body class="sg-single-pattern">
+	<!-- Start of Pattern --><style type="text/css">
+p { margin-bottom: 1em; }
+</style>
+<h1>Code Guidelines</h1>
+
+<h2>1) Class names</h2>
+
+<p>.breadcrumbs (standaard)<br />
+.breadcrumbs-list (subitem)<br />
+.breadcrumbs-item (subitem)<br />
+.breadcrumbs--footer (variant op standaard | gebruik: class = "breadcrumbs breadcrumbs--footer")</p>
+
+<p>.pageHeader (standaard meerdere woorden met camelCase)<br />
+.pageHeader-link<br />
+.pageHeader--home</p>
+
+<h3>States</h3>
+<p>.is-opened<br />
+.is-closed<br />
+.is-animating<br />
+.is-selected<br />
+.is-disabled</p>
+
+<h3>Javascript / Angular</h3>
+<p>.js-openClose / .js-openClose-content<br />
+.js-accordion / .js-accordion--mobile</p>
+
+<h3>Angular Animation Classes</h3>
+<p>.ngAnimate-height<br />
+.ngAnimate-scale<br />
+.ngAnimate-opacity</p>
+
+<h2>2) Mixin names</h2>
+
+<p><strong>Altijd camelCase!</strong></p>
+
+<p>@mixin accShow<br />
+@mixin showText</p>
+
+<h2>3) Var names</h2>
+
+<p><strong>Altijd camelCase!</strong></p>
+
+<p>$lightBlue<br />
+%addSidePadding<br />
+$blockMargin</p>
+
+<h2>4) Units</h2>
+
+<p>
+rem - als ie 'vast' moet staan (alleen als de hele pagina schaalt)<br />
+em - als ie mee moet schalen met het element zelf (bijv. "personeel >")<br />
+% - met name voor breedtes (bijv. blokken)
+</p>
+<h3>Viewport</h3>
+<p>
+vw - breedte van browserscherm = 100vw<br />
+vh - hoogte van het browserscherm = 100vh<br />
+vmin<br />
+vmax
+</p>
+
+<p>Voor de definitie van borders kan/mag wel gebruik worden gemaakt van pixels,
+omdat het strakke, voorspelbare lijnen moeten zijn.</p>
+
+<h2>5) z-index</h2>
+
+<p>Isaac maakt mixin</p>
+
+<p><strong>VERWERKT!!!</strong></p>
+
+<h2>6) boxSizing</h2>
+
+<p>Standaard op 'border-box' (zie <s>_reset.scss</s> _normalize.scss)</p>
+
+<p><strong>VERWERKT!!!</strong></p>
+
+<h2>7) Normalize</h2>
+
+<p>Nieuwste versie (3.0.3) downloaden!<br />
++ combineren met _reset.scss</p>
+
+<p><strong>VERWERKT!!!</strong></p>
+
+<h2>8) Lay-out</h2>
+
+<p>Standaard flexbox (geen Float, inlineBlock)</p>
+
+<p><strong>VERWERKT!!!</strong></p>
+
+<h2>9) Uitzoeken: Responsive images</h2>
+
+<p>Toon aparte afbeelding per schermgrootte, alternatief voor wat we nu doen bij Subhome Personeel</p>
+
+<p>html5-picture-element</p>
+
+<h2>10) Iconen</h2>
+
+<p>Hoe om te gaan met iconen? Met name bij Thema's</p>
+
+<p>- In iconFont of SVG's?<br />
+- Houdt rekening met requests/performance<br />
+- Beheer door redactie of definieren in CSS<br />
+- etc.</p>
+
+<p>Functionele iconen in iconFont en content gerelateerde iconen in SVG???</p>
+
+<h2>11) Taal</h2>
+
+<p>Gebruik Engels voor classnamen en commentaar binnen CSS en Javascript</p>	<!-- End of Pattern -->
+
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+
+	<!-- DO NOT MODIFY -->
+	<script>
+		// handle injection of items from PHP
+		var patternPartial = "atoms-code-guidelines";
+		var lineage = [];
+		var lineageR = [];
+		var patternState = ""
+		var cssEnabled = false; //TODO
+	</script>
+
+	<script type="text/html" id="sg-pattern-html">
+
+	</script>
+
+	<script type="text/html" id="sg-pattern-css">
+
+	</script>
+	<script src="../../styleguide/js/vendor/jwerty.js"></script>
+	<script src="../../styleguide/js/postmessage.js"></script>
+	<script src="../../data/annotations.js"></script>
+	<script src="../../styleguide/js/annotations-pattern.js"></script>
+	<script src="../../styleguide/js/code-pattern.js"></script>
+	<!-- /DO NOT MODIFY -->
+
+	<script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
+	<script type="text/javascript" src="../../js/config.js"></script>
+	<script type="text/javascript" src="../../js/global.js"></script>
+	<script>
+		(function () {
+			console.log("DOM fully loaded and parsed");
+			if (location.pathname.split("/")[1] !== "PatternLibrary") {
+				return;
+			}
+
+			var links = [].slice.call(document.getElementsByTagName("a"));
+
+			links.forEach(function (link) {
+				link.href = link.getAttribute("href").replace(/^\//, "/PatternLibrary/	");
+			});
+		}());
+	</script>
+</body>
+</html>

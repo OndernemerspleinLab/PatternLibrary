@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="DopApp">
   <head id="patternlab-head">
     <title>Pattern Lab Sub-type Style Guide</title>
     <meta charset="UTF-8">
@@ -7,23 +7,29 @@
     <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
     <link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css" media="all" />
     <link rel="stylesheet" href="../../css/style.css" media="all" />
+    <style>
+      .menuBarContainer {
+        position: relative !important;
+        height: 100vh !important;
+      }
+    </style>
   </head>
   <body class="sg-pattern-list">
-    
+
     <!-- View All Patterns in a Pattern Sub-Type -->
     <div class="sg-main" role="main">
-      
+
       <!-- Patterns -->
       <div id="sg-patterns">
           <div class="sg-pattern">
             <h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-00-text-00-bronhouder&#x2F;01-molecules-00-text-00-bronhouder.html" class="patternLink" data-patternpartial="">bronhouder</a></h2>
             <div class="sg-pattern-body">
-              <div class="byline">Geplaatst door: Kamer van Koophandel</div>
+              <div class="infoText infoText--source">Geplaatst door: Kamer van Koophandel</div>
               <div class="sg-code" style="display: none">
                 <h3 class="sg-code-head">HTML</h3>
                 <pre class="sg-code-html">
                   <code>
-                    &lt;div class=&quot;byline&quot;&gt;Geplaatst door: Kamer van Koophandel&lt;&#x2F;div&gt;
+                    &lt;div class=&quot;infoText infoText--source&quot;&gt;Geplaatst door: Kamer van Koophandel&lt;&#x2F;div&gt;
                   </code>
                 </pre>
               </div>
@@ -32,12 +38,12 @@
           <div class="sg-pattern">
             <h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-00-text-01-laatste-update&#x2F;01-molecules-00-text-01-laatste-update.html" class="patternLink" data-patternpartial="">laatste-update</a></h2>
             <div class="sg-pattern-body">
-              <div class="byline">Laatste update: <time datetime="2015-07-14T10:32+00:00">14 juli 2015</time></div>
+              <div class="infoText infoText--date">Laatste update: <time datetime="2015-07-14T10:32+00:00">14 juli 2015</time></div>
               <div class="sg-code" style="display: none">
                 <h3 class="sg-code-head">HTML</h3>
                 <pre class="sg-code-html">
                   <code>
-                    &lt;div class=&quot;byline&quot;&gt;Laatste update: &lt;time datetime=&quot;2015-07-14T10:32+00:00&quot;&gt;14 juli 2015&lt;&#x2F;time&gt;&lt;&#x2F;div&gt;
+                    &lt;div class=&quot;infoText infoText--date&quot;&gt;Laatste update: &lt;time datetime=&quot;2015-07-14T10:32+00:00&quot;&gt;14 juli 2015&lt;&#x2F;time&gt;&lt;&#x2F;div&gt;
                   </code>
                 </pre>
               </div>
@@ -78,9 +84,9 @@
             </div>
           </div>
       </div> <!--end #sg-patterns-->
-  
+
     </div><!--end .sg-main-->
-    
+
     <!-- JS to hook everything together and do annotations -->
     <script>
       // handle injection of items from PHP
@@ -92,6 +98,24 @@
     <script src="../../data/annotations.js"></script>
     <script src="../../styleguide/js/annotations-pattern.js"></script>
     <script src="../../styleguide/js/code-pattern.js"></script>
-    
+
+    <script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
+    <script type="text/javascript" src="../../js/config.js"></script>
+    <script type="text/javascript" src="../../js/global.js"></script>
+    <script>
+      (function () {
+        console.log("DOM fully loaded and parsed");
+        if (location.pathname.split("/")[1] !== "PatternLibrary") {
+          return;
+        }
+
+        var links = [].slice.call(document.getElementsByTagName("a"));
+
+        links.forEach(function (link) {
+          link.href = link.getAttribute("href").replace(/^\//, "/PatternLibrary/  ");
+        });
+      }());
+    </script>
+
   </body>
 </html>

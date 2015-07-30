@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html ng-app="DopApp">
+  <head id="patternlab-head">
+    <title>Pattern Lab Sub-type Style Guide</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
+    <link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css" media="all" />
+    <link rel="stylesheet" href="../../css/style.css" media="all" />
+    <style>
+      .menuBarContainer {
+        position: relative !important;
+        height: 100vh !important;
+      }
+    </style>
+  </head>
+  <body class="sg-pattern-list">
+
+    <!-- View All Patterns in a Pattern Sub-Type -->
+    <div class="sg-main" role="main">
+
+      <!-- Patterns -->
+      <div id="sg-patterns">
+          <div class="sg-pattern">
+            <h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-00-guidelines-00-code-guidelines&#x2F;00-atoms-00-guidelines-00-code-guidelines.html" class="patternLink" data-patternpartial="">code-guidelines</a></h2>
+            <div class="sg-pattern-body">
+              <style type="text/css">
+p { margin-bottom: 1em; }
+</style>
+<h1>Code Guidelines</h1>
+
+<h2>1) Class names</h2>
+
+<p>.breadcrumbs (standaard)<br />
+.breadcrumbs-list (subitem)<br />
+.breadcrumbs-item (subitem)<br />
+.breadcrumbs--footer (variant op standaard | gebruik: class = "breadcrumbs breadcrumbs--footer")</p>
+
+<p>.pageHeader (standaard meerdere woorden met camelCase)<br />
+.pageHeader-link<br />
+.pageHeader--home</p>
+
+<h3>States</h3>
+<p>.is-opened<br />
+.is-closed<br />
+.is-animating<br />
+.is-selected<br />
+.is-disabled</p>
+
+<h3>Javascript / Angular</h3>
+<p>.js-openClose / .js-openClose-content<br />
+.js-accordion / .js-accordion--mobile</p>
+
+<h3>Angular Animation Classes</h3>
+<p>.ngAnimate-height<br />
+.ngAnimate-scale<br />
+.ngAnimate-opacity</p>
+
+<h2>2) Mixin names</h2>
+
+<p><strong>Altijd camelCase!</strong></p>
+
+<p>@mixin accShow<br />
+@mixin showText</p>
+
+<h2>3) Var names</h2>
+
+<p><strong>Altijd camelCase!</strong></p>
+
+<p>$lightBlue<br />
+%addSidePadding<br />
+$blockMargin</p>
+
+<h2>4) Units</h2>
+
+<p>
+rem - als ie 'vast' moet staan (alleen als de hele pagina schaalt)<br />
+em - als ie mee moet schalen met het element zelf (bijv. "personeel >")<br />
+% - met name voor breedtes (bijv. blokken)
+</p>
+<h3>Viewport</h3>
+<p>
+vw - breedte van browserscherm = 100vw<br />
+vh - hoogte van het browserscherm = 100vh<br />
+vmin<br />
+vmax
+</p>
+
+<p>Voor de definitie van borders kan/mag wel gebruik worden gemaakt van pixels,
+omdat het strakke, voorspelbare lijnen moeten zijn.</p>
+
+<h2>5) z-index</h2>
+
+<p>Isaac maakt mixin</p>
+
+<p><strong>VERWERKT!!!</strong></p>
+
+<h2>6) boxSizing</h2>
+
+<p>Standaard op 'border-box' (zie <s>_reset.scss</s> _normalize.scss)</p>
+
+<p><strong>VERWERKT!!!</strong></p>
+
+<h2>7) Normalize</h2>
+
+<p>Nieuwste versie (3.0.3) downloaden!<br />
++ combineren met _reset.scss</p>
+
+<p><strong>VERWERKT!!!</strong></p>
+
+<h2>8) Lay-out</h2>
+
+<p>Standaard flexbox (geen Float, inlineBlock)</p>
+
+<p><strong>VERWERKT!!!</strong></p>
+
+<h2>9) Uitzoeken: Responsive images</h2>
+
+<p>Toon aparte afbeelding per schermgrootte, alternatief voor wat we nu doen bij Subhome Personeel</p>
+
+<p>html5-picture-element</p>
+
+<h2>10) Iconen</h2>
+
+<p>Hoe om te gaan met iconen? Met name bij Thema's</p>
+
+<p>- In iconFont of SVG's?<br />
+- Houdt rekening met requests/performance<br />
+- Beheer door redactie of definieren in CSS<br />
+- etc.</p>
+
+<p>Functionele iconen in iconFont en content gerelateerde iconen in SVG???</p>
+
+<h2>11) Taal</h2>
+
+<p>Gebruik Engels voor classnamen en commentaar binnen CSS en Javascript</p>
+              <div class="sg-code" style="display: none">
+                <h3 class="sg-code-head">HTML</h3>
+                <pre class="sg-code-html">
+                  <code>
+                    &lt;style type=&quot;text&#x2F;css&quot;&gt;
+p { margin-bottom: 1em; }
+&lt;&#x2F;style&gt;
+&lt;h1&gt;Code Guidelines&lt;&#x2F;h1&gt;
+
+&lt;h2&gt;1) Class names&lt;&#x2F;h2&gt;
+
+&lt;p&gt;.breadcrumbs (standaard)&lt;br &#x2F;&gt;
+.breadcrumbs-list (subitem)&lt;br &#x2F;&gt;
+.breadcrumbs-item (subitem)&lt;br &#x2F;&gt;
+.breadcrumbs--footer (variant op standaard | gebruik: class = &quot;breadcrumbs breadcrumbs--footer&quot;)&lt;&#x2F;p&gt;
+
+&lt;p&gt;.pageHeader (standaard meerdere woorden met camelCase)&lt;br &#x2F;&gt;
+.pageHeader-link&lt;br &#x2F;&gt;
+.pageHeader--home&lt;&#x2F;p&gt;
+
+&lt;h3&gt;States&lt;&#x2F;h3&gt;
+&lt;p&gt;.is-opened&lt;br &#x2F;&gt;
+.is-closed&lt;br &#x2F;&gt;
+.is-animating&lt;br &#x2F;&gt;
+.is-selected&lt;br &#x2F;&gt;
+.is-disabled&lt;&#x2F;p&gt;
+
+&lt;h3&gt;Javascript &#x2F; Angular&lt;&#x2F;h3&gt;
+&lt;p&gt;.js-openClose &#x2F; .js-openClose-content&lt;br &#x2F;&gt;
+.js-accordion &#x2F; .js-accordion--mobile&lt;&#x2F;p&gt;
+
+&lt;h3&gt;Angular Animation Classes&lt;&#x2F;h3&gt;
+&lt;p&gt;.ngAnimate-height&lt;br &#x2F;&gt;
+.ngAnimate-scale&lt;br &#x2F;&gt;
+.ngAnimate-opacity&lt;&#x2F;p&gt;
+
+&lt;h2&gt;2) Mixin names&lt;&#x2F;h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Altijd camelCase!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+
+&lt;p&gt;@mixin accShow&lt;br &#x2F;&gt;
+@mixin showText&lt;&#x2F;p&gt;
+
+&lt;h2&gt;3) Var names&lt;&#x2F;h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Altijd camelCase!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+
+&lt;p&gt;$lightBlue&lt;br &#x2F;&gt;
+%addSidePadding&lt;br &#x2F;&gt;
+$blockMargin&lt;&#x2F;p&gt;
+
+&lt;h2&gt;4) Units&lt;&#x2F;h2&gt;
+
+&lt;p&gt;
+rem - als ie &#39;vast&#39; moet staan (alleen als de hele pagina schaalt)&lt;br &#x2F;&gt;
+em - als ie mee moet schalen met het element zelf (bijv. &quot;personeel &gt;&quot;)&lt;br &#x2F;&gt;
+% - met name voor breedtes (bijv. blokken)
+&lt;&#x2F;p&gt;
+&lt;h3&gt;Viewport&lt;&#x2F;h3&gt;
+&lt;p&gt;
+vw - breedte van browserscherm = 100vw&lt;br &#x2F;&gt;
+vh - hoogte van het browserscherm = 100vh&lt;br &#x2F;&gt;
+vmin&lt;br &#x2F;&gt;
+vmax
+&lt;&#x2F;p&gt;
+
+&lt;p&gt;Voor de definitie van borders kan&#x2F;mag wel gebruik worden gemaakt van pixels,
+omdat het strakke, voorspelbare lijnen moeten zijn.&lt;&#x2F;p&gt;
+
+&lt;h2&gt;5) z-index&lt;&#x2F;h2&gt;
+
+&lt;p&gt;Isaac maakt mixin&lt;&#x2F;p&gt;
+
+&lt;p&gt;&lt;strong&gt;VERWERKT!!!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+
+&lt;h2&gt;6) boxSizing&lt;&#x2F;h2&gt;
+
+&lt;p&gt;Standaard op &#39;border-box&#39; (zie &lt;s&gt;_reset.scss&lt;&#x2F;s&gt; _normalize.scss)&lt;&#x2F;p&gt;
+
+&lt;p&gt;&lt;strong&gt;VERWERKT!!!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+
+&lt;h2&gt;7) Normalize&lt;&#x2F;h2&gt;
+
+&lt;p&gt;Nieuwste versie (3.0.3) downloaden!&lt;br &#x2F;&gt;
++ combineren met _reset.scss&lt;&#x2F;p&gt;
+
+&lt;p&gt;&lt;strong&gt;VERWERKT!!!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+
+&lt;h2&gt;8) Lay-out&lt;&#x2F;h2&gt;
+
+&lt;p&gt;Standaard flexbox (geen Float, inlineBlock)&lt;&#x2F;p&gt;
+
+&lt;p&gt;&lt;strong&gt;VERWERKT!!!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+
+&lt;h2&gt;9) Uitzoeken: Responsive images&lt;&#x2F;h2&gt;
+
+&lt;p&gt;Toon aparte afbeelding per schermgrootte, alternatief voor wat we nu doen bij Subhome Personeel&lt;&#x2F;p&gt;
+
+&lt;p&gt;html5-picture-element&lt;&#x2F;p&gt;
+
+&lt;h2&gt;10) Iconen&lt;&#x2F;h2&gt;
+
+&lt;p&gt;Hoe om te gaan met iconen? Met name bij Thema&#39;s&lt;&#x2F;p&gt;
+
+&lt;p&gt;- In iconFont of SVG&#39;s?&lt;br &#x2F;&gt;
+- Houdt rekening met requests&#x2F;performance&lt;br &#x2F;&gt;
+- Beheer door redactie of definieren in CSS&lt;br &#x2F;&gt;
+- etc.&lt;&#x2F;p&gt;
+
+&lt;p&gt;Functionele iconen in iconFont en content gerelateerde iconen in SVG???&lt;&#x2F;p&gt;
+
+&lt;h2&gt;11) Taal&lt;&#x2F;h2&gt;
+
+&lt;p&gt;Gebruik Engels voor classnamen en commentaar binnen CSS en Javascript&lt;&#x2F;p&gt;
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+      </div> <!--end #sg-patterns-->
+
+    </div><!--end .sg-main-->
+
+    <!-- JS to hook everything together and do annotations -->
+    <script>
+      // handle injection of items from PHP
+      var patternPartial = "viewall-atoms-guidelines";
+      var lineage = "";
+    </script>
+    <script src="../../styleguide/js/vendor/jwerty.js"></script>
+    <script src="../../styleguide/js/postmessage.js"></script>
+    <script src="../../data/annotations.js"></script>
+    <script src="../../styleguide/js/annotations-pattern.js"></script>
+    <script src="../../styleguide/js/code-pattern.js"></script>
+
+    <script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
+    <script type="text/javascript" src="../../js/config.js"></script>
+    <script type="text/javascript" src="../../js/global.js"></script>
+    <script>
+      (function () {
+        console.log("DOM fully loaded and parsed");
+        if (location.pathname.split("/")[1] !== "PatternLibrary") {
+          return;
+        }
+
+        var links = [].slice.call(document.getElementsByTagName("a"));
+
+        links.forEach(function (link) {
+          link.href = link.getAttribute("href").replace(/^\//, "/PatternLibrary/  ");
+        });
+      }());
+    </script>
+
+  </body>
+</html>

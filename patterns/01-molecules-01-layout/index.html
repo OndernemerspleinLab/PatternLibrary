@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="DopApp">
   <head id="patternlab-head">
     <title>Pattern Lab Sub-type Style Guide</title>
     <meta charset="UTF-8">
@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all" />
     <link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css" media="all" />
     <link rel="stylesheet" href="../../css/style.css" media="all" />
+    <style>
+      .menuBarContainer {
+        position: relative !important;
+        height: 100vh !important;
+      }
+    </style>
   </head>
   <body class="sg-pattern-list">
-    
+
     <!-- View All Patterns in a Pattern Sub-Type -->
     <div class="sg-main" role="main">
-      
+
       <!-- Patterns -->
       <div id="sg-patterns">
           <div class="sg-pattern">
@@ -36,7 +42,7 @@
 	<div class="column column--quarter">1/4</div>
 	<div class="column column--quarter">1/4</div>
 	<div class="column column--threeQuarter">3/4</div>
-	<div class="column">1</div>
+	<div class="column column--full">1</div>
 </div>
 <div class="layoutContainer gridContainer">
 	<div class="column column--third">
@@ -71,7 +77,7 @@
 	&lt;div class=&quot;column column--quarter&quot;&gt;1&#x2F;4&lt;&#x2F;div&gt;
 	&lt;div class=&quot;column column--quarter&quot;&gt;1&#x2F;4&lt;&#x2F;div&gt;
 	&lt;div class=&quot;column column--threeQuarter&quot;&gt;3&#x2F;4&lt;&#x2F;div&gt;
-	&lt;div class=&quot;column&quot;&gt;1&lt;&#x2F;div&gt;
+	&lt;div class=&quot;column column--full&quot;&gt;1&lt;&#x2F;div&gt;
 &lt;&#x2F;div&gt;
 &lt;div class=&quot;layoutContainer gridContainer&quot;&gt;
 	&lt;div class=&quot;column column--third&quot;&gt;
@@ -90,9 +96,9 @@
             </div>
           </div>
       </div> <!--end #sg-patterns-->
-  
+
     </div><!--end .sg-main-->
-    
+
     <!-- JS to hook everything together and do annotations -->
     <script>
       // handle injection of items from PHP
@@ -104,6 +110,24 @@
     <script src="../../data/annotations.js"></script>
     <script src="../../styleguide/js/annotations-pattern.js"></script>
     <script src="../../styleguide/js/code-pattern.js"></script>
-    
+
+    <script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
+    <script type="text/javascript" src="../../js/config.js"></script>
+    <script type="text/javascript" src="../../js/global.js"></script>
+    <script>
+      (function () {
+        console.log("DOM fully loaded and parsed");
+        if (location.pathname.split("/")[1] !== "PatternLibrary") {
+          return;
+        }
+
+        var links = [].slice.call(document.getElementsByTagName("a"));
+
+        links.forEach(function (link) {
+          link.href = link.getAttribute("href").replace(/^\//, "/PatternLibrary/  ");
+        });
+      }());
+    </script>
+
   </body>
 </html>
