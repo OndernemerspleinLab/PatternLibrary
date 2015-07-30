@@ -1,7 +1,7 @@
 "use strict";
 
 var baseURL = "/js/";
-if (location.pathname.split("/")[1] !== "PatternLibrary") {
+if (location.pathname.split("/")[1] === "PatternLibrary") {
   baseURL = "/PatternLibrary/js/";
 }
 
