@@ -1049,10 +1049,6 @@ button:hover .menuBar-icon {
   overflow-x: hidden;
   width: 240px;
   height: 100%; }
-  @media (max-width: 49.9375em) {
-    .menuBar-content {
-      -webkit-transform: translate(-290px, 0px);
-              transform: translate(-290px, 0px); } }
   .menuBar-content:nth-child(2) {
     width: 250px; }
   .menuBar-content:nth-child(3) {
