@@ -1,1 +1,0 @@
-{"version":3,"sources":["source/jsSource/global.js"],"names":[],"mappings":";;AAAA,MAAM,UAAO,CAAC,OAAO,CAAC,CAAC","file":"source/jsSource/global.js","sourcesContent":["System.import('start');"]}
