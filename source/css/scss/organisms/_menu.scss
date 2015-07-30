@@ -99,9 +99,6 @@ button:hover {
 	top: 0;
 	bottom: 0;
 	z-index: 10;
-	@include mqLesserThan(extraLarge) {
-		transform: translate(-290px, 0px);
-	}
 	background: mapDeepGet($colors, hemelblauw lightest);
 	overflow-y: visible;
 	overflow-x: hidden;
