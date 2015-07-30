@@ -1,7 +1,12 @@
 "use strict";
 
+var baseURL = "/js/";
+if (location.pathname.split("/")[1] !== "PatternLibrary") {
+  baseURL = "/PatternLibrary/js/";
+}
+
 System.config({
-  "baseURL": "/js/",
+  "baseURL": baseURL,
   "transpiler": "babel",
   "babelOptions": {
     "optional": ["runtime"]
