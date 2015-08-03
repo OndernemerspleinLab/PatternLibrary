@@ -63,9 +63,9 @@
 
 //
 .valid {
-	color: mapDeepGet($colors, groen default);
+	color: getColor(groen default);
 }
 
 .error {
-	color: mapDeepGet($colors, rood default);
+	color: getColor(rood default);
 }

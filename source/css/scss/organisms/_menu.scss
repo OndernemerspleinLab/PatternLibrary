@@ -19,14 +19,14 @@
 	position: relative;
 	height: 100%;
 	width: 50px;
-	background: mapDeepGet($colors, blauw lichtblauwRH) none repeat scroll 0% 0%;
-	background-image: linear-gradient(mapDeepGet($colors, blauw lichtblauwRH), mapDeepGet($colors, groen mintgroenRH));
+	background: getColor(blauw lichtblauwRH) none repeat scroll 0% 0%;
+	background-image: linear-gradient(getColor(blauw lichtblauwRH), getColor(groen mintgroenRH));
 
 	&:before {
 		content: "";
 		position: absolute;
 		display: block;
-		background: mapDeepGet($colors, hemelblauw lightest);
+		background: getColor(hemelblauw lightest);
 		top: 0;
 		bottom: 0;
 		right: 100%;
@@ -67,7 +67,7 @@
 
     &.is-opened {
     	.menuBar-icon {
-    		fill: mapDeepGet($colors, zwart);
+    		fill: getColor(zwart);
     		transform: scale(1.1);
     	}
 	}
@@ -77,16 +77,16 @@
 .menuBar-icon {
 	width: 40px;
 	height: 40px;
-	fill: mapDeepGet($colors, hemelblauw darkest);
+	fill: getColor(hemelblauw darkest);
 	transition: all .2s ease-in-out;
 }
 button:hover {
 	.menuBar-icon {
-		//stroke: mapDeepGet($colors, wit);
+		//stroke: getColor(wit);
 		//stroke-width: 1px;
 		//fill-opacity:0.1;
 		//stroke-opacity:0.9;
-		fill: mapDeepGet($colors, zwart);
+		fill: getColor(zwart);
 		//filter: url(../../images/svg-filters.svg#shadow);
 		//fill: url("../../images/svg-filters.svg#gradient");
 		transform: scale(1.1);
@@ -99,7 +99,7 @@ button:hover {
 	top: 0;
 	bottom: 0;
 	z-index: 10;
-	background: mapDeepGet($colors, hemelblauw lightest);
+	background: getColor(hemelblauw lightest);
 	overflow-y: visible;
 	overflow-x: hidden;
 	width: 240px;
@@ -133,9 +133,9 @@ button:hover {
 	.linkList {
 		li {
 		    &:hover {
-		    	background: mapDeepGet($colors, hemelblauw default);
+		    	background: getColor(hemelblauw default);
 		    	a {
-		    		color: mapDeepGet($colors, wit);
+		    		color: getColor(wit);
 		    	}
 		    }
 		}
@@ -145,7 +145,7 @@ button:hover {
 	    padding: 5px 20px;
 	}
 	a {
-	    color: mapDeepGet($colors, hemelblauw darkest);
+	    color: getColor(hemelblauw darkest);
 	    text-decoration: none;
 	    display: block;
 	}
@@ -168,7 +168,7 @@ button:hover {
 }
 .menuBar--subTitle {
 	padding: 10px 20px;
-	color: mapDeepGet($colors, grijs darkest);
+	color: getColor(grijs darkest);
 	font-weight: bold;
 	text-transform: uppercase;
 }

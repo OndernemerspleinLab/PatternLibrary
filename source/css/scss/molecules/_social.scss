@@ -5,8 +5,8 @@
 	height: 34px;
 	width: 34px;
 	text-decoration: none;
-	background-color: mapDeepGet($colors, hemelblauw default);
-	color: mapDeepGet($colors, wit);
+	background-color: getColor(hemelblauw default);
+	color: getColor(wit);
 	overflow: hidden;
 
 	&:before {
@@ -20,7 +20,7 @@
 		text-align: center;
 	}
 	&:hover, &:active {
-		background-color: mapDeepGet($colors, grijs darkest);
+		background-color: getColor(grijs darkest);
 	}
 	span {
 		@include accHide;
@@ -44,48 +44,48 @@
 	a {
 		@extend %sociallink_basis;
 		&.twitter {
-			background-color: mapDeepGet($colors, twitter);
+			background-color: getColor(twitter);
 			&:before {
 				content: getIcon(social twitter);
 			}
 			&:hover, &:active {
-				background-color: mapDeepGet($colors, grijs darkest);
+				background-color: getColor(grijs darkest);
 			}
 		}
 		&.facebook {
-			background-color: mapDeepGet($colors, facebook);
+			background-color: getColor(facebook);
 			&:before {
 				content: getIcon(social facebook);
 			}
 			&:hover, &:active {
-				background-color: mapDeepGet($colors, grijs darkest);
+				background-color: getColor(grijs darkest);
 			}
 		}
 		&.linkedin {
-			background-color: mapDeepGet($colors, linkedin);
+			background-color: getColor(linkedin);
 			&:before {
 				content: getIcon(social linkedin);
 			}
 			&:hover, &:active {
-				background-color: mapDeepGet($colors, grijs darkest);
+				background-color: getColor(grijs darkest);
 			}
 		}
 		&.googleplus {
-			background-color: mapDeepGet($colors, googleplus);
+			background-color: getColor(googleplus);
 			&:before {
 				content: getIcon(social googleplus);
 			}
 			&:hover, &:active {
-				background-color: mapDeepGet($colors, grijs darkest);
+				background-color: getColor(grijs darkest);
 			}
 		}
 		&.youtube {
-			background-color: mapDeepGet($colors, youtube);
+			background-color: getColor(youtube);
 			&:before {
 				content: getIcon(social youtube);
 			}
 			&:hover, &:active {
-				background-color: mapDeepGet($colors, grijs darkest);
+				background-color: getColor(grijs darkest);
 			}
 		}
 		&.mail {
@@ -110,7 +110,7 @@
 				}
 			}
 			a {
-				color: mapDeepGet($colors, wit);
+				color: getColor(wit);
 			}
 		}
 	}
@@ -132,25 +132,25 @@
 		a {
 			height: 24px;
 			width: 24px;
-			color: mapDeepGet($colors, hemelblauw light);
-			background-color: mapDeepGet($colors, hemelblauw darkest);
+			color: getColor(hemelblauw light);
+			background-color: getColor(hemelblauw darkest);
 			&:before {
 				height: 24px;
 				width: 24px;
 				font-size: 19px;
 			}
 			&:hover, &:active {
-				color: mapDeepGet($colors, wit);
-				background-color: mapDeepGet($colors, hemelblauw default);
+				color: getColor(wit);
+				background-color: getColor(hemelblauw default);
 			}
 			&.twitter,
 			&.linkedin,
 			&.facebook,
 			&.googleplus,
 			&.youtube {
-				background-color: mapDeepGet($colors, hemelblauw darkest);
+				background-color: getColor(hemelblauw darkest);
 				&:hover, &:active {
-					background-color: mapDeepGet($colors, hemelblauw default);
+					background-color: getColor(hemelblauw default);
 				}
 			}
 			&.youtube {

@@ -18,8 +18,8 @@ p {
 /* Blockquote */
 blockquote {
     font-style: italic;
-    border-left: 1px solid mapDeepGet($colors, grijs medium);
-    color: mapDeepGet($colors, grijs medium);
+    border-left: 1px solid getColor(grijs medium);
+    color: getColor(grijs medium);
 	padding-left: $pad;
 	margin-bottom: $space;
 }
@@ -28,12 +28,12 @@ blockquote {
 hr {
 	border: 0;
     height: 2px;
-    background: mapDeepGet($colors, grijs lightest);
+    background: getColor(grijs lightest);
     margin: $space-double 0;
 }
 
 abbr {
-    border-bottom: 1px dotted mapDeepGet($colors, grijs medium);
+    border-bottom: 1px dotted getColor(grijs medium);
     cursor: help;
 }
 
@@ -69,7 +69,7 @@ abbr {
 }
 
 .highlight--blue {
-	color: mapDeepGet($colors, hemelblauw default);
+	color: getColor(hemelblauw default);
 }
 
 // Only for development purposes!

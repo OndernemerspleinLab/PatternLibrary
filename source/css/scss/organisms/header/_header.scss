@@ -3,9 +3,9 @@
 .header { }
 
 .brandBar {
-	background: mapDeepGet($colors, hemelblauw default);
+	background: getColor(hemelblauw default);
 	min-height: 50px;
-	border-bottom: 10px solid mapDeepGet($colors, hemelblauw light);
+	border-bottom: 10px solid getColor(hemelblauw light);
 }
 
 // logo styling -> _header-logo.scss

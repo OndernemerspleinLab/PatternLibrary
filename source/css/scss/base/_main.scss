@@ -2,10 +2,10 @@
     $MAIN CONTENT AREA
 \*------------------------------------*/
 body {
-	background: mapDeepGet($colors, wit);
+	background: getColor(wit);
 	font: 100%/1.5 RijksOverheidSans, Tahoma;
 	-webkit-text-size-adjust: 100%;
-	color: mapDeepGet($colors, grijs darkest);
+	color: getColor(grijs darkest);
 	@include mqLesserThan(extraLarge) {
 		padding-left: 50px;
 	}

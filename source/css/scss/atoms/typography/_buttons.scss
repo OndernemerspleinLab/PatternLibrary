@@ -4,8 +4,8 @@
 
 .btn {
 	display: inline-block;
-	background: mapDeepGet($colors, grijs darkest);
-	color: mapDeepGet($colors, wit);
+	background: getColor(grijs darkest);
+	color: getColor(wit);
 	line-height: 1;
 	font-weight: bold;
 	padding: $pad;
@@ -13,12 +13,12 @@
 	text-align: center;
 
 	&:hover, &:focus {
-		color: mapDeepGet($colors, wit);
+		color: getColor(wit);
 	}
 
 	&.disabled {
-		background: mapDeepGet($colors, grijs lightest);
-		color: mapDeepGet($colors, grijs medium);
+		background: getColor(grijs lightest);
+		color: getColor(grijs medium);
 	}
 }
 
@@ -29,7 +29,7 @@
 .btn-large {
 	padding: $pad-half;
 	text-transform: uppercase;
-	background: mapDeepGet($colors, grijs medium);
+	background: getColor(grijs medium);
 	font-size: 1.4rem;
 	font-weight: normal;
 }

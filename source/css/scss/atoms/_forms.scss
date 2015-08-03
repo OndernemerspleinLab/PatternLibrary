@@ -30,7 +30,7 @@ button, input, select, textarea {
 
 input, textarea {
 	width: 100%;
-	border: 1px solid mapDeepGet($colors, grijs medium);
+	border: 1px solid getColor(grijs medium);
 	padding: $pad-half 0.65rem;
 }
 
@@ -40,8 +40,8 @@ input[type=text], input[type=search], input[type=url], input[type=number], texta
 
 button, input[type="submit"] {
 	padding: $pad-half;
-	background: mapDeepGet($colors, grijs darkest);
-	border: 1px solid mapDeepGet($colors, grijs medium);
+	background: getColor(grijs darkest);
+	border: 1px solid getColor(grijs medium);
 	cursor: pointer;
 }
 
@@ -74,7 +74,7 @@ input[type="search"]::-webkit-search-decoration {
 
 	input[type=submit], button, .btn {
 		padding: 0.65rem 1.3rem;
-		background: mapDeepGet($colors, grijs darkest);
+		background: getColor(grijs darkest);
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -82,8 +82,8 @@ input[type="search"]::-webkit-search-decoration {
 		width: auto;
 
 		&:hover, &:focus {
-			background: mapDeepGet($colors, grijs medium);
-			color: mapDeepGet($colors, wit);
+			background: getColor(grijs medium);
+			color: getColor(wit);
 		}
 	}
 }
@@ -107,10 +107,10 @@ input[type="search"]::-webkit-search-decoration {
 
 /* Validation */
 .has-error {
-	border-color: mapDeepGet($colors, rood default);
+	border-color: getColor(rood default);
 }
 .is-valid {
-	border-color: mapDeepGet($colors, groen default);
+	border-color: getColor(groen default);
 }
 
 
@@ -128,6 +128,6 @@ input[type="search"]::-webkit-search-decoration {
 	background: none;
 	padding: 0.78em 1em;
 	border: 0;
-	border-left: 1px solid mapDeepGet($colors, grijs medium);
-	color: mapDeepGet($colors, grijs medium);
+	border-left: 1px solid getColor(grijs medium);
+	color: getColor(grijs medium);
 }

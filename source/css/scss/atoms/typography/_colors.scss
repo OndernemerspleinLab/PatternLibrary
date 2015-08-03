@@ -52,6 +52,10 @@ $colors: (
 	youtube: #CC181E
 );
 
+@function getColor($color) {
+	@return mapDeepGet($colors, $color);
+}
+
 // HSL codes!!!
 
 // BLUES

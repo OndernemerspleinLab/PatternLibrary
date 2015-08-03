@@ -6,11 +6,11 @@
 		margin-bottom: 1.5em;
 	}
 	&--blue {
-		background-color: mapDeepGet($colors, hemelblauw lightest);
+		background-color: getColor(hemelblauw lightest);
 		padding: 0.5em;
 	}
 	&--border {
-		border: 1px solid mapDeepGet($colors, mosgroen default);
+		border: 1px solid getColor(mosgroen default);
 		padding: 0.5em;
 	}
 }
