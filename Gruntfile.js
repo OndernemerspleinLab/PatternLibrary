@@ -63,6 +63,14 @@ module.exports = function(grunt) {
 
 			}
 		},
+		modernizr_builder: {
+			build: {
+				options: {
+					config: './grunt/modernizrConfig.json',
+					dest: './source/jsSource/utils/modernizr.js',
+				},
+			},
+		},
 		clean: {
 			options: { force: true },
 			files: ['./public/patterns', './fonts/iconFont']
@@ -256,6 +264,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('deploy', ['default', 'buildcontrol:gh-pages']);
 
 	grunt.registerTask('serve', ['default', 'connect', 'watch']);
+	grunt.registerTask('modernizr', ['modernizr_builder']);
 
 	// git subtree push --prefix public/ origin gh-pages
 };

@@ -1,6 +1,6 @@
 import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
-import {checkClassDecorator} from 'utils/animationUtils';
+import {checkClassDecorator, canAnimateDecorator} from 'utils/animationUtils';
 
 const duration = 400;
 const delay = 400;
@@ -18,29 +18,37 @@ const animateOpacity = ($element, opacity, complete) => {
 
 
 DopApp.animation('.ngAnimate-menuBar-content', () => ({
-	beforeAddClass: checkClassDecorator(hideClass, ($element, className, done) => {
+	beforeAddClass: checkClassDecorator(hideClass, canAnimateDecorator(($element, className, done) => {
 		Velocity($element, "stop");
 		if ($element[0].style.opacity === "") {
 			Velocity.hook($element, "z-index", 1);
 			Velocity.hook($element, "opacity", 1);
 		}
 		done();
-	}),
+	}, ($element, className, done) => {
+		done();
+	})),
 
-	addClass: checkClassDecorator(hideClass, ($element, className, done) => {
+	addClass: checkClassDecorator(hideClass, canAnimateDecorator(($element, className, done) => {
 		animateOpacity($element, 0, done);
-	}),
+	}, ($element, className, done) => {
+		done();
+	})),
 
-	beforeRemoveClass: checkClassDecorator(hideClass, ($element, className, done) => {
+	beforeRemoveClass: checkClassDecorator(hideClass, canAnimateDecorator(($element, className, done) => {
 		Velocity($element, "stop");
 		if ($element[0].style.opacity === "") {
 			Velocity.hook($element, "z-index", 2);
 			Velocity.hook($element, "opacity", 0);
 		}
 		done();
-	}),
+	}, ($element, className, done) => {
+		done();
+	})),
 
-	removeClass: checkClassDecorator(hideClass, ($element, className, done) => {
+	removeClass: checkClassDecorator(hideClass, canAnimateDecorator(($element, className, done) => {
 		animateOpacity($element, 1, done);
-	}),
+	}, ($element, className, done) => {
+		done();
+	})),
 }));
