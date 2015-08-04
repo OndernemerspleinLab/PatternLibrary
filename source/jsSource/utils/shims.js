@@ -1,3 +1,5 @@
+"format es6";
+
 if (typeof console === "undefined") {
 	window.console = {};
 }
