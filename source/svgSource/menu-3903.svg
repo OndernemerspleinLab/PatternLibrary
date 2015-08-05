@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="64px" height="64px" viewBox="-102.5 127.5 64 64" enable-background="new -102.5 127.5 64 64" xml:space="preserve">
-<g id="_x32_4px_Boxes">
-	<rect x="-102.5" y="127.5" fill="none" width="64" height="64"/>
-</g>
-<polygon points="-49,139.5 -92,139.5 -92,147.5 -53.0317,147.5 "/>
-<polygon points="-92,163.5 -53.0317,163.5 -49,155.5 -92,155.5 "/>
-<polygon points="-92,179.5 -53.0317,179.5 -49,171.5 -92,171.5 "/>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+	<polygon points="53.5,12 10.5,12 10.5,20 49.4688,20 "/>
+	<polygon points="10.5,36 49.4688,36 53.5,28 10.5,28 "/>
+	<polygon points="10.5,52 49.4688,52 53.5,44 10.5,44 "/>
 </svg>
