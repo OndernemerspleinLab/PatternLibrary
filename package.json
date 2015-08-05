@@ -87,7 +87,6 @@
       "angular": "npm:angular@^1.4.3",
       "angular-animate": "npm:angular-animate@^1.4.3",
       "angular-route": "npm:angular-route@^1.4.3",
-      "immutable": "npm:immutable@^3.7.4",
       "velocity-animate": "npm:velocity-animate@^1.2.2"
     },
     "devDependencies": {

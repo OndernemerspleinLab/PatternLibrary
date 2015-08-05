@@ -1,7 +1,5 @@
 System.config({
-  "baseURL": location.pathname.split("/")[1] === "PatternLibrary" ?
-      "/PatternLibrary/js/" :
-      "/js/",
+  "baseURL": "/js/",
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
@@ -23,7 +21,6 @@ System.config({
     "babel": "npm:babel-core@5.8.3",
     "babel-runtime": "npm:babel-runtime@5.8.3",
     "core-js": "npm:core-js@0.9.18",
-    "immutable": "npm:immutable@3.7.4",
     "velocity-animate": "npm:velocity-animate@1.2.2",
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"
