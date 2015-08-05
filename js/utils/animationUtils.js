@@ -1,5 +1,5 @@
 import Modernizr from 'utils/modernizr';
-import {arrayfy, existing, unexisting, isEmptyArray, mapObject, filterObject} from 'utils/objectsArrays';
+import {arrayfy, existing, unexisting, isEmptyArray, mapObject, filterObject} from 'utils/functional';
 
 export const canAnimate = () => {
 	return Modernizr.csstransforms;
