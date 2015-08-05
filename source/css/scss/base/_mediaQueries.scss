@@ -1,25 +1,30 @@
 // MEDIAQUERIES
 
 $mediaQueries: (
+	// 480px
 	extraSmall: (
-		greater: "(min-width: 10em)",
-		lesser: "(max-width: #{10em - (1/16)})"
-	),
-	small: (
-		greater: "(min-width: 20em)",
-		lesser: "(max-width: #{20em - (1/16)})"
-	),
-	medium: (
 		greater: "(min-width: 30em)",
 		lesser: "(max-width: #{30em - (1/16)})"
 	),
-	large: (
+	// 640px
+	small: (
 		greater: "(min-width: 40em)",
 		lesser: "(max-width: #{40em - (1/16)})"
 	),
+	// 768px
+	medium: (
+		greater: "(min-width: 48em)",
+		lesser: "(max-width: #{48em - (1/16)})"
+	),
+	// 960px
+	large: (
+		greater: "(min-width: 64em)",
+		lesser: "(max-width: #{64em - (1/16)})"
+	),
+	// 1280px
 	extraLarge: (
-		greater: "(min-width: 50em)",
-		lesser: "(max-width: #{50em - (1/16)})"
+		greater: "(min-width: 80em)",
+		lesser: "(max-width: #{80em - (1/16)})"
 	),
 );
 

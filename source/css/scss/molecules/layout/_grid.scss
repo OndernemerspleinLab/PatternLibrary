@@ -1,7 +1,8 @@
 /* GRID */
 
-$maxWidth: 70rem;
-$space: 2rem;
+//$maxWidth: 70rem; //1120px
+$maxWidth: 80rem; //1280px
+$space: 2rem; //32px
 
 .layoutContainer {
 	max-width: $maxWidth;
