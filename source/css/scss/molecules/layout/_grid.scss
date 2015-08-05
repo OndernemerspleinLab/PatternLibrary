@@ -29,6 +29,8 @@ $space: 2rem; //32px
 	margin: $space/2;
 	//flex: 1 1 100%;
 	flex: 0 1 auto; // default
+	overflow: hidden;
+	word-wrap: break-word;
 
 	&--full {
 		flex-basis: 100%;
@@ -61,6 +63,8 @@ $space: 2rem; //32px
 	}
 
 	&--twoThird {
-		flex-basis: calc(#{100%*2/3} - #{$space});
+		@include mqGreaterThan(large) {
+			flex-basis: calc(#{100%*2/3} - #{$space});
+		}
 	}
 }
