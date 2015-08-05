@@ -1,3 +1,4 @@
+// Manage open and closed state for groups of elements that can only have multiple opened at a time
 
 const multipleOpened  = Object.freeze({
 	open: (store, openedUnit) => store[openedUnit] = true,
@@ -10,7 +11,7 @@ const multipleOpened  = Object.freeze({
 
 
 const create = () => {
-	let store = {};
+	const store = {};
 
 	return Object.freeze(Object.keys(multipleOpened).reduce((memo, key) => {
 		memo[key] = multipleOpened[key].bind(null, store);

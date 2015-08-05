@@ -18,14 +18,13 @@ export default class menuBar {
 		let animationPromise;
 
 		$scope.$watch(this.openClose.getOpenedUnit, (openedUnit, oldOpenedUnit) => {
-			let closedElement = getElement(oldOpenedUnit);
-			console.log(openedUnit, oldOpenedUnit);
+			const closedElement = getElement(oldOpenedUnit);
 			if (animationPromise) {
 				$animate.cancel(animationPromise);
 			}
 
 			if (openedUnit) {
-				let openedElement = getElement(openedUnit);
+				const openedElement = getElement(openedUnit);
 				if (oldOpenedUnit) {
 					animationPromise = $animate.animate($element, null, { resize: true }, null, {
 						openedElement,

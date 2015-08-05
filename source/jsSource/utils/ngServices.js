@@ -1,8 +1,7 @@
-import angular from 'angular';
+import 'angular';
 import DopApp from 'DopApp';
-import Immutable from 'immutable';
 
-var serviceNames = [
+const serviceNames = [
 	"$http",
 	"$animate",
 	"$rootScope",
@@ -11,12 +10,12 @@ var serviceNames = [
 ];
 
 
-let ngServices = {};
+const ngServices = {};
 
 getServices.$inject = serviceNames;
 function getServices(...services) {
 		services.reduce(function (memo, service, index) {
-		let name = serviceNames[index];
+		const name = serviceNames[index];
 		memo[name] = service;
 
 		return memo;
