@@ -1,5 +1,7 @@
 System.config({
-  "baseURL": "/js/",
+  "baseURL": location.pathname.split("/")[1] === "PatternLibrary" ?
+      "/PatternLibrary/js/" :
+      "/js/",
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
