@@ -1,46 +1,40 @@
 import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
-import {checkClassDecorator} from 'utils/animationUtils';
+import {animation} from 'utils/animationUtils';
 
 const duration = 400;
-const delay = 400;
-const hideClass= "ng-hide";
+const delay = 0;
+const hideClass = "ng-hide";
 
-const animateOpacity = ($element, opacity, complete) => {
+const animateOpacity = ({$element, opacity, done}) => {
 	Velocity($element, {
 		opacity,
 	}, {
 		queue: false,
 		duration,
-		complete
+		delay,
+		complete: done
 	});
 };
 
+const beforeAnimate = ({$element, zIndex, opacity, done}) => {
+	Velocity($element, "stop");
 
-DopApp.animation('.ngAnimate-menuBar-content', () => ({
-	beforeAddClass: checkClassDecorator(hideClass, ($element, className, done) => {
-		Velocity($element, "stop");
-		if ($element[0].style.opacity === "") {
-			Velocity.hook($element, "z-index", 1);
-			Velocity.hook($element, "opacity", 1);
-		}
-		done();
-	}),
+	if ($element[0].style.opacity === "") {
+		Velocity.hook($element, "z-index", zIndex);
+		Velocity.hook($element, "opacity", opacity);
+	}
+	done();
+};
 
-	addClass: checkClassDecorator(hideClass, ($element, className, done) => {
-		animateOpacity($element, 0, done);
-	}),
+animation({
+	module: DopApp,
+	selector: '.ngAnimate-menuBar-content',
 
-	beforeRemoveClass: checkClassDecorator(hideClass, ($element, className, done) => {
-		Velocity($element, "stop");
-		if ($element[0].style.opacity === "") {
-			Velocity.hook($element, "z-index", 2);
-			Velocity.hook($element, "opacity", 0);
-		}
-		done();
-	}),
+	classNamesFilter: hideClass,
 
-	removeClass: checkClassDecorator(hideClass, ($element, className, done) => {
-		animateOpacity($element, 1, done);
-	}),
-}));
+	beforeAddClass: ({$element, done}) => beforeAnimate({$element, zIndex: 1, opacity: 1, done}),
+	addClass: ({$element, done}) => animateOpacity({$element, opacity: 0, done}),
+	beforeRemoveClass: ({$element, done}) => beforeAnimate({$element, zIndex: 2, opacity: 0, done}),
+	removeClass: ({$element, className, done}) => animateOpacity({$element, opacity: 1, done}),
+});

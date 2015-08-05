@@ -1,8 +1,8 @@
-import angular from 'angular';
+import 'angular';
 import DopApp from 'DopApp';
-import Immutable from 'immutable';
 
-var serviceNames = [
+// List of services that will be extracted from angular
+const serviceNames = [
 	"$http",
 	"$animate",
 	"$rootScope",
@@ -11,12 +11,12 @@ var serviceNames = [
 ];
 
 
-let ngServices = {};
+const ngServices = {};
 
 getServices.$inject = serviceNames;
 function getServices(...services) {
-		services.reduce(function (memo, service, index) {
-		let name = serviceNames[index];
+	services.reduce(function (memo, service, index) {
+		const name = serviceNames[index];
 		memo[name] = service;
 
 		return memo;
@@ -26,4 +26,5 @@ function getServices(...services) {
 
 DopApp.run(getServices);
 
+// ngServices will be populated once angular was initiated
 export default ngServices;
