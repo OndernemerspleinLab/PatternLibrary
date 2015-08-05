@@ -90,8 +90,8 @@
 		}
 		&.mail {
 			&:before {
-				content: getIcon(enveloppe);
-				margin-top: -5px;
+				content: getIcon(email);
+				//margin-top: -5px;
 			}
 		}
 	}
