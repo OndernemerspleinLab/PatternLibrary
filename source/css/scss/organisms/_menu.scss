@@ -113,7 +113,12 @@ button:hover {
 		width: 300px;
 	}
 	&:nth-child(4) {
-		width: 500px;
+		@include mqLesserThan(small) {
+			width: 250px;
+		}
+		@include mqGreaterThan(small) {
+			width: 500px;
+		}
 	}
 	&:nth-child(5) {
 		width: 300px;
