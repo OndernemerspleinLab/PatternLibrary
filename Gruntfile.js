@@ -244,6 +244,12 @@ module.exports = function(grunt) {
 				},
 			},
 		},
+
+		karma: {
+            unit: {
+                configFile: './grunt/karma.conf.js'
+            }
+        }
 	});
 
 	// load all grunt tasks
