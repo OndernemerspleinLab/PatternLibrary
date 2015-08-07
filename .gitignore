@@ -13,3 +13,4 @@ patternlab.json
 jspm_packages
 /source/_patterns/00-atoms/04-images/figures.mustache
 /source/_patterns/00-atoms/04-images/01-figures-demo.mustache
+/source/js

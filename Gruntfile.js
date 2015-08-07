@@ -93,7 +93,7 @@ module.exports = function(grunt) {
 			},
 			script: {
 				files: [
-					{ expand: true, cwd: './source/jsSource/', src: '**/*.js', dest: './public/js/'},
+					{ expand: true, cwd: './source/js/', src: 'global.js', dest: './public/js/'},
 				]
 			},
 			style: {
@@ -245,6 +245,18 @@ module.exports = function(grunt) {
 			},
 		},
 
+		bundleJspm: {
+			development: {
+				options: {
+		  			expression: 'start',
+		  			dest: 'source/js/global.js',
+		  			sourceMaps: true,
+					lowResSourceMaps: false,
+					inject: false
+				}
+			},
+		},
+
 		karma: {
             unit: {
                 configFile: './grunt/karma.conf.js'
@@ -257,9 +269,11 @@ module.exports = function(grunt) {
 
 	//load the patternlab task
 	grunt.task.loadTasks('./builder/');
+	grunt.task.loadTasks('./grunt/tasks/');
 
 	grunt.registerTask('styles', ['webfont', 'sass', 'postcss', 'copy:style']);
-	grunt.registerTask('scripts', ['copy:script']);
+	grunt.registerTask('bundleScripts', ['bundleJspm:development']);
+	grunt.registerTask('scripts', ['bundleScripts', 'copy:script']);
 	grunt.registerTask('copyToPublic', ['copy:main', 'copy:images']);
 	grunt.registerTask('svgFigures', ['svgstore', 'rename:svgFigures']);
 
