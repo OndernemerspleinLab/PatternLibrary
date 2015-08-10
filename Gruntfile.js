@@ -8,17 +8,14 @@ module.exports = function(grunt) {
 	// load all grunt tasks
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-	//load the patternlab task
+	// load the patternlab task
 	grunt.task.loadTasks('./builder/');
+
+	// load self defined tasks
 	grunt.task.loadTasks('./grunt/tasks/');
 
-	require('./grunt/taskConfig/styles')(grunt);
-	require('./grunt/taskConfig/scripts')(grunt);
-	require('./grunt/taskConfig/svg')(grunt);
-	require('./grunt/taskConfig/images')(grunt);
-	require('./grunt/taskConfig/main')(grunt);
-	require('./grunt/taskConfig/serve')(grunt);
-	require('./grunt/taskConfig/deploy')(grunt);
+	// load configuration for tasks
+	require('./grunt/taskConfig/')(grunt);
 
 
 

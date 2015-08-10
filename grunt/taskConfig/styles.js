@@ -2,11 +2,6 @@ var path = require("path");
 
 module.exports = function(grunt) {
 	var config = {
-		style: {
-			files: [
-				{ expand: true, cwd: './source/css/', src: ['*.css', '*.css.map'], dest: './public/css/' },
-			]
-		},
 		sass: {
 			development: {
 				options: {
@@ -57,47 +52,10 @@ module.exports = function(grunt) {
 				},
 			},
 		},
-		webfont: {
-			options: {
-				hashes: false,
-				fontFilename: "icons-{hash}",
-				relativeFontPath: "../fonts/iconFont/",
-				engine: "node",
-				stylesheet: "scss",
-				template: "source/iconFontSource/template.css",
-				htmlDemo: true,
-				htmlDemoTemplate: "source/iconFontSource/demoTemplate.html",
-				types: ["eot", "woff", "ttf", "svg"],
-				rename: function (name) {
-					var parsedPath = path.parse(name);
-					parsedPath.ext = "";
-					parsedPath.base = parsedPath.name;
-					name = path.format(parsedPath);
-					name = name.replace("\\", "/");
-					name = name.replace(/^\/?source\/iconFontSource\//, "");
-					name = name.replace(/[^\/A-z\-_0-9]/g, "-");
-					return name;
-				},
-				templateOptions: {
-					"objectName": "$iconKeyCodes",
-					"functionName": "getIcon",
-					"baseClass": "icon",
-					"classPrefix": "icon-",
-					"mixinPrefix": "icon-",
-				},
-				destHtml: 'source/iconFontSource/',
-			},
-			build: {
-				src: ['source/iconFontSource/**/*.svg'],
-				dest: 'source/fonts/iconFont/',
-				destCss: 'source/css/scss/iconFont/',
-			}
-		},
 		copy: {
 			style: {
 				files: [
 					{ expand: true, cwd: './source/css/', src: ['*.css', '*.css.map'], dest: './public/css/' },
-					{ expand: true, cwd: './source/fonts/', src: '**', dest: './public/fonts/'},
 				]
 			},
 		},
@@ -110,22 +68,13 @@ module.exports = function(grunt) {
 				files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
 				tasks: ['devStyles'],
 			},
-			iconFont: {
-				options: {
-					livereload: true
-				},
-				files: [
-					'source/iconFontSource/**/*.svg',
-					'source/iconFontSource/template.css',
-					'source/iconFontSource/demoTemplate.html',
-				],
-				tasks: ['devStyles'],
-			},
 		},
 	};
 
 	grunt.config.merge(config);
 
-	grunt.registerTask('devStyles', ['webfont', 'sass:development', 'postcss', 'copy:style']);
-	grunt.registerTask('prodStyles', ['webfont', 'sass:production', 'postcss', 'copy:style']);
+	grunt.registerTask('copyStyles', ['copy:iconFont', 'copy:style']);
+
+	grunt.registerTask('devStyles', ['webfont', 'sass:development', 'postcss', 'copyStyles']);
+	grunt.registerTask('prodStyles', ['webfont', 'sass:production', 'postcss', 'copyStyles']);
 };
