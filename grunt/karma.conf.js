@@ -13,7 +13,7 @@ module.exports = function(config) {
             // useBundles: true,
             loadFiles: [
                 'jsTest/testConfig.js',
-                'jsTest/test.js',
+                'jsTest/mainSpec.js',
             ],
             serveFiles: [
                 'jsSource/**/*.js',
