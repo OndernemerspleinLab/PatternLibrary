@@ -1,26 +1,5 @@
 module.exports = function(grunt) {
 	var config = {
-		modernizr_builder: {
-			build: {
-				options: {
-					config: './grunt/modernizrConfig.json',
-					dest: './source/jsSource/utils/modernizr.js',
-				},
-			},
-		},
-
-		babel: {
-			options: {
-				stage: 0,
-				sourceMap: true,
-			},
-			development: {
-				cwd: './source/jsSource/',
-				src: '*.js',
-				dest: './source/js/',
-				expand: true,
-			}
-		},
 		jshint: {
 			scripts: {
 				options: {
@@ -29,7 +8,7 @@ module.exports = function(grunt) {
 				files: [{
 					cwd: './source/jsSource/',
 					expand: true,
-					src: ['**/*.js', '!jspm_packages/**', '!utils/modernizr.js'],
+					src: ['**/*.js', '!jspm_packages/**'],
 				}],
 			},
 		},
@@ -89,7 +68,6 @@ module.exports = function(grunt) {
 
 	grunt.config.merge(config);
 
-	grunt.registerTask('modernizr', ['modernizr_builder']);
 	grunt.registerTask('devBundleScripts', ['jshint:scripts', 'karma:unit', 'bundleJspm:development', 'copy:globalScript']);
 	grunt.registerTask('prodScripts', ['karma:unit', 'bundleJspm:production', 'copy:globalScript']);
 	grunt.registerTask('devScripts', ['karma:unit', 'copy:scriptSource']);

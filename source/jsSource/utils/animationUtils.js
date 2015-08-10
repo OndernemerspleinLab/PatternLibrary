@@ -1,4 +1,4 @@
-import Modernizr from 'utils/modernizr';
+import Modernizr from 'modernizr';
 import {arrayfy, existing, unexisting, isEmptyArray, mapObject, filterObject} from 'utils/functional';
 
 export const canAnimate = () => {

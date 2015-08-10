@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 
 
 
-	// ***** Most important tasks Tasks *****
+	// ***** Most important tasks *****
 
 	// ** Build patternlab **
 	// grunt

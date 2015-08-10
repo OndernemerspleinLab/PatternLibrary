@@ -1,8 +1,0 @@
-{
-	"classPrefix": "has-",
-	"options": [
-	],
-	"feature-detects": [
-		"css/transforms"
-	]
-}
