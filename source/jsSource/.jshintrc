@@ -1,4 +1,7 @@
 {
+	"predef": [
+		"System"
+	],
 	"esnext": true,
 	"curly": true,
 	"eqeqeq": true,
