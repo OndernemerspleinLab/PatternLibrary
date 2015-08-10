@@ -6,8 +6,10 @@ body {
 	font: 100%/1.5 RijksOverheidSans, Tahoma;
 	-webkit-text-size-adjust: 100%;
 	color: getColor(grijs darkest);
-	padding-left: 50px;
+}
 
+.page {
+	padding-left: 50px;
 }
 
 .font-secondary {
