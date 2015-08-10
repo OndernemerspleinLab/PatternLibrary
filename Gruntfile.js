@@ -10,14 +10,14 @@ module.exports = function(grunt) {
 					livereload: true
 				},
 				files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
-				tasks: ['styles'],
+				tasks: ['devStyles'],
 			},
 			js: { //scss can be watched if you like
 				options: {
 					livereload: true
 				},
 				files: ['source/jsSource/**/*.js'],
-				tasks: ['scripts'],
+				tasks: ['devScripts'],
 			},
 			svgFigures: { //scss can be watched if you like
 				options: {
@@ -89,16 +89,19 @@ module.exports = function(grunt) {
 			}
 		},
 		copy: {
-			svgDemo: {
-			},
-			script: {
+			globalScript: {
 				files: [
-					{ expand: true, cwd: './source/js/', src: 'global.js', dest: './public/js/'},
+					{ expand: true, cwd: './source/js/', src: ['global.js', 'global.js.map'], dest: './public/js/'},
+				]
+			},
+			scriptSource: {
+				files: [
+					{ expand: true, cwd: './source/jsSource/', src: ['**/*.js'], dest: './public/js/'},
 				]
 			},
 			style: {
 				files: [
-					{ expand: true, cwd: './source/css/', src: '*.css', dest: './public/css/' },
+					{ expand: true, cwd: './source/css/', src: ['*.css', '*.css.map'], dest: './public/css/' },
 				]
 			},
 			images: {
@@ -126,20 +129,34 @@ module.exports = function(grunt) {
 			patternlab: ['Gruntfile.js', './builder/lib/patternlab.js']
 		},
 		sass: {
-			build: {
+			development: {
 				options: {
 					sourceMap: true,
 					sourceMapContents: true,
-					style: 'expanded',
-					precision: 8
+					outputStyle: 'expanded',
+					precision: 8,
 				},
 				files: {
 					'./source/css/style.css': './source/css/style.scss',
 					'./public/styleguide/css/static.css': './public/styleguide/css/static.scss',
 					'./public/styleguide/css/styleguide.css': './public/styleguide/css/styleguide.scss',
 					'./public/styleguide/css/styleguide-specific.css': './public/styleguide/css/styleguide-specific.scss'
-				}
-			}
+				},
+			},
+			production: {
+				options: {
+					sourceMap: true,
+					sourceMapContents: true,
+					outputStyle: 'compressed',
+					precision: 8,
+				},
+				files: {
+					'./source/css/style.css': './source/css/style.scss',
+					'./public/styleguide/css/static.css': './public/styleguide/css/static.scss',
+					'./public/styleguide/css/styleguide.css': './public/styleguide/css/styleguide.scss',
+					'./public/styleguide/css/styleguide-specific.css': './public/styleguide/css/styleguide-specific.scss'
+				},
+			},
 		},
 		postcss: {
 			build: {
@@ -246,13 +263,23 @@ module.exports = function(grunt) {
 		},
 
 		bundleJspm: {
+			options: {
+				expression: 'start',
+				dest: 'source/js/global.js',
+				sourceMaps: true,
+				lowResSourceMaps: false,
+				inject: false,
+			},
 			development: {
 				options: {
-		  			expression: 'start',
-		  			dest: 'source/js/global.js',
-		  			sourceMaps: true,
-					lowResSourceMaps: false,
-					inject: false
+					minify: false,
+					mangle: false,
+				}
+			},
+			production: {
+				options: {
+					minify: true,
+					mangle: true,
 				}
 			},
 		},
@@ -271,14 +298,17 @@ module.exports = function(grunt) {
 	grunt.task.loadTasks('./builder/');
 	grunt.task.loadTasks('./grunt/tasks/');
 
-	grunt.registerTask('styles', ['webfont', 'sass', 'postcss', 'copy:style']);
-	grunt.registerTask('bundleScripts', ['bundleJspm:development']);
-	grunt.registerTask('scripts', ['bundleScripts', 'copy:script']);
+	grunt.registerTask('devStyles', ['webfont', 'sass:development', 'postcss', 'copy:style']);
+	grunt.registerTask('prodStyles', ['webfont', 'sass:production', 'postcss', 'copy:style']);
+	grunt.registerTask('devBundleScripts', ['karma:unit', 'bundleJspm:development', 'copy:globalScript']);
+	grunt.registerTask('prodScripts', ['karma:unit', 'bundleJspm:production', 'copy:globalScript']);
+	grunt.registerTask('devScripts', ['karma:unit', 'copy:scriptSource']);
 	grunt.registerTask('copyToPublic', ['copy:main', 'copy:images']);
 	grunt.registerTask('svgFigures', ['svgstore', 'rename:svgFigures']);
 
 	//if you choose to use scss, or any preprocessor, you can add it here
-	grunt.registerTask('default', ['clean', 'svgFigures', 'patternlab', 'styles', 'scripts', 'copyToPublic']);
+	grunt.registerTask('default', ['clean', 'svgFigures', 'patternlab', 'devStyles', 'devScripts', 'copyToPublic']);
+	grunt.registerTask('bundle', ['default', 'prodStyles', 'prodScripts']);
 
 	// Deploy to GitHub Pages
 	grunt.registerTask('deploy', ['default', 'buildcontrol:gh-pages']);
