@@ -2,39 +2,39 @@ module.exports = function(grunt, devOrProd) {
 
 	var devReplacements = [
 		{
-			from: '<!--dev',
+			from: '<!--dev:',
 			to: '<!--dev-->',
 		},
 		{
-			from: '/dev-->',
+			from: ':/dev-->',
 			to: '<!--/dev-->',
 		},
 		{
 			from: '<!--prod-->',
-			to: '<!--prod',
+			to: '<!--prod:',
 		},
 		{
 			from: '<!--/prod-->',
-			to: '/prod-->',
+			to: ':/prod-->',
 		},
 	];
 
 	var prodReplacements = [
 		{
-			from: '<!--prod',
+			from: '<!--prod:',
 			to: '<!--prod-->',
 		},
 		{
-			from: '/prod-->',
+			from: ':/prod-->',
 			to: '<!--/prod-->',
 		},
 		{
 			from: '<!--dev-->',
-			to: '<!--dev',
+			to: '<!--dev:',
 		},
 		{
 			from: '<!--/dev-->',
-			to: '/dev-->',
+			to: ':/dev-->',
 		},
 	];
 

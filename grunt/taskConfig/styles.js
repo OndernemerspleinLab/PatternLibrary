@@ -71,12 +71,12 @@ module.exports = function(grunt, devOrProd) {
 		},
 	};
 
-	var scriptsTasks;
+	var stylesTasks;
 
 	if (devOrProd === "dev") {
-		scriptsTasks = "devScripts";
+		stylesTasks = "devStyles";
 	} else if (devOrProd === "prod") {
-		scriptsTasks = "prodScripts";
+		stylesTasks = "prodStyles";
 	} else {
 		grunt.fail.fatal('devOrProd variable not properly set.');
 	}
@@ -87,5 +87,5 @@ module.exports = function(grunt, devOrProd) {
 
 	grunt.registerTask('devStyles', ['webfont', 'sass:development', 'postcss', 'copyStyles']);
 	grunt.registerTask('prodStyles', ['webfont', 'sass:production', 'postcss', 'copyStyles']);
-	grunt.registerTask('styles', [scriptsTasks]);
+	grunt.registerTask('styles', [stylesTasks]);
 };

@@ -2,6 +2,14 @@ module.exports = function(grunt) {
 	// Config for building dev or prod
 	var devOrProd = "dev";
 
+	if (process.argv.indexOf("--dev") > -1) {
+		devOrProd = "dev";
+	}
+
+	if (process.argv.indexOf("--prod") > -1) {
+		devOrProd = "prod";
+	}
+
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
