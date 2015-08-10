@@ -56,7 +56,7 @@ module.exports = function(grunt) {
 					'source/iconFontSource/template.css',
 					'source/iconFontSource/demoTemplate.html',
 				],
-				tasks: ['devStyles'],
+				tasks: ['styles'],
 			},
 		},
 	};

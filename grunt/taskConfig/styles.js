@@ -1,6 +1,6 @@
 var path = require("path");
 
-module.exports = function(grunt) {
+module.exports = function(grunt, devOrProd) {
 	var config = {
 		sass: {
 			development: {
@@ -66,10 +66,20 @@ module.exports = function(grunt) {
 					livereload: true
 				},
 				files: ['source/css/**/*.scss', 'public/styleguide/css/*.scss'],
-				tasks: ['devStyles'],
+				tasks: ['styles'],
 			},
 		},
 	};
+
+	var scriptsTasks;
+
+	if (devOrProd === "dev") {
+		scriptsTasks = "devScripts";
+	} else if (devOrProd === "prod") {
+		scriptsTasks = "prodScripts";
+	} else {
+		grunt.fail.fatal('devOrProd variable not properly set.');
+	}
 
 	grunt.config.merge(config);
 
@@ -77,4 +87,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('devStyles', ['webfont', 'sass:development', 'postcss', 'copyStyles']);
 	grunt.registerTask('prodStyles', ['webfont', 'sass:production', 'postcss', 'copyStyles']);
+	grunt.registerTask('styles', [scriptsTasks]);
 };

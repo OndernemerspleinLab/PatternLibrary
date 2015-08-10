@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function(grunt, devOrProd) {
 	var config = {
 		jshint: {
 			scripts: {
@@ -15,8 +15,8 @@ module.exports = function(grunt) {
 
 		bundleJspm: {
 			options: {
-				expression: 'start',
-				dest: 'source/js/global.js',
+				expression: 'global',
+				dest: 'source/js/globalBundled.js',
 				sourceMaps: true,
 				lowResSourceMaps: false,
 				inject: false,
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         copy: {
 			globalScript: {
 				files: [
-					{ expand: true, cwd: './source/js/', src: ['global.js', 'global.js.map'], dest: './public/js/'},
+					{ expand: true, cwd: './source/js/', src: ['globalBundled.js', 'globalBundled.js.map'], dest: './public/js/'},
 				]
 			},
 			scriptSource: {
@@ -60,7 +60,15 @@ module.exports = function(grunt) {
 					livereload: true
 				},
 				files: ['source/jsSource/**/*.js'],
-				tasks: ['devScripts'],
+				tasks: ['scripts'],
+
+			},
+			karma: {
+				options: {
+					livereload: true
+				},
+				files: ['source/jsTest/**/*Spec.js'],
+				tasks: ['karma:unit'],
 
 			},
 		},
@@ -68,7 +76,16 @@ module.exports = function(grunt) {
 
 	grunt.config.merge(config);
 
+	if (devOrProd === "dev") {
+		scriptsTasks = "devScripts";
+	} else if (devOrProd === "prod") {
+		scriptsTasks = "prodScripts";
+	} else {
+		grunt.fail.fatal('devOrProd variable not properly set.');
+	}
+
 	grunt.registerTask('devBundleScripts', ['jshint:scripts', 'karma:unit', 'bundleJspm:development', 'copy:globalScript']);
 	grunt.registerTask('prodScripts', ['karma:unit', 'bundleJspm:production', 'copy:globalScript']);
 	grunt.registerTask('devScripts', ['karma:unit', 'copy:scriptSource']);
+	grunt.registerTask('scripts', [scriptsTasks]);
 };

@@ -1,4 +1,6 @@
 module.exports = function(grunt) {
+	// Config for building dev or prod
+	var devOrProd = "dev";
 
 	// Project configuration.
 	grunt.initConfig({
@@ -15,7 +17,7 @@ module.exports = function(grunt) {
 	grunt.task.loadTasks('./grunt/tasks/');
 
 	// load configuration for tasks
-	require('./grunt/taskConfig/')(grunt);
+	require('./grunt/taskConfig/')(grunt, devOrProd);
 
 
 
