@@ -6,9 +6,8 @@ describe("DopApp", function () {
 		expect(angular.module("DopApp")).toEqual(jasmine.any(Object));
 	});
 
-	it("should depend on ngAnimate", function () {
+	it("should require ngAnimate", function () {
 		expect(DopApp.requires).toEqual(["ngAnimate"]);
-
 	});
 });
 

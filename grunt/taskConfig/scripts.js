@@ -65,9 +65,9 @@ module.exports = function(grunt, devOrProd) {
 			},
 			karma: {
 				options: {
-					livereload: true
+					livereload: false
 				},
-				files: ['source/jsTest/**/*Spec.js'],
+				files: ['source/jsTest/**/*.js'],
 				tasks: ['karma:unit'],
 
 			},

@@ -33,6 +33,7 @@
     "karma-jasmine": "^0.3.6",
     "karma-jspm": "^1.1.5",
     "karma-phantomjs-launcher": "^0.2.1",
+    "karma-spec-reporter": "0.0.20",
     "matchdep": "^0.3.0",
     "mustache": "^1.0.0",
     "phantomjs": "^1.9.17",

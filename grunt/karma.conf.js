@@ -25,7 +25,7 @@ module.exports = function(config) {
         files: ['../node_modules/karma-babel-preprocessor/node_modules/babel-core/browser-polyfill.js'],
 
         // test results reporter to use
-        reporters: ['dots'],
+        reporters: ['spec'],
 
         // web server port
         port: 9876,
