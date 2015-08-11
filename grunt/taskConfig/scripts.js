@@ -76,6 +76,8 @@ module.exports = function(grunt, devOrProd) {
 
 	grunt.config.merge(config);
 
+	var scriptsTasks;
+
 	if (devOrProd === "dev") {
 		scriptsTasks = "devScripts";
 	} else if (devOrProd === "prod") {
