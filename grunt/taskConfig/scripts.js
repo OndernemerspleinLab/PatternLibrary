@@ -86,7 +86,8 @@ module.exports = function(grunt, devOrProd) {
 		grunt.fail.fatal('devOrProd variable not properly set.');
 	}
 
-	grunt.registerTask('prodScripts', ['karma:unit', 'bundleJspm:production', 'copy:globalScript']);
-	grunt.registerTask('devScripts', ['karma:unit', 'copy:scriptSource']);
+	grunt.registerTask('tests', ['karma:unit', 'jshint:scripts']);
+	grunt.registerTask('prodScripts', ['tests', 'bundleJspm:production', 'copy:globalScript']);
+	grunt.registerTask('devScripts', ['tests', 'copy:scriptSource']);
 	grunt.registerTask('scripts', [scriptsTasks]);
 };
