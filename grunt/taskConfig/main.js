@@ -38,12 +38,13 @@ module.exports = function(grunt, devOrProd) {
 		},
 	];
 
-	var replacements;
+	var replaceTask;
+	var replaceNormalizeTask = "replace:scriptTagsDev";
 
 	if (devOrProd === "dev") {
-		replacements = devReplacements;
+		replaceTask = "replace:scriptTagsDev";
 	} else if (devOrProd === "prod") {
-		replacements = prodReplacements;
+		replaceTask = "replace:scriptTagsProd";
 	} else {
 		grunt.fail.fatal('devOrProd variable not properly set.');
 	}
@@ -61,8 +62,17 @@ module.exports = function(grunt, devOrProd) {
 			}
 		},
 		replace: {
-			scriptTags: {
-				replacements: replacements,
+			scriptTagsDev: {
+				replacements: devReplacements,
+				overwrite: true,
+				src: [
+					'./source/_patternlab-files/styleguide.mustache',
+					'./source/_patternlab-files/viewall.mustache',
+					'./source/_patternlab-files/pattern-header-footer/footer.html',
+				],
+			},
+			scriptTagsProd: {
+				replacements: prodReplacements,
 				overwrite: true,
 				src: [
 					'./source/_patternlab-files/styleguide.mustache',
@@ -89,5 +99,5 @@ module.exports = function(grunt, devOrProd) {
 	grunt.config.merge(config);
 
 	grunt.registerTask('copyToPublic', ['copy:main', 'copy:images']);
-	grunt.registerTask('default', ['clean', 'svgFigures', 'replace', 'patternlab', 'styles', 'scripts', 'copyToPublic']);
+	grunt.registerTask('default', ['clean', 'svgFigures', replaceTask, 'patternlab', 'styles', 'scripts', 'copyToPublic', replaceNormalizeTask]);
 };
