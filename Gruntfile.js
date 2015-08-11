@@ -1,12 +1,13 @@
 module.exports = function(grunt) {
-	// Config for building dev or prod
+	// Config for building dev or prod,
+	// can be overwritten by commandline argument
 	var devOrProd = "dev";
 
 	if (process.argv.indexOf("--dev") > -1) {
 		devOrProd = "dev";
 	}
 
-	if (process.argv.indexOf("--prod") > -1) {
+	if (process.argv.indexOf("--prod") > -1 || process.argv.indexOf("deploy") > -1) {
 		devOrProd = "prod";
 	}
 
@@ -34,9 +35,12 @@ module.exports = function(grunt) {
 	// ** Build patternlab **
 	// grunt
 
+	// ** Build patternlab for production **
+	// grunt --prod
+
 	// ** Build patternlab and serve on http://localhost:9001 **
 	// grunt serve
 
-	// ** Build patternlab and deploy to GitHub Pages **
+	// ** Build patternlab for production and deploy to GitHub Pages **
 	// grunt deploy
 };
