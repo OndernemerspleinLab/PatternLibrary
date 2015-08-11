@@ -15,12 +15,14 @@ System.config({
 
 System.config({
   "map": {
+    "Modernizr/modernizr-neue": "github:Modernizr/modernizr-neue@master",
     "angular": "npm:angular@1.4.3",
     "angular-animate": "npm:angular-animate@1.4.3",
     "angular-route": "npm:angular-route@1.4.3",
     "babel": "npm:babel-core@5.8.3",
     "babel-runtime": "npm:babel-runtime@5.8.3",
     "core-js": "npm:core-js@0.9.18",
+    "modernizr": "github:Modernizr/Modernizr@2.8.3",
     "velocity-animate": "npm:velocity-animate@1.2.2",
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"

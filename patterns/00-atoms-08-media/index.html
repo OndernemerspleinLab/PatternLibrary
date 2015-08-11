@@ -61,12 +61,17 @@
     <script src="../../styleguide/js/annotations-pattern.js"></script>
     <script src="../../styleguide/js/code-pattern.js"></script>
 
-    <script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
-    <script type="text/javascript" src="../../js/config.js"></script>
-    <script type="text/javascript" src="../../js/global.js"></script>
+    <!--dev:
+      <script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
+      <script type="text/javascript" src="../../js/config.js"></script>
+      <script type="text/javascript" src="../../js/init.js"></script>
+    :/dev-->
+
+    <!--prod-->
+      <script type="text/javascript" src="../../js/globalBundled.js"></script>
+    <!--/prod-->
     <script>
       (function () {
-        console.log("DOM fully loaded and parsed");
         if (location.pathname.split("/")[1] !== "PatternLibrary") {
           return;
         }
