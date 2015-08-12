@@ -10,6 +10,13 @@ export const unexisting = negate(existing);
 
 export const isEmptyArray = (arr) => arr.length === 0;
 
+export const partial = (func, ...args) => func.bind(null, ...args);
+
+export const partialByObject = (func, boundObj = {}) => (obj = {}) => {
+	const argObj = Object.assign({}, boundObj, obj);
+	return func(argObj);
+};
+
 // Always returns an array, if the candidate is an array it is returned
 // otherwise it is wrapped in an array
 export const arrayfy = (candidate) => {
@@ -20,9 +27,11 @@ export const arrayfy = (candidate) => {
 	return [];
 };
 
-
 export const reduceObject = (obj, iterator, initial) => {
 	const keys = Object.keys(obj);
+	if (unexisting(initial)) {
+		initial = obj[keys.shift()];
+	}
 
 	return keys.reduce((memo, key) => {
 		const value = obj[key];

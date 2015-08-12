@@ -1,5 +1,7 @@
 // Manage open and closed state for groups of elements that can only have one opened at a time
 
+import {partial} from 'utils/functional';
+
 const singleOpened = Object.freeze({
 	isOpened: (store, openedUnit) => store.opened === openedUnit,
 	isAnyOpened: (store) => Boolean(store.opened),
@@ -16,7 +18,7 @@ const create = () => {
 	const store = {};
 
 	return Object.freeze(Object.keys(singleOpened).reduce((memo, key) => {
-		memo[key] = singleOpened[key].bind(null, store);
+		memo[key] = partial(singleOpened[key], store);
 		return memo;
 	}, {}));
 };

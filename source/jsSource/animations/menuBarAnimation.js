@@ -41,7 +41,7 @@ animation({
 	module: DopApp,
 	selector: '.ngAnimate-menuBar',
 
-	classNamesFilter: openedClass,
+	classNameFilters: openedClass,
 
 	addClass: animate,
 	addClassInstant: instant,

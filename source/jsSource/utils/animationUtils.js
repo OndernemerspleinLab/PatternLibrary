@@ -1,6 +1,8 @@
 import Modernizr from 'modernizr';
 import {arrayfy, existing, unexisting, isEmptyArray, mapObject, filterObject} from 'utils/functional';
 
+
+// Only animate when we can do so efficiently with csstransforms
 export const canAnimate = () => {
 	return Modernizr.csstransforms;
 };
@@ -13,21 +15,23 @@ export const canAnimateDecorator = (animationCallback, noAnimationCallback) => {
 	return callback;
 };
 
-// Only call callback when the className matches one of the classNamesFilter
-export const checkClassDecorator = (classNamesFilter, callback) => {
+//  check if classNameFilters is empty or if className is in classNameFilters
+export const checkClass = (classNameFilters, className) => {
+	classNameFilters = arrayfy(classNameFilters);
+
+	return isEmptyArray(classNameFilters) || classNameFilters.includes(className);
+};
+
+// Only call callback when the className matches one of the classNameFilters
+export const checkClassDecorator = (classNameFilters, callback) => {
 	if (unexisting(callback)) {
 		return undefined;
 	}
-	classNamesFilter = arrayfy(classNamesFilter);
 
 	return (config) => {
 		const className = config.className;
-		if (isEmptyArray(classNamesFilter)) {
-			return callback(config);
-		}
 
-
-		if (classNamesFilter.some((classNameFilter) => classNameFilter === className )) {
+		if (checkClass(className)) {
 			return callback(config);
 		}
 	};
@@ -73,7 +77,7 @@ export const animation = ({
 	module,
 	selector,
 
-	classNamesFilter,
+	classNameFilters,
 
 	beforeAnimate, beforeAnimateInstant,
 	animate, animateInstant,
@@ -94,14 +98,14 @@ export const animation = ({
 		animate: canAnimateDecorator(animate, animateInstant),
 		beforeAnimate: canAnimateDecorator(beforeAnimate, beforeAnimateInstant),
 
-		setClass: checkClassDecorator(classNamesFilter, canAnimateDecorator(setClass, setClassInstant)),
-		beforeSetClass: checkClassDecorator(classNamesFilter, canAnimateDecorator(beforeSetClass, beforeSetClassInstant)),
+		setClass: checkClassDecorator(classNameFilters, canAnimateDecorator(setClass, setClassInstant)),
+		beforeSetClass: checkClassDecorator(classNameFilters, canAnimateDecorator(beforeSetClass, beforeSetClassInstant)),
 
-		addClass: checkClassDecorator(classNamesFilter, canAnimateDecorator(addClass, addClassInstant)),
-		beforeAddClass: checkClassDecorator(classNamesFilter, canAnimateDecorator(beforeAddClass, beforeAddClassInstant)),
+		addClass: checkClassDecorator(classNameFilters, canAnimateDecorator(addClass, addClassInstant)),
+		beforeAddClass: checkClassDecorator(classNameFilters, canAnimateDecorator(beforeAddClass, beforeAddClassInstant)),
 
-		removeClass: checkClassDecorator(classNamesFilter, canAnimateDecorator(removeClass, removeClassInstant)),
-		beforeRemoveClass: checkClassDecorator(classNamesFilter, canAnimateDecorator(beforeRemoveClass, beforeRemoveClassInstant)),
+		removeClass: checkClassDecorator(classNameFilters, canAnimateDecorator(removeClass, removeClassInstant)),
+		beforeRemoveClass: checkClassDecorator(classNameFilters, canAnimateDecorator(beforeRemoveClass, beforeRemoveClassInstant)),
 	};
 
 	// Filter out properties without a callback

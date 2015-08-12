@@ -31,7 +31,7 @@ animation({
 	module: DopApp,
 	selector: '.ngAnimate-menuBar-content',
 
-	classNamesFilter: hideClass,
+	classNameFilters: hideClass,
 
 	beforeAddClass: ({$element, done}) => beforeAnimate({$element, zIndex: 1, opacity: 1, done}),
 	addClass: ({$element, done}) => animateOpacity({$element, opacity: 0, done}),
