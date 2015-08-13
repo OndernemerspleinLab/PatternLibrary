@@ -1,4 +1,5 @@
 import createOpenClose from 'openClose/singleOpened';
+import * as classNames from 'constants/classNames';
 
 const getElement = (id) => {
 	if (!id) {
@@ -32,12 +33,12 @@ export default class menuBar {
 						duration: 100
 					});
 				} else {
-					animationPromise = $animate.addClass($element, "is-opened", {
+					animationPromise = $animate.addClass($element, classNames.opened, {
 						openedElement
 					});
 				}
 			} else {
-				animationPromise = $animate.removeClass($element, "is-opened", {
+				animationPromise = $animate.removeClass($element, classNames.opened, {
 					closedElement
 				});
 			}

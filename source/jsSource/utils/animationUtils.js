@@ -1,5 +1,9 @@
 import Modernizr from 'modernizr';
-import {arrayfy, existing, unexisting, isEmptyArray, mapObject, filterObject} from 'utils/functional';
+import {
+	arrayfy, existing, unexisting, includes,
+	isFilledArray, mapObject, filterObject,
+	toObjectArguments, aliasMapProperty, partial
+} from 'utils/functional';
 
 
 // Only animate when we can do so efficiently with csstransforms
@@ -8,18 +12,22 @@ export const canAnimate = () => {
 };
 
 
-// Call either animationCallback or noAnimationCallback depending
+// Call either canCallCallback or canNotCallCallback depending
 // on wether the browser supports enough to succesfully animate
-export const canAnimateDecorator = (animationCallback, noAnimationCallback) => {
-	const callback = canAnimate() ? animationCallback : noAnimationCallback;
+export const switchCallback = (switcher, truthyCallback, falsyCallback) => {
+	const callback = switcher() ? truthyCallback : falsyCallback;
 	return callback;
 };
+
+// Call either animationCallback or noAnimationCallback depending
+// on wether the browser supports enough to succesfully animate
+export const canAnimateSwitcher = partial(switchCallback, canAnimate);
 
 //  check if classNameFilters is empty or if className is in classNameFilters
 export const checkClass = (classNameFilters, className) => {
 	classNameFilters = arrayfy(classNameFilters);
 
-	return isEmptyArray(classNameFilters) || classNameFilters.includes(className);
+	return isFilledArray(classNameFilters) && includes(classNameFilters, className);
 };
 
 // Only call callback when the className matches one of the classNameFilters
@@ -30,43 +38,28 @@ export const checkClassDecorator = (classNameFilters, callback) => {
 
 	return (config) => {
 		const className = config.className;
-
-		if (checkClass(className)) {
+		if (checkClass(classNameFilters, className)) {
 			return callback(config);
 		}
 	};
 };
 
-const makeAngularCallback = (callback, eventName) => {
-	let angularCallback;
+export const makeNgAnimationCallback = (callback, eventName) => {
+	const argsMap = new Map([
+		['animate', ['$element', 'from', 'to', 'done', 'options']],
+		['setClass', ['$element', 'classNameToAdd', 'classNameToRemove', 'done', 'options']],
+		['addClass', ['$element', 'className', 'done', 'options']],
+	]);
 
-	// Pass the arguments as an object to the callback
-	// so that they can be treaded as named arguments
-	switch (eventName) {
-		case 'beforeAnimate':
-		case 'animate':
-			angularCallback = ($element, from, to, done, options) =>
-					callback({$element, from, to, done, options});
-			break;
+	aliasMapProperty(argsMap, 'animate', 'beforeAnimate');
+	aliasMapProperty(argsMap, 'setClass', 'beforeSetClass');
+	aliasMapProperty(argsMap, 'addClass', 'beforeAddClass');
+	aliasMapProperty(argsMap, 'addClass', 'beforeRemoveClass');
+	aliasMapProperty(argsMap, 'addClass', 'removeClass');
 
-		case 'beforeSetClass':
-		case 'setClass':
-			angularCallback = ($element, classNameToAdd, classNameToRemove, done, options) =>
-					callback({$element, classNameToAdd, classNameToRemove, done, options});
-			break;
+	const argNames = argsMap.get(eventName);
 
-		case 'beforeAddClass':
-		case 'addClass':
-		case 'beforeRemoveClass':
-		case 'removeClass':
-			angularCallback = ($element, className, done, options) =>
-					callback({$element, className, done, options});
-			break;
-
-		default:
-			angularCallback = callback;
-			break;
-    }
+	const angularCallback = existing(argNames) ? toObjectArguments(callback, argNames) : callback;
 
 	return angularCallback;
 };
@@ -95,24 +88,24 @@ export const animation = ({
 
 	// All possible animation types
 	const fullAnimationConfig = {
-		animate: canAnimateDecorator(animate, animateInstant),
-		beforeAnimate: canAnimateDecorator(beforeAnimate, beforeAnimateInstant),
+		animate: canAnimateSwitcher(animate, animateInstant),
+		beforeAnimate: canAnimateSwitcher(beforeAnimate, beforeAnimateInstant),
 
-		setClass: checkClassDecorator(classNameFilters, canAnimateDecorator(setClass, setClassInstant)),
-		beforeSetClass: checkClassDecorator(classNameFilters, canAnimateDecorator(beforeSetClass, beforeSetClassInstant)),
+		setClass: checkClassDecorator(classNameFilters, canAnimateSwitcher(setClass, setClassInstant)),
+		beforeSetClass: checkClassDecorator(classNameFilters, canAnimateSwitcher(beforeSetClass, beforeSetClassInstant)),
 
-		addClass: checkClassDecorator(classNameFilters, canAnimateDecorator(addClass, addClassInstant)),
-		beforeAddClass: checkClassDecorator(classNameFilters, canAnimateDecorator(beforeAddClass, beforeAddClassInstant)),
+		addClass: checkClassDecorator(classNameFilters, canAnimateSwitcher(addClass, addClassInstant)),
+		beforeAddClass: checkClassDecorator(classNameFilters, canAnimateSwitcher(beforeAddClass, beforeAddClassInstant)),
 
-		removeClass: checkClassDecorator(classNameFilters, canAnimateDecorator(removeClass, removeClassInstant)),
-		beforeRemoveClass: checkClassDecorator(classNameFilters, canAnimateDecorator(beforeRemoveClass, beforeRemoveClassInstant)),
+		removeClass: checkClassDecorator(classNameFilters, canAnimateSwitcher(removeClass, removeClassInstant)),
+		beforeRemoveClass: checkClassDecorator(classNameFilters, canAnimateSwitcher(beforeRemoveClass, beforeRemoveClassInstant)),
 	};
 
 	// Filter out properties without a callback
 	// so angular animation doesn't erroneously calls it
 	const filteredAnimationConfig = filterObject(fullAnimationConfig, existing);
 
-	const animationConfig = mapObject(filteredAnimationConfig, makeAngularCallback);
+	const animationConfig = mapObject(filteredAnimationConfig, makeNgAnimationCallback);
 
 	// Angular function for registering animations
 	return module.animation(selector, () => animationConfig);

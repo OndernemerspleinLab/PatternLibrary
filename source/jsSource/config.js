@@ -18,6 +18,7 @@ System.config({
     "Modernizr/modernizr-neue": "github:Modernizr/modernizr-neue@master",
     "angular": "npm:angular@1.4.3",
     "angular-animate": "npm:angular-animate@1.4.3",
+    "angular-mocks": "npm:angular-mocks@1.4.3",
     "angular-route": "npm:angular-route@1.4.3",
     "babel": "npm:babel-core@5.8.3",
     "babel-runtime": "npm:babel-runtime@5.8.3",

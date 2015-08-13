@@ -1,15 +1,15 @@
 // Manage open and closed state for groups of elements that can only have one opened at a time
 
-import {partial} from 'utils/functional';
+import {partial, existing, truthy} from 'utils/functional';
 
 const singleOpened = Object.freeze({
-	isOpened: (store, openedUnit) => store.opened === openedUnit,
-	isAnyOpened: (store) => Boolean(store.opened),
+	isOpened: (store, openedUnit) => existing(store.opened) && store.opened === openedUnit,
+	isAnyOpened: (store) => truthy(store.opened),
 	getOpenedUnit: (store) => store.opened,
 
 	open: (store, openedUnit) => store.opened = openedUnit,
 	close: (store) => store.opened = undefined,
-	toggle: (store, openedUnit) => store.opened === openedUnit ?
+	toggle: (store, openedUnit) => singleOpened.isOpened(store, openedUnit) ?
 			singleOpened.close(store) :
 			singleOpened.open(store, openedUnit),
 });

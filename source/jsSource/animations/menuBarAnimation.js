@@ -2,10 +2,11 @@ import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
 import {animation} from 'utils/animationUtils';
 import {existing} from 'utils/functional';
-
+import {opened as classNameFilters} from 'constants/classNames';
+import {menuBar as selector} from 'constants/animationSelectors';
+console.log(classNameFilters, selector);
 const duration = 800;
 const easing = [200, 20];
-const openedClass = "is-opened";
 
 const getWidth = element => {
 	if (existing(element)) {
@@ -39,9 +40,9 @@ const instant = ({ $element, options: {openedElement}, done}) => {
 
 animation({
 	module: DopApp,
-	selector: '.ngAnimate-menuBar',
+	selector,
 
-	classNameFilters: openedClass,
+	classNameFilters,
 
 	addClass: animate,
 	addClassInstant: instant,

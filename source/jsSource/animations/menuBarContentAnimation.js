@@ -1,10 +1,14 @@
 import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
+import {partialByObject} from 'utils/functional';
 import {animation} from 'utils/animationUtils';
+import {hidden as classNameFilters} from 'constants/classNames';
+import {menuBarContent as selector} from 'constants/animationSelectors';
+console.log("C", classNameFilters, selector);
+
 
 const duration = 400;
 const delay = 0;
-const hideClass = "ng-hide";
 
 const animateOpacity = ({$element, opacity, done}) => {
 	Velocity($element, {
@@ -29,12 +33,12 @@ const beforeAnimate = ({$element, zIndex, opacity, done}) => {
 
 animation({
 	module: DopApp,
-	selector: '.ngAnimate-menuBar-content',
+	selector,
 
-	classNameFilters: hideClass,
+	classNameFilters,
 
-	beforeAddClass: ({$element, done}) => beforeAnimate({$element, zIndex: 1, opacity: 1, done}),
-	addClass: ({$element, done}) => animateOpacity({$element, opacity: 0, done}),
-	beforeRemoveClass: ({$element, done}) => beforeAnimate({$element, zIndex: 2, opacity: 0, done}),
-	removeClass: ({$element, className, done}) => animateOpacity({$element, opacity: 1, done}),
+	beforeAddClass: partialByObject(beforeAnimate, {zIndex: 1, opacity: 1}),
+	addClass: partialByObject(animateOpacity, {opacity: 0}),
+	beforeRemoveClass: partialByObject(beforeAnimate, {zIndex: 2, opacity: 0}),
+	removeClass: partialByObject(animateOpacity, {opacity: 1}),
 });

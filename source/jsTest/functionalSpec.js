@@ -1,8 +1,11 @@
 import {
 	negate, existing, unexisting,
-	partial, partialByObject,
-	isEmptyArray, arrayfy, reduceObject,
+	falsy, truthy,
+	partial, partialByObject, includes,
+	isFilledArray, isEmptyArray,
+	arrayfy, reduceObject,
 	mapObject, filterObject,
+	aliasMapProperty, toObjectArguments
 } from 'utils/functional';
 
 describe("functional", () => {
@@ -44,6 +47,38 @@ describe("functional", () => {
 			expect(unexisting({})).toBe(false);
 		});
 	});
+	describe("falsy", () => {
+		it("return true for false, null and undefined", () => {
+			expect(falsy(null)).toBe(true);
+			expect(falsy(undefined)).toBe(true);
+			expect(falsy(false)).toBe(true);
+		});
+
+		it("return false for values other than false, null and undefined", () => {
+			expect(falsy("")).toBe(false);
+			expect(falsy(0)).toBe(false);
+			expect(falsy(true)).toBe(false);
+			expect(falsy(NaN)).toBe(false);
+			expect(falsy([])).toBe(false);
+			expect(falsy({})).toBe(false);
+		});
+	});
+	describe("truthy", () => {
+		it("return false for false, null and undefined", () => {
+			expect(truthy(null)).toBe(false);
+			expect(truthy(undefined)).toBe(false);
+			expect(truthy(false)).toBe(false);
+		});
+
+		it("return true for values other than false, null and undefined", () => {
+			expect(truthy("")).toBe(true);
+			expect(truthy(0)).toBe(true);
+			expect(truthy(true)).toBe(true);
+			expect(truthy(NaN)).toBe(true);
+			expect(truthy([])).toBe(true);
+			expect(truthy({})).toBe(true);
+		});
+	});
 
 	describe("partial", () => {
 		let func;
@@ -75,13 +110,13 @@ describe("functional", () => {
 		it("should partially apply an object to a function", () => {
 			partialByObject(func, {a: 1, b: 2})({ b: 3, c: 4 });
 
-			expect(func).toHaveBeenCalledWith({a: 1, b: 3, c: 4});
+			expect(func).toHaveBeenCalledWith({a: 1, b: 2, c: 4});
 		});
 
 		it("should partially apply an object to a function", () => {
 			partialByObject(partialByObject(func, {a: 1, b: 2}), { b: 3, c: 4 })({c: 5, d: 6});
 
-			expect(func).toHaveBeenCalledWith({a: 1, b: 3, c: 5, d: 6});
+			expect(func).toHaveBeenCalledWith({a: 1, b: 2, c: 4, d: 6});
 		});
 
 		it("should not alter the boundObj and the argsObj", () => {
@@ -95,12 +130,31 @@ describe("functional", () => {
 		});
 	});
 
+	describe("includes", () => {
+		it("report if a value is in an array", () => {
+			const arr = [0, 1, 2, 3];
+			expect(includes(arr, 2)).toBe(true);
+			expect(includes(arr, 4)).toBe(false);
+			expect(includes(arr, "2")).toBe(false);
+			expect(includes(arr, undefined)).toBe(false);
+		});
+	});
+
 	describe("isEmptyArray", () => {
 		it("should descern between empty and filled arrays", () => {
 			expect(isEmptyArray([])).toBe(true);
 			expect(isEmptyArray([1, null])).toBe(false);
 			expect(isEmptyArray([,])).toBe(false); // jshint ignore:line
 			expect(isEmptyArray([undefined])).toBe(false);
+		});
+	});
+
+	describe("isFilledArray", () => {
+		it("should descern between empty and filled arrays", () => {
+			expect(isFilledArray([])).toBe(false);
+			expect(isFilledArray([1, null])).toBe(true);
+			expect(isFilledArray([,])).toBe(true); // jshint ignore:line
+			expect(isFilledArray([undefined])).toBe(true);
 		});
 	});
 
@@ -167,6 +221,41 @@ describe("functional", () => {
 				expect(obj).toBe(obj);
 				expect(obj[key]).toBe(val);
 			});
+		});
+	});
+
+	describe("aliasMapProperty", () => {
+		it("should make an alias for a map property", () => {
+			const map = new Map();
+
+			map.set("original", 1);
+			aliasMapProperty(map, "original", "alias");
+
+			expect(map.get("alias")).toBe(1);
+		});
+	});
+
+	describe("toObjectArguments", () => {
+		let callbackSpy = jasmine.createSpy("callback");
+
+		it("should call the callback with the argMames combined with the original args in an object", () => {
+			const argNames = ["a", "b", "c"];
+			const objectCallback = toObjectArguments(callbackSpy, argNames);
+			objectCallback(1, 2, 3);
+
+			const calledArgs = callbackSpy.calls.mostRecent().args;
+			expect(calledArgs.length).toBe(1);
+			expect(calledArgs[0]).toEqual({ a: 1, b: 2, c: 3 });
+		});
+
+		it("should call the callback with an empty object when argNames is empty", () => {
+			const argNames = [];
+			const objectCallback = toObjectArguments(callbackSpy, argNames);
+			objectCallback(1, 2, 3);
+
+			const calledArgs = callbackSpy.calls.mostRecent().args;
+			expect(calledArgs.length).toBe(1);
+			expect(calledArgs[0]).toEqual({});
 		});
 	});
 });
