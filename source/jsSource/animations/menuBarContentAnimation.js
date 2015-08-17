@@ -1,6 +1,6 @@
 import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
-import {partialByObject} from 'utils/functional';
+import {partialByObject, partial} from 'utils/functional';
 import {animation} from 'utils/ngAnimation';
 import {hidden as classNameFilters} from 'constants/classNames';
 import {menuBarContent as selector} from 'constants/animationSelectors';
@@ -25,7 +25,7 @@ const beforeAnimate = ({$element, zIndex, opacity, done}) => {
 	done();
 };
 
-animation({
+const init = partial(animation, {
 	module: DopApp,
 	selector,
 
@@ -36,3 +36,5 @@ animation({
 	beforeRemoveClass: partialByObject(beforeAnimate, {zIndex: 2, opacity: 0}),
 	removeClass: partialByObject(animateOpacity, {opacity: 1}),
 });
+
+export default init;
