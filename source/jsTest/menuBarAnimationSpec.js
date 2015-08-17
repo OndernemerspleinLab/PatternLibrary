@@ -78,11 +78,12 @@ describe("menuBarAnimation", () => {
 		const configObj = args[1]();
 		const mockElement = [];
 		const mockOptions = {};
-		const mockDone = () => {};
+		const mockDone = jasmine.createSpy();
 
 		configObj.removeClass(mockElement, opened, mockDone, mockOptions);
 
 		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "left", "0px");
+		expect(mockDone).toHaveBeenCalled();
 	});
 
 	it("should transition instantly to the with of an openedElement when animations are disabled", () => {
@@ -96,13 +97,14 @@ describe("menuBarAnimation", () => {
 		const mockOptions = {
 			openedElement
 		};
-		const mockDone = () => {};
+		const mockDone = jasmine.createSpy();
 		const width = getWidth(openedElement);
 
 		configObj.addClass(mockElement, opened, mockDone, mockOptions);
 
 		expect(width).not.toBe("0px");
 		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "left", width);
+		expect(mockDone).toHaveBeenCalled();
 	});
 
 
