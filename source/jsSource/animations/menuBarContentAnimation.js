@@ -4,21 +4,15 @@ import {partialByObject} from 'utils/functional';
 import {animation} from 'utils/animationUtils';
 import {hidden as classNameFilters} from 'constants/classNames';
 import {menuBarContent as selector} from 'constants/animationSelectors';
-console.log("C", classNameFilters, selector);
-
-
-const duration = 400;
-const delay = 0;
+import {menuBarContent as animationTiming} from 'constants/animationTiming';
 
 const animateOpacity = ({$element, opacity, done}) => {
 	Velocity($element, {
 		opacity,
-	}, {
+	}, Object.assign({
 		queue: false,
-		duration,
-		delay,
 		complete: done
-	});
+	}, animationTiming));
 };
 
 const beforeAnimate = ({$element, zIndex, opacity, done}) => {

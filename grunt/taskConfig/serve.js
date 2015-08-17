@@ -11,9 +11,12 @@ module.exports = function(grunt) {
 				},
 			},
 		},
+		watch: {
+			options: {},
+		},
 	};
 
-	grunt.registerTask('serve', ['default', 'connect', 'watch']);
+	grunt.registerTask('serve', ['default', 'connect', 'karma:background', 'watch']);
 
 	grunt.config.merge(config);
 };

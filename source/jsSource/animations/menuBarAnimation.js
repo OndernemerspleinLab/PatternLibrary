@@ -3,10 +3,8 @@ import Velocity from 'velocity-animate';
 import {animation} from 'utils/animationUtils';
 import {existing} from 'utils/functional';
 import {opened as classNameFilters} from 'constants/classNames';
+import {menuBar as animationTiming} from 'constants/animationTiming';
 import {menuBar as selector} from 'constants/animationSelectors';
-console.log(classNameFilters, selector);
-const duration = 800;
-const easing = [200, 20];
 
 const getWidth = element => {
 	if (existing(element)) {
@@ -20,11 +18,9 @@ const animateTranslateX = ($element, translateX, done) => {
 	Velocity($element, "stop");
 	Velocity($element, {
 		translateX,
-	}, {
-		duration,
-		easing,
+	}, Object.assign({
 		complete: done
-	});
+	}, animationTiming));
 };
 
 const animate = ({$element, options: {openedElement}, done}) => {

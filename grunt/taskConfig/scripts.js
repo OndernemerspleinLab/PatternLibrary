@@ -36,40 +36,55 @@ module.exports = function(grunt, devOrProd) {
 		},
 
 		karma: {
-            unit: {
-                configFile: './grunt/karma.conf.js'
-            }
+			unit: {
+				configFile: './grunt/karma.conf.js',
+				options: {
+					singleRun: true,
+				},
+			},
+			background: {
+				configFile: './grunt/karma.conf.js',
+				options: {
+    				background: true,
+					singleRun: false,
+				},
+			},
+			watch: {
+				configFile: './grunt/karma.conf.js',
+				options: {
+					singleRun: false,
+				},
+			},
         },
 
         copy: {
 			globalScript: {
 				files: [
 					{ expand: true, cwd: './source/js/', src: ['globalBundled.js', 'globalBundled.js.map'], dest: './public/js/'},
-				]
+				],
 			},
 			scriptSource: {
 				files: [
 					{ expand: true, cwd: './source/jsSource/', src: ['**/*.js'], dest: './public/js/'},
-				]
+				],
 			},
 		},
 
 		watch: {
 			js: {
 				options: {
-					livereload: true
+					livereload: true,
 				},
 				files: ['source/jsSource/**/*.js'],
-				tasks: ['scripts'],
+				tasks: ['scriptsWatched'],
 
 			},
-			karma: {
+			tests: {
 				options: {
-					livereload: false
+					livereload: false,
 				},
-				files: ['source/jsTest/**/*.js'],
-				tasks: ['karma:unit'],
-
+				files: ['source/jsSource/**/*.js', 'source/jsTest/**/*.js'],
+				tasks: ['karma:background:run'],
 			},
 		},
 	};
@@ -87,7 +102,8 @@ module.exports = function(grunt, devOrProd) {
 	}
 
 	grunt.registerTask('tests', ['karma:unit', 'jshint:scripts']);
-	grunt.registerTask('prodScripts', ['tests', 'bundleJspm:production', 'copy:globalScript']);
-	grunt.registerTask('devScripts', ['tests', 'copy:scriptSource']);
-	grunt.registerTask('scripts', [scriptsTasks]);
+	grunt.registerTask('prodScripts', ['bundleJspm:production', 'copy:globalScript']);
+	grunt.registerTask('devScripts', ['copy:scriptSource']);
+	grunt.registerTask('scriptsWatched', ['jshint:scripts', scriptsTasks]);
+	grunt.registerTask('scripts', ['tests', scriptsTasks]);
 };
