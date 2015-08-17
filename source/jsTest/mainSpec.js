@@ -6,4 +6,5 @@ import 'jsTest/functionalSpec';
 import 'jsTest/singleOpenedSpec';
 import 'jsTest/multipleOpenedSpec';
 import 'jsTest/animationUtilsSpec';
+import 'jsTest/menuBarAnimationSpec';
 import 'jsTest/ngAnimation';

@@ -1,12 +1,12 @@
 import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
-import {animation} from 'utils/animationUtils';
-import {existing} from 'utils/functional';
+import {animation} from 'utils/ngAnimation';
+import {existing, partial} from 'utils/functional';
 import {opened as classNameFilters} from 'constants/classNames';
 import {menuBar as animationTiming} from 'constants/animationTiming';
 import {menuBar as selector} from 'constants/animationSelectors';
 
-const getWidth = element => {
+export const getWidth = element => {
 	if (existing(element)) {
 		element.style.width = "";
 		return getComputedStyle(element).getPropertyValue("width");
@@ -14,7 +14,7 @@ const getWidth = element => {
 	return "0px";
 };
 
-const animateTranslateX = ($element, translateX, done) => {
+export const animateTranslateX = ($element, translateX, done) => {
 	Velocity($element, "stop");
 	Velocity($element, {
 		translateX,
@@ -23,18 +23,18 @@ const animateTranslateX = ($element, translateX, done) => {
 	}, animationTiming));
 };
 
-const animate = ({$element, options: {openedElement}, done}) => {
+export const animate = ({$element, options: {openedElement}, done}) => {
 	const width = getWidth(openedElement);
 	animateTranslateX($element, width, done);
 };
 
-const instant = ({ $element, options: {openedElement}, done}) => {
+export const instant = ({ $element, options: {openedElement}, done}) => {
 	const width = getWidth(openedElement);
 	Velocity.hook($element, "left", width);
 	done();
 };
 
-animation({
+const init = partial(animation, {
 	module: DopApp,
 	selector,
 
@@ -49,3 +49,5 @@ animation({
 	animate: animate,
 	animateInstant: instant,
 });
+
+export default init;

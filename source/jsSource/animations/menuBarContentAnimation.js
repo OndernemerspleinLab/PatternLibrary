@@ -1,7 +1,7 @@
 import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
 import {partialByObject} from 'utils/functional';
-import {animation} from 'utils/animationUtils';
+import {animation} from 'utils/ngAnimation';
 import {hidden as classNameFilters} from 'constants/classNames';
 import {menuBarContent as selector} from 'constants/animationSelectors';
 import {menuBarContent as animationTiming} from 'constants/animationTiming';
