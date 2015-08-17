@@ -81,7 +81,7 @@ describe("ngAnimation", () => {
 			expect(callArgs[0]).toBe(selector);
 		});
 
-		it("should have the animate callbacks set", () => {
+		it("should have the animate callbacks working", () => {
 			enableAnimations();
 			initAnimation();
 
@@ -139,7 +139,7 @@ describe("ngAnimation", () => {
 			});
 		});
 
-		it("should have the instant callbacks set", () => {
+		it("should have the instant callbacks working", () => {
 			disableAnimations();
 			initAnimation();
 
@@ -197,7 +197,7 @@ describe("ngAnimation", () => {
 			});
 		});
 
-		it("should have the instant callbacks set", () => {
+		it("should not fire animations when the class does not match", () => {
 			disableAnimations();
 			initAnimation(["c"]);
 
