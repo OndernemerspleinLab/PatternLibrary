@@ -47,6 +47,24 @@ describe("animationUtils", () => {
 			expect(checkClassDecorator("a", undefined)).toBeUndefined();
 		});
 
-		// Hier verder gaan
+		it("should execute the callback when the className matches", () => {
+			const funcWithClassCheck = checkClassDecorator("a", spyCallback);
+			const config = {
+				className: "a",
+				otherProp: "b"
+			};
+			funcWithClassCheck(config);
+			expect(spyCallback).toHaveBeenCalledWith(config);
+		});
+
+		it("should not execute the callback when the className does not match", () => {
+			const funcWithClassCheck = checkClassDecorator("a", spyCallback);
+			const config = {
+				className: "b",
+				otherProp: "a"
+			};
+			funcWithClassCheck(config);
+			expect(spyCallback.calls.count()).toBe(0);
+		});
 	});
 });
