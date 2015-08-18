@@ -37,4 +37,6 @@ const init = partial(animation, {
 	removeClass: partialByObject(animateOpacity, {opacity: 1}),
 });
 
+init();
+
 export default init;

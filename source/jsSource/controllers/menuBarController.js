@@ -11,7 +11,7 @@ const getElement = (id) => {
 	return element;
 };
 
-export default class menuBar {
+export default class MenuBarController {
 	static get $inject() { return ['$element', '$scope', '$animate']; }
 
 	constructor($element, $scope, $animate) {

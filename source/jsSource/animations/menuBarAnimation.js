@@ -50,4 +50,6 @@ const init = partial(animation, {
 	animateInstant: instant,
 });
 
+init();
+
 export default init;

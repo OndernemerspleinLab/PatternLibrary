@@ -3,10 +3,12 @@ import controller from 'controllers/menuBarController';
 import 'animations/menuBarAnimation';
 import 'animations/menuBarContentAnimation';
 
-DopApp.directive("menuBar", () => ({
+export const menuBarDirective = () => ({
 	scope: {},
 	templateUrl: "menuBar.html",
 	controllerAs: "viewModel",
 	controller,
 	bindToController: true
-}));
+});
+
+DopApp.directive("menuBar", menuBarDirective);

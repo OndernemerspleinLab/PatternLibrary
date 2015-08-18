@@ -1,6 +1,6 @@
 export const menuBar = {
 	duration: 800,
-	easing: [20,0, 20],
+	easing: [200, 20],
 	delay: 0,
 };
 
