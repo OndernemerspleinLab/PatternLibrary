@@ -42,6 +42,12 @@ module.exports = function(grunt, devOrProd) {
 					singleRun: true,
 				},
 			},
+			coverage: {
+				configFile: './grunt/karma.coverage.conf.js',
+				options: {
+					singleRun: true,
+				},
+			},
 			background: {
 				configFile: './grunt/karma.conf.js',
 				options: {
@@ -101,6 +107,7 @@ module.exports = function(grunt, devOrProd) {
 		grunt.fail.fatal('devOrProd variable not properly set.');
 	}
 
+	grunt.registerTask('coverage', ['karma:coverage']);
 	grunt.registerTask('tests', ['karma:unit', 'jshint:scripts']);
 	grunt.registerTask('prodScripts', ['bundleJspm:production', 'copy:globalScript']);
 	grunt.registerTask('devScripts', ['copy:scriptSource']);
