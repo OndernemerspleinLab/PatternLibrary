@@ -9,7 +9,13 @@ import {menuBar as selector} from 'constants/animationSelectors';
 export const getWidth = element => {
 	if (existing(element)) {
 		element.style.width = "";
-		return getComputedStyle(element).getPropertyValue("width");
+		const width = parseInt(getComputedStyle(element).getPropertyValue("width"), 10);
+		const maxWidth = parseInt(getComputedStyle(element).getPropertyValue("max-width"), 10);
+		const minWidth = parseInt(getComputedStyle(element).getPropertyValue("min-width"), 10);
+
+		const actualWidth = Math.max(Math.min(width, maxWidth), minWidth) + "px";
+
+		return actualWidth;
 	}
 	return "0px";
 };
