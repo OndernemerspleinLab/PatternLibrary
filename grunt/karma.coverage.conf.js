@@ -26,7 +26,6 @@ module.exports = function(config) {
         preprocessors: {
             'jsSource/*.js': ['coverage'],
             'jsSource/!(jspm_packages)/**/*.js': ['coverage'],
-            'jsSource/jspm_packages/**/*.js': [],
         },
 
         coverageReporter: {
@@ -41,7 +40,9 @@ module.exports = function(config) {
             ],
             // configure the reporter to use isparta for JavaScript coverage
             // Only on { "karma-coverage": "douglasduteil/karma-coverage#next" }
-            instrumenters: { isparta : require('isparta') },
+            instrumenters: {
+                isparta : require('isparta'),
+            },
             instrumenter: {
                 '**/*.js': 'isparta'
             },
