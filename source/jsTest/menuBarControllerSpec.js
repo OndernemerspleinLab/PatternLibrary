@@ -11,7 +11,9 @@ describe("menuBarController", () => {
 	let $rootScope;
 	let $animate;
 	let element;
+	let $window;
 	let menuBar;
+	let openedElement;
 
 	beforeEach(inject((_$controller_, _$rootScope_) => {
 		$controller = _$controller_;
@@ -19,10 +21,18 @@ describe("menuBarController", () => {
 		$animate = jasmine.createSpyObj('$animate', ['cancel', 'animate', 'addClass', 'removeClass']);
 		element = angular.element(document.createElement("div"));
 		$scope = $rootScope.$new(true);
-		menuBar = new MenuBarController(element, $scope, $animate);
+		$window = document.createElement("div");
+		menuBar = new MenuBarController(element, $scope, $animate, $window, 0);
+		openedElement = document.createElement("div");
+		openedElement.id = "openedElement";
+		document.body.appendChild(openedElement);
 	}));
 
-	it("animate the menuBar when menuBar items are opened or closed", () => {
+	afterEach(() => {
+		document.body.removeChild(openedElement);
+	});
+
+	it("should animate the menuBar when menuBar items are opened or closed", () => {
 
 		// Trigger before anything is opened or closed
 		// just like normal usage
@@ -48,5 +58,26 @@ describe("menuBarController", () => {
 		expect($animate.removeClass).toHaveBeenCalledWith(element, classNames.opened, {
 			closedElement: null
 		});
+	});
+
+	it("should resize an opened menu when the window is resized", () => {
+		$scope.$digest();
+
+		menuBar.openClose.open("openedElement");
+		$scope.$digest();
+
+		expect($animate.addClass).toHaveBeenCalledWith(element, classNames.opened, {
+			openedElement: openedElement
+		});
+
+
+		angular.element($window).triggerHandler("resize");
+		$scope.$digest();
+
+		expect($animate.animate).toHaveBeenCalledWith(element, null, { resize: true }, null, {
+			openedElement: openedElement,
+			duration: 100,
+		});
+
 	});
 });

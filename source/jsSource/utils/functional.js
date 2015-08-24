@@ -28,6 +28,19 @@ export const partialByObject = (func, boundObj = {}) => {
 	};
 };
 
+export const debounce = (callback, delay) => {
+	let timer;
+
+	if (unexisting(delay) || delay === 0) {
+		return callback;
+	}
+
+	return (...args) => {
+		clearTimeout(timer);
+		timer = setTimeout(partial(callback, ...args), delay);
+	};
+};
+
 // Always returns an array, if the candidate is an array it is returned
 // otherwise it is wrapped in an array
 export const arrayfy = (candidate) => {

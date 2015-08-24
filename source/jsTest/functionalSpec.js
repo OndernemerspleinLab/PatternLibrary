@@ -2,7 +2,7 @@ import {
 	negate, existing, unexisting,
 	falsy, truthy,
 	partial, partialByObject, includes,
-	isFilledArray, isEmptyArray,
+	isFilledArray, isEmptyArray, debounce,
 	arrayfy, reduceObject,
 	mapObject, filterObject,
 	aliasMapProperty, toObjectArguments
@@ -127,6 +127,32 @@ describe("functional", () => {
 
 			expect(boundObj).toEqual({a: 1, b: 2});
 			expect(argsObj).toEqual({b: 3, c: 4});
+		});
+	});
+
+	describe("debounce", () => {
+		it("should ", () => {
+			const timeout = 100;
+			const setTimeoutSpy = spyOn(window, "setTimeout");
+			const clearTimeoutSpy = spyOn(window, "clearTimeout");
+			const debounceCallbackSpy = jasmine.createSpy("debounceCallback");
+
+			const debounced = debounce(debounceCallbackSpy, timeout);
+
+			debounced(1, 2, 3);
+			expect(clearTimeoutSpy).toHaveBeenCalled();
+			expect(setTimeoutSpy).toHaveBeenCalledWith(jasmine.any(Function), timeout);
+			const firstCallback = setTimeoutSpy.calls.mostRecent().args[0];
+			firstCallback();
+			expect(debounceCallbackSpy).toHaveBeenCalledWith(1, 2, 3);
+
+			debounced(4, 5, 6);
+			expect(clearTimeoutSpy).toHaveBeenCalled();
+			expect(setTimeoutSpy).toHaveBeenCalledWith(jasmine.any(Function), timeout);
+			const secondCallback = setTimeoutSpy.calls.mostRecent().args[0];
+			secondCallback();
+			expect(debounceCallbackSpy).toHaveBeenCalledWith(4, 5, 6);
+
 		});
 	});
 

@@ -1,5 +1,7 @@
 // MENU
 
+$menuBarWidth: 50px;
+
 .container {
     position: relative;
     height: 100%;
@@ -18,7 +20,7 @@
 .menuBar {
 	position: relative;
 	height: 100%;
-	width: 50px;
+	width: $menuBarWidth;
 	background: getColor(blauw lichtblauwRH) none repeat scroll 0% 0%;
 	background-image: linear-gradient(getColor(blauw lichtblauwRH), getColor(groen mintgroenRH));
 
@@ -42,8 +44,8 @@
     left: 0;
     background: none;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: $menuBarWidth;
+    height: $menuBarWidth;
     padding: 0;
 
     &.menuBar-button--menu {
@@ -104,6 +106,7 @@ button:hover {
 	overflow-x: hidden;
 	width: 240px;
 	height: 100%;
+	max-width: calc(100vw - #{$menuBarWidth + 20px});
 
 	// For testing script
 	&:nth-child(2) {
