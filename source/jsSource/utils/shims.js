@@ -1,4 +1,4 @@
-"format es6";
+import 'fastclick';
 
 // Prevent Internet Explorer from chrashing on console.log statements
 if (typeof console === "undefined") {
