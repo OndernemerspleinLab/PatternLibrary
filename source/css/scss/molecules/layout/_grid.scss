@@ -1,15 +1,32 @@
 /* GRID */
 
-//$maxWidth: 70rem; //1120px
-$maxWidth: 80rem; //1280px
-$space: 2rem; //16px
+$maxWidth: 60rem; //1080px
+$space: 2rem;
 
 .layoutContainer {
 	max-width: $maxWidth;
+
 	margin: {
 		left: auto;
 		right: auto;
 	};
+
+    border-left: 2.8rem solid transparent;
+    max-width: $maxWidth;
+	padding: 0 0.2rem;
+
+	@include mqGreaterThan(extraSmall) {
+		padding: 0 3%;
+    }
+	@include mqGreaterThan(small) {
+		padding: 0 1.6rem;
+    }
+	@include mqGreaterThan(mediumLarge) {
+		padding: 0 1rem;
+    }
+	@include mqGreaterThan(extraLarge) {
+		padding: 0 1.6rem;
+    }
 }
 
 .gridContainer {
