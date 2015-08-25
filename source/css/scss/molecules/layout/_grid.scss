@@ -78,9 +78,8 @@ $space: 2rem; //16px
 	}
 
 	&--twoThird {
-		@include mqLesserThan(mediumLarge) {
-			flex-basis: 100%;
-		}
+		flex-basis: 100%;
+
 		@include mqGreaterThan(mediumLarge) {
 			flex-basis: calc(#{100%*2/3} - #{$space});
 		}
