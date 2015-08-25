@@ -3,13 +3,29 @@
 \*------------------------------------*/
 body {
 	background: getColor(wit);
-	font: 100%/1.5 RijksOverheidSans, Tahoma;
+	// added unit size to line-height to keep a consistent vertical rhythm
+	font: 100%/1.6 RijksOverheidSans, Tahoma;
 	-webkit-text-size-adjust: 100%;
 	color: getColor(grijs darkest);
 }
 
 .page {
-	padding-left: 50px;
+    border-left: 2.8rem solid transparent;
+    margin: 0 auto;
+    max-width: 60rem;
+	padding: 0 0.2rem;
+	@include mqGreaterThan(extraSmall) {
+		padding: 0 3%;
+    }
+	@include mqGreaterThan(small) {
+		padding: 0 1.6rem;
+    }
+	@include mqGreaterThan(mediumLarge) {
+		padding: 0 1rem;
+    }
+	@include mqGreaterThan(extraLarge) {
+		padding: 0 1.6rem;
+    }
 }
 
 .font-secondary {

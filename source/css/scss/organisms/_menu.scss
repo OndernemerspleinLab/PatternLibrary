@@ -1,6 +1,6 @@
 // MENU
 
-$menuBarWidth: 50px;
+$menuBarWidth: 2.8rem;
 
 .container {
     position: relative;
@@ -106,7 +106,7 @@ $menuBarWidth: 50px;
 	overflow-x: hidden;
 	width: 240px;
 	height: 100%;
-	max-width: calc(100vw - #{$menuBarWidth + 20px});
+	max-width: calc(100vw - #{$menuBarWidth + 1.1rem});
 
 	// For testing script
 	&:nth-child(2) {

@@ -1,30 +1,40 @@
 // MEDIAQUERIES
 
 $mediaQueries: (
-	// 480px
+	// 384px
 	extraSmall: (
-		greater: "(min-width: 30em)",
-		lesser: "(max-width: #{30em - (1/16)})"
+		greater: "(min-width: 24em)",
+		lesser: "(max-width: #{24em - (1/16)})"
+	),
+	// 560px
+	small: (
+		greater: "(min-width: 35em)",
+		lesser: "(max-width: #{35em - (1/16)})"
 	),
 	// 640px
-	small: (
+	smallMedium: (
 		greater: "(min-width: 40em)",
 		lesser: "(max-width: #{40em - (1/16)})"
 	),
-	// 768px
+	// 720px
 	medium: (
-		greater: "(min-width: 48em)",
-		lesser: "(max-width: #{48em - (1/16)})"
+		greater: "(min-width: 45em)",
+		lesser: "(max-width: #{45em - (1/16)})"
 	),
-	// 960px
+	// 800px
+	mediumLarge: (
+		greater: "(min-width: 50em)",
+		lesser: "(max-width: #{50em - (1/16)})"
+	),
+	// 880px
 	large: (
-		greater: "(min-width: 64em)",
-		lesser: "(max-width: #{64em - (1/16)})"
+		greater: "(min-width: 55em)",
+		lesser: "(max-width: #{55em - (1/16)})"
 	),
-	// 1280px
+	// 912px
 	extraLarge: (
-		greater: "(min-width: 80em)",
-		lesser: "(max-width: #{80em - (1/16)})"
+		greater: "(min-width: 57em)",
+		lesser: "(max-width: #{57em - (1/16)})"
 	),
 );
 

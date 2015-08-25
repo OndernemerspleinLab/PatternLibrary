@@ -2,7 +2,7 @@
 
 //$maxWidth: 70rem; //1120px
 $maxWidth: 80rem; //1280px
-$space: 1rem; //16px
+$space: 2rem; //16px
 
 .layoutContainer {
 	max-width: $maxWidth;
@@ -37,52 +37,51 @@ $space: 1rem; //16px
 	}
 
 	&--half {
-		@include mqLesserThan(small) {
-			flex-basis: 100%;
-		}
-		@include mqGreaterThan(small) {
+		flex-basis: 100%;
+
+		@include mqGreaterThan(smallMedium) {
 			flex-basis: calc(50% - #{$space});
 		}
 	}
 
 	&--quarter {
-		@include mqLesserThan(small) {
-			flex-basis: 100%;
+		flex-basis: calc(50% - #{$space});
+
+		@include mqGreaterThan(smallMedium) {
+			flex-basis: calc(#{100%*1/3} - #{$space});
 		}
-		@include mqGreaterThan(small) {
-			flex-basis: calc(50% - #{$space});
-		}
-		@include mqGreaterThan(large) {
+		@include mqGreaterThan(mediumLarge) {
 			flex-basis: calc(25% - #{$space});
 		}
 	}
 
 	&--threeQuarter {
-		@include mqLesserThan(small) {
-			flex-basis: 100%;
+		flex-basis: 100%;
+
+		@include mqGreaterThan(smallMedium) {
+			flex-basis: calc(#{100%*2/3} - #{$space});
 		}
-		@include mqGreaterThan(small) {
-			flex-basis: calc(50% - #{$space});
-		}
-		@include mqGreaterThan(large) {
+		@include mqGreaterThan(mediumLarge) {
 			flex-basis: calc(75% - #{$space});
 		}
 	}
 
 	&--third {
-		@include mqLesserThan(small) {
-			flex-basis: 100%;
+		flex-basis: 100%;
+
+		@include mqGreaterThan(smallMedium) {
+			flex-basis: calc(#{100%*1/2} - #{$space});
 		}
-		@include mqGreaterThan(small) {
+		@include mqGreaterThan(mediumLarge) {
 			flex-basis: calc(#{100%*1/3} - #{$space});
 		}
 	}
 
 	&--twoThird {
-		@include mqLesserThan(small) {
+		@include mqLesserThan(mediumLarge) {
 			flex-basis: 100%;
 		}
-		@include mqGreaterThan(small) {
+		@include mqGreaterThan(mediumLarge) {
 			flex-basis: calc(#{100%*2/3} - #{$space});
 		}
 	}

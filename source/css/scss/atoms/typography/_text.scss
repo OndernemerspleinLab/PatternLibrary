@@ -1,11 +1,11 @@
 html {
 	font-size: 100%;
 
-	@include mqGreaterThan(medium) {
+	@include mqGreaterThan(small) {
 		font-size: 100%/16*17;
 	}
 
-	@include mqGreaterThan(extraLarge) {
+	@include mqGreaterThan(large) {
 		font-size: 100%/16*18;
 	}
 }
@@ -39,10 +39,13 @@ abbr {
 
 //Intro text
 .intro {
-	font-size: mapDeepGet($fontsize, echoHeading);
+	font-size: mapDeepGet($fontsize, introText small);
     font-style: italic;
     display: block;
     clear: both;
+	@include mqGreaterThan(medium) {
+		font-size: mapDeepGet($fontsize, introText medium);
+	}
 }
 
 //Pullquote
