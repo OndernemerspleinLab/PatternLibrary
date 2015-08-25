@@ -1,0 +1,12 @@
+.media {
+	display: flex;
+	flex-direction: row;
+}
+
+.media-text {
+	flex: 1 1 auto;
+}
+
+.media-figure {
+	flex: 0 0 auto;
+}
