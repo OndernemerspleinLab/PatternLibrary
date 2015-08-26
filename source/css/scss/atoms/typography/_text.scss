@@ -1,8 +1,8 @@
 html {
-	font-size: 100%;
+	// font-size: 100%;
+	font-size: 100%/16*17;
 
 	@include mqGreaterThan(small) {
-		font-size: 100%/16*17;
 	}
 
 	@include mqGreaterThan(large) {
