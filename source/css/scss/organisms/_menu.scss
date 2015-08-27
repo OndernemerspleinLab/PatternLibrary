@@ -1,7 +1,5 @@
 // MENU
 
-$menuBarWidth: 2.8rem;
-
 .container {
     position: relative;
     height: 100%;
@@ -20,9 +18,13 @@ $menuBarWidth: 2.8rem;
 .menuBar {
 	position: relative;
 	height: 100%;
-	width: $menuBarWidth;
-	background: getColor(blauw lichtblauwRH) none repeat scroll 0% 0%;
-	background-image: linear-gradient(getColor(blauw lichtblauwRH), getColor(groen mintgroenRH));
+	width: $menuBarWidthSmall;
+	background: getColor(blauw lichtblauwRH);
+	background: linear-gradient(rgba(getColor(blauw lichtblauwRH), 0.9), rgba(getColor(groen mintgroenRH), 0.9));
+
+	@include mqGreaterThan(small) {
+		width: $menuBarWidthLarge;
+	}
 
 	&:before {
 		content: "";
@@ -44,9 +46,13 @@ $menuBarWidth: 2.8rem;
     left: 0;
     background: none;
     border: none;
-    width: $menuBarWidth;
-    height: $menuBarWidth;
+    width: $menuBarWidthSmall;
+    height: $menuBarWidthSmall;
     padding: 0;
+	@include mqGreaterThan(small) {
+		width: $menuBarWidthLarge;
+		height: $menuBarWidthLarge;
+	}
 
     &.menuBar-button--menu {
 
@@ -77,10 +83,11 @@ $menuBarWidth: 2.8rem;
 
 // SVG Icon
 .menuBar-icon {
-	width: 40px;
-	height: 40px;
+	width: 1.8rem;
+	height: 1.8rem;
 	fill: getColor(hemelblauw darkest);
 	transition: all .2s ease-in-out;
+    opacity: 0.9;
 }
 .no-touch .menuBar-button:hover {
 	.menuBar-icon {
@@ -106,7 +113,12 @@ $menuBarWidth: 2.8rem;
 	overflow-x: hidden;
 	width: 240px;
 	height: 100%;
-	max-width: calc(100vw - #{$menuBarWidth + 1.1rem});
+	max-width: calc(100vw - #{$menuBarWidthSmall + 1.1rem});
+
+
+	@include mqGreaterThan(small) {
+		max-width: calc(100vw - #{$menuBarWidthLarge + 1.1rem});
+	}
 
 	// For testing script
 	&:nth-child(2) {

@@ -1,20 +1,64 @@
 /* Headings */
 
+h1, .pageHeading,
+h2, .bravoHeading,
+h3, .charlieHeading,
+h4, .deltaHeading,
+h5, .echoHeading,
+h6, .foxtrotHeading {
+	line-height: 1.2;
+	color: getColor(hemelblauw darkest);
+}
+
 h1, .pageHeading {
-	font-size: mapDeepGet($fontsize, pageheading);
+	font-size: getFontSize(pageHeading small);
+	hyphens: auto;
+	margin: {
+		top: 0;
+		bottom: 0.5em;
+	}
+
+	@include mqGreaterThan(small) {
+		font-size: getFontSize(pageHeading medium);
+	}
+
+	@include mqGreaterThan(large) {
+		font-size: getFontSize(pageHeading large);
+		margin-bottom: 0.5em;
+	}
 }
 h2, .bravoHeading {
-	font-size: mapDeepGet($fontsize, bravoHeading);
+	font-size: getFontSize(bravoHeading small);
+
+	margin: {
+		top: 1.1em;
+		bottom: 0.2em;
+	}
+
+	@include mqGreaterThan(small) {
+		font-size: getFontSize(bravoHeading medium);
+	}
+
+	@include mqGreaterThan(large) {
+		font-size: getFontSize(bravoHeading large);
+		margin-bottom: 0.1em;
+	}
 }
-h3, .charlieHeading {
-	font-size: mapDeepGet($fontsize, charlieHeading);
-}
-h4, .deltaHeading {
-	font-size: mapDeepGet($fontsize, deltaHeading);
-}
-h5, .echoHeading {
-	font-size: mapDeepGet($fontsize, echoHeading);
-}
-h6 {
-	font-size: mapDeepGet($fontsize, root);
+h3, .charlieHeading,
+h4, .deltaHeading,
+h5, .echoHeading,
+h6, .foxtrotHeading {
+	font-size: getFontSize(charlieHeading small);
+	margin: {
+		top: 1.1em;
+		bottom: 0.2em;
+	}
+
+	@include mqGreaterThan(small) {
+		font-size: getFontSize(charlieHeading medium);
+	}
+
+	@include mqGreaterThan(large) {
+		font-size: getFontSize(charlieHeading large);
+	}
 }

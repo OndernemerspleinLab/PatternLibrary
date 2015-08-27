@@ -1,9 +1,9 @@
-// Base: Functions, Mixins, e.d.
-@import "scss/base/utils";
-@import "scss/base/mixins";
-@import "scss/base/mediaQueries";
-@import "scss/base/variables";
-@import "scss/base/normalize";
+// atoms/Base: Functions, Mixins, e.d.
+@import "scss/atoms/base/utils";
+@import "scss/atoms/base/mixins";
+@import "scss/atoms/base/mediaQueries";
+@import "scss/atoms/base/variables";
+@import "scss/atoms/base/normalize";
 
 // Font & Colors
 @import "scss/atoms/typography/colors";
@@ -19,8 +19,8 @@
 @import "scss/molecules/media";
 @import "scss/molecules/aside";
 
-@import "scss/base/main";
-@import "scss/base/global-classes";
+@import "scss/atoms/base/main";
+@import "scss/atoms/base/global-classes";
 
 // Typography
 @import "scss/atoms/typography/links";

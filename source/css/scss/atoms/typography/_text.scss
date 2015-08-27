@@ -12,7 +12,7 @@ html {
 
 /* Text-Related Elements */
 p {
-	//margin-bottom: $space;
+	margin-bottom: 1em;
 }
 
 /* Blockquote */
@@ -39,18 +39,20 @@ abbr {
 
 //Intro text
 .intro {
-	font-size: mapDeepGet($fontsize, introText small);
+	font-size: getFontSize(introText medium);
     font-style: italic;
     display: block;
     clear: both;
-	@include mqGreaterThan(medium) {
-		font-size: mapDeepGet($fontsize, introText medium);
+    margin-bottom: 1em;
+	color: getColor(hemelblauw darkest);
+	@include mqGreaterThan(large) {
+		margin-bottom: 1.5em;
 	}
 }
 
 //Pullquote
 .pullquote {
-	font-size: mapDeepGet($fontsize, large);
+	font-size: getFontSize(large);
     font-style: italic;
 }
 

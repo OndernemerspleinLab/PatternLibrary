@@ -21,14 +21,16 @@
 	}
 
 	a {
+		@include noUnderline;
 		display: inline-block;
 		padding: $pad-half $pad $pad-half 0;
-		text-decoration: none;
+
 		.brandBar & {
 			color: getColor(wit);
 		}
-		&:hover, &:active {
-			text-decoration: underline;
+
+		&:hover, &:active, &:focus {
+			@include underline;
 		}
 	}
 }

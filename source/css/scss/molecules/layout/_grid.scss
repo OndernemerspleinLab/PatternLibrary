@@ -11,7 +11,8 @@ $space: 2rem;
 		right: auto;
 	};
 
-    border-left: 2.8rem solid transparent;
+    border-left: solid transparent;
+    border-left-width: $menuBarWidthSmall;
     max-width: $maxWidth;
 	padding: 0 0.2rem;
 
@@ -24,6 +25,9 @@ $space: 2rem;
 	@include mqGreaterThan(mediumLarge) {
 		padding: 0 1rem;
     }
+	@include mqGreaterThan(large) {
+	    border-left-width: $menuBarWidthLarge;
+	}
 	@include mqGreaterThan(extraLarge) {
 		padding: 0 1.6rem;
     }

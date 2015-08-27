@@ -1,11 +1,23 @@
 /* LINKS */
 
-a {
-	color: getColor(grijs darkest);
-	text-decoration: underline;
-	outline: 0;
+@mixin underline {
+	text-decoration: none;
+	border-bottom: 1px solid;
+}
 
-	&:hover, &:focus {
-		color: getColor(blauw tekstlinkRH);
+@mixin noUnderline {
+	text-decoration: none;
+	border-bottom: none;
+}
+
+a {
+	color: inherit;
+	@include underline;
+	transition: color 400ms;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: getColor(hemelblauw default);
 	}
 }

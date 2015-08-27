@@ -1,16 +1,30 @@
 // FONTSIZES
 
-$fontsize: (
+$fontSize: (
 	root: 1rem,
 	small: 0.75rem,
 	large: 1.25rem,
-	pageheading: 2.75rem,
-	bravoHeading: 2.25rem,
-	charlieHeading: 2rem,
-	deltaHeading: 1.75rem,
-	echoHeading: 1.5rem,
+	pageHeading: (
+		small: 1.7rem,
+		medium: 1.9rem,
+		large: 2.2rem,
+	),
+	bravoHeading: (
+		small: 1.3rem,
+		medium: 1.4rem,
+		large: 1.5rem,
+	),
+	charlieHeading: (
+		small: 1rem,
+		medium: 1.1rem,
+		large: 1.1rem,
+	),
 	introText: (
 		small: 1.15rem,
 		medium: 1.2rem,
 	)
 );
+
+@function getFontSize ($name) {
+	@return mapDeepGet($fontSize, $name);
+}

@@ -15,3 +15,4 @@ jspm_packages
 /source/_patterns/00-atoms/04-images/01-figures-demo.mustache
 /source/js
 /coverage
+*.sublime-project
