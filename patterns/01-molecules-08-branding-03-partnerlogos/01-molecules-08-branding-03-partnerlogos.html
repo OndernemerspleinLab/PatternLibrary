@@ -32,16 +32,19 @@
 
 </head>
 <body class="sg-single-pattern">
-	<!-- Start of Pattern --><p>Informatie op de website wordt u aangeboden door (semi-) overheidspartijen zoals:</p>
-<ul class="partner-logos">
-	<li><a href="#kvk"><img src="//placehold.it/59x50?text=KvK" alt="Kamer van Koophandel"></a></li>
-	<li><img src="//placehold.it/50x50?text=avb" alt="Antwoord voor bedrijven"></li>
-	<li><a href="#rvo"><img src="//placehold.it/133x50?text=rvo" alt="Rijksdienst voor Ondernemend Nederland"></a></li>
-	<li><a href="#rdw"><img src="//placehold.it/143x50?text=RDW" alt="RDW"></a></li>
-	<li><a href="#bd"><img src="//placehold.it/89x50?text=BD" alt="Belastingdienst"></a></li>
-	<li><a href="#cbs"><img src="//placehold.it/33x50?text=CBS" alt="CBS"></a></li>
-	<li><a href="#uwv"><img src="//placehold.it/162x50?text=UWV" alt="UWV"></a></li>
-</ul>	<!-- End of Pattern -->
+	<!-- Start of Pattern --><p class="partnerLogos-intro">Informatie op de website wordt u aangeboden door (semi-) overheidspartijen zoals:</p>
+<div class="partnerLogos">
+
+	<ul class="gridContainer gridContainer--centerItems gridContainer--singleLine u-noBullets">
+		<li class="verticalItem"><a href="#kvk"><img class="partnerLogo" src="//placehold.it/59x50/e7f7fe/033054?text=KvK" alt="Kamer van Koophandel"></a></li>
+		<li class="verticalItem"><img class="partnerLogo" src="//placehold.it/50x50/e7f7fe/033054?text=avb" alt="Antwoord voor bedrijven"></li>
+		<li class="verticalItem"><a href="#rvo"><img class="partnerLogo" src="//placehold.it/133x50/e7f7fe/033054?text=rvo" alt="Rijksdienst voor Ondernemend Nederland"></a></li>
+		<li class="verticalItem"><a href="#rdw"><img class="partnerLogo" src="//placehold.it/143x50/e7f7fe/033054?text=RDW" alt="RDW"></a></li>
+		<li class="verticalItem"><a href="#bd"><img class="partnerLogo" src="//placehold.it/89x50/e7f7fe/033054?text=BD" alt="Belastingdienst"></a></li>
+		<li class="verticalItem"><a href="#cbs"><img class="partnerLogo" src="//placehold.it/33x50/e7f7fe/033054?text=CBS" alt="CBS"></a></li>
+		<li class="verticalItem"><a href="#uwv"><img class="partnerLogo" src="//placehold.it/162x50/e7f7fe/033054?text=UWV" alt="UWV"></a></li>
+	</ul>
+</div>	<!-- End of Pattern -->
 
 	<!--
 		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
@@ -53,7 +56,7 @@
 		// handle injection of items from PHP
 		var patternPartial = "molecules-partnerlogos";
 		var lineage = [];
-		var lineageR = [{"lineagePattern":"organisms-footer","lineagePath":"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html"}];
+		var lineageR = [];
 		var patternState = ""
 		var cssEnabled = false; //TODO
 	</script>
