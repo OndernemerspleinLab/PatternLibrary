@@ -1,0 +1,19 @@
+
+
+// Footer Nav
+.footerNav {
+	margin: {
+		top: 0.5rem;
+		bottom: 0.5rem;
+	}
+
+	&-link {
+		@include noUnderline;
+		color: getColor(zwart);
+
+		@include hoverEtc {
+			@include underline;
+			color: getColor(zwart);
+		}
+	}
+}

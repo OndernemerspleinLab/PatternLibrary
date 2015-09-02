@@ -16,21 +16,21 @@ $space: 2rem;
     max-width: $maxWidth;
 	padding: 0 0.2rem;
 
-	@include mqGreaterThan(extraSmall) {
-		padding: 0 3%;
-    }
+	@include setPropWithMq(greater, padding, (
+		all: 0 0.2rem,
+		extraSmall: 0 3%,
+		small: 0 1.6rem,
+		mediumLarge: 0 1rem,
+		extraLarge: 0 1.6rem
+	));
+
 	@include mqGreaterThan(small) {
-		padding: 0 1.6rem;
-    }
-	@include mqGreaterThan(mediumLarge) {
-		padding: 0 1rem;
-    }
-	@include mqGreaterThan(large) {
 	    border-left-width: $menuBarWidthLarge;
 	}
-	@include mqGreaterThan(extraLarge) {
-		padding: 0 1.6rem;
-    }
+
+	&--fullWidth {
+		max-width: none;
+	}
 }
 
 .gridContainer {
@@ -43,6 +43,18 @@ $space: 2rem;
 	&--stretchItems {
 		align-items: stretch;
 	}
+	&--alignItemsToEnd {
+		align-items: flex-end;
+	}
+	&--centerItems {
+		justify-content: center;
+	}
+	&--spaceBetweenItems {
+		justify-content: space-between;
+	}
+	&--singleLine {
+		flex-wrap: nowrap;
+	}
 }
 
 
@@ -50,59 +62,50 @@ $space: 2rem;
 	margin: 0 $space/2;
 	//flex: 1 1 100%;
 	flex: 0 1 auto; // default
-	overflow: hidden;
-	word-wrap: break-word;
+
+	&--fit {
+		flex: 1 1 auto;
+	}
 
 	&--full {
 		flex-basis: 100%;
 	}
 
 	&--half {
-		flex-basis: 100%;
-
-		@include mqGreaterThan(smallMedium) {
-			flex-basis: calc(50% - #{$space});
-		}
+		@include setPropWithMq(greater, flex-basis, (
+			all: 100%,
+			smallMedium: calc(50% - #{$space}),
+		));
 	}
 
 	&--quarter {
-		flex-basis: calc(50% - #{$space});
-
-		@include mqGreaterThan(smallMedium) {
-			flex-basis: calc(#{100%*1/3} - #{$space});
-		}
-		@include mqGreaterThan(mediumLarge) {
-			flex-basis: calc(25% - #{$space});
-		}
+		@include setPropWithMq(greater, flex-basis, (
+			all: calc(50% - #{$space}),
+			smallMedium: calc(#{100%*1/3} - #{$space}),
+			mediumLarge: calc(25% - #{$space})
+		));
 	}
 
 	&--threeQuarter {
-		flex-basis: 100%;
-
-		@include mqGreaterThan(smallMedium) {
-			flex-basis: calc(#{100%*2/3} - #{$space});
-		}
-		@include mqGreaterThan(mediumLarge) {
-			flex-basis: calc(75% - #{$space});
-		}
+		@include setPropWithMq(greater, flex-basis, (
+			all: 100%,
+			smallMedium: calc(#{100%*2/3} - #{$space}),
+			mediumLarge: calc(75% - #{$space})
+		));
 	}
 
 	&--third {
-		flex-basis: 100%;
-
-		@include mqGreaterThan(smallMedium) {
-			flex-basis: calc(#{100%*1/2} - #{$space});
-		}
-		@include mqGreaterThan(mediumLarge) {
-			flex-basis: calc(#{100%*1/3} - #{$space});
-		}
+		@include setPropWithMq(greater, flex-basis, (
+			all: 100%,
+			smallMedium: calc(#{100%*1/2} - #{$space}),
+			mediumLarge: calc(#{100%*1/3} - #{$space})
+		));
 	}
 
 	&--twoThird {
-		flex-basis: 100%;
-
-		@include mqGreaterThan(mediumLarge) {
-			flex-basis: calc(#{100%*2/3} - #{$space});
-		}
+		@include setPropWithMq(greater, flex-basis, (
+			all: 100%,
+			mediumLarge: calc(#{100%*2/3} - #{$space})
+		));
 	}
 }

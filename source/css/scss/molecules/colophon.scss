@@ -1,0 +1,5 @@
+.colophon {
+	background: getColor(hemelblauw light);
+	color: getColor(hemelblauw darkest);
+	@include insideMargin(1.2rem 1.2rem);
+}

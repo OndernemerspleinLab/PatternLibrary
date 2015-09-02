@@ -1,172 +1,64 @@
 // SOCIAL MEDIA
 
-%sociallink_basis {
-	display: block;
-	height: 34px;
-	width: 34px;
-	text-decoration: none;
-	background-color: getColor(hemelblauw default);
-	color: getColor(wit);
-	overflow: hidden;
-
-	&:before {
-		@include icon;
-		content: "";
-		display: inline-block;
-		width: 34px;
-		height: 34px;
-		font-size: 30px;
-		line-height: 1.15;
-		text-align: center;
-	}
-	&:hover, &:active {
-		background-color: getColor(grijs darkest);
-	}
-	span {
-		@include accHide;
-	}
-}
 
 // Social Base
 
+.socials {
+	margin: {
+		top: 0.5rem;
+		bottom: 0.9rem;
+	}
+}
+
 .social {
-	overflow: hidden;
-	padding-left: 0;
+	&-link {
+		display: block;
+		height: 2rem;
+		width: 2rem;
+		@include noUnderline;
+		background-color: getColor(grijs medium);
+		margin: 0 0.25rem;
+		padding: 12%;
+		transition: background-color 400ms;
 
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: flex-start;
+		&--facebook {
+			@include hoverEtc {
+				background-color: getColor(socials facebook);
+			}
+		}
+		&--twitter {
+			@include hoverEtc {
+				background-color: getColor(socials twitter);
+			}
+		}
+		&--linkedin {
+			@include hoverEtc {
+				background-color: getColor(socials linkedin);
+			}
+		}
+		&--googleplus {
+			@include hoverEtc {
+				background-color: getColor(socials googleplus);
+			}
+		}
+		&--youtube {
+			@include hoverEtc {
+				background-color: getColor(socials youtube);
+			}
+		}
 
-	li {
-		//display: inline-block;
-		flex: 0 1 auto; // default
-		list-style: none;
-		margin-right: $pad;
-		&:last-child {
-			margin-right: 0;
-		}
-	}
 
-	a {
-		@extend %sociallink_basis;
-		&.twitter {
-			background-color: getColor(twitter);
-			&:before {
-				content: getIcon(social twitter);
-			}
-			&:hover, &:active {
-				background-color: getColor(grijs darkest);
-			}
-		}
-		&.facebook {
-			background-color: getColor(facebook);
-			&:before {
-				content: getIcon(social facebook);
-			}
-			&:hover, &:active {
-				background-color: getColor(grijs darkest);
-			}
-		}
-		&.linkedin {
-			background-color: getColor(linkedin);
-			&:before {
-				content: getIcon(social linkedin);
-			}
-			&:hover, &:active {
-				background-color: getColor(grijs darkest);
-			}
-		}
-		&.googleplus {
-			background-color: getColor(googleplus);
-			&:before {
-				content: getIcon(social googleplus);
-			}
-			&:hover, &:active {
-				background-color: getColor(grijs darkest);
-			}
-		}
-		&.youtube {
-			background-color: getColor(youtube);
-			&:before {
-				content: getIcon(social youtube);
-			}
-			&:hover, &:active {
-				background-color: getColor(grijs darkest);
-			}
-		}
-		&.mail {
-			&:before {
-				content: getIcon(email);
-				//margin-top: -5px;
+		@include hoverEtc {
+			.social-figure {
+				fill: getColor(wit);
 			}
 		}
 	}
 
-	// Social Share
-	&--share {
-		.menuBar-content & {
-			li {
-				padding: 0 10px 0 0;
-				margin-right: 0;
-				&:first-child {
-					padding-left: 20px;
-				}
-				&:hover {
-					background-color: transparent;
-				}
-			}
-			a {
-				color: getColor(wit);
-			}
-		}
-	}
+	&-figure {
+		height: 100%;
+		transition: fill 400ms;
 
-	// Social Follow
-	&--follow {
-		@include mqGreaterThan(medium) {
-			text-align: right;
-		}
-		padding: $pad-half $pad;
-		margin: 0;
-		li {
-			padding: 0.45rem 0px;
-			margin-right: $pad-half;
-			&:last-child {
-				margin-right: 0;
-			}
-		}
-		a {
-			height: 24px;
-			width: 24px;
-			color: getColor(hemelblauw light);
-			background-color: getColor(hemelblauw darkest);
-			&:before {
-				height: 24px;
-				width: 24px;
-				font-size: 19px;
-			}
-			&:hover, &:active {
-				color: getColor(wit);
-				background-color: getColor(hemelblauw default);
-			}
-			&.twitter,
-			&.linkedin,
-			&.facebook,
-			&.googleplus,
-			&.youtube {
-				background-color: getColor(hemelblauw darkest);
-				&:hover, &:active {
-					background-color: getColor(hemelblauw default);
-				}
-			}
-			&.youtube {
-				&:before {
-					margin-top: 3px;
-				}
-			}
-		}
+		fill: getColor(grijs light);
 	}
-
 }

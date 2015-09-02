@@ -1,12 +1,12 @@
 .aside {
+    font-size: getFontSize(aside);
+
 	@include mqGreaterThan(medium) {
 	    padding-left: 1rem;
-	    font-size: 0.95rem;
 		line-height: 1.6rem;
 	}
 
 	@include mqGreaterThan(extraLarge) {
 	    padding-left: 1.7rem;
-	    font-size: 1rem;
 	}
 }

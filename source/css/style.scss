@@ -4,12 +4,17 @@
 @import "scss/atoms/base/mediaQueries";
 @import "scss/atoms/base/variables";
 @import "scss/atoms/base/normalize";
+@import "scss/atoms/base/insideMargin";
 
 // Font & Colors
 @import "scss/atoms/typography/colors";
 @import "scss/atoms/font/fontface";
 @import "scss/iconFont/icons";
 @import "scss/atoms/typography/fontsize";
+
+// Utility Classes
+@import "scss/atoms/utilityClasses";
+@import "scss/atoms/verticalItem";
 
 // Lay-out
 @import "scss/molecules/layout/grid";
@@ -36,11 +41,16 @@
 @import "scss/organisms/header/header";
 @import "scss/organisms/header/header-logo";
 @import "scss/organisms/header/breadcrumbs";
+@import "scss/molecules/footerNav";
+@import "scss/molecules/colophon";
 @import "scss/organisms/footer/footer";
 @import "scss/organisms/menu";
 
 // Specific elements
 @import "scss/molecules/social";
+
+// Diapositive
+@import "scss/atoms/typography/diapositive";
 
 // State
 @import "scss/state/baseState";

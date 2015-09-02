@@ -5,6 +5,11 @@
 	@each $key in $keys {
 		$result: map-get($result,$key);
 	}
+
+	@if $result == null {
+		@error "could not find #{$keys} in #{$map}";
+	}
+
 	@return $result;
 }
 // voorbeeld gebruik:

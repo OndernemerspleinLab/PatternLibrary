@@ -2,54 +2,37 @@
 
 $colors: (
 	hemelblauw: (
-		default: #007BC8,
+		default: #0077CE,
 		darkest: #033054,
-		dark: #005B94,
-		light: #B2D7EE,
-		lightest: #e7f7fe
-	),
-	blauw: (
-		lichtblauwRH: #8fcae7,
-		tekstlinkRH: #154273
+		light: #8FCAE7,
+		lightest: #DDEFF8
 	),
 	robijnrood: (
-		default: #ca005d,
-		lighter: #efb2ce,
-		lightest: #f7d9e7
+		default: #A90061,
 	),
 	mosgroen: (
-		default: #777c00,
-		lighter: #d6d7b2,
-		lightest: #ebebd9
-	),
-	groen: (
-		default: #39870c,
-		lighter: #c3dbb6,
-		lightest: #e1eddb,
-		mintgroenRH: #76d2b6
+		default: #777C00,
 	),
 	paars: (
-		default: #42145f,
-		lighter: #c6b8cf,
-		lightest: #e3dce7
+		default: #42145F,
 	),
-	rood: (
-		default: #d52b1e,
-		lighter: #f2bfbb,
-		lightest: #f9dfdd
+	mintgroen: (
+		default: #76d2b6
 	),
 	grijs: (
-		darkest: #3e3e3e,
-		medium: #a3a3a3,
-		lightest: #f3f3f3
+		darkest: #333333,
+		medium: #8F8F8F,
+		light: #dddddd,
 	),
 	zwart: #000000,
 	wit: #FFFFFF,
-	facebook: #3B5998,
-	twitter: #5EA9DD,
-	linkedin: #0274B3,
-	googleplus: #DA4835,
-	youtube: #CC181E
+	socials: (
+		facebook: #3B5998,
+		twitter: #5EA9DD,
+		linkedin: #0274B3,
+		googleplus: #DA4835,
+		youtube: #CC181E
+	)
 );
 
 @function getColor($color) {

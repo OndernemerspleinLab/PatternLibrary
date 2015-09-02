@@ -4,16 +4,43 @@
 
 .brandBar {
 	background: getColor(hemelblauw default);
-	min-height: 50px;
-	border-bottom: 10px solid getColor(hemelblauw light);
-	margin-left: -50px;
-	padding-left: 50px;
+	min-height: 1.875rem;
+	border-bottom: 0.3125rem solid getColor(hemelblauw light);
+	margin-left: 0;
+	padding-left: 0;
+
+	@include mqGreaterThan(small) {
+		min-height: 2.94rem;
+		border-bottom-width: 0.59rem;
+	}
+
+	@include mqGreaterThan(large) {
+		min-height: 3rem;
+		border-bottom-width: 0.59rem;
+	}
 }
 
 // logo styling -> _header-logo.scss
 
+.header-heading {
+	margin: {
+		top: 0.9rem;
+		bottom: 0.65rem;
+	}
+}
+
 // Pay-off
 .payOff {
-	margin: 1rem 0;
+	margin: 0 0 0.1rem 0;
 	text-align: right;
+	color: getColor(grijs medium);
+	font-style: italic;
+
+	@include mqLesserThan(small) {
+		font-size: getFontSize(small);
+	}
+
+	@include mqLesserThan(extraSmall) {
+		display: none;
+	}
 }

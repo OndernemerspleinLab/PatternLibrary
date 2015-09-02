@@ -1,76 +1,31 @@
 /* FOOTER */
 
 .footer {
-	clear: both;
-	overflow: hidden;
-	color: getColor(hemelblauw darkest);
-	line-height: 1.2;
+	background: getColor(grijs light);
+	@include insideMarginTop(0.5rem);
+	font-size: getFontSize(small);
 
-	a {
-		@include noUnderline;
-		color: getColor(hemelblauw darkest);
+	@include mqGreaterThan(smallMedium) {
+		font-size: getFontSize(root);
 	}
 }
 
-.footerBar {
-	background: getColor(hemelblauw light);
-	min-height: 50px;
-	border-bottom: 0;
+.partnerLogos {
+	overflow: auto;
+	overflow-y: hidden;
 
-	// overrule!
-	.column {
-		margin: 0;
+	&-intro {
+		text-align: center;
 	}
 }
 
-// Footer Nav
-.footer-navigation {
-	padding: $pad-half $pad;
-	margin: 0;
-
-	li {
-		display: inline-block;
-	}
-
-	a {
-		@include noUnderline;
-		display: block;
-		padding: $pad-half $pad $pad-half 0;
-		&:hover, &:active {
-			text-decoration: underline;
-		}
-	}
-	.divider {
-		display: inline-block;
-		padding: $pad-half $pad $pad-half 0;
-	}
-}
-
-
-// Footer Content
-.footer-content-wrapper {
-	background: getColor(hemelblauw lightest);
-}
-.footer-content {
-	padding: $pad-half;
-	text-align: center;
-
-	p {
-		margin-bottom: 1em;
-	}
+.partnerLogo {
+	max-width: none;
+	width: auto;
+	height: 3rem;
 }
 
 .copyright {
-	margin-top: 1em;
-}
-
-.partner-logos {
-	li {
-		display: inline;
-		margin-left: 1em;
-
-		&:first-child {
-			margin-left: 0;
-		}
-	}
+	text-align: center;
+	margin: 1rem 0;
 }

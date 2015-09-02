@@ -1,0 +1,11 @@
+.diapositive {
+	color: getColor(wit);
+}
+
+.diapositive-link {
+	&:hover,
+	&:focus,
+	&:active {
+		color: getColor(wit);
+	}
+}

@@ -3,34 +3,31 @@
 .breadcrumbs {
 	margin: 0 0.5rem;
 	padding-left: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	@include noBullets;
+}
 
-	li {
+.breadcrumb {
+	&:before {
+		content: ">";
 		display: inline-block;
-		.brandBar & {
-			color: getColor(wit);
-		}
-		&:before {
-			content: ">";
-			display: inline-block;
-			padding-right: $pad;
-		}
-		&:first-child:before {
-			content: "";
-			padding-right: 0;
-		}
+		padding-right: $pad;
+	}
+	&:first-child:before {
+		content: "";
+		padding-right: 0;
 	}
 
-	a {
+	&-link {
 		@include noUnderline;
 		display: inline-block;
 		padding: $pad-half $pad $pad-half 0;
 
-		.brandBar & {
-			color: getColor(wit);
-		}
-
 		&:hover, &:active, &:focus {
 			@include underline;
+
 		}
 	}
 }

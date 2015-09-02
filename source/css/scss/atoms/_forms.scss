@@ -7,7 +7,6 @@ form > div {
 }
 
 form ol, form ul {
-	list-style: none;
 	margin-left: 0;
 }
 
@@ -107,10 +106,10 @@ input[type="search"]::-webkit-search-decoration {
 
 /* Validation */
 .has-error {
-	border-color: getColor(rood default);
+	border-color: getColor(robijnrood default);
 }
 .is-valid {
-	border-color: getColor(groen default);
+	border-color: getColor(mosgroen default);
 }
 
 

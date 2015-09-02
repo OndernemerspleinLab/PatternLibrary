@@ -2,18 +2,25 @@
 
 .block {
 
+	margin: {
+		top: $space/2;
+		bottom: $space/2;
+	}
+
 	&--side {
 		margin-bottom: 1.5em;
 	}
 	&--blue {
 		background-color: getColor(hemelblauw lightest);
-		padding: 0.5em;
+		padding: 0 0.5em;
+		@include insideMargin(0.5em);
 	}
 	&--border {
 		border: 1px solid getColor(mosgroen default);
-		padding: 0.5em;
+		padding: 0 0.5em;
+		@include insideMargin(0.5em);
 	}
 }
 .block-title {
-
+	margin-top: 0.34rem;
 }

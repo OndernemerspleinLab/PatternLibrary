@@ -36,29 +36,56 @@ $mediaQueries: (
 		greater: "(min-width: 57em)",
 		lesser: "(max-width: #{57em - (1/16)})"
 	),
+	// 1200px
+	extraExtraLarge: (
+		greater: "(min-width: 75em)",
+		lesser: "(max-width: #{75em - (1/16)})"
+	),
 );
 
 @function getMediaQuery($name, $type) {
 	@return mapDeepGet($mediaQueries, $name $type);
 }
 
-@mixin mqGreaterThan($name) {
-	@media #{getMediaQuery($name, greater)} {
-		@content;
+@mixin mq($type, $name) {
+	@if ($type == between) {
+		$smallestMq: getMediaQuery($smallest, greater);
+		$largestMq: getMediaQuery($largest, lesser);
+
+		@media #{$smallestMq} and #{$largestMq} {
+			@content;
+		};
+	} @else {
+		@media #{getMediaQuery($name, $type)} {
+			@content;
+		}
 	}
+}
+
+@mixin mqGreaterThan($name) {
+	@include mq(greater, $name) { @content; };
 };
 
 @mixin mqLesserThan($name) {
-	@media #{getMediaQuery($name, lesser)} {
-		@content;
-	}
+	@include mq(lesser, $name) { @content; };
 };
 
 @mixin mqBetween($smallest, $largest) {
-	$smallestMq: getMediaQuery($smallest, greater);
-	$largestMq: getMediaQuery($largest, lesser);
-
-	@media #{$smallestMq} and #{$largestMq} {
-		@content;
-	};
+	@include mq(between, $name) { @content; };
 };
+
+@mixin setPropWithMq($mqType, $propertyName, $map) {
+	@each $tuple in $map {
+
+		$mq: nth($tuple, 1);
+		$value: nth($tuple, 2);
+
+		@if ($mq == all) {
+			#{$propertyName}: $value;
+		} @else {
+			@include mq($mqType, $mq) {
+				#{$propertyName}: $value;
+			}
+		}
+	}
+}

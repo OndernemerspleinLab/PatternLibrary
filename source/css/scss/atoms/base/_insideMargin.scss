@@ -1,0 +1,27 @@
+@mixin insideMarginTop($margin) {
+	@include before("") {
+		display: block;
+		margin-top: -1px;
+		padding-top: 1px;
+		margin-bottom: $margin;
+	}
+}
+
+@mixin insideMarginBottom($margin) {
+	@include after("") {
+		display: block;
+		margin-bottom: -1px;
+		padding-bottom: 1px;
+		margin-top: $margin;
+	}
+}
+
+@mixin insideMargin($margin) {
+	$marginTop: nth($margin, 1);
+	$marginBottom: if(length($margin) > 1,
+		nth($margin, 2),
+		nth($margin, 1)
+	);
+	@include insideMarginTop($marginTop);
+	@include insideMarginBottom($marginBottom);
+}

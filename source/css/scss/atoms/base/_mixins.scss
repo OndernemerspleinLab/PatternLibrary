@@ -29,12 +29,69 @@
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow:hidden;
-	@if $lte-ie8 {
-		text-indent: 1000em;
-	}
 }
 @mixin showText {
 	text-indent:0;
 	white-space:normal;
 	overflow:auto;
+}
+
+@mixin before($content: null) {
+	&:before {
+		@if ($content != null) {
+			content: quote($content);
+		}
+		@content;
+	}
+}
+
+@mixin after($content: null) {
+	&:after {
+		@if ($content != null) {
+			content: quote($content);
+		}
+		@content;
+	}
+}
+
+@mixin hoverEtc {
+	&:hover,
+	&:focus,
+	&:active {
+		@content;
+	}
+}
+
+@mixin listSpacing {
+	padding-left: 1rem;
+	margin-bottom: 1rem;
+
+	@include mqGreaterThan(smallMedium) {
+		padding-left: 0;
+	}
+}
+
+@mixin noListSpacing {
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+@mixin bullets($type: square) {
+	@include listSpacing;
+	list-style: $type;
+}
+
+@mixin noBullets {
+	@include noListSpacing;
+	list-style: none;
+}
+
+@mixin numbers($type: decimal) {
+	@include listSpacing;
+	list-style: $type;
+}
+
+@mixin noNumbers {
+	@include noListSpacing;
+	list-style: none;
 }

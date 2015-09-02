@@ -81,7 +81,7 @@ module.exports = function(grunt, devOrProd) {
 				options: {
 					livereload: true,
 				},
-				files: ['source/jsSource/**/*.js'],
+				files: ['source/jsSource/**/*.js', '!source/jsSource/jspm_packages/**'],
 				tasks: ['scriptsWatched'],
 
 			},
