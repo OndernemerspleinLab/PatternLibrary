@@ -18,8 +18,8 @@ p {
 /* Blockquote */
 blockquote {
     font-style: italic;
-    border-left: 1px solid getColor(grijs medium);
-    color: getColor(grijs medium);
+    border-left: 1px solid getColor(grijs default);
+    color: getColor(grijs default);
 	padding-left: $pad;
 	margin-bottom: $space;
 }
@@ -33,7 +33,7 @@ hr {
 }
 
 abbr {
-    border-bottom: 1px dotted getColor(grijs medium);
+    border-bottom: 1px dotted getColor(grijs default);
     cursor: help;
 }
 

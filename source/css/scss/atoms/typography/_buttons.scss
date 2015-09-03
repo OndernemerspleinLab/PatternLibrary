@@ -18,7 +18,7 @@
 
 	&.disabled {
 		background: getColor(grijs light);
-		color: getColor(grijs medium);
+		color: getColor(grijs default);
 	}
 }
 
@@ -29,7 +29,7 @@
 .btn-large {
 	padding: $pad-half;
 	text-transform: uppercase;
-	background: getColor(grijs medium);
+	background: getColor(grijs default);
 	font-size: 1.4rem;
 	font-weight: normal;
 }

@@ -29,7 +29,7 @@ button, input, select, textarea {
 
 input, textarea {
 	width: 100%;
-	border: 1px solid getColor(grijs medium);
+	border: 1px solid getColor(grijs default);
 	padding: $pad-half 0.65rem;
 }
 
@@ -40,7 +40,7 @@ input[type=text], input[type=search], input[type=url], input[type=number], texta
 button, input[type="submit"] {
 	padding: $pad-half;
 	background: getColor(grijs darkest);
-	border: 1px solid getColor(grijs medium);
+	border: 1px solid getColor(grijs default);
 	cursor: pointer;
 }
 
@@ -81,7 +81,7 @@ input[type="search"]::-webkit-search-decoration {
 		width: auto;
 
 		&:hover, &:focus {
-			background: getColor(grijs medium);
+			background: getColor(grijs default);
 			color: getColor(wit);
 		}
 	}
@@ -127,6 +127,6 @@ input[type="search"]::-webkit-search-decoration {
 	background: none;
 	padding: 0.78em 1em;
 	border: 0;
-	border-left: 1px solid getColor(grijs medium);
-	color: getColor(grijs medium);
+	border-left: 1px solid getColor(grijs default);
+	color: getColor(grijs default);
 }

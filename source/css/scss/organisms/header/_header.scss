@@ -33,7 +33,7 @@
 .payOff {
 	margin: 0 0 0.1rem 0;
 	text-align: right;
-	color: getColor(grijs medium);
+	color: getColor(grijs default);
 	font-style: italic;
 
 	@include mqLesserThan(small) {

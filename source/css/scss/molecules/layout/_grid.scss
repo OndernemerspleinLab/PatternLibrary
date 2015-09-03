@@ -12,13 +12,12 @@ $space: 2rem;
 	};
 
     border-left: solid transparent;
-    border-left-width: $menuBarWidthSmall;
+    border-left-width: $menuBarWidthSmall - 0.5rem;
     max-width: $maxWidth;
-	padding: 0 0.2rem;
 
 	@include setPropWithMq(greater, padding, (
-		all: 0 0.2rem,
-		extraSmall: 0 3%,
+		all: 0 0.2rem 0 0,
+		extraSmall: 0 3% 0 0,
 		small: 0 1.6rem,
 		mediumLarge: 0 1rem,
 		extraLarge: 0 1.6rem
@@ -26,6 +25,10 @@ $space: 2rem;
 
 	@include mqGreaterThan(small) {
 	    border-left-width: $menuBarWidthLarge;
+	}
+
+	@include mqGreaterThan(extraLarge) {
+	    border-left-width: $menuBarWidthExtraLarge;
 	}
 
 	&--fullWidth {

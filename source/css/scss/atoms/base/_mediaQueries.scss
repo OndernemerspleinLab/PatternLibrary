@@ -36,10 +36,10 @@ $mediaQueries: (
 		greater: "(min-width: 57em)",
 		lesser: "(max-width: #{57em - (1/16)})"
 	),
-	// 1200px
+	// 1280px
 	extraExtraLarge: (
-		greater: "(min-width: 75em)",
-		lesser: "(max-width: #{75em - (1/16)})"
+		greater: "(min-width: 70em)",
+		lesser: "(max-width: #{70em - (1/16)})"
 	),
 );
 

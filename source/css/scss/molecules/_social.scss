@@ -16,7 +16,7 @@
 		height: 2rem;
 		width: 2rem;
 		@include noUnderline;
-		background-color: getColor(grijs medium);
+		background-color: getColor(grijs default);
 		margin: 0 0.25rem;
 		padding: 12%;
 		transition: background-color 400ms;
