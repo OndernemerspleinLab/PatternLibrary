@@ -1,6 +1,6 @@
 /* GRID */
 
-$maxWidth: 60rem; //1080px
+$maxWidth: 68rem; //1224px
 $space: 2rem;
 
 .layoutContainer {
@@ -27,7 +27,7 @@ $space: 2rem;
 	    border-left-width: $menuBarWidthLarge;
 	}
 
-	@include mqGreaterThan(extraLarge) {
+	@include mqGreaterThan(extraExtraLarge) {
 	    border-left-width: $menuBarWidthExtraLarge;
 	}
 

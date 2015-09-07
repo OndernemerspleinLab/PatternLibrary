@@ -16,40 +16,48 @@
 		height: 2rem;
 		width: 2rem;
 		@include noUnderline;
-		background-color: getColor(grijs default);
 		margin: 0 0.25rem;
-		padding: 12%;
 		transition: background-color 400ms;
 
 		&--facebook {
 			@include hoverEtc {
-				background-color: getColor(socials facebook);
+				.social-figure-background {
+					fill: getColor(socials facebook);
+				}
 			}
 		}
 		&--twitter {
 			@include hoverEtc {
-				background-color: getColor(socials twitter);
+				.social-figure-background {
+					fill: getColor(socials twitter);
+				}
 			}
 		}
 		&--linkedin {
 			@include hoverEtc {
-				background-color: getColor(socials linkedin);
+				.social-figure-background {
+					fill: getColor(socials linkedin);
+				}
 			}
 		}
 		&--googleplus {
 			@include hoverEtc {
-				background-color: getColor(socials googleplus);
+				.social-figure-background {
+					fill: getColor(socials googleplus);
+				}
 			}
 		}
 		&--youtube {
 			@include hoverEtc {
-				background-color: getColor(socials youtube);
+				.social-figure-background {
+					fill: getColor(socials youtube);
+				}
 			}
 		}
 
 
 		@include hoverEtc {
-			.social-figure {
+			.social-figure-foreground {
 				fill: getColor(wit);
 			}
 		}
@@ -57,8 +65,21 @@
 
 	&-figure {
 		height: 100%;
-		transition: fill 400ms;
 
-		fill: getColor(grijs light);
+
+		&-background,
+		&-foreground {
+			transition: fill 400ms;
+		}
+
+		&-background {
+			fill: getColor(grijs default);
+		}
+
+		&-foreground {
+			fill: getColor(grijs light);
+			transform-origin: center;
+			transform: scale(0.6);
+		}
 	}
 }

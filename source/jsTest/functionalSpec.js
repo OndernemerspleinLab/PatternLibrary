@@ -3,7 +3,7 @@ import {
 	falsy, truthy,
 	partial, partialByObject, includes,
 	isFilledArray, isEmptyArray, debounce,
-	arrayfy, reduceObject,
+	arrayfy, spliceItem, reduceObject,
 	mapObject, filterObject,
 	aliasMapProperty, toObjectArguments
 } from 'utils/functional';
@@ -198,6 +198,19 @@ describe("functional", () => {
 		it("should return an array value without altering it", () => {
 			const arr= [1, 2, 3];
 			expect(arrayfy(arr)).toBe(arr);
+		});
+	});
+
+	describe("spliceItem", () => {
+		it("should not alter an array which does not contain the item", () => {
+			const arr = [1, 2, 3];
+			spliceItem(arr, 4);
+			expect(arr).toEqual([1, 2, 3]);
+		});
+		it("should remove an item from an array", () => {
+			const arr = [1, 2, 3];
+			spliceItem(arr, 2);
+			expect(arr).toEqual([1, 3]);
 		});
 	});
 

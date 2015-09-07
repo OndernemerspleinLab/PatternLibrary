@@ -1,10 +1,10 @@
 <div class="hide-svg">{{> atoms-figures }}</div>
 <script type="text/ng-template" id="menuBar.html">
-    <div class="menuBar is-menuBar-retracted">
+    <div class="menuBar" ng-class="{'is-menuBar-retracted': viewModel.isMenuBarRetracted}">
         <div class="menuBar-navigation">
             <a href="{{ link.templates-homepage }}" class="menuBar-button menuBar-button--navigation menuBar-button--home">
                 <svg class="menuBar-icon">
-                    <use xlink:href="#figures-menu-3903"></use>
+                    <use xlink:href="#figures-home-2004"></use>
                 </svg>
                 <span class="menuBar-button-text">Home</span>
             </a>

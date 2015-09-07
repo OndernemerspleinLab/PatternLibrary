@@ -51,6 +51,14 @@ export const arrayfy = (candidate) => {
 	return [];
 };
 
+// Remove an item from an array by modifying the array
+export const spliceItem = (arr, item) => {
+	const index = arr.indexOf(item);
+	if (index >= 0) {
+		arr.splice(index, 1);
+	}
+};
+
 export const reduceObject = (obj, iterator, initial) => {
 	const keys = Object.keys(obj);
 	if (unexisting(initial)) {

@@ -10,3 +10,4 @@ import 'jsTest/menuBarAnimationSpec';
 import 'jsTest/menuBarContentAnimationSpec';
 import 'jsTest/menuBarDirectiveSpec';
 import 'jsTest/menuBarControllerSpec';
+import 'jsTest/scrollEventSpec';
