@@ -1,12 +1,14 @@
 import {resetAnimations, enableAnimations, disableAnimations} from 'jsTest/testUtils';
 import initAnimation, { getWidth } from 'animations/menuBarAnimation';
 import Velocity from 'velocity-animate';
+import angular from 'angular';
 import {opened} from 'constants/classNames';
 import {menuBar as animationTiming} from 'constants/animationTiming';
 import DopApp from 'DopApp';
 
 describe("menuBarAnimation", () => {
 	let openedElement;
+	let mockElement;
 
 	beforeEach(() => {
 		spyOn(DopApp, "animation");
@@ -16,11 +18,15 @@ describe("menuBarAnimation", () => {
 
 	beforeEach(() => {
 		openedElement = document.createElement('div');
+		const mockDomElement = document.createElement('div');
+		mockElement = angular.element(mockDomElement);
+		document.body.appendChild(mockDomElement);
 		document.body.appendChild(openedElement);
 	});
 
 	afterEach(resetAnimations);
 	afterEach(() => {
+		document.body.removeChild(mockElement[0]);
 		document.body.removeChild(openedElement);
 	});
 
@@ -30,7 +36,6 @@ describe("menuBarAnimation", () => {
 		const call = DopApp.animation.calls.mostRecent();
 		const args = call.args;
 		const configObj = args[1]();
-		const mockElement = [];
 		const mockOptions = {};
 		const mockDone = () => {};
 
@@ -40,8 +45,9 @@ describe("menuBarAnimation", () => {
 		expect(Velocity).toHaveBeenCalledWith(mockElement, {
 			translateX: "0px",
 		}, Object.assign({
-			complete: mockDone
+			complete: jasmine.any(Function)
 		}, animationTiming));
+
 	});
 
 	it("should animate to the with of an openedElement", () => {
@@ -50,7 +56,6 @@ describe("menuBarAnimation", () => {
 		const call = DopApp.animation.calls.mostRecent();
 		const args = call.args;
 		const configObj = args[1]();
-		const mockElement = [];
 
 		const mockOptions = {
 			openedElement

@@ -62,7 +62,11 @@ $space: 2rem;
 
 
 .column {
-	margin: 0 $space/2;
+	margin: {
+		left: $space/2;
+		right: $space/2;
+	}
+
 	//flex: 1 1 100%;
 	flex: 0 1 auto; // default
 

@@ -8,6 +8,7 @@ const serviceNames = [
 	"$rootScope",
 	"$q",
 	"$timeout",
+	"$document",
 	"$window"
 ];
 
@@ -15,7 +16,7 @@ const serviceNames = [
 const ngServices = {};
 
 getServices.$inject = serviceNames;
-function getServices(...services) {
+export function getServices(...services) {
 	services.reduce(function (memo, service, index) {
 		const name = serviceNames[index];
 		memo[name] = service;

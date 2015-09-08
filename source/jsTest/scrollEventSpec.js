@@ -31,14 +31,13 @@ describe("scrollEvent", () => {
 	});
 
 	describe("scrollEventRunner", () => {
-		let $rootScope;
+		const $timeout = (func) => func();
 		let $window;
 		let $document;
 		let scrollEvent = document.createEvent("Event");
 		scrollEvent.initEvent("scroll");
 
-		beforeEach(inject((_$rootScope_, _$document_) => {
-			$rootScope = _$rootScope_;
+		beforeEach(inject((_$document_) => {
 			$window = document.createElement("div");
 			$document = _$document_;
 		}));
@@ -46,7 +45,7 @@ describe("scrollEvent", () => {
 		it("should call callbacks when scroll event is triggered", () => {
 			const listener = jasmine.createSpy("listener");
 			const listener2 = jasmine.createSpy("listener2");
-			scrollEventRunner($window, $document, $rootScope, 0);
+			scrollEventRunner($window, $document, $timeout, 0);
 			registerScrollListener(listener);
 			registerScrollListener(listener2);
 			$window.scrollX = 10;

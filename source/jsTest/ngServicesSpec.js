@@ -1,5 +1,5 @@
 import DopApp from 'DopApp';
-import ngServices from 'utils/ngServices';
+import ngServices, {getServices} from 'utils/ngServices';
 
 describe("ngServices", function () {
 
@@ -8,12 +8,16 @@ describe("ngServices", function () {
 		"$animate",
 		"$rootScope",
 		"$q",
-		"$timeout"
+		"$timeout",
+		"$document",
+		"$window"
 	];
+	DopApp.run(getServices);
 
 	serviceNames.forEach(function (serviceName) {
 		it(`should have the angular ${serviceName} service as a property`, function () {
 			const runFunction = (service) => {
+				expect(service).not.toBeUndefined();
 				expect(ngServices[serviceName]).toBe(service);
 			};
 			runFunction.$inject = [serviceName];

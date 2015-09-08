@@ -1,6 +1,6 @@
 <div class="hide-svg">{{> atoms-figures }}</div>
 <script type="text/ng-template" id="menuBar.html">
-    <div class="menuBar" ng-class="{'is-menuBar-retracted': viewModel.isMenuBarRetracted}">
+    <div class="menuBar" ng-class="{'is-menuBar-retracted': viewModel.isMenuBarRetracted()}">
         <div class="menuBar-navigation">
             <a href="{{ link.templates-homepage }}" class="menuBar-button menuBar-button--navigation menuBar-button--home">
                 <svg class="menuBar-icon">
@@ -50,7 +50,6 @@
     </div>
 
     <div id="menu" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('menu')">
-        <p class="menuBar--title"><a href="#">Home</a></p>
         <span class="menuBar--subTitle textLine">Onderwerpen</span>
         <ul class="linkList">
             <li><a href="#">Personeel</a></li>

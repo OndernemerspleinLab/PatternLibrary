@@ -1,28 +1,31 @@
 import MenuBarController from 'controllers/menuBarController';
 import mock from 'jsTest/ngMock';
+import prepNgServices from 'jsTest/prepNgServices';
 import * as classNames from 'constants/classNames';
 import angular from 'angular';
 
 const {inject} = mock;
 
 describe("menuBarController", () => {
-	let $controller;
 	let $scope;
 	let $rootScope;
 	let $animate;
 	let element;
 	let $window;
+	let $document;
 	let menuBar;
 	let openedElement;
+	prepNgServices();
 
-	beforeEach(inject((_$controller_, _$rootScope_) => {
-		$controller = _$controller_;
+	beforeEach(inject((_$rootScope_) => {
+		const body = document.createElement("div");
 		$rootScope = _$rootScope_;
 		$animate = jasmine.createSpyObj('$animate', ['cancel', 'animate', 'addClass', 'removeClass']);
 		element = angular.element(document.createElement("div"));
 		$scope = $rootScope.$new(true);
 		$window = document.createElement("div");
-		menuBar = new MenuBarController(element, $scope, $animate, $window, 0);
+		$document = [{body}];
+		menuBar = new MenuBarController(element, $scope, $animate, $window, $document, 0);
 		openedElement = document.createElement("div");
 		openedElement.id = "openedElement";
 		document.body.appendChild(openedElement);

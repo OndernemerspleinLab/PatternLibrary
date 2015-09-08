@@ -1,0 +1,245 @@
+[4mRunning "karma:unit" (karma) task[24m
+[32m08 09 2015 18:58:00.101:INFO [karma]: [39mKarma v0.13.8 server started at http://localhost:9876/
+[32m08 09 2015 18:58:00.105:INFO [launcher]: [39mStarting browser PhantomJS
+[32m08 09 2015 18:58:00.793:INFO [PhantomJS 1.9.8 (Mac OS X 0.0.0)]: [39mConnected on socket LQZmjBPRMZjuneprAAAA with id 61356513
+PhantomJS 1.9.8 (Mac OS X 0.0.0) LOG LOG: [36m'PREP'[39m
+
+  DopApp
+    [32m✓ [39mshould be a defined module
+    [32m✓ [39mshould require ngAnimate
+
+  ngServices
+    [32m✓ [39mshould have the angular $http service as a property
+    [32m✓ [39mshould have the angular $animate service as a property
+    [32m✓ [39mshould have the angular $rootScope service as a property
+    [32m✓ [39mshould have the angular $q service as a property
+    [32m✓ [39mshould have the angular $timeout service as a property
+    [32m✓ [39mshould have the angular $document service as a property
+    [32m✓ [39mshould have the angular $window service as a property
+
+  functional
+    negate
+      [32m✓ [39mshould negate the result of a function
+    existing
+      [32m✓ [39mreturn false for null and undefined
+      [32m✓ [39mreturn true for values other than null and undefined
+    unexisting
+      [32m✓ [39mreturn true for null and undefined
+      [32m✓ [39mreturn false for values other than null and undefined
+    falsy
+      [32m✓ [39mreturn true for false, null and undefined
+      [32m✓ [39mreturn false for values other than false, null and undefined
+    truthy
+      [32m✓ [39mreturn false for false, null and undefined
+      [32m✓ [39mreturn true for values other than false, null and undefined
+    partial
+      [32m✓ [39mshould partially apply a function
+      [32m✓ [39mshould partially apply zero arguments
+    partialByObject
+      [32m✓ [39mshould partially apply an object to a function
+      [32m✓ [39mshould partially apply an object to a function
+      [32m✓ [39mshould not alter the boundObj and the argsObj
+    debounce
+      [32m✓ [39mshould 
+    includes
+      [32m✓ [39mreport if a value is in an array
+    isEmptyArray
+      [32m✓ [39mshould descern between empty and filled arrays
+    isFilledArray
+      [32m✓ [39mshould descern between empty and filled arrays
+    arrayfy
+      [32m✓ [39mshould create an empty array for unexisting values
+      [32m✓ [39mshould wrap an existing non array value in an array
+      [32m✓ [39mshould return an array value without altering it
+    spliceItem
+      [32m✓ [39mshould not alter an array which does not contain the item
+      [32m✓ [39mshould remove an item from an array
+    reduceObject
+      [32m✓ [39mshould reduce an object
+      [32m✓ [39mshould supply iterator with memo, val, key, obj
+    mapObject
+      [32m✓ [39mshould map an object
+      [32m✓ [39mshould supply iterator with val, key, obj
+    filterObject
+      [32m✓ [39mshould map an object
+      [32m✓ [39mshould supply iterator with val, key, obj
+    aliasMapProperty
+      [32m✓ [39mshould make an alias for a map property
+    toObjectArguments
+      [32m✓ [39mshould call the callback with the argMames combined with the original args in an object
+      [32m✓ [39mshould call the callback with an empty object when argNames is empty
+
+  singleOpened
+    isOpened
+      [32m✓ [39mshould not match undefined
+      [32m✓ [39mshould descern opened and closed units
+    isAnyOpened
+      [32m✓ [39mshould find out if anything is opened
+    getOpenedUnit
+      [32m✓ [39mshould return undefined when no unit is opened
+      [32m✓ [39mshould return the opened unit
+    open
+      [32m✓ [39mshould open a unit
+    close
+      [32m✓ [39mshould close a unit
+    toggle
+      [32m✓ [39mshould toggle a unit
+      [32m✓ [39mshould open a unit when an other unit is opened
+
+  multipleOpened
+    isOpened
+      [32m✓ [39mshould descern opened and closed units
+    isAnyOpened
+      [32m✓ [39mshould find out if anything is opened
+    open
+      [32m✓ [39mshould open a unit without closing others
+    close
+      [32m✓ [39mshould close a unit
+    toggle
+      [32m✓ [39mshould toggle a unit
+
+  animationUtils
+    switchCallback
+      [32m✓ [39mshould switch between
+    canAnimate
+      [32m✓ [39mshould return true when csstransforms are supported
+      [32m✓ [39mshould return false when csstransforms are unsupported
+    checkClass
+      [32m✓ [39mshould check if className is part of classNameFilters
+      [32m✓ [39mshould accept classNameFilters as a string
+      [32m✓ [39mshould return false when classNameFilters is omitted
+    checkClassDecorator
+      [32m✓ [39mshould return undefined when no callback is provided
+      [32m✓ [39mshould execute the callback when the className matches
+      [32m✓ [39mshould not execute the callback when the className does not match
+    makeNgAnimationCallback
+      [32m✓ [39mshould build the correct arguments object for animate
+      [32m✓ [39mshould build the correct arguments object for beforeAnimate
+      [32m✓ [39mshould build the correct arguments object for setClass
+      [32m✓ [39mshould build the correct arguments object for beforeSetClass
+      [32m✓ [39mshould build the correct arguments object for addClass
+      [32m✓ [39mshould build the correct arguments object for beforeAddClass
+      [32m✓ [39mshould build the correct arguments object for removeClass
+      [32m✓ [39mshould build the correct arguments object for beforeRemoveClass
+
+  ngAnimation
+    animation
+      [32m✓ [39mshould have called the module’s animation method
+      [32m✓ [39mshould have the animate callbacks working
+      [32m✓ [39mshould have the instant callbacks working
+      [32m✓ [39mshould not fire animations when the class does not match
+
+  menuBarAnimation
+    [32m✓ [39mshould animate to 0px when there is no openedElement
+    [32m✓ [39mshould animate to the with of an openedElement
+    [32m✓ [39mshould transition instantly to 0px when animations are disabled
+    [32m✓ [39mshould transition instantly to the with of an openedElement when animations are disabled
+    [32m✓ [39mshould prepare an element to be animated open
+    [32m✓ [39mshould animate an element open
+    [32m✓ [39mshould prepare an element to be animated close
+    [32m✓ [39mshould animate an element close
+    [32m✓ [39mshould do nothing when animations are disabled
+
+  menuBarDirective
+    [32m✓ [39mshould be properly configured
+
+  menuBarController
+    [31m✗ [39m[31mshould animate the menuBar when menuBar items are opened or closed[39m
+	TypeError: 'undefined' is not an object (evaluating '$document[0]')
+	undefined
+	    at executeScrollListeners (:21)
+	    at registerScrollListener (:48)
+	    at MenuBarController (:76)
+	    at :41
+
+	TypeError: 'undefined' is not an object (evaluating 'menuBar.openClose')
+	    at :57
+
+	NOT_FOUND_ERR: NOT_FOUND_ERR: DOM Exception 8 (line 48)
+	Error: NOT_FOUND_ERR: DOM Exception 8
+	    at :48
+
+    [31m✗ [39m[31mshould resize an opened menu when the window is resized[39m
+	TypeError: 'undefined' is not an object (evaluating '$document[0]')
+	    at executeScrollListeners (:21)
+	    at registerScrollListener (:48)
+	    at MenuBarController (:76)
+	    at :41
+
+	TypeError: 'undefined' is not an object (evaluating 'menuBar.openClose')
+	    at :82
+
+	NOT_FOUND_ERR: NOT_FOUND_ERR: DOM Exception 8 (line 48)
+	Error: NOT_FOUND_ERR: DOM Exception 8
+	    at :48
+
+
+  scrollEvent
+    registerScrollListener
+      [31m✗ [39m[31mshould register a listener in the provided list[39m
+	TypeError: 'undefined' is not an object (evaluating '$document[0]')
+	    at executeScrollListeners (:21)
+	    at registerScrollListener (:48)
+	    at :21
+
+      [31m✗ [39m[31mshould return an unregister function[39m
+	TypeError: 'undefined' is not an object (evaluating '$document[0]')
+	    at executeScrollListeners (:21)
+	    at registerScrollListener (:48)
+	    at :30
+
+    scrollEventRunner
+      [31m✗ [39m[31mshould call callbacks when scroll event is triggered[39m
+	TypeError: 'undefined' is not an object (evaluating '$document[0]')
+	    at executeScrollListeners (:21)
+	    at registerScrollListener (:48)
+	    at :60
+
+
+PhantomJS 1.9.8 (Mac OS X 0.0.0): Executed 91 of 91[31m (5 FAILED)[39m (0.087 secs / 0.053 secs)
+[31mTOTAL: 5 FAILED, 86 SUCCESS[39m
+
+
+[31m1) should animate the menuBar when menuBar items are opened or closed
+[39m[31m     menuBarController
+[39m     [90mTypeError: 'undefined' is not an object (evaluating '$document[0]')
+undefined
+    at executeScrollListeners (:21)
+    at registerScrollListener (:48)
+    at MenuBarController (:76)
+    at :41[39m     [90mTypeError: 'undefined' is not an object (evaluating 'menuBar.openClose')
+    at :57[39m     [90mNOT_FOUND_ERR: NOT_FOUND_ERR: DOM Exception 8 (line 48)
+Error: NOT_FOUND_ERR: DOM Exception 8
+    at :48[39m
+[31m2) should resize an opened menu when the window is resized
+[39m[31m     menuBarController
+[39m     [90mTypeError: 'undefined' is not an object (evaluating '$document[0]')
+    at executeScrollListeners (:21)
+    at registerScrollListener (:48)
+    at MenuBarController (:76)
+    at :41[39m     [90mTypeError: 'undefined' is not an object (evaluating 'menuBar.openClose')
+    at :82[39m     [90mNOT_FOUND_ERR: NOT_FOUND_ERR: DOM Exception 8 (line 48)
+Error: NOT_FOUND_ERR: DOM Exception 8
+    at :48[39m
+[31m3) should register a listener in the provided list
+[39m[31m     scrollEvent registerScrollListener
+[39m     [90mTypeError: 'undefined' is not an object (evaluating '$document[0]')
+    at executeScrollListeners (:21)
+    at registerScrollListener (:48)
+    at :21[39m
+[31m4) should return an unregister function
+[39m[31m     scrollEvent registerScrollListener
+[39m     [90mTypeError: 'undefined' is not an object (evaluating '$document[0]')
+    at executeScrollListeners (:21)
+    at registerScrollListener (:48)
+    at :30[39m
+[31m5) should call callbacks when scroll event is triggered
+[39m[31m     scrollEvent scrollEventRunner
+[39m     [90mTypeError: 'undefined' is not an object (evaluating '$document[0]')
+    at executeScrollListeners (:21)
+    at registerScrollListener (:48)
+    at :60[39m
+
+[33mWarning: Task "karma:unit" failed. Use --force to continue.[39m
+
+[31mAborted due to warnings.[39m
