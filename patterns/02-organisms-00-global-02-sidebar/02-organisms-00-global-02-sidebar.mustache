@@ -1,10 +1,10 @@
 &lt;div class=&quot;hide-svg&quot;&gt;{{&gt; atoms-figures }}&lt;/div&gt;
 &lt;script type=&quot;text/ng-template&quot; id=&quot;menuBar.html&quot;&gt;
-    &lt;div class=&quot;menuBar is-menuBar-retracted&quot;&gt;
+    &lt;div class=&quot;menuBar&quot; ng-class=&quot;{&apos;is-menuBar-retracted&apos;: viewModel.isMenuBarRetracted}&quot;&gt;
         &lt;div class=&quot;menuBar-navigation&quot;&gt;
             &lt;a href=&quot;{{ link.templates-homepage }}&quot; class=&quot;menuBar-button menuBar-button--navigation menuBar-button--home&quot;&gt;
                 &lt;svg class=&quot;menuBar-icon&quot;&gt;
-                    &lt;use xlink:href=&quot;#figures-menu-3903&quot;&gt;&lt;/use&gt;
+                    &lt;use xlink:href=&quot;#figures-home-2004&quot;&gt;&lt;/use&gt;
                 &lt;/svg&gt;
                 &lt;span class=&quot;menuBar-button-text&quot;&gt;Home&lt;/span&gt;
             &lt;/a&gt;

@@ -7,7 +7,8 @@ const serviceNames = [
 	"$animate",
 	"$rootScope",
 	"$q",
-	"$timeout"
+	"$timeout",
+	"$window"
 ];
 
 

@@ -1,5 +1,6 @@
 import angular from 'angular';
 import {debounce} from 'utils/functional';
+import {registerScrollListener} from 'utils/scrollEvent';
 import createOpenClose from 'openClose/singleOpened';
 import * as classNames from 'constants/classNames';
 
@@ -40,6 +41,10 @@ export default class MenuBarController {
 			}
 
 		}, debounceDuration));
+
+		registerScrollListener(({top}) => {
+			this.isMenuBarRetracted = top > 0;
+		});
 
 		$scope.$watch(this.openClose.getOpenedUnit, (openedUnit, oldOpenedUnit) => {
 			const closedElement = getElement(oldOpenedUnit);
