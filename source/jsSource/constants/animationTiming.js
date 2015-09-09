@@ -4,6 +4,11 @@ export const menuBar = {
 	delay: 0,
 };
 
+export const height = {
+	duration: 400,
+	delay: 0,
+};
+
 export const menuBarContent = {
 	duration: 400,
 	delay: 0,

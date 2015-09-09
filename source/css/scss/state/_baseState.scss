@@ -1,4 +1,10 @@
+
+// Default angular styling
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+    display: none !important;
+}
+
 // For specificity so ng-hide can be overridden
-.is-animating.is-animating {
+.is-forceShowing.is-forceShowing {
 	display: block !important;
 }

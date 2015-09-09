@@ -22,12 +22,11 @@ const cancelAnimation = (animationPromise) => {
 };
 
 export default class MenuBarController {
-	static get $inject() { return ['$element', '$scope', '$animate', '$window', '$document']; }
+	static get $inject() { return ['$element', '$scope', '$animate', '$window', '$rootScope']; }
 
-	constructor($element, $scope, $animate, $window, $document, debounceDuration = 100) {
+	constructor($element, $scope, $animate, $window, $rootScope, debounceDuration = 100) {
 		this.openClose = createOpenClose();
 		let animationPromise;
-		const bodyElement = angular.element($document[0].body);
 
 		angular.element($window).on("resize", debounce(() => {
 			if (animationPromise) {
@@ -59,7 +58,7 @@ export default class MenuBarController {
 			cancelAnimation(animationPromise);
 
 			if (openedUnit) {
-				$animate.addClass(bodyElement, classNames.bodyMenuOpened);
+				$rootScope.menuOpened = true;
 				const openedElement = getElement(openedUnit);
 				if (oldOpenedUnit) {
 					animationPromise = $animate.animate($element, null, { resize: true }, null, {
@@ -73,7 +72,7 @@ export default class MenuBarController {
 					});
 				}
 			} else {
-				$animate.removeClass(bodyElement, classNames.bodyMenuOpened);
+				$rootScope.menuOpened = false;
 				animationPromise = $animate.removeClass($element, classNames.opened, {
 					closedElement
 				});

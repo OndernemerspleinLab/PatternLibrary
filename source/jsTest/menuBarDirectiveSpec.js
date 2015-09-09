@@ -3,13 +3,11 @@ import controller from 'controllers/menuBarController';
 import {menuBarDirective as directive} from 'directives/menuBarDirective';
 
 describe("menuBarDirective", () => {
-	it("should be properly configured", () => {
-		baseTestDirective({
-			directive,
+	describe("directive configuration", () => {
+		baseTestDirective(directive, "menuBarDirective", {
 			controller,
-			directiveName: "menuBarDirective",
-			templateUrl: "menuBar.html",
-			scopeConfig: {}
+			scope: true,
+			restrict: "A",
 		});
 	});
 });

@@ -12,20 +12,19 @@ describe("menuBarController", () => {
 	let $animate;
 	let element;
 	let $window;
-	let $document;
 	let menuBar;
+	let mockRootScope;
 	let openedElement;
 	prepNgServices();
 
 	beforeEach(inject((_$rootScope_) => {
-		const body = document.createElement("div");
 		$rootScope = _$rootScope_;
 		$animate = jasmine.createSpyObj('$animate', ['cancel', 'animate', 'addClass', 'removeClass']);
 		element = angular.element(document.createElement("div"));
 		$scope = $rootScope.$new(true);
 		$window = document.createElement("div");
-		$document = [{body}];
-		menuBar = new MenuBarController(element, $scope, $animate, $window, $document, 0);
+		mockRootScope = _$rootScope_.$new();
+		menuBar = new MenuBarController(element, $scope, $animate, $window, mockRootScope, 0);
 		openedElement = document.createElement("div");
 		openedElement.id = "openedElement";
 		document.body.appendChild(openedElement);
@@ -82,5 +81,15 @@ describe("menuBarController", () => {
 			duration: 100,
 		});
 
+	});
+
+	it("should expose when the menu is opened", () => {
+		$scope.$digest();
+		menuBar.openClose.open("element");
+		$scope.$digest();
+		expect(mockRootScope.menuOpened).toBe(true);
+		menuBar.openClose.close("element");
+		$scope.$digest();
+		expect(mockRootScope.menuOpened).toBe(false);
 	});
 });

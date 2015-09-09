@@ -2,6 +2,7 @@ import {resetAnimations, enableAnimations, disableAnimations} from 'jsTest/testU
 import initAnimation, { getWidth } from 'animations/menuBarAnimation';
 import Velocity from 'velocity-animate';
 import angular from 'angular';
+import prepNgServices from 'jsTest/prepNgServices';
 import {opened} from 'constants/classNames';
 import {menuBar as animationTiming} from 'constants/animationTiming';
 import DopApp from 'DopApp';
@@ -9,6 +10,8 @@ import DopApp from 'DopApp';
 describe("menuBarAnimation", () => {
 	let openedElement;
 	let mockElement;
+
+	prepNgServices();
 
 	beforeEach(() => {
 		spyOn(DopApp, "animation");
@@ -18,6 +21,7 @@ describe("menuBarAnimation", () => {
 
 	beforeEach(() => {
 		openedElement = document.createElement('div');
+		openedElement.style.display = "none";
 		const mockDomElement = document.createElement('div');
 		mockElement = angular.element(mockDomElement);
 		document.body.appendChild(mockDomElement);

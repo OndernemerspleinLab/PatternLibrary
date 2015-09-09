@@ -206,40 +206,16 @@ $menuIconSizePaddingRatioLarge: (1 - $menuIconSizeRatioLarge) / 2;
 	bottom: 0;
 	z-index: 10;
 	background: getColor(hemelblauw lightest);
-	overflow-y: visible;
-	overflow-x: hidden;
-	width: 240px;
+	min-width: 15rem;
 	height: 100%;
-	max-width: calc(100vw - #{$menuBarWidthSmall + 1.1rem});
+	max-width: calc(100vw - #{$menuBarWidthSmall});
 
 
 	@include mqGreaterThan(small) {
-		max-width: calc(100vw - #{$menuBarWidthLarge + 1.1rem});
+		max-width: calc(100vw - #{$menuBarWidthLarge});
 	}
-
-	// For testing script
-	&:nth-child(2) {
-		width: 250px;
-	}
-	&:nth-child(3) {
-		width: 300px;
-	}
-	&:nth-child(4) {
-		@include mqLesserThan(small) {
-			width: 250px;
-		}
-		@include mqGreaterThan(small) {
-			width: 500px;
-		}
-	}
-	&:nth-child(5) {
-		width: 300px;
-	}
-	&:nth-child(6) {
-		width: 450px;
-	}
-	&:nth-child(7) {
-		width: 450px;
+	@include mqGreaterThan(large) {
+		max-width: calc(100vw - #{$menuBarWidthExtraLarge});
 	}
 
 	ul {
@@ -270,23 +246,4 @@ $menuIconSizePaddingRatioLarge: (1 - $menuIconSizeRatioLarge) / 2;
 		padding: 5px 20px;
 	}
 
-}
-.menuBar--title {
-	font-weight: bold;
-	padding: 20px 20px 10px 20px;
-	font-size: 1.5em;
-
-	a {
-	    @include noUnderline;
-		padding: 0;
-		&:hover, &:active {
-	    	@include underline;
-		}
-	}
-}
-.menuBar--subTitle {
-	padding: 10px 20px;
-	color: getColor(grijs darkest);
-	font-weight: bold;
-	text-transform: uppercase;
 }

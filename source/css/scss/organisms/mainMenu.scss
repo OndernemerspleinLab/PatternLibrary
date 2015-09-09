@@ -1,0 +1,24 @@
+.mainMenu {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	&-title {
+		flex: 0 0 auto;
+	}
+
+	&-button {
+	@include cleanButton;
+	}
+
+	&-content {
+		flex: 0 1 auto;
+		overflow: auto;
+		overflow-x: hidden;
+		padding: 1px 0;
+
+		&.ng-animate {
+			overflow: hidden;
+		}
+	}
+}

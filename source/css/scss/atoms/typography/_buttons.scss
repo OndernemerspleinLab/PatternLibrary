@@ -37,3 +37,12 @@
 .text-btn {
 	font-style: italic;
 }
+
+@mixin cleanButton {
+	background: none;
+	border: none;
+	padding: 0;
+	color: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
