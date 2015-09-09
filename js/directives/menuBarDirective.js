@@ -1,14 +1,13 @@
 import DopApp from 'DopApp';
 import controller from 'controllers/menuBarController';
-import 'animations/menuBarAnimation';
-import 'animations/menuBarContentAnimation';
+import 'animations/heightAnimation';
 
 export const menuBarDirective = () => ({
-	scope: {},
-	templateUrl: "menuBar.html",
+	scope: true,
 	controllerAs: "viewModel",
 	controller,
-	bindToController: true
+	restrict: "A",
+	bindToController: true,
 });
 
 DopApp.directive("menuBar", menuBarDirective);

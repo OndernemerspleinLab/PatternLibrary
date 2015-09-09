@@ -1,24 +1,30 @@
 import DopApp from 'DopApp';
 import angular from 'angular';
 import {debounce, partial, spliceItem} from 'utils/functional';
+import ngServices from 'utils/ngServices';
 
 const listeners = [];
 
-export const scrollEventRunner = ($window, $document, $rootScope, delay = 200) => {
-	const windowElement = angular.element($window);
-	const doc = $document[0];
 
-	windowElement.on("scroll", debounce(() => {
-		const left = $window.scrollX || doc.documentElement.scrollLeft || doc.body.scrollLeft || 0;
-		const top = $window.scrollY || doc.documentElement.scrollTop || doc.body.scrollTop || 0;
-		$rootScope.$apply(() => listeners.forEach(listener => listener({top, left})));
-	}, delay));
+const executeScrollListeners = ($window, $document, $timeout) => {
+	const doc = $document[0];
+	const left = $window.scrollX || doc.documentElement.scrollLeft || doc.body.scrollLeft || 0;
+	const top = $window.scrollY || doc.documentElement.scrollTop || doc.body.scrollTop || 0;
+	$timeout(() => listeners.forEach(listener => listener({top, left})));
 };
 
-scrollEventRunner.$inject = ["$window", "$document", "$rootScope"];
+export const scrollEventRunner = ($window, $document, $timeout, delay = 200) => {
+	const windowElement = angular.element($window);
+
+	windowElement.on("scroll", debounce(partial(executeScrollListeners, $window, $document, $timeout), delay));
+};
+
+scrollEventRunner.$inject = ["$window", "$document", "$timeout"];
 
 export const registerScrollListener = (listener, list = listeners) => {
 	list.push(listener);
+	executeScrollListeners(ngServices.$window, ngServices.$document, ngServices.$timeout);
+
 	return partial(spliceItem, list, listener);
 };
 

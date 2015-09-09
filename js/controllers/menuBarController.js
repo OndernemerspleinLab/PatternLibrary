@@ -2,6 +2,7 @@ import angular from 'angular';
 import {debounce} from 'utils/functional';
 import {registerScrollListener} from 'utils/scrollEvent';
 import createOpenClose from 'openClose/singleOpened';
+import ngServices from 'utils/ngServices';
 import * as classNames from 'constants/classNames';
 
 const getElement = (id) => {
@@ -14,10 +15,16 @@ const getElement = (id) => {
 	return element;
 };
 
-export default class MenuBarController {
-	static get $inject() { return ['$element', '$scope', '$animate', '$window']; }
+const cancelAnimation = (animationPromise) => {
+	if (animationPromise) {
+		ngServices.$animate.cancel(animationPromise);
+	}
+};
 
-	constructor($element, $scope, $animate, $window, debounceDuration = 100) {
+export default class MenuBarController {
+	static get $inject() { return ['$element', '$scope', '$animate', '$window', '$rootScope']; }
+
+	constructor($element, $scope, $animate, $window, $rootScope, debounceDuration = 100) {
 		this.openClose = createOpenClose();
 		let animationPromise;
 
@@ -43,16 +50,15 @@ export default class MenuBarController {
 		}, debounceDuration));
 
 		registerScrollListener(({top}) => {
-			this.isMenuBarRetracted = top > 0;
+			this.menuBarRetracted = top > 0;
 		});
 
 		$scope.$watch(this.openClose.getOpenedUnit, (openedUnit, oldOpenedUnit) => {
 			const closedElement = getElement(oldOpenedUnit);
-			if (animationPromise) {
-				$animate.cancel(animationPromise);
-			}
+			cancelAnimation(animationPromise);
 
 			if (openedUnit) {
+				$rootScope.menuOpened = true;
 				const openedElement = getElement(openedUnit);
 				if (oldOpenedUnit) {
 					animationPromise = $animate.animate($element, null, { resize: true }, null, {
@@ -66,10 +72,15 @@ export default class MenuBarController {
 					});
 				}
 			} else {
+				$rootScope.menuOpened = false;
 				animationPromise = $animate.removeClass($element, classNames.opened, {
 					closedElement
 				});
 			}
 		});
+	}
+
+	isMenuBarRetracted() {
+		return this.menuBarRetracted && !this.openClose.isAnyOpened();
 	}
 }

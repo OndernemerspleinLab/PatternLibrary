@@ -1,6 +1,6 @@
 &lt;div class=&quot;hide-svg&quot;&gt;{{&gt; atoms-figures }}&lt;/div&gt;
-&lt;script type=&quot;text/ng-template&quot; id=&quot;menuBar.html&quot;&gt;
-    &lt;div class=&quot;menuBar&quot; ng-class=&quot;{&apos;is-menuBar-retracted&apos;: viewModel.isMenuBarRetracted}&quot;&gt;
+&lt;div class=&quot;menuBarContainer ngAnimate-menuBar&quot; menu-bar&gt;
+    &lt;div class=&quot;menuBar&quot; ng-class=&quot;{&apos;is-menuBar-retracted&apos;: viewModel.isMenuBarRetracted()}&quot;&gt;
         &lt;div class=&quot;menuBar-navigation&quot;&gt;
             &lt;a href=&quot;{{ link.templates-homepage }}&quot; class=&quot;menuBar-button menuBar-button--navigation menuBar-button--home&quot;&gt;
                 &lt;svg class=&quot;menuBar-icon&quot;&gt;
@@ -42,50 +42,14 @@
             &lt;/button&gt;
             &lt;button ng-click=&quot;viewModel.openClose.toggle(&apos;enquete&apos;)&quot; class=&quot;menuBar-button menuBar-button--context menuBar-button--enquete&quot; ng-class=&quot;{&apos;is-opened&apos;: viewModel.openClose.isOpened(&apos;enquete&apos;)}&quot;&gt;
                 &lt;svg class=&quot;menuBar-icon&quot;&gt;
-                    &lt;use xlink:href=&quot;#figures-enquete-2022&quot;&gt;&lt;/use&gt;
+                    &lt;use xlink:href=&quot;#figures-enquete&quot;&gt;&lt;/use&gt;
                 &lt;/svg&gt;
                 &lt;span class=&quot;menuBar-button-text&quot;&gt;Enqu&ecirc;te&lt;/span&gt;
             &lt;/button&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-
     &lt;div id=&quot;menu&quot; class=&quot;menuBar-content ngAnimate-menuBar-content ng-hide&quot; ng-show=&quot;viewModel.openClose.isOpened(&apos;menu&apos;)&quot;&gt;
-        &lt;p class=&quot;menuBar--title&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/p&gt;
-        &lt;span class=&quot;menuBar--subTitle textLine&quot;&gt;Onderwerpen&lt;/span&gt;
-        &lt;ul class=&quot;linkList&quot;&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Personeel&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bedrijf starten&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Handelsregister&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Administratie&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Geldzaken&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Belastingen&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Internationaal ondernemen&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Innovatie en productontwikkeling&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Marketing&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Huisvesting&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bedrijf organiseren&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bedrijf beschermen&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Freelance en zzp&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Bedrijf stoppen of verkopen&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Duurzaam ondernemen&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;span class=&quot;menuBar--subTitle textLine&quot;&gt;Direct naar&lt;/span&gt;
-        &lt;ul class=&quot;linkList&quot;&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Wetten en regels&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Wetswijzigingen&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Subsidies&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Direct regelen&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Branche-informatie&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Regio-informatie&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Webinars en video&CloseCurlyQuote;s&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Evenementen&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-        &lt;span class=&quot;menuBar--subTitle textLine&quot;&gt;Ondernemersplein&lt;/span&gt;
-        &lt;ul class=&quot;linkList&quot;&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Uw idee ter verbetering&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Over ons&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
+        {{&gt;organisms-mainMenu}}
     &lt;/div&gt;
     &lt;div id=&quot;search&quot; class=&quot;menuBar-content ngAnimate-menuBar-content ng-hide&quot; ng-show=&quot;viewModel.openClose.isOpened(&apos;search&apos;)&quot;&gt;
         &lt;p class=&quot;menuBar--title&quot;&gt;Zoeken&lt;/p&gt;
@@ -145,9 +109,4 @@
         &lt;/p&gt;
         &lt;p&gt;Ja / Nee / Herinner mij over 10 paginas&lt;/p&gt;
     &lt;/div&gt;
-
-&lt;/script&gt;
-
-&lt;div class=&quot;menuBarContainer ngAnimate-menuBar&quot; menu-bar&gt;
-
 &lt;/div&gt;
