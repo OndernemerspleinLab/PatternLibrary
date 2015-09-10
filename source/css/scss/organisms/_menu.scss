@@ -1,11 +1,5 @@
 // MENU
 
-
-$menuIconSizeRatioSmall: 0.6;
-$menuIconSizeRatioLarge: 0.48;
-$menuIconSizePaddingRatioSmall: (1 - $menuIconSizeRatioSmall) / 2;
-$menuIconSizePaddingRatioLarge: (1 - $menuIconSizeRatioLarge) / 2;
-
 .is-menuOpened {
 	overflow: hidden;
 }
@@ -174,7 +168,7 @@ $menuIconSizePaddingRatioLarge: (1 - $menuIconSizeRatioLarge) / 2;
 	width: $menuIconSizeRatioSmall * $menuBarWidthSmall;
 	height: $menuIconSizeRatioSmall * $menuBarWidthSmall;
 	fill: getColor(hemelblauw darkest);
-	transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
     opacity: 0.9;
 
 	@include mqGreaterThan(small) {
@@ -209,6 +203,7 @@ $menuIconSizePaddingRatioLarge: (1 - $menuIconSizeRatioLarge) / 2;
 	min-width: 15rem;
 	height: 100%;
 	max-width: calc(100vw - #{$menuBarWidthSmall});
+	width: 35rem;
 
 
 	@include mqGreaterThan(small) {
@@ -222,28 +217,6 @@ $menuIconSizePaddingRatioLarge: (1 - $menuIconSizeRatioLarge) / 2;
 	    margin: 0;
 	    padding: 0;
 		@include noBullets;
-	}
-	.linkList {
-		li {
-		    &:hover {
-		    	background: getColor(hemelblauw default);
-		    	a {
-		    		color: getColor(wit);
-		    	}
-		    }
-		}
-    }
-	li {
-	    margin: 0;
-	    padding: 5px 20px;
-	}
-	a {
-	    @include noUnderline;
-	    color: getColor(hemelblauw darkest);
-	    display: block;
-	}
-	p {
-		padding: 5px 20px;
 	}
 
 }

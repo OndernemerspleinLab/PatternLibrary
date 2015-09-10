@@ -1,60 +1,69 @@
-<nav class="mainMenu" main-menu default-opened="onderwerpen">
-    <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('onderwerpen')">
-        Onderwerpen
-        <button class="mainMenu-button" ng-switch="viewModel.openClose.isOpened('onderwerpen')">
-            <span ng-switch-when="true">sluiten</span>
-            <span ng-switch-when="false">openen</span>
-        </button>
-    </h2>
-    <div class="mainMenu-content ngAnimate-height" ng-show="viewModel.openClose.isOpened('onderwerpen')">
-        <ul class="linkList">
-            <li><a href="#">Personeel</a></li>
-            <li><a href="#">Bedrijf starten</a></li>
-            <li><a href="#">Handelsregister</a></li>
-            <li><a href="#">Administratie</a></li>
-            <li><a href="#">Geldzaken</a></li>
-            <li><a href="#">Belastingen</a></li>
-            <li><a href="#">Internationaal ondernemen</a></li>
-            <li><a href="#">Innovatie en productontwikkeling</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Huisvesting</a></li>
-            <li><a href="#">Bedrijf organiseren</a></li>
-            <li><a href="#">Bedrijf beschermen</a></li>
-            <li><a href="#">Freelance en zzp</a></li>
-            <li><a href="#">Bedrijf stoppen of verkopen</a></li>
-            <li><a href="#">Duurzaam ondernemen</a></li>
-        </ul>
-    </div>
-    <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('directNaar')">
-        Direct naar
-        <button class="mainMenu-button" ng-switch="viewModel.openClose.isOpened('directNaar')">
-            <span ng-switch-when="true">sluiten</span>
-            <span ng-switch-when="false">openen</span>
-        </button>
-    </h2>
-    <div class="mainMenu-content ngAnimate-height ng-hide" ng-show="viewModel.openClose.isOpened('directNaar')">
-        <ul class="linkList">
-            <li><a href="#">Wetten en regels</a></li>
-            <li><a href="#">Wetswijzigingen</a></li>
-            <li><a href="#">Subsidies</a></li>
-            <li><a href="#">Direct regelen</a></li>
-            <li><a href="#">Branche-informatie</a></li>
-            <li><a href="#">Regio-informatie</a></li>
-            <li><a href="#">Webinars en video’s</a></li>
-            <li><a href="#">Evenementen</a></li>
-        </ul>
-    </div>
-    <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('ondernemersplein')">
-        Ondernemersplein
-        <button class="mainMenu-button" ng-switch="viewModel.openClose.isOpened('ondernemersplein')">
-            <span ng-switch-when="true">sluiten</span>
-            <span ng-switch-when="false">openen</span>
-        </button>
-    </h2>
-    <div class="mainMenu-content ngAnimate-height ng-hide" ng-show="viewModel.openClose.isOpened('ondernemersplein')">
-        <ul class="linkList">
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Uw idee ter verbetering</a></li>
-            <li><a href="#">Over ons</a></li>
-        </ul>
-</nav>
+<div class="mainMenu">
+    
+    <button class="close mainMenu-close" ng-click="viewModel.openClose.close('menu')">
+        <span class="close-text">Sluiten</span>
+        <svg class="close-icon">
+            <use xlink:href="#figures-sluiten"></use>
+        </svg>
+    </button>
+    <nav class="mainMenu-nav" main-menu default-opened="onderwerpen">
+        <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('onderwerpen')">
+            Onderwerpen
+            <button class="mainMenu-button" ng-switch="viewModel.openClose.isOpened('onderwerpen')">
+                <span ng-switch-when="true">sluiten</span>
+                <span ng-switch-when="false">openen</span>
+            </button>
+        </h2>
+        <div class="mainMenu-content ngAnimate-height" data-open-close-name="onderwerpen" ng-show="viewModel.isOpened('onderwerpen')">
+            <ul class="mainMenu-linkList">
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Personeel</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Bedrijf starten</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Handelsregister</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Administratie</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Geldzaken</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Belastingen</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Internationaal ondernemen</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Innovatie en productontwikkeling</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Marketing</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Huisvesting</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Bedrijf organiseren</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Bedrijf beschermen</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Freelance en zzp</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Bedrijf stoppen of verkopen</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Duurzaam ondernemen</a></li>
+            </ul>
+        </div>
+        <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('directNaar')">
+            Direct naar…
+            <button class="mainMenu-button" ng-switch="viewModel.openClose.isOpened('directNaar')">
+                <span ng-switch-when="true">sluiten</span>
+                <span ng-switch-when="false">openen</span>
+            </button>
+        </h2>
+        <div class="mainMenu-content ngAnimate-height ng-hide" data-open-close-name="directNaar" ng-show="viewModel.isOpened('directNaar')">
+            <ul class="mainMenu-linkList">
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Wetten en regels</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Wetswijzigingen</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Subsidies</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Direct regelen</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Branche-informatie</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Regio-informatie</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Webinars en video’s</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Evenementen</a></li>
+            </ul>
+        </div>
+        <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('ondernemersplein')">
+            Ondernemersplein
+            <button class="mainMenu-button" ng-switch="viewModel.openClose.isOpened('ondernemersplein')">
+                <span ng-switch-when="true">sluiten</span>
+                <span ng-switch-when="false">openen</span>
+            </button>
+        </h2>
+        <div class="mainMenu-content ngAnimate-height ng-hide" data-open-close-name="ondernemersplein" ng-show="viewModel.isOpened('ondernemersplein')">
+            <ul class="mainMenu-linkList">
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Contact</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Uw idee ter verbetering</a></li>
+                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Over ons</a></li>
+            </ul>
+    </nav>
+</div>

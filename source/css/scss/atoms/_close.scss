@@ -1,0 +1,28 @@
+.close {
+	transition: transform 0.2s ease-in-out;
+	padding: 0;
+	background: none;
+	border: none;
+    position: relative;
+    width: $menuBarWidthSmall;
+    height: $menuBarWidthSmall;
+    padding: ($menuIconSizePaddingRatioSmall * $menuBarWidthSmall);
+
+	@include mqGreaterThan(small) {
+		width: $menuBarWidthLarge;
+		height: $menuBarWidthLarge;
+	    padding: ($menuIconSizePaddingRatioLarge * $menuBarWidthLarge);
+	}
+
+	@include hoverEtc {
+		transform: scale(1.1);
+	}
+
+	&-icon {
+		width: 100%;
+		height: 100%;
+	}
+	&-text {
+		@include accHide;
+	}
+}

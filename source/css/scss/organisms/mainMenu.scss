@@ -3,8 +3,33 @@
 	flex-direction: column;
 	height: 100%;
 
+	&-close {
+		background: getColor(wit);
+		margin: 0 $halfSpace;
+
+		.close-icon {
+			fill: getColor(hemelblauw darkest);
+		}
+	}
+
+	&-nav {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 0;
+		margin-top: 1.75rem;
+		@include mqGreaterThan(small) {
+			margin-top: 1.6rem;
+		}
+		@include mqGreaterThan(large) {
+			margin-top: 1.8rem;
+		}
+	}
+
 	&-title {
 		flex: 0 0 auto;
+		margin: 0;
+		padding: $quarterSpace $halfSpace;
+		line-height: 1.6;
 	}
 
 	&-button {
@@ -15,10 +40,32 @@
 		flex: 0 1 auto;
 		overflow: auto;
 		overflow-x: hidden;
-		padding: 1px 0;
+		border: solid getColor(grijs light);
+		border-width: 1px 0;
 
 		&.ng-animate {
 			overflow: hidden;
+		}
+	}
+
+	&-linkList {
+		background: rgba(getColor(wit), 0.6);
+	}
+
+	&-item {
+		margin: 0;
+	}
+
+	&-link {
+		display: block;
+		@include noUnderline;
+		padding: $quarterSpace $halfSpace;
+
+		transition: background-color 400ms;
+
+		@include hoverEtc {
+			color: inherit;
+			background: getColor(hemelblauw lightest);
 		}
 	}
 }

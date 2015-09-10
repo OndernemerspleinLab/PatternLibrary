@@ -2,6 +2,8 @@
 
 $maxWidth: 68rem; //1224px
 $space: 2rem;
+$halfSpace: $space/2;
+$quarterSpace: $space/4;
 
 .layoutContainer {
 	max-width: $maxWidth;
@@ -62,9 +64,10 @@ $space: 2rem;
 
 
 .column {
+	display: block;
 	margin: {
-		left: $space/2;
-		right: $space/2;
+		left: $halfSpace;
+		right: $halfSpace;
 	}
 
 	//flex: 1 1 100%;

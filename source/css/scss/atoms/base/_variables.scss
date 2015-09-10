@@ -20,3 +20,9 @@ $pad-quarter :$pad/4;
 $menuBarWidthSmall: 2rem;
 $menuBarWidthLarge: 3.16rem;
 $menuBarWidthExtraLarge: 7.9rem;
+
+// Menu bar icons
+$menuIconSizeRatioSmall: 0.6;
+$menuIconSizeRatioLarge: 0.48;
+$menuIconSizePaddingRatioSmall: (1 - $menuIconSizeRatioSmall) / 2;
+$menuIconSizePaddingRatioLarge: (1 - $menuIconSizeRatioLarge) / 2;
