@@ -2,16 +2,19 @@
     
     &lt;button class=&quot;close mainMenu-close&quot; ng-click=&quot;viewModel.openClose.close(&apos;menu&apos;)&quot;&gt;
         &lt;span class=&quot;close-text&quot;&gt;Sluiten&lt;/span&gt;
-        &lt;svg class=&quot;close-icon&quot;&gt;
+        &lt;svg class=&quot;close-icon&quot; aria-hidden&gt;
             &lt;use xlink:href=&quot;#figures-sluiten&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;
     &lt;/button&gt;
     &lt;nav class=&quot;mainMenu-nav&quot; main-menu default-opened=&quot;onderwerpen&quot;&gt;
         &lt;h2 class=&quot;charlieHeading mainMenu-title&quot; ng-click=&quot;viewModel.openClose.toggle(&apos;onderwerpen&apos;)&quot;&gt;
             Onderwerpen
-            &lt;button class=&quot;mainMenu-button&quot; ng-switch=&quot;viewModel.openClose.isOpened(&apos;onderwerpen&apos;)&quot;&gt;
-                &lt;span ng-switch-when=&quot;true&quot;&gt;sluiten&lt;/span&gt;
-                &lt;span ng-switch-when=&quot;false&quot;&gt;openen&lt;/span&gt;
+            &lt;button class=&quot;mainMenu-button openCloseMark is-opened&quot; ng-class=&quot;{ &apos;is-opened&apos;: viewModel.openClose.isOpened(&apos;onderwerpen&apos;) }&quot; ng-switch=&quot;viewModel.openClose.isOpened(&apos;onderwerpen&apos;)&quot;&gt;
+                &lt;svg class=&quot;openCloseMark-icon&quot; aria-hidden&gt;
+                    &lt;use xlink:href=&quot;#figures-chevron-down&quot;&gt;&lt;/use&gt;
+                &lt;/svg&gt;
+                &lt;span class=&quot;openCloseMark-text&quot; ng-switch-when=&quot;true&quot;&gt;sluiten&lt;/span&gt;
+                &lt;span class=&quot;openCloseMark-text&quot; ng-switch-when=&quot;false&quot;&gt;openen&lt;/span&gt;
             &lt;/button&gt;
         &lt;/h2&gt;
         &lt;div class=&quot;mainMenu-content ngAnimate-height&quot; data-open-close-name=&quot;onderwerpen&quot; ng-show=&quot;viewModel.isOpened(&apos;onderwerpen&apos;)&quot;&gt;
@@ -35,9 +38,12 @@
         &lt;/div&gt;
         &lt;h2 class=&quot;charlieHeading mainMenu-title&quot; ng-click=&quot;viewModel.openClose.toggle(&apos;directNaar&apos;)&quot;&gt;
             Direct naar&hellip;
-            &lt;button class=&quot;mainMenu-button&quot; ng-switch=&quot;viewModel.openClose.isOpened(&apos;directNaar&apos;)&quot;&gt;
-                &lt;span ng-switch-when=&quot;true&quot;&gt;sluiten&lt;/span&gt;
-                &lt;span ng-switch-when=&quot;false&quot;&gt;openen&lt;/span&gt;
+            &lt;button class=&quot;mainMenu-button openCloseMark&quot; ng-class=&quot;{ &apos;is-opened&apos;: viewModel.openClose.isOpened(&apos;directNaar&apos;) }&quot; ng-switch=&quot;viewModel.openClose.isOpened(&apos;directNaar&apos;)&quot;&gt;
+                &lt;svg class=&quot;openCloseMark-icon&quot; aria-hidden&gt;
+                    &lt;use xlink:href=&quot;#figures-chevron-down&quot;&gt;&lt;/use&gt;
+                &lt;/svg&gt;
+                &lt;span class=&quot;openCloseMark-text&quot; ng-switch-when=&quot;true&quot;&gt;sluiten&lt;/span&gt;
+                &lt;span class=&quot;openCloseMark-text&quot; ng-switch-when=&quot;false&quot;&gt;openen&lt;/span&gt;
             &lt;/button&gt;
         &lt;/h2&gt;
         &lt;div class=&quot;mainMenu-content ngAnimate-height ng-hide&quot; data-open-close-name=&quot;directNaar&quot; ng-show=&quot;viewModel.isOpened(&apos;directNaar&apos;)&quot;&gt;
@@ -54,9 +60,12 @@
         &lt;/div&gt;
         &lt;h2 class=&quot;charlieHeading mainMenu-title&quot; ng-click=&quot;viewModel.openClose.toggle(&apos;ondernemersplein&apos;)&quot;&gt;
             Ondernemersplein
-            &lt;button class=&quot;mainMenu-button&quot; ng-switch=&quot;viewModel.openClose.isOpened(&apos;ondernemersplein&apos;)&quot;&gt;
-                &lt;span ng-switch-when=&quot;true&quot;&gt;sluiten&lt;/span&gt;
-                &lt;span ng-switch-when=&quot;false&quot;&gt;openen&lt;/span&gt;
+            &lt;button class=&quot;mainMenu-button openCloseMark&quot; ng-class=&quot;{ &apos;is-opened&apos;: viewModel.openClose.isOpened(&apos;ondernemersplein&apos;) }&quot; ng-switch=&quot;viewModel.openClose.isOpened(&apos;ondernemersplein&apos;)&quot;&gt;
+                &lt;svg class=&quot;openCloseMark-icon&quot; aria-hidden&gt;
+                    &lt;use xlink:href=&quot;#figures-chevron-down&quot;&gt;&lt;/use&gt;
+                &lt;/svg&gt;
+                &lt;span class=&quot;openCloseMark-text&quot; ng-switch-when=&quot;true&quot;&gt;sluiten&lt;/span&gt;
+                &lt;span class=&quot;openCloseMark-text&quot; ng-switch-when=&quot;false&quot;&gt;openen&lt;/span&gt;
             &lt;/button&gt;
         &lt;/h2&gt;
         &lt;div class=&quot;mainMenu-content ngAnimate-height ng-hide&quot; data-open-close-name=&quot;ondernemersplein&quot; ng-show=&quot;viewModel.isOpened(&apos;ondernemersplein&apos;)&quot;&gt;
