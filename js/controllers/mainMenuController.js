@@ -9,6 +9,12 @@ export default class MenuBarController {
 
 		if (defaultOpened) {
 			this.openClose.open(defaultOpened);
+			this.actuallyOpened = defaultOpened;
 		}
+
+		this.isOpened = name => {
+			return this.openClose.isOpened(name) &&
+					(this.actuallyOpened === name || this.actuallyOpened === undefined);
+		};
 	}
 }
