@@ -212,11 +212,4 @@
 	@include mqGreaterThan(large) {
 		max-width: calc(100vw - #{$menuBarWidthExtraLarge});
 	}
-
-	ul {
-	    margin: 0;
-	    padding: 0;
-		@include noBullets;
-	}
-
 }

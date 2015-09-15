@@ -16,12 +16,12 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 0;
-		margin-top: 1.75rem;
+		margin-top: 1.25rem;
 		@include mqGreaterThan(small) {
-			margin-top: 1.6rem;
+			margin-top: 1.1rem;
 		}
 		@include mqGreaterThan(large) {
-			margin-top: 1.8rem;
+			margin-top: 1.3rem;
 		}
 	}
 
@@ -31,6 +31,12 @@
 		padding: $quarterSpace $halfSpace;
 		line-height: 1.6;
 		cursor: pointer;
+
+		@include hoverEtc {
+			.mainMenu-title-text {
+				@include underline;
+			}
+		}
 	}
 
 	&-button {
@@ -45,8 +51,8 @@
 		flex: 0 1 auto;
 		overflow: auto;
 		overflow-x: hidden;
-		border: solid getColor(grijs light);
 		border-width: 1px 0;
+		padding: $quarterSpace 0;
 
 		&.ng-animate {
 			overflow: hidden;
@@ -55,6 +61,8 @@
 
 	&-linkList {
 		background: rgba(getColor(wit), 0.6);
+		padding: $quarterSpace 0;
+		@include noBullets;
 	}
 
 	&-item {

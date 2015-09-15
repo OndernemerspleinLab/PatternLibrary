@@ -8,7 +8,7 @@
     </button>
     <nav class="mainMenu-nav" main-menu default-opened="onderwerpen">
         <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('onderwerpen')">
-            Onderwerpen
+            <span class="mainMenu-title-text">Onderwerpen</span>
             <button class="mainMenu-button openCloseMark is-opened" ng-class="{ 'is-opened': viewModel.openClose.isFullyOpened('onderwerpen') }" ng-switch="viewModel.openClose.isOpened('onderwerpen')">
                 <svg class="openCloseMark-icon" aria-hidden>
                     <use xlink:href="#figures-chevron-down"></use>
@@ -37,7 +37,7 @@
             </ul>
         </div>
         <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('directNaar')">
-            Direct naar…
+            <span class="mainMenu-title-text">Direct naar…</span>
             <button class="mainMenu-button openCloseMark" ng-class="{ 'is-opened': viewModel.openClose.isFullyOpened('directNaar') }" ng-switch="viewModel.openClose.isOpened('directNaar')">
                 <svg class="openCloseMark-icon" aria-hidden>
                     <use xlink:href="#figures-chevron-down"></use>
@@ -59,7 +59,7 @@
             </ul>
         </div>
         <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('ondernemersplein')">
-            Ondernemersplein
+            <span class="mainMenu-title-text">Ondernemersplein</span>
             <button class="mainMenu-button openCloseMark" ng-class="{ 'is-opened': viewModel.openClose.isFullyOpened('ondernemersplein') }" ng-switch="viewModel.openClose.isOpened('ondernemersplein')">
                 <svg class="openCloseMark-icon" aria-hidden>
                     <use xlink:href="#figures-chevron-down"></use>
