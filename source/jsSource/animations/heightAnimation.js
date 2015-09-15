@@ -6,7 +6,7 @@ import {existing, partial} from 'utils/functional';
 import {height as animationTiming} from 'constants/animationTiming';
 import {height as selector} from 'constants/animationSelectors';
 import getStyleProperty from 'utils/getStyleProperty';
-import ngServices from 'utils/ngServices';
+// import ngServices from 'utils/ngServices';
 
 const cleanHeightStyle = (element) => element.style.height = "";
 
@@ -19,7 +19,7 @@ export const getHeight = element => {
 		element.classList.remove(forceShowingClassName);
 		element.style.height = originalHeightStyle;
 
-		return height;
+		return height + "px";
 	}
 	return "0px";
 };
@@ -33,34 +33,41 @@ const animateHeight = ($element, height, done) => {
 	}, animationTiming));
 };
 
-const getOpenCloseName = (element) => element.dataset.openCloseName;
+// const getOpenCloseName = (element) => element.dataset.openCloseName;
 
-const getViewModel = $element => {
-	const scope = $element.scope();
-	return scope && scope.viewModel;
-};
+// const getViewModel = $element => {
+// 	const scope = $element.scope();
+// 	return scope && scope.viewModel;
+// };
 
-const setActuallyOpenedState = (element, state = {}) => {
-	const openCloseName = getOpenCloseName(element);
-	if (openCloseName) {
-		ngServices.$timeout(() => state.actuallyOpened = openCloseName);
-	}
-};
+// // const setVisuallyOpenedState = (element, openClose = {}) => {
+// // 	const openCloseName = getOpenCloseName(element);
+// // 	if (openCloseName && openClose.visuallyOpen) {
+// // 		ngServices.$timeout(() => openClose.visuallyOpen(openCloseName));
+// // 	}
+// // };
 
-const resetActuallyOpenedState = (element, state = {}) => {
-	if (state.actuallyOpened && state.actuallyOpened === getOpenCloseName(element)) {
-		ngServices.$timeout(() => state.actuallyOpened = undefined);
-	}
-};
+// // const resetVisuallyOpenedState = (element, openClose = {}) => {
+// // 	const openCloseName = getOpenCloseName(element);
 
-const setActuallyOpened = ($element) => {
-	const viewModel = getViewModel($element);
-	setActuallyOpenedState($element[0], viewModel);
-};
-const resetActuallyOpened = ($element) => {
-	const viewModel = getViewModel($element);
-	resetActuallyOpenedState($element[0], viewModel);
-};
+// // 	if (openClose.isVisuallyOpened && openClose.visuallyClose &&
+// // 			openClose.isVisuallyOpened(openCloseName)) {
+// // 		ngServices.$timeout(() => openClose.visuallyClose(openCloseName));
+// // 	}
+// // };
+
+// // const setVisuallyOpened = ($element) => {
+// // 	const viewModel = getViewModel($element);
+// // 	if (viewModel) {
+// // 		setVisuallyOpenedState($element[0], viewModel.openClose);
+// // 	}
+// // };
+// // const resetVisuallyOpened = ($element) => {
+// // 	const viewModel = getViewModel($element);
+// // 	if (viewModel) {
+// // 		resetVisuallyOpenedState($element[0], viewModel.openClose);
+// // 	}
+// // };
 
 export const animateOpen = ({$element, options: {openedElement}, done}) => {
 	const element = $element[0];
@@ -72,9 +79,10 @@ export const animateOpen = ({$element, options: {openedElement}, done}) => {
 		Velocity.hook($element, "height", startHeight);
 	}
 
-	setActuallyOpened($element);
+	// setVisuallyOpened($element);
 	animateHeight($element, height, () => {
 		cleanHeightStyle(element);
+		console.log("DONE OPEN");
 		done();
 	});
 };
@@ -87,9 +95,10 @@ export const animateClose = ({$element, options: {openedElement}, done}) => {
 		Velocity.hook($element, "height", startHeight);
 	}
 
-	animateHeight($element, 0, () => {
+	animateHeight($element, "0px", () => {
 		cleanHeightStyle(element);
-		resetActuallyOpened($element);
+		// resetVisuallyOpened($element);
+		console.log("DONE CLOSE");
 		done();
 	});
 };
@@ -98,7 +107,7 @@ const init = partial(animation, {
 	module: DopApp,
 	selector,
 
-	classNameFilters,
+	classNameFilters: "is-hidden" || classNameFilters,
 
 	addClass: animateClose,
 

@@ -1,0 +1,9 @@
+.columnsContainer {
+	&--half {
+		column-count: 2;
+	}
+
+	&-item {
+		break-inside: avoid;
+	}
+}

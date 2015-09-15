@@ -4,6 +4,11 @@
     display: none !important;
 }
 
+// For hiding manually
+.is-hidden:not(.ng-animate) {
+    display: none !important;
+}
+
 // For specificity so ng-hide can be overridden
 .is-forceShowing.is-forceShowing {
 	display: block !important;

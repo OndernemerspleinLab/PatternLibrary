@@ -1,11 +1,11 @@
 import {resetAnimations, enableAnimations, disableAnimations} from 'jsTest/testUtils';
 import initAnimation from 'animations/menuBarContentAnimation';
 import Velocity from 'velocity-animate';
-import {hidden} from 'constants/classNames';
+import {ngHidden} from 'constants/classNames';
 import {menuBarContent as animationTiming} from 'constants/animationTiming';
 import DopApp from 'DopApp';
 
-describe("menuBarAnimation", () => {
+describe("menuBarContentAnimation", () => {
 
 	beforeEach(() => {
 		spyOn(DopApp, "animation");
@@ -25,7 +25,7 @@ describe("menuBarAnimation", () => {
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
-		configObj.beforeRemoveClass(mockElement, hidden, mockDone, mockOptions);
+		configObj.beforeRemoveClass(mockElement, ngHidden, mockDone, mockOptions);
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, "stop");
 		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "z-index", 2);
@@ -43,7 +43,7 @@ describe("menuBarAnimation", () => {
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
-		configObj.removeClass(mockElement, hidden, mockDone, mockOptions);
+		configObj.removeClass(mockElement, ngHidden, mockDone, mockOptions);
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, {
 			opacity: 1
@@ -63,7 +63,7 @@ describe("menuBarAnimation", () => {
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
-		configObj.beforeAddClass(mockElement, hidden, mockDone, mockOptions);
+		configObj.beforeAddClass(mockElement, ngHidden, mockDone, mockOptions);
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, "stop");
 		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "z-index", 1);
@@ -81,7 +81,7 @@ describe("menuBarAnimation", () => {
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
-		configObj.addClass(mockElement, hidden, mockDone, mockOptions);
+		configObj.addClass(mockElement, ngHidden, mockDone, mockOptions);
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, {
 			opacity: 0

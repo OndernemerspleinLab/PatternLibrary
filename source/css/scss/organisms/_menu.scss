@@ -203,7 +203,7 @@
 	min-width: 15rem;
 	height: 100%;
 	max-width: calc(100vw - #{$menuBarWidthSmall});
-	width: 35rem;
+	width: 40rem;
 
 
 	@include mqGreaterThan(small) {

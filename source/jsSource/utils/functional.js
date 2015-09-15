@@ -59,6 +59,11 @@ export const spliceItem = (arr, item) => {
 	}
 };
 
+export const defaults = (obj, ...defaultObjs) => {
+	const defaultObjsReversed = [...defaultObjs].reverse();
+	return Object.assign({}, ...defaultObjsReversed, obj);
+};
+
 export const reduceObject = (obj, iterator, initial) => {
 	const keys = Object.keys(obj);
 	if (unexisting(initial)) {

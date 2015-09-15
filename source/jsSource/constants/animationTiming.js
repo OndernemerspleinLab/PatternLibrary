@@ -6,6 +6,7 @@ export const menuBar = {
 
 export const height = {
 	duration: 400,
+	easing: "ease-in-out",
 	delay: 0,
 };
 

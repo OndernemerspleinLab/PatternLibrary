@@ -95,7 +95,7 @@ describe("menuBarAnimation", () => {
 		expect(mockDone).toHaveBeenCalled();
 	});
 
-	it("should transition instantly to the with of an openedElement when animations are disabled", () => {
+	it("should transition instantly to the width of an openedElement when animations are disabled", () => {
 		disableAnimations();
 		initAnimation();
 		const call = DopApp.animation.calls.mostRecent();
