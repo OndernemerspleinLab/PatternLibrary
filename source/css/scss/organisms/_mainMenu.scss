@@ -2,10 +2,14 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	position: relative;
 
 	&-close {
+		@include zIndex(seeThroughScroll front);
+		position: absolute;
+		left: $halfSpace;
+		top: 0;
 		background: getColor(wit);
-		margin: 0 $halfSpace;
 
 		.close-icon {
 			fill: getColor(hemelblauw darkest);
@@ -16,21 +20,43 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 0;
-		margin-top: 1.25rem;
-		@include mqGreaterThan(small) {
-			margin-top: 1.1rem;
+
+		@include before("") {
+			display: block;
+			flex: 0 0 auto;
+			@include zIndex(seeThroughScroll overlay);
+			background: rgba(getColor(hemelblauw lightest), 0.9);
+			height: $menuBarWidthSmall + 0.75rem;
+			@include mqGreaterThan(small) {
+				height: $menuBarWidthLarge + 0.6rem;
+			}
+			@include mqGreaterThan(large) {
+				height: $menuBarWidthLarge + 0.8rem;
+			}
 		}
-		@include mqGreaterThan(large) {
-			margin-top: 1.3rem;
+
+		@include after("") {
+			display: block;
+			flex: 1 0 auto;
+			@include zIndex(seeThroughScroll overlay);
+			background: rgba(getColor(hemelblauw lightest), 0.9);
+			height:  1rem;
+			@include mqGreaterThan(small) {
+				height: 2rem;
+			}
+			@include mqGreaterThan(large) {
+				height: 3rem;
+			}
 		}
 	}
 
 	&-title {
 		flex: 0 0 auto;
 		margin: 0;
-		padding: $quarterSpace $halfSpace;
+		padding: $halfSpace $halfSpace;
 		line-height: 1.6;
 		cursor: pointer;
+		background: rgba(getColor(hemelblauw lightest), 0.9);
 
 		@include hoverEtc {
 			.mainMenu-title-text {
@@ -51,16 +77,18 @@
 		flex: 0 1 auto;
 		overflow: auto;
 		overflow-x: hidden;
-		border-width: 1px 0;
-		padding: $quarterSpace 0;
+		padding: 0;
 
 		&.ng-animate {
 			overflow: hidden;
 		}
+
+		&-background {
+			background: rgba(getColor(wit), 0.6);
+		}
 	}
 
 	&-linkList {
-		background: rgba(getColor(wit), 0.6);
 		padding: $quarterSpace 0;
 		@include noBullets;
 	}

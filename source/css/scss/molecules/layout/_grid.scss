@@ -2,8 +2,8 @@
 
 $maxWidth: 68rem; //1224px
 $space: 2rem;
-$halfSpace: $space/2;
-$quarterSpace: $space/4;
+$halfSpace: $space/2; // 1rem
+$quarterSpace: $space/4; // 0.5rem
 
 .layoutContainer {
 	max-width: $maxWidth;

@@ -1,0 +1,25 @@
+.seeThroughScroll {
+	position: relative;
+	@include zIndex(seeThroughScroll);
+
+	&-size {
+		overflow: hidden;
+	}
+	&-scroll {
+		overflow: auto;
+		overflow-x: hidden;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	&-content {
+		position: relative;
+		@include zIndex(seeThroughScroll content);
+	}
+	&-overlay {
+		position: relative;
+		@include zIndex(seeThroughScroll overlay);
+	}
+}

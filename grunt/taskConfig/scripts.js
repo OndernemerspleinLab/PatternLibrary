@@ -79,17 +79,23 @@ module.exports = function(grunt, devOrProd) {
 		watch: {
 			js: {
 				options: {
-					livereload: true,
+					livereload: false,
 				},
 				files: ['source/jsSource/**/*.js', '!source/jsSource/jspm_packages/**'],
 				tasks: ['scriptsWatched'],
 
 			},
+			jsDist: {
+				options: {
+					livereload: true,
+				},
+				files: ['public/js/**/*.js'],
+			},
 			tests: {
 				options: {
 					livereload: false,
 				},
-				files: ['source/jsSource/**/*.js', 'source/jsTest/**/*.js'],
+				files: ['source/jsSource/**/*.js', '!source/jsSource/jspm_packages/**', 'source/jsTest/**/*.js'],
 				tasks: ['karma:background:run'],
 			},
 		},

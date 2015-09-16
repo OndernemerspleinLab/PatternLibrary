@@ -64,6 +64,15 @@ export const defaults = (obj, ...defaultObjs) => {
 	return Object.assign({}, ...defaultObjsReversed, obj);
 };
 
+export const forEachObject = (obj, iterator) => {
+	const keys = Object.keys(obj);
+
+	keys.forEach((memo, key) => {
+		const value = obj[key];
+		iterator(memo, value, key, obj);
+	});
+};
+
 export const reduceObject = (obj, iterator, initial) => {
 	const keys = Object.keys(obj);
 	if (unexisting(initial)) {

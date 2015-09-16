@@ -1,6 +1,14 @@
 /* Z-INDEX */
 
 $zIndex: (
+	(
+		name: seeThroughScroll,
+		subZIndex: (
+			content,
+			overlay,
+			front
+		),
+	),
 	overlay,
 	stickyBar,
 	(
@@ -9,7 +17,7 @@ $zIndex: (
 			(name: title),
 			(name: test)
 		),
-	)
+	),
 );
 
 @function saveMapGet($potentialMap, $name, $default: null) {

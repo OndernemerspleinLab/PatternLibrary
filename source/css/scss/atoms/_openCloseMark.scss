@@ -1,5 +1,6 @@
 .openCloseMark {
 	transition: transform 400ms;
+    transform: rotate(0deg);
 
 	&.is-opened {
 		transform: rotate(-180deg);

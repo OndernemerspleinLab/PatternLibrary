@@ -24,6 +24,12 @@ const singleOpened = Object.freeze({
 		singleOpened.open(store, openedUnit);
 		singleOpened.visuallyOpen(store, openedUnit);
 	},
+
+	getFullyOpenedUnit: (store) => {
+		const opened = singleOpened.getOpenedUnit(store);
+		return singleOpened.canBeVisuallyOpened(store, opened) ? opened : undefined;
+	},
+
 	isFullyOpened: (store, openedUnit) => singleOpened.isOpened(store, openedUnit) &&
 			singleOpened.canBeVisuallyOpened(store, openedUnit),
 

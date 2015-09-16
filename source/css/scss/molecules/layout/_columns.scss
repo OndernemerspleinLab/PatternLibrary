@@ -1,6 +1,8 @@
 .columnsContainer {
 	&--half {
-		column-count: 2;
+		@include mqGreaterThan(small) {
+			column-count: 2;
+		}
 	}
 
 	&-item {
