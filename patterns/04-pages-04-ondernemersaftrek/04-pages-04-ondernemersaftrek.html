@@ -114,18 +114,17 @@
         </div>
     </div>
     <div id="menu" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('menu')">
-<div class="mainMenu">
-    
-    <button class="close mainMenu-close" ng-click="viewModel.openClose.close('menu')">
-        <span class="close-text">Sluiten</span>
-        <svg class="close-icon" aria-hidden>
-            <use xlink:href="#figures-sluiten"></use>
-        </svg>
-    </button>
-    <nav class="mainMenu-nav" main-menu default-opened="onderwerpen">
-        <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('onderwerpen')">
-            Onderwerpen
-            <button class="mainMenu-button openCloseMark is-opened" ng-class="{ 'is-opened': viewModel.openClose.isOpened('onderwerpen') }" ng-switch="viewModel.openClose.isOpened('onderwerpen')">
+<button class="close mainMenu-close" ng-click="viewModel.openClose.close('menu')">
+    <span class="close-text">Sluiten</span>
+    <svg class="close-icon" aria-hidden>
+        <use xlink:href="#figures-sluiten"></use>
+    </svg>
+</button>
+<div class="mainMenu" main-menu="menu" default-opened="onderwerpen">
+    <nav class="mainMenu-nav" see-through-scroll open-close="viewModel.openClose">
+        <h2 class="charlieHeading mainMenu-title seeThroughScroll-overlay" ng-click="viewModel.openClose.toggle('onderwerpen')">
+            <span class="mainMenu-title-text">Onderwerpen</span>
+            <button class="mainMenu-button openCloseMark is-opened" ng-class="{ 'is-opened': viewModel.openClose.isFullyOpened('onderwerpen') }" ng-switch="viewModel.openClose.isOpened('onderwerpen')">
                 <svg class="openCloseMark-icon" aria-hidden>
                     <use xlink:href="#figures-chevron-down"></use>
                 </svg>
@@ -133,28 +132,33 @@
                 <span class="openCloseMark-text" ng-switch-when="false">openen</span>
             </button>
         </h2>
-        <div class="mainMenu-content ngAnimate-height" data-open-close-name="onderwerpen" ng-show="viewModel.isOpened('onderwerpen')">
-            <ul class="mainMenu-linkList">
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Personeel</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Bedrijf starten</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Handelsregister</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Administratie</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Geldzaken</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Belastingen</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Internationaal ondernemen</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Innovatie en productontwikkeling</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Marketing</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Huisvesting</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Bedrijf organiseren</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Bedrijf beschermen</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Freelance en zzp</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Bedrijf stoppen of verkopen</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Duurzaam ondernemen</a></li>
-            </ul>
+
+        <div class="mainMenu-content seeThroughScroll-size ngAnimate-seeThroughScroll is-hidden" see-through-scroll-element="size" unit-name="onderwerpen">
+            <div class="seeThroughScroll-scroll mainMenu-content-background" see-through-scroll-element="scroll" unit-name="onderwerpen">
+                <div class="seeThroughScroll-content" see-through-scroll-element="content" unit-name="onderwerpen">
+                    <ul class="mainMenu-linkList columnsContainer columnsContainer--half">
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Personeel</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Bedrijf starten</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Handelsregister</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Administratie</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Geldzaken</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Belastingen</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Internationaal ondernemen</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Innovatie en productontwikkeling</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Marketing</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Huisvesting</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Bedrijf organiseren</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Bedrijf beschermen</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Freelance en zzp</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Bedrijf stoppen of verkopen</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Duurzaam ondernemen</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('directNaar')">
-            Direct naar…
-            <button class="mainMenu-button openCloseMark" ng-class="{ 'is-opened': viewModel.openClose.isOpened('directNaar') }" ng-switch="viewModel.openClose.isOpened('directNaar')">
+        <h2 class="charlieHeading mainMenu-title seeThroughScroll-overlay" ng-click="viewModel.openClose.toggle('directNaar')">
+            <span class="mainMenu-title-text">Direct naar…</span>
+            <button class="mainMenu-button openCloseMark" ng-class="{ 'is-opened': viewModel.openClose.isFullyOpened('directNaar') }" ng-switch="viewModel.openClose.isOpened('directNaar')">
                 <svg class="openCloseMark-icon" aria-hidden>
                     <use xlink:href="#figures-chevron-down"></use>
                 </svg>
@@ -162,21 +166,25 @@
                 <span class="openCloseMark-text" ng-switch-when="false">openen</span>
             </button>
         </h2>
-        <div class="mainMenu-content ngAnimate-height ng-hide" data-open-close-name="directNaar" ng-show="viewModel.isOpened('directNaar')">
-            <ul class="mainMenu-linkList">
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Wetten en regels</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Wetswijzigingen</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Subsidies</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Direct regelen</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Branche-informatie</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Regio-informatie</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Webinars en video’s</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Evenementen</a></li>
-            </ul>
+        <div class="mainMenu-content seeThroughScroll-size ngAnimate-seeThroughScroll is-hidden" see-through-scroll-element="size" unit-name="directNaar">
+            <div class="seeThroughScroll-scroll mainMenu-content-background" see-through-scroll-element="scroll" unit-name="directNaar">
+                <div class="seeThroughScroll-content" see-through-scroll-element="content" unit-name="directNaar">
+                    <ul class="mainMenu-linkList columnsContainer columnsContainer--half">
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Wetten en regels</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Wetswijzigingen</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Subsidies</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Direct regelen</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Branche-informatie</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Regio-informatie</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Webinars en video’s</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Evenementen</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <h2 class="charlieHeading mainMenu-title" ng-click="viewModel.openClose.toggle('ondernemersplein')">
-            Ondernemersplein
-            <button class="mainMenu-button openCloseMark" ng-class="{ 'is-opened': viewModel.openClose.isOpened('ondernemersplein') }" ng-switch="viewModel.openClose.isOpened('ondernemersplein')">
+        <h2 class="charlieHeading mainMenu-title seeThroughScroll-overlay" ng-click="viewModel.openClose.toggle('ondernemersplein')">
+            <span class="mainMenu-title-text">Ondernemersplein</span>
+            <button class="mainMenu-button openCloseMark" ng-class="{ 'is-opened': viewModel.openClose.isFullyOpened('ondernemersplein') }" ng-switch="viewModel.openClose.isOpened('ondernemersplein')">
                 <svg class="openCloseMark-icon" aria-hidden>
                     <use xlink:href="#figures-chevron-down"></use>
                 </svg>
@@ -184,12 +192,17 @@
                 <span class="openCloseMark-text" ng-switch-when="false">openen</span>
             </button>
         </h2>
-        <div class="mainMenu-content ngAnimate-height ng-hide" data-open-close-name="ondernemersplein" ng-show="viewModel.isOpened('ondernemersplein')">
-            <ul class="mainMenu-linkList">
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Contact</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Uw idee ter verbetering</a></li>
-                <li class="mainMenu-item"><a class="mainMenu-link" href="#">Over ons</a></li>
-            </ul>
+        <div class="mainMenu-content seeThroughScroll-size ngAnimate-seeThroughScroll is-hidden" see-through-scroll-element="size" unit-name="ondernemersplein">
+            <div class="seeThroughScroll-scroll mainMenu-content-background" see-through-scroll-element="scroll" unit-name="ondernemersplein">
+                <div class="seeThroughScroll-content" see-through-scroll-element="content" unit-name="ondernemersplein">
+                    <ul class="mainMenu-linkList columnsContainer columnsContainer--half">
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Contact</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Uw idee ter verbetering</a></li>
+                        <li class="mainMenu-item columnsContainer-item"><a class="mainMenu-link" href="#">Over ons</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </nav>
 </div>
     </div>

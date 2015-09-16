@@ -1,6 +1,7 @@
 import DopApp from 'DopApp';
 import controller from 'controllers/menuBarController';
-import 'animations/heightAnimation';
+
+export const directiveName = "menuBar";
 
 export const menuBarDirective = () => ({
 	scope: true,
@@ -10,4 +11,4 @@ export const menuBarDirective = () => ({
 	bindToController: true,
 });
 
-DopApp.directive("menuBar", menuBarDirective);
+DopApp.directive(directiveName, menuBarDirective);
