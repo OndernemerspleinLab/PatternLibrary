@@ -1,7 +1,9 @@
 import {hidden as defaultHiddenClass} from 'constants/classNames';
 import {defaults, partial} from 'utils/functional';
 import {registerResizeListener} from 'utils/resizeEvent';
+import {registerScrollListener} from 'utils/scrollEvent';
 import ngServices from 'utils/ngServices';
+import Modernizr from 'modernizr';
 
 const openUnit = (openClose, hiddenClass, $wrapper, unitName, unitElements) => {
 	openClose.visuallyOpen(unitName);
@@ -37,6 +39,14 @@ const registerElement = (unitStore, elementRole, unitName, $element) => {
 	addToUnit(unitStore, unitName, elementRoles.get(elementRole), $element);
 };
 
+const registerResizeListners = (resize) => {
+	registerResizeListener(resize);
+
+	if (Modernizr.touch) {
+		registerScrollListener(resize);
+	}
+};
+
 export default class SeeThroughScrollController {
 	static get $inject() { return ['$scope', '$element', '$attrs', '$parse']; }
 
@@ -51,7 +61,7 @@ export default class SeeThroughScrollController {
 
 		const resize = () => {
 			console.log("resize");
-			const fullyOpenedUnit = openClose.getFullyOpenedUnit();
+			const fullyOpenedUnit = getFullyOpenedUnit();
 			if (fullyOpenedUnit) {
 				const unit = unitStore[fullyOpenedUnit];
 				resizeUnit(openClose, hiddenClass, $element, fullyOpenedUnit, unit);
@@ -74,9 +84,7 @@ export default class SeeThroughScrollController {
 			}
 		});
 
-		registerResizeListener(resize);
-
-		this.resize = resize;
+		registerResizeListners(resize);
 	}
 
 }
