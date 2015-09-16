@@ -8,6 +8,7 @@ import {seeThroughScroll as selector} from 'constants/animationSelectors';
 // import ngServices from 'utils/ngServices';
 
 const cleanHeightStyle = (element) => element.style.height = "";
+const triggerRedraw = ($element) => $element[0].offsetHeight;
 
 export const getClientRect = $element => $element[0].getBoundingClientRect();
 
@@ -87,7 +88,12 @@ const prepareOpen = ({options, done}) => {
 
 export const animateOpen = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement, targetHeight}, done}) => {
 	animateHeight($sizeElement, `${targetHeight}px`, done);
-	animateOpacity($scrollElement, 1, done);
+	animateOpacity($scrollElement, 1, () => {
+		$wrapper.css("display", "none");
+		triggerRedraw($wrapper);
+		$wrapper.css("display", "");
+		done();
+	});
 };
 
 export const resize = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement, targetHeight}, done}) => {
