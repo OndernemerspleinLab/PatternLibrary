@@ -21,12 +21,11 @@ const animateHeight = ($element, height, done) => {
 
 };
 
-const animateOpacity = ($element, opacity) => {
+export const animateOpacity = ($element, opacity) => {
 	Velocity($element, "stop");
 	Velocity($element, {
 		opacity
-	}, Object.assign({
-	}, animationTiming));
+	}, { duration: 400 });
 };
 
 export const getVerticalClientRect = $element => {
@@ -87,14 +86,12 @@ const prepareOpen = ({options, done}) => {
 
 export const animateOpen = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement, targetHeight}, done}) => {
 	animateHeight($sizeElement, `${targetHeight}px`, done);
-	animateOpacity($scrollElement, 1, () => {
-		done();
-	});
+	// animateOpacity($scrollElement, 1, () => {});
 };
 
 export const resize = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement, targetHeight}, done}) => {
 	Velocity.hook($sizeElement, 'height', `${targetHeight}px`);
-	Velocity.hook($scrollElement, 'opacity', 1);
+	// Velocity.hook($scrollElement, 'opacity', 1);
 	done();
 };
 
@@ -111,7 +108,7 @@ const prepareClose = ({options, done}) => {
 
 export const animateClose = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement}, done}) => {
 	animateHeight($sizeElement, '0px', done);
-	animateOpacity($scrollElement, 0.2, done);
+	// animateOpacity($scrollElement, 0.2, () => {});
 };
 
 const init = partial(animation, {
