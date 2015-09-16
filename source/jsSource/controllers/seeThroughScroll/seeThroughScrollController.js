@@ -8,11 +8,13 @@ import Modernizr from 'modernizr';
 const openUnit = (openClose, hiddenClass, $wrapper, unitName, unitElements) => {
 	openClose.visuallyOpen(unitName);
 	const options = Object.assign({$wrapper}, unitElements);
+	ngServices.$animate.removeClass(unitElements.$scrollElement, hiddenClass);
 	return ngServices.$animate.removeClass(unitElements.$sizeElement, hiddenClass, options);
 };
 const closeUnit = (openClose, hiddenClass, $wrapper, unitName, unitElements) => {
 	const options = Object.assign({$wrapper}, unitElements);
 	return ngServices.$animate.addClass(unitElements.$sizeElement, hiddenClass, options).then(() => {
+		ngServices.$animate.addClass(unitElements.$scrollElement, hiddenClass);
 		openClose.visuallyClose(unitName);
 	});
 };
@@ -60,7 +62,6 @@ export default class SeeThroughScrollController {
 
 
 		const resize = () => {
-			console.log("resize");
 			const fullyOpenedUnit = getFullyOpenedUnit();
 			if (fullyOpenedUnit) {
 				const unit = unitStore[fullyOpenedUnit];
