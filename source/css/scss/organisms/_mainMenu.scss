@@ -58,9 +58,11 @@
 		cursor: pointer;
 		background: rgba(getColor(hemelblauw lightest), 0.9);
 
-		@include hoverEtc {
-			.mainMenu-title-text {
-				@include underline;
+		.no-touch  & {
+			@include hoverEtc {
+				.mainMenu-title-text {
+					@include underline;
+				}
 			}
 		}
 	}
