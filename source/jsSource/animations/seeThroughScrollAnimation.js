@@ -111,7 +111,7 @@ const prepareClose = ({options, done}) => {
 
 export const animateClose = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement}, done}) => {
 	animateHeight($sizeElement, '0px', done);
-	animateOpacity($scrollElement, 0, done);
+	animateOpacity($scrollElement, 0.2, done);
 };
 
 const init = partial(animation, {
@@ -124,7 +124,7 @@ const init = partial(animation, {
 	addClass: animateClose,
 
 	beforeRemoveClass: prepareOpen,
-	removeClass: resize,
+	removeClass: animateOpen,
 
 	beforeAnimate: prepareOpen,
 	animate: resize,
