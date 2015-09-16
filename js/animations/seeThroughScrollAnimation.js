@@ -68,7 +68,8 @@ const setContentMargins = (sizeRect, wrapperRect, $contentElement) => {
 	});
 };
 
-const prepareOpen = ($wrapper, $sizeElement, $scrollElement, $contentElement) => {
+const prepareOpen = ({options, done}) => {
+	const {$wrapper, $sizeElement, $scrollElement, $contentElement} = options;
 	const startHeight = $sizeElement[0].style.height;
 	cleanElements($sizeElement, $scrollElement, $contentElement);
 
@@ -79,29 +80,34 @@ const prepareOpen = ($wrapper, $sizeElement, $scrollElement, $contentElement) =>
 
 	setAnimationStartState($sizeElement, $scrollElement, startHeight);
 
-	return targetHeight;
+	options.targetHeight = targetHeight;
+
+	done();
 };
 
-export const animateOpen = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement}, done}) => {
-	const targetHeight = prepareOpen($wrapper, $sizeElement, $scrollElement, $contentElement);
+export const animateOpen = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement, targetHeight}, done}) => {
 	animateHeight($sizeElement, `${targetHeight}px`, done);
 	animateOpacity($scrollElement, 1, done);
 };
 
-export const resize = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement}, done}) => {
-	const targetHeight = prepareOpen($wrapper, $sizeElement, $scrollElement, $contentElement);
+export const resize = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement, targetHeight}, done}) => {
 	Velocity.hook($sizeElement, 'height', `${targetHeight}px`);
 	Velocity.hook($scrollElement, 'opacity', 1);
 	done();
 };
 
-export const animateClose = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement}, done}) => {
+const prepareClose = ({options, done}) => {
+	const {$sizeElement} = options;
 	const startHeight = $sizeElement[0].style.height;
 	if (startHeight === "") {
 		const {height} = getVerticalClientRect($sizeElement);
 
 		Velocity.hook($sizeElement, "height", height);
 	}
+	done();
+};
+
+export const animateClose = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement}, done}) => {
 	animateHeight($sizeElement, '0px', done);
 	animateOpacity($scrollElement, 0, done);
 };
@@ -112,11 +118,14 @@ const init = partial(animation, {
 
 	classNameFilters: classNameFilters,
 
+	beforeAddClass: prepareClose,
 	addClass: animateClose,
 
+	beforeRemoveClass: prepareOpen,
 	removeClass: animateOpen,
 
-	animate: resize
+	beforeAnimate: prepareOpen,
+	animate: resize,
 });
 
 init();
