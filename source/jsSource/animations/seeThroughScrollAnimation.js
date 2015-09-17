@@ -92,6 +92,11 @@ export const animateOpen = ({options: {$wrapper, $sizeElement, $scrollElement, $
 	animateOpacity($scrollElement, 1, () => {});
 };
 
+export const instantOpen = ({options: {$scrollElement}, done}) => {
+	$scrollElement.css('position', 'relative');
+	done();
+};
+
 export const resize = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement, targetHeight}, done}) => {
 	Velocity.hook($sizeElement, 'height', `${targetHeight}px`);
 	Velocity.hook($scrollElement, 'opacity', 1);
@@ -125,9 +130,11 @@ const init = partial(animation, {
 
 	beforeRemoveClass: prepareOpen,
 	removeClass: animateOpen,
+	removeClassInstant: instantOpen,
 
 	beforeAnimate: prepareOpen,
 	animate: resize,
+	animateInstant: instantOpen,
 });
 
 init();
