@@ -1,7 +1,7 @@
-const regex = /matrix(3d)?\((.*)\)/;
-const defaultReturn = { values: [], is3d: false };
+const regex = /^matrix(3d)?\((.*)\)$/;
 
-export const parseMatrix = (cssMatrixString) => {
+export const parseMatrix = (cssMatrixString = "") => {
+	const defaultReturn = { values: [], is3d: false };
 
 	if (!cssMatrixString) {
 		return defaultReturn;

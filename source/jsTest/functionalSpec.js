@@ -3,8 +3,8 @@ import {
 	falsy, truthy,
 	partial, partialByObject, includes,
 	isFilledArray, isEmptyArray, debounce,
-	arrayfy, spliceItem, reduceObject,
-	mapObject, filterObject,
+	arrayfy, spliceItem, defaults, forEachObject,
+	reduceObject, mapObject, filterObject,
 	aliasMapProperty, toObjectArguments
 } from 'utils/functional';
 
@@ -211,6 +211,28 @@ describe("functional", () => {
 			const arr = [1, 2, 3];
 			spliceItem(arr, 2);
 			expect(arr).toEqual([1, 3]);
+		});
+	});
+
+	describe("defaults", () => {
+		it("should return a new object with the defaults filled in", () => {
+			const result = defaults({a: 3}, {a: 2, b: 2}, { a: 1, b: 1, c: 1 });
+			expect(result).toEqual({a: 3, b: 2, c: 1});
+		});
+	});
+
+	describe("forEachObject", () => {
+		it("should iterate over an object", () => {
+			const iterator = jasmine.createSpy("forEachObject iterator");
+			const obj = { key1: 'val1', key2: 'val2', key3: 'val3' };
+
+			forEachObject(obj, iterator);
+
+			const callsArgs = iterator.calls.allArgs();
+
+			expect(callsArgs[0]).toEqual(['val1', "key1", obj]);
+			expect(callsArgs[1]).toEqual(['val2', "key2", obj]);
+			expect(callsArgs[2]).toEqual(['val3', "key3", obj]);
 		});
 	});
 

@@ -1,9 +1,12 @@
 import {scrollEventRunner, registerScrollListener} from 'utils/scrollEvent';
 
 import mock from 'jsTest/ngMock';
+import prepNgServices from 'jsTest/prepNgServices';
 const {inject} = mock;
 
 describe("scrollEvent", () => {
+	prepNgServices();
+
 	describe("registerScrollListener", () => {
 		it("should register a listener in the provided list", () => {
 			const list = [];
