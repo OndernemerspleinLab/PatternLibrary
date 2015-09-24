@@ -1,0 +1,24 @@
+.list {
+	&--double {
+		@include mqGreaterThan(small) {
+			column-count: 2;
+		}
+	}
+	&--triple {
+		@include setPropWithMq(greater, column-count, (
+			small: 2,
+			medium: 3
+		));
+	}
+	&--quadruple {
+		@include setPropWithMq(greater, column-count, (
+			small: 2,
+			smallMedium: 3,
+			mediumLarge: 4
+		));
+	}
+
+	&-item {
+		break-inside: avoid;
+	}
+}

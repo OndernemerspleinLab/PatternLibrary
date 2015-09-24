@@ -10,6 +10,11 @@
 	border-bottom: none;
 }
 
+@mixin hideUnderline {
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+}
+
 a {
 	color: inherit;
 	@include underline;
@@ -20,4 +25,33 @@ a {
 	&:active {
 		color: getColor(hemelblauw default);
 	}
+}
+
+.interfaceLink {
+	$lineHeight: 1.6;
+
+	line-height: $lineHeight;
+	@include noUnderline;
+	color: getColor(hemelblauw default);
+	fill: getColor(hemelblauw default);
+	display: inline-flex;
+    align-items: flex-start;
+
+
+	@include hoverEtc {
+		.interfaceLink-text {
+			@include underline;
+		}
+	}
+
+	&-icon {
+		flex: 0 0 auto;
+		height: ($lineHeight * 1em);
+		margin-right: 0.3em;
+	}
+	&-text {
+		flex: 1 1 0;
+		@include hideUnderline;
+	}
+
 }

@@ -18,7 +18,7 @@
 
 // Lay-out
 @import "scss/molecules/layout/grid";
-@import "scss/molecules/layout/columns";
+@import "scss/molecules/layout/list";
 @import "scss/molecules/layout/blocks";
 @import "scss/molecules/layout/zindex";
 
@@ -29,6 +29,7 @@
 @import "scss/atoms/base/global-classes";
 
 // Typography
+@import "scss/atoms/goIcon";
 @import "scss/atoms/typography/links";
 @import "scss/atoms/typography/lists";
 @import "scss/atoms/typography/headings";
@@ -52,6 +53,7 @@
 @import "scss/organisms/menu";
 @import "scss/organisms/mainMenu";
 @import "scss/molecules/seeThroughScroll";
+@import "scss/molecules/linkList";
 
 // Specific elements
 @import "scss/molecules/social";
