@@ -18,6 +18,14 @@
 		));
 	}
 
+	&-spacedItem {
+		break-inside: avoid;
+		margin: {
+			left: $halfSpace;
+			right: $halfSpace;
+		}
+	}
+
 	&-item {
 		break-inside: avoid;
 	}
