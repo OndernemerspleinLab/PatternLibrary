@@ -138,6 +138,7 @@
 
 	@include hoverEtc {
     	background-color: rgba(getColor(hemelblauw lightest), 0.7);
+		color: inherit;
 	}
 
     &.is-opened {
