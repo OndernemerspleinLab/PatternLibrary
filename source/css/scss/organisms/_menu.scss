@@ -77,6 +77,10 @@
 		width: 2000px;
 		width: 100vw;
 	}
+
+	&-context {
+		margin-top: auto;
+	}
 }
 
 .is-menuBar-retracted {
@@ -130,9 +134,6 @@
 
 	@include mqGreaterThan(large) {
 		width: $menuBarWidthExtraLarge;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
 	}
 
 	@include hoverEtc {
@@ -145,6 +146,14 @@
     		fill: getColor(zwart);
     		transform: scale(1.1);
     	}
+	}
+
+	&-inner {
+		@include mqGreaterThan(large) {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
 	}
 
 	&-text {
