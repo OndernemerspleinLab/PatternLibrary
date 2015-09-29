@@ -1,6 +1,6 @@
 import DopApp from 'DopApp';
 import controller from 'controllers/seeThroughScroll/seeThroughScrollController';
-import 'animations/seeThroughScrollAnimation';
+import 'animations/seeThroughScroll/seeThroughScrollAnimation';
 import {directiveName as parentDirectiveName} from 'directives/mainMenuDirective';
 
 const controllerAs = 'seeThroughScroll';

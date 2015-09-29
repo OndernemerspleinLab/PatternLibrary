@@ -67,9 +67,9 @@ export const defaults = (obj, ...defaultObjs) => {
 export const forEachObject = (obj, iterator) => {
 	const keys = Object.keys(obj);
 
-	keys.forEach((memo, key) => {
+	keys.forEach((key) => {
 		const value = obj[key];
-		iterator(memo, value, key, obj);
+		iterator(value, key, obj);
 	});
 };
 
