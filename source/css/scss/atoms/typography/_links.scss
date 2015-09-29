@@ -55,3 +55,28 @@ a {
 	}
 
 }
+
+.headingLink {
+	$lineHeight: 1.2;
+
+	line-height: $lineHeight;
+	@include noUnderline;
+	color: getColor(hemelblauw default);
+	fill: getColor(hemelblauw default);
+
+	@include hoverEtc {
+		.interfaceLink-text {
+			@include underline;
+		}
+	}
+
+	&-icon {
+		display: inline-block;
+		height: ($lineHeight * 1em);
+		margin-left: 0.3em;
+		vertical-align: middle;
+	}
+	&-text {
+		@include hideUnderline;
+	}
+}
