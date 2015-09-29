@@ -22,7 +22,6 @@
 @import "scss/molecules/layout/blocks";
 @import "scss/molecules/layout/zindex";
 
-@import "scss/molecules/media";
 @import "scss/molecules/aside";
 
 @import "scss/atoms/base/main";
@@ -54,6 +53,7 @@
 @import "scss/organisms/mainMenu";
 @import "scss/molecules/seeThroughScroll";
 @import "scss/molecules/linkList";
+@import "scss/molecules/media";
 
 // Specific elements
 @import "scss/molecules/social";

@@ -19,7 +19,7 @@
 	&-nav {
 		display: flex;
 		flex-direction: column;
-		flex: 1 1 0;
+		flex: 1 1 auto;
 
 		@include before("") {
 			display: block;
@@ -109,6 +109,12 @@
 		@include hoverEtc {
 			color: inherit;
 			background: getColor(hemelblauw lightest);
+		}
+
+		&-icon {
+			height: 2em;
+			width: 2em;
+			margin: -0.2em 0.8em -0.2em 0;
 		}
 	}
 }
