@@ -21,7 +21,7 @@
 	}
 
 	&-link {
-		@include noUnderline;
+		@include hideUnderline;
 		display: inline-block;
 		padding: $pad-half $pad $pad-half 0;
 
