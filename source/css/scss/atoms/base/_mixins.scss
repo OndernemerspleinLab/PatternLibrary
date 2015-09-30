@@ -76,7 +76,7 @@
 	margin-bottom: 0;
 }
 
-@mixin bullets($type: square) {
+@mixin bullets($type: disc) {
 	@include listSpacing;
 	list-style: $type;
 }

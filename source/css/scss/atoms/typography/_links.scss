@@ -82,5 +82,24 @@ a {
 }
 
 .externalLink {
+	$lineHeight: 1.2;
 
+	line-height: $lineHeight;
+	@include noUnderline;
+
+	@include hoverEtc {
+		.externalLink-text {
+			@include underline;
+		}
+	}
+
+	&-icon {
+		//height: ($lineHeight * 1em);
+		height: 0.75em;
+		//margin-left: 0.15em;
+		vertical-align: middle;
+	}
+	&-text {
+		@include underline;
+	}
 }
