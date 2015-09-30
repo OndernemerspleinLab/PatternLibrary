@@ -23,10 +23,14 @@
 	max-width: none;
 	width: auto;
 	height: 2.5rem;
-	filter: grayscale(100%);
 	&:hover {
 		transform: scale(1.1);
-		filter: grayscale(0%);
+	}
+	&.color {
+		filter: grayscale(100%);
+		&:hover {
+			filter: grayscale(0%);
+		}
 	}
 }
 
