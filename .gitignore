@@ -16,3 +16,4 @@ jspm_packages
 /source/js
 /coverage
 *.sublime-project
+*.sublime-workspace
