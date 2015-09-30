@@ -1,0 +1,9 @@
+{
+	"title" : "Contentpagina Uitgebreid",
+	"bodyClass": "page",
+	"author" : {
+		"first-name": "Author",
+		"last-name": "Name",
+		"partner" : "Kamer van Koophandel"
+	}
+}

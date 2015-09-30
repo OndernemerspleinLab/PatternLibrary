@@ -1,0 +1,32 @@
+<div class="container">
+	{{> organisms-sidebar }}
+	<div class="page" id="page">
+		{{> organisms-header }}
+		<div class="main">
+			<div class="layoutContainer gridContainer">
+				<div class="column column--twoThird">
+					<header class="article-header">
+						<h1>H1 Marktonderzoek doen</h1>
+						<div class="infoText infoText--source">Geplaatst door: {{ author.partner }}</div>
+						<div class="infoText infoText--date">Laatste update: <time datetime="2015-10-01T10:32+00:00">1 oktober 2015</time></div>
+					</header>
+					{{> molecules-intro-text }}
+					{{> organisms-content-body-base }}
+				</div>
+				<div class="column column--third aside">
+					{{> organisms-bronhouder }}
+					<div class="block block--side suggestions">
+						<h2 class="block-title echoHeading">H2 Niet gevonden wat u zocht?</h2>
+						<p>Was u misschien op zoek naar:</p>
+						<ul>
+							<li><a href="#1">Marketingmix</a></li>
+							<li><a href="#2">Sterkte-zwakte analyse</a></li>
+							<li><a href="#3">Brancheonderzoek</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{> organisms-footer }}
+	</div>
+</div>

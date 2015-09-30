@@ -12,6 +12,7 @@ h6, .foxtrotHeading {
 
 h1, .pageHeading {
 	font-size: getFontSize(pageHeading small);
+	color: getColor(hemelblauw default);
 	hyphens: auto;
 	margin: {
 		top: 0;
