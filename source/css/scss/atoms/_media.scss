@@ -14,12 +14,13 @@ iframe {
 	max-width: 100%;
 }
 
-figure {
-	margin-bottom: $space;
-	img {
+figure, .image-figure {
+	margin: 0.8rem 0;
+	img, .image {
 		margin-bottom: $space-quarter;
 	}
 }
-figcaption {
+figcaption, .image-caption {
 	font-style: italic;
+	font-size: getFontSize(small);
 }

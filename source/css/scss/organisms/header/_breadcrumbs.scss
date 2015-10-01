@@ -1,7 +1,7 @@
 /* BREADCRUMBS */
 
 .breadcrumbs {
-	margin: 0 0.5rem;
+	margin: 0 1rem;
 	padding-left: 0;
 	display: flex;
 	flex-direction: row;
@@ -10,6 +10,7 @@
 }
 
 .breadcrumb {
+	padding: 0;
 	&:before {
 		content: ">";
 		display: inline-block;
@@ -18,16 +19,18 @@
 	&:first-child:before {
 		content: "";
 		padding-right: 0;
+		margin-left: -3px;
 	}
 
 	&-link {
 		@include hideUnderline;
 		display: inline-block;
 		padding: $pad-half $pad $pad-half 0;
+	}
 
-		&:hover, &:active, &:focus {
+	@include hoverEtc {
+		.breadcrumb-text {
 			@include underline;
-
 		}
 	}
 }

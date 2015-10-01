@@ -60,9 +60,12 @@ abbr {
 .infoText {
 	font-style: italic;
 	margin-bottom: 1em;
+	color: getColor(grijs default);
+	font-size: getFontSize(small);
 
 	&--source {
 		float: left;
+		max-width: 65%;
 	}
 	&--date {
 		float: right;

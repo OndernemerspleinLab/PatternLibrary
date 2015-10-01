@@ -3,6 +3,9 @@
 ol, ul {
 	margin-top: 0;
 	margin-left: 1rem;
+	aside & {
+		margin-left: 0;
+	}
 }
 
 ol {
@@ -12,7 +15,17 @@ ol {
 ul {
 	@include bullets;
 	ul {
-		@include bullets;
+		@include bullets(square);
+		margin-bottom: 0;
+	}
+	ol {
+		margin-bottom: 0;
+	}
+}
+
+ol {
+	ol, ul {
+		margin-bottom: 0;
 	}
 }
 
@@ -26,7 +39,7 @@ li {
 
 dl {
 	overflow: hidden;
-	margin: 0 0 $space;
+	//margin: 0 0 $space;
 }
 
 dt {
@@ -35,4 +48,5 @@ dt {
 
 dd {
 	margin-left: 0;
+	margin-bottom: 0.3em;
 }
