@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 					livereload: true
 				},
 				files: ['source/svgSource/**/*.svg'],
-				tasks: ['default'],
+				tasks: ['buildSvg'],
 			},
 		},
 	};
@@ -36,4 +36,5 @@ module.exports = function(grunt) {
 	grunt.config.merge(config);
 
 	grunt.registerTask('svgFigures', ['svgstore', 'rename:svgFigures']);
+	grunt.registerTask('buildSvg', ['svgFigures', 'buildTemplates']);
 };

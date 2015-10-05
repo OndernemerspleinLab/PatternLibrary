@@ -91,7 +91,7 @@ module.exports = function(grunt, devOrProd) {
 				'source/_patterns/**/*.json',
 				'source/_data/*.json'
 				],
-				tasks: ['default']
+				tasks: ['buildTemplates']
 			},
 		},
 	};
@@ -99,5 +99,6 @@ module.exports = function(grunt, devOrProd) {
 	grunt.config.merge(config);
 
 	grunt.registerTask('copyToPublic', ['copy:main', 'copy:images']);
-	grunt.registerTask('default', ['clean', 'svgFigures', replaceTask, 'patternlab', 'styles', 'scripts', 'copyToPublic', replaceNormalizeTask]);
+	grunt.registerTask('buildTemplates', [replaceTask, 'patternlab', replaceNormalizeTask]);
+	grunt.registerTask('default', ['clean', 'svgFigures', 'buildTemplates', 'styles', 'scripts', 'copyToPublic']);
 };
