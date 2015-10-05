@@ -59,6 +59,13 @@
 				}
 			}
 		}
+		&--email {
+			@include hoverEtc {
+				.social-figure-background {
+					fill: getColor(hemelblauw darkest);
+				}
+			}
+		}
 
 
 		@include hoverEtc {
