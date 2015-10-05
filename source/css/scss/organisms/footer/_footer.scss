@@ -1,5 +1,15 @@
 /* FOOTER */
 
+.backgroundLine {
+	border-top: 1px solid getColor(grijs light);
+	text-align: center
+
+	span {
+		background-color: getColor(wit);
+		padding: 0.5rem;
+	}
+}
+
 .footer {
 	background: getColor(grijs light);
 	@include insideMarginTop(0.5rem);
@@ -23,14 +33,30 @@
 	max-width: none;
 	width: auto;
 	height: 2.5rem;
-	&:hover {
-		transition: all 0.2s ease-in-out;
-		transform: scale(1.1);
-	}
-	&.color {
+
+	&--color {
 		filter: grayscale(100%);
 		&:hover {
 			filter: grayscale(0%);
+		}
+	}
+
+	&--contentBottom {
+		&:hover {
+			//transform: none;
+			//transition: none;
+		}
+	}
+	&--contentRight {
+		&:hover {
+			//transform: none;
+			//transition: none;
+		}
+	}
+	&--footer {
+		&:hover {
+			transition: all 0.2s ease-in-out;
+			transform: scale(1.1);
 		}
 	}
 }

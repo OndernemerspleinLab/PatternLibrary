@@ -31,10 +31,11 @@
 
 // Pay-off
 .payOff {
-	margin: 0 0 0.1rem 0;
-	text-align: right;
+	margin: 0 0 0.1rem 1.5rem;
+	text-align: left;
 	color: getColor(grijs default);
 	font-style: italic;
+	font-size: 1.1rem;
 
 	@include mqLesserThan(small) {
 		font-size: getFontSize(small);
