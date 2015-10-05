@@ -1,3 +1,12 @@
 .linkList {
 	@include noBullets;
+
+	.aside & {
+		margin-left: 0;
+
+		.interfaceLink {
+			color: getColor(grijs darkest);
+			fill: getColor(grijs darkest);
+		}
+	}
 }
