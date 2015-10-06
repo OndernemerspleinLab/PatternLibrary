@@ -78,7 +78,36 @@
 
 @mixin bullets($type: disc) {
 	@include listSpacing;
-	list-style: $type;
+	//list-style: $type;
+	counter-reset: li;
+	li {
+		list-style-type: none;
+	    counter-increment: li;
+	    position: relative;
+
+	    &:before {
+	    	content: "•";
+			position: absolute;
+			left: -2.5em;
+			width: 2em;
+			text-align: right;
+			color: getColor(hemelblauw darkest);
+			font-weight: bold;
+	    }
+
+	    ul li {
+    		ol li {
+	    		&:before {
+	    			content: counter(li,decimal) ".";
+	    		}
+    		}
+    	}
+    	ol li {
+    		&:before {
+    			content: counter(li,decimal) ".";
+    		}
+		}
+	}
 }
 
 @mixin noBullets {
@@ -95,10 +124,51 @@
 
 @mixin numbers($type: decimal) {
 	@include listSpacing;
-	list-style: $type;
+	//list-style: $type;
+	counter-reset: li;
+	li {
+		list-style-type: none;
+	    counter-increment: li;
+	    position: relative;
+
+	    &:before {
+	    	content: counter(li) ".";
+			position: absolute;
+			left: -2.5em;
+			width: 2em;
+			text-align: right;
+			color: getColor(hemelblauw darkest);
+			font-weight: bold;
+	    }
+
+	    ol li {
+    		ul li {
+    			&:before {
+    				content: "•";
+    			}
+    		}
+    	}
+    	ul li {
+			&:before {
+				content: "•";
+			}
+			ol li {
+	    		&:before {
+	    			content: counter(li,decimal) ".";
+	    		}
+			}
+		}
+	}
 }
 
 @mixin noNumbers {
 	@include noListSpacing;
 	list-style: none;
+	li {
+		&:before {
+			content: "";
+			position: relative;
+			display: none;
+		}
+	}
 }

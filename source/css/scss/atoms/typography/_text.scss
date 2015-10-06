@@ -64,11 +64,15 @@ abbr {
 	font-size: getFontSize(small);
 
 	&--source {
-		float: left;
-		max-width: 65%;
+		@include mqGreaterThan(smallMedium) {
+			float: left;
+			max-width: 65%;
+		}
 	}
 	&--date {
-		float: right;
+		@include mqGreaterThan(smallMedium) {
+			float: right;
+		}
 	}
 	&--afzender {
 		text-align: center;
