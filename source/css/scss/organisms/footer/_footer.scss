@@ -1,12 +1,17 @@
 /* FOOTER */
 
-.backgroundLine {
+.content-footer {
 	border-top: 1px solid getColor(grijs light);
-	text-align: center;
+	padding-bottom: 1rem;
 
-	span {
-		background-color: getColor(wit);
-		padding: 0.5rem;
+	ul {
+		margin-left: 0;
+		.verticalItem:first-child {
+			margin-left: 0;
+		}
+		.partnerLogo {
+			height: 3.5rem;
+		}
 	}
 }
 
@@ -42,16 +47,10 @@
 	}
 
 	&--contentBottom {
-		&:hover {
-			//transform: none;
-			//transition: none;
-		}
+
 	}
 	&--contentRight {
-		&:hover {
-			//transform: none;
-			//transition: none;
-		}
+
 	}
 	&--footer {
 		&:hover {

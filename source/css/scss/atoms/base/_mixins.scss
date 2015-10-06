@@ -84,6 +84,12 @@
 @mixin noBullets {
 	@include noListSpacing;
 	list-style: none;
+	li {
+		&:before {
+			content: "";
+			position: relative;
+		}
+	}
 }
 
 @mixin numbers($type: decimal) {

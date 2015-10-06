@@ -70,6 +70,16 @@ abbr {
 	&--date {
 		float: right;
 	}
+	&--afzender {
+		text-align: center;
+		position: relative;
+		span {
+			background-color: white;
+			padding: 0 1rem;
+			position: absolute;
+			top: -27px;
+		}
+	}
 }
 
 .textLine {
