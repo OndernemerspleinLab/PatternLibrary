@@ -30,9 +30,19 @@
 					fill: getColor(socials facebook);
 				}
 			}
+			.social--share & {
+				.social-figure-background {
+					fill: getColor(socials facebook);
+				}
+			}
 		}
 		&--twitter {
 			@include hoverEtc {
+				.social-figure-background {
+					fill: getColor(socials twitter);
+				}
+			}
+			.social--share & {
 				.social-figure-background {
 					fill: getColor(socials twitter);
 				}
@@ -44,9 +54,19 @@
 					fill: getColor(socials linkedin);
 				}
 			}
+			.social--share & {
+				.social-figure-background {
+					fill: getColor(socials linkedin);
+				}
+			}
 		}
 		&--googleplus {
 			@include hoverEtc {
+				.social-figure-background {
+					fill: getColor(socials googleplus);
+				}
+			}
+			.social--share & {
 				.social-figure-background {
 					fill: getColor(socials googleplus);
 				}
@@ -58,9 +78,19 @@
 					fill: getColor(socials youtube);
 				}
 			}
+			.social--share & {
+				.social-figure-background {
+					fill: getColor(socials youtube);
+				}
+			}
 		}
 		&--email {
 			@include hoverEtc {
+				.social-figure-background {
+					fill: getColor(hemelblauw darkest);
+				}
+			}
+			.social--share & {
 				.social-figure-background {
 					fill: getColor(hemelblauw darkest);
 				}
@@ -91,5 +121,9 @@
 		&-foreground {
 			fill: getColor(grijs light);
 		}
+	}
+
+	&--share {
+		margin-left: 0;
 	}
 }

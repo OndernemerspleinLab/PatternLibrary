@@ -11,6 +11,8 @@
 
 .breadcrumb {
 	padding: 0;
+	font-size: getFontSize(small);
+
 	&:before {
 		content: ">";
 		display: inline-block;

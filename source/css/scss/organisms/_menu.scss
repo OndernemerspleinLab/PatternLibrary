@@ -81,6 +81,10 @@
 	&-context {
 		margin-top: auto;
 	}
+
+	&--title {
+		@extend .bravoHeading;
+	}
 }
 
 .is-menuBar-retracted {
