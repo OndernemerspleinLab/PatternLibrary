@@ -1,36 +1,88 @@
 /* LISTS */
 
-ol, ul {
+ul, ol {
 	margin-top: 0;
-	margin-left: 1rem;
-}
-
-ol {
-	@include numbers;
-}
-
-ul {
-	@include bullets;
-	ul {
-		@include bullets(square);
+	margin-bottom: 0;
+	counter-reset: li;
+	ul, ol {
 		margin-bottom: 0;
-	}
-	ol {
-		margin-bottom: 0;
+		ul, ol {
+			margin-bottom: 0;
+		}
 	}
 }
-
-ol {
-	ol, ul {
-		margin-bottom: 0;
-	}
-}
-
 li {
 	margin: 0;
 	padding: {
 		top: 0.3em;
 		bottom: 0.3em;
+	}
+	list-style-type: none;
+    counter-increment: li;
+    position: relative;
+
+    &:before {
+		position: absolute;
+		left: -2.5em;
+		width: 2em;
+		text-align: right;
+		color: getColor(hemelblauw default);
+		font-weight: bold;
+    }
+}
+
+// Unordered list
+ul {
+	@include bullets;
+	margin-left: 1.1rem;
+
+	li {
+    	&:before {
+    		content: "•";
+    	}
+    	ul li {
+    		ol li {
+	    		&:before {
+	    			content: counter(li,decimal) ".";
+	    		}
+    		}
+    	}
+    	ol li {
+    		&:before {
+    			content: counter(li,decimal) ".";
+    		}
+		}
+    }
+}
+
+// Ordered list
+ol {
+	@include numbers;
+	margin-left: 1.6rem;
+
+	li {
+    	&:before {
+    		content: counter(li) ".";
+    	}
+
+    	ol li {
+    		ul li {
+    			&:before {
+    				content: "•";
+    			}
+    		}
+    	}
+    	ul li {
+			&:before {
+				content: "•";
+			}
+			ol li {
+	    		&:before {
+	    			content: counter(li,decimal) ".";
+	    		}
+			}
+		}
+
 	}
 }
 
