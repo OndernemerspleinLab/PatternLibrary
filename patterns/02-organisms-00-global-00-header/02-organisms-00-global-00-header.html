@@ -35,18 +35,39 @@
 	<!-- Start of Pattern --><!-- Begin Header -->
 <header class="header clearfix" role="banner">
 	<div class="header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems">
-<div class="column logo">
+<div class="column column--twoThird logo">
 	<a class="logo-link" title="Ga naar homepage" href="&#x2F;patterns&#x2F;03-templates-00-homepage&#x2F;03-templates-00-homepage.html">
 		<span class="textLine">
 			o<span class="highlight--blue">n</span>dernemers
 		</span> <span class="textLine">p<span class="highlight--blue">l</span>ein</span>
 	</a>
-</div><div class="column column--fit">
+</div><div class="column column--third column--fit">
 	<p class="payOff">Eén plek voor alle zaken</p>
 </div>	</div>
 	<div class="brandBar">
 		<div class="layoutContainer">
-		</div>
+<ul class="breadcrumbs diapositive">
+	<li class="breadcrumb">
+		<a class="breadcrumb-link breadcrumb-linkFirst diapositive-link" href="&#x2F;patterns&#x2F;03-templates-00-homepage&#x2F;03-templates-00-homepage.html">
+			<span class="breadcrumb-text">Home</span>
+		</a>
+	</li>
+	<li class="breadcrumb">
+		<a class="breadcrumb-link diapositive-link" href="#">
+			<span class="breadcrumb-text">Alles over ondernemen</span>
+		</a>
+	</li>
+	<li class="breadcrumb">
+		<a class="breadcrumb-link diapositive-link" href="&#x2F;patterns&#x2F;03-templates-01-theme&#x2F;03-templates-01-theme.html">
+			<span class="breadcrumb-text">Marketing</span>
+		</a>
+	</li>
+	<li class="breadcrumb">
+		<a class="breadcrumb-link diapositive-link" href="&#x2F;patterns&#x2F;03-templates-02-subject&#x2F;03-templates-02-subject.html">
+			<span class="breadcrumb-text">Marktonderzoek</span>
+		</a>
+	</li>
+</ul>		</div>
 	</div>
 </header>
 <!-- End Header -->	<!-- End of Pattern -->
@@ -60,8 +81,8 @@
 	<script>
 		// handle injection of items from PHP
 		var patternPartial = "organisms-header";
-		var lineage = [{"lineagePattern":"molecules-logo","lineagePath":"../../patterns/01-molecules-08-branding-00-logo/01-molecules-08-branding-00-logo.html"},{"lineagePattern":"molecules-payoff","lineagePath":"../../patterns/01-molecules-08-branding-01-payoff/01-molecules-08-branding-01-payoff.html"}];
-		var lineageR = [{"lineagePattern":"templates-homepage","lineagePath":"../../patterns/03-templates-00-homepage/03-templates-00-homepage.html"},{"lineagePattern":"templates-theme","lineagePath":"../../patterns/03-templates-01-theme/03-templates-01-theme.html"},{"lineagePattern":"templates-subject","lineagePath":"../../patterns/03-templates-02-subject/03-templates-02-subject.html"},{"lineagePattern":"templates-contentpage","lineagePath":"../../patterns/03-templates-03-contentpage/03-templates-03-contentpage.html"},{"lineagePattern":"pages-ondernemersaftrek","lineagePath":"../../patterns/04-pages-04-ondernemersaftrek/04-pages-04-ondernemersaftrek.html"}];
+		var lineage = [{"lineagePattern":"molecules-logo","lineagePath":"../../patterns/01-molecules-08-branding-00-logo/01-molecules-08-branding-00-logo.html"},{"lineagePattern":"molecules-payoff","lineagePath":"../../patterns/01-molecules-08-branding-01-payoff/01-molecules-08-branding-01-payoff.html"},{"lineagePattern":"molecules-breadcrumbs","lineagePath":"../../patterns/01-molecules-05-navigation-01-breadcrumbs/01-molecules-05-navigation-01-breadcrumbs.html"}];
+		var lineageR = [{"lineagePattern":"templates-homepage","lineagePath":"../../patterns/03-templates-00-homepage/03-templates-00-homepage.html"},{"lineagePattern":"templates-theme","lineagePath":"../../patterns/03-templates-01-theme/03-templates-01-theme.html"},{"lineagePattern":"templates-subject","lineagePath":"../../patterns/03-templates-02-subject/03-templates-02-subject.html"},{"lineagePattern":"templates-contentpage-base","lineagePath":"../../patterns/03-templates-03-contentpage-base/03-templates-03-contentpage-base.html"},{"lineagePattern":"templates-contentpage-extended","lineagePath":"../../patterns/03-templates-04-contentpage-extended/03-templates-04-contentpage-extended.html"},{"lineagePattern":"pages-ondernemersaftrek","lineagePath":"../../patterns/04-pages-05-ondernemersaftrek/04-pages-05-ondernemersaftrek.html"}];
 		var patternState = ""
 		var cssEnabled = false; //TODO
 	</script>

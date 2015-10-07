@@ -33,10 +33,26 @@
 </head>
 <body class="sg-single-pattern" ng-class="{'is-menuOpened': menuOpened}">
 	<!-- Start of Pattern --><ul class="breadcrumbs diapositive">
-	<li class="breadcrumb"><a class="breadcrumb-link diapositive-link" href="&#x2F;patterns&#x2F;03-templates-00-homepage&#x2F;03-templates-00-homepage.html">Home</a></li>
-	<li class="breadcrumb"><a class="breadcrumb-link diapositive-link" href="#">Alles over ondernemen</a></li>
-	<li class="breadcrumb"><a class="breadcrumb-link diapositive-link" href="&#x2F;patterns&#x2F;03-templates-01-theme&#x2F;03-templates-01-theme.html">Marketing</a></li>
-	<li class="breadcrumb"><a class="breadcrumb-link diapositive-link" href="&#x2F;patterns&#x2F;03-templates-02-subject&#x2F;03-templates-02-subject.html">Marktonderzoek</a></li>
+	<li class="breadcrumb">
+		<a class="breadcrumb-link breadcrumb-linkFirst diapositive-link" href="&#x2F;patterns&#x2F;03-templates-00-homepage&#x2F;03-templates-00-homepage.html">
+			<span class="breadcrumb-text">Home</span>
+		</a>
+	</li>
+	<li class="breadcrumb">
+		<a class="breadcrumb-link diapositive-link" href="#">
+			<span class="breadcrumb-text">Alles over ondernemen</span>
+		</a>
+	</li>
+	<li class="breadcrumb">
+		<a class="breadcrumb-link diapositive-link" href="&#x2F;patterns&#x2F;03-templates-01-theme&#x2F;03-templates-01-theme.html">
+			<span class="breadcrumb-text">Marketing</span>
+		</a>
+	</li>
+	<li class="breadcrumb">
+		<a class="breadcrumb-link diapositive-link" href="&#x2F;patterns&#x2F;03-templates-02-subject&#x2F;03-templates-02-subject.html">
+			<span class="breadcrumb-text">Marktonderzoek</span>
+		</a>
+	</li>
 </ul>	<!-- End of Pattern -->
 
 	<!--
@@ -49,7 +65,7 @@
 		// handle injection of items from PHP
 		var patternPartial = "molecules-breadcrumbs";
 		var lineage = [];
-		var lineageR = [];
+		var lineageR = [{"lineagePattern":"organisms-header","lineagePath":"../../patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html"}];
 		var patternState = ""
 		var cssEnabled = false; //TODO
 	</script>

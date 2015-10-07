@@ -39,9 +39,28 @@
 		<li>
 			Lists can be nested inside of each other
 			<ul>
-				<li>This is a nested list item</li>
-				<li>This is another nested list item in an unordered list</li>
+				<li>This is a nested unordered list item</li>
+				<li>Test test test
+					<ol>
+						<li>This is a nested ordered list item</li>
+						<li>This is a nested ordered list item</li>
+					</ol>
+				</li>
+				<li>This is another nested unordered list item in an unordered list</li>
 			</ul>
+		</li>
+		<li>
+			Lists can be nested inside of each other
+			<ol>
+				<li>This is a nested ordered list item</li>
+				<li>Test test test
+					<ul>
+						<li>This is a nested unordered list item</li>
+						<li>This is a nested unordered list item</li>
+					</ul>
+				</li>
+				<li>This is another nested ordered list item in an unordered list</li>
+			</ol>
 		</li>
 		<li><a href="#">This is the last list item with a link</a></li>
 	</ul>
@@ -57,7 +76,7 @@
 		// handle injection of items from PHP
 		var patternPartial = "atoms-unordered";
 		var lineage = [];
-		var lineageR = [{"lineagePattern":"organisms-content-body","lineagePath":"../../patterns/02-organisms-01-content-00-content-body/02-organisms-01-content-00-content-body.html"}];
+		var lineageR = [{"lineagePattern":"organisms-content-body-base","lineagePath":"../../patterns/02-organisms-01-content-00-content-body-base/02-organisms-01-content-00-content-body-base.html"},{"lineagePattern":"organisms-content-body-extended","lineagePath":"../../patterns/02-organisms-01-content-00-content-body-extended/02-organisms-01-content-00-content-body-extended.html"},{"lineagePattern":"organisms-content-body","lineagePath":"../../patterns/02-organisms-01-content-00-content-body/02-organisms-01-content-00-content-body.html"}];
 		var patternState = ""
 		var cssEnabled = false; //TODO
 	</script>
