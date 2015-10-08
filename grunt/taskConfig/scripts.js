@@ -51,7 +51,14 @@ module.exports = function(grunt, devOrProd) {
 			background: {
 				configFile: './grunt/karma.conf.js',
 				options: {
-    				background: true,
+					background: true,
+					singleRun: false,
+				},
+			},
+			serve: {
+				configFile: './grunt/karma.conf.js',
+				options: {
+					background: false,
 					singleRun: false,
 				},
 			},
@@ -82,14 +89,14 @@ module.exports = function(grunt, devOrProd) {
 					livereload: false,
 				},
 				files: ['source/jsSource/**/*.js', '!source/jsSource/jspm_packages/**'],
-				tasks: ['scriptsWatched'],
+				tasks: ['scripts'],
 
 			},
 			jsDist: {
 				options: {
 					livereload: true,
 				},
-				files: ['public/js/**/*.js'],
+				files: ['public/js/**/*.js', '!public/js/jspm_packages/**'],
 			},
 			tests: {
 				options: {
@@ -115,8 +122,8 @@ module.exports = function(grunt, devOrProd) {
 
 	grunt.registerTask('coverage', ['karma:coverage']);
 	grunt.registerTask('tests', ['karma:unit', 'jshint:scripts']);
-	grunt.registerTask('prodScripts', ['bundleJspm:production', 'copy:globalScript']);
+	grunt.registerTask('watchTests', ['karma:background', 'watch:tests']);
+	grunt.registerTask('prodScripts', ['tests', 'bundleJspm:production', 'copy:globalScript']);
 	grunt.registerTask('devScripts', ['copy:scriptSource']);
-	grunt.registerTask('scriptsWatched', ['jshint:scripts', scriptsTasks]);
-	grunt.registerTask('scripts', ['tests', scriptsTasks]);
+	grunt.registerTask('scripts', [scriptsTasks]);
 };
