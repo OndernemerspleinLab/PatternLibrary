@@ -1,4 +1,4 @@
-import MenuBarController from 'controllers/menuBarController';
+import MenuBarController, {sideContentUnitType} from 'controllers/menuBarController';
 import mock from 'jsTest/ngMock';
 import prepNgServices from 'jsTest/prepNgServices';
 import * as classNames from 'constants/classNames';
@@ -19,13 +19,14 @@ describe("menuBarController", () => {
 
 	beforeEach(inject((_$rootScope_) => {
 		$rootScope = _$rootScope_;
-		$animate = jasmine.createSpyObj('$animate', ['cancel', 'animate', 'addClass', 'removeClass']);
+		$animate = jasmine.createSpyObj('$animate', ['cancel', 'animate', 'addClass', 'removeClass', 'on']);
 		element = angular.element(document.createElement("div"));
 		$scope = $rootScope.$new(true);
 		$window = document.createElement("div");
 		mockRootScope = _$rootScope_.$new();
-		menuBar = new MenuBarController(element, $scope, $animate, $window, mockRootScope, 0);
+		menuBar = new MenuBarController(element, $scope, $animate, $window, mockRootScope, func => func(), 0);
 		openedElement = document.createElement("div");
+		openedElement.classList.add("ngAnimate-menuBar-content");
 		openedElement.id = "openedElement";
 		document.body.appendChild(openedElement);
 	}));
@@ -85,10 +86,11 @@ describe("menuBarController", () => {
 
 	it("should expose when the menu is opened", () => {
 		$scope.$digest();
-		menuBar.openClose.open("element");
+		menuBar.openClose.open("openedElement");
+		menuBar.openClose.visuallyOpen(sideContentUnitType);
 		$scope.$digest();
 		expect(mockRootScope.menuOpened).toBe(true);
-		menuBar.openClose.close("element");
+		menuBar.openClose.close("openedElement");
 		$scope.$digest();
 		expect(mockRootScope.menuOpened).toBe(false);
 	});

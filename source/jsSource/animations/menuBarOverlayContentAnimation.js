@@ -3,8 +3,9 @@ import Velocity from 'velocity-animate';
 import {partialByObject, partial} from 'utils/functional';
 import {animation} from 'utils/ngAnimation';
 import {ngHidden as classNameFilters} from 'constants/classNames';
-import {menuBarContent as selector} from 'constants/animationSelectors';
-import {menuBarContent as animationTiming} from 'constants/animationTiming';
+import {menuBarOverlayContent as selector} from 'constants/animationSelectors';
+import {menuBarOverlayContent as animationTiming} from 'constants/animationTiming';
+import getStyleProperty from 'utils/getStyleProperty';
 
 const animateOpacity = ({$element, opacity, done}) => {
 	Velocity($element, {
@@ -15,10 +16,18 @@ const animateOpacity = ({$element, opacity, done}) => {
 	}, animationTiming));
 };
 
-const beforeAnimate = ({$element, zIndex, opacity, done}) => {
+const getZindex = ($element, zIndexDelta) => {
+	$element.css("z-index", "");
+	const zIndex = getStyleProperty($element[0], "z-index");
+	const normalizedZIndex = isNaN(zIndex) ? 0 : Number(zIndex);
+	return normalizedZIndex + zIndexDelta;
+};
+
+const beforeAnimate = ({$element, zIndexDelta, opacity, done}) => {
 	Velocity($element, "stop");
 
 	if ($element[0].style.opacity === "") {
+		const zIndex = getZindex($element, zIndexDelta);
 		Velocity.hook($element, "z-index", zIndex);
 		Velocity.hook($element, "opacity", opacity);
 	}
@@ -31,9 +40,9 @@ const init = partial(animation, {
 
 	classNameFilters,
 
-	beforeAddClass: partialByObject(beforeAnimate, {zIndex: 1, opacity: 1}),
+	beforeAddClass: partialByObject(beforeAnimate, {zIndexDelta: 0, opacity: 1}),
 	addClass: partialByObject(animateOpacity, {opacity: 0}),
-	beforeRemoveClass: partialByObject(beforeAnimate, {zIndex: 2, opacity: 0}),
+	beforeRemoveClass: partialByObject(beforeAnimate, {zIndexDelta: 1, opacity: 0}),
 	removeClass: partialByObject(animateOpacity, {opacity: 1}),
 });
 

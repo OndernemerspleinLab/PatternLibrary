@@ -2,7 +2,7 @@ import 'angular';
 import DopApp from 'DopApp';
 
 // List of services that will be extracted from angular
-const serviceNames = [
+export const serviceNames = [
 	"$http",
 	"$animate",
 	"$rootScope",
@@ -17,6 +17,7 @@ const ngServices = {};
 
 getServices.$inject = serviceNames;
 export function getServices(...services) {
+	if (Object.isFrozen(ngServices)) { return; }
 	services.reduce(function (memo, service, index) {
 		const name = serviceNames[index];
 		memo[name] = service;

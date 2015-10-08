@@ -14,8 +14,9 @@ $zIndex: (
 	(
 		name: menuBar,
 		subZIndex: (
-			(name: title),
-			(name: test)
+			contextContent,
+			bar,
+			content
 		),
 	),
 );

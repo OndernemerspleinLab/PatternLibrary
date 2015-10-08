@@ -1,11 +1,12 @@
+import angular from 'angular';
 import {resetAnimations, enableAnimations, disableAnimations} from 'jsTest/testUtils';
-import initAnimation from 'animations/menuBarContentAnimation';
+import initAnimation from 'animations/menuBarSideContentAnimation';
 import Velocity from 'velocity-animate';
 import {ngHidden} from 'constants/classNames';
-import {menuBarContent as animationTiming} from 'constants/animationTiming';
+import {menuBarSideContent as animationTiming} from 'constants/animationTiming';
 import DopApp from 'DopApp';
 
-describe("menuBarContentAnimation", () => {
+describe("menuBarSideContentAnimation", () => {
 
 	beforeEach(() => {
 		spyOn(DopApp, "animation");
@@ -21,14 +22,14 @@ describe("menuBarContentAnimation", () => {
 		const call = DopApp.animation.calls.mostRecent();
 		const args = call.args;
 		const configObj = args[1]();
-		const mockElement = [{ style: {opacity: ""}}];
+		const mockElement = angular.element(document.createElement("div"));
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
 		configObj.beforeRemoveClass(mockElement, ngHidden, mockDone, mockOptions);
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, "stop");
-		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "z-index", 2);
+		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "z-index", 1);
 		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "opacity", 0);
 		expect(mockDone).toHaveBeenCalled();
 	});
@@ -39,7 +40,7 @@ describe("menuBarContentAnimation", () => {
 		const call = DopApp.animation.calls.mostRecent();
 		const args = call.args;
 		const configObj = args[1]();
-		const mockElement = [];
+		const mockElement = angular.element(document.createElement("div"));
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
@@ -59,14 +60,14 @@ describe("menuBarContentAnimation", () => {
 		const call = DopApp.animation.calls.mostRecent();
 		const args = call.args;
 		const configObj = args[1]();
-		const mockElement = [{ style: {opacity: ""}}];
+		const mockElement = angular.element(document.createElement("div"));
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
 		configObj.beforeAddClass(mockElement, ngHidden, mockDone, mockOptions);
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, "stop");
-		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "z-index", 1);
+		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "z-index", 0);
 		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "opacity", 1);
 		expect(mockDone).toHaveBeenCalled();
 	});
@@ -77,7 +78,7 @@ describe("menuBarContentAnimation", () => {
 		const call = DopApp.animation.calls.mostRecent();
 		const args = call.args;
 		const configObj = args[1]();
-		const mockElement = [];
+		const mockElement = angular.element(document.createElement("div"));
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 

@@ -1,18 +1,40 @@
 import angular from 'angular';
-import {debounce} from 'utils/functional';
+import {
+	debounce,
+	// existing,
+} from 'utils/functional';
 import {registerScrollListener} from 'utils/scrollEvent';
 import createOpenClose from 'openClose/singleOpened';
 import ngServices from 'utils/ngServices';
 import * as classNames from 'constants/classNames';
+import {menuBarSideContent} from 'constants/animationSelectors';
 
-const getElement = (id) => {
-	if (!id) {
+export const sideContentUnitType = "sideContent";
+
+const getUnitElement = (unit) => {
+	if (!unit) {
 		return null;
 	}
 
-	const element = document.getElementById(id);
+	return document.getElementById(unit);
+};
 
-	return element;
+const isElementSideContent = element => {
+	const className = menuBarSideContent.replace(/^\./, "");
+
+	if (element && element.classList.contains(className)) {
+		return element;
+	}
+};
+
+const getMenuBarSideContentElement = (unit) => {
+	const element = getUnitElement(unit);
+
+	if (isElementSideContent(element)) {
+		return element;
+	}
+
+	return null;
 };
 
 const cancelAnimation = (animationPromise) => {
@@ -22,9 +44,9 @@ const cancelAnimation = (animationPromise) => {
 };
 
 export default class MenuBarController {
-	static get $inject() { return ['$element', '$scope', '$animate', '$window', '$rootScope']; }
+	static get $inject() { return ['$element', '$scope', '$animate', '$window', '$rootScope', '$timeout']; }
 
-	constructor($element, $scope, $animate, $window, $rootScope, debounceDuration = 100) {
+	constructor($element, $scope, $animate, $window, $rootScope, $timeout, debounceDuration = 100) {
 		this.openClose = createOpenClose();
 		let animationPromise;
 
@@ -37,8 +59,8 @@ export default class MenuBarController {
 
 			if (openedUnit) {
 
-				$scope.$apply(() => {
-					const openedElement = getElement(openedUnit);
+				$timeout(() => {
+					const openedElement = getMenuBarSideContentElement(openedUnit);
 
 					animationPromise = $animate.animate($element, null, { resize: true }, null, {
 						openedElement,
@@ -53,31 +75,49 @@ export default class MenuBarController {
 			this.menuBarRetracted = top > 0;
 		});
 
-		$scope.$watch(this.openClose.getOpenedUnit, (openedUnit, oldOpenedUnit) => {
-			const closedElement = getElement(oldOpenedUnit);
+		const open = (openedUnit, oldOpenedUnit) => {
+			this.openClose.visuallyOpen(sideContentUnitType);
+			const openedElement = getMenuBarSideContentElement(openedUnit);
+			const closedElement = getMenuBarSideContentElement(oldOpenedUnit);
+			$rootScope.menuOpened = Boolean(openedElement);
+
+			if (oldOpenedUnit) {
+				animationPromise = $animate.animate($element, null, { resize: true }, null, {
+					openedElement,
+					closedElement,
+					duration: 100
+				});
+			} else {
+				animationPromise = $animate.addClass($element, classNames.opened, {
+					openedElement
+				});
+			}
+		};
+
+		const close = (oldOpenedUnit) => {
+			const closedElement = getMenuBarSideContentElement(oldOpenedUnit);
+			$rootScope.menuOpened = false;
+			animationPromise = $animate.removeClass($element, classNames.opened, {
+				closedElement
+			});
+
+			if (animationPromise) {
+				animationPromise.then(() => this.openClose.visuallyClose(sideContentUnitType));
+			}
+		};
+
+		const openOrClose = (openedUnit, oldOpenedUnit) => {
 			cancelAnimation(animationPromise);
 
 			if (openedUnit) {
-				$rootScope.menuOpened = true;
-				const openedElement = getElement(openedUnit);
-				if (oldOpenedUnit) {
-					animationPromise = $animate.animate($element, null, { resize: true }, null, {
-						openedElement,
-						closedElement,
-						duration: 100
-					});
-				} else {
-					animationPromise = $animate.addClass($element, classNames.opened, {
-						openedElement
-					});
-				}
+				open(openedUnit, oldOpenedUnit);
 			} else {
-				$rootScope.menuOpened = false;
-				animationPromise = $animate.removeClass($element, classNames.opened, {
-					closedElement
-				});
+				close(oldOpenedUnit);
 			}
-		});
+		};
+
+		$scope.$watch(this.openClose.getOpenedUnit, openOrClose);
+		$scope.$watch(this.openClose.getVisuallyOpenedUnit, () => openOrClose(this.openClose.getOpenedUnit()));
 	}
 
 	isMenuBarRetracted() {

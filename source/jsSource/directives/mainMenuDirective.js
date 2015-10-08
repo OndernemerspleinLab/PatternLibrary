@@ -2,7 +2,8 @@ import DopApp from 'DopApp';
 import controller from 'controllers/mainMenuController';
 import 'animations/menuBarAnimation';
 import {directiveName as parentDirectiveName} from 'directives/menuBarDirective';
-import 'animations/menuBarContentAnimation';
+import 'directives/menuBarSideContentDirective';
+import 'directives/menuBarOverlayContentDirective';
 
 export const directiveName = "mainMenu";
 const controllerAs = 'viewModel';

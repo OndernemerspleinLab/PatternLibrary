@@ -60,10 +60,10 @@
             </button>
         </div>
     </div>
-    <div id="menu" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('menu')">
+    <div id="menu" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isFullyOpened('menu', 'sideContent')">
         {{>organisms-mainMenu}}
     </div>
-    <div id="search" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('search')">
+    <div id="search" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isFullyOpened('search', 'sideContent')">
         <p class="menuBar--title">Zoeken</p>
         <p>
             <input id="text" type="text" placeholder="Waar bent u naar op zoek?">
@@ -75,7 +75,7 @@
             <li><a href="#">belastingaangifte</a></li>
         </ul>
     </div>
-    <div id="profile" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('profile')">
+    <div id="profile" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isFullyOpened('profile', 'sideContent')">
         <p class="menuBar--title">Informatie op maat</p>
         <p>Hier kan de gebruiker zijn profiel instellen en beheren!</p>
         <p class="menuBar--subTitle textLine">Uw favorieten</p>
@@ -93,11 +93,11 @@
         <p class="menuBar--subTitle textLine">Uw berichtenbox</p>
         <p>Koppel uw Berichtenbox aan Ondernemersplein.nl en kijk hier of er nieuwe berichten voor u zijn.</p>
     </div>
-    <div id="share" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('share')">
+    <div id="share" class="menuBar-context-content ngAnimate-menuBar-context-content ng-hide" ng-show="viewModel.openClose.isFullyOpened('share')">
         <p class="menuBar--title">Deel deze pagina</p>
         {{> molecules-social-share }}
     </div>
-    <div id="feedback" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('feedback')">
+    <div id="feedback" class="menuBar-context-content ngAnimate-menuBar-context-content ng-hide" ng-show="viewModel.openClose.isFullyOpened('feedback')">
         <p class="menuBar--title">Geef uw mening</p>
         <form action="#" style="padding: 0 20px;">
             <fieldset class="options">
@@ -114,7 +114,7 @@
         </form>
         <p>Annuleer | Verstuur</p>
     </div>
-    <div id="enquete" class="menuBar-content ngAnimate-menuBar-content ng-hide" ng-show="viewModel.openClose.isOpened('enquete')">
+    <div id="enquete" class="menuBar-context-content ngAnimate-menuBar-context-content ng-hide" ng-show="viewModel.openClose.isFullyOpened('enquete')">
         <p class="menuBar--title">Enquete</p>
         <p>
             Wilt u ons helpen onze website te verbeteren? Vul dan de vragenlijst in!

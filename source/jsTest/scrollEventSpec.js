@@ -1,11 +1,9 @@
 import {scrollEventRunner, registerScrollListener} from 'utils/scrollEvent';
 
 import mock from 'jsTest/ngMock';
-import prepNgServices from 'jsTest/prepNgServices';
 const {inject} = mock;
 
 describe("scrollEvent", () => {
-	prepNgServices();
 
 	describe("registerScrollListener", () => {
 		it("should register a listener in the provided list", () => {
@@ -51,11 +49,12 @@ describe("scrollEvent", () => {
 			scrollEventRunner($window, $document, $timeout, 0);
 			registerScrollListener(listener);
 			registerScrollListener(listener2);
+
+			expect(listener).toHaveBeenCalledWith({ top: 0, left: 0 });
+			expect(listener2).toHaveBeenCalledWith({ top: 0, left: 0 });
+
 			$window.scrollX = 10;
 			$window.scrollY = 20;
-
-			expect(listener).not.toHaveBeenCalled();
-			expect(listener2).not.toHaveBeenCalled();
 
 			$window.dispatchEvent(scrollEvent);
 

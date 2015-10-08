@@ -1,5 +1,7 @@
 // Start running specs
 // import 'global';
+import prepNgServices from 'jsTest/prepNgServices';
+prepNgServices();
 import 'jsTest/DopAppSpec';
 import 'jsTest/ngServicesSpec';
 import 'jsTest/functionalSpec';
@@ -14,7 +16,7 @@ import 'jsTest/cssMatrixSpec';
 // import 'jsTest/seeThroughScrollAnimationSpec';
 // import 'jsTest/seeThroughScrollAnimationFunctionsSpec';
 import 'jsTest/menuBarAnimationSpec';
-import 'jsTest/menuBarContentAnimationSpec';
+import 'jsTest/menuBarSideContentAnimationSpec';
 
 // controllers
 // import 'jsTest/seeThroughScrollControllerSpec';

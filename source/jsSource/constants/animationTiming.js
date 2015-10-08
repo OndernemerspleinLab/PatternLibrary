@@ -10,7 +10,12 @@ export const height = {
 	delay: 0,
 };
 
-export const menuBarContent = {
+export const menuBarSideContent = {
+	duration: 400,
+	delay: 0,
+};
+
+export const menuBarOverlayContent = {
 	duration: 400,
 	delay: 0,
 };

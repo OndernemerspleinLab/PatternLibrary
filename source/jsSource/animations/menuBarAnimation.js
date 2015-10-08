@@ -46,8 +46,8 @@ export const animateTranslateX = ($element, translateX, done) => {
 };
 
 export const animateOpen = ({$element, options: {openedElement}, done}) => {
-	const width = getWidth(openedElement);
-	animateTranslateX($element, width, done);
+	const translateX = openedElement ? getWidth(openedElement) : getTranslateX($element[0]);
+	animateTranslateX($element, translateX, done);
 };
 
 export const animateClose = ({$element, options: {openedElement}, done}) => {
