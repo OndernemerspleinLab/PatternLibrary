@@ -98,10 +98,10 @@
       "baseURL": "source/jsSource"
     },
     "dependencies": {
-      "angular": "npm:angular@^1.4.3",
-      "angular-animate": "npm:angular-animate@^1.4.3",
-      "angular-mocks": "npm:angular-mocks@^1.4.3",
-      "angular-route": "npm:angular-route@^1.4.3",
+      "angular": "npm:angular@1.4.7",
+      "angular-animate": "npm:angular-animate@1.4.7",
+      "angular-mocks": "npm:angular-mocks@1.4.7",
+      "angular-route": "npm:angular-route@1.4.7",
       "fastclick": "npm:fastclick@^1.0.6",
       "modernizr": "github:Modernizr/Modernizr@^2.8.3",
       "velocity-animate": "npm:velocity-animate@^1.2.2"
