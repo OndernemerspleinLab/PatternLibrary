@@ -1,35 +1,27 @@
 import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
+import Modernizr from 'modernizr';
 import {partialByObject, partial} from 'utils/functional';
 import {animation} from 'utils/ngAnimation';
-import {ngHidden as classNameFilters} from 'constants/classNames';
+import {hidden as classNameFilters} from 'constants/classNames';
 import {menuBarOverlayContent as selector} from 'constants/animationSelectors';
 import {menuBarOverlayContent as animationTiming} from 'constants/animationTiming';
-import getStyleProperty from 'utils/getStyleProperty';
+const transformPropName = Modernizr.prefixed("transform");
 
-const animateOpacity = ({$element, opacity, done}) => {
+const animateOpacity = ({$element, translateX, done}) => {
 	Velocity($element, {
-		opacity,
+		translateX,
 	}, Object.assign({
 		queue: false,
 		complete: done
 	}, animationTiming));
 };
 
-const getZindex = ($element, zIndexDelta) => {
-	$element.css("z-index", "");
-	const zIndex = getStyleProperty($element[0], "z-index");
-	const normalizedZIndex = isNaN(zIndex) ? 0 : Number(zIndex);
-	return normalizedZIndex + zIndexDelta;
-};
-
-const beforeAnimate = ({$element, zIndexDelta, opacity, done}) => {
+const beforeOpenAnimate = ({$element, done}) => {
 	Velocity($element, "stop");
 
-	if ($element[0].style.opacity === "") {
-		const zIndex = getZindex($element, zIndexDelta);
-		Velocity.hook($element, "z-index", zIndex);
-		Velocity.hook($element, "opacity", opacity);
+	if ($element[0].style[transformPropName] === "") {
+		Velocity.hook($element, "translateX", "-100%");
 	}
 	done();
 };
@@ -40,10 +32,9 @@ const init = partial(animation, {
 
 	classNameFilters,
 
-	beforeAddClass: partialByObject(beforeAnimate, {zIndexDelta: 0, opacity: 1}),
-	addClass: partialByObject(animateOpacity, {opacity: 0}),
-	beforeRemoveClass: partialByObject(beforeAnimate, {zIndexDelta: 1, opacity: 0}),
-	removeClass: partialByObject(animateOpacity, {opacity: 1}),
+	addClass: partialByObject(animateOpacity, {translateX: "-100%"}),
+	beforeRemoveClass: beforeOpenAnimate,
+	removeClass: partialByObject(animateOpacity, {translateX: "0%"}),
 });
 
 init();

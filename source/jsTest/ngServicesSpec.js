@@ -10,6 +10,7 @@ describe("ngServices", function () {
 		"$q",
 		"$timeout",
 		"$document",
+		"$parse",
 		"$window"
 	];
 	DopApp.run(getServices);

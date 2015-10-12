@@ -2,7 +2,7 @@ import angular from 'angular';
 import {resetAnimations, enableAnimations, disableAnimations} from 'jsTest/testUtils';
 import initAnimation from 'animations/menuBarSideContentAnimation';
 import Velocity from 'velocity-animate';
-import {ngHidden} from 'constants/classNames';
+import {hidden} from 'constants/classNames';
 import {menuBarSideContent as animationTiming} from 'constants/animationTiming';
 import DopApp from 'DopApp';
 
@@ -26,7 +26,7 @@ describe("menuBarSideContentAnimation", () => {
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
-		configObj.beforeRemoveClass(mockElement, ngHidden, mockDone, mockOptions);
+		configObj.beforeRemoveClass(mockElement, hidden, mockDone, mockOptions);
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, "stop");
 		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "z-index", 1);
@@ -44,7 +44,7 @@ describe("menuBarSideContentAnimation", () => {
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
-		configObj.removeClass(mockElement, ngHidden, mockDone, mockOptions);
+		configObj.removeClass(mockElement, hidden, mockDone, mockOptions);
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, {
 			opacity: 1
@@ -64,7 +64,7 @@ describe("menuBarSideContentAnimation", () => {
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
-		configObj.beforeAddClass(mockElement, ngHidden, mockDone, mockOptions);
+		configObj.beforeAddClass(mockElement, hidden, mockDone, mockOptions);
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, "stop");
 		expect(Velocity.hook).toHaveBeenCalledWith(mockElement, "z-index", 0);
@@ -82,7 +82,7 @@ describe("menuBarSideContentAnimation", () => {
 		const mockOptions = {};
 		const mockDone = jasmine.createSpy();
 
-		configObj.addClass(mockElement, ngHidden, mockDone, mockOptions);
+		configObj.addClass(mockElement, hidden, mockDone, mockOptions);
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, {
 			opacity: 0

@@ -9,6 +9,7 @@ export const serviceNames = [
 	"$q",
 	"$timeout",
 	"$document",
+	"$parse",
 	"$window"
 ];
 

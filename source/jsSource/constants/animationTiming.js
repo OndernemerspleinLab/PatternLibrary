@@ -16,6 +16,7 @@ export const menuBarSideContent = {
 };
 
 export const menuBarOverlayContent = {
-	duration: 400,
+	duration: 800,
 	delay: 0,
+	easing: [200, 20],
 };

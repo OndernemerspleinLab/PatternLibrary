@@ -103,7 +103,7 @@ module.exports = function(grunt, devOrProd) {
 					livereload: false,
 				},
 				files: ['source/jsSource/**/*.js', '!source/jsSource/jspm_packages/**', 'source/jsTest/**/*.js'],
-				tasks: ['karma:background:run'],
+				tasks: ['tests'],
 			},
 		},
 	};

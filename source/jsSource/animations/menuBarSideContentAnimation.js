@@ -2,7 +2,7 @@ import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
 import {partialByObject, partial} from 'utils/functional';
 import {animation} from 'utils/ngAnimation';
-import {ngHidden as classNameFilters} from 'constants/classNames';
+import {hidden as classNameFilters} from 'constants/classNames';
 import {menuBarSideContent as selector} from 'constants/animationSelectors';
 import {menuBarSideContent as animationTiming} from 'constants/animationTiming';
 import getStyleProperty from 'utils/getStyleProperty';

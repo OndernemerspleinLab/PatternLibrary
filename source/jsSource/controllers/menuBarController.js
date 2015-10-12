@@ -22,9 +22,12 @@ const getUnitElement = (unit) => {
 const isElementSideContent = element => {
 	const className = menuBarSideContent.replace(/^\./, "");
 
-	if (element && element.classList.contains(className)) {
-		return element;
-	}
+	return Boolean(element) && element.classList.contains(className);
+};
+
+const isUnitSideContent = unit => {
+	const element = getUnitElement(unit);
+	return isElementSideContent(element);
 };
 
 const getMenuBarSideContentElement = (unit) => {
@@ -49,6 +52,7 @@ export default class MenuBarController {
 	constructor($element, $scope, $animate, $window, $rootScope, $timeout, debounceDuration = 100) {
 		this.openClose = createOpenClose();
 		let animationPromise;
+		this.sideContentUnitType = sideContentUnitType;
 
 		angular.element($window).on("resize", debounce(() => {
 			if (animationPromise) {
@@ -76,10 +80,10 @@ export default class MenuBarController {
 		});
 
 		const open = (openedUnit, oldOpenedUnit) => {
-			this.openClose.visuallyOpen(sideContentUnitType);
 			const openedElement = getMenuBarSideContentElement(openedUnit);
 			const closedElement = getMenuBarSideContentElement(oldOpenedUnit);
 			$rootScope.menuOpened = Boolean(openedElement);
+			this.openClose.visuallyOpen(sideContentUnitType);
 
 			if (oldOpenedUnit) {
 				animationPromise = $animate.animate($element, null, { resize: true }, null, {
@@ -109,7 +113,7 @@ export default class MenuBarController {
 		const openOrClose = (openedUnit, oldOpenedUnit) => {
 			cancelAnimation(animationPromise);
 
-			if (openedUnit) {
+			if (isUnitSideContent(openedUnit) && this.openClose.canBeVisuallyOpened(sideContentUnitType)) {
 				open(openedUnit, oldOpenedUnit);
 			} else {
 				close(oldOpenedUnit);

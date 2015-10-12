@@ -69,7 +69,6 @@ export default class SeeThroughScrollController {
 			}
 		};
 
-		window.sts = this;
 		$scope.$watch(() => this.isParentOpened && this.isParentOpened(), (opened) => {
 			if(opened) {
 				resize();
