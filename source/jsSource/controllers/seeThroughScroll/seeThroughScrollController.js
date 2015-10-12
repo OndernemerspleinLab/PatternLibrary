@@ -61,7 +61,7 @@ export default class SeeThroughScrollController {
 		this.register = partial(registerElement, unitStore);
 
 
-		const resize = () => {
+		const resize = this.resize = () => {
 			const fullyOpenedUnit = getFullyOpenedUnit();
 			if (fullyOpenedUnit) {
 				const unit = unitStore[fullyOpenedUnit];
@@ -69,10 +69,9 @@ export default class SeeThroughScrollController {
 			}
 		};
 
-		this.resize = resize;
-
-		$scope.$watch(() => this.isParentFullyOpened && this.isParentFullyOpened(), (isOpened) => {
-			if(isOpened) {
+		window.sts = this;
+		$scope.$watch(() => this.isParentOpened && this.isParentOpened(), (opened) => {
+			if(opened) {
 				resize();
 			}
 		});
