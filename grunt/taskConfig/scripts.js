@@ -86,17 +86,11 @@ module.exports = function(grunt, devOrProd) {
 		watch: {
 			js: {
 				options: {
-					livereload: false,
+					livereload: true,
 				},
 				files: ['source/jsSource/**/*.js', '!source/jsSource/jspm_packages/**'],
 				tasks: ['scripts'],
 
-			},
-			jsDist: {
-				options: {
-					livereload: true,
-				},
-				files: ['public/js/**/*.js', '!public/js/jspm_packages/**'],
 			},
 			tests: {
 				options: {

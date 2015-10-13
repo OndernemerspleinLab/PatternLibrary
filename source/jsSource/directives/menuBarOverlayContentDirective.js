@@ -4,8 +4,6 @@ import ngServices from 'utils/ngServices';
 import {hidden as hiddenClass} from 'constants/classNames';
 import 'animations/menuBarOverlayContentAnimation';
 
-
-
 export const directiveName = "menuBarOverlayContent";
 
 export const menuBarOverlayContentDirective = () => ({
@@ -15,12 +13,22 @@ export const menuBarOverlayContentDirective = () => ({
 		const {isFullyOpened, visuallyOpen, visuallyClose} = parentDirective.openClose;
 		const unitName = $attrs.unitName;
 
-		const openElement = $openedElement => ngServices.$animate.removeClass($openedElement, hiddenClass);
-		const closeElement = $closedElement => ngServices.$animate.addClass($closedElement, hiddenClass);
+		const openElement = ($openedElement, buttonElement) => ngServices.$animate.removeClass($openedElement, hiddenClass, {buttonElement});
+		const closeElement = ($closedElement) => ngServices.$animate.addClass($closedElement, hiddenClass);
+
+		const findButton = (unitName) => {
+			const {elementStore} = parentDirective.elementRegistar;
+			const registration = elementStore.find(({data: {type, unitName: name}}) => type === 'button' && name === unitName);
+
+			if (registration) {
+				return registration.element;
+			}
+		};
 
 		const open = ($openedElement, openedUnitType) => {
 			visuallyOpen(openedUnitType);
-			return openElement($openedElement);
+			const buttonElement = findButton(unitName);
+			return openElement($openedElement, buttonElement);
 		};
 
 		const close = ($closedElement, closedUnitType) => {

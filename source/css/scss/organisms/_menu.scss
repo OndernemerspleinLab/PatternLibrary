@@ -81,6 +81,7 @@
 
 	&-context {
 		margin-top: auto;
+		padding-bottom: $halfSpace;
 	}
 
 	&--title {
@@ -146,24 +147,28 @@
 		color: inherit;
 	}
 
-	&.menuBar-button--context {
+	&.is-opened {
+		background-color: getColor(hemelblauw lightest);
+
+		.menuBar-icon {
+			fill: getColor(zwart);
+			transform: scale(1.1);
+		}
+	}
+
+	&--context {
 
 		@include before("") {
 			position: absolute;
 			left: 0;
 			top: 0;
 			bottom: 0;
-			right: -4px;
+			right: -5px;
 			background-color: getColor(hemelblauw lightest);
 			transform: translateX(-100%);
-			transition: transform 200ms 400ms;
+			transition: transform 200ms 100ms;
 		}
-	}
-
-	&.is-opened {
-		background-color: getColor(hemelblauw lightest);
-
-		&.menuBar-button--context {
+		&.is-opened {
 			background-color: none;
 
 			@include hoverEtc {
@@ -176,11 +181,6 @@
 				transform: translateX(0);
 			}
 		}
-
-		.menuBar-icon {
-			fill: getColor(zwart);
-			transform: scale(1.1);
-		}
 	}
 
 	&-inner {
@@ -192,6 +192,8 @@
 	}
 
 	&-text {
+		position: relative;
+
 		@include mqLesserThan(large) {
 			@include accHide;
 		}
@@ -263,15 +265,21 @@
 	bottom: 0;
 	left: 0;
 	background: getColor(hemelblauw lightest);
-	padding-left: $menuBarWidthSmall;
+	border-left: $menuBarWidthSmall solid transparent;
+	width: 32rem;
+	max-width: 90vw;
+	max-height: calc(100vh - 2rem);
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
 
 	@include zIndex(menuBar contextContent);
 
 	@include mqGreaterThan(small) {
-		padding-left: $menuBarWidthLarge;
+		border-left-width: $menuBarWidthLarge;
 	}
 
 	@include mqGreaterThan(large) {
-		padding-left: $menuBarWidthExtraLarge;
+		border-left-width: $menuBarWidthExtraLarge;
 	}
 }
