@@ -1,20 +1,5 @@
 /* FOOTER */
 
-.content-footer {
-	border-top: 1px solid getColor(grijs light);
-	padding-bottom: 1rem;
-
-	ul {
-		margin-left: 0;
-		.verticalItem:first-child {
-			margin-left: 0;
-		}
-		.partnerLogo {
-			height: 3.5rem;
-		}
-	}
-}
-
 .footer {
 	background: getColor(grijs light);
 	@include insideMarginTop(0.5rem);

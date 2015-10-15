@@ -4,21 +4,23 @@
 
 .btn {
 	display: inline-block;
-	background: getColor(grijs darkest);
+	background: getColor(hemelblauw default);
 	color: getColor(wit);
 	line-height: 1;
-	font-weight: bold;
+	//font-weight: bold;
 	padding: $pad;
 	border: 0;
 	text-align: center;
+	text-transform: uppercase;
 
 	&:hover, &:focus {
 		color: getColor(wit);
+		background: getColor(hemelblauw darkest);
 	}
 
 	&.disabled {
 		background: getColor(grijs light);
-		color: getColor(grijs default);
+		color: getColor(grijs darkest);
 	}
 }
 
@@ -29,7 +31,7 @@
 .btn-large {
 	padding: $pad-half;
 	text-transform: uppercase;
-	background: getColor(grijs default);
+	background: getColor(hemelblauw default);
 	font-size: 1.4rem;
 	font-weight: normal;
 }

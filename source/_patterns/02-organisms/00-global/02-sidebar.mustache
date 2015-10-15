@@ -50,14 +50,22 @@
                     <span class="menuBar-button-text">Uw mening</span>
                 </div>
             </button>
-            <button ng-click="viewModel.openClose.toggle('enquete')"  register-element="{'type': 'button', 'unitName': 'enquete'}" class="menuBar-button menuBar-button--context menuBar-button--enquete" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('enquete')}">
+            <button ng-click="viewModel.openClose.toggle('backtotop')"  register-element="{'type': 'button', 'unitName': 'backtotop'}" class="menuBar-button menuBar-button--context menuBar-button--backtotop" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('backtotop')}">
+                <div class="menuBar-button-inner">
+                    <svg aria-hidden="true" class="menuBar-icon">
+                        <use xlink:href="#figures-pijl-boven-1004"></use>
+                    </svg>
+                    <span class="menuBar-button-text">Naar boven</span>
+                </div>
+            </button>
+            <!--button ng-click="viewModel.openClose.toggle('enquete')"  register-element="{'type': 'button', 'unitName': 'enquete'}" class="menuBar-button menuBar-button--context menuBar-button--enquete" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('enquete')}">
                 <div class="menuBar-button-inner">
                     <svg aria-hidden="true" class="menuBar-icon">
                         <use xlink:href="#figures-enquete"></use>
                     </svg>
-                    <span class="menuBar-button-text">Enquête</span>
+                    <span class="menuBar-button-text">Enquete</span>
                 </div>
-            </button>
+            </button-->
         </div>
     </div>
     <div id="menu" class="menuBar-sideContent ngAnimate-menuBar-sideContent is-hidden" menu-bar-side-content unit-name="menu">

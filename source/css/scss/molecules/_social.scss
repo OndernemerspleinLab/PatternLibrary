@@ -119,7 +119,11 @@
 		}
 
 		&-foreground {
-			fill: getColor(grijs light);
+			fill: getColor(wit);
+
+			.footer & {
+				fill: getColor(grijs light);
+			}
 		}
 	}
 

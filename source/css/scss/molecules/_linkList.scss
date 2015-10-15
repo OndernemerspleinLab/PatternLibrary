@@ -5,8 +5,15 @@
 		margin-left: 0;
 
 		.interfaceLink {
-			color: getColor(grijs default);
-			fill: getColor(grijs darkest);
+			color: getColor(grijs rightcolumn);
+			fill: getColor(grijs default);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: getColor(hemelblauw default);
+				fill: getColor(hemelblauw default);
+			}
 		}
 	}
 }

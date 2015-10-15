@@ -75,13 +75,30 @@ abbr {
 		}
 	}
 	&--afzender {
-		text-align: center;
+		text-align: left;
 		position: relative;
+		border-top: 1px solid getColor(grijs light);
 		span {
 			background-color: white;
-			padding: 0 1rem;
+			padding: 0 1rem 0 0;
 			position: absolute;
-			top: -27px;
+			top: -14px;
+		}
+	}
+}
+
+//Source Block
+.sourceBlock {
+
+	padding: 1rem 0;
+
+	ul {
+		margin-left: 0;
+		.verticalItem:first-child {
+			margin-left: 0;
+		}
+		.partnerLogo {
+			height: 3.5rem;
 		}
 	}
 }
