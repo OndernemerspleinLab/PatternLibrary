@@ -85,18 +85,18 @@ $quarterSpace: $space/4; // 0.5rem
 	}
 
 	&--full {
-		flex-basis: 100%;
+		width: 100%;
 	}
 
 	&--half {
-		@include setPropWithMq(greater, flex-basis, (
+		@include setPropWithMq(greater, width, (
 			all: 100%,
 			smallMedium: calc(50% - #{$space}),
 		));
 	}
 
 	&--quarter {
-		@include setPropWithMq(greater, flex-basis, (
+		@include setPropWithMq(greater, width, (
 			all: calc(50% - #{$space}),
 			smallMedium: calc(#{100%*1/3} - #{$space}),
 			mediumLarge: calc(25% - #{$space})
@@ -104,7 +104,7 @@ $quarterSpace: $space/4; // 0.5rem
 	}
 
 	&--threeQuarter {
-		@include setPropWithMq(greater, flex-basis, (
+		@include setPropWithMq(greater, width, (
 			all: 100%,
 			smallMedium: calc(#{100%*2/3} - #{$space}),
 			mediumLarge: calc(75% - #{$space})
@@ -112,7 +112,7 @@ $quarterSpace: $space/4; // 0.5rem
 	}
 
 	&--third {
-		@include setPropWithMq(greater, flex-basis, (
+		@include setPropWithMq(greater, width, (
 			all: 100%,
 			smallMedium: calc(#{100%*1/2} - #{$space}),
 			mediumLarge: calc(#{100%*1/3} - #{$space})
@@ -120,7 +120,7 @@ $quarterSpace: $space/4; // 0.5rem
 	}
 
 	&--twoThird {
-		@include setPropWithMq(greater, flex-basis, (
+		@include setPropWithMq(greater, width, (
 			all: 100%,
 			mediumLarge: calc(#{100%*2/3} - #{$space})
 		));
