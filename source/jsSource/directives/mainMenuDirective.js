@@ -17,9 +17,10 @@ export const mainMenuDirective = () => ({
 	require: `?^${parentDirectiveName}`, // TODO parent directive checken als deze open gaat
 	link: function ($scope, $element, $attrs, parentDirective) {
 		if (parentDirective) {
-			const isOpened = parentDirective.openClose.isOpened;
+			const {openClose: {isFullyOpened}, sideContentUnitType} = parentDirective;
 
-			$scope[controllerAs].isOpened = isOpened;
+			$scope[controllerAs].isFullyOpened = isFullyOpened;
+			$scope[controllerAs].menuType = sideContentUnitType;
 		}
 	},
 });

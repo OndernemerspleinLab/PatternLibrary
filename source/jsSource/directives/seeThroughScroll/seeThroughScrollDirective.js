@@ -13,7 +13,7 @@ export const seeThroughtScrollDirective = () => ({
 	require: `?^${parentDirectiveName}`, // TODO parent directive checken als deze open gaat
 	link: function ($scope, $element, $attrs, parentDirective) {
 		if (parentDirective) {
-			$scope[controllerAs].isParentOpened = parentDirective.isMenuOpened;
+			$scope[controllerAs].isParentFullyOpened = parentDirective.isMenuFullyOpened;
 		}
 	},
 });
