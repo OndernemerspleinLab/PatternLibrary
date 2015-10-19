@@ -103,6 +103,12 @@
     </div>
     <div id="share" class="menuBar-overlayContent ngAnimate-menuBar-overlayContent is-hidden" menu-bar-overlay-content unit-name="share">
         {{> molecules-social-share }}
+        <button class="close share-close" ng-click="viewModel.openClose.close('share')">
+            <span class="close-text">Sluiten</span>
+            <svg class="close-icon" aria-hidden="true">
+                <use xlink:href="#figures-sluiten"></use>
+            </svg>
+        </button>
     </div>
     <div id="feedback" class="menuBar-overlayContent ngAnimate-menuBar-overlayContent is-hidden" menu-bar-overlay-content unit-name="feedback">
         <p class="menuBar--title">Geef uw mening</p>
