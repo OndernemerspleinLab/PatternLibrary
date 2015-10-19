@@ -3,13 +3,6 @@
 
 // Social Base
 
-.socials {
-	margin: {
-		top: 0.5rem;
-		bottom: 0.9rem;
-	}
-}
-
 .social {
 	&-link {
 		display: block;
@@ -129,5 +122,9 @@
 
 	&--share {
 		margin-left: 0;
+	}
+
+	&--follow {
+		margin: 0.5em 0 0.9em 0;
 	}
 }

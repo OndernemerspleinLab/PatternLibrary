@@ -72,6 +72,15 @@ abbr {
 	&--date {
 		@include mqGreaterThan(smallMedium) {
 			float: right;
+
+			span {
+				display: block;
+			}
+		}
+		@include mqGreaterThan(extraLarge) {
+			span {
+				display: inline;
+			}
 		}
 	}
 	&--afzender {
