@@ -1,6 +1,10 @@
 .linkList {
 	@include noBullets;
 
+	.block-crs & {
+		margin-left: 0;
+	}
+
 	.aside & {
 		margin-left: 0;
 

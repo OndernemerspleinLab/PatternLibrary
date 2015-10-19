@@ -14,16 +14,20 @@
 				<div class="column column--full">
 					<h2>Wat de meeste ondernemers willen weten</h2>
 					<ul>
-						<li><a href="{{ link.templates-contentpage }}">Een rechtsvorm kiezen</a></li>
-						<li><a href="{{ link.templates-contentpage }}">De VAR: onmisbaar voor zzp'ers</a></li>
-						<li><a href="{{ link.templates-contentpage }}">In 10 stappen naar een eigen bedrijf</a></li>
-						<li><a href="{{ link.templates-contentpage }}">Financiering vinden</a></li>
-						<li><a href="{{ link.templates-contentpage }}">Een ondernemingsplan maken</a></li>
-						<li><a href="{{ link.templates-contentpage }}">Btw-aangifte doen voor starters</a></li>
+						<li><a href="{{ link.templates-contentpage-base }}">Een rechtsvorm kiezen</a></li>
+						<li><a href="{{ link.templates-contentpage-base }}">De VAR: onmisbaar voor zzp'ers</a></li>
+						<li><a href="{{ link.templates-contentpage-base }}">In 10 stappen naar een eigen bedrijf</a></li>
+						<li><a href="{{ link.templates-contentpage-base }}">Financiering vinden</a></li>
+						<li><a href="{{ link.templates-contentpage-base }}">Een ondernemingsplan maken</a></li>
+						<li><a href="{{ link.templates-contentpage-base }}">Btw-aangifte doen voor starters</a></li>
 					</ul>
 				</div>
 			</div>
+
 			<div class="layoutContainer gridContainer">
+				<div class="column column--full">
+					<h3>Thema's</h3>
+				</div>
 				<div class="column column--third">
 					<ul>
 						<li><a href="{{ link.templates-theme }}">Personeel</a></li>
@@ -62,28 +66,21 @@
 					<h3>Regio</h3>
 					<p>Ruimte voor regio blok</p>
 				</div>
-				<div class="column column--third">
-					<h3><span class="yellow-marker">Situaties</span></h3>
-					<ul>
-						<li><a href="#situatie1">Ik wil een nieuw idee realiseren</a></li>
-						<li><a href="#situatie2">Ik heb geld nogdig voor mijn bedrijf</a></li>
-						<li><a href="#situatie3">Ik wil starten met een uitvinding</a></li>
-					</ul>
-				</div>
+				{{> organisms-crsblok-linklijst}}
 			</div>
 			<div class="layoutContainer gridContainer">
 				<div class="column column--full">
 					<h2>Direct regelen</h2>
 					<ul class="interfaceLinkList triple-list">
-                        <li><a href="#">Adressenbestand</a></li>
-                        <li><a href="#">VAR aanvragen</a></li>
-                        <li><a href="#">Omgevingsvergunning</a></li>
-                        <li><a href="#">Aftrek voor speur- en ontwikkelingswerk (WBSO)</a></li>
-                        <li><a href="#">Afval </a></li>
-                        <li><a href="#">Uw bedrijf en het milieu</a></li>
-                        <li><a href="#">Geluid</a></li>
+                        <li><a href="{{ link.templates-contentpage-base }}">Adressenbestand</a></li>
+                        <li><a href="{{ link.templates-contentpage-base }}">VAR aanvragen</a></li>
+                        <li><a href="{{ link.templates-contentpage-base }}">Omgevingsvergunning</a></li>
+                        <li><a href="{{ link.templates-contentpage-base }}">Aftrek voor speur- en ontwikkelingswerk (WBSO)</a></li>
+                        <li><a href="{{ link.templates-contentpage-base }}">Afval </a></li>
+                        <li><a href="{{ link.templates-contentpage-base }}">Uw bedrijf en het milieu</a></li>
+                        <li><a href="{{ link.templates-contentpage-base }}">Geluid</a></li>
                     </ul>
-                    <a href="#meer">Wat kan ik nog meer direct regelen?</a>
+                    <a href="{{ link.templates-contentpage-base }}">Wat kan ik nog meer direct regelen?</a>
 				</div>
 			</div>
 			<div class="layoutContainer gridContainer">

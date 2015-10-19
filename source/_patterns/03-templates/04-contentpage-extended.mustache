@@ -7,8 +7,8 @@
 				<div class="column column--twoThird">
 					<header class="article-header">
 						<h1>Marktonderzoek doen</h1>
-						<div class="infoText infoText--source"><span class="yellow-marker">Geplaatst door: {{ author.partner }}</span></div>
-						<div class="infoText infoText--date"><span class="yellow-marker">Laatste update: <time datetime="2015-07-14T10:32+00:00">14 juli 2015</time></span></div>
+						{{> molecules-bronhouder-text }}
+						{{> molecules-laatste-update }}
 					</header>
 					{{> molecules-intro-text }}
 					<div class="infoText"><span class="yellow-marker">Ingangsdatum: <time datetime="2015-07-14T10:32+00:00">1 januari 2016</time></span></div>
@@ -25,7 +25,7 @@
 							<li><a href="#3">Brancheonderzoek</a></li>
 						</ul>
 					</div>
-					{{> molecules-social-share }}
+					{{> molecules-bronhouder-contentfooter }}
 				</div>
 				<div class="column column--third aside">
 					{{> organisms-contactblok }}
@@ -114,10 +114,7 @@
 			</div>
 			<div class="layoutContainer gridContainer">
 				{{> organisms-promoblok}}
-				<div class="column column--third">
-					<h3><span class="yellow-line">CRS 1</span></h3>
-					<p>Bijvoorbeeld: Forum</p>
-				</div>
+				{{> organisms-crsblok-linklijst}}
 				<div class="column column--third">
 					<h3><span class="yellow-line">CRS 2</span></h3>
 					<p>Bijvoorbeeld: Bijeenkomsten</p>
