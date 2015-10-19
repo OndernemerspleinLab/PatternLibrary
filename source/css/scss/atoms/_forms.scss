@@ -130,3 +130,14 @@ input[type="search"]::-webkit-search-decoration {
 	border-left: 1px solid getColor(grijs default);
 	color: getColor(grijs default);
 }
+
+
+/* Form Buttons */
+.formButton {
+	&-cancel {
+		float: left;
+	}
+	&-submit {
+		float: right;
+	}
+}

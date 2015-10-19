@@ -1,0 +1,26 @@
+<button class="close share-close" ng-click="viewModel.openClose.close('feedback')">
+    <span class="close-text">Sluiten</span>
+    <svg class="close-icon" aria-hidden="true">
+        <use xlink:href="#figures-sluiten"></use>
+    </svg>
+</button>
+<form action="#" class="feedback-form">
+    <fieldset class="options">
+        <legend>Heeft deze informatie u geholpen?</legend>
+        <ul class="gridContainer u-noBullets">
+            <li class="verticalItem"><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio">Ja</label></li>
+            <li class="verticalItem"><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio" checked="checked">Nee</label></li>
+        </ul>
+        <div class="field-container">
+            <label for="textarea">
+                Hoe kunnen wij deze informatie verbeteren?
+                <span class="textLine"><em>(optioneel, maximaal 1000 tekens)</em></span>
+            </label>
+            <textarea id="textarea" rows="3" cols="48" placeholder=""></textarea>
+        </div>
+    </fieldset>
+</form>
+<p>
+    <a href="#" class="formButton-cancel">Annuleer</a>
+    <a href="#" class="formButton-submit btn">Verstuur</a>
+</p>

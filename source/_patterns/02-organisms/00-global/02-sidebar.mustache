@@ -111,27 +111,22 @@
         </button>
     </div>
     <div id="feedback" class="menuBar-overlayContent ngAnimate-menuBar-overlayContent is-hidden" menu-bar-overlay-content unit-name="feedback">
-        <p class="menuBar--title">Geef uw mening</p>
-        <form action="#" style="padding: 0 20px;">
-            <fieldset class="options">
-                <legend>Heeft deze informatie u geholpen?</legend>
-                <ul>
-                    <li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked">Ja</label></li>
-                    <li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio">Nee</label></li>
-                </ul>
-                <div class="field-container">
-                    <label for="textarea">Wat vindt u goed op deze pagina (maximaal 1000 tekens)?</label>
-                    <textarea id="textarea" rows="3" cols="48" placeholder=""></textarea>
-                </div>
-            </fieldset>
-        </form>
-        <p>Annuleer | Verstuur</p>
+        {{> organisms-sidebar-feedback }}
     </div>
     <div id="enquete" class="menuBar-overlayContent ngAnimate-menuBar-overlayContent is-hidden" menu-bar-overlay-content unit-name="enquete">
-        <p class="menuBar--title">Enquete</p>
+        <button class="close enquete-close" ng-click="viewModel.openClose.close('enquete')">
+            <span class="close-text">Sluiten</span>
+            <svg class="close-icon" aria-hidden="true">
+                <use xlink:href="#figures-sluiten"></use>
+            </svg>
+        </button>
         <p>
-            Wilt u ons helpen onze website te verbeteren? Vul dan de vragenlijst in!
+            Wij zijn benieuwd naar uw ervaringen met de website. Wilt u daarom een vragenlijst invullen? Dit duurt maximaal 5 minuten.
         </p>
-        <p>Ja / Nee / Herinner mij over 10 paginas</p>
+        <p>
+            <a href="#" class="btn">Ja</a>
+            <a href="#" class="btn">Nee</a>
+            <a href="#" class="btn">Herinner mij later</a>
+        </p>
     </div>
 </div>
