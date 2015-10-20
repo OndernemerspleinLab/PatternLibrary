@@ -20,3 +20,7 @@ export const menuBarOverlayContent = {
 	delay: 0,
 	easing: [200, 20],
 };
+
+export const scrollDocument = {
+	duration: 400,
+};

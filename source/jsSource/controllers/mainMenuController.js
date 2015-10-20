@@ -1,4 +1,3 @@
-// import {partial} from 'utils/functional';
 import createOpenClose from 'openClose/singleOpened';
 export default class MenuBarController {
 	static get $inject() { return ['$attrs']; }

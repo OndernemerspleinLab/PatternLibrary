@@ -1,9 +1,5 @@
-import angular from 'angular';
-import {
-	debounce,
-	// existing,
-} from 'utils/functional';
 import {registerScrollListener} from 'utils/scrollEvent';
+import {registerResizeListener} from 'utils/resizeEvent';
 import createOpenClose from 'openClose/singleOpened';
 import ngServices from 'utils/ngServices';
 import * as classNames from 'constants/classNames';
@@ -49,12 +45,12 @@ const cancelAnimation = (animationPromise) => {
 export default class MenuBarController {
 	static get $inject() { return ['$element', '$scope', '$animate', '$window', '$rootScope', '$timeout']; }
 
-	constructor($element, $scope, $animate, $window, $rootScope, $timeout, debounceDuration = 100) {
+	constructor($element, $scope, $animate, $window, $rootScope, $timeout) {
 		this.openClose = createOpenClose();
 		let animationPromise;
 		this.sideContentUnitType = sideContentUnitType;
 
-		angular.element($window).on("resize", debounce(() => {
+		registerResizeListener(() => {
 			if (animationPromise) {
 				$animate.cancel(animationPromise);
 			}
@@ -73,7 +69,7 @@ export default class MenuBarController {
 				});
 			}
 
-		}, debounceDuration));
+		});
 
 		registerScrollListener(({top}) => {
 			this.menuBarRetracted = top > 0;

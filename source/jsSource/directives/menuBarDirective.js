@@ -2,6 +2,7 @@ import DopApp from 'DopApp';
 import controller from 'controllers/menuBarController';
 import {directiveName as elementRegistarDirectiveName} from 'directives/elementRegistarDirective';
 import 'directives/registerElementDirective';
+import 'directives/backToTopDirective';
 
 export const directiveName = "menuBar";
 

@@ -37,13 +37,7 @@ export const menuBarOverlayContentDirective = () => ({
 			});
 		};
 
-		const isThisUnitFullyOpened = () =>
-				console.log(
-					"OOVV",
-					parentDirective.openClose.getOpenedUnit(),
-					parentDirective.openClose.getVisuallyOpenedUnit()
-				) ||
-				isFullyOpened(unitName);
+		const isThisUnitFullyOpened = () => isFullyOpened(unitName);
 
 		$scope.$watch(isThisUnitFullyOpened, fullyOpened => {
 			if (fullyOpened) {
