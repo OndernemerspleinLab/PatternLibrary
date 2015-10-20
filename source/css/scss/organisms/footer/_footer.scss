@@ -1,12 +1,19 @@
 /* FOOTER */
 
 .footer {
-	background: getColor(grijs light);
+	//background: getColor(hemelblauw lightest);
+	background: #BADDEF;
 	@include insideMarginTop(0.5rem);
 	font-size: getFontSize(small);
 
 	@include mqGreaterThan(smallMedium) {
 		font-size: getFontSize(root);
+	}
+}
+
+.footerNav {
+	&-link {
+		color: getColor(hemelblauw darkest);
 	}
 }
 

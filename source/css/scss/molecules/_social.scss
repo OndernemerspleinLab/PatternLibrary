@@ -124,14 +124,14 @@
 		}
 
 		&-background {
-			fill: getColor(grijs default);
+			fill: getColor(hemelblauw darkest);
 		}
 
 		&-foreground {
 			fill: getColor(wit);
 
 			.footer & {
-				fill: getColor(grijs light);
+				fill: #BADDEF;
 			}
 		}
 	}
