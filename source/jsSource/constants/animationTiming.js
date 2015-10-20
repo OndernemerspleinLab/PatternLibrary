@@ -24,3 +24,8 @@ export const menuBarOverlayContent = {
 export const scrollDocument = {
 	duration: 400,
 };
+
+export const offScreenBottom = {
+	duration: 400,
+	easing: [200, 20],
+};

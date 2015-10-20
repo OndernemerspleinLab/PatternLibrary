@@ -183,6 +183,13 @@
 		}
 	}
 
+	&--backToTop {
+		transition: transform 100ms;
+		&.is-offScreen {
+	    	transform: translateY(4rem);
+		}
+	}
+
 	&-inner {
 		@include mqGreaterThan(large) {
 			display: flex;
