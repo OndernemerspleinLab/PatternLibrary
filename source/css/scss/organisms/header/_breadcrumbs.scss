@@ -1,7 +1,8 @@
 /* BREADCRUMBS */
 
 .breadcrumbs {
-	margin: 0 1rem;
+	//margin: 0 1rem;
+	margin: 0;
 	padding-left: 0;
 	display: flex;
 	flex-direction: row;
@@ -16,12 +17,14 @@
 	&-link {
 		@include hideUnderline;
 		display: inline-block;
-		padding: $pad-half $pad $pad-half 0;
+		padding: $pad-half $pad-half $pad-half 0;
+		color: getColor(hemelblauw darkest);
+
 		&:before {
 			content: ">";
 			display: inline-block;
 			padding-right: $pad;
-			color: getColor(wit);
+			//color: getColor(wit);
 		}
 		&.breadcrumb-linkFirst {
 			&:before {
