@@ -93,28 +93,40 @@
 	&-linkList {
 		padding: $quarterSpace 0;
 		@include noBullets;
+		margin-left: 0;
 	}
 
 	&-item {
 		margin: 0;
+		@include mqGreaterThan(large) {
+			padding: 0;
+		}
 	}
 
 	&-link {
 		display: block;
+		@include mqGreaterThan(smallMedium) {
+			display: inline-block;
+		}
 		@include noUnderline;
 		padding: $quarterSpace $halfSpace;
+		color: getColor(hemelblauw darkest);
 
 		transition: background-color 400ms;
 
 		@include hoverEtc {
 			color: inherit;
 			background: getColor(hemelblauw lightest);
+			@include mqGreaterThan(large) {
+				background: getColor(hemelblauw light);
+			}
 		}
 
 		&-icon {
 			height: 2em;
 			width: 2em;
 			margin: -0.2em 0.8em -0.2em 0;
+			fill: getColor(hemelblauw darkest);
 		}
 	}
 }

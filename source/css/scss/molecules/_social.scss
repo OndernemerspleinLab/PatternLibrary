@@ -3,8 +3,13 @@
 .share-close {
 	@include zIndex(seeThroughScroll front);
 	position: absolute;
-	right: $halfSpace;
-	top: 0.75rem;
+	right: $quarterSpace;
+	top: 1.25rem;
+
+	@include mqGreaterThan(small) {
+		right: $halfSpace;
+		top: $quarterSpace;
+	}
 
 	.close-icon {
 		fill: getColor(hemelblauw darkest);
@@ -91,12 +96,12 @@
 		&--email {
 			@include hoverEtc {
 				.social-figure-background {
-					fill: getColor(hemelblauw darkest);
+					fill: getColor(hemelblauw default);
 				}
 			}
 			.social--share & {
 				.social-figure-background {
-					fill: getColor(hemelblauw darkest);
+					fill: getColor(hemelblauw default);
 				}
 			}
 		}

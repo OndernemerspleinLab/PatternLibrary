@@ -36,12 +36,13 @@
 	color: getColor(grijs default);
 	font-style: italic;
 	font-size: 1.1rem;
+	line-height: 1.2;
 
 	@include mqLesserThan(small) {
 		font-size: getFontSize(small);
 	}
 
 	@include mqLesserThan(extraSmall) {
-		display: none;
+		//display: none;
 	}
 }
