@@ -272,6 +272,7 @@
 	bottom: 0;
 	left: 0;
 	background: getColor(hemelblauw lightest);
+	outline: 5px solid hsla(0, 0%, 100%, 0.6);
 	border-left: $menuBarWidthSmall solid transparent;
 	width: 32rem;
 	max-width: 90vw;
