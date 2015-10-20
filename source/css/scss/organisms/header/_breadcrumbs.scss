@@ -23,7 +23,7 @@
 		&:before {
 			content: ">";
 			display: inline-block;
-			padding-right: $pad;
+			padding-right: $pad-quarter;
 			//color: getColor(wit);
 		}
 		&.breadcrumb-linkFirst {
