@@ -1,8 +1,8 @@
 /* BREADCRUMBS */
 
 .breadcrumbs {
-	//margin: 0 1rem;
-	margin: 0;
+	margin: 0 1rem;
+	//margin: 0;
 	padding-left: 0;
 	display: flex;
 	flex-direction: row;
@@ -18,13 +18,14 @@
 		@include hideUnderline;
 		display: inline-block;
 		padding: $pad-half $pad-half $pad-half 0;
-		color: getColor(hemelblauw darkest);
+		//color: getColor(hemelblauw darkest);
+		color: getColor(wit);
 
 		&:before {
 			content: ">";
 			display: inline-block;
 			padding-right: $pad-quarter;
-			//color: getColor(wit);
+			color: getColor(wit);
 		}
 		&.breadcrumb-linkFirst {
 			&:before {
@@ -36,7 +37,7 @@
 		}
 	}
 	&-text {
-		@include underline;
+		@include hideUnderline;
 	}
 
 	@include hoverEtc {

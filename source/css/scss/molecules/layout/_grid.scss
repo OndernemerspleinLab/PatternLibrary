@@ -91,7 +91,7 @@ $quarterSpace: $space/4; // 0.5rem
 	&--half {
 		@include setPropWithMq(greater, width, (
 			all: 100%,
-			smallMedium: calc(50% - #{$space}),
+			smallMedium: calc(50% - #{$space})
 		));
 	}
 

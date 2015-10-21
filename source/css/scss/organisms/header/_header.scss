@@ -43,6 +43,6 @@
 	}
 
 	@include mqLesserThan(extraSmall) {
-		//display: none;
+		display: none;
 	}
 }

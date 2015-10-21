@@ -27,10 +27,6 @@
 }
 
 .partnerLogo {
-	max-width: none;
-	width: auto;
-	height: 2.5rem;
-
 	&--color {
 		filter: grayscale(100%);
 		&:hover {
@@ -38,16 +34,29 @@
 		}
 	}
 
-	&--contentBottom {
+	&--contentBottom { }
+	&--contentRight { }
 
+	&-item {
+		padding-right: $pad;
 	}
-	&--contentRight {
-
+	&-image {
+		max-width: none;
+		width: auto;
+		height: 1.8rem;
+		@include mqGreaterThan(large) {
+			height: 2.5rem;
+		}
+		.sourceBlock & {
+			height: 3.5em;
+		}
 	}
 	&--footer {
+		opacity: 0.5;
 		&:hover {
 			transition: all 0.2s ease-in-out;
 			transform: scale(1.1);
+			opacity: 1;
 		}
 	}
 }
