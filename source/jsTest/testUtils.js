@@ -22,3 +22,5 @@ export const baseTestDirective = (directive, directiveName, expectedConfig) => {
 		expect(DopApp._invokeQueue.some(item => item[2][0] === directiveName));
 	});
 };
+
+export const el = (type) => document.createElement(type);

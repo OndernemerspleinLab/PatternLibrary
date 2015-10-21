@@ -4,9 +4,11 @@ import {
 	partial, partialByObject, includes,
 	isFilledArray, isEmptyArray, debounce,
 	arrayfy, spliceItem, defaults, forEachObject,
-	reduceObject, mapObject, filterObject,
+	reduceObject, mapObject, filterObject, isAscendantOf,
 	aliasMapProperty, toObjectArguments
 } from 'utils/functional';
+
+import {el} from 'jsTest/testUtils';
 
 describe("functional", () => {
 	describe("negate", () => {
@@ -282,6 +284,35 @@ describe("functional", () => {
 				expect(obj).toBe(obj);
 				expect(obj[key]).toBe(val);
 			});
+		});
+	});
+
+	describe("isAscendantOf", () => {
+		let el1;
+		let el2;
+		let el3;
+		let el4;
+		beforeEach(() => {
+			el1 = el("div");
+			el2 = el("div");
+			el3 = el("div");
+			el4 = el("div");
+
+			el1.appendChild(el2);
+			el2.appendChild(el3);
+			el3.appendChild(el4);
+		});
+
+		it("should find itself as a parent", () => {
+			expect(isAscendantOf(el2, el2)).toBe(true);
+		});
+
+		it("should find a parent for a child", () => {
+			expect(isAscendantOf(el2, el4)).toBe(true);
+		});
+
+		it("should find a parent for a child", () => {
+			expect(isAscendantOf(el2, el1)).toBe(false);
 		});
 	});
 

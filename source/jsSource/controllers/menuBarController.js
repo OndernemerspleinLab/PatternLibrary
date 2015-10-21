@@ -1,5 +1,6 @@
 import {registerScrollListener} from 'utils/scrollEvent';
 import {registerResizeListener} from 'utils/resizeEvent';
+import {registerClickAwayListener} from 'utils/clickAwayEvent';
 import createOpenClose from 'openClose/singleOpened';
 import ngServices from 'utils/ngServices';
 import * as classNames from 'constants/classNames';
@@ -75,11 +76,18 @@ export default class MenuBarController {
 			this.menuBarRetracted = top > 0;
 		});
 
+		let removeClickAwayListener = () => {};
+
 		const open = (openedUnit, oldOpenedUnit) => {
 			const openedElement = getMenuBarSideContentElement(openedUnit);
 			const closedElement = getMenuBarSideContentElement(oldOpenedUnit);
 			$rootScope.menuOpened = Boolean(openedElement);
 			this.openClose.visuallyOpen(sideContentUnitType);
+
+			removeClickAwayListener();
+			removeClickAwayListener = registerClickAwayListener(() => {
+				this.openClose.close(openedUnit);
+			}, $element[0]);
 
 			if (oldOpenedUnit) {
 				animationPromise = $animate.animate($element, null, { resize: true }, null, {
@@ -97,6 +105,8 @@ export default class MenuBarController {
 		const close = (oldOpenedUnit) => {
 			const closedElement = getMenuBarSideContentElement(oldOpenedUnit);
 			$rootScope.menuOpened = false;
+			removeClickAwayListener();
+			removeClickAwayListener = () => {};
 			animationPromise = $animate.removeClass($element, classNames.opened, {
 				closedElement
 			});
