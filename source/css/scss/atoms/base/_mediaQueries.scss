@@ -49,6 +49,8 @@ $mediaQueries: (
 
 @mixin mq($type, $name) {
 	@if ($type == between) {
+		$smallest: nth($name, 0);
+		$largest: nth($name, 1);
 		$smallestMq: getMediaQuery($smallest, greater);
 		$largestMq: getMediaQuery($largest, lesser);
 
@@ -70,8 +72,8 @@ $mediaQueries: (
 	@include mq(lesser, $name) { @content; };
 };
 
-@mixin mqBetween($smallest, $largest) {
-	@include mq(between, $name) { @content; };
+@mixin mqBetween($names) {
+	@include mq(between, $names) { @content; };
 };
 
 @mixin setPropWithMq($mqType, $propertyName, $map) {
