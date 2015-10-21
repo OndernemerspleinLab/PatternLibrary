@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="DopApp" ng-class="{'is-menuOpened': menuOpened}">
+<html ng-app="DopApp" class="html" ng-class="{'is-menuOpened': menuOpened}">
 <head>
 	<title>Pattern Lab Pattern</title>
 	<meta charset="UTF-8">
@@ -33,7 +33,9 @@
 </head>
 <body class="sg-single-pattern" ng-class="{'is-menuOpened': menuOpened}">
 	<!-- Start of Pattern --><div class="text">
-	<p><a href="#">This is a text link</a></p>
+	<p>This is a <a href="#">internal text link</a> in a paragraph.</p>
+
+	<p>This is a <a href="#" class="externalLink">external text link</a> in a paragraph.</p>
 
 	<p><strong>Strong is used to indicate strong importance</strong></p>
 

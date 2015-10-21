@@ -2,7 +2,8 @@ import DopApp from 'DopApp';
 import controller from 'controllers/mainMenuController';
 import 'animations/menuBarAnimation';
 import {directiveName as parentDirectiveName} from 'directives/menuBarDirective';
-import 'animations/menuBarContentAnimation';
+import 'directives/menuBarSideContentDirective';
+import 'directives/menuBarOverlayContentDirective';
 
 export const directiveName = "mainMenu";
 const controllerAs = 'viewModel';
@@ -16,9 +17,10 @@ export const mainMenuDirective = () => ({
 	require: `?^${parentDirectiveName}`, // TODO parent directive checken als deze open gaat
 	link: function ($scope, $element, $attrs, parentDirective) {
 		if (parentDirective) {
-			const isFullyOpened = parentDirective.openClose.isFullyOpened;
+			const {openClose: {isFullyOpened}, sideContentUnitType} = parentDirective;
 
 			$scope[controllerAs].isFullyOpened = isFullyOpened;
+			$scope[controllerAs].menuType = sideContentUnitType;
 		}
 	},
 });

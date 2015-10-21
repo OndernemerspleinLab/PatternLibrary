@@ -50,9 +50,9 @@ const registerResizeListners = (resize) => {
 };
 
 export default class SeeThroughScrollController {
-	static get $inject() { return ['$scope', '$element', '$attrs', '$parse']; }
+	static get $inject() { return ['$scope', '$element', '$attrs', '$timeout', '$parse']; }
 
-	constructor($scope, $element, $attrs, $parse) {
+	constructor($scope, $element, $attrs, $timeout, $parse) {
 		const unitStore = {};
 		const {hiddenClass} = defaults($attrs, {hiddenClass: defaultHiddenClass});
 		const openClose = $parse($attrs.openClose)($scope);
@@ -61,7 +61,7 @@ export default class SeeThroughScrollController {
 		this.register = partial(registerElement, unitStore);
 
 
-		const resize = () => {
+		const resize = this.resize = () => {
 			const fullyOpenedUnit = getFullyOpenedUnit();
 			if (fullyOpenedUnit) {
 				const unit = unitStore[fullyOpenedUnit];
@@ -69,11 +69,9 @@ export default class SeeThroughScrollController {
 			}
 		};
 
-		this.resize = resize;
-
-		$scope.$watch(() => this.isParentFullyOpened && this.isParentFullyOpened(), (isOpened) => {
-			if(isOpened) {
-				resize();
+		$scope.$watch(() => this.isParentFullyOpened && this.isParentFullyOpened(), (opened) => {
+			if(opened) {
+				$timeout(resize, 100);
 			}
 		});
 

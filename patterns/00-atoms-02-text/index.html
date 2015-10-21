@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="DopApp" ng-class="{'is-menuOpened': menuOpened}">
+<html ng-app="DopApp" class="html" ng-class="{'is-menuOpened': menuOpened}">
   <head id="patternlab-head">
     <title>Pattern Lab Sub-type Style Guide</title>
     <meta charset="UTF-8">
@@ -105,7 +105,9 @@
             <h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-02-text-05-inline-elements&#x2F;00-atoms-02-text-05-inline-elements.html" class="patternLink" data-patternpartial="">inline-elements</a></h2>
             <div class="sg-pattern-body">
               <div class="text">
-	<p><a href="#">This is a text link</a></p>
+	<p>This is a <a href="#">internal text link</a> in a paragraph.</p>
+
+	<p>This is a <a href="#" class="externalLink">external text link</a> in a paragraph.</p>
 
 	<p><strong>Strong is used to indicate strong importance</strong></p>
 
@@ -151,7 +153,9 @@
                 <pre class="sg-code-html">
                   <code>
                     &lt;div class=&quot;text&quot;&gt;
-	&lt;p&gt;&lt;a href=&quot;#&quot;&gt;This is a text link&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+	&lt;p&gt;This is a &lt;a href=&quot;#&quot;&gt;internal text link&lt;&#x2F;a&gt; in a paragraph.&lt;&#x2F;p&gt;
+
+	&lt;p&gt;This is a &lt;a href=&quot;#&quot; class=&quot;externalLink&quot;&gt;external text link&lt;&#x2F;a&gt; in a paragraph.&lt;&#x2F;p&gt;
 
 	&lt;p&gt;&lt;strong&gt;Strong is used to indicate strong importance&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 
@@ -280,12 +284,12 @@ p q r s t u v w x y z { | } ~
           <div class="sg-pattern">
             <h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-02-text-10-caption&#x2F;00-atoms-02-text-10-caption.html" class="patternLink" data-patternpartial="">caption</a></h2>
             <div class="sg-pattern-body">
-              <p class="caption">A caption can be applied to an image, quote, form field, etc.</p>
+              <p class="infoText">A caption can be applied to an image, quote, form field, etc.</p>
               <div class="sg-code" style="display: none">
                 <h3 class="sg-code-head">HTML</h3>
                 <pre class="sg-code-html">
                   <code>
-                    &lt;p class=&quot;caption&quot;&gt;A caption can be applied to an image, quote, form field, etc.&lt;&#x2F;p&gt;
+                    &lt;p class=&quot;infoText&quot;&gt;A caption can be applied to an image, quote, form field, etc.&lt;&#x2F;p&gt;
                   </code>
                 </pre>
               </div>

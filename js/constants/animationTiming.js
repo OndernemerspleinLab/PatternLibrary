@@ -10,7 +10,22 @@ export const height = {
 	delay: 0,
 };
 
-export const menuBarContent = {
+export const menuBarSideContent = {
 	duration: 400,
 	delay: 0,
+};
+
+export const menuBarOverlayContent = {
+	duration: 800,
+	delay: 0,
+	easing: [200, 20],
+};
+
+export const scrollDocument = {
+	duration: 400,
+};
+
+export const offScreenBottom = {
+	duration: 400,
+	easing: [200, 20],
 };

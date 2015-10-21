@@ -1,0 +1,26 @@
+&lt;button class=&quot;close share-close&quot; ng-click=&quot;viewModel.openClose.close(&apos;feedback&apos;)&quot;&gt;
+    &lt;span class=&quot;close-text&quot;&gt;Sluiten&lt;/span&gt;
+    &lt;svg class=&quot;close-icon&quot; aria-hidden=&quot;true&quot;&gt;
+        &lt;use xlink:href=&quot;#figures-sluiten&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+&lt;/button&gt;
+&lt;form action=&quot;#&quot; class=&quot;feedback-form&quot;&gt;
+    &lt;fieldset class=&quot;options&quot;&gt;
+        &lt;legend&gt;Heeft deze informatie u geholpen?&lt;/legend&gt;
+        &lt;ul class=&quot;gridContainer u-noBullets&quot;&gt;
+            &lt;li class=&quot;verticalItem&quot;&gt;&lt;label for=&quot;radio1&quot;&gt;&lt;input id=&quot;radio1&quot; name=&quot;radio&quot; type=&quot;radio&quot; class=&quot;radio&quot;&gt;Ja&lt;/label&gt;&lt;/li&gt;
+            &lt;li class=&quot;verticalItem&quot;&gt;&lt;label for=&quot;radio2&quot;&gt;&lt;input id=&quot;radio2&quot; name=&quot;radio&quot; type=&quot;radio&quot; class=&quot;radio&quot; checked=&quot;checked&quot;&gt;Nee&lt;/label&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;div class=&quot;field-container&quot;&gt;
+            &lt;label for=&quot;textarea&quot;&gt;
+                Hoe kunnen wij deze informatie verbeteren?
+                &lt;span class=&quot;textLine&quot;&gt;&lt;em&gt;(optioneel, maximaal 1000 tekens)&lt;/em&gt;&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;textarea id=&quot;textarea&quot; rows=&quot;3&quot; cols=&quot;48&quot; placeholder=&quot;&quot;&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+&lt;p&gt;
+    &lt;a href=&quot;#&quot; class=&quot;formButton-cancel&quot;&gt;Annuleer&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;formButton-submit btn&quot;&gt;Verstuur&lt;/a&gt;
+&lt;/p&gt;

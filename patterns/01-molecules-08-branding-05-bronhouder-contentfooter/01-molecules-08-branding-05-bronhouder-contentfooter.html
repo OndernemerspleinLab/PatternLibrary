@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="DopApp" ng-class="{'is-menuOpened': menuOpened}">
+<html ng-app="DopApp" class="html" ng-class="{'is-menuOpened': menuOpened}">
 <head>
 	<title>Pattern Lab Pattern</title>
 	<meta charset="UTF-8">
@@ -32,22 +32,18 @@
 
 </head>
 <body class="sg-single-pattern" ng-class="{'is-menuOpened': menuOpened}">
-	<!-- Start of Pattern --><div class="layoutContainer gridContainer">
-	<div class="column column--full">
-		<div class="infoText">
-			<p class="infoText--afzender">
-				<span>Afzender:</span>
-			</p>
-			<ul class="gridContainer gridContainer--singleLine u-noBullets">
-				<li class="verticalItem">
-					<img class="partnerLogo partnerLogo--contentBottom" src="../../images/logos/KvK_color.svg" alt="Kamer van Koophandel">
-				</li>
-				<li class="verticalItem">
-					<img class="partnerLogo partnerLogo--contentBottom" src="../../images/logos/RVO_color.svg" alt="Rijksdienst voor Ondernemend Nederland">
-				</li>
-			</ul>
-		</div>
-	</div>
+	<!-- Start of Pattern --><div class="sourceBlock">
+	<p class="infoText infoText--afzender">
+		<span>Deze informatie is geplaatst door:</span>
+	</p>
+	<ul class="gridContainer gridContainer--singleLine u-noBullets">
+		<li class="verticalItem">
+			<img class="partnerLogo partnerLogo--contentBottom" src="../../images/logos/KvK_color.svg" alt="Kamer van Koophandel">
+		</li>
+		<li class="verticalItem">
+			<img class="partnerLogo partnerLogo--contentBottom" src="../../images/logos/RVO_color.svg" alt="Rijksdienst voor Ondernemend Nederland">
+		</li>
+	</ul>
 </div>	<!-- End of Pattern -->
 
 	<!--
@@ -60,7 +56,7 @@
 		// handle injection of items from PHP
 		var patternPartial = "molecules-bronhouder-contentfooter";
 		var lineage = [];
-		var lineageR = [{"lineagePattern":"templates-contentpage-base","lineagePath":"../../patterns/03-templates-03-contentpage-base/03-templates-03-contentpage-base.html"}];
+		var lineageR = [{"lineagePattern":"templates-contentpage-base","lineagePath":"../../patterns/03-templates-03-contentpage-base/03-templates-03-contentpage-base.html"},{"lineagePattern":"templates-contentpage-extended","lineagePath":"../../patterns/03-templates-04-contentpage-extended/03-templates-04-contentpage-extended.html"}];
 		var patternState = ""
 		var cssEnabled = false; //TODO
 	</script>

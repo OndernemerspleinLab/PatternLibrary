@@ -8,30 +8,37 @@ const singleOpened = Object.freeze({
 	getOpenedUnit: (store) => store.opened,
 
 	open: (store, openedUnit) => store.opened = openedUnit,
-	close: (store) => store.opened = undefined,
-	toggle: (store, openedUnit) => singleOpened.isOpened(store, openedUnit) ?
-			singleOpened.close(store) :
-			singleOpened.open(store, openedUnit),
+	close: (store, closedUnit) => {
+		if (closedUnit === store.opened) {
+			store.opened = undefined;
+		}
+	},
+	toggle: (store, unit) => singleOpened.isOpened(store, unit) ?
+			singleOpened.close(store, unit) :
+			singleOpened.open(store, unit),
 
 	canBeVisuallyOpened: (store, openedUnit) => unexisting(store.visuallyOpened) || store.visuallyOpened === openedUnit,
 	isVisuallyOpened: (store, openedUnit) => existing(store.visuallyOpened) && store.visuallyOpened === openedUnit,
 	getVisuallyOpenedUnit: (store) => store.visuallyOpened,
 
 	visuallyOpen: (store, openedUnit) => store.visuallyOpened = openedUnit,
-	visuallyClose: (store) => store.visuallyOpened = undefined,
+	visuallyClose: (store, closedUnit) => {
+		if (closedUnit === store.visuallyOpened) {
+			store.visuallyOpened = undefined;
+		}
+	},
 
-	fullyOpen: (store, openedUnit) => {
+	fullyOpen: (store, openedUnit, visuallyOpenedUnit = openedUnit) => {
 		singleOpened.open(store, openedUnit);
-		singleOpened.visuallyOpen(store, openedUnit);
+		singleOpened.visuallyOpen(store, visuallyOpenedUnit);
 	},
 
 	getFullyOpenedUnit: (store) => {
 		const opened = singleOpened.getOpenedUnit(store);
 		return singleOpened.canBeVisuallyOpened(store, opened) ? opened : undefined;
 	},
-
-	isFullyOpened: (store, openedUnit) => singleOpened.isOpened(store, openedUnit) &&
-			singleOpened.canBeVisuallyOpened(store, openedUnit),
+	isFullyOpened: (store, openedUnit, visuallyOpenedUnit = openedUnit) => singleOpened.isOpened(store, openedUnit) &&
+			singleOpened.canBeVisuallyOpened(store, visuallyOpenedUnit),
 
 });
 

@@ -118,4 +118,4 @@ export const toObjectArguments = (func, argNames) => {
 	return callback;
 };
 
-
+export const minimalZero = partial(Math.max, 0);
