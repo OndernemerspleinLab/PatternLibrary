@@ -19,7 +19,7 @@
 	&-nav {
 		display: flex;
 		flex-direction: column;
-		flex: 1 1 auto;
+		flex: 1 1 0;
 
 		@include before("") {
 			display: block;
