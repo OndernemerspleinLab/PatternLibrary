@@ -186,7 +186,7 @@
 	&--backToTop {
 		transition: transform 100ms;
 		&.is-offScreen {
-	    	transform: translateY(4rem);
+	    	transform: translateY(200%);
 		}
 	}
 
