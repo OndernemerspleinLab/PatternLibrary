@@ -86,6 +86,7 @@
 	    position: relative;
 
 	    &:before {
+	    	speak: none;
 	    	content: "•";
 			position: absolute;
 			left: -2.5em;
