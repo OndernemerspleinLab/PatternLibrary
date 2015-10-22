@@ -22,6 +22,10 @@
 		background: getColor(grijs light);
 		color: getColor(grijs darkest);
 	}
+
+	&--marginRight {
+		margin-right: $pad-half;
+	}
 }
 
 .btn-small {

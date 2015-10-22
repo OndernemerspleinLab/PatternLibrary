@@ -4,11 +4,11 @@
 	@include zIndex(seeThroughScroll front);
 	position: absolute;
 	right: $quarterSpace;
-	top: 1.25rem;
+	top: 1.5rem;
 
 	@include mqGreaterThan(small) {
 		right: $halfSpace;
-		top: $quarterSpace;
+		top: 0.75rem;
 	}
 
 	.close-icon {
