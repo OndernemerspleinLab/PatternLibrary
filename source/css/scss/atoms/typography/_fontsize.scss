@@ -35,3 +35,6 @@ $fontSize: (
 @function getFontSize ($name) {
 	@return mapDeepGet($fontSize, $name);
 }
+
+// How to use in CSS
+// font-size: getFontSize(logo, small);
