@@ -32,8 +32,8 @@ h2, .bravoHeading {
 	font-size: getFontSize(bravoHeading small);
 
 	margin: {
-		top: 1.1em;
-		bottom: 0.2em;
+		top: 1.4em;
+		bottom: 0.4em;
 	}
 
 	@include mqGreaterThan(small) {
@@ -42,7 +42,7 @@ h2, .bravoHeading {
 
 	@include mqGreaterThan(large) {
 		font-size: getFontSize(bravoHeading large);
-		margin-bottom: 0.1em;
+		// margin-bottom: 0.1em;
 	}
 }
 h3, .charlieHeading,
@@ -51,7 +51,7 @@ h5, .echoHeading,
 h6, .foxtrotHeading {
 	font-size: getFontSize(charlieHeading small);
 	margin: {
-		top: 1.1em;
+		top: 1.5em;
 		bottom: 0.2em;
 	}
 

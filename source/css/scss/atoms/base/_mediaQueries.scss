@@ -47,6 +47,18 @@ $mediaQueries: (
 		greater: "(min-width: 70em)",
 		lesser: "(max-width: #{70em - (1/16)})"
 	),
+
+	// 464px
+	smallHeight: (
+		greater: "(min-height: 29em)",
+		lesser: "(max-height: #{29em - (1/16)})"
+	),
+
+	// 544px
+	smallMediumHeight: (
+		greater: "(min-height: 34em)",
+		lesser: "(max-height: #{34em - (1/16)})"
+	),
 );
 
 // Not for direct usage, it is used by the mixins below

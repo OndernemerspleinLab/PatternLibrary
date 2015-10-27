@@ -43,10 +43,15 @@ abbr {
     font-style: italic;
     display: block;
     clear: both;
-    margin-bottom: 1em;
 	color: getColor(hemelblauw darkest);
+	margin-bottom: (1.4 * getFontSize(bravoHeading small));
+
+	@include mqGreaterThan(small) {
+		margin-bottom: (1.4 * getFontSize(bravoHeading medium));
+	}
+
 	@include mqGreaterThan(large) {
-		margin-bottom: 1.5em;
+		margin-bottom: (1.4 * getFontSize(bravoHeading large));
 	}
 }
 
