@@ -18,8 +18,18 @@ body {
 }
 
 .main {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+	margin-top: (1.4 * getFontSize(bravoHeading small));
+	margin-bottom: (1.4 * getFontSize(bravoHeading small));
+
+	@include mqGreaterThan(small) {
+		margin-top: (1.4 * getFontSize(bravoHeading medium));
+		margin-bottom: (1.4 * getFontSize(bravoHeading medium));
+	}
+
+	@include mqGreaterThan(large) {
+		margin-top: (1.4 * getFontSize(bravoHeading large));
+		margin-bottom: (1.4 * getFontSize(bravoHeading large));
+	}
 }
 
 .font-secondary {
