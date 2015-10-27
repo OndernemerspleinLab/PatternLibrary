@@ -20,7 +20,7 @@
 		border-left: 0;
 	}
 	&--grey {
-		background-color: getColor(grijs light);
+		background-color: getColor(grijs lightest);
 		padding: 0 0.5em;
 		@include insideMargin(0.5em);
 		border-left: 0;
@@ -30,7 +30,14 @@
 		padding: 0 0.5em;
 		@include insideMargin(0.5em);
 	}
-}
-.block-title {
-	margin-top: 0.34rem;
+
+	&-title {
+		margin-top: 0.34rem;
+	}
+	&-image {
+
+	}
+	&-link {
+
+	}
 }
