@@ -25,6 +25,12 @@
 	@include mqGreaterThan(extraExtraLarge) {
 		transform: none;
 	}
+
+	@include mqGreaterThan(extraExtraExtraLarge) {
+		left: 50%;
+		margin-left: (-1 * map-get($maxPageWidth, rem) / 2);
+	}
+
 }
 
 .menuBar {
@@ -77,6 +83,10 @@
 		right: 100%;
 		width: 2000px;
 		width: 100vw;
+		@include mqGreaterThan(extraExtraExtraLarge) {
+
+			background: getColor(grijs lightest);
+		}
 	}
 
 	&-context {
@@ -304,5 +314,10 @@
 
 	@include mqGreaterThan(large) {
 		border-left-width: $menuBarWidthExtraLarge;
+	}
+
+	@include mqGreaterThan(extraExtraExtraLarge) {
+		left: 50%;
+		margin-left: (-1 * map-get($maxPageWidth, rem) / 2);
 	}
 }

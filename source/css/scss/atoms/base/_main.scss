@@ -2,7 +2,7 @@
     $MAIN CONTENT AREA
 \*------------------------------------*/
 body {
-	background: getColor(wit);
+	background: getColor(grijs lightest);
 	// added unit size to line-height to keep a consistent vertical rhythm
 	font: 100%/1.6 RijksOverheidSans, Tahoma;
 	-webkit-text-size-adjust: 100%;
@@ -12,9 +12,20 @@ body {
 .page {
 	transition-property: opacity;
 	transition-duration: 200ms;
+	max-width: map-get($maxPageWidth, rem);
+	background: getColor(wit);
+
+	// To prevent margin overflow;
+	padding-top: 1px;
+	margin: -1px auto 0 auto;
+
 	.is-menuOpened & {
 		opacity: 0.3;
 	}
+	@include mqGreaterThan(extraExtraExtraLarge) {
+		max-width: map-get($maxPageWidth, rem);
+	}
+
 }
 
 .main {

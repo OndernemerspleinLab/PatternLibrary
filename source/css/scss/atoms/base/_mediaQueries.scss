@@ -42,11 +42,19 @@ $mediaQueries: (
 		greater: "(min-width: 57em)",
 		lesser: "(max-width: #{57em - (1/16)})"
 	),
-	// 1280px
+	// 1120px
 	extraExtraLarge: (
 		greater: "(min-width: 70em)",
 		lesser: "(max-width: #{70em - (1/16)})"
 	),
+	// 1296px
+	extraExtraExtraLarge: (
+		greater: "(min-width: #{map-get($maxPageWidth, em)})",
+		lesser: "(max-width: #{map-get($maxPageWidth, em) - (1/16)})"
+	),
+
+
+
 
 	// 464px
 	smallHeight: (
