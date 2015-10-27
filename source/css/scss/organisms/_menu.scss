@@ -147,12 +147,14 @@
 		color: inherit;
 	}
 
-	&.is-opened {
-		background-color: getColor(hemelblauw lightest);
-
-		.menuBar-icon {
-			fill: getColor(zwart);
-			transform: scale(1.1);
+	&--secondary {
+		@include mqLesserThan(smallHeight) {
+			display: none;
+		}
+		@include mqGreaterThan(small) {
+			@include mqLesserThan(smallMediumHeight) {
+				display: none;
+			}
 		}
 	}
 
@@ -187,6 +189,15 @@
 		transition: transform 100ms;
 		&.is-offScreen {
 	    	transform: translateY(200%);
+		}
+	}
+
+	&.is-opened {
+		background-color: getColor(hemelblauw lightest);
+
+		.menuBar-icon {
+			fill: getColor(zwart);
+			transform: scale(1.1);
 		}
 	}
 
