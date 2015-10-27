@@ -4,6 +4,10 @@
 	display: block;
 	position: relative;
 
+	@include mqGreaterThan(mediumLarge) {
+		width: calc(#{100%*2/3} - #{$space});
+	}
+
 	&-link {
 		@include noUnderline;
 

@@ -1,0 +1,25 @@
+// Pay-off
+.payOff {
+
+	@include mqGreaterThan(mediumLarge) {
+		width: calc(#{100%*1/3} - #{$space});
+	}
+
+	@include mqLesserThan(extraSmall) {
+		display: none;
+	}
+
+	&-text {
+		margin: 0 0 0.1rem 0;
+		text-align: left;
+		color: getColor(grijs default);
+		font-style: italic;
+		font-size: 1.1rem;
+		line-height: 1.2;
+
+		@include mqLesserThan(small) {
+			font-size: getFontSize(small);
+		}
+
+	}
+}

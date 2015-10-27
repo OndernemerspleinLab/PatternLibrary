@@ -1,5 +1,8 @@
 /* HEADER */
 
+// logo styling -> _header-logo.scss
+// payOff styling -> _header-payOff.scss
+
 .header { }
 
 .brandBar {
@@ -20,29 +23,9 @@
 	}
 }
 
-// logo styling -> _header-logo.scss
-
 .header-heading {
 	margin: {
 		top: 0.9rem;
 		bottom: 0.65rem;
-	}
-}
-
-// Pay-off
-.payOff {
-	margin: 0 0 0.1rem 1.5rem;
-	text-align: left;
-	color: getColor(grijs default);
-	font-style: italic;
-	font-size: 1.1rem;
-	line-height: 1.2;
-
-	@include mqLesserThan(small) {
-		font-size: getFontSize(small);
-	}
-
-	@include mqLesserThan(extraSmall) {
-		display: none;
 	}
 }
