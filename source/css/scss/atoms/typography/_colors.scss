@@ -1,5 +1,7 @@
 // COLORS
 
+// Declaration of all colors
+// grouped by major color group
 $colors: (
 	hemelblauw: (
 		default: #007bc7,
@@ -36,9 +38,8 @@ $colors: (
 	)
 );
 
+// Example:
+// color: getColor(hemelblauw darkest);
 @function getColor($color) {
 	@return mapDeepGet($colors, $color);
 }
-
-// How to use in CSS
-// color: getColor(hemelblauw darkest);

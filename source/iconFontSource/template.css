@@ -8,7 +8,10 @@
 	font-style: normal;
 }
 <% } %>
-<% if (baseStyles) { %>@mixin <%= baseClass %> {
+
+
+<% if (baseStyles) { %>// Default styling for iconfont
+@mixin <%= baseClass %> {
 	display: inline;
 	font-family: "<%= fontBaseName %>";
 	font-weight: normal;
@@ -23,6 +26,7 @@
 }
 <% } %>
 
+// Default styling for iconfont as an extendable
 %<%= baseClass %> {
 	@include <%= baseClass %>;
 }
@@ -103,6 +107,8 @@
 
 <%= objectName %>: <%= iconScssMap %>;
 
+// get an icon keycode by name
+// this is usually used in the content property of a pseudo element
 @function <%= functionName %>($iconNames) {
 	@return mapDeepGet(<%= objectName %>, $iconNames);
 };

@@ -1,5 +1,7 @@
 // FONTSIZES
 
+// Overview of all fontsizes
+// submaps are used for responsive sizes
 $fontSize: (
 	root: 1rem,
 	small: 0.875rem,
@@ -32,9 +34,8 @@ $fontSize: (
 	)
 );
 
+// Example:
+// font-size: getFontSize(logo small);
 @function getFontSize ($name) {
 	@return mapDeepGet($fontSize, $name);
 }
-
-// How to use in CSS
-// font-size: getFontSize(logo, small);

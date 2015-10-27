@@ -1,5 +1,10 @@
 /* Z-INDEX */
 
+// Declaration of all z-indexes
+// From top to bottom in the list, equals from low to high in z-index values
+// a z-index can be declared as just its name
+// or as a map with a "name" property and optionally a "subZIndex" property
+// in "subZIndex" one or more z-indexes can be declared
 $zIndex: (
 	(
 		name: seeThroughScroll,
@@ -20,6 +25,8 @@ $zIndex: (
 	),
 );
 
+// Get a property from a map
+// if $potentialMap is not actually a map, return $default
 @function saveMapGet($potentialMap, $name, $default: null) {
 	@if  type-of($potentialMap) == "map" {
 		@return map-get($potentialMap, $name);
@@ -28,6 +35,11 @@ $zIndex: (
 	}
 }
 
+
+// returns a (sub)z-index for the provided names
+// Examples:
+// getZIndex(menuBar)
+// getZIndex(menuBar content)
 @function getZIndex($names) {
 	$list: $zIndex;
 
@@ -53,12 +65,14 @@ $zIndex: (
 	@return $match;
 }
 
-@mixin zIndex($names) {
-	z-index: getZIndex($names);
-}
-
+// Set the z-index by the zIndex name
+// Examples:
 // a {
 // 	@include zIndex(overlay);
 // 	@include zIndex(menuBar title);
 // 	@include zIndex(menuBar);
 // }
+@mixin zIndex($names) {
+	z-index: getZIndex($names);
+}
+

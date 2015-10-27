@@ -1,3 +1,10 @@
+// Add a margin to the inside of an element
+// this can be used instead of padding
+// when it is desirable that the padding
+// of the parent element collapses with the
+// margin of the child elements
+
+// Example: @include insideMarginTop(2em);
 @mixin insideMarginTop($margin) {
 	@include before("") {
 		display: block;
@@ -7,6 +14,7 @@
 	}
 }
 
+// Example: @include insideMarginBottom(2rem);
 @mixin insideMarginBottom($margin) {
 	@include after("") {
 		display: block;
@@ -16,6 +24,9 @@
 	}
 }
 
+// Set the inside margin for both top and bottom
+// Example: @include insideMargin(2rem 1rem);
+// Example2: @include insideMargin(2rem); -> This add 2rem to both top and bottom
 @mixin insideMargin($margin) {
 	$marginTop: nth($margin, 1);
 	$marginBottom: if(length($margin) > 1,

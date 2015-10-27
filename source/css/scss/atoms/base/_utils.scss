@@ -1,5 +1,11 @@
 // FUNCTIONS
 
+// Get a property from a nested map
+// voorbeeld gebruik:
+// a {
+//	 color: mapDeepGet($colors, blue light);
+//	 background-color: mapDeepGet($colors, paars);
+// }
 @function mapDeepGet($map, $keys) {
 	$result: $map;
 	@each $key in $keys {
@@ -12,8 +18,3 @@
 
 	@return $result;
 }
-// voorbeeld gebruik:
-// a {
-//	 color: mapDeepGet($colors, blue light);
-//	 background-color: mapDeepGet($colors, paars);
-// }

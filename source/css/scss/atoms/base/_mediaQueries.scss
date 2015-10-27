@@ -1,5 +1,11 @@
 // MEDIAQUERIES
 
+
+// Definition of all breakpoints
+// mediaqueryes are defined for both
+// greater than and smaller than the breakpoint
+// These values are not directly used
+// Instead use the mixins below
 $mediaQueries: (
 	// 384px
 	extraSmall: (
@@ -43,10 +49,15 @@ $mediaQueries: (
 	),
 );
 
+// Not for direct usage, it is used by the mixins below
+// get a mediaquery by its name and type
 @function getMediaQuery($name, $type) {
 	@return mapDeepGet($mediaQueries, $name $type);
 }
 
+// Not for direct usage, it is used by the mixins below
+// type is "greater", "lesser" or "between"
+// When the type is is "between", the $name of two breakpoints should be provided
 @mixin mq($type, $name) {
 	@if ($type == between) {
 		$smallest: nth($name, 0);
@@ -64,18 +75,40 @@ $mediaQueries: (
 	}
 }
 
+// Mixin for mediaquery that is greater than the breakpoint provided in $name
+// Example:
+// @include mqGreaterThan(small) { p { margin: 1rem 0; } };
 @mixin mqGreaterThan($name) {
 	@include mq(greater, $name) { @content; };
 };
 
+// Mixin for mediaquery that is lesser than the breakpoint provided in $name
+// Example:
+// @include mqLesserThan(large) { p { margin: 1rem 0; } };
 @mixin mqLesserThan($name) {
 	@include mq(lesser, $name) { @content; };
 };
 
+// Mixin for mediaquery that is between the two breakpoints provided in $names
+// Example:
+// @include mqBetween(small, medium) { p { margin: 1rem 0; } };
 @mixin mqBetween($names) {
 	@include mq(between, $names) { @content; };
 };
 
+// When a property has to have a dirrent value in multiple
+// breakpoint ranges setPropWithMq provides a
+// convinient way of setting the values
+// $mqType is "lesser", "greater" or "between"
+// $propertyName is the name of the css property, for example "padding"
+// $map is a set of key value pairs, where the key is either the name of a breakpoint
+// or "all". When "all" is used the property hets set outside of any media queries
+// Example:
+// @include setPropWithMq(greater, width, (
+// 	all: 100%,
+// 	smallMedium: calc(#{100%*1/2} - #{$space}),
+// 	mediumLarge: calc(#{100%*1/3} - #{$space})
+// ));
 @mixin setPropWithMq($mqType, $propertyName, $map) {
 	@each $tuple in $map {
 

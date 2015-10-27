@@ -1,15 +1,19 @@
 /* LINKS */
 
+// Add underline
 @mixin underline {
 	text-decoration: none;
 	border-bottom: 1px solid;
 }
 
+// Undo underline
 @mixin noUnderline {
 	text-decoration: none;
 	border-bottom: none;
 }
 
+// Hide underline without changing the dimensions relative
+// to an underlined link
 @mixin hideUnderline {
 	text-decoration: none;
 	border-bottom: 1px solid transparent;
