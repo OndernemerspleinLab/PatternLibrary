@@ -4,4 +4,8 @@
 	@include mqGreaterThan(mediumLarge) {
 		line-height: 1.6rem;
 	}
+
+	@include mqGreaterThan(extraExtraLarge) {
+		padding-left: 2rem;
+	}
 }

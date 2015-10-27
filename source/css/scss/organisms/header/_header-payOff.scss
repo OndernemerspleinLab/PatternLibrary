@@ -9,6 +9,10 @@
 		display: none;
 	}
 
+	@include mqGreaterThan(extraExtraLarge) {
+		padding-left: 2rem;
+	}
+
 	&-text {
 		margin: 0 0 0.1rem 0;
 		text-align: left;
