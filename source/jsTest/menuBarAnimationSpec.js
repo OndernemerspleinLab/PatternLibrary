@@ -21,9 +21,14 @@ describe("menuBarAnimation", () => {
 
 	beforeEach(() => {
 		openedElement = document.createElement('div');
-		openedElement.style.display = "none";
+		openedElement.style.minWidth = "200px";
+		openedElement.style.maxWidth = "200px";
 		const mockDomElement = document.createElement('div');
 		mockElement = angular.element(mockDomElement);
+		mockElement.css({
+			position: "fixed",
+			left: 0,
+		});
 		document.body.appendChild(mockDomElement);
 		document.body.appendChild(openedElement);
 	});
@@ -54,7 +59,7 @@ describe("menuBarAnimation", () => {
 
 	});
 
-	it("should animate to the with of an openedElement", () => {
+	it("should animate to the width of an openedElement", () => {
 		enableAnimations();
 		initAnimation();
 		const call = DopApp.animation.calls.mostRecent();
@@ -73,7 +78,7 @@ describe("menuBarAnimation", () => {
 
 		expect(Velocity).toHaveBeenCalledWith(mockElement, "stop");
 		expect(Velocity).toHaveBeenCalledWith(mockElement, {
-			translateX: getWidth(openedElement),
+			translateX: "200px",
 		}, Object.assign({
 			complete: mockDone
 		}, animationTiming));
