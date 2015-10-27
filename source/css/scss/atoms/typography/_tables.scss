@@ -3,15 +3,19 @@
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	border: 1px solid getColor(grijs default);
 	width: 100%;
+	table-layout:fixed;
+	word-wrap:break-word;
+	margin-bottom: 1em;
 }
-th {
+th, td {
 	text-align: left;
-	border: 1px solid getColor(grijs default);
+	border-bottom: 1px solid getColor(grijs light);
 	padding: 0.2em;
+	color: getColor(hemelblauw darkest);
+	vertical-align: top;
+    text-align: left;
 }
 td {
-	border: 1px solid getColor(grijs default);
-	padding: 0.2em;
+	color: getColor(grijs darkest);
 }

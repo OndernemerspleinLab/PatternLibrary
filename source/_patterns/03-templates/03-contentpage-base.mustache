@@ -2,11 +2,6 @@
 	{{> organisms-sidebar }}
 	<div class="page" id="page">
 		{{> organisms-header }}
-		<!--div class="layoutContainer gridContainer">
-			<div class="column column--full">
-				{{> molecules-breadcrumbs }}
-			</div>
-		</div-->
 		<div class="main">
 			<div class="layoutContainer gridContainer">
 				<div class="column column--twoThird">
@@ -20,23 +15,7 @@
 					{{> molecules-bronhouder-contentfooter }}
 				</div>
 				<div class="column column--third aside">
-					<div class="block block--side suggestions">
-						<h2 class="block-title charlieHeading sideHeading">H2 Niet gevonden wat u zocht?</h2>
-						<ul class="linkList">
-							<li class="linkList-item">
-								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Omgevingsvergunning: vervangen vergunningen en uitzonderingen</span></span></a>
-							</li>
-							<li class="linkList-item">
-								<a href="#" class="interfaceLink externalLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Watervergunning</span></span></a>
-							</li>
-							<li class="linkList-item">
-								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Bezwaar en beroep tegen beslissing overheid</span></span></a>
-							</li>
-							<li class="linkList-item">
-								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>eHerkenning</span></span></a>
-							</li>
-						</ul>
-					</div>
+					{{> organisms-side-blok-linklijst }}
 					{{! molecules-bronhouder-logo }}
 				</div>
 			</div>

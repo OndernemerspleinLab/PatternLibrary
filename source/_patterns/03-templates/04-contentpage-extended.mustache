@@ -11,42 +11,14 @@
 						{{> molecules-laatste-update }}
 					</header>
 					{{> molecules-intro-text }}
-					<div class="infoText"><span class="yellow-marker">Ingangsdatum: <time datetime="2015-07-14T10:32+00:00">1 januari 2016</time></span></div>
-					<div class="block block--side block--blue sc-block">
-						<h2 class="block-title echoHeading"><span class="yellow-marker">Meer weten of direct aanvragen</span></h2>
-						<p>SC block</p>
-					</div>
+					{{> molecules-page-content }}
 					{{> organisms-content-body-extended }}
-					<div class="block block--side block--blue rvo-links">
-						<h2 class="block-title echoHeading"><span class="yellow-marker">Lees meer over [...] (RVO)</span></h2>
-						<ul>
-							<li><a href="#1">Marketingmix</a></li>
-							<li><a href="#2">Sterkte-zwakte analyse</a></li>
-							<li><a href="#3">Brancheonderzoek</a></li>
-						</ul>
-					</div>
 					{{> molecules-bronhouder-contentfooter }}
+					{{> organisms-hoenuverder-blok }}
 				</div>
 				<div class="column column--third aside">
-					{{> organisms-contactblok }}
-					<div class="block block--side suggestions">
-						<h2 class="block-title charlieHeading sideHeading">Niet gevonden wat u zocht?</h2>
-						<p>Wellicht bent u op zoek naar:</p>
-						<ul class="linkList">
-							<li class="linkList-item">
-								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Omgevingsvergunning: vervangen vergunningen en uitzonderingen</span></span></a>
-							</li>
-							<li class="linkList-item">
-								<a href="#" class="interfaceLink externalLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Watervergunning</span></span></a>
-							</li>
-							<li class="linkList-item">
-								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Bezwaar en beroep tegen beslissing overheid</span></span></a>
-							</li>
-							<li class="linkList-item">
-								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>eHerkenning</span></span></a>
-							</li>
-						</ul>
-					</div>
+					{{! organisms-contactblok }}
+					{{> organisms-side-blok-linklijst }}
 					<div class="block block--side avb-law">
 						<h2 class="block-title echoHeading"><span class="yellow-marker">Wet- en regelgeving (AvB</span></h2>
 						<ul>
@@ -123,15 +95,7 @@
 			</div>
 			<div class="layoutContainer gridContainer">
 				{{> organisms-promoblok}}
-				{{> organisms-crsblok-linklijst}}
-				<div class="column column--third">
-					<h3><span class="yellow-line">CRS 2</span></h3>
-					<p>Bijvoorbeeld: Bijeenkomsten</p>
-				</div>
-				<div class="column column--third">
-					<h3><span class="yellow-line">CRS 3</span></h3>
-					<p>Bijvoorbeeld: Verhaal</p>
-				</div>
+				{{> organisms-crsblok-discussies }}
 			</div>
 		</div>
 		{{> organisms-footer }}

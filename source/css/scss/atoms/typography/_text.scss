@@ -50,17 +50,10 @@ abbr {
 	}
 }
 
-//Pullquote
-.pullquote {
-	font-size: getFontSize(large);
-    font-style: italic;
-}
-
 //Info text
 .infoText {
 	font-style: italic;
 	margin-bottom: 1em;
-	//color: getColor(grijs default);
 	font-size: getFontSize(small);
 
 	&--source {

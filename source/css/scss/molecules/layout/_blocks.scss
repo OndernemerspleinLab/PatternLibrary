@@ -17,6 +17,13 @@
 		background-color: getColor(hemelblauw lightest);
 		padding: 0 0.5em;
 		@include insideMargin(0.5em);
+		border-left: 0;
+	}
+	&--grey {
+		background-color: getColor(grijs light);
+		padding: 0 0.5em;
+		@include insideMargin(0.5em);
+		border-left: 0;
 	}
 	&--border {
 		border: 1px solid getColor(mosgroen default);

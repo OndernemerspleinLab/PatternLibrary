@@ -5,6 +5,8 @@
 		margin-left: 0;
 	}
 
+	.readMoreBlock &,
+	.pageContentNav &,
 	.aside & {
 		margin-left: 0;
 
@@ -18,6 +20,13 @@
 				color: getColor(hemelblauw default);
 				fill: getColor(hemelblauw default);
 			}
+		}
+	}
+
+	.readMoreBlock &,
+	.pageContentNav & {
+		.list-spacedItem {
+			margin-left: 0;
 		}
 	}
 }
