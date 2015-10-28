@@ -5,7 +5,7 @@
 	position: relative;
 
 	@include mqGreaterThan(mediumLarge) {
-		width: calc(#{100%*2/3} - #{$space});
+		width: calcColumnWidth(2/3);
 	}
 
 	&-link {

@@ -2,7 +2,7 @@
 .payOff {
 
 	@include mqGreaterThan(mediumLarge) {
-		width: calc(#{100%*1/3} - #{$space});
+		width: calcColumnWidth(1/3);
 	}
 
 	@include mqLesserThan(extraSmall) {

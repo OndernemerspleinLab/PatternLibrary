@@ -1,6 +1,4 @@
 .aside {
-    font-size: getFontSize(aside);
-
 	@include mqGreaterThan(mediumLarge) {
 		line-height: 1.6rem;
 	}
