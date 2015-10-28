@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="DopApp" class="html" ng-class="{'is-menuOpened': menuOpened}">
+<head>
+	<title>Pattern Lab Pattern</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+	<!-- never cache patterns -->
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+
+	<!--
+		Styleguide CSS is included for
+	-->
+	<link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all">
+	<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css" media="all" />
+
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+	<link rel="stylesheet" href="../../css/style.css" media="all" />
+
+	<style>
+		.has-comment, .has-comment a {
+			cursor: help !important;
+		}
+	</style>
+
+</head>
+<body class="sg-single-pattern" ng-class="{'is-menuOpened': menuOpened}">
+	<!-- Start of Pattern --><div class="column column--third">
+	<h2 class="charlieHeading">Discussies</h2>
+	<ul class="linkList">
+		<li class="linkList-item">
+			<a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html" class="interfaceLink">
+<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>				<span class="interfaceLink-text">Starten als zzp'er<br />Geplaatst op 18 okt 2014 (5 reacties)</a></span>
+		</li>
+		<li class="linkList-item">
+			<a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html" class="interfaceLink">
+<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>				<span class="interfaceLink-text">Cursus Starten als ZZP’er van LOI<br />Geplaatst op 6 okt 2014 (7 reacties)</a></span>
+		</li>
+		<li class="linkList-item">
+			<a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html" class="interfaceLink ">
+<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>				<span class="interfaceLink-text">hulp bij 1e belasting aangifte als ondernemer<br />Geplaatst op 20 aug 2014 (5 reacties)</span>
+			</a>
+		</li>
+	</ul>
+	<!--a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html">Meer discussies</a-->
+	<p class="infoText">Deze informatie is afkomstig van Hallo en Higherlevel</p>
+</div>	<!-- End of Pattern -->
+
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+
+	<!-- DO NOT MODIFY -->
+	<script>
+		// handle injection of items from PHP
+		var patternPartial = "organisms-crsblok-discussies";
+		var lineage = [{"lineagePattern":"atoms-goIcon-interfaceLink","lineagePath":"../../patterns/00-atoms-04-images-04-goIcon-interfaceLink/00-atoms-04-images-04-goIcon-interfaceLink.html"}];
+		var lineageR = [{"lineagePattern":"templates-subject","lineagePath":"../../patterns/03-templates-02-subject/03-templates-02-subject.html"},{"lineagePattern":"templates-contentpage-extended","lineagePath":"../../patterns/03-templates-04-contentpage-extended/03-templates-04-contentpage-extended.html"}];
+		var patternState = ""
+		var cssEnabled = false; //TODO
+	</script>
+
+	<script type="text/html" id="sg-pattern-html">
+
+	</script>
+
+	<script type="text/html" id="sg-pattern-css">
+
+	</script>
+	<script src="../../styleguide/js/vendor/jwerty.js"></script>
+	<script src="../../styleguide/js/postmessage.js"></script>
+	<script src="../../data/annotations.js"></script>
+	<script src="../../styleguide/js/annotations-pattern.js"></script>
+	<script src="../../styleguide/js/code-pattern.js"></script>
+	<!-- /DO NOT MODIFY -->
+
+	<!--dev:
+		<script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
+		<script type="text/javascript" src="../../js/config.js"></script>
+		<script type="text/javascript" src="../../js/init.js"></script>
+	:/dev-->
+
+	<!--prod-->
+		<script type="text/javascript" src="../../js/globalBundled.js"></script>
+	<!--/prod-->
+	<script>
+		(function () {
+			if (location.pathname.split("/")[1] !== "PatternLibrary") {
+				return;
+			}
+
+			var links = [].slice.call(document.getElementsByTagName("a"));
+
+			links.forEach(function (link) {
+				link.href = link.getAttribute("href").replace(/^\//, "/PatternLibrary/	");
+			});
+		}());
+	</script>
+</body>
+</html>

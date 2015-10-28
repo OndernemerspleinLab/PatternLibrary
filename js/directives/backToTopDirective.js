@@ -9,7 +9,7 @@ export const directiveName = "backToTop";
 DopApp.directive(directiveName, () => ({
 	link: ($scope, $element) => {
 		registerScrollListener(({top}) => {
-			if (top > 0) {
+			if (top > window.innerHeight) {
 				ngServices.$animate.removeClass($element, offScreenClassName);
 			} else {
 				ngServices.$animate.addClass($element, offScreenClassName);

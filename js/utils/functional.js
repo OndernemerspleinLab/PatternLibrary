@@ -103,6 +103,20 @@ export const filterObject = (obj, iterator) => {
 	}, {});
 };
 
+export const isAscendantOf = (parent, child) => {
+	if (parent === child) {
+		return true;
+	}
+
+	const nextChild = child.parentElement;
+
+	if (!nextChild) {
+		return false;
+	}
+
+	return isAscendantOf(parent, nextChild);
+};
+
 export const aliasMapProperty = (map, oldKey, aliasKey) => map.set(aliasKey, map.get(oldKey));
 
 export const toObjectArguments = (func, argNames) => {

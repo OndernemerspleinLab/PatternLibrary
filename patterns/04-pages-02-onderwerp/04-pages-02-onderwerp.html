@@ -190,7 +190,7 @@
             </button>
         </div>
         <div class="menuBar-context">
-            <button ng-click="viewModel.openClose.toggle('share')"  register-element="{'type': 'button', 'unitName': 'share'}" class="menuBar-button menuBar-button--context menuBar-button--share" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('share')}">
+            <button ng-click="viewModel.openClose.toggle('share')"  register-element="{'type': 'button', 'unitName': 'share'}" class="menuBar-button menuBar-button--secondary menuBar-button--context menuBar-button--share" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('share')}">
                 <div class="menuBar-button-inner">
                     <svg aria-hidden="true" class="menuBar-icon">
                         <use xlink:href="#figures-delen"></use>
@@ -198,7 +198,7 @@
                     <span class="menuBar-button-text">Delen</span>
                 </div>
             </button>
-            <button ng-click="viewModel.openClose.toggle('feedback')"  register-element="{'type': 'button', 'unitName': 'feedback'}" class="menuBar-button menuBar-button--context menuBar-button--feedback" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('feedback')}">
+            <button ng-click="viewModel.openClose.toggle('feedback')"  register-element="{'type': 'button', 'unitName': 'feedback'}" class="menuBar-button menuBar-button--secondary menuBar-button--context menuBar-button--feedback" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('feedback')}">
                 <div class="menuBar-button-inner">
                     <svg aria-hidden="true" class="menuBar-icon">
                         <use xlink:href="#figures-mening"></use>
@@ -206,7 +206,7 @@
                     <span class="menuBar-button-text">Uw mening</span>
                 </div>
             </button>
-            <button ng-click="viewModel.openClose.toggle('enquete')"  register-element="{'type': 'button', 'unitName': 'enquete'}" class="menuBar-button menuBar-button--context menuBar-button--enquete" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('enquete')}">
+            <button ng-click="viewModel.openClose.toggle('enquete')"  register-element="{'type': 'button', 'unitName': 'enquete'}" class="menuBar-button menuBar-button--secondary menuBar-button--context menuBar-button--enquete" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('enquete')}">
                 <div class="menuBar-button-inner">
                     <svg aria-hidden="true" class="menuBar-icon">
                         <use xlink:href="#figures-enquete"></use>
@@ -218,7 +218,7 @@
                 <svg aria-hidden="true" class="menuBar-icon">
                     <use xlink:href="#figures-top"></use>
                 </svg>
-                <span class="menuBar-button-text">Naar boven</span>
+                <span class="menuBar-button-text">Omhoog</span>
             </a>
         </div>
     </div>
@@ -715,11 +715,12 @@
             <textarea id="textarea" rows="3" cols="48" placeholder=""></textarea>
         </div>
     </fieldset>
+    <p>
+        <a href="#" class="formButton-cancel">Annuleer</a>
+        <a href="#" class="formButton-submit btn">Verstuur</a>
+    </p>
 </form>
-<p>
-    <a href="#" class="formButton-cancel">Annuleer</a>
-    <a href="#" class="formButton-submit btn">Verstuur</a>
-</p>    </div>
+    </div>
     <div id="enquete" class="menuBar-overlayContent ngAnimate-menuBar-overlayContent is-hidden" menu-bar-overlay-content unit-name="enquete">
         <button class="close enquete-close" ng-click="viewModel.openClose.close('enquete')">
             <span class="close-text">Sluiten</span>
@@ -731,8 +732,8 @@
             Wij zijn benieuwd naar uw ervaringen met de website. Wilt u daarom een vragenlijst invullen? Dit duurt maximaal 5 minuten.
         </p>
         <p>
-            <a href="#" class="btn">Ja</a>
-            <a href="#" class="btn">Nee</a>
+            <a href="#" class="btn btn--marginRight">Ja</a>
+            <a href="#" class="btn btn--marginRight">Nee</a>
             <a href="#" class="btn">Herinner mij later</a>
         </p>
     </div>
@@ -740,39 +741,44 @@
 <!-- Begin Header -->
 <header class="header clearfix" role="banner">
 	<div class="header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems">
-<div class="column column--twoThird logo">
+<div class="column logo">
 	<a class="logo-link" title="Ga naar homepage" href="&#x2F;patterns&#x2F;03-templates-00-homepage&#x2F;03-templates-00-homepage.html">
 		<span class="textLine">
 			o<span class="highlight--blue">n</span>dernemers
 		</span> <span class="textLine">p<span class="highlight--blue">l</span>ein</span>
 	</a>
-</div><div class="column column--third  column--fit">
-	<p class="payOff">Eén plek voor alle zaken</p>
+</div><div class="column payOff">
+	<p class="payOff-text"><!--Eén plek voor alle zaken-->Het informatiepunt voor ondernemers <span class="highlight--blue">van de overheid</span></p>
 </div>	</div>
 	<div class="brandBar">
-		<!--div class="layoutContainer">
-<ul class="breadcrumbs">
+		<div class="layoutContainer">
+<ul class="breadcrumbs diapositive">
 	<li class="breadcrumb">
-		<a class="breadcrumb-link breadcrumb-linkFirst" href="&#x2F;patterns&#x2F;03-templates-00-homepage&#x2F;03-templates-00-homepage.html">
+		<a class="breadcrumb-link breadcrumb-linkFirst diapositive-link" href="&#x2F;patterns&#x2F;03-templates-00-homepage&#x2F;03-templates-00-homepage.html">
 			<span class="breadcrumb-text">Home</span>
 		</a>
 	</li>
 	<li class="breadcrumb">
-		<a class="breadcrumb-link" href="#">
+		<a class="breadcrumb-link diapositive-link" href="#">
 			<span class="breadcrumb-text">Alles over ondernemen</span>
 		</a>
 	</li>
 	<li class="breadcrumb">
-		<a class="breadcrumb-link" href="&#x2F;patterns&#x2F;03-templates-01-theme&#x2F;03-templates-01-theme.html">
+		<a class="breadcrumb-link diapositive-link" href="&#x2F;patterns&#x2F;03-templates-01-theme&#x2F;03-templates-01-theme.html">
 			<span class="breadcrumb-text">Marketing</span>
 		</a>
 	</li>
 	<li class="breadcrumb">
-		<a class="breadcrumb-link" href="&#x2F;patterns&#x2F;03-templates-02-subject&#x2F;03-templates-02-subject.html">
+		<a class="breadcrumb-link diapositive-link" href="&#x2F;patterns&#x2F;03-templates-02-subject&#x2F;03-templates-02-subject.html">
 			<span class="breadcrumb-text">Marktonderzoek</span>
 		</a>
 	</li>
-</ul>		</div-->
+	<li class="breadcrumb">
+		<a class="breadcrumb-link diapositive-link" href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html">
+			<span class="breadcrumb-text">Marktonderzoek doen</span>
+		</a>
+	</li>
+</ul>		</div>
 	</div>
 </header>
 <!-- End Header -->		<div class="main">
@@ -844,19 +850,29 @@
 						<li><a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html">Reclame maken</a></li>
 					</ul>
 				</div>
-				<div class="column column--third">
-					<h2><span class="yellow-line">Forum</span></h2>
-					<ul>
-						<li><a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html">Starten als zzp'er<br />Geplaatst op 18 okt 2014 (5 reacties)</a></li>
-						<li><a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html">Cursus Starten als ZZP’er van LOI<br />Geplaatst op 6 okt 2014 (7 reacties) </a></li>
-						<li><a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html">hulp bij 1e belasting aangifte als ondernemer<br />Geplaatst op 20 aug 2014 (5 reacties) </a></li>
-					</ul>
-					<a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html">Meer discussies</a>
-				</div>
-			</div>
+<div class="column column--third">
+	<h2 class="charlieHeading">Discussies</h2>
+	<ul class="linkList">
+		<li class="linkList-item">
+			<a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html" class="interfaceLink">
+<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>				<span class="interfaceLink-text">Starten als zzp'er<br />Geplaatst op 18 okt 2014 (5 reacties)</a></span>
+		</li>
+		<li class="linkList-item">
+			<a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html" class="interfaceLink">
+<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>				<span class="interfaceLink-text">Cursus Starten als ZZP’er van LOI<br />Geplaatst op 6 okt 2014 (7 reacties)</a></span>
+		</li>
+		<li class="linkList-item">
+			<a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html" class="interfaceLink ">
+<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>				<span class="interfaceLink-text">hulp bij 1e belasting aangifte als ondernemer<br />Geplaatst op 20 aug 2014 (5 reacties)</span>
+			</a>
+		</li>
+	</ul>
+	<!--a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html">Meer discussies</a-->
+	<p class="infoText">Deze informatie is afkomstig van Hallo en Higherlevel</p>
+</div>			</div>
 			<div class="layoutContainer gridContainer">
 <div class="column column--third block-crs">
-	<h3><span class="yellow-line">Situaties</span></h3>
+	<h2 class="charlieHeading"><span class="yellow-line">Situaties</span></h2>
 	<ul class="linkList">
 		<li class="linkList-item">
 			<a href="&#x2F;patterns&#x2F;03-templates-03-contentpage-base&#x2F;03-templates-03-contentpage-base.html" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span>Ik wil een nieuw idee realiseren</span></span></a>
@@ -1096,38 +1112,38 @@
 </div>
 -->
 <div class="partnerLogos column">
-	<ul class="gridContainer gridContainer--centerItems gridContainer--singleLine u-noBullets">
-		<li class="verticalItem">
+	<ul class="gridContainer gridContainer--centerItems u-noBullets">
+		<li class="partnerLogo-item">
 			<a href="http://www.kvk.nl" title="Kamer van Koophandel">
-				<img class="partnerLogo partnerLogo--footer" src="../../images/logos/KvK_blue.svg" alt="Kamer van Koophandel">
+				<img class="partnerLogo-image partnerLogo--footer" src="../../images/logos/KvK_blue.svg" alt="Kamer van Koophandel">
 			</a>
 		</li>
-		<li class="verticalItem">
-			<img class="partnerLogo partnerLogo--footer" src="../../images/logos/AVB_blue.svg" alt="Antwoord voor bedrijven">
+		<li class="partnerLogo-item">
+			<img class="partnerLogo-image partnerLogo--footer" src="../../images/logos/AVB_blue.svg" alt="Antwoord voor bedrijven">
 		</li>
-		<li class="verticalItem">
+		<li class="partnerLogo-item">
 			<a href="http://www.rvo.nl" title="Rijksdienst voor Ondernemend Nederland">
-				<img class="partnerLogo partnerLogo--footer" src="../../images/logos/RVO_blue.svg" alt="Rijksdienst voor Ondernemend Nederland">
+				<img class="partnerLogo-image partnerLogo--footer" src="../../images/logos/RVO_blue.svg" alt="Rijksdienst voor Ondernemend Nederland">
 			</a>
 		</li>
-		<li class="verticalItem">
+		<li class="partnerLogo-item">
 			<a href="http://www.belastingdienst.nl/zakelijk" title="Belastingdienst">
-				<img class="partnerLogo partnerLogo--footer" src="../../images/logos/Belastingdienst_blue.svg" alt="Belastingdienst">
+				<img class="partnerLogo-image partnerLogo--footer" src="../../images/logos/Belastingdienst_blue.svg" alt="Belastingdienst">
 			</a>
 		</li>
-		<li class="verticalItem">
+		<li class="partnerLogo-item">
 			<a href="http://www.rdw.nl/Zakelijk" title="Rijksdienst voor het Wegverkeer">
-				<img class="partnerLogo partnerLogo--footer" src="../../images/logos/RDW_blue.svg" alt="RDW">
+				<img class="partnerLogo-image partnerLogo--footer" src="../../images/logos/RDW_blue.svg" alt="RDW">
 			</a>
 		</li>
-		<li class="verticalItem">
+		<li class="partnerLogo-item">
 			<a href="http://www.cbs.nl" title="Centraal Bureau voor de Statistiek">
-				<img class="partnerLogo partnerLogo--footer" src="../../images/logos/CBS_blue.svg" alt="CBS">
+				<img class="partnerLogo-image partnerLogo--footer" src="../../images/logos/CBS_blue.svg" alt="CBS">
 			</a>
 		</li>
-		<li class="verticalItem">
+		<li class="partnerLogo-item">
 			<a href="http://www.uwv.nl/particulieren/" title="Uitvoeringsinstituut Werknemers Verzekeringen">
-				<img class="partnerLogo partnerLogo--footer" src="../../images/logos/UWV_blue.svg" alt="UWV">
+				<img class="partnerLogo-image partnerLogo--footer" src="../../images/logos/UWV_blue.svg" alt="UWV">
 			</a>
 		</li>
 	</ul>

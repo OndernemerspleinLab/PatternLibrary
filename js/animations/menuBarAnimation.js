@@ -2,7 +2,7 @@ import Modernizr from 'modernizr';
 import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
 import {animation} from 'utils/ngAnimation';
-import {existing, partial} from 'utils/functional';
+import {existing, partial, minimalZero} from 'utils/functional';
 import {parseMatrix, getTranslateXFromMatrix} from 'utils/cssMatrix';
 import {opened as classNameFilters, forceShowing as forceShowingClassName} from 'constants/classNames';
 import {menuBar as animationTiming} from 'constants/animationTiming';
@@ -45,8 +45,31 @@ export const animateTranslateX = ($element, translateX, done) => {
 	}, animationTiming));
 };
 
+export const getLeftOffset = (element) => {
+
+	const transformState = getStyleProperty(element, transformPropName);
+	element.style[transformPropName] = "";
+	const {left} = element.getBoundingClientRect();
+	const leftOffset = minimalZero(left);
+	element.style[transformPropName] = transformState;
+
+	return leftOffset;
+};
+
+export const correctTranslateXForLeftOffset = (element, translateXDelta) => {
+	const leftOffset = getLeftOffset(element);
+	const translateXDeltaInt = parseInt(translateXDelta, 10) || 0;
+
+	const translateX = parseInt(translateXDeltaInt, 10) - leftOffset + "px";
+
+	return translateX;
+};
+
 export const animateOpen = ({$element, options: {openedElement}, done}) => {
-	const translateX = openedElement ? getWidth(openedElement) : getTranslateX($element[0]);
+	const element = $element[0];
+	const translateXDelta = openedElement ? getWidth(openedElement) : getTranslateX(element);
+
+	const translateX = correctTranslateXForLeftOffset(element, translateXDelta);
 	animateTranslateX($element, translateX, done);
 };
 
