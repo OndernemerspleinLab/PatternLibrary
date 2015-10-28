@@ -47,11 +47,9 @@ export default class MenuBarController {
 	static get $inject() { return ['$element', '$scope', '$animate', '$window', '$rootScope', '$timeout']; }
 
 	constructor($element, $scope, $animate, $window, $rootScope, $timeout) {
-		this.openClose = createOpenClose();
 		let animationPromise;
-		this.sideContentUnitType = sideContentUnitType;
 
-		registerResizeListener(() => {
+		const resizeCallback = () => {
 			if (animationPromise) {
 				$animate.cancel(animationPromise);
 			}
@@ -69,12 +67,11 @@ export default class MenuBarController {
 					});
 				});
 			}
+		};
 
-		});
-
-		registerScrollListener(({top}) => {
+		const scrollCallback = ({top}) => {
 			this.menuBarRetracted = top > 0;
-		});
+		};
 
 		let removeClickAwayListener = () => {};
 
@@ -126,8 +123,17 @@ export default class MenuBarController {
 			}
 		};
 
-		$scope.$watch(this.openClose.getOpenedUnit, openOrClose);
-		$scope.$watch(this.openClose.getVisuallyOpenedUnit, () => openOrClose(this.openClose.getOpenedUnit()));
+		const init = () => {
+			this.openClose = createOpenClose();
+			this.sideContentUnitType = sideContentUnitType;
+			registerResizeListener(resizeCallback);
+			registerScrollListener(scrollCallback);
+			$scope.$watch(this.openClose.getOpenedUnit, openOrClose);
+			$scope.$watch(this.openClose.getVisuallyOpenedUnit, () => openOrClose(this.openClose.getOpenedUnit()));
+		};
+
+		init();
+
 	}
 
 	isMenuBarRetracted() {
