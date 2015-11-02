@@ -56,20 +56,23 @@ export const getLeftOffset = (element) => {
 	return leftOffset;
 };
 
-export const correctTranslateXForLeftOffset = (element, translateXDelta) => {
+export const correctTranslateXForLeftOffset = (element, originTranslateX, translateXDelta) => {
 	const leftOffset = getLeftOffset(element);
 	const translateXDeltaInt = parseInt(translateXDelta, 10) || 0;
+	const originTranslateXInt = parseInt(originTranslateX, 10) || 0;
 
-	const translateX = parseInt(translateXDeltaInt, 10) - leftOffset + "px";
+	const translateX = Math.max(originTranslateXInt, translateXDeltaInt - leftOffset);
+	const translateXString = translateX + "px";
 
-	return translateX;
+	return translateXString;
 };
 
 export const animateOpen = ({$element, options: {openedElement}, done}) => {
 	const element = $element[0];
-	const translateXDelta = openedElement ? getWidth(openedElement) : getTranslateX(element);
+	const originTranslateX = getTranslateX(element);
+	const translateXDelta = openedElement ? getWidth(openedElement) : originTranslateX;
 
-	const translateX = correctTranslateXForLeftOffset(element, translateXDelta);
+	const translateX = correctTranslateXForLeftOffset(element, originTranslateX, translateXDelta);
 	animateTranslateX($element, translateX, done);
 };
 
