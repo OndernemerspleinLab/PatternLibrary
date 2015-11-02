@@ -44,7 +44,6 @@
 
 // Main Elements
 @import "scss/molecules/linkList";
-@import "scss/molecules/media";
 
 // Header Elements
 @import "scss/organisms/header/header";
@@ -71,6 +70,9 @@
 
 // Diapositive
 @import "scss/atoms/typography/diapositive";
+
+// Media element
+@import "scss/molecules/media";
 
 // State
 @import "scss/state/baseState";
