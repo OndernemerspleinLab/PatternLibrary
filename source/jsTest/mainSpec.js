@@ -1,5 +1,5 @@
 // Start running specs
-// import 'global';
+import 'directives/all';
 import prepNgServices from 'jsTest/prepNgServices';
 prepNgServices();
 import 'jsTest/DopAppSpec';
