@@ -1,4 +1,5 @@
 .mainMenu {
+	$menuItemPadding: 0.35rem;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -53,7 +54,7 @@
 	&-title {
 		flex: 0 0 auto;
 		margin: 0;
-		padding: $halfSpace $halfSpace;
+		padding: $menuItemPadding $halfSpace;
 		line-height: 1.6;
 		cursor: pointer;
 		background: rgba(getColor(hemelblauw lightest), 0.9);
@@ -91,7 +92,7 @@
 	}
 
 	&-linkList {
-		padding: $quarterSpace 0;
+		padding: $menuItemPadding 0;
 		@include noBullets;
 		margin-left: 0;
 	}
@@ -109,7 +110,7 @@
 			display: inline-block;
 		}
 		@include noUnderline;
-		padding: $quarterSpace $halfSpace;
+		padding: $menuItemPadding $halfSpace;
 		color: getColor(hemelblauw darkest);
 
 		transition: background-color 400ms;
@@ -123,9 +124,9 @@
 		}
 
 		&-icon {
-			height: 2em;
-			width: 2em;
-			margin: -0.2em 0.8em -0.2em 0;
+			height: 1.5rem;
+			width: 1.5rem;
+			margin: -0.2rem 0.8rem -0.2rem 0;
 			fill: getColor(hemelblauw darkest);
 		}
 	}
