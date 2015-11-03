@@ -1,12 +1,28 @@
-.pageContentNav {
-	border: 3px solid getColor(grijs light);
+.pageContentNav,
+.readMoreBlock {
 	padding: 1em;
 	margin-bottom: 1em;
 
 	&--title {
 		margin-top: 0;
+		margin-bottom: 0.5em;
+		font-weight: normal;
 	}
 	&--list {
 
+	}
+
+	&.block--grey {
+		.interfaceLink {
+			color: getColor(hemelblauw grijscontrast);
+			fill: getColor(hemelblauw grijscontrast);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: getColor(hemelblauw grijscontrast);
+				fill: getColor(hemelblauw grijscontrast);
+			}
+		}
 	}
 }

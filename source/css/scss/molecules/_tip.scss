@@ -1,10 +1,11 @@
 .tip {
-	border-left: 3px solid getColor(grijs light);
+	border-left: 4px solid getColor(grijs default);
 	padding-left: 1em;
 	margin: 1em 0;
 
 	&--header {
-		font-weight: normal;
+		//font-weight: normal;
+		color: getColor(grijs default);
 	}
 	&--content {
 

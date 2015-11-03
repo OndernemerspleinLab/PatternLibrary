@@ -82,14 +82,16 @@ abbr {
 		}
 	}
 	&--afzender {
-		text-align: left;
-		position: relative;
-		border-top: 1px solid getColor(grijs light);
+		//text-align: left;
+		//position: relative;
+		border-top: 4px solid getColor(grijs border);
+		padding-top: 0.75em;
+		margin-bottom: 0.75em;
 		span {
-			background-color: white;
-			padding: 0 1rem 0 0;
-			position: absolute;
-			top: -14px;
+			//background-color: white;
+			//padding: 0 1rem 0 0;
+			//position: absolute;
+			//top: -14px;
 		}
 	}
 }
@@ -105,7 +107,7 @@ abbr {
 			margin-left: 0;
 		}
 		.partnerLogo {
-			height: 3.5rem;
+			height: 2.75rem;
 		}
 	}
 }

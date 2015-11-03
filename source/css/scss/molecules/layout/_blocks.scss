@@ -10,8 +10,12 @@
 	&--side {
 		margin-top: 0;
 		margin-bottom: 1.5em;
-		border-left: 1px solid getColor(grijs light);
-		padding-left: 0.75em;
+		border-bottom: 4px solid getColor(grijs border);
+		padding-bottom: 0.5em;
+
+		&:last-child {
+			border-bottom: none;
+		}
 	}
 	&--blue {
 		background-color: getColor(hemelblauw lightest);
@@ -21,7 +25,7 @@
 	}
 	&--grey {
 		background-color: getColor(grijs lightest);
-		padding: 0 0.5em;
+		padding: 1em;
 		@include insideMargin(0.5em);
 		border-left: 0;
 	}

@@ -5,12 +5,10 @@
 		margin-left: 0;
 	}
 
-	.readMoreBlock &,
-	.pageContentNav &,
 	.aside & {
 		margin-left: 0;
 
-		.interfaceLink {
+		/*.interfaceLink {
 			color: getColor(grijs rightcolumn);
 			fill: getColor(grijs default);
 
@@ -20,11 +18,12 @@
 				color: getColor(hemelblauw default);
 				fill: getColor(hemelblauw default);
 			}
-		}
+		}*/
 	}
 
 	.readMoreBlock &,
 	.pageContentNav & {
+		margin-left: 0;
 		.list-spacedItem {
 			margin-left: 0;
 		}

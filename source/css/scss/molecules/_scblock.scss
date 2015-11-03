@@ -1,0 +1,43 @@
+.scBlock {
+	padding-left: 5em;
+	position: relative;
+	margin: 0;
+
+	&-wrapper {
+		margin: 1rem 0;
+	}
+
+	&--icon {
+		fill: getColor(paars default);
+		height: 2.5em;
+		width: 2.5em;
+		position: absolute;
+		top: 1em;
+		left: 0.5em;
+		display: block;
+	}
+	&--title {
+		color: getColor(paars default);
+	}
+	&--subTitle {
+
+	}
+	&--form {
+
+	}
+	&--result {
+		padding: 0.35em 0 0.35em 5em;
+		color: getColor(paars default);
+		background-color: getColor(paars lightest);
+		border-top: 3px solid getColor(wit);
+	}
+	&--resultLink {
+		color: getColor(paars default);
+		fill: getColor(paars default);
+		&:hover,
+		&:focus,
+		&:active {
+			color: getColor(paars default);
+		}
+	}
+}

@@ -4,29 +4,39 @@
 // grouped by major color group
 $colors: (
 	hemelblauw: (
-		default: #007bc7,
-		darkest: #033054,
-		light: #8FCAE7,
-		lightest: #DDEFF8
+		default: #007bc7,	// default -> hemelblauw
+		darkest: #033054,	// bestaat niet in Rijkshuisstijl
+		light: #8FCAE7,		// default -> licht blauw
+		lightest: #DDEFF8, 	// light -> licht blauw
+		grijscontrast: #0172b7
 	),
-	robijnrood: (
+	robijnrood: (			// is eigenlijk violet!
 		default: #A90061,
+		light: #e5b2cf,
+		lightest: #f2d9e7
 	),
 	mosgroen: (
 		default: #777C00,
+		light: #d6d7b2,
+		lightest: #ebebd9
 	),
 	paars: (
 		default: #42145F,
+		light: #c6b8cf,
+		lightest: #e3dce7
 	),
 	mintgroen: (
-		default: #76d2b6
+		default: #76d2b6,
+		light: #d6f1e9,
+		lightest: #ebf8f4
 	),
-	grijs: (
+	grijs: (				// alle grijstinten wijken af van Rijkshuisstijl
 		darkest: #333333,
 		default: #8F8F8F,
 		rightcolumn: #444444,
+		border: #e5e5e5,
 		light: #dddddd,
-		lightest: #f2f2f2
+		lightest: #f6f6f6
 	),
 	zwart: #000000,
 	wit: #FFFFFF,
