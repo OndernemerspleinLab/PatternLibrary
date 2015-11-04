@@ -1,12 +1,13 @@
 .linkList {
 	@include noBullets;
+	margin-left: 0;
 
 	.block-crs & {
-		margin-left: 0;
+		//margin-left: 0;
 	}
 
 	.aside & {
-		margin-left: 0;
+		//margin-left: 0;
 
 		/*.interfaceLink {
 			color: getColor(grijs rightcolumn);
@@ -23,7 +24,7 @@
 
 	.readMoreBlock &,
 	.pageContentNav & {
-		margin-left: 0;
+		//margin-left: 0;
 		.list-spacedItem {
 			margin-left: 0;
 		}

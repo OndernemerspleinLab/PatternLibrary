@@ -6,6 +6,7 @@
 		top: $space/2;
 		bottom: $space/2;
 	}
+	padding: $space/4 $space/2;
 
 	&--side {
 		margin-top: 0;
@@ -19,19 +20,14 @@
 	}
 	&--blue {
 		background-color: getColor(hemelblauw lightest);
-		padding: 0 0.5em;
 		@include insideMargin(0.5em);
-		border-left: 0;
 	}
 	&--grey {
 		background-color: getColor(grijs lightest);
-		padding: 1em;
 		@include insideMargin(0.5em);
-		border-left: 0;
 	}
 	&--border {
-		border: 1px solid getColor(mosgroen default);
-		padding: 0 0.5em;
+		border: 1px solid getColor(hemelblauw default);
 		@include insideMargin(0.5em);
 	}
 
