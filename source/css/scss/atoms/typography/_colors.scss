@@ -10,7 +10,7 @@ $colors: (
 		lightest: #DDEFF8, 	// light -> licht blauw
 		grijscontrast: #0172b7
 	),
-	violet: (			// is eigenlijk violet!
+	violet: (
 		default: #A90061,
 		light: #e5b2cf,
 		lightest: #f2d9e7
@@ -37,6 +37,16 @@ $colors: (
 		border: #e5e5e5,
 		light: #dddddd,
 		lightest: #f6f6f6
+	),
+	groen: (
+		default: #39870c,
+		light: #c3dbb6,
+		lightest: #efeddb
+	),
+	rood: (
+		default: #d52b1e,
+		light: #f2bfbb,
+		lightest: #f9dfdd
 	),
 	zwart: #000000,
 	wit: #FFFFFF,

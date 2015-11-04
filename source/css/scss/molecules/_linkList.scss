@@ -2,29 +2,8 @@
 	@include noBullets;
 	margin-left: 0;
 
-	.block-crs & {
-		//margin-left: 0;
-	}
-
-	.aside & {
-		//margin-left: 0;
-
-		/*.interfaceLink {
-			color: getColor(grijs rightcolumn);
-			fill: getColor(grijs default);
-
-			&:hover,
-			&:active,
-			&:focus {
-				color: getColor(hemelblauw default);
-				fill: getColor(hemelblauw default);
-			}
-		}*/
-	}
-
 	.readMoreBlock &,
 	.pageContentNav & {
-		//margin-left: 0;
 		.list-spacedItem {
 			margin-left: 0;
 		}

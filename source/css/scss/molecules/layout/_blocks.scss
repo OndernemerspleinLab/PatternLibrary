@@ -6,13 +6,19 @@
 		top: $space/2;
 		bottom: $space/2;
 	}
+	@include insideMargin(0.5em);
 	padding: $space/4 $space/2;
+
+	.crs-wrapper & {
+		background-color: getColor(wit);
+	}
 
 	&--side {
 		margin-top: 0;
 		margin-bottom: 1.5em;
 		border-bottom: 4px solid getColor(grijs border);
 		padding-bottom: 0.5em;
+		padding-left: 0;
 
 		&:last-child {
 			border-bottom: none;
@@ -20,15 +26,92 @@
 	}
 	&--blue {
 		background-color: getColor(hemelblauw lightest);
-		@include insideMargin(0.5em);
+		//@include insideMargin(0.5em);
+
+		.crs-wrapper & {
+			background-color: getColor(wit);
+		}
+	}
+	&--blue {
+		background-color: getColor(hemelblauw lightest);
+		//@include insideMargin(0.5em);
+
+		.crs-wrapper & {
+			background-color: getColor(wit);
+		}
+	}
+	&--purple {
+		//@include insideMargin(0.5em);
+		.block-title {
+			color: getColor(paars default);
+			font-weight: normal;
+		}
+		.block-icon {
+			fill: getColor(paars default);
+			height: 2rem;
+			width: 2rem;
+			margin-right: 1rem;
+		}
+		.interfaceLink {
+			color: getColor(grijs darkest);
+			fill: getColor(paars default);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: getColor(paars default);
+				fill: getColor(paars default);
+			}
+		}
+
+		.crs-wrapper & {
+			background-color: getColor(wit);
+		}
+	}
+	&--violet {
+		//@include insideMargin(0.5em);
+		.block-title {
+			color: getColor(violet default);
+			font-weight: normal;
+		}
+		.block-icon {
+			fill: getColor(violet default);
+			height: 1.5rem;
+			width: 1.5rem;
+			margin-right: 1rem;
+
+		}
+		.interfaceLink {
+			color: getColor(grijs darkest);
+			fill: getColor(violet default);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: getColor(violet default);
+				fill: getColor(violet default);
+			}
+		}
+
+		.crs-wrapper & {
+			background-color: getColor(wit);
+		}
 	}
 	&--grey {
 		background-color: getColor(grijs lightest);
-		@include insideMargin(0.5em);
+		//@include insideMargin(0.5em);
+
+		.crs-wrapper & {
+			background-color: getColor(wit);
+		}
 	}
 	&--border {
 		border: 1px solid getColor(hemelblauw default);
-		@include insideMargin(0.5em);
+		//@include insideMargin(0.5em);
+
+		.crs-wrapper & {
+			background-color: getColor(wit);
+		}
 	}
 
 	&-title {
@@ -40,4 +123,8 @@
 	&-link {
 
 	}
+}
+
+.crs-wrapper {
+	background-color: getColor(grijs lightest);
 }

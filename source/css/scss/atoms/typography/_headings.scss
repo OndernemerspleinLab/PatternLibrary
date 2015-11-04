@@ -44,6 +44,10 @@ h2, .bravoHeading {
 		font-size: getFontSize(bravoHeading large);
 		// margin-bottom: 0.1em;
 	}
+
+	&.block-title {
+		margin-top: 0;
+	}
 }
 h3, .charlieHeading,
 h4, .deltaHeading,
@@ -53,6 +57,10 @@ h6, .foxtrotHeading {
 	margin: {
 		top: 1.5em;
 		bottom: 0.2em;
+	}
+
+	&.block-title {
+		margin-top: 0;
 	}
 
 	@include mqGreaterThan(small) {
