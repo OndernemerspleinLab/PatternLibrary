@@ -28,10 +28,17 @@
 	.lab-colors ul,
 	.lab-colors {
 		list-style: none;
+		padding-left: 0;
+		margin-bottom: 0;
 	}
 
 	.lab-colors li {
 		margin: 2em 0;
+	}
+	.lab-colors li:before {
+		content: "";
+		position: relative;
+		display: none;
 	}
 
 	.lab-colors ul li {
@@ -55,27 +62,36 @@
 
 <h2>Kleuren</h2>
 <ul class="lab-colors">
-	<li>
+	<li>Steunkleuren:
 		<ul>
 			<li style="background: #777C00;" class="diapositive"><span>Mosgroen:</span> <span>#777C00</span></li>
-			<li style="background: #A90061;" class="diapositive"><span>Robijnrood:</span> <span>#A90061</span></li>
+			<li style="background: #A90061;" class="diapositive"><span>Violet:</span> <span>#A90061</span></li>
 			<li style="background: #42145F;" class="diapositive"><span>Paars:</span> <span>#42145F</span></li>
 		</ul>
 	</li>
 
-	<li>
+	<li>Blauwtinten:
 		<ul>
-			<li style="background: #0077CE;" class="diapositive"><span>Hemelblauw:</span> <span>#0077CE</span></li>
+			<li style="background: #007bc7;" class="diapositive"><span>Hemelblauw:</span> <span>#007bc7</span></li>
 			<li style="background: #8FCAE7;"><span>Hemelblauw licht:</span> <span>#8FCAE7</span></li>
-			<li style="background: #DDEFF8;"><span>lightest lichtst:</span> <span>#DDEFF8</span></li>
+			<li style="background: #DDEFF8;"><span>Hemelblauw lichtst:</span> <span>#DDEFF8</span></li>
 			<li style="background: #033054;" class="diapositive"><span>Hemelblauw donkerst:</span> <span>#033054</span></li>
 		</ul>
 	</li>
-	<li>
+	<li>Grijstinten:
 		<ul>
 			<li style="background: #333333;" class="diapositive"><span>Grijs donkerst:</span> <span>#333333</span></li>
 			<li style="background: #8F8F8F;"><span>Grijs:</span> <span>#8F8F8F</span></li>
 			<li style="background: #DDDDDD;"><span>Grijs licht:</span> <span>#DDDDDD</span></li>
+			<li style="background: #f6f6f6;"><span>Grijs lichtst:</span> <span>#f6f6f6</span></li>
+		</ul>
+	</li>
+
+	<li>Overige kleuren:
+		<ul>
+			<li style="background: #76d2b6;"><span>Mintgroen:</span> <span>#76d2b6</span></li>
+			<li style="background: #d52b1e;" class="diapositive"><span>Rood:</span> <span>#d52b1e</span></li>
+			<li style="background: #39870c;" class="diapositive"><span>Groen:</span> <span>#39870c</span></li>
 		</ul>
 	</li>
 </ul>
@@ -100,6 +116,11 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+	.lab-gradients li:before {
+		content: "";
+		position: relative;
+		display: none;
 	}
 
 	.lab-gradients span {
@@ -128,10 +149,17 @@
 	.lab-colors ul,
 	.lab-colors {
 		list-style: none;
+		padding-left: 0;
+		margin-bottom: 0;
 	}
 
 	.lab-colors li {
 		margin: 2em 0;
+	}
+	.lab-colors li:before {
+		content: &quot;&quot;;
+		position: relative;
+		display: none;
 	}
 
 	.lab-colors ul li {
@@ -155,27 +183,36 @@
 
 &lt;h2&gt;Kleuren&lt;&#x2F;h2&gt;
 &lt;ul class=&quot;lab-colors&quot;&gt;
-	&lt;li&gt;
+	&lt;li&gt;Steunkleuren:
 		&lt;ul&gt;
 			&lt;li style=&quot;background: #777C00;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Mosgroen:&lt;&#x2F;span&gt; &lt;span&gt;#777C00&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
-			&lt;li style=&quot;background: #A90061;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Robijnrood:&lt;&#x2F;span&gt; &lt;span&gt;#A90061&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+			&lt;li style=&quot;background: #A90061;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Violet:&lt;&#x2F;span&gt; &lt;span&gt;#A90061&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
 			&lt;li style=&quot;background: #42145F;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Paars:&lt;&#x2F;span&gt; &lt;span&gt;#42145F&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
 		&lt;&#x2F;ul&gt;
 	&lt;&#x2F;li&gt;
 
-	&lt;li&gt;
+	&lt;li&gt;Blauwtinten:
 		&lt;ul&gt;
-			&lt;li style=&quot;background: #0077CE;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Hemelblauw:&lt;&#x2F;span&gt; &lt;span&gt;#0077CE&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+			&lt;li style=&quot;background: #007bc7;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Hemelblauw:&lt;&#x2F;span&gt; &lt;span&gt;#007bc7&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
 			&lt;li style=&quot;background: #8FCAE7;&quot;&gt;&lt;span&gt;Hemelblauw licht:&lt;&#x2F;span&gt; &lt;span&gt;#8FCAE7&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
-			&lt;li style=&quot;background: #DDEFF8;&quot;&gt;&lt;span&gt;lightest lichtst:&lt;&#x2F;span&gt; &lt;span&gt;#DDEFF8&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+			&lt;li style=&quot;background: #DDEFF8;&quot;&gt;&lt;span&gt;Hemelblauw lichtst:&lt;&#x2F;span&gt; &lt;span&gt;#DDEFF8&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
 			&lt;li style=&quot;background: #033054;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Hemelblauw donkerst:&lt;&#x2F;span&gt; &lt;span&gt;#033054&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
 		&lt;&#x2F;ul&gt;
 	&lt;&#x2F;li&gt;
-	&lt;li&gt;
+	&lt;li&gt;Grijstinten:
 		&lt;ul&gt;
 			&lt;li style=&quot;background: #333333;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Grijs donkerst:&lt;&#x2F;span&gt; &lt;span&gt;#333333&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
 			&lt;li style=&quot;background: #8F8F8F;&quot;&gt;&lt;span&gt;Grijs:&lt;&#x2F;span&gt; &lt;span&gt;#8F8F8F&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
 			&lt;li style=&quot;background: #DDDDDD;&quot;&gt;&lt;span&gt;Grijs licht:&lt;&#x2F;span&gt; &lt;span&gt;#DDDDDD&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+			&lt;li style=&quot;background: #f6f6f6;&quot;&gt;&lt;span&gt;Grijs lichtst:&lt;&#x2F;span&gt; &lt;span&gt;#f6f6f6&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+		&lt;&#x2F;ul&gt;
+	&lt;&#x2F;li&gt;
+
+	&lt;li&gt;Overige kleuren:
+		&lt;ul&gt;
+			&lt;li style=&quot;background: #76d2b6;&quot;&gt;&lt;span&gt;Mintgroen:&lt;&#x2F;span&gt; &lt;span&gt;#76d2b6&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+			&lt;li style=&quot;background: #d52b1e;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Rood:&lt;&#x2F;span&gt; &lt;span&gt;#d52b1e&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+			&lt;li style=&quot;background: #39870c;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Groen:&lt;&#x2F;span&gt; &lt;span&gt;#39870c&lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
 		&lt;&#x2F;ul&gt;
 	&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -200,6 +237,11 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+	.lab-gradients li:before {
+		content: &quot;&quot;;
+		position: relative;
+		display: none;
 	}
 
 	.lab-gradients span {

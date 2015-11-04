@@ -2,10 +2,17 @@
 &Tab;.lab-colors ul,
 &Tab;.lab-colors {
 &Tab;&Tab;list-style: none;
+&Tab;&Tab;padding-left: 0;
+&Tab;&Tab;margin-bottom: 0;
 &Tab;}
 
 &Tab;.lab-colors li {
 &Tab;&Tab;margin: 2em 0;
+&Tab;}
+&Tab;.lab-colors li:before {
+&Tab;&Tab;content: &quot;&quot;;
+&Tab;&Tab;position: relative;
+&Tab;&Tab;display: none;
 &Tab;}
 
 &Tab;.lab-colors ul li {
@@ -29,27 +36,36 @@
 
 &lt;h2&gt;Kleuren&lt;/h2&gt;
 &lt;ul class=&quot;lab-colors&quot;&gt;
-&Tab;&lt;li&gt;
+&Tab;&lt;li&gt;Steunkleuren:
 &Tab;&Tab;&lt;ul&gt;
 &Tab;&Tab;&Tab;&lt;li style=&quot;background: #777C00;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Mosgroen:&lt;/span&gt; &lt;span&gt;#777C00&lt;/span&gt;&lt;/li&gt;
-&Tab;&Tab;&Tab;&lt;li style=&quot;background: #A90061;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Robijnrood:&lt;/span&gt; &lt;span&gt;#A90061&lt;/span&gt;&lt;/li&gt;
+&Tab;&Tab;&Tab;&lt;li style=&quot;background: #A90061;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Violet:&lt;/span&gt; &lt;span&gt;#A90061&lt;/span&gt;&lt;/li&gt;
 &Tab;&Tab;&Tab;&lt;li style=&quot;background: #42145F;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Paars:&lt;/span&gt; &lt;span&gt;#42145F&lt;/span&gt;&lt;/li&gt;
 &Tab;&Tab;&lt;/ul&gt;
 &Tab;&lt;/li&gt;
 
-&Tab;&lt;li&gt;
+&Tab;&lt;li&gt;Blauwtinten:
 &Tab;&Tab;&lt;ul&gt;
-&Tab;&Tab;&Tab;&lt;li style=&quot;background: #0077CE;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Hemelblauw:&lt;/span&gt; &lt;span&gt;#0077CE&lt;/span&gt;&lt;/li&gt;
+&Tab;&Tab;&Tab;&lt;li style=&quot;background: #007bc7;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Hemelblauw:&lt;/span&gt; &lt;span&gt;#007bc7&lt;/span&gt;&lt;/li&gt;
 &Tab;&Tab;&Tab;&lt;li style=&quot;background: #8FCAE7;&quot;&gt;&lt;span&gt;Hemelblauw licht:&lt;/span&gt; &lt;span&gt;#8FCAE7&lt;/span&gt;&lt;/li&gt;
-&Tab;&Tab;&Tab;&lt;li style=&quot;background: #DDEFF8;&quot;&gt;&lt;span&gt;lightest lichtst:&lt;/span&gt; &lt;span&gt;#DDEFF8&lt;/span&gt;&lt;/li&gt;
+&Tab;&Tab;&Tab;&lt;li style=&quot;background: #DDEFF8;&quot;&gt;&lt;span&gt;Hemelblauw lichtst:&lt;/span&gt; &lt;span&gt;#DDEFF8&lt;/span&gt;&lt;/li&gt;
 &Tab;&Tab;&Tab;&lt;li style=&quot;background: #033054;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Hemelblauw donkerst:&lt;/span&gt; &lt;span&gt;#033054&lt;/span&gt;&lt;/li&gt;
 &Tab;&Tab;&lt;/ul&gt;
 &Tab;&lt;/li&gt;
-&Tab;&lt;li&gt;
+&Tab;&lt;li&gt;Grijstinten:
 &Tab;&Tab;&lt;ul&gt;
 &Tab;&Tab;&Tab;&lt;li style=&quot;background: #333333;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Grijs donkerst:&lt;/span&gt; &lt;span&gt;#333333&lt;/span&gt;&lt;/li&gt;
 &Tab;&Tab;&Tab;&lt;li style=&quot;background: #8F8F8F;&quot;&gt;&lt;span&gt;Grijs:&lt;/span&gt; &lt;span&gt;#8F8F8F&lt;/span&gt;&lt;/li&gt;
 &Tab;&Tab;&Tab;&lt;li style=&quot;background: #DDDDDD;&quot;&gt;&lt;span&gt;Grijs licht:&lt;/span&gt; &lt;span&gt;#DDDDDD&lt;/span&gt;&lt;/li&gt;
+&Tab;&Tab;&Tab;&lt;li style=&quot;background: #f6f6f6;&quot;&gt;&lt;span&gt;Grijs lichtst:&lt;/span&gt; &lt;span&gt;#f6f6f6&lt;/span&gt;&lt;/li&gt;
+&Tab;&Tab;&lt;/ul&gt;
+&Tab;&lt;/li&gt;
+
+&Tab;&lt;li&gt;Overige kleuren:
+&Tab;&Tab;&lt;ul&gt;
+&Tab;&Tab;&Tab;&lt;li style=&quot;background: #76d2b6;&quot;&gt;&lt;span&gt;Mintgroen:&lt;/span&gt; &lt;span&gt;#76d2b6&lt;/span&gt;&lt;/li&gt;
+&Tab;&Tab;&Tab;&lt;li style=&quot;background: #d52b1e;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Rood:&lt;/span&gt; &lt;span&gt;#d52b1e&lt;/span&gt;&lt;/li&gt;
+&Tab;&Tab;&Tab;&lt;li style=&quot;background: #39870c;&quot; class=&quot;diapositive&quot;&gt;&lt;span&gt;Groen:&lt;/span&gt; &lt;span&gt;#39870c&lt;/span&gt;&lt;/li&gt;
 &Tab;&Tab;&lt;/ul&gt;
 &Tab;&lt;/li&gt;
 &lt;/ul&gt;
@@ -74,6 +90,11 @@
 &Tab;&Tab;display: flex;
 &Tab;&Tab;justify-content: space-between;
 &Tab;&Tab;align-items: center;
+&Tab;}
+&Tab;.lab-gradients li:before {
+&Tab;&Tab;content: &quot;&quot;;
+&Tab;&Tab;position: relative;
+&Tab;&Tab;display: none;
 &Tab;}
 
 &Tab;.lab-gradients span {
