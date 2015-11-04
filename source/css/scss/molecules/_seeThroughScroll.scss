@@ -1,9 +1,14 @@
+
+
 .seeThroughScroll {
 	position: relative;
 	@include zIndex(seeThroughScroll);
 
 	&-size {
 		overflow: hidden;
+		@include mqDisableSeeThroughScroll {
+			display: none;
+		}
 	}
 	&-scroll {
 		overflow: auto;
@@ -14,10 +19,27 @@
 		width: 100%;
 		height: 100%;
 		@include zIndex(seeThroughScroll content);
+		@include mqDisableSeeThroughScroll {
+			position: relative;
+			width: auto;
+			height: auto;
+			left: auto;
+			top: auto;
+			overflow: visible;
+		}
+
+		@include mqDisableSeeThroughScroll {
+			&.is-hidden:not(.ng-animate) {
+				display: block !important;
+			}
+		}
 
 		.touch & {
 			overflow-y: scroll;
 			-webkit-overflow-scrolling: touch;
+			@include mqDisableSeeThroughScroll {
+				overflow-y: visible;
+			}
 		}
 	}
 	&-content {

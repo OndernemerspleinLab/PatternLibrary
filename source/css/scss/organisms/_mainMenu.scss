@@ -1,5 +1,13 @@
+@mixin mqDisableSeeThroughScroll {
+	@include mqGreaterThan(smallMedium) {
+		@include mqGreaterThan(mediumHeight) {
+			@content;
+		}
+	}
+}
+
 .mainMenu {
-	$menuItemPadding: 0.35rem;
+	$menuItemPadding: 0.33rem;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -21,6 +29,13 @@
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 0;
+		font-size: getFontSize(small);
+
+		@include mqDisableSeeThroughScroll {
+			margin-top: $menuBarWidthSmall + 1.75rem;
+			overflow: auto;
+			overflow-x: hidden;
+		}
 
 		@include before("") {
 			display: block;
@@ -33,6 +48,9 @@
 			}
 			@include mqGreaterThan(large) {
 				height: $menuBarWidthLarge + 0.8rem;
+			}
+			@include mqDisableSeeThroughScroll {
+				display: none;
 			}
 		}
 
@@ -66,6 +84,22 @@
 				}
 			}
 		}
+
+		@include mqDisableSeeThroughScroll {
+			cursor: auto;
+			margin-top: 1rem;
+			padding: {
+				top: ($menuItemPadding / 2);
+				bottom: ($menuItemPadding / 2);
+			}
+			.no-touch  & {
+				@include hoverEtc {
+					.mainMenu-title-text {
+						@include noUnderline;
+					}
+				}
+			}
+		}
 	}
 
 	&-button {
@@ -74,6 +108,9 @@
 		width: 2rem;
 		height: 1.5rem;
 	    vertical-align: -31%;
+		@include mqDisableSeeThroughScroll {
+			display: none;
+		}
 	}
 
 	&-content {
@@ -88,6 +125,9 @@
 
 		&-background {
 			background: rgba(getColor(wit), 0.6);
+			@include mqDisableSeeThroughScroll {
+				background: none;
+			}
 		}
 	}
 
@@ -95,13 +135,14 @@
 		padding: $menuItemPadding 0;
 		@include noBullets;
 		margin-left: 0;
+		@include mqDisableSeeThroughScroll {
+			padding: 0;
+		}
 	}
 
 	&-item {
 		margin: 0;
-		@include mqGreaterThan(large) {
-			padding: 0;
-		}
+		padding: 0;
 	}
 
 	&-link {
