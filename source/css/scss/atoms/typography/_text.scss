@@ -15,13 +15,13 @@ p {
 	margin-bottom: 1em;
 }
 
-/* Blockquote */
+/* Blockquote (is gelijk aan _tip.scss) */
 blockquote {
     font-style: italic;
-    border-left: 1px solid getColor(grijs default);
+    border-left: 4px solid getColor(grijs default);
     color: getColor(grijs default);
-	padding-left: $pad;
-	margin-bottom: $space;
+	padding-left: 1em;
+	margin: 1em 0;
 }
 
 /* Horizontal Rule */
