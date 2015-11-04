@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html ng-app="DopApp" class="html" ng-class="{'is-menuOpened': menuOpened}">
+<head>
+	<title>Pattern Lab Pattern</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+	<!-- never cache patterns -->
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+
+	<!--
+		Styleguide CSS is included for
+	-->
+	<link rel="stylesheet" href="../../styleguide/css/styleguide.css" media="all">
+	<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css" media="all" />
+
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+	<link rel="stylesheet" href="../../css/style.css" media="all" />
+
+	<style>
+		.has-comment, .has-comment a {
+			cursor: help !important;
+		}
+	</style>
+
+</head>
+<body class="sg-single-pattern" ng-class="{'is-menuOpened': menuOpened}">
+	<!-- Start of Pattern --><table class="grid">
+    <tbody>
+        <tr>
+            <td>
+                <p>&nbsp;</p>
+            </td>
+            <td>
+                <p><strong>Eenmanszaak</strong></p>
+            </td>
+            <td>
+                <p><strong>Maatschap</strong></p>
+            </td>
+            <td>
+                <p><strong>VOF</strong></p>
+            </td>
+            <td>
+                <p><strong>BV</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Kenmerken</strong></p>
+            </td>
+            <td>
+                <ul>
+                    <li>Eén eigenaar</li>
+                    <li>Natuurlijk persoon</li>
+                </ul>
+            </td>
+            <td>
+                <p>Bundeling van eenmanszaken en/of BV’s. De leden worden maten genoemd.</p>
+            </td>
+            <td>
+                <p>Bundeling van eenmanszaken en/of BV’s. De leden worden vennoten genoemd.</p>
+            </td>
+            <td>
+                <ul>
+                    <li>Een of meer aandeelhouders</li>
+                    <li>Rechtspersoon</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Aansprakelijkheid</strong></p>
+            </td>
+            <td>
+                <p>Privé <a title="Aansprakelijkheid" href="../juridisch/aansprakelijkheid" target="_self">aansprakelijk</a></p>
+            </td>
+            <td>
+                <p>Maten zijn ieder voor een gelijk deel <a title="Aansprakelijkheid" href="../juridisch/aansprakelijkheid" target="_self">aansprakelijk</a>,&nbsp;ook met hun privévermogen</p>
+            </td>
+            <td>
+                <p>Vennoten zijn ieder voor 100% aansprakelijk, ook met hun privévermogen</p>
+            </td>
+            <td>
+                <p>In principe niet privé aansprakelijk, behalve bij wanbeheer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Oprichting</strong></p>
+            </td>
+            <td>
+                <p>Inschrijven bij <a title="De Kamer van Koophandel" href="../../starten/kvk/index_html" target="_self">KvK</a></p>
+            </td>
+            <td>
+                <ul>
+                    <li>Afzonderlijke maten schrijven zich in bij <a title="De Kamer van Koophandel" href="../../starten/kvk/index_html" target="_self">KvK</a> </li>
+                    <li>Maatschapscontract opstellen (niet verplicht, wel sterk aan te raden)</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>VOF inschrijven bij KvK</li>
+                    <li>Vennootschapscontract opstellen (niet verplicht, wel sterk aan te raden)</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Wordt opgericht door de notaris</li>
+                    <li>Oprichtingskapitaal&nbsp; nodig</li>
+                    <li>Notaris zorgt voor inschrijving bij de KvK</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Belastingen</strong></p>
+            </td>
+            <td>
+                <ul>
+                    <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a></li>
+                    <li><a title="Zelfstandigenaftrek" href="../inkomstenbelasting/aftrekposten/zelfstandigenaftrek" target="_self">Zelfstandigenaftrek</a>&nbsp;en <a title="Startersaftrek" href="../inkomstenbelasting/aftrekposten/startersaftrek" target="_self">startersaftrek</a> (onder voorwaarden)</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a></li>
+                    <li><a title="Zelfstandigenaftrek" href="../inkomstenbelasting/aftrekposten/zelfstandigenaftrek" target="_self">Zelfstandigenaftrek</a>&nbsp;en <a title="Startersaftrek" href="../inkomstenbelasting/aftrekposten/startersaftrek" target="_self">startersaftrek</a> (onder voorwaarden)</li>
+                    <li>Maten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de <a title="BTW" href="../btw/index_html" target="_self">btw</a> is de maatschap als geheel ondernemer</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Inkomstenbelasting zelfstandigenaftrek en startersaftrek (onder voorwaarden)</li>
+                    <li>Vennoten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de btw&nbsp;is de VOF als geheel ondernemer</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><a title="Vennootschapsbelasting" href="bv/vennootschapsbelasting" target="_self">Vennootschapsbelasting</a></li>
+                    <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a>&nbsp;over salaris directeur-grootaandeelhouder</li>
+                    <li>Dividendbelasting</li>
+                    <li>Geen ondernemersaftrekposten</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Sociale zekerheid</strong></p>
+            </td>
+            <td>
+                <p>Geen werknemersverzekeringen</p>
+            </td>
+            <td>
+                <p>Geen werknemersverzekeringen</p>
+            </td>
+            <td>
+                <p>Geen werknemersverzekeringen</p>
+            </td>
+            <td>
+                <p>Directeur-grootaandeelhouder valt niet onder werknemersverzekeringen (tenzij er sprake is van ondergeschiktheid)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Verplichtingen</strong></p>
+            </td>
+            <td>
+                <p>Inschrijving KvK&nbsp;</p>
+            </td>
+            <td>
+                <p>Inschrijving KvK van de aangesloten eenmanszaken&nbsp;en <a title="BV" href="bv/index_html" target="_self">BV’s</a></p>
+            </td>
+            <td>
+                <p>Inschrijving KvK</p>
+            </td>
+            <td>
+                <ul>
+                    <li><a title="Jaarrekening" href="../inkomstenbelasting/jaarrekening/index_html" target="_self">Jaarrekening</a> maken en deponeren bij de KvK</li>
+                    <li>Inschrijving KvK</li>
+                    <li>Maandelijks aangifte én betaling loonbelasting</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Kosten</strong></p>
+            </td>
+            <td></td>
+            <td>
+                <p>Kosten voor het opstellen van het maatschapscontract</p>
+            </td>
+            <td>
+                <p>Kosten voor het opstellen van het vennootschapscontract</p>
+            </td>
+            <td>
+                <ul>
+                    <li>Oprichtingskosten circa € 1500</li>
+                    <li>Oprichtingskapitaal&nbsp;circa € 18.000 (in elk geval tot de wet vereenvoudiging en flexibilisering bv-recht ingaat)</li>
+                    <li>Accountantskosten vanwege de jaarrekening</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Bijzonderheden</strong></p>
+            </td>
+            <td></td>
+            <td>
+                <p>Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze rechtsvorm.</p>
+            </td>
+            <td>
+                <ul>
+                    <li>Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze <a title="Rechtsvormen" href="index_html" target="_self">rechtsvorm</a>.</li>
+                    <li>Freelancende levenspartners kunnen een speciale VOF oprichten: de man/vrouw-firma.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Het tarief van de <a title="Vennootschapsbelasting" href="bv/vennootschapsbelasting" target="_self">vennootschapsbelasting</a> ligt lager dan dat van de <a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">inkomstenbelasting</a>. Boven een bepaalde nettowinst kan een <a title="BV" href="bv/index_html" target="_self">BV</a> daardoor voordeliger zijn. Dit omslagpunt is per situatie verschillend, maar ligt globaal bij een nettowinst van circa € 70.000.</li>
+                    <li>Aantrekkelijke korting bij ouderschapsverlof.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>	<!-- End of Pattern -->
+
+	<!--
+		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)
+		Therefore all calls to assets should have the ../../ in order to work in an apache-less environment
+	-->
+
+	<!-- DO NOT MODIFY -->
+	<script>
+		// handle injection of items from PHP
+		var patternPartial = "atoms-table-rechtsvorm";
+		var lineage = [];
+		var lineageR = [{"lineagePattern":"organisms-content-body-extended","lineagePath":"../../patterns/02-organisms-01-content-00-content-body-extended/02-organisms-01-content-00-content-body-extended.html"}];
+		var patternState = ""
+		var cssEnabled = false; //TODO
+	</script>
+
+	<script type="text/html" id="sg-pattern-html">
+
+	</script>
+
+	<script type="text/html" id="sg-pattern-css">
+
+	</script>
+	<script src="../../styleguide/js/vendor/jwerty.js"></script>
+	<script src="../../styleguide/js/postmessage.js"></script>
+	<script src="../../data/annotations.js"></script>
+	<script src="../../styleguide/js/annotations-pattern.js"></script>
+	<script src="../../styleguide/js/code-pattern.js"></script>
+	<!-- /DO NOT MODIFY -->
+
+	<!--dev:
+		<script type="text/javascript" src="../../js/jspm_packages/system.js"></script>
+		<script type="text/javascript" src="../../js/config.js"></script>
+		<script type="text/javascript" src="../../js/init.js"></script>
+	:/dev-->
+
+	<!--prod-->
+		<script type="text/javascript" src="../../js/globalBundled.js"></script>
+	<!--/prod-->
+	<script>
+		(function () {
+			if (location.pathname.split("/")[1] !== "PatternLibrary") {
+				return;
+			}
+
+			var links = [].slice.call(document.getElementsByTagName("a"));
+
+			links.forEach(function (link) {
+				link.href = link.getAttribute("href").replace(/^\//, "/PatternLibrary/	");
+			});
+		}());
+	</script>
+</body>
+</html>

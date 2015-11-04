@@ -34,9 +34,28 @@
 <body class="sg-single-pattern" ng-class="{'is-menuOpened': menuOpened}">
 	<!-- Start of Pattern --><p><a href="#">Een goed idee is het halve werk</a>. Maar om van uw idee een bedrijf te maken, heeft u klanten nodig. Door een marktonderzoek te doen ziet u of uw plannen haalbaar zijn.</p>
 
-<div class="block block--side block--blue sc-block">
-	<h2 class="block-title echoHeading">Meer weten of direct aanvragen</h2>
-	<p>SC block</p>
+<div class="scBlock-wrapper">
+	<div class="block block--grey scBlock">
+		<h2 class="block-title scBlock--title">
+			<svg aria-hidden="true" class="scBlock--icon">
+				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-consument-6003"></use>
+		    </svg>
+			Meer weten of direct aanvragen?
+		</h2>
+		<p class="scBlock--subTitle">Bij uw gemeente, provincie of waterschap</p>
+		<form class="scBlock--form">
+			<input id="text" type="text" placeholder="Bijvoorbeeld Rotterdam">
+		</form>
+	</div>
+	<div class="scBlock--result">
+		<a href="#" class="interfaceLink scBlock--resultLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-met-hoek"></use></svg><span class="interfaceLink-text externalLink"><span>Terras exploiteren (Rotterdam)</span></span></a>
+	</div>
+	<div class="scBlock--result">
+		<a href="#" class="interfaceLink scBlock--resultLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-met-hoek"></use></svg><span class="interfaceLink-text externalLink"><span>Terras formulier (Rotterdam)</span></span></a>
+	</div>
+	<div class="scBlock--result">
+		<a href="#" class="interfaceLink scBlock--resultLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-met-hoek"></use></svg><span class="interfaceLink-text externalLink"><span>Milieubeheer, gedoogbeschikking (Noord-Holland)</span></span></a>
+	</div>
 </div>
 <h2>H2 Van idee naar markt</h2>
 <p>Met een marktonderzoek brengt u de markt in kaart. U onderzoekt wie uw klanten zijn, wat ze willen en waar u ze vindt. Ook is het interessant om te kijken hoe anderen in uw branche het doen. Hoe kunt u zich onderscheiden van de concurrentie? Uit een <a href="#" class="externalLink">marktonderzoek</a> blijkt hoe u klanten naar uw bedrijf kunt trekken. Het is de basis voor uw marketing.</p>
@@ -73,46 +92,203 @@
 <h6>H6 Kleinste heading die er is</h6>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, suscipit repellendus nulla accusantium deserunt sed explicabo voluptate sapiente ratione inventore molestiae nihil earum repellat quia odit vitae perspiciatis aliquam amet?</p>
 
-<table>
-	<thead>
-		<tr>
-			<th></th>
-			<th>Table Heading 1</th>
-			<th>Table Heading 2</th>
-			<th>Table Heading 3</th>
-			<th>Table Heading 4</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th>Table RowHeading 1</th>
-			<td>Table Cell 1</td>
-			<td>Table Cell 2</td>
-			<td>Aliquam ultrices cursus mauris, eget volutpat justo mattis nec</td>
-			<td>Table Cell 4</td>
-		</tr>
-		<tr>
-			<th>Table RowHeading 1</th>
-			<td>Table Cell 1</td>
-			<td>Table Cell 2</td>
-			<td>Table Cell 3</td>
-			<td>Table Cell 4</td>
-		</tr>
-		<tr>
-			<th>Table RowHeading 1</th>
-			<td>Table Cell 1</td>
-			<td>Table Cell 2</td>
-			<td>Table Cell 3</td>
-			<td>Table Cell 4</td>
-		</tr>
-		<tr>
-			<th>Table RowHeading 1</th>
-			<td>Table Cell 1</td>
-			<td>Table Cell 2</td>
-			<td>Table Cell 3</td>
-			<td>Table Cell 4</td>
-		</tr>
-	</tbody>
+<table class="grid">
+    <tbody>
+        <tr>
+            <td>
+                <p>&nbsp;</p>
+            </td>
+            <td>
+                <p><strong>Eenmanszaak</strong></p>
+            </td>
+            <td>
+                <p><strong>Maatschap</strong></p>
+            </td>
+            <td>
+                <p><strong>VOF</strong></p>
+            </td>
+            <td>
+                <p><strong>BV</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Kenmerken</strong></p>
+            </td>
+            <td>
+                <ul>
+                    <li>Eén eigenaar</li>
+                    <li>Natuurlijk persoon</li>
+                </ul>
+            </td>
+            <td>
+                <p>Bundeling van eenmanszaken en/of BV’s. De leden worden maten genoemd.</p>
+            </td>
+            <td>
+                <p>Bundeling van eenmanszaken en/of BV’s. De leden worden vennoten genoemd.</p>
+            </td>
+            <td>
+                <ul>
+                    <li>Een of meer aandeelhouders</li>
+                    <li>Rechtspersoon</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Aansprakelijkheid</strong></p>
+            </td>
+            <td>
+                <p>Privé <a title="Aansprakelijkheid" href="../juridisch/aansprakelijkheid" target="_self">aansprakelijk</a></p>
+            </td>
+            <td>
+                <p>Maten zijn ieder voor een gelijk deel <a title="Aansprakelijkheid" href="../juridisch/aansprakelijkheid" target="_self">aansprakelijk</a>,&nbsp;ook met hun privévermogen</p>
+            </td>
+            <td>
+                <p>Vennoten zijn ieder voor 100% aansprakelijk, ook met hun privévermogen</p>
+            </td>
+            <td>
+                <p>In principe niet privé aansprakelijk, behalve bij wanbeheer</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Oprichting</strong></p>
+            </td>
+            <td>
+                <p>Inschrijven bij <a title="De Kamer van Koophandel" href="../../starten/kvk/index_html" target="_self">KvK</a></p>
+            </td>
+            <td>
+                <ul>
+                    <li>Afzonderlijke maten schrijven zich in bij <a title="De Kamer van Koophandel" href="../../starten/kvk/index_html" target="_self">KvK</a> </li>
+                    <li>Maatschapscontract opstellen (niet verplicht, wel sterk aan te raden)</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>VOF inschrijven bij KvK</li>
+                    <li>Vennootschapscontract opstellen (niet verplicht, wel sterk aan te raden)</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Wordt opgericht door de notaris</li>
+                    <li>Oprichtingskapitaal&nbsp; nodig</li>
+                    <li>Notaris zorgt voor inschrijving bij de KvK</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Belastingen</strong></p>
+            </td>
+            <td>
+                <ul>
+                    <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a></li>
+                    <li><a title="Zelfstandigenaftrek" href="../inkomstenbelasting/aftrekposten/zelfstandigenaftrek" target="_self">Zelfstandigenaftrek</a>&nbsp;en <a title="Startersaftrek" href="../inkomstenbelasting/aftrekposten/startersaftrek" target="_self">startersaftrek</a> (onder voorwaarden)</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a></li>
+                    <li><a title="Zelfstandigenaftrek" href="../inkomstenbelasting/aftrekposten/zelfstandigenaftrek" target="_self">Zelfstandigenaftrek</a>&nbsp;en <a title="Startersaftrek" href="../inkomstenbelasting/aftrekposten/startersaftrek" target="_self">startersaftrek</a> (onder voorwaarden)</li>
+                    <li>Maten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de <a title="BTW" href="../btw/index_html" target="_self">btw</a> is de maatschap als geheel ondernemer</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Inkomstenbelasting zelfstandigenaftrek en startersaftrek (onder voorwaarden)</li>
+                    <li>Vennoten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de btw&nbsp;is de VOF als geheel ondernemer</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><a title="Vennootschapsbelasting" href="bv/vennootschapsbelasting" target="_self">Vennootschapsbelasting</a></li>
+                    <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a>&nbsp;over salaris directeur-grootaandeelhouder</li>
+                    <li>Dividendbelasting</li>
+                    <li>Geen ondernemersaftrekposten</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Sociale zekerheid</strong></p>
+            </td>
+            <td>
+                <p>Geen werknemersverzekeringen</p>
+            </td>
+            <td>
+                <p>Geen werknemersverzekeringen</p>
+            </td>
+            <td>
+                <p>Geen werknemersverzekeringen</p>
+            </td>
+            <td>
+                <p>Directeur-grootaandeelhouder valt niet onder werknemersverzekeringen (tenzij er sprake is van ondergeschiktheid)</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Verplichtingen</strong></p>
+            </td>
+            <td>
+                <p>Inschrijving KvK&nbsp;</p>
+            </td>
+            <td>
+                <p>Inschrijving KvK van de aangesloten eenmanszaken&nbsp;en <a title="BV" href="bv/index_html" target="_self">BV’s</a></p>
+            </td>
+            <td>
+                <p>Inschrijving KvK</p>
+            </td>
+            <td>
+                <ul>
+                    <li><a title="Jaarrekening" href="../inkomstenbelasting/jaarrekening/index_html" target="_self">Jaarrekening</a> maken en deponeren bij de KvK</li>
+                    <li>Inschrijving KvK</li>
+                    <li>Maandelijks aangifte én betaling loonbelasting</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Kosten</strong></p>
+            </td>
+            <td></td>
+            <td>
+                <p>Kosten voor het opstellen van het maatschapscontract</p>
+            </td>
+            <td>
+                <p>Kosten voor het opstellen van het vennootschapscontract</p>
+            </td>
+            <td>
+                <ul>
+                    <li>Oprichtingskosten circa € 1500</li>
+                    <li>Oprichtingskapitaal&nbsp;circa € 18.000 (in elk geval tot de wet vereenvoudiging en flexibilisering bv-recht ingaat)</li>
+                    <li>Accountantskosten vanwege de jaarrekening</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p><strong>Bijzonderheden</strong></p>
+            </td>
+            <td></td>
+            <td>
+                <p>Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze rechtsvorm.</p>
+            </td>
+            <td>
+                <ul>
+                    <li>Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze <a title="Rechtsvormen" href="index_html" target="_self">rechtsvorm</a>.</li>
+                    <li>Freelancende levenspartners kunnen een speciale VOF oprichten: de man/vrouw-firma.</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Het tarief van de <a title="Vennootschapsbelasting" href="bv/vennootschapsbelasting" target="_self">vennootschapsbelasting</a> ligt lager dan dat van de <a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">inkomstenbelasting</a>. Boven een bepaalde nettowinst kan een <a title="BV" href="bv/index_html" target="_self">BV</a> daardoor voordeliger zijn. Dit omslagpunt is per situatie verschillend, maar ligt globaal bij een nettowinst van circa € 70.000.</li>
+                    <li>Aantrekkelijke korting bij ouderschapsverlof.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
 </table>
 <p>Aliquam ultrices cursus mauris, eget volutpat justo mattis nec. Sed a orci turpis. Aliquam aliquet placerat dui, consectetur tincidunt leo tristique et.</p>	<!-- End of Pattern -->
 
@@ -125,7 +301,7 @@
 	<script>
 		// handle injection of items from PHP
 		var patternPartial = "organisms-content-body-extended";
-		var lineage = [{"lineagePattern":"atoms-unordered","lineagePath":"../../patterns/00-atoms-03-lists-00-unordered/00-atoms-03-lists-00-unordered.html"},{"lineagePattern":"molecules-tip","lineagePath":"../../patterns/01-molecules-00-text-05-tip/01-molecules-00-text-05-tip.html"},{"lineagePattern":"atoms-ordered","lineagePath":"../../patterns/00-atoms-03-lists-01-ordered/00-atoms-03-lists-01-ordered.html"},{"lineagePattern":"atoms-table","lineagePath":"../../patterns/00-atoms-07-tables-00-table/00-atoms-07-tables-00-table.html"}];
+		var lineage = [{"lineagePattern":"atoms-unordered","lineagePath":"../../patterns/00-atoms-03-lists-00-unordered/00-atoms-03-lists-00-unordered.html"},{"lineagePattern":"molecules-tip","lineagePath":"../../patterns/01-molecules-00-text-05-tip/01-molecules-00-text-05-tip.html"},{"lineagePattern":"atoms-ordered","lineagePath":"../../patterns/00-atoms-03-lists-01-ordered/00-atoms-03-lists-01-ordered.html"},{"lineagePattern":"atoms-table-rechtsvorm","lineagePath":"../../patterns/00-atoms-07-tables-01-table-rechtsvorm/00-atoms-07-tables-01-table-rechtsvorm.html"}];
 		var lineageR = [{"lineagePattern":"templates-contentpage-extended","lineagePath":"../../patterns/03-templates-04-contentpage-extended/03-templates-04-contentpage-extended.html"}];
 		var patternState = ""
 		var cssEnabled = false; //TODO
