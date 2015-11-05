@@ -18,6 +18,8 @@
 	}
 	&--title {
 		color: getColor(paars default);
+		font-size: 1.35rem;
+		margin-bottom: 0;
 	}
 	&--subTitle {
 
@@ -57,6 +59,7 @@
 		font-size: getFontSize(small);
 		font-style: italic;
 		display: block;
+		margin-bottom: 0.5em;
 	}
 	&--noResultLink {
 		color: getColor(grijs darkest);

@@ -29,7 +29,8 @@ button, input, select, textarea {
 
 input, textarea {
 	width: 100%;
-	border: 1px solid getColor(grijs default);
+	//border: 1px solid getColor(grijs default);
+	border: 0;
 	padding: $pad-half 0.65rem;
 }
 
