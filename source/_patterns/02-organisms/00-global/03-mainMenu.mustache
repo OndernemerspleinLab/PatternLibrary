@@ -6,8 +6,8 @@
     </svg>
 </button>
 <div class="mainMenu" main-menu="menu" default-opened="onderwerpen">
-    <nav class="mainMenu-nav seeThroughScroll" see-through-scroll open-close="viewModel.openClose" open-close-state="viewModel.openCloseState">
-        <h2 class="charlieHeading mainMenu-title seeThroughScroll-overlay" ng-click="viewModel.toggle('onderwerpen')">
+    <nav class="mainMenu-nav seeThroughScroll" see-through-scroll open-close="viewModel.openClose">
+        <h2 class="charlieHeading mainMenu-title seeThroughScroll-overlay" ng-click="viewModel.openClose.toggle('onderwerpen')">
             <span class="mainMenu-title-text">Onderwerpen</span>
             <button class="mainMenu-button openCloseMark is-opened" ng-class="{ 'is-opened': viewModel.openClose.isFullyOpened('onderwerpen') }" ng-switch="viewModel.openClose.isOpened('onderwerpen')">
                 <svg class="openCloseMark-icon" aria-hidden="true">
@@ -40,7 +40,7 @@
                 </ul>
             </div>
         </div>
-        <h2 class="charlieHeading mainMenu-title seeThroughScroll-overlay" ng-click="viewModel.toggle('directNaar')">
+        <h2 class="charlieHeading mainMenu-title seeThroughScroll-overlay" ng-click="viewModel.openClose.toggle('directNaar')">
             <span class="mainMenu-title-text">Direct naar…</span>
             <button class="mainMenu-button openCloseMark" ng-class="{ 'is-opened': viewModel.openClose.isFullyOpened('directNaar') }" ng-switch="viewModel.openClose.isOpened('directNaar')">
                 <svg class="openCloseMark-icon" aria-hidden="true">
@@ -122,7 +122,7 @@
             </div>
         </div>
 
-        <h2 class="charlieHeading mainMenu-title seeThroughScroll-overlay" ng-click="viewModel.toggle('ondernemersplein')">
+        <h2 class="charlieHeading mainMenu-title seeThroughScroll-overlay" ng-click="viewModel.openClose.toggle('ondernemersplein')">
             <span class="mainMenu-title-text">Ondernemersplein</span>
             <button class="mainMenu-button openCloseMark" ng-class="{ 'is-opened': viewModel.openClose.isFullyOpened('ondernemersplein') }" ng-switch="viewModel.openClose.isOpened('ondernemersplein')">
                 <svg class="openCloseMark-icon" aria-hidden="true">

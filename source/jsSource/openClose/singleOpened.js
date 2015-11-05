@@ -2,15 +2,27 @@
 
 import {partial, existing, unexisting, truthy} from 'utils/functional';
 
+const isEnabled = (store) => store.enabled !== false;
+const setWhenEnabled = (store, name, value) => {
+	if (isEnabled(store)) {
+		store[name] = value;
+	}
+};
 const singleOpened = Object.freeze({
 	isOpened: (store, openedUnit) => existing(store.opened) && store.opened === openedUnit,
 	isAnyOpened: (store) => truthy(store.opened),
 	getOpenedUnit: (store) => store.opened,
 
-	open: (store, openedUnit) => store.opened = openedUnit,
+	enable: (store) => store.enabled = true,
+	setEnabled: (store, enabled) => store.enabled = enabled,
+	disable: (store) => store.enabled = false,
+	isEnabled,
+	isDisabled: (store) => !singleOpened.isEnabled(store),
+
+	open: (store, openedUnit) => setWhenEnabled(store, "opened", openedUnit),
 	close: (store, closedUnit) => {
 		if (closedUnit === store.opened) {
-			store.opened = undefined;
+			setWhenEnabled(store, "opened", undefined);
 		}
 	},
 	toggle: (store, unit) => singleOpened.isOpened(store, unit) ?
@@ -21,10 +33,10 @@ const singleOpened = Object.freeze({
 	isVisuallyOpened: (store, openedUnit) => existing(store.visuallyOpened) && store.visuallyOpened === openedUnit,
 	getVisuallyOpenedUnit: (store) => store.visuallyOpened,
 
-	visuallyOpen: (store, openedUnit) => store.visuallyOpened = openedUnit,
+	visuallyOpen: (store, openedUnit) => setWhenEnabled(store, "visuallyOpened", openedUnit),
 	visuallyClose: (store, closedUnit) => {
 		if (closedUnit === store.visuallyOpened) {
-			store.visuallyOpened = undefined;
+			setWhenEnabled(store, "visuallyOpened", undefined);
 		}
 	},
 

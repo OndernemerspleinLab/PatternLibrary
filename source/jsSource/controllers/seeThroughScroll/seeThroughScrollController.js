@@ -57,21 +57,14 @@ export default class SeeThroughScrollController {
 		const unitStore = {};
 		const {hiddenClass} = defaults($attrs, {hiddenClass: defaultHiddenClass});
 		const openClose = $parse($attrs.openClose)($scope);
-		const openCloseState = $parse($attrs.openCloseState)($scope);
 		const {getFullyOpenedUnit} = openClose;
 
 		this.register = partial(registerElement, unitStore);
 
-		this.toggle = (unitName) => {
-			if (openCloseState.enabled) {
-				openClose.toggle(unitName);
-			}
-		};
-
 
 		const resizeOne = (unitName) => {
 			const unit = unitStore[unitName];
-			resizeUnit(openClose, hiddenClass, $element, unitName, unit, openCloseState.enabled);
+			resizeUnit(openClose, hiddenClass, $element, unitName, unit, openClose.isEnabled());
 		};
 
 		const resize = this.resize = () => {
@@ -85,36 +78,39 @@ export default class SeeThroughScrollController {
 			Object.keys(unitStore).forEach(resizeOne);
 		};
 
-		$scope.$watch(() => this.isParentFullyOpened && this.isParentFullyOpened(), (opened) => {
-			if(opened && openCloseState.enabled) {
-				$timeout(resize, 100);
-			}
-		});
+		const startListening = () => {
+			$scope.$watch(() => this.isParentFullyOpened && this.isParentFullyOpened(), (opened) => {
+				if(opened && openClose.isEnabled()) {
+					$timeout(resize, 100);
+				}
+			});
 
-		$scope.$watch(getFullyOpenedUnit, (fullyOpenedUnit, oldFullyOpenedUnit) => {
-			if (fullyOpenedUnit && openCloseState.enabled) {
-				const unit = unitStore[fullyOpenedUnit];
-				openUnit(openClose, hiddenClass, $element, fullyOpenedUnit, unit);
-			} else if (oldFullyOpenedUnit && openCloseState.enabled) {
-				const unit = unitStore[oldFullyOpenedUnit];
-				closeUnit(openClose, hiddenClass, $element, oldFullyOpenedUnit, unit);
-			}
-		});
+			$scope.$watch(getFullyOpenedUnit, (fullyOpenedUnit, oldFullyOpenedUnit) => {
+				if (fullyOpenedUnit) {
+					const unit = unitStore[fullyOpenedUnit];
+					openUnit(openClose, hiddenClass, $element, fullyOpenedUnit, unit);
+				} else if (oldFullyOpenedUnit) {
+					const unit = unitStore[oldFullyOpenedUnit];
+					closeUnit(openClose, hiddenClass, $element, oldFullyOpenedUnit, unit);
+				}
+			});
 
+			openClose.setEnabled(!mqDisableSeeThroughScroll.matches);
 
-		openCloseState.enabled = !mqDisableSeeThroughScroll.matches;
+			mqDisableSeeThroughScroll.addListener((mq) => {
+				openClose.setEnabled(!mq.matches);
 
-		mqDisableSeeThroughScroll.addListener((mq) => {
-				openCloseState.enabled = !mq.matches;
-
-				if (openCloseState.enabled) {
+				if (openClose.isEnabled()) {
 					resize();
 				} else {
 					resizeAll();
 				}
-		});
+			});
 
-		registerResizeListners(resize);
+			registerResizeListners(resize);
+		};
+
+		startListening();
 	}
 
 }
