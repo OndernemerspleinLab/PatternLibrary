@@ -32,7 +32,7 @@
 		}
 	}
 
-	&--promo {
+	&-promo {
 		padding: 0;
 		position: relative;
 
@@ -64,14 +64,41 @@
 			right: 0;
 			bottom: 0;
 			left: 0;
-			background-image: none;
+			//background-image: none;
 			text-indent: 1000%; //snelle hack voor Chrome
 			white-space: nowrap;
-			overflow:hidden;
+			overflow: hidden;
 			display: block;
-			z-index: 2;
-			background: #fff;
+			//z-index: 2;
+			background: getColor(wit);
 			opacity: 0;
+		}
+		&:hover, &:active, &:focus {
+			transform: scale(1.025);
+		}
+		&--violet {
+			.block-label {
+				background-color: getColor(violet default);
+				color: getColor(wit);
+			}
+			&:hover, &:active, &:focus {
+				.block-title,
+				.block-text {
+					color: getColor(violet default);
+				}
+			}
+		}
+		&--green {
+			.block-label {
+				background-color: getColor(mosgroen default);
+				color: getColor(wit);
+			}
+			&:hover, &:active, &:focus {
+				.block-title,
+				.block-text {
+					color: getColor(mosgroen default);
+				}
+			}
 		}
 	}
 
