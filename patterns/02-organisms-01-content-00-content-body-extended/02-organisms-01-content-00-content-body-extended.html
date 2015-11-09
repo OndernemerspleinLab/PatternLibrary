@@ -117,7 +117,10 @@
 
 <div zoom-table>
     <div class="tableWrapper" ng-class="viewModel.getStateClass()">
-        <button class="table-control" ng-click="viewModel.openClose.toggle('table')">Zoom</button>
+        <button class="table-control" ng-click="viewModel.openClose.toggle('table')" ng-switch="this.openClose.isOpened('table')">
+            <span ng-show="viewModel.openClose.isOpened('table')" class="ng-hide">Sluiten</span>
+            <span ng-hide="viewModel.openClose.isOpened('table')">Full screen</span>
+        </button>
         <table>
             <caption>Voorbeeldtabel kies een rechtsvorm</caption>
             <thead>

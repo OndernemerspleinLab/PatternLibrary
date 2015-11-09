@@ -931,7 +931,10 @@
 
 &lt;div zoom-table&gt;
     &lt;div class=&quot;tableWrapper&quot; ng-class=&quot;viewModel.getStateClass()&quot;&gt;
-        &lt;button class=&quot;table-control&quot; ng-click=&quot;viewModel.openClose.toggle(&apos;table&apos;)&quot;&gt;Zoom&lt;/button&gt;
+        &lt;button class=&quot;table-control&quot; ng-click=&quot;viewModel.openClose.toggle(&apos;table&apos;)&quot; ng-switch=&quot;this.openClose.isOpened(&apos;table&apos;)&quot;&gt;
+            &lt;span ng-show=&quot;viewModel.openClose.isOpened(&apos;table&apos;)&quot; class=&quot;ng-hide&quot;&gt;Sluiten&lt;/span&gt;
+            &lt;span ng-hide=&quot;viewModel.openClose.isOpened(&apos;table&apos;)&quot;&gt;Full screen&lt;/span&gt;
+        &lt;/button&gt;
         &lt;table&gt;
             &lt;caption&gt;Voorbeeldtabel kies een rechtsvorm&lt;/caption&gt;
             &lt;thead&gt;
