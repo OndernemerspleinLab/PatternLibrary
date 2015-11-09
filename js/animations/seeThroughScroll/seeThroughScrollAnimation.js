@@ -74,9 +74,16 @@ export const instantOpen = ({options: {$scrollElement}, done}) => {
 	done();
 };
 
-export const resize = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement, targetHeight}, done}) => {
-	Velocity.hook($sizeElement, 'height', `${targetHeight}px`);
+export const resize = ({options: {$wrapper, $sizeElement, $scrollElement, $contentElement, targetHeight, enabled}, done}) => {
 	Velocity.hook($scrollElement, 'opacity', 1);
+	if (enabled) {
+		Velocity.hook($sizeElement, 'height', `${targetHeight}px`);
+	} else {
+		$contentElement.css({
+			"margin-top": "",
+			"margin-bottom": "",
+		});
+	}
 	done();
 };
 

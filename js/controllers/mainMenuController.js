@@ -5,7 +5,6 @@ export default class MenuBarController {
 	constructor($attrs) {
 		this.openClose = createOpenClose();
 		const {defaultOpened, mainMenu: menuName} = $attrs;
-
 		this.menuName = menuName;
 		this.isMenuFullyOpened = () => this.isFullyOpened && this.isFullyOpened(menuName, this.menuType);
 

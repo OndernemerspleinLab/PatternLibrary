@@ -1,4 +1,5 @@
 import {hidden as defaultHiddenClass} from 'constants/classNames';
+import {mqDisableSeeThroughScroll} from 'constants/mediaQueries';
 import {defaults, partial} from 'utils/functional';
 import {registerResizeListener} from 'utils/resizeEvent';
 import {registerScrollListener} from 'utils/scrollEvent';
@@ -11,6 +12,7 @@ const openUnit = (openClose, hiddenClass, $wrapper, unitName, unitElements) => {
 	ngServices.$animate.removeClass(unitElements.$scrollElement, hiddenClass);
 	return ngServices.$animate.removeClass(unitElements.$sizeElement, hiddenClass, options);
 };
+
 const closeUnit = (openClose, hiddenClass, $wrapper, unitName, unitElements) => {
 	const options = Object.assign({$wrapper}, unitElements);
 	return ngServices.$animate.addClass(unitElements.$sizeElement, hiddenClass, options).then(() => {
@@ -19,9 +21,8 @@ const closeUnit = (openClose, hiddenClass, $wrapper, unitName, unitElements) => 
 	});
 };
 
-const resizeUnit = (openClose, hiddenClass, $wrapper, unitName, unitElements) => {
-	openClose.visuallyOpen(unitName);
-	const options = Object.assign({$wrapper}, unitElements);
+const resizeUnit = (openClose, hiddenClass, $wrapper, unitName, unitElements, enabled) => {
+	const options = Object.assign({$wrapper, enabled}, unitElements);
 	return ngServices.$animate.animate(unitElements.$sizeElement, null, { resize: true }, null, options);
 };
 
@@ -61,31 +62,55 @@ export default class SeeThroughScrollController {
 		this.register = partial(registerElement, unitStore);
 
 
+		const resizeOne = (unitName) => {
+			const unit = unitStore[unitName];
+			resizeUnit(openClose, hiddenClass, $element, unitName, unit, openClose.isEnabled());
+		};
+
 		const resize = this.resize = () => {
 			const fullyOpenedUnit = getFullyOpenedUnit();
 			if (fullyOpenedUnit) {
-				const unit = unitStore[fullyOpenedUnit];
-				resizeUnit(openClose, hiddenClass, $element, fullyOpenedUnit, unit);
+				resizeOne(fullyOpenedUnit);
 			}
 		};
 
-		$scope.$watch(() => this.isParentFullyOpened && this.isParentFullyOpened(), (opened) => {
-			if(opened) {
-				$timeout(resize, 100);
-			}
-		});
+		const resizeAll = this.resize = () => {
+			Object.keys(unitStore).forEach(resizeOne);
+		};
 
-		$scope.$watch(getFullyOpenedUnit, function (fullyOpenedUnit, oldFullyOpenedUnit) {
-			if (fullyOpenedUnit) {
-				const unit = unitStore[fullyOpenedUnit];
-				openUnit(openClose, hiddenClass, $element, fullyOpenedUnit, unit);
-			} else if (oldFullyOpenedUnit) {
-				const unit = unitStore[oldFullyOpenedUnit];
-				closeUnit(openClose, hiddenClass, $element, oldFullyOpenedUnit, unit);
-			}
-		});
+		const startListening = () => {
+			$scope.$watch(() => this.isParentFullyOpened && this.isParentFullyOpened(), (opened) => {
+				if(opened && openClose.isEnabled()) {
+					$timeout(resize, 100);
+				}
+			});
 
-		registerResizeListners(resize);
+			$scope.$watch(getFullyOpenedUnit, (fullyOpenedUnit, oldFullyOpenedUnit) => {
+				if (fullyOpenedUnit) {
+					const unit = unitStore[fullyOpenedUnit];
+					openUnit(openClose, hiddenClass, $element, fullyOpenedUnit, unit);
+				} else if (oldFullyOpenedUnit) {
+					const unit = unitStore[oldFullyOpenedUnit];
+					closeUnit(openClose, hiddenClass, $element, oldFullyOpenedUnit, unit);
+				}
+			});
+
+			openClose.setEnabled(!mqDisableSeeThroughScroll.matches);
+
+			mqDisableSeeThroughScroll.addListener((mq) => {
+				openClose.setEnabled(!mq.matches);
+
+				if (openClose.isEnabled()) {
+					resize();
+				} else {
+					resizeAll();
+				}
+			});
+
+			registerResizeListners(resize);
+		};
+
+		startListening();
 	}
 
 }

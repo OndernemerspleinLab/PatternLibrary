@@ -4,7 +4,12 @@
 <svg version="1.1" id="Laag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="22.649px" height="34.909px" viewBox="0 0 22.649 34.909" enable-background="new 0 0 22.649 34.909" xml:space="preserve">
 <g>
-
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="0.489,6.56 0.489,15.97 9.714,16.029 9.714,12.631
+		3.643,12.631 3.584,9.714 9.537,9.714 9.537,6.746 0.489,6.56 	"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M12.749,0.548v15.304h9.292V6.619h-6.316V0.371L12.749,0.548
+		L12.749,0.548z M15.912,9.714v3.162h3.095L18.879,9.84L15.912,9.714L15.912,9.714z"/>
+	<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="0.548,18.947 0.548,28.172 18.703,28.172 18.82,31.089
+		0.489,31.266 0.548,34.428 22.042,34.184 21.857,25.077 3.769,24.959 3.584,22.159 22.042,22.041 21.983,18.761 0.548,18.947 	"/>
 	<path fill-rule="evenodd" clip-rule="evenodd" fill="#00A1CD" d="M22.159,34.909l0.489-0.481v-9.41l-0.489-0.489H4.25v-1.88h17.91
 		l0.489-0.489v-3.272l-0.489-0.489H0.489L0,18.888v9.41l0.489,0.481h17.91v1.88H0.489L0,31.089v3.339l0.489,0.481H22.159
 		L22.159,34.909z M1.215,19.554v8.011h17.91l0.489,0.489v3.339l-0.489,0.422H1.215v1.88h20.22v-8.011H3.525l-0.43-0.422v-3.339
