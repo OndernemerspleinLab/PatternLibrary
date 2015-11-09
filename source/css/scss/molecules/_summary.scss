@@ -1,0 +1,26 @@
+.summary {
+	line-height: 1.2;
+
+	&-unit {
+		align-items: flex-end;
+		margin-bottom: 2rem;
+	}
+
+	&-number {
+		line-height: 0.5;
+	}
+	&-percentage {
+		position: absolute;
+		display: block;
+		left: 100%;
+		font-size: 3rem;
+		top: 0;
+		line-height: 0.8;
+	}
+
+	&-text {
+	    display: block;
+	    font-size: 0.7em;
+	    max-height: 2.4em;
+	}
+}

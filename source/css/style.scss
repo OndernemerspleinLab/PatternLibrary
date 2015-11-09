@@ -64,6 +64,7 @@
 // Content Elements
 @import "scss/molecules/pageContentNav";
 @import "scss/molecules/scblock";
+@import "scss/molecules/counter";
 
 // Specific elements
 @import "scss/molecules/social";
@@ -74,6 +75,9 @@
 
 // Media element
 @import "scss/molecules/media";
+
+// Summary element
+@import "scss/molecules/summary";
 
 // State
 @import "scss/state/baseState";
