@@ -43,6 +43,7 @@ button, input[type="submit"] {
 	background: getColor(grijs darkest);
 	border: 1px solid getColor(grijs default);
 	cursor: pointer;
+    color: getColor(wit);
 }
 
 input[type="checkbox"],

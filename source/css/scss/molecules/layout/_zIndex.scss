@@ -10,7 +10,8 @@ $zIndex: (
 		name: table,
 		subZIndex:(
 			content,
-			caption
+			caption,
+			control,
 		),
 	),
 	(
@@ -21,7 +22,6 @@ $zIndex: (
 			front
 		),
 	),
-	overlay,
 	(
 		name: menuBar,
 		subZIndex: (
@@ -30,6 +30,7 @@ $zIndex: (
 			content
 		),
 	),
+	overlay,
 );
 
 // Get a property from a map

@@ -1,6 +1,17 @@
 /* TABLES */
 .tableWrapper {
 	position: relative;
+
+	&.is-fixedTable {
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: getColor(wit);
+
+		@include zIndex(overlay);
+	}
 }
 
 table {
@@ -39,6 +50,7 @@ th, td {
 	vertical-align: top;
     text-align: left;
     min-width: 10rem;
+    max-width: 20rem;
 	@include zIndex(table content);
 
     &:first-child {
@@ -47,4 +59,12 @@ th, td {
 }
 td {
 	color: getColor(grijs darkest);
+}
+
+.table {
+	&-control {
+		position: relative;
+		@include zIndex(table control);
+
+	}
 }
