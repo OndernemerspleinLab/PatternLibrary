@@ -23,6 +23,7 @@
 	&-text {
 	    display: block;
 	    font-size: 0.7em;
-	    max-height: 2.4em;
+	    background: rgba(getColor(wit), 0.8);
+	    position: relative;
 	}
 }
