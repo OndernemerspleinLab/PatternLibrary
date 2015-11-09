@@ -1,20 +1,49 @@
 /* TABLES */
+.tableWrapper {
+	position: relative;
+}
 
 table {
+	padding-top: 2.1rem;
 	border-collapse: collapse;
 	border-spacing: 0;
-	width: 100%;
-	table-layout:fixed;
 	word-wrap:break-word;
 	margin-bottom: 1em;
+	font-size: getFontSize(small);
+	display: block;
+	width: 100%;
+	overflow: auto;
+	max-height: 90vh;
+	@include zIndex(table);
+}
+
+caption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	font-weight: bold;
+	color: getColor(hemelblauw darkest);
+	background-color: getColor(wit);
+	font-size: getFontSize(charlieHeading);
+	top: 0;
+	padding: 0.3em 1em;
+	max-width: 100%;
+	font-size: getFontSize(charlieHeading);
+	@include zIndex(table caption);
 }
 th, td {
 	text-align: left;
 	border-bottom: 1px solid getColor(grijs light);
-	padding: 0.2em;
+	padding: 0.2em 0.6em;
 	color: getColor(hemelblauw darkest);
 	vertical-align: top;
     text-align: left;
+    min-width: 10rem;
+	@include zIndex(table content);
+
+    &:first-child {
+    	min-width: 6rem;
+    }
 }
 td {
 	color: getColor(grijs darkest);

@@ -53,7 +53,7 @@ h3, .charlieHeading,
 h4, .deltaHeading,
 h5, .echoHeading,
 h6, .foxtrotHeading {
-	font-size: getFontSize(charlieHeading small);
+	font-size: getFontSize(charlieHeading);
 	margin: {
 		top: 1.5em;
 		bottom: 0.2em;
@@ -61,14 +61,6 @@ h6, .foxtrotHeading {
 
 	&.block-title {
 		margin-top: 0;
-	}
-
-	@include mqGreaterThan(small) {
-		font-size: getFontSize(charlieHeading medium);
-	}
-
-	@include mqGreaterThan(large) {
-		font-size: getFontSize(charlieHeading large);
 	}
 }
 
