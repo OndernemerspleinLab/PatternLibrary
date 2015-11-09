@@ -1,0 +1,1 @@
+export const countUp = "/countUp.html";

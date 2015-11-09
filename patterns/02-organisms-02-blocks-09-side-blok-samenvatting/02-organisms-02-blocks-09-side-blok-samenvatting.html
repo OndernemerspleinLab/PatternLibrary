@@ -33,22 +33,31 @@
 </head>
 <body class="sg-single-pattern" ng-class="{'is-menuOpened': menuOpened}">
 	<!-- Start of Pattern --><div class="block block--side summary">
-	<p style="position: relative;margin-bottom: 2rem;text-align: center;">
-		<span class="highlight--blue" style="font-size:8rem; font-weight:bold;">21</span>
-		<span class="highlight--blue" style="font-size:3rem;">%</span>
-		<span class="textLine">levering van onroerende zaken</span>
+	<p class="summary-unit media">
+		<span class="counter highlight--blue media-figure summary-number">
+			<span class="counter-original">21</span>
+			<span count-up count-start="0" count-end="21" class="counter-overlay" aria-hidden="true">0</span>
+			<span class="highlight--blue summary-percentage">%</span>
+		</span>
+		<span class="summary-text media-text">levering van onroerende zaken</span>
 	</p>
-	<p style="position: relative;text-align: center;">
-		<span class="highlight--blue" style="font-size:6rem; font-weight:bold;">6</span>
-		<span class="highlight--blue" style="font-size:3rem;">%</span>
-		<span class="textLine">onder meer voor etenswaren en sommige diensten</span>
+	<p class="summary-unit media">
+		<span class="counter highlight--blue media-figure summary-number">
+			<span class="counter-original">6</span>
+			<span count-up count-start="0" count-end="6" class="counter-overlay" aria-hidden="true">0</span>
+			<span class="highlight--blue summary-percentage">%</span>
+		</span>
+		<span class="summary-text media-text">onder meer voor etenswaren en sommige diensten</span>
 	</p>
 	<p>
 		<a href="#" class="interfaceLink">
 <svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>			<span class="interfaceLink-text"><span>Bekijk voor alle tarieven ons overzicht</span></span>
 		</a>
 	</p>
-</div>	<!-- End of Pattern -->
+</div>
+<script type="text/ng-template" id="/countUp.html">
+	<span class="" ng-bind="viewModel.currentCount"></span>
+</script>	<!-- End of Pattern -->
 
 	<!--
 		Remember that patterns are displayed from two-levels deep (e.g. patterns/patterntype-patternsubtype-patternname/patterntype-patternsubtype-patternname.html)

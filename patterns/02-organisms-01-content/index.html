@@ -327,209 +327,211 @@
 <h6>H6 Kleinste heading die er is</h6>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, suscipit repellendus nulla accusantium deserunt sed explicabo voluptate sapiente ratione inventore molestiae nihil earum repellat quia odit vitae perspiciatis aliquam amet?</p>
 
-<div class="tableWrapper">
+<div zoom-table>
+    <div class="tableWrapper" ng-class="viewModel.getStateClass()">
+        <button class="table-control" ng-click="viewModel.openClose.toggle('table')">Zoom</button>
+        <table>
+            <caption>Voorbeeldtabel kies een rechtsvorm</caption>
+            <thead>
+                <tr>
+                    <td>
+                    </td>
+                    <th scope="col">
+                        Eenmanszaak
+                    </th>
+                    <th scope="col">
+                        Maatschap
+                    </th>
+                    <th scope="col">
+                        VOF
+                    </th>
+                    <th scope="col">
+                        BV
+                    </th>
+                </tr>
 
-    <table>
-        <caption>Voorbeeldtabel kies een rechtsvorm</caption>
-        <thead>
-            <tr>
-                <td>
-                </td>
-                <th scope="col">
-                    Eenmanszaak
-                </th>
-                <th scope="col">
-                    Maatschap
-                </th>
-                <th scope="col">
-                    VOF
-                </th>
-                <th scope="col">
-                    BV
-                </th>
-            </tr>
-
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">
-                    Kenmerken
-                </th>
-                <td>
-                    <ul>
-                        <li>Eén eigenaar</li>
-                        <li>Natuurlijk persoon</li>
-                    </ul>
-                </td>
-                <td>
-                    <p>Bundeling van eenmanszaken en/of BV’s. De leden worden maten genoemd.</p>
-                </td>
-                <td>
-                    <p>Bundeling van eenmanszaken en/of BV’s. De leden worden vennoten genoemd.</p>
-                </td>
-                <td>
-                    <ul>
-                        <li>Een of meer aandeelhouders</li>
-                        <li>Rechtspersoon</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    Aansprakelijkheid
-                </th>
-                <td>
-                    <p>Privé <a title="Aansprakelijkheid" href="../juridisch/aansprakelijkheid" target="_self">aansprakelijk</a></p>
-                </td>
-                <td>
-                    <p>Maten zijn ieder voor een gelijk deel <a title="Aansprakelijkheid" href="../juridisch/aansprakelijkheid" target="_self">aansprakelijk</a>,&nbsp;ook met hun privévermogen</p>
-                </td>
-                <td>
-                    <p>Vennoten zijn ieder voor 100% aansprakelijk, ook met hun privévermogen</p>
-                </td>
-                <td>
-                    <p>In principe niet privé aansprakelijk, behalve bij wanbeheer</p>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    Oprichting
-                </th>
-                <td>
-                    <p>Inschrijven bij <a title="De Kamer van Koophandel" href="../../starten/kvk/index_html" target="_self">KvK</a></p>
-                </td>
-                <td>
-                    <ul>
-                        <li>Afzonderlijke maten schrijven zich in bij <a title="De Kamer van Koophandel" href="../../starten/kvk/index_html" target="_self">KvK</a> </li>
-                        <li>Maatschapscontract opstellen (niet verplicht, wel sterk aan te raden)</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>VOF inschrijven bij KvK</li>
-                        <li>Vennootschapscontract opstellen (niet verplicht, wel sterk aan te raden)</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Wordt opgericht door de notaris</li>
-                        <li>Oprichtingskapitaal&nbsp; nodig</li>
-                        <li>Notaris zorgt voor inschrijving bij de KvK</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    Belastingen
-                </th>
-                <td>
-                    <ul>
-                        <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a></li>
-                        <li><a title="Zelfstandigenaftrek" href="../inkomstenbelasting/aftrekposten/zelfstandigenaftrek" target="_self">Zelfstandigenaftrek</a>&nbsp;en <a title="Startersaftrek" href="../inkomstenbelasting/aftrekposten/startersaftrek" target="_self">startersaftrek</a> (onder voorwaarden)</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a></li>
-                        <li><a title="Zelfstandigenaftrek" href="../inkomstenbelasting/aftrekposten/zelfstandigenaftrek" target="_self">Zelfstandigenaftrek</a>&nbsp;en <a title="Startersaftrek" href="../inkomstenbelasting/aftrekposten/startersaftrek" target="_self">startersaftrek</a> (onder voorwaarden)</li>
-                        <li>Maten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de <a title="BTW" href="../btw/index_html" target="_self">btw</a> is de maatschap als geheel ondernemer</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Inkomstenbelasting zelfstandigenaftrek en startersaftrek (onder voorwaarden)</li>
-                        <li>Vennoten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de btw&nbsp;is de VOF als geheel ondernemer</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li><a title="Vennootschapsbelasting" href="bv/vennootschapsbelasting" target="_self">Vennootschapsbelasting</a></li>
-                        <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a>&nbsp;over salaris directeur-grootaandeelhouder</li>
-                        <li>Dividendbelasting</li>
-                        <li>Geen ondernemersaftrekposten</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    Sociale zekerheid
-                </th>
-                <td>
-                    <p>Geen werknemersverzekeringen</p>
-                </td>
-                <td>
-                    <p>Geen werknemersverzekeringen</p>
-                </td>
-                <td>
-                    <p>Geen werknemersverzekeringen</p>
-                </td>
-                <td>
-                    <p>Directeur-grootaandeelhouder valt niet onder werknemersverzekeringen (tenzij er sprake is van ondergeschiktheid)</p>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    Verplichtingen
-                </th>
-                <td>
-                    <p>Inschrijving KvK&nbsp;</p>
-                </td>
-                <td>
-                    <p>Inschrijving KvK van de aangesloten eenmanszaken&nbsp;en <a title="BV" href="bv/index_html" target="_self">BV’s</a></p>
-                </td>
-                <td>
-                    <p>Inschrijving KvK</p>
-                </td>
-                <td>
-                    <ul>
-                        <li><a title="Jaarrekening" href="../inkomstenbelasting/jaarrekening/index_html" target="_self">Jaarrekening</a> maken en deponeren bij de KvK</li>
-                        <li>Inschrijving KvK</li>
-                        <li>Maandelijks aangifte én betaling loonbelasting</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    Kosten
-                </th>
-                <td></td>
-                <td>
-                    <p>Kosten voor het opstellen van het maatschapscontract</p>
-                </td>
-                <td>
-                    <p>Kosten voor het opstellen van het vennootschapscontract</p>
-                </td>
-                <td>
-                    <ul>
-                        <li>Oprichtingskosten circa € 1500</li>
-                        <li>Oprichtingskapitaal&nbsp;circa € 18.000 (in elk geval tot de wet vereenvoudiging en flexibilisering bv-recht ingaat)</li>
-                        <li>Accountantskosten vanwege de jaarrekening</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    Bijzonderheden
-                </th>
-                <td></td>
-                <td>
-                    <p>Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze rechtsvorm.</p>
-                </td>
-                <td>
-                    <ul>
-                        <li>Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze <a title="Rechtsvormen" href="index_html" target="_self">rechtsvorm</a>.</li>
-                        <li>Freelancende levenspartners kunnen een speciale VOF oprichten: de man/vrouw-firma.</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>Het tarief van de <a title="Vennootschapsbelasting" href="bv/vennootschapsbelasting" target="_self">vennootschapsbelasting</a> ligt lager dan dat van de <a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">inkomstenbelasting</a>. Boven een bepaalde nettowinst kan een <a title="BV" href="bv/index_html" target="_self">BV</a> daardoor voordeliger zijn. Dit omslagpunt is per situatie verschillend, maar ligt globaal bij een nettowinst van circa € 70.000.</li>
-                        <li>Aantrekkelijke korting bij ouderschapsverlof.</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        Kenmerken
+                    </th>
+                    <td>
+                        <ul>
+                            <li>Eén eigenaar</li>
+                            <li>Natuurlijk persoon</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Bundeling van eenmanszaken en/of BV’s. De leden worden maten genoemd.</p>
+                    </td>
+                    <td>
+                        <p>Bundeling van eenmanszaken en/of BV’s. De leden worden vennoten genoemd.</p>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Een of meer aandeelhouders</li>
+                            <li>Rechtspersoon</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Aansprakelijkheid
+                    </th>
+                    <td>
+                        <p>Privé <a title="Aansprakelijkheid" href="../juridisch/aansprakelijkheid" target="_self">aansprakelijk</a></p>
+                    </td>
+                    <td>
+                        <p>Maten zijn ieder voor een gelijk deel <a title="Aansprakelijkheid" href="../juridisch/aansprakelijkheid" target="_self">aansprakelijk</a>,&nbsp;ook met hun privévermogen</p>
+                    </td>
+                    <td>
+                        <p>Vennoten zijn ieder voor 100% aansprakelijk, ook met hun privévermogen</p>
+                    </td>
+                    <td>
+                        <p>In principe niet privé aansprakelijk, behalve bij wanbeheer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Oprichting
+                    </th>
+                    <td>
+                        <p>Inschrijven bij <a title="De Kamer van Koophandel" href="../../starten/kvk/index_html" target="_self">KvK</a></p>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Afzonderlijke maten schrijven zich in bij <a title="De Kamer van Koophandel" href="../../starten/kvk/index_html" target="_self">KvK</a> </li>
+                            <li>Maatschapscontract opstellen (niet verplicht, wel sterk aan te raden)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>VOF inschrijven bij KvK</li>
+                            <li>Vennootschapscontract opstellen (niet verplicht, wel sterk aan te raden)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Wordt opgericht door de notaris</li>
+                            <li>Oprichtingskapitaal&nbsp; nodig</li>
+                            <li>Notaris zorgt voor inschrijving bij de KvK</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Belastingen
+                    </th>
+                    <td>
+                        <ul>
+                            <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a></li>
+                            <li><a title="Zelfstandigenaftrek" href="../inkomstenbelasting/aftrekposten/zelfstandigenaftrek" target="_self">Zelfstandigenaftrek</a>&nbsp;en <a title="Startersaftrek" href="../inkomstenbelasting/aftrekposten/startersaftrek" target="_self">startersaftrek</a> (onder voorwaarden)</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a></li>
+                            <li><a title="Zelfstandigenaftrek" href="../inkomstenbelasting/aftrekposten/zelfstandigenaftrek" target="_self">Zelfstandigenaftrek</a>&nbsp;en <a title="Startersaftrek" href="../inkomstenbelasting/aftrekposten/startersaftrek" target="_self">startersaftrek</a> (onder voorwaarden)</li>
+                            <li>Maten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de <a title="BTW" href="../btw/index_html" target="_self">btw</a> is de maatschap als geheel ondernemer</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Inkomstenbelasting zelfstandigenaftrek en startersaftrek (onder voorwaarden)</li>
+                            <li>Vennoten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de btw&nbsp;is de VOF als geheel ondernemer</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a title="Vennootschapsbelasting" href="bv/vennootschapsbelasting" target="_self">Vennootschapsbelasting</a></li>
+                            <li><a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">Inkomstenbelasting</a>&nbsp;over salaris directeur-grootaandeelhouder</li>
+                            <li>Dividendbelasting</li>
+                            <li>Geen ondernemersaftrekposten</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Sociale zekerheid
+                    </th>
+                    <td>
+                        <p>Geen werknemersverzekeringen</p>
+                    </td>
+                    <td>
+                        <p>Geen werknemersverzekeringen</p>
+                    </td>
+                    <td>
+                        <p>Geen werknemersverzekeringen</p>
+                    </td>
+                    <td>
+                        <p>Directeur-grootaandeelhouder valt niet onder werknemersverzekeringen (tenzij er sprake is van ondergeschiktheid)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Verplichtingen
+                    </th>
+                    <td>
+                        <p>Inschrijving KvK&nbsp;</p>
+                    </td>
+                    <td>
+                        <p>Inschrijving KvK van de aangesloten eenmanszaken&nbsp;en <a title="BV" href="bv/index_html" target="_self">BV’s</a></p>
+                    </td>
+                    <td>
+                        <p>Inschrijving KvK</p>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><a title="Jaarrekening" href="../inkomstenbelasting/jaarrekening/index_html" target="_self">Jaarrekening</a> maken en deponeren bij de KvK</li>
+                            <li>Inschrijving KvK</li>
+                            <li>Maandelijks aangifte én betaling loonbelasting</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Kosten
+                    </th>
+                    <td></td>
+                    <td>
+                        <p>Kosten voor het opstellen van het maatschapscontract</p>
+                    </td>
+                    <td>
+                        <p>Kosten voor het opstellen van het vennootschapscontract</p>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Oprichtingskosten circa € 1500</li>
+                            <li>Oprichtingskapitaal&nbsp;circa € 18.000 (in elk geval tot de wet vereenvoudiging en flexibilisering bv-recht ingaat)</li>
+                            <li>Accountantskosten vanwege de jaarrekening</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        Bijzonderheden
+                    </th>
+                    <td></td>
+                    <td>
+                        <p>Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze rechtsvorm.</p>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze <a title="Rechtsvormen" href="index_html" target="_self">rechtsvorm</a>.</li>
+                            <li>Freelancende levenspartners kunnen een speciale VOF oprichten: de man/vrouw-firma.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Het tarief van de <a title="Vennootschapsbelasting" href="bv/vennootschapsbelasting" target="_self">vennootschapsbelasting</a> ligt lager dan dat van de <a title="Inkomstenbelasting" href="../inkomstenbelasting/index_html" target="_self">inkomstenbelasting</a>. Boven een bepaalde nettowinst kan een <a title="BV" href="bv/index_html" target="_self">BV</a> daardoor voordeliger zijn. Dit omslagpunt is per situatie verschillend, maar ligt globaal bij een nettowinst van circa € 70.000.</li>
+                            <li>Aantrekkelijke korting bij ouderschapsverlof.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <p>Aliquam ultrices cursus mauris, eget volutpat justo mattis nec. Sed a orci turpis. Aliquam aliquet placerat dui, consectetur tincidunt leo tristique et.</p>
               <div class="sg-code" style="display: none">
@@ -619,209 +621,211 @@
 &lt;h6&gt;H6 Kleinste heading die er is&lt;&#x2F;h6&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, suscipit repellendus nulla accusantium deserunt sed explicabo voluptate sapiente ratione inventore molestiae nihil earum repellat quia odit vitae perspiciatis aliquam amet?&lt;&#x2F;p&gt;
 
-&lt;div class=&quot;tableWrapper&quot;&gt;
+&lt;div zoom-table&gt;
+    &lt;div class=&quot;tableWrapper&quot; ng-class=&quot;viewModel.getStateClass()&quot;&gt;
+        &lt;button class=&quot;table-control&quot; ng-click=&quot;viewModel.openClose.toggle(&#39;table&#39;)&quot;&gt;Zoom&lt;&#x2F;button&gt;
+        &lt;table&gt;
+            &lt;caption&gt;Voorbeeldtabel kies een rechtsvorm&lt;&#x2F;caption&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        Eenmanszaak
+                    &lt;&#x2F;th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        Maatschap
+                    &lt;&#x2F;th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        VOF
+                    &lt;&#x2F;th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        BV
+                    &lt;&#x2F;th&gt;
+                &lt;&#x2F;tr&gt;
 
-    &lt;table&gt;
-        &lt;caption&gt;Voorbeeldtabel kies een rechtsvorm&lt;&#x2F;caption&gt;
-        &lt;thead&gt;
-            &lt;tr&gt;
-                &lt;td&gt;
-                &lt;&#x2F;td&gt;
-                &lt;th scope=&quot;col&quot;&gt;
-                    Eenmanszaak
-                &lt;&#x2F;th&gt;
-                &lt;th scope=&quot;col&quot;&gt;
-                    Maatschap
-                &lt;&#x2F;th&gt;
-                &lt;th scope=&quot;col&quot;&gt;
-                    VOF
-                &lt;&#x2F;th&gt;
-                &lt;th scope=&quot;col&quot;&gt;
-                    BV
-                &lt;&#x2F;th&gt;
-            &lt;&#x2F;tr&gt;
-
-        &lt;&#x2F;thead&gt;
-        &lt;tbody&gt;
-            &lt;tr&gt;
-                &lt;th scope=&quot;row&quot;&gt;
-                    Kenmerken
-                &lt;&#x2F;th&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;Eén eigenaar&lt;&#x2F;li&gt;
-                        &lt;li&gt;Natuurlijk persoon&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Bundeling van eenmanszaken en&#x2F;of BV’s. De leden worden maten genoemd.&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Bundeling van eenmanszaken en&#x2F;of BV’s. De leden worden vennoten genoemd.&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;Een of meer aandeelhouders&lt;&#x2F;li&gt;
-                        &lt;li&gt;Rechtspersoon&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-            &lt;&#x2F;tr&gt;
-            &lt;tr&gt;
-                &lt;th scope=&quot;row&quot;&gt;
-                    Aansprakelijkheid
-                &lt;&#x2F;th&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Privé &lt;a title=&quot;Aansprakelijkheid&quot; href=&quot;..&#x2F;juridisch&#x2F;aansprakelijkheid&quot; target=&quot;_self&quot;&gt;aansprakelijk&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Maten zijn ieder voor een gelijk deel &lt;a title=&quot;Aansprakelijkheid&quot; href=&quot;..&#x2F;juridisch&#x2F;aansprakelijkheid&quot; target=&quot;_self&quot;&gt;aansprakelijk&lt;&#x2F;a&gt;,&amp;nbsp;ook met hun privévermogen&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Vennoten zijn ieder voor 100% aansprakelijk, ook met hun privévermogen&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;In principe niet privé aansprakelijk, behalve bij wanbeheer&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-            &lt;&#x2F;tr&gt;
-            &lt;tr&gt;
-                &lt;th scope=&quot;row&quot;&gt;
-                    Oprichting
-                &lt;&#x2F;th&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Inschrijven bij &lt;a title=&quot;De Kamer van Koophandel&quot; href=&quot;..&#x2F;..&#x2F;starten&#x2F;kvk&#x2F;index_html&quot; target=&quot;_self&quot;&gt;KvK&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;Afzonderlijke maten schrijven zich in bij &lt;a title=&quot;De Kamer van Koophandel&quot; href=&quot;..&#x2F;..&#x2F;starten&#x2F;kvk&#x2F;index_html&quot; target=&quot;_self&quot;&gt;KvK&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
-                        &lt;li&gt;Maatschapscontract opstellen (niet verplicht, wel sterk aan te raden)&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;VOF inschrijven bij KvK&lt;&#x2F;li&gt;
-                        &lt;li&gt;Vennootschapscontract opstellen (niet verplicht, wel sterk aan te raden)&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;Wordt opgericht door de notaris&lt;&#x2F;li&gt;
-                        &lt;li&gt;Oprichtingskapitaal&amp;nbsp; nodig&lt;&#x2F;li&gt;
-                        &lt;li&gt;Notaris zorgt voor inschrijving bij de KvK&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-            &lt;&#x2F;tr&gt;
-            &lt;tr&gt;
-                &lt;th scope=&quot;row&quot;&gt;
-                    Belastingen
-                &lt;&#x2F;th&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;&lt;a title=&quot;Inkomstenbelasting&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;index_html&quot; target=&quot;_self&quot;&gt;Inkomstenbelasting&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Zelfstandigenaftrek&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;aftrekposten&#x2F;zelfstandigenaftrek&quot; target=&quot;_self&quot;&gt;Zelfstandigenaftrek&lt;&#x2F;a&gt;&amp;nbsp;en &lt;a title=&quot;Startersaftrek&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;aftrekposten&#x2F;startersaftrek&quot; target=&quot;_self&quot;&gt;startersaftrek&lt;&#x2F;a&gt; (onder voorwaarden)&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;&lt;a title=&quot;Inkomstenbelasting&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;index_html&quot; target=&quot;_self&quot;&gt;Inkomstenbelasting&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Zelfstandigenaftrek&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;aftrekposten&#x2F;zelfstandigenaftrek&quot; target=&quot;_self&quot;&gt;Zelfstandigenaftrek&lt;&#x2F;a&gt;&amp;nbsp;en &lt;a title=&quot;Startersaftrek&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;aftrekposten&#x2F;startersaftrek&quot; target=&quot;_self&quot;&gt;startersaftrek&lt;&#x2F;a&gt; (onder voorwaarden)&lt;&#x2F;li&gt;
-                        &lt;li&gt;Maten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de &lt;a title=&quot;BTW&quot; href=&quot;..&#x2F;btw&#x2F;index_html&quot; target=&quot;_self&quot;&gt;btw&lt;&#x2F;a&gt; is de maatschap als geheel ondernemer&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;Inkomstenbelasting zelfstandigenaftrek en startersaftrek (onder voorwaarden)&lt;&#x2F;li&gt;
-                        &lt;li&gt;Vennoten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de btw&amp;nbsp;is de VOF als geheel ondernemer&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;&lt;a title=&quot;Vennootschapsbelasting&quot; href=&quot;bv&#x2F;vennootschapsbelasting&quot; target=&quot;_self&quot;&gt;Vennootschapsbelasting&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-                        &lt;li&gt;&lt;a title=&quot;Inkomstenbelasting&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;index_html&quot; target=&quot;_self&quot;&gt;Inkomstenbelasting&lt;&#x2F;a&gt;&amp;nbsp;over salaris directeur-grootaandeelhouder&lt;&#x2F;li&gt;
-                        &lt;li&gt;Dividendbelasting&lt;&#x2F;li&gt;
-                        &lt;li&gt;Geen ondernemersaftrekposten&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-            &lt;&#x2F;tr&gt;
-            &lt;tr&gt;
-                &lt;th scope=&quot;row&quot;&gt;
-                    Sociale zekerheid
-                &lt;&#x2F;th&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Geen werknemersverzekeringen&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Geen werknemersverzekeringen&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Geen werknemersverzekeringen&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Directeur-grootaandeelhouder valt niet onder werknemersverzekeringen (tenzij er sprake is van ondergeschiktheid)&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-            &lt;&#x2F;tr&gt;
-            &lt;tr&gt;
-                &lt;th scope=&quot;row&quot;&gt;
-                    Verplichtingen
-                &lt;&#x2F;th&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Inschrijving KvK&amp;nbsp;&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Inschrijving KvK van de aangesloten eenmanszaken&amp;nbsp;en &lt;a title=&quot;BV&quot; href=&quot;bv&#x2F;index_html&quot; target=&quot;_self&quot;&gt;BV’s&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Inschrijving KvK&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;&lt;a title=&quot;Jaarrekening&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;jaarrekening&#x2F;index_html&quot; target=&quot;_self&quot;&gt;Jaarrekening&lt;&#x2F;a&gt; maken en deponeren bij de KvK&lt;&#x2F;li&gt;
-                        &lt;li&gt;Inschrijving KvK&lt;&#x2F;li&gt;
-                        &lt;li&gt;Maandelijks aangifte én betaling loonbelasting&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-            &lt;&#x2F;tr&gt;
-            &lt;tr&gt;
-                &lt;th scope=&quot;row&quot;&gt;
-                    Kosten
-                &lt;&#x2F;th&gt;
-                &lt;td&gt;&lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Kosten voor het opstellen van het maatschapscontract&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Kosten voor het opstellen van het vennootschapscontract&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;Oprichtingskosten circa € 1500&lt;&#x2F;li&gt;
-                        &lt;li&gt;Oprichtingskapitaal&amp;nbsp;circa € 18.000 (in elk geval tot de wet vereenvoudiging en flexibilisering bv-recht ingaat)&lt;&#x2F;li&gt;
-                        &lt;li&gt;Accountantskosten vanwege de jaarrekening&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-            &lt;&#x2F;tr&gt;
-            &lt;tr&gt;
-                &lt;th scope=&quot;row&quot;&gt;
-                    Bijzonderheden
-                &lt;&#x2F;th&gt;
-                &lt;td&gt;&lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;p&gt;Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze rechtsvorm.&lt;&#x2F;p&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze &lt;a title=&quot;Rechtsvormen&quot; href=&quot;index_html&quot; target=&quot;_self&quot;&gt;rechtsvorm&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
-                        &lt;li&gt;Freelancende levenspartners kunnen een speciale VOF oprichten: de man&#x2F;vrouw-firma.&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-                &lt;td&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;Het tarief van de &lt;a title=&quot;Vennootschapsbelasting&quot; href=&quot;bv&#x2F;vennootschapsbelasting&quot; target=&quot;_self&quot;&gt;vennootschapsbelasting&lt;&#x2F;a&gt; ligt lager dan dat van de &lt;a title=&quot;Inkomstenbelasting&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;index_html&quot; target=&quot;_self&quot;&gt;inkomstenbelasting&lt;&#x2F;a&gt;. Boven een bepaalde nettowinst kan een &lt;a title=&quot;BV&quot; href=&quot;bv&#x2F;index_html&quot; target=&quot;_self&quot;&gt;BV&lt;&#x2F;a&gt; daardoor voordeliger zijn. Dit omslagpunt is per situatie verschillend, maar ligt globaal bij een nettowinst van circa € 70.000.&lt;&#x2F;li&gt;
-                        &lt;li&gt;Aantrekkelijke korting bij ouderschapsverlof.&lt;&#x2F;li&gt;
-                    &lt;&#x2F;ul&gt;
-                &lt;&#x2F;td&gt;
-            &lt;&#x2F;tr&gt;
-        &lt;&#x2F;tbody&gt;
-    &lt;&#x2F;table&gt;
+            &lt;&#x2F;thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;th scope=&quot;row&quot;&gt;
+                        Kenmerken
+                    &lt;&#x2F;th&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Eén eigenaar&lt;&#x2F;li&gt;
+                            &lt;li&gt;Natuurlijk persoon&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Bundeling van eenmanszaken en&#x2F;of BV’s. De leden worden maten genoemd.&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Bundeling van eenmanszaken en&#x2F;of BV’s. De leden worden vennoten genoemd.&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Een of meer aandeelhouders&lt;&#x2F;li&gt;
+                            &lt;li&gt;Rechtspersoon&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                &lt;&#x2F;tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope=&quot;row&quot;&gt;
+                        Aansprakelijkheid
+                    &lt;&#x2F;th&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Privé &lt;a title=&quot;Aansprakelijkheid&quot; href=&quot;..&#x2F;juridisch&#x2F;aansprakelijkheid&quot; target=&quot;_self&quot;&gt;aansprakelijk&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Maten zijn ieder voor een gelijk deel &lt;a title=&quot;Aansprakelijkheid&quot; href=&quot;..&#x2F;juridisch&#x2F;aansprakelijkheid&quot; target=&quot;_self&quot;&gt;aansprakelijk&lt;&#x2F;a&gt;,&amp;nbsp;ook met hun privévermogen&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Vennoten zijn ieder voor 100% aansprakelijk, ook met hun privévermogen&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;In principe niet privé aansprakelijk, behalve bij wanbeheer&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                &lt;&#x2F;tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope=&quot;row&quot;&gt;
+                        Oprichting
+                    &lt;&#x2F;th&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Inschrijven bij &lt;a title=&quot;De Kamer van Koophandel&quot; href=&quot;..&#x2F;..&#x2F;starten&#x2F;kvk&#x2F;index_html&quot; target=&quot;_self&quot;&gt;KvK&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Afzonderlijke maten schrijven zich in bij &lt;a title=&quot;De Kamer van Koophandel&quot; href=&quot;..&#x2F;..&#x2F;starten&#x2F;kvk&#x2F;index_html&quot; target=&quot;_self&quot;&gt;KvK&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
+                            &lt;li&gt;Maatschapscontract opstellen (niet verplicht, wel sterk aan te raden)&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;VOF inschrijven bij KvK&lt;&#x2F;li&gt;
+                            &lt;li&gt;Vennootschapscontract opstellen (niet verplicht, wel sterk aan te raden)&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Wordt opgericht door de notaris&lt;&#x2F;li&gt;
+                            &lt;li&gt;Oprichtingskapitaal&amp;nbsp; nodig&lt;&#x2F;li&gt;
+                            &lt;li&gt;Notaris zorgt voor inschrijving bij de KvK&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                &lt;&#x2F;tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope=&quot;row&quot;&gt;
+                        Belastingen
+                    &lt;&#x2F;th&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a title=&quot;Inkomstenbelasting&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;index_html&quot; target=&quot;_self&quot;&gt;Inkomstenbelasting&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+                            &lt;li&gt;&lt;a title=&quot;Zelfstandigenaftrek&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;aftrekposten&#x2F;zelfstandigenaftrek&quot; target=&quot;_self&quot;&gt;Zelfstandigenaftrek&lt;&#x2F;a&gt;&amp;nbsp;en &lt;a title=&quot;Startersaftrek&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;aftrekposten&#x2F;startersaftrek&quot; target=&quot;_self&quot;&gt;startersaftrek&lt;&#x2F;a&gt; (onder voorwaarden)&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a title=&quot;Inkomstenbelasting&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;index_html&quot; target=&quot;_self&quot;&gt;Inkomstenbelasting&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+                            &lt;li&gt;&lt;a title=&quot;Zelfstandigenaftrek&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;aftrekposten&#x2F;zelfstandigenaftrek&quot; target=&quot;_self&quot;&gt;Zelfstandigenaftrek&lt;&#x2F;a&gt;&amp;nbsp;en &lt;a title=&quot;Startersaftrek&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;aftrekposten&#x2F;startersaftrek&quot; target=&quot;_self&quot;&gt;startersaftrek&lt;&#x2F;a&gt; (onder voorwaarden)&lt;&#x2F;li&gt;
+                            &lt;li&gt;Maten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de &lt;a title=&quot;BTW&quot; href=&quot;..&#x2F;btw&#x2F;index_html&quot; target=&quot;_self&quot;&gt;btw&lt;&#x2F;a&gt; is de maatschap als geheel ondernemer&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Inkomstenbelasting zelfstandigenaftrek en startersaftrek (onder voorwaarden)&lt;&#x2F;li&gt;
+                            &lt;li&gt;Vennoten zijn ieder afzonderlijk ondernemer voor de Belastingdienst, maar voor de btw&amp;nbsp;is de VOF als geheel ondernemer&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a title=&quot;Vennootschapsbelasting&quot; href=&quot;bv&#x2F;vennootschapsbelasting&quot; target=&quot;_self&quot;&gt;Vennootschapsbelasting&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+                            &lt;li&gt;&lt;a title=&quot;Inkomstenbelasting&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;index_html&quot; target=&quot;_self&quot;&gt;Inkomstenbelasting&lt;&#x2F;a&gt;&amp;nbsp;over salaris directeur-grootaandeelhouder&lt;&#x2F;li&gt;
+                            &lt;li&gt;Dividendbelasting&lt;&#x2F;li&gt;
+                            &lt;li&gt;Geen ondernemersaftrekposten&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                &lt;&#x2F;tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope=&quot;row&quot;&gt;
+                        Sociale zekerheid
+                    &lt;&#x2F;th&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Geen werknemersverzekeringen&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Geen werknemersverzekeringen&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Geen werknemersverzekeringen&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Directeur-grootaandeelhouder valt niet onder werknemersverzekeringen (tenzij er sprake is van ondergeschiktheid)&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                &lt;&#x2F;tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope=&quot;row&quot;&gt;
+                        Verplichtingen
+                    &lt;&#x2F;th&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Inschrijving KvK&amp;nbsp;&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Inschrijving KvK van de aangesloten eenmanszaken&amp;nbsp;en &lt;a title=&quot;BV&quot; href=&quot;bv&#x2F;index_html&quot; target=&quot;_self&quot;&gt;BV’s&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Inschrijving KvK&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a title=&quot;Jaarrekening&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;jaarrekening&#x2F;index_html&quot; target=&quot;_self&quot;&gt;Jaarrekening&lt;&#x2F;a&gt; maken en deponeren bij de KvK&lt;&#x2F;li&gt;
+                            &lt;li&gt;Inschrijving KvK&lt;&#x2F;li&gt;
+                            &lt;li&gt;Maandelijks aangifte én betaling loonbelasting&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                &lt;&#x2F;tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope=&quot;row&quot;&gt;
+                        Kosten
+                    &lt;&#x2F;th&gt;
+                    &lt;td&gt;&lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Kosten voor het opstellen van het maatschapscontract&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Kosten voor het opstellen van het vennootschapscontract&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Oprichtingskosten circa € 1500&lt;&#x2F;li&gt;
+                            &lt;li&gt;Oprichtingskapitaal&amp;nbsp;circa € 18.000 (in elk geval tot de wet vereenvoudiging en flexibilisering bv-recht ingaat)&lt;&#x2F;li&gt;
+                            &lt;li&gt;Accountantskosten vanwege de jaarrekening&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                &lt;&#x2F;tr&gt;
+                &lt;tr&gt;
+                    &lt;th scope=&quot;row&quot;&gt;
+                        Bijzonderheden
+                    &lt;&#x2F;th&gt;
+                    &lt;td&gt;&lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;p&gt;Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze rechtsvorm.&lt;&#x2F;p&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Waarschijnlijk in 2008 treedt er een nieuwe wet in werking die invloed heeft op deze &lt;a title=&quot;Rechtsvormen&quot; href=&quot;index_html&quot; target=&quot;_self&quot;&gt;rechtsvorm&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+                            &lt;li&gt;Freelancende levenspartners kunnen een speciale VOF oprichten: de man&#x2F;vrouw-firma.&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                    &lt;td&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;Het tarief van de &lt;a title=&quot;Vennootschapsbelasting&quot; href=&quot;bv&#x2F;vennootschapsbelasting&quot; target=&quot;_self&quot;&gt;vennootschapsbelasting&lt;&#x2F;a&gt; ligt lager dan dat van de &lt;a title=&quot;Inkomstenbelasting&quot; href=&quot;..&#x2F;inkomstenbelasting&#x2F;index_html&quot; target=&quot;_self&quot;&gt;inkomstenbelasting&lt;&#x2F;a&gt;. Boven een bepaalde nettowinst kan een &lt;a title=&quot;BV&quot; href=&quot;bv&#x2F;index_html&quot; target=&quot;_self&quot;&gt;BV&lt;&#x2F;a&gt; daardoor voordeliger zijn. Dit omslagpunt is per situatie verschillend, maar ligt globaal bij een nettowinst van circa € 70.000.&lt;&#x2F;li&gt;
+                            &lt;li&gt;Aantrekkelijke korting bij ouderschapsverlof.&lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;td&gt;
+                &lt;&#x2F;tr&gt;
+            &lt;&#x2F;tbody&gt;
+        &lt;&#x2F;table&gt;
+    &lt;&#x2F;div&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;Aliquam ultrices cursus mauris, eget volutpat justo mattis nec. Sed a orci turpis. Aliquam aliquet placerat dui, consectetur tincidunt leo tristique et.&lt;&#x2F;p&gt;
                   </code>
