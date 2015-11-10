@@ -29,17 +29,17 @@ body {
 }
 
 .main {
-	margin-top: (1.4 * getFontSize(bravoHeading small));
-	margin-bottom: (1.4 * getFontSize(bravoHeading small));
+	margin-top: (1.4 * getFontSize(h2 small));
+	margin-bottom: (1.4 * getFontSize(h2 small));
 
 	@include mqGreaterThan(small) {
-		margin-top: (1.4 * getFontSize(bravoHeading medium));
-		margin-bottom: (1.4 * getFontSize(bravoHeading medium));
+		margin-top: (1.4 * getFontSize(h2 medium));
+		margin-bottom: (1.4 * getFontSize(h2 medium));
 	}
 
 	@include mqGreaterThan(large) {
-		margin-top: (1.4 * getFontSize(bravoHeading large));
-		margin-bottom: (1.4 * getFontSize(bravoHeading large));
+		margin-top: (1.4 * getFontSize(h2 large));
+		margin-bottom: (1.4 * getFontSize(h2 large));
 	}
 }
 

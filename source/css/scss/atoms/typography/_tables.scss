@@ -35,11 +35,11 @@ caption {
 	font-weight: bold;
 	color: getColor(hemelblauw darkest);
 	background-color: getColor(wit);
-	font-size: getFontSize(charlieHeading);
+	font-size: getFontSize(h3);
 	top: 0;
 	padding: 0.3em 1em;
 	max-width: 100%;
-	font-size: getFontSize(charlieHeading);
+	font-size: getFontSize(h3);
 	@include zIndex(table caption);
 }
 th, td {

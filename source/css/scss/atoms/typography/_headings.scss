@@ -1,17 +1,17 @@
 /* Headings */
 
-h1, .pageHeading,
-h2, .bravoHeading,
-h3, .charlieHeading,
-h4, .deltaHeading,
-h5, .echoHeading,
-h6, .foxtrotHeading {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
 	line-height: 1.2;
 	color: getColor(hemelblauw darkest);
 }
 
-h1, .pageHeading {
-	font-size: getFontSize(pageHeading small);
+h1, .h1 {
+	font-size: getFontSize(h1 small);
 	color: getColor(hemelblauw default);
 	hyphens: auto;
 	margin: {
@@ -20,16 +20,16 @@ h1, .pageHeading {
 	}
 
 	@include mqGreaterThan(small) {
-		font-size: getFontSize(pageHeading medium);
+		font-size: getFontSize(h1 medium);
 	}
 
 	@include mqGreaterThan(large) {
-		font-size: getFontSize(pageHeading large);
+		font-size: getFontSize(h1 large);
 		margin-bottom: 0.5em;
 	}
 }
-h2, .bravoHeading {
-	font-size: getFontSize(bravoHeading small);
+h2, .h2 {
+	font-size: getFontSize(h2 small);
 
 	margin: {
 		top: 1.4em;
@@ -37,11 +37,11 @@ h2, .bravoHeading {
 	}
 
 	@include mqGreaterThan(small) {
-		font-size: getFontSize(bravoHeading medium);
+		font-size: getFontSize(h2 medium);
 	}
 
 	@include mqGreaterThan(large) {
-		font-size: getFontSize(bravoHeading large);
+		font-size: getFontSize(h2 large);
 		// margin-bottom: 0.1em;
 	}
 
@@ -49,11 +49,11 @@ h2, .bravoHeading {
 		margin-top: 0;
 	}
 }
-h3, .charlieHeading,
-h4, .deltaHeading,
-h5, .echoHeading,
-h6, .foxtrotHeading {
-	font-size: getFontSize(charlieHeading);
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	font-size: getFontSize(h3);
 	margin: {
 		top: 1.5em;
 		bottom: 0.2em;
