@@ -19,7 +19,7 @@ class CountUp {
 	constructor() {
 		this.currentCount = Number(this.countStart) || 0;
 		this.countStep = Number(this.countStep) || 1;
-		this.countDeltaInMs = Number(this.countDeltaInMs) || 100;
+		this.countDeltaInMs = Number(this.countDeltaInMs) || 70;
 		this.countEnd = Number(this.countEnd) || 1;
 		nextCount(this);
 	}

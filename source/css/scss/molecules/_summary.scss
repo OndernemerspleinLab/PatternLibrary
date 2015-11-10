@@ -3,35 +3,25 @@
 
 	&-unit {
 		align-items: flex-end;
-		margin-bottom: 2rem;
-
-		& + & {
-			margin-top: 5rem;
-		}
+		margin-bottom: 2.4rem;
+		margin-left: -0.3rem;
 	}
 
 	&-number {
-		line-height: 0.5;
-		font-weight: bold;
+		line-height: 0.68;
 
-		&--primary {
-			font-size: getFontSize(summary primaryNumber);
+		font-size: getFontSize(summary number);
 
-		}
-
-		&--secondary {
-			font-size: getFontSize(summary secondaryNumber);
-
-		}
 	}
 
 	&-percentage {
+		margin-left: -0.07em;
 		position: absolute;
 		display: block;
 		left: 100%;
 		font-size: getFontSize(summary percentage);
-		bottom: 3.5rem;
-		line-height: 0.8;
+		bottom: 2.4rem;
+		line-height: 0.68;
 	}
 
 	&-text {
