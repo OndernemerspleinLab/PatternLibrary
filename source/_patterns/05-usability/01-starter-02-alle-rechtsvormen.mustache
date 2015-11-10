@@ -1,0 +1,114 @@
+<div class="container">
+	{{> organisms-sidebar }}
+	<div class="page" id="page">
+		<header class="header clearfix" role="banner">
+			<div class="header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems">
+				{{> molecules-logo }}
+				{{> molecules-payoff }}
+			</div>
+			<div class="brandBar">
+				<div class="layoutContainer">
+					<ul class="breadcrumbs diapositive">
+						<li class="breadcrumb">
+							<a class="breadcrumb-link breadcrumb-linkFirst diapositive-link" href="#">
+								<span class="breadcrumb-text">Home</span>
+							</a>
+						</li>
+						<li class="breadcrumb">
+							<a class="breadcrumb-link diapositive-link" href="#">
+								<span class="breadcrumb-text">Alles over ondernemen</span>
+							</a>
+						</li>
+						<li class="breadcrumb">
+							<a class="breadcrumb-link diapositive-link" href="#">
+								<span class="breadcrumb-text">Bedrijf organiseren</span>
+							</a>
+						</li>
+						<li class="breadcrumb">
+							<a class="breadcrumb-link diapositive-link" href="#">
+								<span class="breadcrumb-text">Rechtsvormen</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="layoutContainer gridContainer">
+				<div class="column column--twoThird">
+					<header class="article-header">
+						<h1>Alle rechtsvormen op een rij</h1>
+						{{! molecules-bronhouder-text }}
+						{{> molecules-laatste-update }}
+					</header>
+
+					<p class="intro">Als startende ondernemer moet u een rechtsvorm kiezen. De rechtsvorm bepaalt onder andere de aansprakelijkheid voor schulden van uw bedrijf en uw belastingverplichtingen.</p>
+
+					<h2>Welke rechtsvormen zijn er?</h2>
+					<p>Er zijn rechtsvormen met rechtspersoonlijkheid en rechtsvormen zonder rechtspersoonlijkheid. Bij een rechtsvorm zonder rechtspersoonlijkheid bent u met uw privévermogen aansprakelijk voor de schulden van uw bedrijf. Dit is bij een rechtsvorm met rechtspersoonlijkheid meestal niet het geval. De Kamer van Koophandel (KvK) heeft informatie over de verschillende rechtsvormen.</p>
+
+					<h2>Rechtvormen zonder rechtspersoonlijkheid</h2>
+					<ul class="linkList">
+						<li class="linkList-item">
+							<a class="interfaceLink" href="#" title="De eenmanszaak">{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>Eenmanszaak</span></span></a>
+						</li>
+						<li class="linkList-item"><a class="interfaceLink" href="#" title="Vennootschap onder firma">{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>Vennootschap onder firma (vof)</span></span></a></li>
+						<li class="linkList-item"><a class="interfaceLink" href="#" title="De maatschap">{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>Maatschap</span></span></a></li>
+						<li class="linkList-item"><a class="interfaceLink" href="#" title="De commanditaire vennootschap (cv)">{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>Commanditaire vennootschap (cv)</span></span></a></li>
+					</ul>
+
+					<h2>Rechtvormen met rechtspersoonlijkheid</h2>
+					<ul class="linkList">
+						<li class="linkList-item"><a class="interfaceLink" href="#" title="De besloten vennootschap (bv)">{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>Besloten vennootschap&nbsp;(bv)</span></span></a></li>
+						<li class="linkList-item"><a class="interfaceLink" href="#" title="De naamloze vennootschap (nv)">{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>Naamloze vennootschap&nbsp;(nv)</span></span></a></li>
+						<li class="linkList-item"><a class="interfaceLink" href="#" title="De coöperatie">{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>Coöperatie en onderlinge waarborgmaatschappij</span></span></a></li>
+						<li class="linkList-item"><a class="interfaceLink" href="#" title="De stichting">{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>Stichting</span></span></a></li>
+						<li class="linkList-item"><a class="interfaceLink" href="#" title="De vereniging">{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>Vereniging</span></span></a></li>
+					</ul>
+
+					<h2>Freelancer en zzp'ers</h2>
+					<p>Een zelfstandige zonder personeel (zzp'er) of freelancer is geen rechtsvorm. Ook als zzp'er of freelancer moet u een <a href="#" title="Een rechtsvorm kiezen">rechtsvorm kiezen</a>.</p>
+
+					{{! organisms-hoenuverder-blok }}
+					{{! molecules-bronhouder-contentfooter }}
+
+				</div>
+				<div class="column column--third aside">
+					{{! organisms-side-blok-samenvatting }}
+					{{! organisms-side-blok-linklijst }}
+					{{! organisms-side-blok-linklijst-extern }}
+				</div>
+			</div>
+		</div>
+		<div class="crs-wrapper">
+			<div class="layoutContainer gridContainer">
+				{{> organisms-crsblok-verhaal}}
+				{{> organisms-crsblok-discussies }}
+				{{! organisms-promoblok}}
+				<div class="column column--third">
+					<div class="block block-promo block-promo--green">
+						<figure class="block-image">
+							<img src="../../images/startersdag.png">
+							<div class="block-label">Evenement</div>
+						</figure>
+						<h2 class="block-title charlieHeading">Zeker weten dat je goed van start gaat?</h2>
+						<div class="block-text">
+							<p>Kom naar de KvK Startersdag op 7 november 2015</p>
+						</div>
+						<a href="http://www.google.nl" class="block-link">Meer over de Startersdag</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{> organisms-footer }}
+	</div>
+</div>
