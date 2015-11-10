@@ -1,0 +1,46 @@
+.tabs {
+	@include noBullets;
+	line-height: 1.2;
+
+	@include mqGreaterThan(smallMedium) {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-end;
+	}
+}
+
+.tab {
+	padding: 0;
+	& + & {
+		@include mqGreaterThan(smallMedium) {
+			margin-left: 0.2rem;
+		}
+	}
+
+	&-link {
+		@include noUnderline;
+		display: block;
+		padding: 0.6rem 0.8rem;
+		background: getColor(hemelblauw darkest);
+		color: getColor(grijs light);
+		font-weight: bold;
+		transform-origin: 50% 50%;
+		transition: transform 0.1s;
+
+		@include mqGreaterThan(smallMedium) {
+			transform-origin: 50% 100%;
+		}
+
+		@include hoverEtc {
+			color: getColor(grijs light);
+			background: darken(getColor(hemelblauw darkest), 5%);
+			transform: scale(1.04);
+		}
+
+		&.is-active {
+			color: getColor(hemelblauw darkest);
+			background: getColor(grijs light);
+		}
+	}
+}
