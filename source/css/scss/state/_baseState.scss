@@ -1,7 +1,11 @@
 
 // Default angular styling
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak,.ng-hide:not(.ng-hide-animate) {
     display: none !important;
+}
+
+[visual-cloak], [data-visual-cloak], [x-visual-cloak], .visual-cloak, .x-visual-cloak {
+	visibility: hidden;
 }
 
 // For hiding manually

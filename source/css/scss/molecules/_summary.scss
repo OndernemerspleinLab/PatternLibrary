@@ -4,25 +4,39 @@
 	&-unit {
 		align-items: flex-end;
 		margin-bottom: 2rem;
+
+		& + & {
+			margin-top: 5rem;
+		}
 	}
 
 	&-number {
 		line-height: 0.5;
-		font-size: 8rem;
 		font-weight: bold;
+
+		&--primary {
+			font-size: getFontSize(summary primaryNumber);
+
+		}
+
+		&--secondary {
+			font-size: getFontSize(summary secondaryNumber);
+
+		}
 	}
+
 	&-percentage {
 		position: absolute;
 		display: block;
 		left: 100%;
-		font-size: 3rem;
-		top: 0;
+		font-size: getFontSize(summary percentage);
+		bottom: 3.5rem;
 		line-height: 0.8;
 	}
 
 	&-text {
 	    display: block;
-	    font-size: 0.7em;
+	    font-size: getFontSize(small);
 	    background: rgba(getColor(wit), 0.8);
 	    position: relative;
 	}

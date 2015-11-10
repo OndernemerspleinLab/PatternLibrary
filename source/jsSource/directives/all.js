@@ -1,3 +1,4 @@
+import 'directives/visualCloakDirective';
 import 'directives/menuBarDirective';
 import 'directives/mainMenuDirective';
 import 'directives/countUpDirective';
