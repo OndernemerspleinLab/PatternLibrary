@@ -74,6 +74,7 @@
 			opacity: 0;
 		}
 		&:hover, &:active, &:focus {
+			transition: all 0.2s ease-in-out;
 			transform: scale(1.025);
 		}
 		&--violet {

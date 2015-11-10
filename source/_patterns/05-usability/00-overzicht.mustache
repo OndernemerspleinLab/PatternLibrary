@@ -1,0 +1,69 @@
+<div class="container">
+	{{> organisms-sidebar }}
+	<div class="page" id="page">
+		<header class="header clearfix" role="banner">
+			<div class="header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems">
+				{{> molecules-logo }}
+				{{> molecules-payoff }}
+			</div>
+			<div class="brandBar">
+				<div class="layoutContainer">
+
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="layoutContainer gridContainer">
+				<div class="column column--twoThird">
+					<header class="article-header">
+						<h1>Overzicht van links</h1>
+					</header>
+
+					<p class="intro">Op deze pagina vind je een overzicht van alle pagina's die onderdeel zijn van het Usability onderzoek.</p>
+
+					<h2>Starter</h2>
+					<ul class="linkList">
+						<li class="linkList-item">
+							<a href="{{ link.usability-starter-aangifte-doen }}" class="interfaceLink" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+								{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>
+									Aangifte doen
+								</span></span>
+							</a>
+						</li>
+					</ul>
+
+					<h2>MKB'er</h2>
+					<ul class="linkList">
+						<li class="linkList-item">
+							<a href="{{ link.usability-mkb-omgevingsvergunning }}" class="interfaceLink" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+								{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>
+									Omgevingsvergunning
+								</span></span>
+							</a>
+						</li>
+					</ul>
+
+					<h2>ZZP'er</h2>
+					<ul class="linkList">
+						<li class="linkList-item">
+							<a href="{{ link.usability-zzp-samenwerken-als-zzpers }}" class="interfaceLink">
+								{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>
+									Samenwerken als zzp'ers
+								</span></span>
+							</a>
+						</li>
+					</ul>
+
+				</div>
+				<div class="column column--third aside">
+
+				</div>
+			</div>
+		</div>
+
+		{{> organisms-footer }}
+	</div>
+</div>
