@@ -1,5 +1,6 @@
 .tabs {
 	@include noBullets;
+	position: relative;
 	line-height: 1.2;
 
 	@include mqGreaterThan(smallMedium) {

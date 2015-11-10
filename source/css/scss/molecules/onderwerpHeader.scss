@@ -1,0 +1,19 @@
+.onderwerpHeader {
+	@include insideMargin(3rem 1rem);
+	background: getColor(mosgroen default);
+
+	&-tabContainer {
+		position: relative;
+		background: linear-gradient(to bottom,
+			getColor(mosgroen default) 1.3rem,
+			transparent 1.3rem
+		);
+		@include mqGreaterThan(smallMedium) {
+			background: getColor(mosgroen default);
+		}
+	}
+}
+
+.onderwerpHeading {
+	color: getColor(wit);
+}
