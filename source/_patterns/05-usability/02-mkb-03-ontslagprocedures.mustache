@@ -1,0 +1,112 @@
+<div class="container">
+	{{> organisms-sidebar }}
+	<div class="page" id="page">
+		<header class="header clearfix" role="banner">
+			<div class="header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems">
+				{{> molecules-logo }}
+				{{> molecules-payoff }}
+			</div>
+			<div class="brandBar">
+				<div class="layoutContainer">
+					<ul class="breadcrumbs diapositive">
+						<li class="breadcrumb">
+							<a class="breadcrumb-link breadcrumb-linkFirst diapositive-link" href="#">
+								<span class="breadcrumb-text">Home</span>
+							</a>
+						</li>
+						<li class="breadcrumb">
+							<a class="breadcrumb-link diapositive-link" href="#">
+								<span class="breadcrumb-text">Alles over ondernemen</span>
+							</a>
+						</li>
+						<li class="breadcrumb">
+							<a class="breadcrumb-link diapositive-link" href="{{ link.usability-mkb-01-personeel }}">
+								<span class="breadcrumb-text">Personeel</span>
+							</a>
+						</li>
+						<li class="breadcrumb">
+							<a class="breadcrumb-link diapositive-link" href="{{ link.usability-mkb-02-ontslag-en-opzeggen }}">
+								<span class="breadcrumb-text">Ontslag en opzeggen</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="layoutContainer gridContainer">
+				<div class="column column--twoThird">
+					<header class="article-header">
+						<h1>Ontslagprocedures</h1>
+						{{> molecules-bronhouder-text }}
+						{{> molecules-laatste-update }}
+					</header>
+
+					<p class="intro">Er zijn verschillende ontslagprocedures. Een ontslag is alleen geldig als u daarvoor de juiste ontslagprocedure volgt. De kantonrechter en UWV beoordelen vooraf of u zich houdt aan de procedure. Dit heet een preventieve toets. De tijd die dit kost komt in mindering op de opzegtermijn. Wel moet altijd 1 maand opzegtermijn overblijven. </p>
+
+					<h2>Wanneer welke ontslagprocedure?</h2>
+
+					<h3>Ontslag via UWV</h3>
+
+					<ul>
+						<li>Als uw werknemer langdurig arbeidsongeschikt is.</li>
+						<li>Bij bedrijfseconomisch ontslag. Hierbij is het mogelijk dat een onafhankelijke en onpartijdige cao-commissie, in plaats van UWV, de preventieve toets uitvoert.</li>
+					</ul>
+
+					<h3>Ontslag via kantonrechter</h3>
+
+					<p>Ontslag om alle andere redenen. Bijvoorbeeld wegens onvoldoende functioneren van uw werknemer of door een verstoorde arbeidsverhouding.</p>
+
+					<h3>Ontslag met wederzijds goedvinden</h3>
+
+					<p>Hierbij maakt u samen met uw werknemer afspraken over het ontslag. Wat is bijvoorbeeld de einddatum? En krijgt uw werknemer een vergoeding? Die afspraken moet u schriftelijk vastleggen in een beëindigingsovereenkomst. Uw werknemer krijgt 14 dagen bedenktijd. Ook deze afspraak zet u in de beëindigingsovereenkomst. Doet u dit niet? Dan krijgt uw werknemer 21 dagen bedenktijd.</p>
+
+					<h2>Collectief ontslag en sociaal plan</h2>
+
+					<p>Ontslaat u binnen 3 maanden om bedrijfseconomische redenen 20 of meer werknemers? En allemaal binnen hetzelfde werkgebied? Dan is er sprake van <a href="#">collectief ontslag</a>. De collectieve regelingen en voorzieningen voor het vertrekkende personeel legt u vast in een <a href="#">sociaal plan</a>.</p>
+
+					{{! organisms-hoenuverder-blok }}
+					{{! molecules-bronhouder-contentfooter }}
+
+					<div class="sourceBlock">
+						<p class="infoText infoText--afzender">
+							<span>Deze informatie is geplaatst door:</span>
+						</p>
+						<ul class="gridContainer gridContainer--singleLine u-noBullets">
+							<li class="verticalItem">
+								<img class="partnerLogo-image partnerLogo--contentBottom" src="../../images/logos/SZW_color.svg" alt="Ministerie van Sociale Zaken en Werkgelegenheid">
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="column column--third aside">
+					{{! organisms-side-blok-samenvatting }}
+					{{! organisms-side-blok-linklijst }}
+					{{! organisms-side-blok-linklijst-extern }}
+				</div>
+			</div>
+		</div>
+		<div class="crs-wrapper">
+			<div class="layoutContainer gridContainer">
+				{{> organisms-crsblok-verhaal}}
+				{{> organisms-crsblok-discussies }}
+				{{! organisms-promoblok}}
+				<div class="column column--third">
+					<div class="block block-promo block-promo--green">
+						<figure class="block-image">
+							<img src="../../images/startersdag.png">
+							<div class="block-label">Evenement</div>
+						</figure>
+						<h2 class="block-title h3">Zeker weten dat je goed van start gaat?</h2>
+						<div class="block-text">
+							<p>Kom naar de KvK Startersdag op 7 november 2015</p>
+						</div>
+						<a href="http://www.google.nl" class="block-link">Meer over de Startersdag</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{> organisms-footer }}
+	</div>
+</div>

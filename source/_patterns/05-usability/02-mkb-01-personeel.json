@@ -1,0 +1,9 @@
+{
+	"title" : "Personeel",
+	"bodyClass": "page",
+	"author" : {
+		"first-name": "Author",
+		"last-name": "Name",
+		"partner" : "Ondernemersplein"
+	}
+}
