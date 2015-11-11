@@ -22,7 +22,7 @@
 	}
 
 	&.block-crs {
-		min-height: 325px;
+		min-height: 300px;
 		position: relative;
 
 		.block-title {
@@ -39,10 +39,16 @@
 			}
 		}
 		.block-moreLink {
-			border-top: 1px solid getColor(grijs, default);
+			border-top: 1px solid getColor(grijs light);
 			position: absolute;
-			bottom: 0;
-			left: 0;
+			//top: 0;
+			bottom: 0.5rem;
+			//left: 1rem;
+			//right: 1rem;
+			font-size: getFontSize(small);
+			padding-top: 0.5em;
+			width: 90%;
+			@include hideUnderline;
 		}
 	}
 
@@ -74,6 +80,7 @@
 	&-promo {
 		padding: 0;
 		position: relative;
+		min-height: 300px;
 
 		.block-image {
 			margin-top: -0.5em;

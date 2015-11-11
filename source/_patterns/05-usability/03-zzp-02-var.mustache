@@ -92,7 +92,7 @@
 					</ul>
 					<a href="{{ link.templates-contentpage-base }}">Alle wetten en regels voor VAR</a>
 				</div>
-				{{> organisms-crsblok-discussies }}
+				{{! organisms-crsblok-discussies }}
 			</div-->
 		</div>
 		<div class="crs-wrapper">
@@ -127,7 +127,14 @@
 								</a>
 							</li>
 						</ul>
-						<a href="#" class="block-moreLink">Meer wetten en regels</a>
+						<div class="block-moreLink">
+							<a class="interfaceLink" href="#">
+								{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>
+									Meer wetten en regels
+								</span></span>
+							</a>
+						</div>
 					</div>
 				</div>
 				<div class="column column--third">
@@ -152,7 +159,14 @@
 								</a>
 							</li>
 						</ul>
-						<a href="#" class="block-moreLink">Meer direct regelen</a>
+						<div class="block-moreLink">
+							<a class="interfaceLink" href="#">
+								{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>
+									Meer direct regelen
+								</span></span>
+							</a>
+						</div>
 					</div>
 				</div>
 				{{> organisms-crsblok-discussies }}
