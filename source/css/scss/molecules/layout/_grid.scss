@@ -48,7 +48,7 @@ $quarterSpace: $space/4; // 0.5rem
 }
 
 // Container for elements that don't use columns
-.container {
+.contentContainer {
 	@extend .layoutContainer;
 	padding: {
 		left: $halfSpace;
