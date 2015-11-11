@@ -2,6 +2,8 @@
 .readMoreBlock {
 	padding: 1em;
 	margin-bottom: 1em;
+	display: block;
+	clear: both;
 
 	&--title {
 		margin-top: 0;
