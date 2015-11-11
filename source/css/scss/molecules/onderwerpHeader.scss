@@ -8,7 +8,7 @@
 			getColor(mosgroen default) 1.3rem,
 			transparent 1.3rem
 		);
-		@include mqGreaterThan(smallMedium) {
+		@include mqGreaterThan(medium) {
 			background: getColor(mosgroen default);
 		}
 	}
