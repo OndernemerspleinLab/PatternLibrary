@@ -111,7 +111,7 @@ h2, h3, h4, h5, h6 {
 	&:after {
 		@include icon;
         display: inline-block;
-       	content: getIcon(external);
+       	content: getIcon(externalLink);
        	@include noUnderline;
     }
 }

@@ -29,13 +29,12 @@
 	}
 	&--clearIcon {
 		position: absolute;
-		top: 6px;
-		right: 6px;
-		height: 1.5rem;
-		width: 1.5rem;
+		top: 8px;
+		right: 8px;
+		height: 1.25rem;
+		width: 1.25rem;
 	}
 	&--result {
-		padding: 0.35em 0.35em 0.35em 5em;
 		color: getColor(paars default);
 		background-color: getColor(paars lightest);
 		border-top: 3px solid getColor(wit);
@@ -43,10 +42,23 @@
 	&--resultLink {
 		color: getColor(paars default);
 		fill: getColor(paars default);
+		padding: 0.35em 0.35em 0.35em 5em;
+		display: block;
 		&:hover,
 		&:focus,
 		&:active {
+			background-color: getColor(paars light);
 			color: getColor(paars default);
+			//fill: getColor(grijs darkest);
+			.interfaceLink-text {
+				span {
+					@include underline;
+				}
+			}
+		}
+		.interfaceLink-icon {
+			height: 0.9rem;
+			width: 0.9rem;
 		}
 	}
 	&--noResult {
