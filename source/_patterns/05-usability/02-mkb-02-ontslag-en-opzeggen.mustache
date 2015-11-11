@@ -56,31 +56,51 @@
 			</div-->
 			<div class="layoutContainer gridContainer">
 				<div class="column column--third">
-					<h2><a href="#">Redenen voor ontslag</a></h2>
+					<h2 class="h4">
+						<a class="headingLink" href="#">
+							<span class="headingLink-text"><span>Redenen voor ontslag</span></span>
+							{{> atoms-goIcon-headingLink }}
+						</a>
+					</h2>
 					<p>Wanneer mag u uw werknemer ontslaan? En wanneer juist niet?</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="#">Opzegtermijn en aanzegtermijn</a></h2>
+					<h2 class="h4">
+						<a class="headingLink" href="#"><span class="headingLink-text"><span>Opzegtermijn en aanzegtermijn</span></span>
+							{{> atoms-goIcon-headingLink }}</a>
+					</h2>
 					<p>Opzegtermijn of aanzegtermijn: wanneer en waarom?</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="{{ link.usability-mkb-03-ontslagprocedures }}">Ontslagprocedures</a></h2>
+					<h2 class="h4">
+						<a class="headingLink" href="{{ link.usability-mkb-03-ontslagprocedures }}"><span class="headingLink-text"><span>Ontslagprocedures</span></span>
+							{{> atoms-goIcon-headingLink }}</a>
+					</h2>
 					<p>Welke ontslagprocedure moet u volgen?</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="#">Transitievergoeding bij ontslag</a></h2>
+					<h2 class="h4">
+						<a class="headingLink" href="#"><span class="headingLink-text"><span>Transitievergoeding bij ontslag</span></span>
+							{{> atoms-goIcon-headingLink }}</a>
+					</h2>
 					<p>Wanneer moet u een transitievergoeding betalen? En wanneer niet?</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="#">Transitievergoeding berekenen</a></h2>
+					<h2 class="h4">
+						<a class="headingLink" href="#"><span class="headingLink-text"><span>Transitievergoeding berekenen</span></span>
+							{{> atoms-goIcon-headingLink }}</a>
+					</h2>
 					<p>Bereken de hoogte van de transitievergoeding</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="#">Bruto maandsalaris voor transitievergoeding</a></h2>
+					<h2 class="h4">
+						<a class="headingLink" href="#"><span class="headingLink-text"><span>Bruto maandsalaris voor transitievergoeding</span></span>
+							{{> atoms-goIcon-headingLink }}</a>
+					</h2>
 					<p>Hiermee berekent u de hoogte van de transitievergoeding</p>
 				</div>
 			</div>
-			<div class="layoutContainer gridContainer">
+			<!--div class="layoutContainer gridContainer">
 				<div class="column column--twoThird">
 					<h2>Wetten en regels</h2>
 					<ul class="linkList list list--double">
@@ -93,26 +113,54 @@
 					</ul>
 					<a href="{{ link.templates-contentpage-base }}">Alle wetten en regels voor ontslag en opzeggen</a>
 				</div>
-				{{> organisms-crsblok-discussies }}
-			</div>
+
+			</div-->
 		</div>
 		<div class="crs-wrapper">
 			<div class="layoutContainer gridContainer">
 				{{> organisms-crsblok-verhaal}}
-				{{> organisms-crsblok-linklijst}}
 				<div class="column column--third">
-					<div class="block block-promo block-promo--green">
-						<figure class="block-image">
-							<img src="../../images/startersdag.png">
-							<div class="block-label">Evenement</div>
-						</figure>
-						<h2 class="block-title h4">Zeker weten dat je goed van start gaat?</h2>
-						<div class="block-text">
-							<p>Kom naar de KvK Startersdag op 7 november 2015</p>
-						</div>
-						<a href="http://www.google.nl" class="block-link">Meer over de Startersdag</a>
+					<div class="block block-crs block--green">
+						<h2 class="block-title h4">
+							<span class="inlineMedia">
+				                <svg aria-hidden="true" class="media-icon block-icon">
+				                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-wet-7003"></use>
+				                </svg>
+				                <span class="media-text">
+				                    Wetten en regels
+				                </span>
+				            </span>
+						</h2>
+						<ul class="block-list linkList">
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">
+									{{> atoms-goIcon-interfaceLink }}
+									<span class="postTitle interfaceLink-text"><span>
+										Ontslagvergoeding
+									</span></span>
+								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">
+									{{> atoms-goIcon-interfaceLink }}
+									<span class="postTitle interfaceLink-text"><span>
+										Ontslagprocedures en opzegverboden
+									</span></span>
+								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">
+									{{> atoms-goIcon-interfaceLink }}
+									<span class="postTitle interfaceLink-text"><span>
+										Transitievergoeding bij ontslag
+									</span></span>
+								</a>
+							</li>
+						</ul>
+						<a class="block-moreLink" href="#">Meer wetten en regels</a>
 					</div>
 				</div>
+				{{> organisms-crsblok-discussies }}
 			</div>
 		</div>
 		{{> organisms-footer }}

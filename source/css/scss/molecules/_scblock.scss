@@ -81,5 +81,10 @@
 		&:active {
 			color: getColor(grijs darkest);
 		}
+		.interfaceLink-icon {
+			height: 0.9rem;
+			width: 0.9rem;
+			margin-top: 2px;
+		}
 	}
 }

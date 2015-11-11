@@ -9,17 +9,55 @@
 	@include insideMargin(0.5em);
 	padding: $space/4 $space/2;
 
-	.crs-wrapper & {
-		background-color: getColor(wit);
-	}
-
 	&-title {
-		margin-top: 0.34rem;
+
 	}
 	&-link {
 
 	}
 
+	// CRS Container
+	.crs-wrapper & {
+		background-color: getColor(wit);
+	}
+
+	&.block-crs {
+		min-height: 325px;
+		position: relative;
+
+		.block-title {
+			font-weight: normal;
+		}
+		.block-icon {
+			height: 1.35rem;
+			width: 1.35rem;
+			margin-right: 0.5rem;
+		}
+		.block-list {
+			.interfaceLink {
+				font-size: getFontSize(small);
+			}
+		}
+		.block-moreLink {
+			border-top: 1px solid getColor(grijs, default);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	.postTitle {
+		font-weight: bold;
+		display: block;
+	}
+
+	.postDate {
+		font-weight: normal;
+		font-style: italic;
+		font-size: getFontSize(extrasmall);
+	}
+
+	// Right Column
 	&--side {
 		margin-top: 0;
 		margin-bottom: 1.5em;
@@ -32,6 +70,7 @@
 		}
 	}
 
+	// Promoblock (met afbeelding)
 	&-promo {
 		padding: 0;
 		position: relative;
@@ -110,23 +149,27 @@
 			background-color: getColor(wit);
 		}
 	}
-	&--blue {
-		background-color: getColor(hemelblauw lightest);
+	&--grey {
+		background-color: getColor(grijs lightest);
 
 		.crs-wrapper & {
 			background-color: getColor(wit);
 		}
 	}
+	&--border {
+		border: 1px solid getColor(hemelblauw default);
+
+		.crs-wrapper & {
+			background-color: getColor(wit);
+		}
+	}
+
 	&--purple {
 		.block-title {
 			color: getColor(paars default);
-			font-weight: normal;
 		}
 		.block-icon {
 			fill: getColor(paars default);
-			height: 2rem;
-			width: 2rem;
-			margin-right: 1rem;
 		}
 		.interfaceLink {
 			color: getColor(grijs darkest);
@@ -144,17 +187,35 @@
 			background-color: getColor(wit);
 		}
 	}
+	&--green {
+		.block-title {
+			color: getColor(mosgroen default);
+		}
+		.block-icon {
+			fill: getColor(mosgroen default);
+		}
+		.interfaceLink {
+			color: getColor(grijs darkest);
+			fill: getColor(mosgroen default);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: getColor(mosgroen default);
+				fill: getColor(mosgroen default);
+			}
+		}
+
+		.crs-wrapper & {
+			background-color: getColor(wit);
+		}
+	}
 	&--violet {
 		.block-title {
 			color: getColor(violet default);
-			font-weight: normal;
 		}
 		.block-icon {
 			fill: getColor(violet default);
-			height: 1.5rem;
-			width: 1.5rem;
-			margin-right: 1rem;
-
 		}
 		.interfaceLink {
 			color: getColor(grijs darkest);
@@ -166,26 +227,15 @@
 				color: getColor(violet default);
 				fill: getColor(violet default);
 			}
+
 		}
 
 		.crs-wrapper & {
 			background-color: getColor(wit);
 		}
 	}
-	&--grey {
-		background-color: getColor(grijs lightest);
 
-		.crs-wrapper & {
-			background-color: getColor(wit);
-		}
-	}
-	&--border {
-		border: 1px solid getColor(hemelblauw default);
 
-		.crs-wrapper & {
-			background-color: getColor(wit);
-		}
-	}
 }
 
 .crs-wrapper {

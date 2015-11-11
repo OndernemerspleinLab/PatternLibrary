@@ -56,23 +56,27 @@
 			</div-->
 			<div class="layoutContainer gridContainer">
 				<div class="column column--third">
-					<h2><a href="{{ link.usability-zzp-03-var-onmisbaar }}">De VAR: onmisbaar voor freelancers en zzp'ers</a></h2>
+					<h2 class="h4"><a class="headingLink" href="{{ link.usability-zzp-03-var-onmisbaar }}"><span class="headingLink-text"><span>De VAR: onmisbaar voor freelancers en zzp'ers</span></span>
+							{{> atoms-goIcon-headingLink }}</a></h2>
 					<p>Met een 'var' geeft de Belastingdienst aan hoe uw inkomsten als 'zelfstandige' beoordeeld gaan worden.</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="#">Vier soorten VAR</a></h2>
+					<h2 class="h4"><a class="headingLink" href="#"><span class="headingLink-text"><span>Vier soorten VAR</span></span>
+							{{> atoms-goIcon-headingLink }}</a></h2>
 					<p>Wat betekent welke VAR? Afhankelijk van uw situatie krijgt u één van vier Verklaringen Arbeidsrelatie (VAR).</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="{{ link.usability-mkb-03-ontslagprocedures }}">VAR aanvragen</a></h2>
+					<h2 class="h4"><a class="headingLink" href="{{ link.usability-mkb-03-ontslagprocedures }}"><span class="headingLink-text"><span>VAR aanvragen</span></span>
+							{{> atoms-goIcon-headingLink }}</a></h2>
 					<p>Informatie voor het aanvragen van de VAR. Hoe u deze aanvraagt en wat de Belastingdienst van u wilt weten.</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="#">Tips bij VAR aanvragen</a></h2>
+					<h2 class="h4"><a class="headingLink" href="#"><span class="headingLink-text"><span>Tips bij VAR aanvragen</span></span>
+							{{> atoms-goIcon-headingLink }}</a></h2>
 					<p>Handige weetjes en tips voor ondernemers die een VAR aan willen vragen.</p>
 				</div>
 			</div>
-			<div class="layoutContainer gridContainer">
+			<!--div class="layoutContainer gridContainer">
 				<div class="column column--third">
 					<h2>Direct regelen</h2>
 					<ul class="linkList list">
@@ -89,25 +93,69 @@
 					<a href="{{ link.templates-contentpage-base }}">Alle wetten en regels voor VAR</a>
 				</div>
 				{{> organisms-crsblok-discussies }}
-			</div>
+			</div-->
 		</div>
 		<div class="crs-wrapper">
 			<div class="layoutContainer gridContainer">
-				{{> organisms-crsblok-verhaal}}
-				{{! organisms-crsblok-linklijst}}
 				<div class="column column--third">
-					<div class="block block-promo block-promo--green">
-						<figure class="block-image">
-							<img src="../../images/startersdag.png">
-							<div class="block-label">Evenement</div>
-						</figure>
-						<h2 class="block-title h4">Zeker weten dat je goed van start gaat?</h2>
-						<div class="block-text">
-							<p>Kom naar de KvK Startersdag op 7 november 2015</p>
-						</div>
-						<a href="http://www.google.nl" class="block-link">Meer over de Startersdag</a>
+					<div class="block block-crs block--green">
+						<h2 class="block-title h4">
+							<span class="inlineMedia">
+				                <svg aria-hidden="true" class="media-icon block-icon">
+				                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-wet-7003"></use>
+				                </svg>
+				                <span class="media-text">
+				                    Wetten en regels
+				                </span>
+				            </span>
+						</h2>
+						<ul class="block-list linkList">
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">
+									{{> atoms-goIcon-interfaceLink }}
+									<span class="postTitle interfaceLink-text"><span>
+										Verklaring arbeidsrelatie (VAR)
+									</span></span>
+								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">
+									{{> atoms-goIcon-interfaceLink }}
+									<span class="postTitle interfaceLink-text"><span>
+										(Model)overeenkomst vervangt Verklaring arbeidsrelatie (VAR)
+									</span></span>
+								</a>
+							</li>
+						</ul>
+						<a href="#" class="block-moreLink">Meer wetten en regels</a>
 					</div>
 				</div>
+				<div class="column column--third">
+					<div class="block block-crs block--purple">
+						<h2 class="block-title h4">
+							<span class="inlineMedia">
+				                <svg aria-hidden="true" class="media-icon block-icon">
+				                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-consument-6003"></use>
+				                </svg>
+				                <span class="media-text">
+				                    Direct regelen
+				                </span>
+				            </span>
+						</h2>
+						<ul class="block-list linkList">
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">
+									{{> atoms-goIcon-interfaceLink }}
+									<span class="postTitle interfaceLink-text"><span>
+										Vraag een Verklaring arbeidsrelatie (VAR) aan bij de Belastingdienst
+									</span></span>
+								</a>
+							</li>
+						</ul>
+						<a href="#" class="block-moreLink">Meer direct regelen</a>
+					</div>
+				</div>
+				{{> organisms-crsblok-discussies }}
 			</div>
 		</div>
 		{{> organisms-footer }}
