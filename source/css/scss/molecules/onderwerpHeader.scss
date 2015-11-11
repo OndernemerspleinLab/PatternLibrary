@@ -4,10 +4,10 @@
 
 	&-tabContainer {
 		position: relative;
-		background: linear-gradient(to bottom,
-			getColor(mosgroen default) 1.3rem,
-			transparent 1.3rem
-		);
+
+		@include mqLesserThan(medium) {
+			box-shadow: 0 1.3rem 0 0 getColor(mosgroen default) inset;
+		}
 		@include mqGreaterThan(medium) {
 			background: getColor(mosgroen default);
 		}
