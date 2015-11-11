@@ -47,6 +47,15 @@ $quarterSpace: $space/4; // 0.5rem
 	}
 }
 
+// Container for elements that don't use columns
+.container {
+	@extend .layoutContainer;
+	padding: {
+		left: $halfSpace;
+		right: $halfSpace;
+	}
+}
+
 .sublayoutContainer {
 	margin: {
 		left: (-1*$halfSpace);

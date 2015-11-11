@@ -31,6 +31,7 @@
 
 		@include mqGreaterThan(smallMedium) {
 			transform-origin: 50% 100%;
+			box-shadow: 0 -0.25rem 0 0 hsl(206, 93%, 12%) inset;
 		}
 
 		@include hoverEtc {
@@ -42,6 +43,7 @@
 		&.is-active {
 			color: getColor(hemelblauw darkest);
 			background: getColor(grijs light);
+			box-shadow: none;
 		}
 	}
 }
