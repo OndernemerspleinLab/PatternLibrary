@@ -15,6 +15,14 @@ $zIndex: (
 		),
 	),
 	(
+		name: tabs,
+		subZIndex:(
+			normal,
+			active,
+			hover,
+		),
+	),
+	(
 		name: seeThroughScroll,
 		subZIndex: (
 			content,

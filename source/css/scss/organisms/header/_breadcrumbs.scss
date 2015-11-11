@@ -1,12 +1,12 @@
 /* BREADCRUMBS */
 
 .breadcrumbs {
+	@include noBullets;
 	margin: 0 1rem;
 	padding-left: 0;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	@include noBullets;
 }
 
 .breadcrumb {

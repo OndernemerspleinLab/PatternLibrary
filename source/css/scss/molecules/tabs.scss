@@ -2,6 +2,7 @@
 	@include noBullets;
 	position: relative;
 	line-height: 1.2;
+	@include zIndex(tabs);
 
 	@include mqGreaterThan(smallMedium) {
 		display: flex;
@@ -15,35 +16,87 @@
 	padding: 0;
 	& + & {
 		@include mqGreaterThan(smallMedium) {
-			margin-left: 0.2rem;
+			margin-left: 0.35rem;
 		}
 	}
 
 	&-link {
 		@include noUnderline;
 		display: block;
-		padding: 0.6rem 0.8rem;
-		background: getColor(hemelblauw darkest);
+		padding: 0.7rem 0.8rem;
 		color: getColor(grijs light);
-		font-weight: bold;
-		transform-origin: 50% 50%;
-		transition: transform 0.1s;
+		position: relative;
+		@include zIndex(tabs normal);
+
+		@include before("") {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: getColor(hemelblauw darkest);
+			transition: top, background-color 0.1s;
+
+			@include mqGreaterThan(smallMedium) {
+				background-image: linear-gradient(to top,
+					#{rgba(getColor(zwart), 0.15)} 0.25rem,
+					transparent 0.25rem);
+			}
+		}
 
 		@include mqGreaterThan(smallMedium) {
 			transform-origin: 50% 100%;
-			box-shadow: 0 -0.25rem 0 0 hsl(206, 93%, 12%) inset;
 		}
 
 		@include hoverEtc {
-			color: getColor(grijs light);
-			background: darken(getColor(hemelblauw darkest), 5%);
-			transform: scale(1.04);
+			@include mqLesserThan(smallMedium) {
+				color: getColor(wit);
+			}
+			@include mqGreaterThan(smallMedium) {
+				color: getColor(grijs light);
+			}
+
+			@include before() {
+				@include mqLesserThan(smallMedium) {
+					background-color: getColor(hemelblauw default);
+				}
+
+				@include mqGreaterThan(smallMedium) {
+					top: -0.25rem;
+					background-image: linear-gradient(to top,
+						#{rgba(getColor(zwart), 0.15)},
+						#{rgba(getColor(zwart), 0.15)});
+				}
+			}
 		}
 
 		&.is-active {
-			color: getColor(hemelblauw darkest);
-			background: getColor(grijs light);
-			box-shadow: none;
+			@include zIndex(tabs active);
+			font-weight: bold;
+			@include mqLesserThan(smallMedium) {
+				box-shadow: 0px -4px 0px 0px rgba(getColor(zwart), 0.15),
+						0px 4px 0px 0px rgba(getColor(zwart), 0.15);
+
+				@include before() {
+					left: -0.25rem;
+					right: -0.25rem;
+				}
+			}
+
+			@include mqGreaterThan(smallMedium) {
+				color: getColor(hemelblauw darkest);
+
+				@include before() {
+					top: -0.25rem;
+					background-color: #{getColor(grijs light)};
+					background-image: none;
+				}
+			}
+
+		}
+
+		&-text {
+			position: relative;
 		}
 	}
 }
