@@ -21,7 +21,13 @@ $fontSize: (
 		medium: 1.4rem,
 		large: 1.5rem,
 	),
-	h3: 1rem,
+	h3: (
+		small: 1.1rem,
+		medium: 1.15rem,
+		large: 1.2rem,
+	),
+	h4: 1rem,
+
 	introText: 1.2rem,
 	summary: (
 		number: 8rem,

@@ -49,11 +49,33 @@ h2, .h2 {
 		margin-top: 0;
 	}
 }
-h3, .h3,
+h3, .h3 {
+	font-size: getFontSize(h3 small);
+	//font-weight: normal;
+
+	margin: {
+		top: 1.4em;
+		bottom: 0.4em;
+	}
+
+	@include mqGreaterThan(small) {
+		font-size: getFontSize(h3 medium);
+	}
+
+	@include mqGreaterThan(large) {
+		font-size: getFontSize(h3 large);
+		// margin-bottom: 0.1em;
+	}
+
+	&.block-title {
+		margin-top: 0;
+	}
+}
+
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-size: getFontSize(h3);
+	font-size: getFontSize(h4);
 	margin: {
 		top: 1.5em;
 		bottom: 0.2em;
