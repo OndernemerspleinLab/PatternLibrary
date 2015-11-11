@@ -1,0 +1,233 @@
+<div class="container">
+	{{> organisms-sidebar }}
+	<div class="page" id="page">
+		<header class="header clearfix" role="banner">
+			<div class="header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems">
+				{{> molecules-logo }}
+				{{> molecules-payoff }}
+			</div>
+			<div class="brandBar">
+				<div class="layoutContainer">
+					<ul class="breadcrumbs diapositive">
+						<li class="breadcrumb">
+							<a class="breadcrumb-link breadcrumb-linkFirst diapositive-link" href="{{ link.templates-homepage }}">
+								<span class="breadcrumb-text">Home</span>
+							</a>
+						</li>
+						<li class="breadcrumb">
+							<a class="breadcrumb-link diapositive-link" href="#">
+								<span class="breadcrumb-text">Wetten en regels</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="main">
+			<div class="layoutContainer gridContainer">
+				<div class="column column--twoThird">
+					<header class="article-header">
+						<h1>Ontslagprocedures en opzegverboden</h1>
+						{{> molecules-bronhouder-text }}
+						{{> molecules-laatste-update }}
+					</header>
+
+					<p class="intro">Wilt u personeel ontslaan? Dan moet u daarvoor een goede reden hebben. Die kan zijn: werkweigering, verwijtbaar gedrag, veel ziekteverzuim, reorganisatie of bedrijfssluiting. Ontslaat u binnen 3 maanden meer dan 20 werknemers binnen 1 werkgebied, om bedrijfseconomische redenen? Dan is er sprake van <a href="#">collectief ontslag</a>.</p>
+
+					<div class="pageContentNav block--grey">
+						<h2 class="pageContentNav--title h3">Op deze pagina behandelen we</h2>
+						<ul class="pageContentNav--list linkList list list--double">
+							<li class="linkList-item list-spacedItem">
+								<a href="#wederzijds" class="interfaceLink">{{> atoms-goIcon-arrow-down }}<span class="interfaceLink-text"><span>Ontslag met wederzijds goedvinden</span></span></a>
+							</li>
+							<li class="linkList-item list-spacedItem">
+								<a href="#toets" class="interfaceLink">{{> atoms-goIcon-arrow-down }}<span class="interfaceLink-text"><span>Preventieve ontslagtoets door UWV of kantonrechter</span></span></a>
+							</li>
+							<li class="linkList-item list-spacedItem">
+								<a href="#cao" class="interfaceLink">{{> atoms-goIcon-arrow-down }}<span class="interfaceLink-text"><span>CAO-commissie bij bedrijfseconomisch ontslag</span></span></a>
+							</li>
+							<li class="linkList-item list-spacedItem">
+								<a href="#proceduretijd" class="interfaceLink">{{> atoms-goIcon-arrow-down }}<span class="interfaceLink-text"><span>Proceduretijd in mindering brengen op opzegtermijn</span></span></a>
+							</li>
+							<li class="linkList-item list-spacedItem">
+								<a href="#ontslag" class="interfaceLink">{{> atoms-goIcon-arrow-down }}<span class="interfaceLink-text"><span>Ontslag: hoger beroep en cassatie</span></span></a>
+							</li>
+							<li class="linkList-item list-spacedItem">
+								<a href="#opzegverboden" class="interfaceLink">{{> atoms-goIcon-arrow-down }}<span class="interfaceLink-text"><span>Opzegverboden</span></span></a>
+							</li>
+							<li class="linkList-item list-spacedItem">
+								<a href="#ontslagregels" class="interfaceLink">{{> atoms-goIcon-arrow-down }}<span class="interfaceLink-text"><span>Ontslagregels in cao of arbeidsovereenkomst</span></span></a>
+							</li>
+							<li class="linkList-item list-spacedItem">
+								<a href="#externe-links" class="interfaceLink">{{> atoms-goIcon-arrow-down }}<span class="interfaceLink-text"><span>Externe links</span></span></a>
+							</li>
+							<li class="linkList-item list-spacedItem">
+								<a href="#wetswijzigingen" class="interfaceLink">{{> atoms-goIcon-arrow-down }}<span class="interfaceLink-text"><span>Wetswijzigingen</span></span></a>
+							</li>
+						</ul>
+					</div>
+
+					<h2 id="wederzijds">Ontslag met wederzijds goedvinden</h2>
+
+					<p>Spreken u en uw werknemer in onderling overleg af zijn dienstverband te beëindigen? Dan is er sprake van <a class="externalLink" href="https://www.werk.nl/werk_nl/werkgever/meerweten/ontslag/vaststellingsovereenkomst#d419038e21" title="externe link">ontslag met wederzijds goedvinden</a>. Uw werknemer gaat vrijwillig akkoord met het ontslag.</p>
+
+					<p>Ontslag met wederzijds goedvinden geldt alleen wanneer het schriftelijk is overeengekomen in een beëindigingsovereenkomst (vaststellingsovereenkomst). Ook kunt u een <a href="#" title="Ontslagvergoeding">ontslagvergoeding</a> overeenkomen.</p>
+
+					<p>Voor ontslag met wederzijds goedvinden hebt u geen toestemming nodig van het UWV. Ook hoeft u de kantonrechter niet om ontbinding van de arbeidsovereenkomst te vragen.</p>
+
+					<p>Uw werknemer heeft een bedenktermijn van 14 dagen. In die tijd kan uw werknemer advies vragen en zijn instemming herroepen. Hij hoeft daar geen reden voor op te geven. U moet de werknemer in de beëindigingsovereenkomst wijzen op deze bedenktermijn. Doet u dit niet? Dan heeft de werknemer een bedenktermijn van 21 dagen.</p>
+
+					<h2 id="toets">Preventieve ontslagtoets door UWV of kantonrechter</h2>
+
+					<p>Vooraf toetst UWV of kantonrechter een ontslag. Door wie is afhankelijk van de reden voor ontslag.</p>
+
+					<p>Bij bedrijfseconomisch ontslag of ontslag na langdurige arbeidsongeschiktheid, zonder toestemming van de medewerker, vraagt u UWV om toestemming voor opzegging van de arbeidsovereenkomst.</p>
+
+					<p>Dit geldt zowel voor een arbeidsovereenkomst voor onbepaalde tijd als voor een overeenkomst voor bepaalde tijd met tussentijdse opzegmogelijkheid. UWV toetst of is voldaan aan de wettelijke criteria om een werknemer te kunnen ontslaan (redelijke grond, herplaatsing).</p>
+
+					<p>Bij andere redenen voor ontslag (zoals bij onvoldoende functioneren of bij een arbeidsconflict) vraagt u de kantonrechter om ontbinding van de arbeidsovereenkomst. Dit doet u ook wanneer sprake is van een overeenkomst voor bepaalde tijd die niet tussentijds kan worden opgezegd. De kantonrechter toetst de wettelijke criteria om een werknemer te kunnen ontslaan.</p>
+
+					<h2 id="cao">CAO-commissie bij bedrijfseconomisch ontslag</h2>
+
+					<p>In de cao kan een van de werkgever onafhankelijke en onpartijdige commissie worden ingesteld die een bedrijfseconomisch ontslag toetst in plaats van UWV.</p>
+
+					<h2 id="proceduretijd">Proceduretijd in mindering brengen op opzegtermijn</h2>
+
+					<p>De procedure bij UWV en de kantonrechter kost tijd. Deze proceduretijd wordt in mindering gebracht op de opzegtermijn die u als werkgever moet hanteren. In beide gevallen moet minstens 1 maand opzegtermijn overblijven.</p>
+
+					<h2 id="ontslag">Ontslag: hoger beroep en cassatie</h2>
+
+					<p>Bent u het als werkgever niet eens met de uitspraak van de kantonrechter over de opzegging of ontbinding van de arbeidsovereenkomst? U kunt hoger beroep en cassatie instellen. Ook de werknemer kan dit doen.</p>
+
+					<h2 id="opzegverboden">Opzegverboden</h2>
+
+					<p>Er zijn situaties waarin uw werknemer tegen ontslag is beschermd. U <a class="externalLink" href="http://www.uwv.nl/werkgevers/werknemer-en-ontslag/tijdens-ontslagvergunning/detail/wanneer-mag-ik-mijn-werknemer-niet-ontslaan" title="externe link">mag hem dan niet ontslaan</a>; er geldt een ontslagverbod. Als hiervan sprake is geeft UWV geen toestemming voor de opzegging, tenzij het opzegverbod binnen 4 weken nadat toestemming is verleend niet meer van toepassing is. Is er wel toestemming verleend, maar blijkt naderhand toch dat er een opzegverbod gold was? Dan geldt de arbeidsovereenkomst als niet opgezegd.</p>
+
+					<p>Ook de kantonrechter houdt rekening met de opzegverboden. De kantonrechter kan de arbeidsovereenkomst in geval van ontslag wegens langdurige arbeidsongeschiktheid en andere redenen voor ontslag wel ontbinden, maar alleen wanneer blijkt dat het ontslag met die opzegverboden geen verband houdt.</p>
+
+					<p>Meent uw werknemer dat het ontslag in strijd is met een opzegverbod? Dan kan hij tot 2 maanden na het beëindigen van de arbeidsovereenkomst de kantonrechter vragen om de opzegging te vernietigen of een billijke vergoeding toe te kennen.</p>
+
+					<h2 id="ontslagregels">Ontslagregels in cao of arbeidsovereenkomst</h2>
+
+					<p>In een <a href="#" title="Cao">cao</a> of <a href="#" title="Arbeidscontract">arbeidsovereenkomst</a> kunnen <a class="externalLink" href="http://www.rijksoverheid.nl/onderwerpen/ontslag/documenten-en-publicaties/brochures/2015/06/04/wwz-ontslag-en-afwijking-cao.html" title="externe link">afwijkende regels over het ontslag</a> staan. Bij een overeenkomst voor bepaalde tijd moet u meestal wachten tot de contractperiode is afgelopen.</p>
+
+					<p>Heeft uw medewerker een contract voor bepaalde tijd van 6 maanden of langer dat automatisch eindigt? Dan moet u uiterlijk 1 maand voor het einde van het contract schriftelijk aan uw werknemer laten weten of u het contract wel of niet verlengt. Doet u dat niet? Dan heeft uw werknemer recht op een vergoeding van een maandloon.</p>
+
+                    <h2 id="externe-links">Externe links</h2>
+                    <ul class="linkList">
+                        <li class="linkList-item">
+                            <a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text externalLink"><span>Ontslag (Rijksoverheid)</span></span></a>
+                        </li>
+                        <li class="linkList-item">
+                            <a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text externalLink"><span>Ontslag met wederzijds goedvinden (UWV)</span></span></a>
+                        </li>
+                        <li class="linkList-item">
+                            <a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text externalLink"><span>Ontslagprocedure via de kantonrechter (UWV)</span></span></a>
+                        </li>
+                        <li class="linkList-item">
+                            <a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text externalLink"><span>Wanneer mag ik mijn werknemer niet ontslaan? (UWV)</span></span></a>
+                        </li>
+                        <li class="linkList-item">
+                            <a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text externalLink"><span>Mijnwerkenzekerheid.nl</span></span></a>
+                        </li>
+                    </ul>
+
+                    <h2 id="wetswijzigingen">Wetswijzigingen</h2>
+                    <ul class="linkList">
+                        <li class="linkList-item">
+                            <a class="interfaceLink" href="#">
+                            	{{> atoms-goIcon-interfaceLink }}
+                            	<span class="interfaceLink-text"><span>
+	                                <span class="textLine">Nieuwe regels ontslag</span>
+	                                <time class="infoText" datetime="Ingangsdatum: 1 mrt 2016">
+	                                    Ingangsdatum: 1 jul 2015
+	                                </time>
+                                </span></span>
+                            </a>
+                            <span class="wetswijziging-datum" data-url="/WetswijzigingsDatumHandler.ashx?id=tcm:106-275116"></span>
+                        </li>
+                    </ul>
+
+					{{! organisms-hoenuverder-blok }}
+					{{! molecules-bronhouder-contentfooter }}
+
+					<div class="sourceBlock">
+						<p class="infoText infoText--afzender">
+							<span>Deze informatie is geplaatst door:</span>
+						</p>
+						<ul class="gridContainer gridContainer--singleLine u-noBullets">
+							<li class="verticalItem">
+								<img class="partnerLogo-image partnerLogo--contentBottom" src="../../images/logos/AVB_color.svg" alt="Antwoord voor bedrijven">
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="column column--third aside">
+					<div class="block block--blue contact">
+						<h2 class="block-title h3">Neem contact op met</h2>
+						<p class="contact-info">Antwoord voor bedrijven</p>
+						<p class="contact-phone">
+							<span>Bel 14 088</span>
+					    </p>
+					</div>
+					{{! organisms-side-blok-samenvatting }}
+					{{! organisms-side-blok-linklijst }}
+					{{! organisms-side-blok-linklijst-extern }}
+
+					<div class="block block--side suggestions">
+						<h2 class="block-title h3 sideHeading">Misschien bent u op zoek naar</h2>
+						<ul class="linkList">
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Collectief ontslag</span></span></a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Ontslagvergoeding</span></span></a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Sociaal plan</span></span></a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="block block--side externalLinks">
+						<h2 class="block-title h3 sideHeading">Wet- en regelgeving</h2>
+						<ul class="linkList">
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text externalLink"><span>Burgerlijk Wetboek Boek 7, Titel 10. Arbeidsovereenkomst, Afdeling 9. Einde van de arbeidsovereenkomst (Overheid.nl)</span></span></a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text externalLink"><span>Wet werk en zekerheid (Overheid.nl)</span></span></a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text externalLink"><span>Buitengewoon Besluit Arbeidsverhoudingen 1945, artikel 2, lid 1b (Overheid.nl)</span></span></a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="crs-wrapper">
+			<div class="layoutContainer gridContainer">
+				{{> organisms-crsblok-verhaal}}
+				{{> organisms-crsblok-discussies }}
+				{{! organisms-promoblok}}
+				<div class="column column--third">
+					<div class="block block-promo block-promo--green">
+						<figure class="block-image">
+							<img src="../../images/startersdag.png">
+							<div class="block-label">Evenement</div>
+						</figure>
+						<h2 class="block-title h3">Zeker weten dat je goed van start gaat?</h2>
+						<div class="block-text">
+							<p>Kom naar de KvK Startersdag op 7 november 2015</p>
+						</div>
+						<a href="http://www.google.nl" class="block-link">Meer over de Startersdag</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{> organisms-footer }}
+	</div>
+</div>
