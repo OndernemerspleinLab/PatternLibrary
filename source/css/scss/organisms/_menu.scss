@@ -154,6 +154,13 @@
 		}
 	}
 
+	@include mqGreaterThan(extraExtraExtraLarge) {
+		margin: {
+			top: 0.9rem;
+			bottom: 0.9rem;
+		}
+	}
+
 	@include mqGreaterThan(large) {
 		width: $menuBarWidthExtraLarge;
 	}

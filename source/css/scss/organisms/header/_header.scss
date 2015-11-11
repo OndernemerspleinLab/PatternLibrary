@@ -19,7 +19,10 @@
 
 	@include mqGreaterThan(large) {
 		min-height: 3rem;
-		border-bottom-width: 0.59rem;
+	}
+
+	@include mqGreaterThan(extraExtraExtraLarge) {
+		min-height: 4.4rem;
 	}
 }
 
