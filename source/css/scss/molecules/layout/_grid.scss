@@ -1,6 +1,6 @@
 /* GRID */
 
-$maxWidth: 68rem; //1224px
+$maxWidth: 75rem; //1350px
 $space: 2rem;
 $halfSpace: $space/2; // 1rem
 $quarterSpace: $space/4; // 0.5rem
@@ -40,6 +40,10 @@ $quarterSpace: $space/4; // 0.5rem
 
 	@include mqGreaterThan(extraExtraLarge) {
 	    border-left-width: $menuBarWidthExtraLarge;
+	}
+
+	@include mqGreaterThan(extraExtraExtraLarge) {
+	    border-left-width: $menuBarWidthExtraExtraLarge;
 	}
 
 	&--fullWidth {

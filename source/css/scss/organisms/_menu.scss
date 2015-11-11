@@ -63,6 +63,10 @@
 		}
 	}
 
+	@include mqGreaterThan(extraExtraExtraLarge) {
+		width: $menuBarWidthExtraExtraLarge;
+	}
+
 	@include before("") {
 			position: absolute;
 			left: 0;
@@ -152,6 +156,10 @@
 
 	@include mqGreaterThan(large) {
 		width: $menuBarWidthExtraLarge;
+	}
+
+	@include mqGreaterThan(extraExtraExtraLarge) {
+		width: $menuBarWidthExtraExtraLarge;
 	}
 
 	@include hoverEtc {
@@ -292,6 +300,10 @@
 	@include mqGreaterThan(large) {
 		max-width: calc(100vw - #{$menuBarWidthExtraLarge});
 	}
+
+	@include mqGreaterThan(extraExtraExtraLarge) {
+		max-width: calc(100vw - #{$menuBarWidthExtraExtraLarge});
+	}
 }
 
 .menuBar-overlayContent {
@@ -316,6 +328,10 @@
 
 	@include mqGreaterThan(large) {
 		border-left-width: $menuBarWidthExtraLarge;
+	}
+
+	@include mqGreaterThan(extraExtraExtraLarge) {
+		border-left-width: $menuBarWidthExtraExtraLarge;
 	}
 
 	@include mqGreaterThan(extraExtraExtraLarge) {
