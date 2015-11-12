@@ -1,6 +1,8 @@
 {
-	"tabs": {
-		"overviewActive": true,
-		"contentActive": false
+	"header": {
+		"tabs": {
+			"overviewActive": true,
+			"contentActive": false
+		}
 	}
 }

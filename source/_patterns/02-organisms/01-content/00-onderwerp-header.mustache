@@ -1,12 +1,19 @@
 <div class="onderwerpHeader">
-	<div class="contentContainer">
-		<h1 class="onderwerpHeading">Auto en uw onderneming</h1>
-	</div>
+	<header class="onderwerpHeader-titleContainer">
+		<div class="contentContainer">
+			{{#header.tabs.overviewActive}}
+				<h1 class="h1 onderwerpHeading">{{header.onderwerpTitle}}</h1>
+			{{/header.tabs.overviewActive}}
+			{{^header.tabs.overviewActive}}
+				<h2 class="h1 onderwerpHeading">{{header.onderwerpTitle}}</h2>
+			{{/header.tabs.overviewActive}}
+		</div>
 
-</div>
-<div class="onderwerpHeader-tabContainer">
-	<div class="contentContainer">
-		{{> molecules-tabs }}
+	</header>
+	<div class="onderwerpHeader-tabContainer">
+		<div class="contentContainer">
+			{{> molecules-tabs }}
+		</div>
 	</div>
-
+	{{> molecules-content-index }}
 </div>

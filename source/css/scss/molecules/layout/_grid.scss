@@ -23,7 +23,6 @@ $quarterSpace: $space/4; // 0.5rem
 	};
 
     border-left: solid transparent;
-    border-left-width: $menuBarWidthSmall - 0.5rem;
     max-width: $maxWidth;
 
 	@include setPropWithMq(greater, padding, (
@@ -34,17 +33,12 @@ $quarterSpace: $space/4; // 0.5rem
 		extraLarge: 0 1.6rem
 	));
 
-	@include mqGreaterThan(small) {
-	    border-left-width: $menuBarWidthLarge;
-	}
-
-	@include mqGreaterThan(extraExtraLarge) {
-	    border-left-width: $menuBarWidthExtraLarge;
-	}
-
-	@include mqGreaterThan(extraExtraExtraLarge) {
-	    border-left-width: $menuBarWidthExtraExtraLarge;
-	}
+	@include setPropWithMq(greater, border-left-width, (
+		all: $menuBarWidthSmall - 0.5rem,
+		small: $menuBarWidthLarge,
+		extraExtraLarge: $menuBarWidthExtraLarge,
+		extraExtraExtraLarge: $menuBarWidthExtraExtraLarge,
+	));
 
 	&--fullWidth {
 		max-width: none;
@@ -54,10 +48,14 @@ $quarterSpace: $space/4; // 0.5rem
 // Container for elements that don't use columns
 .contentContainer {
 	@extend .layoutContainer;
-	padding: {
-		left: $halfSpace;
-		right: $halfSpace;
-	}
+    border-right: $halfSpace solid transparent;
+
+	@include setPropWithMq(greater, border-left-width, (
+		all: $menuBarWidthSmall - 0.5rem + $halfSpace,
+		small: $menuBarWidthLarge + $halfSpace,
+		extraExtraLarge: $menuBarWidthExtraLarge + $halfSpace,
+		extraExtraExtraLarge: $menuBarWidthExtraExtraLarge + $halfSpace,
+	));
 }
 
 .sublayoutContainer {

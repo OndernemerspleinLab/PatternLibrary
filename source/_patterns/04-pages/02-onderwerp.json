@@ -1,4 +1,32 @@
 {
 	"title" : "Onderwerp",
-	"bodyClass": "subject"
+	"bodyClass": "subject",
+
+	"header": {
+		"onderwerpTitle": "Marktonderzoek",
+		"tabs": {
+			"overviewActive": true,
+			"contentActive": false
+		},
+		"contentIndex": {
+			"links": [
+				{
+					"name": "Auto",
+					"href": "#"
+				},
+				{
+					"name": "Brommer",
+					"href": "#"
+				},
+				{
+					"name": "Fiets",
+					"href": "#"
+				},
+				{
+					"name": "Scooter",
+					"href": "#"
+				}
+			]
+		}
+	}
 }

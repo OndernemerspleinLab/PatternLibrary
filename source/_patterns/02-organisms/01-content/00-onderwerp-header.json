@@ -1,6 +1,36 @@
 {
-	"tabs": {
-		"overviewActive": false,
-		"contentActive": true
+	"header": {
+		"onderwerpTitle": "Auto en uw onderneming",
+		"tabs": {
+			"overviewActive": false,
+			"contentActive": true,
+			"links": {
+				"overviewHref": "#",
+				"contentHref": "#",
+				"lawsHref": "#",
+				"arrangeHref": "#",
+				"discussionsHref": "#"
+			}
+		},
+		"contentIndex": {
+			"links": [
+				{
+					"name": "Auto",
+					"href": "#"
+				},
+				{
+					"name": "Brommer",
+					"href": "#"
+				},
+				{
+					"name": "Fiets",
+					"href": "#"
+				},
+				{
+					"name": "Scooter",
+					"href": "#"
+				}
+			]
+		}
 	}
 }

@@ -2,45 +2,45 @@
 
 <ul class="tabs">
 	<li class="tab">
-		{{#tabs.overviewActive}}
+		{{#header.tabs.overviewActive}}
 			<span class="media tab-link is-active">
-		{{/tabs.overviewActive}}
-		{{^tabs.overviewActive}}
-			<a class="media tab-link" href="#">
-		{{/tabs.overviewActive}}
+		{{/header.tabs.overviewActive}}
+		{{^header.tabs.overviewActive}}
+			<a class="media tab-link" href="{{header.tabs.links.overviewHref}}">
+		{{/header.tabs.overviewActive}}
 			<svg aria-hidden="true" class="tab-icon tab-icon--overzicht media-figure">
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-overzicht"></use>
 			</svg>
 			<span class="tab-text media-text media-text">Overzicht</span>
-		{{#tabs.overviewActive}}
+		{{#header.tabs.overviewActive}}
 			</span>
-		{{/tabs.overviewActive}}
-		{{^tabs.overviewActive}}
+		{{/header.tabs.overviewActive}}
+		{{^header.tabs.overviewActive}}
 			</a>
-		{{/tabs.overviewActive}}
+		{{/header.tabs.overviewActive}}
 	</li>
 	<li class="tab">
 		<span class=" tab-link--large">
-			{{#tabs.contentActive}}
+			{{#header.tabs.contentActive}}
 				<span class="media tab-link tab-link--content is-active">
-			{{/tabs.contentActive}}
-			{{^tabs.contentActive}}
-				<a class="media tab-link tab-link--content" href="#">
-			{{/tabs.contentActive}}
+			{{/header.tabs.contentActive}}
+			{{^header.tabs.contentActive}}
+				<a class="media tab-link tab-link--content" href="{{header.tabs.links.contentHref}}">
+			{{/header.tabs.contentActive}}
 				<svg aria-hidden="true" class="tab-icon media-figure">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-inhoud"></use>
 				</svg>
 				<span class="tab-text media-text">Inhoud</span>
-			{{#tabs.contentActive}}
+			{{#header.tabs.contentActive}}
 				</span>
-			{{/tabs.contentActive}}
-			{{^tabs.contentActive}}
+			{{/header.tabs.contentActive}}
+			{{^header.tabs.contentActive}}
 				</a>
-			{{/tabs.contentActive}}
+			{{/header.tabs.contentActive}}
 		</span>
-		<span open-close-single class="tab-openClose tab-link--small {{#tabs.contentActive}}is-active{{/tabs.contentActive}}" ng-class="{ 'is-opened': viewModel.isOpened('content') }">
+		<span open-close-single class="tab-openClose tab-link--small {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}" ng-class="{ 'is-opened': viewModel.isOpened('content') }">
 			<button class="tab-button" ng-click="viewModel.toggle('content')">
-				<span class="media tab-link tab-openClose-link tab-link--openClose {{#tabs.contentActive}}is-active{{/tabs.contentActive}}" ng-class="{ 'is-opened': viewModel.isOpened('content') }" href="#">
+				<span class="media tab-link tab-openClose-link tab-link--openClose {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}" ng-class="{ 'is-opened': viewModel.isOpened('content') }">
 					<svg aria-hidden="true" class="tab-icon media-figure">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-inhoud"></use>
 					</svg>
@@ -61,27 +61,57 @@
 		</span>
 	</li>
 	<li class="tab">
-		<a class="media tab-link" href="#">
+		{{#header.tabs.lawsActive}}
+			<span class="media tab-link is-active">
+		{{/header.tabs.lawsActive}}
+		{{^header.tabs.lawsActive}}
+			<a class="media tab-link" href="{{header.tabs.links.lawsHref}}">
+		{{/header.tabs.lawsActive}}
 			<svg aria-hidden="true" class="tab-icon media-figure">
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-wet-7003"></use>
 			</svg>
 			<span class="tab-text media-text">Wetten en regels</span>
-		</a>
+		{{#header.tabs.lawsActive}}
+			</span>
+		{{/header.tabs.lawsActive}}
+		{{^header.tabs.lawsActive}}
+			</a>
+		{{/header.tabs.lawsActive}}
 	</li>
 	<li class="tab">
-		<a class="media tab-link" href="#">
+		{{#header.tabs.arrangeActive}}
+			<span class="media tab-link is-active">
+		{{/header.tabs.arrangeActive}}
+		{{^header.tabs.arrangeActive}}
+			<a class="media tab-link" href="{{header.tabs.links.arrangeHref}}">
+		{{/header.tabs.arrangeActive}}
 			<svg aria-hidden="true" class="tab-icon media-figure">
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-consument-6003"></use>
 			</svg>
 			<span class="tab-text media-text">Direct regelen</span>
-		</a>
+		{{#header.tabs.arrangeActive}}
+			</span>
+		{{/header.tabs.arrangeActive}}
+		{{^header.tabs.arrangeActive}}
+			</a>
+		{{/header.tabs.arrangeActive}}
 	</li>
 	<li class="tab">
-		<a class="media tab-link" href="#">
+		{{#header.tabs.discussionsActive}}
+			<span class="media tab-link is-active">
+		{{/header.tabs.discussionsActive}}
+		{{^header.tabs.discussionsActive}}
+			<a class="media tab-link" href="{{header.tabs.links.discussionsHref}}">
+		{{/header.tabs.discussionsActive}}
 			<svg aria-hidden="true" class="tab-icon media-figure">
 				<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-discussies"></use>
 			</svg>
 			<span class="tab-text media-text">Forum</span>
-		</a>
+		{{#header.tabs.discussionsActive}}
+			</span>
+		{{/header.tabs.discussionsActive}}
+		{{^header.tabs.discussionsActive}}
+			</a>
+		{{/header.tabs.discussionsActive}}
 	</li>
 </ul>

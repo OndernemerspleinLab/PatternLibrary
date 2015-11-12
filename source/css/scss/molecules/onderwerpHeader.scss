@@ -1,6 +1,10 @@
 .onderwerpHeader {
-	@include insideMargin(3rem 1rem);
-	background: getColor(mosgroen default);
+
+	&-titleContainer {
+		@include insideMargin(1.2rem 1rem);
+		background: getColor(mosgroen default);
+
+	}
 
 	&-tabContainer {
 		position: relative;
