@@ -1,0 +1,19 @@
+&lt;div class=&quot;onderwerpHeader {{#header.tabs.contentActive}}block--grey{{/header.tabs.contentActive}}&quot;&gt;
+&Tab;&lt;header class=&quot;onderwerpHeader-titleContainer&quot;&gt;
+&Tab;&Tab;&lt;div class=&quot;contentContainer&quot;&gt;
+&Tab;&Tab;&Tab;{{#header.tabs.overviewActive}}
+&Tab;&Tab;&Tab;&Tab;&lt;h1 class=&quot;h1 onderwerpHeading&quot;&gt;{{header.onderwerpTitle}}&lt;/h1&gt;
+&Tab;&Tab;&Tab;{{/header.tabs.overviewActive}}
+&Tab;&Tab;&Tab;{{^header.tabs.overviewActive}}
+&Tab;&Tab;&Tab;&Tab;&lt;h2 class=&quot;h1 onderwerpHeading&quot;&gt;{{header.onderwerpTitle}}&lt;/h2&gt;
+&Tab;&Tab;&Tab;{{/header.tabs.overviewActive}}
+&Tab;&Tab;&lt;/div&gt;
+
+&Tab;&lt;/header&gt;
+&Tab;&lt;div class=&quot;onderwerpHeader-tabContainer&quot;&gt;
+&Tab;&Tab;&lt;div class=&quot;contentContainer&quot;&gt;
+&Tab;&Tab;&Tab;{{&gt; molecules-tabs }}
+&Tab;&Tab;&lt;/div&gt;
+&Tab;&lt;/div&gt;
+&Tab;{{&gt; molecules-content-index }}
+&lt;/div&gt;

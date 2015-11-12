@@ -1,0 +1,113 @@
+&lt;div class=&quot;hide-svg&quot;&gt;{{&gt; atoms-figures }}&lt;/div&gt;
+
+&lt;ul class=&quot;tabs&quot;&gt;
+&Tab;&lt;li class=&quot;tab&quot;&gt;
+&Tab;&Tab;{{#header.tabs.overviewActive}}
+&Tab;&Tab;&Tab;&lt;span class=&quot;media tab-link is-active&quot;&gt;
+&Tab;&Tab;{{/header.tabs.overviewActive}}
+&Tab;&Tab;{{^header.tabs.overviewActive}}
+&Tab;&Tab;&Tab;&lt;a class=&quot;media tab-link&quot; href=&quot;{{header.tabs.links.overviewHref}}&quot;&gt;
+&Tab;&Tab;{{/header.tabs.overviewActive}}
+&Tab;&Tab;&Tab;&lt;svg aria-hidden=&quot;true&quot; class=&quot;tab-icon tab-icon--overzicht media-figure&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#figures-overzicht&quot;&gt;&lt;/use&gt;
+&Tab;&Tab;&Tab;&lt;/svg&gt;
+&Tab;&Tab;&Tab;&lt;span class=&quot;tab-text media-text media-text&quot;&gt;Overzicht&lt;/span&gt;
+&Tab;&Tab;{{#header.tabs.overviewActive}}
+&Tab;&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;{{/header.tabs.overviewActive}}
+&Tab;&Tab;{{^header.tabs.overviewActive}}
+&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;{{/header.tabs.overviewActive}}
+&Tab;&lt;/li&gt;
+&Tab;&lt;li class=&quot;tab&quot;&gt;
+&Tab;&Tab;&lt;span class=&quot; tab-link--large&quot;&gt;
+&Tab;&Tab;&Tab;{{#header.tabs.contentActive}}
+&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;media tab-link tab-link--content is-active&quot;&gt;
+&Tab;&Tab;&Tab;{{/header.tabs.contentActive}}
+&Tab;&Tab;&Tab;{{^header.tabs.contentActive}}
+&Tab;&Tab;&Tab;&Tab;&lt;a class=&quot;media tab-link tab-link--content&quot; href=&quot;{{header.tabs.links.contentHref}}&quot;&gt;
+&Tab;&Tab;&Tab;{{/header.tabs.contentActive}}
+&Tab;&Tab;&Tab;&Tab;&lt;svg aria-hidden=&quot;true&quot; class=&quot;tab-icon media-figure&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#figures-inhoud&quot;&gt;&lt;/use&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/svg&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;tab-text media-text&quot;&gt;Inhoud&lt;/span&gt;
+&Tab;&Tab;&Tab;{{#header.tabs.contentActive}}
+&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;&Tab;{{/header.tabs.contentActive}}
+&Tab;&Tab;&Tab;{{^header.tabs.contentActive}}
+&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;&Tab;{{/header.tabs.contentActive}}
+&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;&lt;span open-close-single class=&quot;tab-openClose tab-link--small {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}&quot; ng-class=&quot;{ &apos;is-opened&apos;: viewModel.isOpened(&apos;content&apos;) }&quot;&gt;
+&Tab;&Tab;&Tab;&lt;button class=&quot;tab-button&quot; ng-click=&quot;viewModel.toggle(&apos;content&apos;)&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;media tab-link tab-openClose-link tab-link--openClose {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}&quot; ng-class=&quot;{ &apos;is-opened&apos;: viewModel.isOpened(&apos;content&apos;) }&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;svg aria-hidden=&quot;true&quot; class=&quot;tab-icon media-figure&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#figures-inhoud&quot;&gt;&lt;/use&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/svg&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;tab-text media-text&quot;&gt;Inhoud&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;svg class=&quot;tab-openClose-icon media-figure&quot; ng-class=&quot;{ &apos;is-opened&apos;: viewModel.isOpened(&apos;content&apos;) }&quot; aria-hidden=&quot;true&quot;&gt;
+&Tab;                    &lt;use xlink:href=&quot;#figures-chevron-down&quot;&gt;&lt;/use&gt;
+&Tab;                &lt;/svg&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;&Tab;&lt;/button&gt;
+&Tab;&Tab;&Tab;&lt;div class=&quot;ng-hide tab-openClose-content ngAnimate-height&quot; ng-show=&quot;viewModel.isOpened(&apos;content&apos;)&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;{{&gt; molecules-content-index-in-tab }}
+
+&Tab;&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&lt;/span&gt;
+&Tab;&lt;/li&gt;
+&Tab;&lt;li class=&quot;tab&quot;&gt;
+&Tab;&Tab;{{#header.tabs.lawsActive}}
+&Tab;&Tab;&Tab;&lt;span class=&quot;media tab-link is-active&quot;&gt;
+&Tab;&Tab;{{/header.tabs.lawsActive}}
+&Tab;&Tab;{{^header.tabs.lawsActive}}
+&Tab;&Tab;&Tab;&lt;a class=&quot;media tab-link&quot; href=&quot;{{header.tabs.links.lawsHref}}&quot;&gt;
+&Tab;&Tab;{{/header.tabs.lawsActive}}
+&Tab;&Tab;&Tab;&lt;svg aria-hidden=&quot;true&quot; class=&quot;tab-icon media-figure&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#figures-wet-7003&quot;&gt;&lt;/use&gt;
+&Tab;&Tab;&Tab;&lt;/svg&gt;
+&Tab;&Tab;&Tab;&lt;span class=&quot;tab-text media-text&quot;&gt;Wetten en regels&lt;/span&gt;
+&Tab;&Tab;{{#header.tabs.lawsActive}}
+&Tab;&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;{{/header.tabs.lawsActive}}
+&Tab;&Tab;{{^header.tabs.lawsActive}}
+&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;{{/header.tabs.lawsActive}}
+&Tab;&lt;/li&gt;
+&Tab;&lt;li class=&quot;tab&quot;&gt;
+&Tab;&Tab;{{#header.tabs.arrangeActive}}
+&Tab;&Tab;&Tab;&lt;span class=&quot;media tab-link is-active&quot;&gt;
+&Tab;&Tab;{{/header.tabs.arrangeActive}}
+&Tab;&Tab;{{^header.tabs.arrangeActive}}
+&Tab;&Tab;&Tab;&lt;a class=&quot;media tab-link&quot; href=&quot;{{header.tabs.links.arrangeHref}}&quot;&gt;
+&Tab;&Tab;{{/header.tabs.arrangeActive}}
+&Tab;&Tab;&Tab;&lt;svg aria-hidden=&quot;true&quot; class=&quot;tab-icon media-figure&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#figures-consument-6003&quot;&gt;&lt;/use&gt;
+&Tab;&Tab;&Tab;&lt;/svg&gt;
+&Tab;&Tab;&Tab;&lt;span class=&quot;tab-text media-text&quot;&gt;Direct regelen&lt;/span&gt;
+&Tab;&Tab;{{#header.tabs.arrangeActive}}
+&Tab;&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;{{/header.tabs.arrangeActive}}
+&Tab;&Tab;{{^header.tabs.arrangeActive}}
+&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;{{/header.tabs.arrangeActive}}
+&Tab;&lt;/li&gt;
+&Tab;&lt;li class=&quot;tab&quot;&gt;
+&Tab;&Tab;{{#header.tabs.discussionsActive}}
+&Tab;&Tab;&Tab;&lt;span class=&quot;media tab-link is-active&quot;&gt;
+&Tab;&Tab;{{/header.tabs.discussionsActive}}
+&Tab;&Tab;{{^header.tabs.discussionsActive}}
+&Tab;&Tab;&Tab;&lt;a class=&quot;media tab-link&quot; href=&quot;{{header.tabs.links.discussionsHref}}&quot;&gt;
+&Tab;&Tab;{{/header.tabs.discussionsActive}}
+&Tab;&Tab;&Tab;&lt;svg aria-hidden=&quot;true&quot; class=&quot;tab-icon media-figure&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#figures-discussies&quot;&gt;&lt;/use&gt;
+&Tab;&Tab;&Tab;&lt;/svg&gt;
+&Tab;&Tab;&Tab;&lt;span class=&quot;tab-text media-text&quot;&gt;Forum&lt;/span&gt;
+&Tab;&Tab;{{#header.tabs.discussionsActive}}
+&Tab;&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;{{/header.tabs.discussionsActive}}
+&Tab;&Tab;{{^header.tabs.discussionsActive}}
+&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;{{/header.tabs.discussionsActive}}
+&Tab;&lt;/li&gt;
+&lt;/ul&gt;
