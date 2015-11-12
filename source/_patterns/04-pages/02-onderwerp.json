@@ -6,7 +6,17 @@
 		"onderwerpTitle": "Marktonderzoek",
 		"tabs": {
 			"overviewActive": true,
-			"contentActive": false
+			"contentActive": false,
+			"lawsActive": false,
+			"arrangeActive": false,
+			"discussionsActive": false,
+			"links": {
+				"overviewHref": "#",
+				"contentHref": "#",
+				"lawsHref": "#",
+				"arrangeHref": "#",
+				"discussionsHref": "#"
+			}
 		},
 		"contentIndex": {
 			"links": [
