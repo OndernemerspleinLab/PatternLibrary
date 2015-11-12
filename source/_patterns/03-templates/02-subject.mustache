@@ -30,45 +30,34 @@
 			</div>
 			<div class="layoutContainer gridContainer">
 				<div class="column column--third">
-					<h2><a href="{{ link.templates-contentpage-base }}">Marktonderzoek doen</a></h2>
+					<h2 class="h4"><a class="headingLink" href="{{ link.templates-contentpage-base }}"><span class="headingLink-text"><span>Marktonderzoek doen</span></span>
+							{{> atoms-goIcon-headingLink }}</a></h2>
 					<p>U heeft een goed idee, maar zijn er wel klanten voor? Een marktonderzoek biedt uitkomst.</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="{{ link.templates-contentpage-base }}">Brancheonderzoek</a></h2>
+					<h2 class="h4"><a class="headingLink" href="{{ link.templates-contentpage-base }}"><span class="headingLink-text"><span>Brancheonderzoek</span></span>
+							{{> atoms-goIcon-headingLink }}</a></h2>
 					<p>Hoe ontwikkelt de branche zich waarin u wilt ondernemen? Een brancheonderzoek geeft u inzicht. </p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="{{ link.templates-contentpage-base }}">Onderzoek uw klanten</a></h2>
+					<h2 class="h4"><a class="headingLink" href="{{ link.templates-contentpage-base }}"><span class="headingLink-text"><span>Onderzoek uw klanten</span></span>
+							{{> atoms-goIcon-headingLink }}</a></h2>
 					<p>Hoe bereikt u uw klanten? Door onderzoek naar uw klanten en hun koopgedrag weet u hoe en waar u ze benadert.</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="{{ link.templates-contentpage-base }}">Een concurrentieanalyse maken</a></h2>
+					<h2 class="h4"><a class="headingLink" href="{{ link.templates-contentpage-base }}"><span class="headingLink-text"><span>Een concurrentieanalyse maken</span></span>
+							{{> atoms-goIcon-headingLink }}</a></h2>
 					<p>Hoe onderscheidt u zich van uw concurrent? Maak uw eigen concurrentieanalyse.</p>
 				</div>
 				<div class="column column--third">
-					<h2><a href="{{ link.templates-contentpage-base }}">Omgevingsanalyse</a></h2>
+					<h2 class="h4"><a class="headingLink" href="{{ link.templates-contentpage-base }}"><span class="headingLink-text"><span>Omgevingsanalyse</span></span>
+							{{> atoms-goIcon-headingLink }}</a></h2>
 					<p>U kent een goede bedrijfsplek en u wilt weten of uw idee potentie heeft. Een omgevingsanalyse geeft u inzicht in kansen en bedreigingen.</p>
 				</div>
 			</div>
 			<div class="layoutContainer gridContainer">
-				<div class="column column--third">
-					<h2>Direct regelen</h2>
-					<ul class="linkList list">
-						<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Bestel een digitaal gewaarmerkt uittreksel met iDeal of creditcard bij de Kamer van Koophandel</span></span></a></li>
-						<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Vraag een toegangscode Handelsregister aan om bedrijfsinformatie op te vragen</span></span></a></li>
-					</ul>
-					<a href="{{ link.templates-contentpage-base }}">Wat kan ik nog meer direct regelen?</a>
-				</div>
-				<div class="column column--third">
-					<h2>Wetten en regels</h2>
-					<ul class="linkList list">
-						<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Reclamebelasting</span></span></a></li>
-						<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Reclame maken op uw pand</span></span></a></li>
-						<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Reclamemateriaal verspreiden</span></span></a></li>
-						<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Reclame maken</span></span></a></li>
-					</ul>
-					<a href="{{ link.templates-contentpage-base }}">Alle wetten en regels voor reclame en promotie</a>
-				</div>
+				{{> organisms-crsblok-wetten-en-regels }}
+				{{> organisms-crsblok-direct-regelen }}
 				{{> organisms-crsblok-discussies }}
 			</div>
 		</div>
@@ -76,19 +65,7 @@
 			<div class="layoutContainer gridContainer">
 				{{> organisms-crsblok-verhaal}}
 				{{> organisms-crsblok-linklijst}}
-				<div class="column column--third">
-					<div class="block block-promo block-promo--green">
-						<figure class="block-image">
-							<img src="../../images/startersdag.png">
-							<div class="block-label">Evenement</div>
-						</figure>
-						<h2 class="block-title h4">Zeker weten dat je goed van start gaat?</h2>
-						<div class="block-text">
-							<p>Kom naar de KvK Startersdag op 7 november 2015</p>
-						</div>
-						<a href="http://www.google.nl" class="block-link">Meer over de Startersdag</a>
-					</div>
-				</div>
+				{{> organisms-promoblok }}
 			</div>
 		</div>
 		{{> organisms-footer }}
