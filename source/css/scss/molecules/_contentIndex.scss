@@ -1,0 +1,32 @@
+.contentIndex {
+	@include noBullets;
+	padding: 1rem 0;
+
+	@include mqLesserThan(medium) {
+		display: none;
+	}
+
+	&-item {
+		padding: 0;
+	}
+}
+.contentIndexInTab {
+	@include noBullets;
+
+	&-item {
+		padding: 0;
+		border-top: 1px solid getColor(grijs light);
+	}
+
+	&-link {
+		@include noUnderline;
+		display: block;
+		color: getColor(hemelblauw grijscontrast);
+		padding: 0.8em 0.8rem;
+
+		@include hoverEtc {
+			color: getColor(hemelblauw darkest);
+
+		}
+	}
+}

@@ -126,7 +126,7 @@
 		&--content.is-active {
 			@include mqGreaterThan(medium) {
 				@include before() {
-					background-color: #{getColor(grijs light)};
+					background-color: #{getColor(grijs lightest)};
 				}
 			}
 		}
@@ -166,7 +166,7 @@
 			right: 0;
 			top: 0;
 			bottom: 0;
-			background-color: getColor(grijs light);
+			background-color: getColor(grijs lightest);
 			box-shadow: 0px 0px 0px 1px getColor(grijs default) inset;
 		}
 		&.is-active {
@@ -195,7 +195,7 @@
 		}
 		&-content {
 			position: relative;
-			padding: 0 0.8rem;
+			overflow: hidden;
 		}
 		&-icon {
 			position: relative;

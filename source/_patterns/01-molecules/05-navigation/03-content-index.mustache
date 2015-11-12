@@ -1,9 +1,12 @@
 {{#header.tabs.contentActive}}
-	<div>
-		<ul>
+	<div class="layoutContainer">
+		<ul class="contentIndex list list--triple">
 			{{#header.contentIndex.links}}
-				<li>
-					<a href="{{href}}">{{name}}</a>
+				<li class="contentIndex-item list-item gridItem">
+					<a class="contentIndex-link interfaceLink" href="{{href}}">
+						<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>
+						<span class="interfaceLink-text">{{name}}</span>
+					</a>
 				</li>
 			{{/header.contentIndex.links}}
 		</ul>

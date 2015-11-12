@@ -89,13 +89,16 @@ $quarterSpace: $space/4; // 0.5rem
 	}
 }
 
-
-.column {
+.gridItem {
 	display: block;
 	margin: {
 		left: $halfSpace;
 		right: $halfSpace;
 	}
+}
+
+.column {
+	@extend .gridItem;
 
 	flex: 0 1 auto; // default
 
