@@ -5,5 +5,48 @@
 		"first-name": "Author",
 		"last-name": "Name",
 		"partner" : "Ministerie van Sociale Zaken en Werkgelegenheid"
+	},
+
+	"header": {
+		"onderwerpTitle": "Ontslag en opzeggen",
+		"tabs": {
+			"overviewActive": false,
+			"contentActive": true,
+			"links": {
+				"overviewHref": "#",
+				"contentHref": "#",
+				"lawsHref": "#",
+				"arrangeHref": "#",
+				"discussionsHref": "#"
+			}
+		},
+		"contentIndex": {
+			"links": [
+				{
+					"name": "Redenen voor ontslag",
+					"href": "#"
+				},
+				{
+					"name": "Opzegtermijn en aanzegtermijn",
+					"href": "#"
+				},
+				{
+					"name": "Ontslagprocedures",
+					"href": "#"
+				},
+				{
+					"name": "Transitievergoeding bij ontslag",
+					"href": "#"
+				},
+				{
+					"name": "Transitievergoeding berekenen",
+					"href": "#"
+				},
+				{
+					"name": "Bruto maandsalaris voor transitievergoeding",
+					"href": "#"
+				}
+			]
+		}
 	}
 }

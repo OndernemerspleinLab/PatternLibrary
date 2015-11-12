@@ -5,5 +5,40 @@
 		"first-name": "Author",
 		"last-name": "Name",
 		"partner" : "Kamer van Koophandel"
+	},
+
+	"header": {
+		"onderwerpTitle": "Verklaring arbeidsrelatie",
+		"tabs": {
+			"overviewActive": false,
+			"contentActive": true,
+			"links": {
+				"overviewHref": "#",
+				"contentHref": "#",
+				"lawsHref": "#",
+				"arrangeHref": "#",
+				"discussionsHref": "#"
+			}
+		},
+		"contentIndex": {
+			"links": [
+				{
+					"name": "DE VAR: onmisbaar voor freelancers en zzp'ers",
+					"href": "#"
+				},
+				{
+					"name": "Vier soorten VAR",
+					"href": "#"
+				},
+				{
+					"name": "VAR aanvragen",
+					"href": "#"
+				},
+				{
+					"name": "Tips bij VAR aanvragen",
+					"href": "#"
+				}
+			]
+		}
 	}
 }
