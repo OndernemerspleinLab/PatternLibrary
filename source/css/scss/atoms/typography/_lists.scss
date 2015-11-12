@@ -45,3 +45,37 @@ dd {
 	margin-left: 0;
 	margin-bottom: 0.3em;
 }
+
+// Toptaken
+.labelList {
+	@include noBullets;
+	margin: 1rem 0 1.5rem 0;
+
+	&-item {
+		background-color: getColor(mintgroen default);
+		display: inline;
+		padding: 0.5rem 1rem;
+		margin: 0 0.5rem 0.5rem 0;
+	}
+	&-link {
+		line-height: 1.6;
+		@include noUnderline;
+		color: getColor(hemelblauw darkest);
+		display: inline-flex;
+	    align-items: flex-start;
+	    font-style: italic;
+	}
+	&-text {
+		flex: 1 1 0;
+		@include hideUnderline;
+		line-height: 1.3;
+
+		span {
+			@include noUnderline;
+			@include hoverEtc {
+				@include underline;
+				color: getColor(hemelblauw darkest);
+			}
+		}
+	}
+}
