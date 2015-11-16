@@ -35,12 +35,19 @@ caption {
 	font-weight: bold;
 	color: getColor(hemelblauw darkest);
 	background-color: getColor(wit);
-	font-size: getFontSize(h3);
 	top: 0;
 	padding: 0.3em 1em;
 	max-width: 100%;
-	font-size: getFontSize(h3);
 	@include zIndex(table caption);
+	font-size: getFontSize(h3 small);
+
+	@include mqGreaterThan(small) {
+		font-size: getFontSize(h3 medium);
+	}
+
+	@include mqGreaterThan(large) {
+		font-size: getFontSize(h3 large);
+	}
 }
 th, td {
 	text-align: left;
