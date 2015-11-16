@@ -11,6 +11,11 @@
 		line-height: 0.68;
 
 		font-size: getFontSize(summary number);
+		transform-origin: 100% 50%;
+		transition: opacity, transform 1s, 0.3s;
+		&[visual-cloak] {
+			transform: scale(0.5);
+		}
 
 	}
 

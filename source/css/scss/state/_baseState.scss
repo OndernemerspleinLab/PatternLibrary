@@ -5,7 +5,7 @@
 }
 
 [visual-cloak], [data-visual-cloak], [x-visual-cloak], .visual-cloak, .x-visual-cloak {
-	visibility: hidden;
+	opacity: 0 !important;
 }
 
 // For hiding manually
