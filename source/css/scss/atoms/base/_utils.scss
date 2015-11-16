@@ -19,7 +19,21 @@
 	@return $result;
 }
 
-@function multiplyProps($map, $factor) {
+
+// Vermenigvuldig alle values van een map een vaste factor
+// Voorbeeld:
+// multiplyProps((
+// 	all: 1rem,
+// 	small: 2rem,
+// 	large: 3rem,
+// ), 2);
+// geeft als resultaat:
+// (
+// 	all: 2rem,
+// 	small: 4rem,
+// 	large: 6rem,
+// );
+@function multiplyProps($map, $factor: 1) {
 	$results: ();
 
 	@each $key, $value in $map {
