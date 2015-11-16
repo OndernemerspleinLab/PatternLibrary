@@ -1,11 +1,9 @@
-{{#header.tabs.contentActive}}
-&Tab;&lt;ul class=&quot;contentIndexInTab list&quot;&gt;
-&Tab;&Tab;{{#header.contentIndex.links}}
-&Tab;&Tab;&Tab;&lt;li class=&quot;contentIndexInTab-item list-item&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;a class=&quot;contentIndexInTab-link&quot; href=&quot;{{href}}&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;{{name}}
-&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
-&Tab;&Tab;&Tab;&lt;/li&gt;
-&Tab;&Tab;{{/header.contentIndex.links}}
-&Tab;&lt;/ul&gt;
-{{/header.tabs.contentActive}}
+&lt;ul class=&quot;contentIndexInTab list&quot;&gt;
+&Tab;{{#header.contentIndex.links}}
+&Tab;&Tab;&lt;li class=&quot;contentIndexInTab-item list-item&quot;&gt;
+&Tab;&Tab;&Tab;&lt;a class=&quot;contentIndexInTab-link&quot; href=&quot;{{href}}&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;{{name}}
+&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;&lt;/li&gt;
+&Tab;{{/header.contentIndex.links}}
+&lt;/ul&gt;
