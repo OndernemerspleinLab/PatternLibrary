@@ -14,7 +14,7 @@
 	position: relative;
 
 	&-close {
-		@include zIndex(seeThroughScroll front);
+		@include zIndex(menuBar content buttons);
 		position: absolute;
 		left: $halfSpace;
 		top: 0;
@@ -40,7 +40,7 @@
 		@include before("") {
 			display: block;
 			flex: 0 0 auto;
-			@include zIndex(seeThroughScroll overlay);
+			@include zIndex(menuBar content seeThroughScroll overlay);
 			background: rgba(getColor(hemelblauw lightest), 0.9);
 			height: $menuBarWidthSmall + 0.75rem;
 			@include mqGreaterThan(small) {
@@ -57,7 +57,7 @@
 		@include after("") {
 			display: block;
 			flex: 1 0 auto;
-			@include zIndex(seeThroughScroll overlay);
+			@include zIndex(menuBar content seeThroughScroll overlay);
 			background: rgba(getColor(hemelblauw lightest), 0.9);
 			height:  1rem;
 			@include mqGreaterThan(small) {

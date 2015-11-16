@@ -1,7 +1,6 @@
 // SOCIAL MEDIA
 
 .share-close {
-	@include zIndex(seeThroughScroll front);
 	position: absolute;
 	right: $quarterSpace;
 	top: 1.5rem;

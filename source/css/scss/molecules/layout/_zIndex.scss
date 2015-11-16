@@ -23,19 +23,25 @@ $zIndex: (
 		),
 	),
 	(
-		name: seeThroughScroll,
-		subZIndex: (
-			content,
-			overlay,
-			front
-		),
-	),
-	(
 		name: menuBar,
 		subZIndex: (
 			contextContent,
 			bar,
-			content
+			(
+				name: content,
+				subZIndex: (
+					(
+						name: seeThroughScroll,
+						subZIndex: (
+							content,
+							overlay,
+							front,
+
+						),
+					),
+					buttons,
+				)
+			),
 		),
 	),
 	overlay,
