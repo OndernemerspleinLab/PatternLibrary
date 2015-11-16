@@ -11,7 +11,6 @@ h6, .h6 {
 }
 
 h1, .h1 {
-	font-size: getFontSize(h1 small);
 	color: getColor(hemelblauw default);
 	hyphens: auto;
 	margin: {
@@ -19,53 +18,26 @@ h1, .h1 {
 		bottom: 0.3em;
 	}
 
-	@include mqGreaterThan(small) {
-		font-size: getFontSize(h1 medium);
-	}
-
-	@include mqGreaterThan(large) {
-		font-size: getFontSize(h1 large);
-		margin-bottom: 0.5em;
-	}
+	@include setPropWithMq(greater, font-size, getFontSize(h1));
 }
 h2, .h2 {
-	font-size: getFontSize(h2 small);
-
 	margin: {
 		top: 2em;
 		bottom: 0.4em;
 	}
 
-	@include mqGreaterThan(small) {
-		font-size: getFontSize(h2 medium);
-	}
-
-	@include mqGreaterThan(large) {
-		font-size: getFontSize(h2 large);
-		// margin-bottom: 0.1em;
-	}
+	@include setPropWithMq(greater, font-size, getFontSize(h2));
 
 	&.block-title {
 		margin-top: 0;
 	}
 }
 h3, .h3 {
-	font-size: getFontSize(h3 small);
-	//font-weight: normal;
-
 	margin: {
 		top: 2em;
 		bottom: 0.4em;
 	}
-
-	@include mqGreaterThan(small) {
-		font-size: getFontSize(h3 medium);
-	}
-
-	@include mqGreaterThan(large) {
-		font-size: getFontSize(h3 large);
-		// margin-bottom: 0.1em;
-	}
+	@include setPropWithMq(greater, font-size, getFontSize(h3));
 
 	&.block-title {
 		margin-top: 0;
@@ -75,7 +47,7 @@ h3, .h3 {
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	font-size: getFontSize(h4);
+	@include setPropWithMq(greater, font-size, getFontSize(h4));
 	margin: {
 		top: 2em;
 		bottom: 0.2em;

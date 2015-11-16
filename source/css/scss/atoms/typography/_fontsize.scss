@@ -13,22 +13,23 @@ $fontSize: (
 		large: 1.735rem,
 	),
 	h1: (
-		small: 1.7rem,
-		medium: 1.9rem,
+		all: 1.7rem,
+		small: 1.9rem,
 		large: 2.2rem,
 	),
 	h2: (
-		small: 1.3rem,
-		medium: 1.4rem,
+		all: 1.3rem,
+		small: 1.4rem,
 		large: 1.5rem,
 	),
 	h3: (
-		small: 1.1rem,
-		medium: 1.15rem,
+		all: 1.1rem,
+		small: 1.15rem,
 		large: 1.2rem,
 	),
-	h4: 1rem,
-
+	h4: (
+		all: 1rem,
+	),
 	introText: 1.2rem,
 	summary: (
 		number: 8rem,

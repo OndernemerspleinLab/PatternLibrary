@@ -39,15 +39,7 @@ caption {
 	padding: 0.3em 1em;
 	max-width: 100%;
 	@include zIndex(table caption);
-	font-size: getFontSize(h3 small);
-
-	@include mqGreaterThan(small) {
-		font-size: getFontSize(h3 medium);
-	}
-
-	@include mqGreaterThan(large) {
-		font-size: getFontSize(h3 large);
-	}
+	@include setPropWithMq(greater, font-size, getFontSize(h3));
 }
 th, td {
 	text-align: left;

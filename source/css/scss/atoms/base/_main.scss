@@ -29,18 +29,9 @@ body {
 }
 
 .main {
-	margin-top: (2 * getFontSize(h2 small));
-	margin-bottom: (2 * getFontSize(h2 small));
-
-	@include mqGreaterThan(small) {
-		margin-top: (2 * getFontSize(h2 medium));
-		margin-bottom: (2 * getFontSize(h2 medium));
-	}
-
-	@include mqGreaterThan(large) {
-		margin-top: (2 * getFontSize(h2 large));
-		margin-bottom: (2 * getFontSize(h2 large));
-	}
+	$marginMap: multiplyProps(getFontSize(h2), 2);
+	@include setPropWithMq(greater, margin-top, $marginMap);
+	@include setPropWithMq(greater, margin-bottom, $marginMap);
 }
 
 .font-secondary {

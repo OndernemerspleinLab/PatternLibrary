@@ -18,3 +18,13 @@
 
 	@return $result;
 }
+
+@function multiplyProps($map, $factor) {
+	$results: ();
+
+	@each $key, $value in $map {
+    $results: map-merge($results, ($key: ($value * $factor)))
+	}
+
+	@return $results;
+}

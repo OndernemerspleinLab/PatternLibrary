@@ -44,15 +44,8 @@ abbr {
     display: block;
     clear: both;
 	color: getColor(hemelblauw darkest);
-	margin-bottom: (2 * getFontSize(h2 small));
-
-	@include mqGreaterThan(small) {
-		margin-bottom: (2 * getFontSize(h2 medium));
-	}
-
-	@include mqGreaterThan(large) {
-		margin-bottom: (2 * getFontSize(h2 large));
-	}
+	$marginMap: multiplyProps(getFontSize(h2), 2);
+	@include setPropWithMq(greater, margin-bottom, $marginMap);
 }
 
 //Info text
