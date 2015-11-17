@@ -1,0 +1,42 @@
+$defaultThemes: (
+	blue: (
+		foreground: getColor(hemelblauw default),
+		background: getColor(hemelblauw lightest),
+	),
+	grey: (
+		foreground: getColor(grijs default),
+		background: getColor(grijs lightest),
+	),
+	purple: (
+		foreground: getColor(paars default),
+		background: getColor(paars lightest),
+	),
+	green: (
+		foreground: getColor(groen default),
+		background: getColor(groen lightest),
+	),
+	violet: (
+		foreground: getColor(violet default),
+		background: getColor(violet lightest),
+	),
+);
+
+@mixin themeProperties($propertyMap, $colors, $themes: $defaultThemes) {
+	@each $propertyName, $colorType in $propertyMap {
+		#{$propertyName}: mapDeepGet($colors, $colorType);
+	}
+}
+
+@mixin theme($propertyMap, $baseClass: "theme", $sameBlock: false, $themes: $defaultThemes) {
+	@each $name, $colors in $themes {
+		@if ($sameBlock) {
+			&#{$baseClass}--#{$name} {
+				@include themeProperties($propertyMap, $colors, $themes);
+			}
+		} @else {
+			#{$baseClass}--#{$name} & {
+				@include themeProperties($propertyMap, $colors, $themes);
+			}
+		}
+	}
+}
