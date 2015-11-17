@@ -54,8 +54,12 @@ dd {
 	&-item {
 		background-color: getColor(mintgroen default);
 		display: inline-block;
-		padding: 0.5rem 1rem;
 		margin: 0 0.5rem 0.5rem 0;
+		padding: 0;
+		&:hover {
+	    	//transition: all 0.2s ease-in-out;
+			transform: scale(1.025);
+	    }
 	}
 	&-link {
 		line-height: 1.6;
@@ -64,6 +68,15 @@ dd {
 		display: inline-flex;
 	    align-items: flex-start;
 	    font-style: italic;
+	    //display: block;
+	    padding: 0.4rem 1rem;
+
+	    &:hover {
+	    	transition: all 0.2s ease-in-out;
+			//transform: scale(1.025);
+			color: getColor(hemelblauw darkest);
+	    }
+
 	}
 	&-text {
 		flex: 1 1 0;
