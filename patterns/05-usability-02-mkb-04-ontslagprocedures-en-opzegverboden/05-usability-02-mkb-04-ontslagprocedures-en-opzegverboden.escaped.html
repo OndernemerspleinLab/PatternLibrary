@@ -862,8 +862,8 @@
         &lt;/div&gt;
     &lt;/fieldset&gt;
     &lt;p&gt;
-        &lt;a href=&quot;#&quot; class=&quot;formButton-cancel&quot;&gt;Annuleer&lt;/a&gt;
-        &lt;a href=&quot;#&quot; class=&quot;formButton-submit btn&quot;&gt;Verstuur&lt;/a&gt;
+        &lt;button class=&quot;formButton-cancel&quot;  ng-click=&quot;viewModel.openClose.close(&apos;feedback&apos;)&quot;&gt;Annuleer&lt;/button&gt;
+        &lt;button class=&quot;formButton-submit btn&quot;&gt;Verstuur&lt;/button&gt;
     &lt;/p&gt;
 &lt;/form&gt;
     &lt;/div&gt;
@@ -1052,11 +1052,29 @@
 
 &Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
 &Tab;&Tab;&Tab;&Tab;&lt;div class=&quot;column column--third aside&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;div class=&quot;block block--blue contact&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;h2 class=&quot;block-title h3&quot;&gt;Neem contact op met&lt;/h2&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;p class=&quot;contact-info&quot;&gt;Antwoord voor bedrijven&lt;/p&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;div class=&quot;block block--side block--purple contact&quot; style=&quot;margin: 0; padding: 0;&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;h2 class=&quot;block-title h3&quot; style=&quot;margin-bottom: 0.5rem;&quot;&gt;Heeft u nog vragen? Neem dan contact op met Antwoord voor bedrijven&lt;/h2&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;p class=&quot;contact-phone&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span&gt;Bel 14 088&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;inlineMedia&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;            &lt;svg aria-hidden=&quot;true&quot; class=&quot;media-icon block-icon&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;              &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#figures-telefoon-0022&quot;&gt;&lt;/use&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;            &lt;/svg&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;            &lt;span class=&quot;media-text&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;                Bel 14 088
+&Tab;&Tab;&Tab;&Tab;&Tab;            &lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;        &lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;    &lt;/p&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;    &lt;p class=&quot;contact-mail&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;inlineMedia&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;            &lt;svg aria-hidden=&quot;true&quot; class=&quot;media-icon block-icon&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;              &lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#figures-email-2012&quot;&gt;&lt;/use&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;            &lt;/svg&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;            &lt;span class=&quot;media-text&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;                &lt;a class=&quot;interfaceLink&quot; href=&quot;http://www.ondernemersplein.nl/wetten-en-regels/contact/&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;                &Tab;&lt;span class=&quot;interfaceLink-text&quot;&gt;&lt;span&gt;Stuur een e-mail&lt;/span&gt;&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;                &lt;/a&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;            &lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;        &lt;/span&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;    &lt;/p&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&lt;/div&gt;
 

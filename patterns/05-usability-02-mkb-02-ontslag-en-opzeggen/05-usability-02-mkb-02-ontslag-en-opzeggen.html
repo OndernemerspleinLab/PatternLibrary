@@ -896,8 +896,8 @@
         </div>
     </fieldset>
     <p>
-        <a href="#" class="formButton-cancel">Annuleer</a>
-        <a href="#" class="formButton-submit btn">Verstuur</a>
+        <button class="formButton-cancel"  ng-click="viewModel.openClose.close('feedback')">Annuleer</button>
+        <button class="formButton-submit btn">Verstuur</button>
     </p>
 </form>
     </div>
@@ -1156,7 +1156,7 @@
 	</li>
 	<li class="tab">
 		<span class=" tab-link--large">
-				<a class="media tab-link tab-link--content" href="#">
+				<a class="media tab-link tab-link--content" href="http:&#x2F;&#x2F;ondernemerspleinlab.github.io&#x2F;PatternLibrary&#x2F;patterns&#x2F;05-usability-02-mkb-03-ontslagprocedures&#x2F;05-usability-02-mkb-03-ontslagprocedures.html">
 				<svg aria-hidden="true" class="tab-icon media-figure">
 					<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-inhoud"></use>
 				</svg>
@@ -1260,11 +1260,41 @@
 					</div>
 				</div>
 				<div class="column column--third">
-<div class="block block--blue contact">
-	<h2 class="block-title h3">Neem contact op met</h2>
-	<p class="contact-info">BelastingTelefoon</p>
+<div class="block block--purple contact" style="margin: 0; padding: 0;">
+	<h2 class="block-title h3" style="margin-bottom: 0.5rem;">Heeft u nog vragen? Neem dan contact op met de BelastingTelefoon</h2>
 	<p class="contact-phone">
-		<span>Bel 0800-0543</span>
+		<span class="inlineMedia">
+            <svg aria-hidden="true" class="media-icon block-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-telefoon-0022"></use>
+            </svg>
+            <span class="media-text">
+                Bel 0800-0543
+            </span>
+        </span>
+    </p>
+    <p class="contact-mail">
+		<span class="inlineMedia">
+            <svg aria-hidden="true" class="media-icon block-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-email-2012"></use>
+            </svg>
+            <span class="media-text">
+                <a class="interfaceLink" href="#">
+                	<span class="interfaceLink-text"><span>Stuur een e-mail</span></span>
+                </a>
+            </span>
+        </span>
+    </p>
+    <p class="contact-chat">
+		<span class="inlineMedia">
+            <svg aria-hidden="true" class="media-icon block-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-contact-2005"></use>
+            </svg>
+            <span class="media-text">
+                <a class="interfaceLink" href="#">
+                	<span class="interfaceLink-text"><span>Chat</span></span>
+                </a>
+            </span>
+        </span>
     </p>
 </div>				</div>
 			</div-->

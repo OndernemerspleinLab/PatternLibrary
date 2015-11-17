@@ -896,8 +896,8 @@
         </div>
     </fieldset>
     <p>
-        <a href="#" class="formButton-cancel">Annuleer</a>
-        <a href="#" class="formButton-submit btn">Verstuur</a>
+        <button class="formButton-cancel"  ng-click="viewModel.openClose.close('feedback')">Annuleer</button>
+        <button class="formButton-submit btn">Verstuur</button>
     </p>
 </form>
     </div>
@@ -1221,44 +1221,43 @@
 					<p class="intro">U heeft een goed idee, maar weet niet of er wel genoeg interesse is voor uw dienst of product. Om zekerheid te krijgen, kunt u een marktonderzoek uitvoeren. U kijkt dan naar uw branche, klanten, concurrentie en omgeving. Hier vindt u informatie die u op weg helpt met een marktonderzoek.</p>
 				</div>
 				<div class="column column--third">
-					<div class="block block--purple contact" style="margin: 0; padding: 0;">
-						<h2 class="block-title h3" style="margin-bottom: 0.5rem;">Heeft u nog vragen? Neem dan contact op met de BelastingTelefoon</h2>
-						<p class="contact-phone">
-							<span class="inlineMedia">
-				                <svg aria-hidden="true" class="media-icon block-icon">
-				                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-telefoon-0022"></use>
-				                </svg>
-				                <span class="media-text">
-				                    Bel 0800-0543
-				                </span>
-				            </span>
-					    </p>
-					    <p class="contact-mail">
-							<span class="inlineMedia">
-				                <svg aria-hidden="true" class="media-icon block-icon">
-				                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-email-2012"></use>
-				                </svg>
-				                <span class="media-text">
-				                    <a class="interfaceLink" href="#">
-				                    	<span class="interfaceLink-text"><span>Stuur een e-mail</span></span>
-				                    </a>
-				                </span>
-				            </span>
-					    </p>
-					    <p class="contact-chat">
-							<span class="inlineMedia">
-				                <svg aria-hidden="true" class="media-icon block-icon">
-				                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-contact-2005"></use>
-				                </svg>
-				                <span class="media-text">
-				                    <a class="interfaceLink" href="#">
-				                    	<span class="interfaceLink-text"><span>Chat</span></span>
-				                    </a>
-				                </span>
-				            </span>
-					    </p>
-					</div>
-				</div>
+<div class="block block--purple contact" style="margin: 0; padding: 0;">
+	<h2 class="block-title h3" style="margin-bottom: 0.5rem;">Heeft u nog vragen? Neem dan contact op met de BelastingTelefoon</h2>
+	<p class="contact-phone">
+		<span class="inlineMedia">
+            <svg aria-hidden="true" class="media-icon block-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-telefoon-0022"></use>
+            </svg>
+            <span class="media-text">
+                Bel 0800-0543
+            </span>
+        </span>
+    </p>
+    <p class="contact-mail">
+		<span class="inlineMedia">
+            <svg aria-hidden="true" class="media-icon block-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-email-2012"></use>
+            </svg>
+            <span class="media-text">
+                <a class="interfaceLink" href="#">
+                	<span class="interfaceLink-text"><span>Stuur een e-mail</span></span>
+                </a>
+            </span>
+        </span>
+    </p>
+    <p class="contact-chat">
+		<span class="inlineMedia">
+            <svg aria-hidden="true" class="media-icon block-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-contact-2005"></use>
+            </svg>
+            <span class="media-text">
+                <a class="interfaceLink" href="#">
+                	<span class="interfaceLink-text"><span>Chat</span></span>
+                </a>
+            </span>
+        </span>
+    </p>
+</div>				</div>
 			</div>
 			<div class="layoutContainer gridContainer">
 				<div class="column column--full">
@@ -1841,7 +1840,7 @@
 	<script>
 		// handle injection of items from PHP
 		var patternPartial = "templates-subject";
-		var lineage = [{"lineagePattern":"organisms-sidebar","lineagePath":"../../patterns/02-organisms-00-global-02-sidebar/02-organisms-00-global-02-sidebar.html"},{"lineagePattern":"organisms-header","lineagePath":"../../patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html"},{"lineagePattern":"organisms-onderwerp-header","lineagePath":"../../patterns/02-organisms-01-content-00-onderwerp-header/02-organisms-01-content-00-onderwerp-header.html"},{"lineagePattern":"organisms-toptaken","lineagePath":"../../patterns/02-organisms-02-blocks-10-toptaken/02-organisms-02-blocks-10-toptaken.html"},{"lineagePattern":"atoms-goIcon-headingLink","lineagePath":"../../patterns/00-atoms-04-images-05-goIcon-headingLink/00-atoms-04-images-05-goIcon-headingLink.html"},{"lineagePattern":"organisms-crsblok-wetten-en-regels","lineagePath":"../../patterns/02-organisms-02-blocks-07-crsblok-wetten-en-regels/02-organisms-02-blocks-07-crsblok-wetten-en-regels.html"},{"lineagePattern":"organisms-crsblok-direct-regelen","lineagePath":"../../patterns/02-organisms-02-blocks-07-crsblok-direct-regelen/02-organisms-02-blocks-07-crsblok-direct-regelen.html"},{"lineagePattern":"organisms-crsblok-discussies","lineagePath":"../../patterns/02-organisms-02-blocks-07-crsblok-discussies/02-organisms-02-blocks-07-crsblok-discussies.html"},{"lineagePattern":"organisms-promoblok","lineagePath":"../../patterns/02-organisms-02-blocks-00-promoblok/02-organisms-02-blocks-00-promoblok.html"},{"lineagePattern":"organisms-footer","lineagePath":"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html"}];
+		var lineage = [{"lineagePattern":"organisms-sidebar","lineagePath":"../../patterns/02-organisms-00-global-02-sidebar/02-organisms-00-global-02-sidebar.html"},{"lineagePattern":"organisms-header","lineagePath":"../../patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html"},{"lineagePattern":"organisms-onderwerp-header","lineagePath":"../../patterns/02-organisms-01-content-00-onderwerp-header/02-organisms-01-content-00-onderwerp-header.html"},{"lineagePattern":"organisms-contactblok","lineagePath":"../../patterns/02-organisms-02-blocks-01-contactblok/02-organisms-02-blocks-01-contactblok.html"},{"lineagePattern":"organisms-toptaken","lineagePath":"../../patterns/02-organisms-02-blocks-10-toptaken/02-organisms-02-blocks-10-toptaken.html"},{"lineagePattern":"atoms-goIcon-headingLink","lineagePath":"../../patterns/00-atoms-04-images-05-goIcon-headingLink/00-atoms-04-images-05-goIcon-headingLink.html"},{"lineagePattern":"organisms-crsblok-wetten-en-regels","lineagePath":"../../patterns/02-organisms-02-blocks-07-crsblok-wetten-en-regels/02-organisms-02-blocks-07-crsblok-wetten-en-regels.html"},{"lineagePattern":"organisms-crsblok-direct-regelen","lineagePath":"../../patterns/02-organisms-02-blocks-07-crsblok-direct-regelen/02-organisms-02-blocks-07-crsblok-direct-regelen.html"},{"lineagePattern":"organisms-crsblok-discussies","lineagePath":"../../patterns/02-organisms-02-blocks-07-crsblok-discussies/02-organisms-02-blocks-07-crsblok-discussies.html"},{"lineagePattern":"organisms-promoblok","lineagePath":"../../patterns/02-organisms-02-blocks-00-promoblok/02-organisms-02-blocks-00-promoblok.html"},{"lineagePattern":"organisms-footer","lineagePath":"../../patterns/02-organisms-00-global-01-footer/02-organisms-00-global-01-footer.html"}];
 		var lineageR = [{"lineagePattern":"pages-onderwerp","lineagePath":"../../patterns/04-pages-02-onderwerp/04-pages-02-onderwerp.html"}];
 		var patternState = ""
 		var cssEnabled = false; //TODO

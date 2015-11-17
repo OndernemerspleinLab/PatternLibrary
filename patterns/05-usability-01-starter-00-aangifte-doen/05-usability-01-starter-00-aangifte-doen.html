@@ -896,8 +896,8 @@
         </div>
     </fieldset>
     <p>
-        <a href="#" class="formButton-cancel">Annuleer</a>
-        <a href="#" class="formButton-submit btn">Verstuur</a>
+        <button class="formButton-cancel"  ng-click="viewModel.openClose.close('feedback')">Annuleer</button>
+        <button class="formButton-submit btn">Verstuur</button>
     </p>
 </form>
     </div>
@@ -1030,12 +1030,14 @@
 						<li>betalingskenmerken en aangiftedatums opzoeken.</li>
 					</ul>
 					<p>U vindt de App Btw-Alert in de <a class="externalLink" href="https://itunes.apple.com/nl/app/btw-alert/id968410049">iTunes-store</a> (iOS) en in <a class="externalLink" href="https://play.google.com/store/apps/details?id=nl.belastingdienst.btwalert">Google Play</a> (Android).</p>
-					<h3>Meer tips voor een tijdige btw-aangifte</h3>
-					<ul>
-						<li>Voor een herinnering per e-mail geeft u uw e-mailadres op op het <a class="externalLink" href="http://mijn.belastingdienst.nl/ppa/">beveiligde gedeelte</a> van Belastingdienst.nl.</li>
-						<li>Volg het Twitteraccount <a class="externalLink" class="ns_onclick ns_teller_https_twitter_com.bdzakelijk" href="https://twitter.com/bdzakelijk">@BDzakelijk</a> voor tips en antwoorden op vragen.</li>
-						<li>Heeft u een tip waardoor u altijd op tijd bent met de btw-aangifte en -betaling? Deel deze op <a class="externalLink ns_onclick ns_teller_http_hallo_kvk_nl.hallo." href="http://hallo.kvk.nl/hallo/">Hallo!</a> of <a class="externalLink ns_onclick ns_teller_http_www_higherlevel_nl.forum." href="http://www.higherlevel.nl/forum/">Higherlevel</a>.</li>
-					</ul>
+					<div class="tip">
+						<h3 class="tip--header">Meer tips voor een tijdige btw-aangifte</h3>
+						<ul class="tip--content">
+							<li>Voor een herinnering per e-mail geeft u uw e-mailadres op op het <a class="externalLink" href="http://mijn.belastingdienst.nl/ppa/">beveiligde gedeelte</a> van Belastingdienst.nl.</li>
+							<li>Volg het Twitteraccount <a class="externalLink" class="ns_onclick ns_teller_https_twitter_com.bdzakelijk" href="https://twitter.com/bdzakelijk">@BDzakelijk</a> voor tips en antwoorden op vragen.</li>
+							<li>Heeft u een tip waardoor u altijd op tijd bent met de btw-aangifte en -betaling? Deel deze op <a class="externalLink ns_onclick ns_teller_http_hallo_kvk_nl.hallo." href="http://hallo.kvk.nl/hallo/">Hallo!</a> of <a class="externalLink ns_onclick ns_teller_http_www_higherlevel_nl.forum." href="http://www.higherlevel.nl/forum/">Higherlevel</a>.</li>
+						</ul>
+					</div>
 
 					<h2 id="schulden">Btw-schulden</h2>
 					<p>De Belastingdienst besteedt veel aandacht aan btw-schulden. Het is dus verstandig om na te gaan of u alle btw heeft aangegeven en betaald. Het kan namelijk zijn dat u per ongeluk een factuur vergeten bent in uw aangifte. Wilt u weten of u een btw-schuld heeft? En wat u dan moet doen? Lees dan <a href="http://www.op.nl/ondernemen/administratie/administratie-beheren/info-en-advies/btw-schulden/" title="Btw-schulden">'Btw-schulden? Check uw administratie'</a>.</p>
@@ -1054,11 +1056,41 @@
 
 				</div>
 				<div class="column column--third aside">
-<div class="block block--blue contact">
-	<h2 class="block-title h3">Neem contact op met</h2>
-	<p class="contact-info">BelastingTelefoon</p>
+<div class="block block--purple contact" style="margin: 0; padding: 0;">
+	<h2 class="block-title h3" style="margin-bottom: 0.5rem;">Heeft u nog vragen? Neem dan contact op met de BelastingTelefoon</h2>
 	<p class="contact-phone">
-		<span>Bel 0800-0543</span>
+		<span class="inlineMedia">
+            <svg aria-hidden="true" class="media-icon block-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-telefoon-0022"></use>
+            </svg>
+            <span class="media-text">
+                Bel 0800-0543
+            </span>
+        </span>
+    </p>
+    <p class="contact-mail">
+		<span class="inlineMedia">
+            <svg aria-hidden="true" class="media-icon block-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-email-2012"></use>
+            </svg>
+            <span class="media-text">
+                <a class="interfaceLink" href="#">
+                	<span class="interfaceLink-text"><span>Stuur een e-mail</span></span>
+                </a>
+            </span>
+        </span>
+    </p>
+    <p class="contact-chat">
+		<span class="inlineMedia">
+            <svg aria-hidden="true" class="media-icon block-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-contact-2005"></use>
+            </svg>
+            <span class="media-text">
+                <a class="interfaceLink" href="#">
+                	<span class="interfaceLink-text"><span>Chat</span></span>
+                </a>
+            </span>
+        </span>
     </p>
 </div>				</div>
 			</div>
