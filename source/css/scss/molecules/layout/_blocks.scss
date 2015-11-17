@@ -153,6 +153,12 @@
 }
 
 .block {
+	margin: {
+		top: $space/2;
+		bottom: $space/2;
+	}
+	@include insideMargin(0.5em);
+	padding: $space/4 $space/2;
 
 	// Right Column
 	&--side {
