@@ -179,6 +179,11 @@
 
 	&--blue {
 		background-color: getColor(hemelblauw lightest);
+
+		.interfaceLink {
+			color: getColor(hemelblauw darkest);
+			fill: getColor(hemelblauw darkest);
+		}
 	}
 
 }

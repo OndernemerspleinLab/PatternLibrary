@@ -86,21 +86,34 @@ h2, h3, h4, h5, h6 {
 	@include noUnderline;
 	color: getColor(hemelblauw default);
 	fill: getColor(hemelblauw default);
+	display: inline-flex;
+    align-items: flex-start;
+
+	.underliner {
+		@include hideUnderline;
+		transition: border-bottom-color 200ms;
+	}
+
 
 	@include hoverEtc {
-		.interfaceLink-text {
+		@include noUnderline;
+		.underliner {
 			@include underline;
 		}
 	}
 
 	&-icon {
-		display: inline-block;
+		//display: inline-block;
+		flex: 0 0 auto;
 		height: ($lineHeight * 1em);
 		//margin-left: 0.2em;
 		vertical-align: middle;
 	}
 	&-text {
-		@include hideUnderline;
+		//@include hideUnderline;
+		//flex: 1 1 0;
+		flex: 0 1 auto;
+		line-height: ($lineHeight * 1em);
 	}
 }
 

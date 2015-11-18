@@ -1,0 +1,24 @@
+.blockContact {
+	$baseThemeClass: ".blockContact";
+
+	.aside & {
+		@extend .block--side;
+	}
+
+	&-title {
+		@include theme((color: foreground), $baseThemeClass);
+		margin-top: 0;
+	}
+	&-item {
+		margin-bottom: 0.5em;
+	}
+	&-icon {
+		@include theme((fill: foreground), $baseThemeClass);
+		height: 1.5em;
+		width: 1.5em;
+		margin-right: 1em;
+	}
+	&-link {
+		@include theme((color: foreground), $baseThemeClass);
+	}
+}

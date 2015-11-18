@@ -8,4 +8,18 @@
 			margin-left: 0;
 		}
 	}
+
+	&--grey {
+		.interfaceLink {
+			color: getColor(grijs darkest);
+			&:hover, &:active, &:focus {
+				color: getColor(hemelblauw default);
+			}
+		}
+	}
+
+	&-itemMore {
+		border-top: 1px solid getColor(grijs light);
+		margin-top: 0.5em;
+	}
 }

@@ -11,80 +11,94 @@
 				</div>
 			</div>
 			<div class="layoutContainer gridContainer">
-				<div class="column column--twoThird">
-					<h2 class="block-title h4">Veel gezocht</h2>
-					<ul class="labelList">
-						<li class="labelList-item">
-							<a href="#" class="labelList-link">
-								<span class="labelList-text"><span>
-									Maak een concurrentieanalyse
-								</span></span>
-							</a>
-						</li>
-					    <li class="labelList-item">
-					    	<a href="#" class="labelList-link">
-					    		<span class="labelList-text"><span>
-					    			Hoe kunt u reclame maken?
-					    		</span></span>
-					    	</a>
-					    </li>
-					    <li class="labelList-item">
-					    	<a href="#" class="labelList-link">
-					    		<span class="labelList-text"><span>
-					    			Zorg voor een goede marketingmix
-					    		</span></span>
-					    	</a>
-					    </li>
-					</ul>
+				<div class="column column--full">
+					{{> organisms-toptaken }}
                 </div>
-                <div class="column column--third">
-					{{> organisms-contactblok }}
-				</div>
 			</div>
 			<div class="layoutContainer gridContainer">
                 <div class="column column--third">
-                	<h2 class="h3"><a class="headingLink" href="{{ link.templates-subject }}"><span class="headingLink-text"><span>Marktonderzoek</span></span>{{> atoms-goIcon-headingLink }}</a></h2>
-					<p>Met o.a.: <a class="interfaceLink" href="{{ link.templates-contentpage-base }}"><span class="interfaceLink-text"><span>Marktonderzoek doen</span</span></a> | <a class="interfaceLink" href="#"><span class="interfaceLink-text"><span>Brancheonderzoek</span</span></a> | <a class="interfaceLink" href="#"><span class="interfaceLink-text"><span>Onderzoek uw klanten</span</span></a></p>
-					<!--ul class="linkList list">
-						<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Marktonderzoek doen</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Brancheonderzoek</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Onderzoek uw klanten</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Een concurrentieanalyse maken</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Omgevingsanalyse</span></span></a></li>
-					</ul-->
+                	<h2 class="h3"><a class="headingLink" href="{{ link.templates-subject }}"><span class="headingLink-text"><span class="underliner">Marktonderzoek</span></span>{{> atoms-goIcon-headingLink }}</a></h2>
+					<ul class="linkList linkList--grey list">
+						<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Marktonderzoek doen</span></span></a></li>
+						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Brancheonderzoek</span></span></a></li>
+						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Onderzoek uw klanten</span></span></a></li>
+						<!--li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Een concurrentieanalyse maken</span></span></a></li>
+						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Omgevingsanalyse</span></span></a></li-->
+						<li class="linkList-item linkList-itemMore"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Meer</span></span></a></li>
+					</ul>
 				</div>
 				<div class="column column--third">
-                	<h2 class="h3"><a class="headingLink" href="#"><span class="headingLink-text"><span>Marketingplan</span></span>{{> atoms-goIcon-headingLink }}</a></h2>
-					<p>Met: <a class="interfaceLink" href="{{ link.templates-contentpage-base }}"><span class="interfaceLink-text"><span>Marketingmix</span</span></a> | <a class="interfaceLink" href="#"><span class="interfaceLink-text"><span>Sterkte-zwakte analyse</span</span></a></p>
-					<!--ul class="linkList list">
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Marketingmix</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Sterkte-zwakte analyse</span></span></a></li>
-					</ul-->
+                	<h2 class="h3">
+                		<a href="#" class="headingLink">
+                			<span class="headingLink-text">
+                				<span class="underliner">Marketingplan</span>
+                			</span>
+                			{{> atoms-goIcon-headingLink }}
+                		</a>
+                	</h2>
+					<ul class="linkList linkList--grey list">
+						<li class="linkList-item">
+							<a href="#" class="interfaceLink">
+								{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text">
+									<span class="underliner">Marketingmix</span>
+								</span>
+							</a>
+						</li>
+						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Sterkte-zwakte analyse</span></span></a></li>
+					</ul>
 				</div>
 				<div class="column column--third">
-                	<h2 class="h3"><a class="headingLink" href="#"><span class="headingLink-text"><span>Onderwerp zonder links</span></span>{{> atoms-goIcon-headingLink }}</a></h2>
+                	<h2 class="h3"><a class="headingLink" href="#"><span class="headingLink-text"><span class="underliner">Onderwerp zonder links</span></span>{{> atoms-goIcon-headingLink }}</a></h2>
                 	<p>U heeft een goed idee, maar zijn er wel klanten voor? Een marktonderzoek biedt uitkomst.</p>
 				</div>
-
 				<div class="column column--third">
-                	<h2 class="h3"><a class="headingLink" href="#"><span class="headingLink-text"><span>Klanten vinden</span></span>{{> atoms-goIcon-headingLink }}</a></h2>
-                	<!--p>Met o.a.: <a class="interfaceLink" href="{{ link.templates-contentpage-base }}"><span class="interfaceLink-text"><span>Hoe vindt u uw klanten?</span</span></a> | <a class="interfaceLink" href="#"><span class="interfaceLink-text"><span>Netwerken</span</span></a> | <a class="interfaceLink" href="#"><span class="interfaceLink-text"><span>Een offerte maken</span</span></a></p-->
-					<ul class="linkList list">
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Hoe vindt u uw klanten?</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Netwerken</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Een offerte maken</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Meer</span></span></a></li>
+                	<h2 class="h3"><a class="headingLink" href="#"><span class="headingLink-text"><span class="underliner">Klanten vinden</span></span>{{> atoms-goIcon-headingLink }}</a></h2>
+					<ul class="linkList linkList--grey list">
+						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Hoe vindt u uw klanten?</span></span></a></li>
+						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Netwerken</span></span></a></li>
+						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Een offerte maken</span></span></a></li>
+						<li class="linkList-item linkList-itemMore"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Meer</span></span></a></li>
 					</ul>
 				</div>
 				<div class="column column--third">
-                	<h2 class="h3"><a class="headingLink" href="#"><span class="headingLink-text"><span>Aanbestedingen</span></span>{{> atoms-goIcon-headingLink }}</a></h2>
-                	<!--p>Met: <a class="interfaceLink" href="{{ link.templates-contentpage-base }}"><span class="interfaceLink-text"><span>Aanbestedingen</span</span></a> | <a class="interfaceLink" href="#"><span class="interfaceLink-text"><span>Stappenplan inschrijven op aanbestedingen</span</span></a></p-->
-					<ul class="linkList list">
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Aanbestedingen</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Stappenplan inschrijven op aanbestedingen</span></span></a></li>
+                	<h2 class="h3"><a class="headingLink" href="#"><span class="headingLink-text"><span class="underliner">Aanbestedingen</span></span>{{> atoms-goIcon-headingLink }}</a></h2>
+					<ul class="linkList linkList--grey list">
+						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Aanbestedingen</span></span></a></li>
+						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Stappenplan inschrijven op aanbestedingen</span></span></a></li>
 					</ul>
 				</div>
-
+			</div>
+			<!-- Optioneel blok: Alle belastingen op een rij -->
+			<div class="layoutContainer gridContainer">
+				<div class="column column--full">
+					<div class="block block--blue">
+						<h2 class="block-title h4">Alle belastingen op een rij</h2>
+						<ul class="linkList list list--triple">
+							<li class="linkList-item">
+								<p>Belastingen voor ondernemers:</p>
+							</li>
+							<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Omzetbelasting</span></span></a></li>
+							<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Inkomstenbelasting</span></span></a></li>
+							<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Vennootschapsbelasting</span></span></a></li>
+							<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Dividendbelasting</span></span></a></li>
+							<li class="linkList-item">
+								<p>Andere belastingen:</p>
+							</li>
+							<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Autobelastingen</span></span></a></li>
+							<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Belasting bij internationaal ondernemen</span></span></a></li>
+							<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Gemeentelijke belastingen en waterschapsbelasting</span></span></a></li>
+							<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Milieubelastingen</span></span></a></li>
+							<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Assurantiebelasting</span></span></a></li>
+							<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Overdrachtsbelasting</span></span></a></li>
+							<li class="linkList-item">
+								<p>Belastingen voor ondernemers met personeel:</p>
+							</li>
+							<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Loonheffingen</span></span></a></li>
+							<li class="linkList-item"><a href="{{ link.templates-contentpage-base }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Werkkostenregeling</span></span></a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class="layoutContainer gridContainer">
 				{{> organisms-crsblok-wetten-en-regels }}
