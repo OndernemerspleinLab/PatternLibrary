@@ -24,7 +24,8 @@
 			"links": [
 				{
 					"name": "DE VAR: onmisbaar voor freelancers en zzp'ers",
-					"href": "#"
+					"href": "#",
+					"active": true
 				},
 				{
 					"name": "Vier soorten VAR",
