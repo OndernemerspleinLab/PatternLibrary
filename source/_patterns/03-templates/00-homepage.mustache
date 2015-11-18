@@ -62,11 +62,41 @@
 
 			<div class="layoutContainer gridContainer">
 				<div class="column column--full">
-					<h3>Thema's</h3>
-					<ul class="linkList list  list--triple">
-						<li class="linkList-item"><a href="{{ link.usability-mkb-01-personeel }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Personeel</span></span></a></li>
-						<li class="linkList-item"><a href="{{ link.usability-starter-01-bedrijf-starten }}" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Bedrijf starten</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Handelsregister</span></span></a></li>
+					<ul class="mainMenu-linkList list list--double">
+	                    <li class="mainMenu-item list-item"><a class="mainMenu-link inlineMedia" href="#">
+	                        <svg aria-hidden="true" class="media-icon mainMenu-link-icon">
+	                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-wet-7003"></use>
+	                        </svg>
+	                        <span class="media-text">
+	                            Wetten en regels
+	                        </span>
+	                    </a></li>
+	                </ul>
+					<ul class="linkList list list--triple themeList">
+						<li class="linkList-item themeList-item">
+							<a href="{{ link.usability-mkb-01-personeel }}" class="interfaceLink themeList-link inlineMedia">
+								<svg aria-hidden="true" class="media-icon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-budget-9000"></use>
+								</svg>
+								<span class="interfaceLink-text media-text">
+									<span class="underliner">Personeel</span>
+								</span>
+							</a>
+						</li>
+						<li class="linkList-item">
+							<a href="{{ link.usability-starter-01-bedrijf-starten }}" class="interfaceLink">
+								<svg aria-hidden="true" class="media-icon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6024-ondernemingen"></use>
+								</svg>
+								<span class="interfaceLink-text"><span>Bedrijf starten</span></span>
+							</a>
+						</li>
+						<li class="linkList-item">
+							<a href="#" class="interfaceLink">
+								{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text"><span>Handelsregister</span></span>
+							</a>
+						</li>
 						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Administratie</span></span></a></li>
 						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Belastingen</span></span></a></li>
 						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span>Geldzaken</span></span></a></li>
