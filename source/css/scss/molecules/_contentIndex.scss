@@ -9,12 +9,26 @@
 	&-item {
 		padding: 0;
 	}
+
+	&-link {
+		&.is-active {
+			fill: getColor(hemelblauw darkest);
+			color: getColor(hemelblauw darkest);
+		}
+	}
+
+	&-icon {
+		&.is-active {
+			transform: rotate(90deg);
+		}
+	}
 }
 .contentIndexInTab {
 	@include noBullets;
 
 	&-item {
 		padding: 0;
+		margin: 0 1px;
 		border-top: 1px solid getColor(grijs light);
 	}
 
@@ -22,7 +36,11 @@
 		@include noUnderline;
 		display: block;
 		color: getColor(hemelblauw grijscontrast);
-		padding: 0.8em 0.8rem;
+		padding: 0.8rem 0.8rem;
+
+		&.is-active {
+			color: getColor(hemelblauw darkest);
+		}
 
 		@include hoverEtc {
 			color: getColor(hemelblauw darkest);

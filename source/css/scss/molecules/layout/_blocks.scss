@@ -49,9 +49,13 @@
 	flex-direction: column;
 	min-height: 16rem;
 	position: relative;
-	flex: 1 0 auto;
 
 	background-color: getColor(grijs lightest);
+
+	.blockContainer > & {
+		flex: 1 0 auto;
+	}
+
 	// CRS Container
 	.crs-wrapper & {
 		background-color: getColor(wit);

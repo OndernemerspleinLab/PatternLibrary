@@ -20,7 +20,8 @@
 				},
 				{
 					"name": "Brommer",
-					"href": "#"
+					"href": "#",
+					"active": true
 				},
 				{
 					"name": "Fiets",
