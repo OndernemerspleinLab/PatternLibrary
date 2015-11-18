@@ -43,15 +43,30 @@ h2, h3, h4, h5, h6 {
 	}
 }
 
+
 .interfaceLink {
 	$lineHeight: 1.6;
 
-	line-height: $lineHeight;
-	@include noUnderline;
-	color: getColor(hemelblauw default);
-	fill: getColor(hemelblauw default);
-	display: inline-flex;
-    align-items: flex-start;
+	@at-root {
+		&,
+		.interfaceLinkStatic {
+			@include noUnderline;
+			color: getColor(hemelblauw default);
+			fill: getColor(hemelblauw default);
+			line-height: $lineHeight;
+
+			display: inline-flex;
+		    align-items: flex-start;
+		}
+	}
+
+	&-icon {
+		flex: 0 0 auto;
+		margin-right: 0.3em;
+	}
+	&-text {
+		flex: 1 1 0;
+	}
 
 	.underliner {
 		@include hideUnderline;
@@ -63,16 +78,6 @@ h2, h3, h4, h5, h6 {
 		.underliner {
 			@include underline;
 		}
-	}
-
-	&-icon {
-		flex: 0 0 auto;
-		height: 1.3;
-		margin-right: 0.3em;
-	}
-	&-text {
-		flex: 1 1 0;
-		line-height: 1.3;
 	}
 
 }

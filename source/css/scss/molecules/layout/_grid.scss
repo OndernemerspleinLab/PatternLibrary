@@ -2,8 +2,10 @@
 
 $maxWidth: 75rem; //1350px
 $space: 2rem;
+$doubleSpace: $space*2; // 4rem
 $halfSpace: $space/2; // 1rem
 $quarterSpace: $space/4; // 0.5rem
+$eighthSpace: $space/8; // 0.25rem
 
 
 // Returns the value for the with of al column of a certain ratio
