@@ -90,6 +90,10 @@
 	margin-left: 0;
 }
 
+%noListSpacing {
+	@include noListSpacing;
+}
+
 // Add bullets to a list
 @mixin bullets($type: disc) {
 	@include listSpacing;
@@ -137,6 +141,10 @@
 			display: none;
 		}
 	}
+}
+
+%noBullets {
+	@include noBullets;
 }
 
 // Add numbers to a list

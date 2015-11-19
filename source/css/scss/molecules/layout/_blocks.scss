@@ -77,6 +77,11 @@
 	@include insideMargin($halfSpace);
 	padding: 0 $halfSpace;
 
+
+	&--autoHeight {
+		min-height: 0;
+	}
+
 	&-title {
 		font-weight: normal;
 		margin-top: 0;
@@ -94,10 +99,15 @@
 
 	&-list {
 		font-size: getFontSize(small);
+
+		&,
+		.interfaceLink {
+			line-height: 1.2;
+		}
 		.goIcon {
 			margin: {
-				top: -0.2rem;
-				bottom: -0.2rem;
+				top: -0.35rem;
+				bottom: -0.35rem;
 			}
 		}
 	}
@@ -146,6 +156,7 @@
 	}
 
 	&-image {
+		width: 100%;
 		margin: 0;
 	}
 
@@ -247,4 +258,8 @@
 
 .crs-wrapper {
 	background-color: getColor(grijs lightest);
+	padding: {
+		top: $halfSpace;
+		bottom: $halfSpace;
+	}
 }

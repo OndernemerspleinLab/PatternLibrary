@@ -104,8 +104,8 @@
 				</div>
 			</div>
 			<div class="layoutContainer gridContainer gridContainer--stretchItems">
-				<div class="column column--third blockContainer">
-					<div class="listBlock listBlock--green">
+				<div class="column column--twoThird blockContainer">
+					<div class="listBlock listBlock--autoHeight listBlock--green">
 						<h2 class="listBlock-title h4">
 							<span class="inlineMedia">
 					            <svg aria-hidden="true" class="media-icon listBlock-icon">
@@ -116,7 +116,7 @@
 					            </span>
 					        </span>
 						</h2>
-						<ul class="listBlock-list linkList">
+						<ul class="listBlock-list linkList list list--double">
 							<li class="linkList-item">
 								<a href="#" class="interfaceLink">
 									{{> atoms-goIcon-interfaceLink }}
@@ -160,37 +160,22 @@
 						</a>
 					</div>
 				</div>
+			</div>
+			<div class="layoutContainer gridContainer gridContainer--stretchItems">
 				<div class="column column--third blockContainer">
-					<div class="listBlock listBlock--violet">
-						<h2 class="listBlock-title h4">
-							<span class="inlineMedia">
-					            <svg aria-hidden="true" class="media-icon listBlock-icon">
-					              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-user-3905"></use>
-					            </svg>
-					            <span class="media-text">
-					                Situaties
-					            </span>
-					        </span>
-						</h2>
-						<ul class="listBlock-list linkList">
-							<li class="linkList-item">
-								<a href="{{ link.templates-contentpage-base }}" class="interfaceLink">
-									{{> atoms-goIcon-interfaceLink }}
-									<span class="postTitle interfaceLink-text"><span class="underliner">
-										Ik ga voor het eerst personeel aannemen
-									</span></span>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="blockContainer-more blockContainer-more--violet">
-						<a class="interfaceLink" href="#">
-							{{> atoms-goIcon-interfaceLink }}
-							<span class="interfaceLink-text"><span class="underliner">
-								Meer situaties
-							</span></span>
-						</a>
-					</div>
+					<a class="promoBlock promoBlock--autoHeight promoBlock--violet" href="#">
+						<div class="promoBlock-go">
+							<h2 class="h4 interfaceLinkStatic promoBlock-go-title">
+								{{> atoms-goIcon-interfaceLink }}
+								<span class="interfaceLink-text">
+									Ik ga voor het eerst personeel aannemen
+								</span>
+							</h2>
+						</div>
+						<figure class="promoBlock-figure">
+							<img class="promoBlock-image" src="../../images/sample/winkel.jpg">
+						</figure>
+					</a>
 				</div>
 			</div>
 		</div>

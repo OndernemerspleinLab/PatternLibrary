@@ -62,8 +62,8 @@ $eighthSpace: $space/8; // 0.25rem
 
 .sublayoutContainer {
 	margin: {
-		left: (-1*$halfSpace);
-		right: (-1*$halfSpace);
+		left: negative($halfSpace);
+		right: negative($halfSpace);
 	};
 }
 

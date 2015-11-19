@@ -1,4 +1,6 @@
 .list {
+	column-gap: $space;
+
 	&--double {
 		@include mqGreaterThan(small) {
 			column-count: 2;

@@ -2,13 +2,6 @@
 	@include noBullets;
 	margin-left: 0;
 
-	.readMoreBlock &,
-	.pageContentNav & {
-		.list-spacedItem {
-			margin-left: 0;
-		}
-	}
-
 	&--grey {
 		.interfaceLink {
 			color: getColor(grijs darkest);
@@ -16,6 +9,10 @@
 				color: getColor(hemelblauw default);
 			}
 		}
+	}
+
+	&-item {
+		break-inside: avoid;
 	}
 
 	&-itemMore {

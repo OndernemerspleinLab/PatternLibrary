@@ -28,7 +28,7 @@
 
 	@include mqGreaterThan(extraExtraExtraLarge) {
 		left: 50%;
-		margin-left: (-1 * map-get($maxPageWidth, rem) / 2);
+		margin-left: negative(map-get($maxPageWidth, rem) / 2);
 	}
 
 }
@@ -343,6 +343,6 @@
 
 	@include mqGreaterThan(extraExtraExtraLarge) {
 		left: 50%;
-		margin-left: (-1 * map-get($maxPageWidth, rem) / 2);
+		margin-left: negative(map-get($maxPageWidth, rem) / 2);
 	}
 }

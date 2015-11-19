@@ -132,9 +132,14 @@
 	}
 
 	&-linkList {
+		@extend %noBullets;
+		column-gap: 0;
+
 		padding: $menuItemPadding 0;
-		@include noBullets;
-		margin-left: 0;
+		margin: {
+			left: 0;
+			right: 0;
+		}
 		@include mqDisableSeeThroughScroll {
 			padding: 0;
 		}

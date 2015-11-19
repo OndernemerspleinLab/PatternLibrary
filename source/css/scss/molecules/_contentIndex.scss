@@ -1,5 +1,5 @@
 .contentIndex {
-	@include noBullets;
+	@extend %noBullets;
 	padding: 1rem 0;
 
 	@include mqLesserThan(medium) {
@@ -24,7 +24,7 @@
 	}
 }
 .contentIndexInTab {
-	@include noBullets;
+	@extend %noBullets;
 
 	&-item {
 		padding: 0;
