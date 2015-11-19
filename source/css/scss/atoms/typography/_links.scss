@@ -105,6 +105,17 @@ h2, h3, h4, h5, h6 {
 		}
 	}
 
+	&-bigIcon {
+		flex: 0 0 auto;
+		height: ($lineHeight * 1em);
+		margin: {
+			top: -0.4em;
+			bottom: -0.4em;
+			right: 0.3em;
+		}
+		vertical-align: middle;
+	}
+
 	&-icon {
 		flex: 0 0 auto;
 		height: ($lineHeight * 1em);
