@@ -15,14 +15,14 @@
 					<h2 class="block-title">Wat de meeste ondernemers willen weten</h2>
 					<ul class="labelList">
 						<li class="labelList-item">
-							<a href="#" class="labelList-link">
+							<a href="{{ link.usability-starter-02-alle-rechtsvormen }}" class="labelList-link">
 								<span class="labelList-text"><span>
 									Een rechtsvorm kiezen
 								</span></span>
 							</a>
 						</li>
 					    <li class="labelList-item">
-					    	<a href="#" class="labelList-link">
+					    	<a href="{{ link.usability-zzp-03-var-onmisbaar }}" class="labelList-link">
 					    		<span class="labelList-text"><span>
 					    			De VAR: onmisbaar voor zzp'ers
 					    		</span></span>
@@ -50,7 +50,7 @@
 					    	</a>
 					    </li>
 					    <li class="labelList-item">
-					    	<a href="#" class="labelList-link">
+					    	<a href="{{ link.usability-starter-00-aangifte-doen }}" class="labelList-link">
 					    		<span class="labelList-text"><span>
 					    			Btw-aangifte doen voor starters
 					    		</span></span>
@@ -61,8 +61,8 @@
 			</div>
 
 			<div class="layoutContainer gridContainer">
-				<div class="column column--twoThird">
-					<ul class="linkList list list--double themeList">
+				<div class="column column--full">
+					<ul class="linkList list list--triple themeList">
 						<li class="linkList-item themeList-item">
 							<a href=	"{{ link.usability-mkb-01-personeel }}" class="headingLink">
 								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
@@ -80,15 +80,6 @@
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6005-starters"></use>
 								</svg>
 								<span class="headingLink-text"><span class="underliner">Bedrijf starten</span></span>
-								{{> atoms-goIcon-headingLink }}
-							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6024-ondernemingen"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Handelsregister</span></span>
 								{{> atoms-goIcon-headingLink }}
 							</a>
 						</li>
@@ -155,18 +146,71 @@
 								{{> atoms-goIcon-headingLink }}
 							</a>
 						</li>
+						<li class="linkList-item">
+							<a href="#" class="headingLink">
+								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-4070-beschermen"></use>
+								</svg>
+								<span class="headingLink-text"><span class="underliner">Bedrijf beschermen</span></span>
+								{{> atoms-goIcon-headingLink }}
+							</a>
+						</li>
+						<li class="linkList-item">
+							<a href="#" class="headingLink">
+								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-0017-bespreking"></use>
+								</svg>
+								<span class="headingLink-text"><span class="underliner">Bedrijf organiseren</span></span>
+								{{> atoms-goIcon-headingLink }}
+							</a>
+						</li>
+						<li class="linkList-item">
+							<a href="#" class="headingLink">
+								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-1008-oog"></use>
+								</svg>
+								<span class="headingLink-text"><span class="underliner">Marketing</span></span>
+								{{> atoms-goIcon-headingLink }}
+							</a>
+						</li>
+						<li class="linkList-item">
+							<a href="#" class="headingLink">
+								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-9001-rekening"></use>
+								</svg>
+								<span class="headingLink-text"><span class="underliner">Administatie</span></span>
+								{{> atoms-goIcon-headingLink }}
+							</a>
+						</li>
+						<li class="linkList-item">
+							<a href="#" class="headingLink">
+								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-9004-belastingen"></use>
+								</svg>
+								<span class="headingLink-text"><span class="underliner">Belastingen</span></span>
+								{{> atoms-goIcon-headingLink }}
+							</a>
+						</li>
+						<li class="linkList-item">
+							<a href="#" class="headingLink">
+								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6028-producten"></use>
+								</svg>
+								<span class="headingLink-text"><span class="underliner">Product en dienst</span></span>
+								{{> atoms-goIcon-headingLink }}
+							</a>
+						</li>
 					</ul>
 				</div>
-				<div class="column column--third">
-					<ul class="linkList list themeList">
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Bedrijf beschermen</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Bedrijf organiseren</span></span></a></li>
-
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Administratie</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Belastingen</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Product en dienst</span></span></a></li>
-						<li class="linkList-item"><a href="#" class="interfaceLink">{{> atoms-goIcon-interfaceLink }}<span class="interfaceLink-text"><span class="underliner">Marketing</span></span></a></li>
-					</ul>
+				<div class="column column--full">
+					<div class="linkList linkList--grey">
+						<div class="linkList-itemMore" style="padding:0.5em 0;">
+		                    <a href="#" class="interfaceLink">
+		                    	{{> atoms-goIcon-interfaceLink }}
+		                    	<span class="interfaceLink-text"><span class="underliner">Bekijk alle onderwerpen</span></span>
+		                    </a>
+		                </div>
+	                </div>
 				</div>
 			</div>
 			<div class="crs-wrapper">
@@ -177,47 +221,37 @@
 				</div>
 			</div>
 
-			<div class="layoutContainer gridContainer">
+			<div class="layoutContainer gridContainer" style="margin-top:1em;">
 				<div class="column column--third">
-					<div class="block block--blue">
-						<h2 class="block-title">Sector</h2>
-						<p>Ruimte voor branche blok</p>
-					</div>
+					<a href="#" class="imageLink">
+						<figure>
+							<img src="../../images/block-sector.png">
+						</figure>
+					</a>
 				</div>
 				<div class="column column--third">
-					<div class="block block--blue">
-						<h2 class="block-title">Gemeente</h2>
-						<p>Ruimte voor regio blok</p>
-					</div>
+					<a href="#" class="imageLink">
+						<figure>
+							<img src="../../images/block-gemeente.png">
+						</figure>
+					</a>
 				</div>
 				<div class="column column--third">
-					<div class="block block--blue">
-						<h2 class="block-title">Landen</h2>
-						<p>Ruimte voor regio blok</p>
-					</div>
+					<a href="#" class="imageLink">
+						<figure>
+							<img src="../../images/block-landen.png">
+						</figure>
+					</a>
 				</div>
 			</div>
 			<div class="layoutContainer gridContainer">
+				<!-- Handelsregister -->
 				<div class="column column--third">
 					<h2 class="h3">
-						<a class="headingLink" href="/PatternLibrary/patterns/03-templates-02-subject/03-templates-02-subject.html">
-							<span class="headingLink-text">
-								<span class="underliner">Online aanvragen</span>
-							</span>
-							<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>
-						</a>
-					</h2>
-					<p>Met o.a.:
-						<a class="interfaceLink" href="/PatternLibrary/	patterns/03-templates-03-contentpage-base/03-templates-03-contentpage-base.html"><span class="interfaceLink-text"><span class="underliner">Marktonderzoek doen</span></span></a>
-						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Brancheonderzoek</span></span></a>
-						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Onderzoek uw klanten</span></span></a>
-					</p>
-				</div>
-				<div class="column column--third">
-					<h2 class="h3">
-						<a class="headingLink" href="/PatternLibrary/patterns/03-templates-02-subject/03-templates-02-subject.html">
+						<a class="headingLink" href="#">
+							<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6034-handel"></use>
+								</svg>
 							<span class="headingLink-text">
 								<span class="underliner">Handelsregister</span>
 							</span>
@@ -225,50 +259,20 @@
 						</a>
 					</h2>
 					<p>Met o.a.:
-						<a class="interfaceLink" href="/PatternLibrary/	patterns/03-templates-03-contentpage-base/03-templates-03-contentpage-base.html"><span class="interfaceLink-text"><span class="underliner">Marktonderzoek doen</span></span></a>
+						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Inschrijven KvK</span></span></a>
 						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Brancheonderzoek</span></span></a>
+						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Bedrijfsinformatie</span></span></a>
 						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Onderzoek uw klanten</span></span></a>
+						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Wijzig inschrijving</span></span></a>
 					</p>
 				</div>
+				<!-- Vergunningen -->
 				<div class="column column--third">
 					<h2 class="h3">
-						<a class="headingLink" href="/PatternLibrary/patterns/03-templates-02-subject/03-templates-02-subject.html">
-							<span class="headingLink-text">
-								<span class="underliner">Inschrijven handelsregister</span>
-							</span>
-							<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>
-						</a>
-					</h2>
-					<p>Met o.a.:
-						<a class="interfaceLink" href="/PatternLibrary/	patterns/03-templates-03-contentpage-base/03-templates-03-contentpage-base.html"><span class="interfaceLink-text"><span class="underliner">Marktonderzoek doen</span></span></a>
-						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Brancheonderzoek</span></span></a>
-						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Onderzoek uw klanten</span></span></a>
-					</p>
-				</div>
-				<div class="column column--third">
-					<h2 class="h3">
-						<a class="headingLink" href="/PatternLibrary/patterns/03-templates-02-subject/03-templates-02-subject.html">
-							<span class="headingLink-text">
-								<span class="underliner">Bedrijfskosten</span>
-							</span>
-							<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>
-						</a>
-					</h2>
-					<p>Met o.a.:
-						<a class="interfaceLink" href="/PatternLibrary/	patterns/03-templates-03-contentpage-base/03-templates-03-contentpage-base.html"><span class="interfaceLink-text"><span class="underliner">Marktonderzoek doen</span></span></a>
-						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Brancheonderzoek</span></span></a>
-						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Onderzoek uw klanten</span></span></a>
-					</p>
-				</div>
-				<div class="column column--third">
-					<h2 class="h3">
-						<a class="headingLink" href="/PatternLibrary/patterns/03-templates-02-subject/03-templates-02-subject.html">
+						<a class="headingLink" href="#">
+							<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-1012-rijkspas"></use>
+								</svg>
 							<span class="headingLink-text">
 								<span class="underliner">Vergunningen</span>
 							</span>
@@ -276,38 +280,49 @@
 						</a>
 					</h2>
 					<p>Met o.a.:
-						<a class="interfaceLink" href="/PatternLibrary/	patterns/03-templates-03-contentpage-base/03-templates-03-contentpage-base.html"><span class="interfaceLink-text"><span class="underliner">Marktonderzoek doen</span></span></a>
+						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Drank- en horeca vergunning</span></span></a>
 						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Brancheonderzoek</span></span></a>
+						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Terrasvergunning</span></span></a>
 						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Onderzoek uw klanten</span></span></a>
+						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Omgevingsvergunning</span></span></a>
 					</p>
 				</div>
+				<!-- Online aanvragen -->
 				<div class="column column--third">
 					<h2 class="h3">
-						<a class="headingLink" href="/PatternLibrary/patterns/03-templates-02-subject/03-templates-02-subject.html">
+						<a class="headingLink" href="#">
+							<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-2008-computer"></use>
+								</svg>
 							<span class="headingLink-text">
-								<span class="underliner">Subsidies</span>
+								<span class="underliner">Online aanvragen</span>
 							</span>
 							<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>
 						</a>
 					</h2>
 					<p>Met o.a.:
-						<a class="interfaceLink" href="/PatternLibrary/	patterns/03-templates-03-contentpage-base/03-templates-03-contentpage-base.html"><span class="interfaceLink-text"><span class="underliner">Marktonderzoek doen</span></span></a>
+						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">VAR aanvragen</span></span></a>
 						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Brancheonderzoek</span></span></a>
+						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">SMS Alert BTW aangifte</span></span></a>
 						|
-						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">Onderzoek uw klanten</span></span></a>
+						<a class="interfaceLink" href="#"><span class="interfaceLink-text"><span class="underliner">A1 verklaring aanvragen</span></span></a>
 					</p>
 				</div>
 				<div class="column column--full">
-                    <a href="{{ link.templates-contentpage-base }}">Wat kan ik nog meer direct regelen?</a>
+					<div class="linkList linkList--grey">
+						<div class="linkList-itemMore" style="padding-top:0.5em;">
+		                    <a href="#" class="interfaceLink">
+		                    	{{> atoms-goIcon-interfaceLink }}
+		                    	<span class="interfaceLink-text"><span class="underliner">Meer direct regelen</span></span>
+		                    </a>
+		                </div>
+	                </div>
 				</div>
 			</div>
 		</div>
 		<div class="crs-wrapper">
 			<div class="layoutContainer gridContainer gridContainer--stretchItems">
-				{{> organisms-promoblok }}
+				{{> organisms-feiten-en-cijfers }}
 				{{> organisms-crsblok-verhaal }}
 				{{> organisms-promoblok }}
 			</div>

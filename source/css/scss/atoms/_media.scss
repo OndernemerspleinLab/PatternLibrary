@@ -42,3 +42,19 @@ figcaption, .image-caption {
 	    height: 100%;
     }
 }
+
+.imageLink {
+
+	figure {
+		margin: 0;
+		img {
+			transition: transform 0.2s;
+			transform-origin: 50% 100%;
+			margin-bottom: 1em;
+			width:100%;
+		}
+		@include hoverEtc {
+			transform: scale(1.025);
+		}
+	}
+}
