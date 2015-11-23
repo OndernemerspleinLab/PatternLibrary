@@ -8,7 +8,6 @@
 		bottom: $halfSpace;
 	}
 
-
 	&-more {
 		$baseThemeClass: #{&};
 		font-size: getFontSize(small);
@@ -28,7 +27,8 @@
 			height: 0.5rem;
 		}
 
-		.interfaceLink {
+		.interfaceLink,
+		.interfaceLinkStatic {
 			color: getColor(grijs darkest);
 		}
 
@@ -40,7 +40,8 @@
 		}
 
 		@at-root {
-			.interfaceLink {
+			.interfaceLink,
+			.interfaceLinkStatic {
 				@include theme((fill: foreground), $baseThemeClass);
 
 				@include hoverEtc {
@@ -48,8 +49,24 @@
 				}
 			}
 		}
+
 	}
 }
+
+.homeBlockMore {
+	$baseThemeClass: ".homeBlockMore";
+	flex: 0 0 auto;
+	padding: $quarterSpace;
+
+	@include theme((background-color: foreground), $baseThemeClass, true);
+
+	.interfaceLink {
+		color: getColor(wit);
+		fill: getColor(wit)
+	}
+}
+
+
 
 %block {
 	display: flex;
@@ -128,6 +145,50 @@
 		}
 	}
 }
+
+.homeBlock {
+	$baseThemeClass: ".homeBlock";
+	cursor: pointer;
+
+	@include noUnderline;
+	@extend %block;
+	transition: transform 0.2s;
+	transform-origin: 50% 0%;
+
+	@include hoverEtc {
+		transform: scale(1.025);
+		@include theme((color: foreground), $baseThemeClass, true);
+		.homeBlock-title {
+			color: inherit;
+		}
+	}
+
+	&--autoHeight {
+		min-height: 0;
+	}
+
+	&-figure {
+		margin: 0;
+		position: relative;
+	}
+
+	&-image {
+		width: 100%;
+		margin: 0;
+	}
+
+	&-content {
+		@include insideMargin($halfSpace);
+		padding: 0 $halfSpace;
+
+	}
+
+	&-title {
+		margin-top: 0;
+	}
+
+}
+
 .promoBlock {
 	$baseThemeClass: ".promoBlock";
 	cursor: pointer;
@@ -242,8 +303,6 @@
 	}
 
 }
-
-
 
 .postTitle {
 	font-weight: bold;
