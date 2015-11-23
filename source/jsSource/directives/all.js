@@ -1,3 +1,4 @@
+import 'directives/deadLinkDirective';
 import 'directives/visualCloakDirective';
 import 'directives/menuBarDirective';
 import 'directives/openCloseSingleDirective';
