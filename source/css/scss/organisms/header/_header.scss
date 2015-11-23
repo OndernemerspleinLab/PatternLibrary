@@ -3,7 +3,9 @@
 // logo styling -> _header-logo.scss
 // payOff styling -> _header-payOff.scss
 
-.header { }
+.header {
+	background-color: rgba(getColor(wit), 0.8);
+}
 
 .brandBar {
 	background: getColor(hemelblauw default);
@@ -27,7 +29,7 @@
 }
 
 .header-heading {
-	margin: {
+	padding: {
 		top: 0.9rem;
 		bottom: 0.65rem;
 	}

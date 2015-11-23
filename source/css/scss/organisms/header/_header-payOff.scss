@@ -25,5 +25,8 @@
 			font-size: getFontSize(small);
 		}
 
+		&--home {
+			color: getColor(zwart);
+		}
 	}
 }

@@ -1,0 +1,11 @@
+.homepageHeader {
+	background-color: getColor(hemelblauw lightest);
+
+	&-topTasks {
+
+		@include setPropWithMq(greater, width, (
+			all: calcColumnWidth(1/1),
+			smallMedium: calcColumnWidth(2/3)
+		));
+	}
+}
