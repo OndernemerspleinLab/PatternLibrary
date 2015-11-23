@@ -7,7 +7,7 @@
 
 
 <script type="text/ng-template" id='/deadLink.html'>
-	<div class="deadLink" ng-if="viewModel.isOpened('deadLinkAlert')"><strong>Deze link doet het nog niet.</strong>
+	<div class="deadLink" ng-click="viewModel.close('deadLinkAlert')" ng-if="viewModel.isOpened('deadLinkAlert')"><strong>Deze link doet het nog niet.</strong>
 		<button ng-click="viewModel.close('deadLinkAlert')">Oké..</button>
 	</div>
 </script>

@@ -1,6 +1,7 @@
 import DopApp from 'DopApp';
 import createOpenClose from 'openClose/singleOpened';
 import {deadLink as templateUrl} from 'constants/templateUrls';
+import ngServices from 'utils/ngServices';
 
 export const directiveName = "deadLink";
 
@@ -32,13 +33,19 @@ const checkIfLinkInParent = (target) =>{
 
 
 
+
 class DeadLink {
 	constructor() {
 		Object.assign(this, createOpenClose());
+		const closeDeadLink = () =>{
+			this.close('deadLinkAlert');
+		};
 		const deadLinkCallback = (event) =>{
 			let target = event.target;
+
 			if(checkIfLinkInParent(target)){
-				this.open('deadLinkAlert');
+				ngServices.$timeout(() => this.open('deadLinkAlert'));
+				ngServices.$timeout(closeDeadLink,3000);
 			}
 
 		};
