@@ -9,7 +9,10 @@
 
 	&-topTasks {
 		position: relative;
-		@include insideMargin(1.5rem 2.5rem);
+		@include insideMargin(1.5rem 1.5rem);
+		@include mqGreaterThan(smallMedium) {
+			@include insideMarginBottom(2.5rem);
+		}
 
 		@include setPropWithMq(greater, width, (
 			all: calcColumnWidth(1/1),
