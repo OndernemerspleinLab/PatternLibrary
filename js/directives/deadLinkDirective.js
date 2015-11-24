@@ -11,7 +11,8 @@ const checkIfDeadLink = (target) => {
 
 	if(!target){return false;}
 	const href = target.getAttribute("href");
-	return href === '' || href === '#';
+	const hasBackToTopAttr = target.hasAttribute('back-to-top');
+	return !hasBackToTopAttr && href === '' || !hasBackToTopAttr && href === '#';
 };
 
 const getLinkFromParent = (target) => {
