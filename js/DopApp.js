@@ -5,7 +5,7 @@ window.getScope = (el) => angular.element(el).scope();
 
 const app = angular.module("DopApp", [ngAnimate]);
 
-const setInterpolation = () => {
+const setInterpolation = ($interpolateProvider) => {
 	$interpolateProvider.startSymbol('{|');
 	$interpolateProvider.endSymbol('|}');
 };
