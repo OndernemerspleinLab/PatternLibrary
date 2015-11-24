@@ -13,5 +13,6 @@ class Themes {
 DopApp.directive(directiveName, () => ({
 	controllerAs: "viewModel",
 	controller: Themes,
+	scope: true,
 	bindToController: true,
 }));

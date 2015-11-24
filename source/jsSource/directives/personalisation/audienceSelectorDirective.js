@@ -12,5 +12,6 @@ class AudienceSelector {
 DopApp.directive(directiveName, () => ({
 	controllerAs: "viewModel",
 	controller: AudienceSelector,
+	scope: true,
 	bindToController: true,
 }));

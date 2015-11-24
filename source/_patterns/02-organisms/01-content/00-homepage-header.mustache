@@ -1,6 +1,6 @@
-<div class="homepageHeader">
+<div class="homepageHeader" stories-view>
 	<div class="homepageHeader-background">
-		<div class="homepageHeader-background-image" style="background-image: url('../../images/homepage/header-ondernemer-krijn-ratsma.jpg')"></div>
+		<div class="homepageHeader-background-image" style="background-image: url('../../images/homepage/header-ondernemer-krijn-ratsma.jpg')" ng-style="viewModel.imageStyle"></div>
 	</div>
 	{{> organisms-header }}
 	<div class="layoutContainer gridContainer homepageHeader-container">
@@ -79,11 +79,11 @@
 		</div>
 	</div>
 
-	<a href="" class="headerStory">
+	<a href="http://verhalen.ondernemersplein.nl/artikelen/#2590/krijn-ratsma" ng-href="viewModel.story.href" class="headerStory">
 		<h2 class="headerStory-intro">Ondernemersverhaal</h2>
 		<blockquote class="headerStory-blockquote">
-			<p class="headerStory-quote">Doe de dingen waar je zelf energie van krijgt</p>
-			<footer>
+			<p class="headerStory-quote" ng-bind="viewModel.story.quote">Doe de dingen waar je zelf energie van krijgt</p>
+			<footer class="headerStory-citation" ng-bind="viewModel.story.citation">
 				Krijn Ratsma
 			</footer>
 		</blockquote>

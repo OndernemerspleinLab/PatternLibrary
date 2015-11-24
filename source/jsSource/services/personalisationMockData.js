@@ -112,14 +112,35 @@ export const topTasks = [
 	},
 ];
 
-export const themes = [
+export const stories = [
 	{
-		text: "",
-		href: "",
+		img: '../../images/homepage/header-ondernemer-krijn-ratsma1440.jpg',
+		quote: 'Doe de dingen waar je zelf energie van krijgt',
+		citation: 'Krijn Ratsma',
+		href: 'http://verhalen.ondernemersplein.nl/artikelen/#2590/krijn-ratsma',
 		audiences: [
 			"Ondernemers",
+		],
+	},
+
+
+	{
+		img: '../../images/homepage/header-starter-wouterjan-stikkel1440.jpg',
+		quote: 'Ik heb alles gefinancierd met zakgeld',
+		citation: 'Wouterjan Stikkel',
+		href: 'http://verhalen.ondernemersplein.nl/artikelen/#1533/wouterjan-stikkel',
+		audiences: [
 			"Starters",
-			"Ervaren ondernemers"
+		],
+	},
+
+	{
+		img: '../../images/homepage/header-starter-ted-griffioen1440.jpg',
+		quote: 'Wij kunnen onze eigen werkplek gaaf maken',
+		citation: 'Ted Griffioen',
+		href: 'http://verhalen.ondernemersplein.nl/artikelen/#2439/ted-griffioen​',
+		audiences: [
+			"Ervaren ondernemers",
 		],
 	},
 ];
