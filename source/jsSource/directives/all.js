@@ -7,3 +7,5 @@ import 'directives/countUpDirective';
 import 'directives/zoomTableDirective';
 import 'directives/seeThroughScroll/seeThroughScrollDirective';
 import 'directives/seeThroughScroll/seeThroughScrollContentDirective';
+import 'directives/personalisation/audienceSelectorDirective';
+import 'directives/personalisation/topTasksDirective';

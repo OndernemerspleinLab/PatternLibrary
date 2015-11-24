@@ -5,14 +5,14 @@
 	{{> organisms-header }}
 	<div class="layoutContainer gridContainer homepageHeader-container">
 		<div class="column homepageHeader-topTasks">
-			<label class="filterContent">
+			<label class="filterContent" audience-selector>
 					<span class="filterContent-text">
 						Wat de meeste
 					</span>
-					<select class="filterContent-select">
-						<option>Ondernemers</option>
-						<option>Starters</option>
-						<option>Ervaren ondernemers</option>
+					<select class="filterContent-select" ng-model="viewModel.selectedAudienceStore.selectedAudience">
+						<option value="Ondernemers">Ondernemers</option>
+						<option value="Starters">Starters</option>
+						<option value="Ervaren ondernemers">Ervaren ondernemers</option>
 					</select>
 					<span class="filterContent-text">
 						willen weten
@@ -20,50 +20,63 @@
 
 			</label>
 
-			<ul class="labelList">
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Een rechtsvorm kiezen
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							De VAR: onmisbaar voor zzp'ers
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							In 10 stappen naar een eigen bedrijf
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Financiering vinden
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Een ondernemingsplan maken
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Btw-aangifte doen voor starters
-						</span></span>
-					</a>
-				</li>
-			</ul>
+			<script type="text/ng-template" id='/topTasks.html'>
+				<ul class="labelList">
+					<li class="labelList-item" ng-repeat="topTask in viewModel.topTasks track by $index">
+						<a ng-href="{|topTask.href|}" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span ng-bind="topTask.text">
+							</span></span>
+						</a>
+					</li>
+				</ul>
+			</script>
+			<div top-tasks>
+				<ul class="labelList">
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Een rechtsvorm kiezen
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								De VAR: onmisbaar voor zzp'ers
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								In 10 stappen naar een eigen bedrijf
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Financiering vinden
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Een ondernemingsplan maken
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Btw-aangifte doen voor starters
+							</span></span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
 		</div>
 	</div>
 </div>

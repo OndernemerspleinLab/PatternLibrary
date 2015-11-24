@@ -4,6 +4,9 @@
 	@include noBullets;
 	margin: 1rem 0 1.5rem 0;
 	@include setPropWithMq(greater, font-size, getFontSize(h3));
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
 
 	&-title {
 		font-weight: normal;
