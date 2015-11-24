@@ -9,3 +9,4 @@ import 'directives/seeThroughScroll/seeThroughScrollDirective';
 import 'directives/seeThroughScroll/seeThroughScrollContentDirective';
 import 'directives/personalisation/audienceSelectorDirective';
 import 'directives/personalisation/topTasksDirective';
+import 'directives/personalisation/themesDirective';
