@@ -8,6 +8,7 @@
 	background-color: rgba(getColor(hemelblauw light),0.9);
 	top: 0;
 	left: 0;
+	padding: 5rem;
 	@include zIndex(overlay);
 
 
@@ -19,13 +20,17 @@
 	}
 
 	button{
-		border-radius: 6px;
+		background-color: getColor(wit);
 		margin-left: 5%;
-		transition: transform .5s ease-out;
+		padding: 0.4rem 1rem;
+		color: getColor(hemelblauw darkest);
+		transition: transform .5s ease-in-out;
+		border: none;
 	}
 
 	button:hover{
-		transform: translateY(-10px);
+		transform: scale(1.05);
+		color: getColor(zwart);
 	}
 
 }
