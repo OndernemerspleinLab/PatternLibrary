@@ -32,9 +32,9 @@
 
 </head>
 <body class="sg-single-pattern" ng-class="{'is-menuOpened': menuOpened}">
-	<!-- Start of Pattern --><div class="homepageHeader">
+	<!-- Start of Pattern --><div class="homepageHeader" stories-view>
 	<div class="homepageHeader-background">
-		<div class="homepageHeader-background-image" style="background-image: url('../../images/homepage/header-ondernemer-krijn-ratsma.jpg')"></div>
+		<div class="homepageHeader-background-image" style="background-image: url('../../images/homepage/header-ondernemer-krijn-ratsma.jpg')" ng-style="viewModel.imageStyle"></div>
 	</div>
 <header class="header" role="banner">
 	<div class="header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems">
@@ -55,14 +55,14 @@
 	</div>
 </header>	<div class="layoutContainer gridContainer homepageHeader-container">
 		<div class="column homepageHeader-topTasks">
-			<label class="filterContent">
+			<label class="filterContent" audience-selector>
 					<span class="filterContent-text">
 						Wat de meeste
 					</span>
-					<select class="filterContent-select">
-						<option>Ondernemers</option>
-						<option>Starters</option>
-						<option>Ervaren ondernemers</option>
+					<select class="filterContent-select" ng-model="viewModel.selectedAudienceStore.selectedAudience">
+						<option value="Ondernemers">Ondernemers</option>
+						<option value="Starters">Starters</option>
+						<option value="Ervaren ondernemers">Ervaren ondernemers</option>
 					</select>
 					<span class="filterContent-text">
 						willen weten
@@ -70,52 +70,74 @@
 
 			</label>
 
-			<ul class="labelList">
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Een rechtsvorm kiezen
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							De VAR: onmisbaar voor zzp'ers
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							In 10 stappen naar een eigen bedrijf
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Financiering vinden
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Een ondernemingsplan maken
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Btw-aangifte doen voor starters
-						</span></span>
-					</a>
-				</li>
-			</ul>
+			<script type="text/ng-template" id='/topTasks.html'>
+				<ul class="labelList">
+					<li class="labelList-item" ng-repeat="topTask in viewModel.topTasks track by $index">
+						<a ng-href="{|topTask.href|}" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span ng-bind="topTask.text">
+							</span></span>
+						</a>
+					</li>
+				</ul>
+			</script>
+			<div top-tasks>
+				<ul class="labelList">
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Een rechtsvorm kiezen
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								De VAR: onmisbaar voor zzp'ers
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								In 10 stappen naar een eigen bedrijf
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Financiering vinden
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Een ondernemingsplan maken
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Btw-aangifte doen voor starters
+							</span></span>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
+
+	<a href="http://verhalen.ondernemersplein.nl/artikelen/#2590/krijn-ratsma" ng-href="viewModel.story.href" class="headerStory">
+		<h2 class="headerStory-intro">Ondernemersverhaal</h2>
+		<blockquote class="headerStory-blockquote">
+			<p class="headerStory-quote" ng-bind="viewModel.story.quote">Doe de dingen waar je zelf energie van krijgt</p>
+			<footer class="headerStory-citation" ng-bind="viewModel.story.citation">
+				Krijn Ratsma
+			</footer>
+		</blockquote>
+	</a>
 </div>	<!-- End of Pattern -->
 
 	<!--
@@ -128,7 +150,7 @@
 		// handle injection of items from PHP
 		var patternPartial = "organisms-homepage-header";
 		var lineage = [{"lineagePattern":"organisms-header","lineagePath":"../../patterns/02-organisms-00-global-00-header/02-organisms-00-global-00-header.html"}];
-		var lineageR = [{"lineagePattern":"templates-homepage","lineagePath":"../../patterns/03-templates-00-homepage/03-templates-00-homepage.html"}];
+		var lineageR = [{"lineagePattern":"templates-homepage-minimal","lineagePath":"../../patterns/03-templates-00-homepage-minimal/03-templates-00-homepage-minimal.html"},{"lineagePattern":"templates-homepage","lineagePath":"../../patterns/03-templates-00-homepage/03-templates-00-homepage.html"}];
 		var patternState = ""
 		var cssEnabled = false; //TODO
 	</script>

@@ -1,4 +1,12 @@
 import angular from 'angular';
 import ngAnimate from 'angular-animate';
 
-export default angular.module("DopApp", [ngAnimate]);
+window.getScope = (el) => angular.element(el).scope();
+
+const app = angular.module("DopApp", [ngAnimate]);
+app.config(function($interpolateProvider) {
+	$interpolateProvider.startSymbol('{|');
+	$interpolateProvider.endSymbol('|}');
+});
+
+export default app;

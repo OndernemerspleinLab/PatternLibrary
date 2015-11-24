@@ -1626,9 +1626,9 @@
         </p>
     </div>
 </div>	<div class="page" id="page">
-<div class="homepageHeader">
+<div class="homepageHeader" stories-view>
 	<div class="homepageHeader-background">
-		<div class="homepageHeader-background-image" style="background-image: url('../../images/homepage/header-ondernemer-krijn-ratsma.jpg')"></div>
+		<div class="homepageHeader-background-image" style="background-image: url('../../images/homepage/header-ondernemer-krijn-ratsma.jpg')" ng-style="viewModel.imageStyle"></div>
 	</div>
 <header class="header" role="banner">
 	<div class="header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems">
@@ -1649,14 +1649,14 @@
 	</div>
 </header>	<div class="layoutContainer gridContainer homepageHeader-container">
 		<div class="column homepageHeader-topTasks">
-			<label class="filterContent">
+			<label class="filterContent" audience-selector>
 					<span class="filterContent-text">
 						Wat de meeste
 					</span>
-					<select class="filterContent-select">
-						<option>Ondernemers</option>
-						<option>Starters</option>
-						<option>Ervaren ondernemers</option>
+					<select class="filterContent-select" ng-model="viewModel.selectedAudienceStore.selectedAudience">
+						<option value="Ondernemers">Ondernemers</option>
+						<option value="Starters">Starters</option>
+						<option value="Ervaren ondernemers">Ervaren ondernemers</option>
 					</select>
 					<span class="filterContent-text">
 						willen weten
@@ -1664,192 +1664,435 @@
 
 			</label>
 
-			<ul class="labelList">
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Een rechtsvorm kiezen
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							De VAR: onmisbaar voor zzp'ers
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							In 10 stappen naar een eigen bedrijf
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Financiering vinden
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Een ondernemingsplan maken
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Btw-aangifte doen voor starters
-						</span></span>
-					</a>
-				</li>
-			</ul>
+			<script type="text/ng-template" id='/topTasks.html'>
+				<ul class="labelList">
+					<li class="labelList-item" ng-repeat="topTask in viewModel.topTasks track by $index">
+						<a ng-href="{|topTask.href|}" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span ng-bind="topTask.text">
+							</span></span>
+						</a>
+					</li>
+				</ul>
+			</script>
+			<div top-tasks>
+				<ul class="labelList">
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Een rechtsvorm kiezen
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								De VAR: onmisbaar voor zzp'ers
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								In 10 stappen naar een eigen bedrijf
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Financiering vinden
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Een ondernemingsplan maken
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Btw-aangifte doen voor starters
+							</span></span>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
+
+	<a href="http://verhalen.ondernemersplein.nl/artikelen/#2590/krijn-ratsma" ng-href="viewModel.story.href" class="headerStory">
+		<h2 class="headerStory-intro">Ondernemersverhaal</h2>
+		<blockquote class="headerStory-blockquote">
+			<p class="headerStory-quote" ng-bind="viewModel.story.quote">Doe de dingen waar je zelf energie van krijgt</p>
+			<footer class="headerStory-citation" ng-bind="viewModel.story.citation">
+				Krijn Ratsma
+			</footer>
+		</blockquote>
+	</a>
 </div>		<div class="main">
+			<div themes-view>
+					<!-- Alle ondernemers -->
+				<div class="layoutContainer gridContainer" ng-if="viewModel.selectedAudience == 'Ondernemers'">
+					<div class="column column--full">
+						<ul class="linkList list list--triple themeList">
+							<li class="linkList-item themeList-item">
+								<a href=	"&#x2F;patterns&#x2F;05-usability-02-mkb-01-personeel&#x2F;05-usability-02-mkb-01-personeel.html" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-4094-werkgelegenheid"></use>
+									</svg>
+									<span class="headingLink-text">
+										<span class="underliner">Personeel</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="&#x2F;patterns&#x2F;05-usability-01-starter-01-bedrijf-starten&#x2F;05-usability-01-starter-01-bedrijf-starten.html" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6005-starters"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Bedrijf starten</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-budget-9000"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Geldzaken</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-world"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Internationaal ondernemen</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6019-innovatie"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Innovatie</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-5066-milieu"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Huisvesting en milieu</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="&#x2F;patterns&#x2F;05-usability-03-zzp-01-freelance-en-zzp&#x2F;05-usability-03-zzp-01-freelance-en-zzp.html" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6033-zzp"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Freelance en zzp</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-9012-koopwoning"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Bedrijf stoppen of verkopen</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6023-ondernemen"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Duurzaam ondernemen</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-4070-beschermen"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Bedrijf beschermen</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-0017-bespreking"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Bedrijf organiseren</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-1008-oog"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Marketing</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-9001-rekening"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Administatie</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-9004-belastingen"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Belastingen</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item">
+								<a href="#" class="headingLink">
+									<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6028-producten"></use>
+									</svg>
+									<span class="headingLink-text"><span class="underliner">Product en dienst</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="column column--full">
+						<div class="linkList linkList--grey">
+							<div class="linkList-itemMore" style="padding:0.5em 0;">
+			                    <a href="#" class="interfaceLink">
+<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>			                    	<span class="interfaceLink-text"><span class="underliner">Bekijk alle onderwerpen</span></span>
+			                    </a>
+			                </div>
+		                </div>
+					</div>
+				</div>
 
-
-			<div class="layoutContainer gridContainer">
-				<div class="column column--full">
-					<ul class="linkList list list--triple themeList">
-						<li class="linkList-item themeList-item">
-							<a href=	"&#x2F;patterns&#x2F;05-usability-02-mkb-01-personeel&#x2F;05-usability-02-mkb-01-personeel.html" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-4094-werkgelegenheid"></use>
-								</svg>
-								<span class="headingLink-text">
-									<span class="underliner">Personeel</span>
-								</span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="&#x2F;patterns&#x2F;05-usability-01-starter-01-bedrijf-starten&#x2F;05-usability-01-starter-01-bedrijf-starten.html" class="headingLink">
+				<!-- Startende ondernemers -->
+				<div class="layoutContainer gridContainer" ng-if="viewModel.selectedAudience == 'Starters'" ng-cloak>
+					<div class="column column--third" style="margin-bottom:1rem;">
+	                	<h2 class="h3" style="margin-top:0;">
+	                		<a href="&#x2F;patterns&#x2F;05-usability-01-starter-01-bedrijf-starten&#x2F;05-usability-01-starter-01-bedrijf-starten.html" class="headingLink">
 								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6005-starters"></use>
 								</svg>
 								<span class="headingLink-text"><span class="underliner">Bedrijf starten</span></span>
 <svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-budget-9000"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Geldzaken</span></span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-world"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Internationaal ondernemen</span></span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6019-innovatie"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Innovatie</span></span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-5066-milieu"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Huisvesting en milieu</span></span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="&#x2F;patterns&#x2F;05-usability-03-zzp-01-freelance-en-zzp&#x2F;05-usability-03-zzp-01-freelance-en-zzp.html" class="headingLink">
+	                	</h2>
+						<ul class="linkList linkList--grey list">
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Starten vanuit huis</span></span></a></li>
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">In 10 stappen naar een eigen bedrijf</span></span></a></li>
+						</ul>
+	                	<h2 class="h3">
+	                		<a href="&#x2F;patterns&#x2F;05-usability-03-zzp-01-freelance-en-zzp&#x2F;05-usability-03-zzp-01-freelance-en-zzp.html" class="headingLink">
 								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6033-zzp"></use>
 								</svg>
 								<span class="headingLink-text"><span class="underliner">Freelance en zzp</span></span>
 <svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
+	                	</h2>
+						<ul class="linkList linkList--grey list">
+							<li class="linkList-item"><a href="&#x2F;patterns&#x2F;05-usability-03-zzp-02-var&#x2F;05-usability-03-zzp-02-var.html" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Verklaring Arbeidsrelatie (VAR)</span></span></a></li>
+							<li class="linkList-item"><a href="&#x2F;patterns&#x2F;05-usability-03-zzp-00-samenwerken-als-zzpers&#x2F;05-usability-03-zzp-00-samenwerken-als-zzpers.html" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Samenwerken als zzp'ers</span></span></a></li>
+						</ul>
+					</div>
+					<div class="column column--third">
+	                	<h2 class="h3" style="margin-top:0;">
+	                		<a href="#" class="headingLink">
 								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-9012-koopwoning"></use>
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-9001-rekening"></use>
 								</svg>
-								<span class="headingLink-text"><span class="underliner">Bedrijf stoppen of verkopen</span></span>
+								<span class="headingLink-text"><span class="underliner">Administratie</span></span>
 <svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
+	                	</h2>
+						<ul class="linkList linkList--grey list">
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Hoe beheert u uw administratie?</span></span></a></li>
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Welke eisen bestaan er t.a.v. facturatie?</span></span></a></li>
+						</ul>
+	                	<h2 class="h3">
+	                		<a href="#" class="headingLink">
+								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-budget-9000"></use>
+								</svg>
+								<span class="headingLink-text"><span class="underliner">Geldzaken</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
+	                	</h2>
+						<ul class="linkList linkList--grey list">
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Uw financiën onder controle</span></span></a></li>
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Subsidies</span></span></a></li>
+						</ul>
+					</div>
+					<div class="column column--third">
+						<ul class="linkList list">
+							<li class="linkList-item themeList-item">
+								<a href="#" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Duurzaam ondernemen</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item themeList-item">
+								<a href="&#x2F;patterns&#x2F;05-usability-02-mkb-01-personeel&#x2F;05-usability-02-mkb-01-personeel.html" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Personeel</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item themeList-item">
+								<a href="#" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Bedrijf beschermen</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item themeList-item">
+								<a href="#" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Innovatie</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item themeList-item">
+								<a href="#" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Internationaal ondernemen</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item themeList-item">
+								<a href="#" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Huisvesting en milieu</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+						</ul>
+						<div class="linkList linkList--grey">
+							<div class="linkList-itemMore" style="padding:0.5em 0;">
+			                    <a href="#" class="interfaceLink">
+<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>			                    	<span class="interfaceLink-text"><span class="underliner">Bekijk alle onderwerpen</span></span>
+			                    </a>
+			                </div>
+		                </div>
+					</div>
+				</div>
+
+				<!-- Ervaren ondernemers -->
+				<div class="layoutContainer gridContainer" ng-if="viewModel.selectedAudience == 'Ervaren ondernemers'" ng-cloak>
+					<div class="column column--third" style="margin-bottom:1rem;">
+	                	<h2 class="h3" style="margin-top:0;">
+	                		<a href="&#x2F;patterns&#x2F;05-usability-02-mkb-01-personeel&#x2F;05-usability-02-mkb-01-personeel.html" class="headingLink">
+								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-4094-werkgelegenheid"></use>
+								</svg>
+								<span class="headingLink-text"><span class="underliner">Personeel</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
+	                	</h2>
+						<ul class="linkList linkList--grey list">
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Personeel aannemen</span></span></a></li>
+							<li class="linkList-item"><a href="&#x2F;patterns&#x2F;05-usability-02-mkb-03-ontslagprocedures&#x2F;05-usability-02-mkb-03-ontslagprocedures.html" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Ontslagprocedures</span></span></a></li>
+						</ul>
+	                	<h2 class="h3">
+	                		<a href="&#x2F;patterns&#x2F;05-usability-03-zzp-01-freelance-en-zzp&#x2F;05-usability-03-zzp-01-freelance-en-zzp.html" class="headingLink">
+								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-world"></use>
+								</svg>
+								<span class="headingLink-text"><span class="underliner">Internationaal ondernemen</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
+	                	</h2>
+						<ul class="linkList linkList--grey list">
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Exporteren</span></span></a></li>
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Belastingen bij internationaal ondernemen</span></span></a></li>
+						</ul>
+					</div>
+					<div class="column column--third">
+	                	<h2 class="h3" style="margin-top:0;">
+	                		<a href="#" class="headingLink">
+								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6019-innovatie"></use>
+								</svg>
+								<span class="headingLink-text"><span class="underliner">Innovatie</span></span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
+	                	</h2>
+						<ul class="linkList linkList--grey list">
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Bescherm uw idee of product</span></span></a></li>
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Samen innoveren</span></span></a></li>
+						</ul>
+	                	<h2 class="h3">
+	                		<a href="#" class="headingLink">
 								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
 									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6023-ondernemen"></use>
 								</svg>
 								<span class="headingLink-text"><span class="underliner">Duurzaam ondernemen</span></span>
 <svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-4070-beschermen"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Bedrijf beschermen</span></span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-0017-bespreking"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Bedrijf organiseren</span></span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-1008-oog"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Marketing</span></span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-9001-rekening"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Administatie</span></span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-9004-belastingen"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Belastingen</span></span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-						<li class="linkList-item">
-							<a href="#" class="headingLink">
-								<svg aria-hidden="true" class="headingLink-bigIcon" style="height:2em;width:2em;margin-right:0.5em;">
-									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-6028-producten"></use>
-								</svg>
-								<span class="headingLink-text"><span class="underliner">Product en dienst</span></span>
-<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="column column--full">
-					<div class="linkList linkList--grey">
-						<div class="linkList-itemMore" style="padding:0.5em 0;">
-		                    <a href="#" class="interfaceLink">
-<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>		                    	<span class="interfaceLink-text"><span class="underliner">Bekijk alle onderwerpen</span></span>
-		                    </a>
+	                	</h2>
+						<ul class="linkList linkList--grey list">
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Subsidies voor duurzaam ondernemen</span></span></a></li>
+							<li class="linkList-item"><a href="#" class="interfaceLink"><svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg><span class="interfaceLink-text"><span class="underliner">Energielabel voor bedrijfspand</span></span></a></li>
+						</ul>
+					</div>
+					<div class="column column--third">
+						<ul class="linkList list">
+							<li class="linkList-item themeList-item">
+								<a href="#" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Bedrijf stoppen of verkopen</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item themeList-item">
+								<a href="&#x2F;patterns&#x2F;05-usability-02-mkb-01-personeel&#x2F;05-usability-02-mkb-01-personeel.html" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Freelance en zzp</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item themeList-item">
+								<a href="#" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Bedrijf beschermen</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item themeList-item">
+								<a href="#" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Administratie</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item themeList-item">
+								<a href="#" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Geldzaken</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+							<li class="linkList-item themeList-item">
+								<a href="#" class="headingLink">
+									<span class="headingLink-text">
+										<span class="underliner">Huisvesting en milieu</span>
+									</span>
+<svg class="goIcon headingLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>								</a>
+							</li>
+						</ul>
+						<div class="linkList linkList--grey">
+							<div class="linkList-itemMore" style="padding:0.5em 0;">
+			                    <a href="#" class="interfaceLink">
+<svg class="goIcon interfaceLink-icon" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use></svg>			                    	<span class="interfaceLink-text"><span class="underliner">Bekijk alle onderwerpen</span></span>
+			                    </a>
+			                </div>
 		                </div>
-	                </div>
+					</div>
 				</div>
+
 			</div>
+
 			<div class="crs-wrapper">
 				<div class="layoutContainer gridContainer gridContainer--stretchItems">
 <div class="column column--third blockContainer">

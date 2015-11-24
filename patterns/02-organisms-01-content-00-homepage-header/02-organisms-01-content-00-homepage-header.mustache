@@ -1,18 +1,18 @@
-&lt;div class=&quot;homepageHeader&quot;&gt;
+&lt;div class=&quot;homepageHeader&quot; stories-view&gt;
 &Tab;&lt;div class=&quot;homepageHeader-background&quot;&gt;
-&Tab;&Tab;&lt;div class=&quot;homepageHeader-background-image&quot; style=&quot;background-image: url(&apos;../../images/homepage/header-ondernemer-krijn-ratsma.jpg&apos;)&quot;&gt;&lt;/div&gt;
+&Tab;&Tab;&lt;div class=&quot;homepageHeader-background-image&quot; style=&quot;background-image: url(&apos;../../images/homepage/header-ondernemer-krijn-ratsma.jpg&apos;)&quot; ng-style=&quot;viewModel.imageStyle&quot;&gt;&lt;/div&gt;
 &Tab;&lt;/div&gt;
 &Tab;{{&gt; organisms-header }}
 &Tab;&lt;div class=&quot;layoutContainer gridContainer homepageHeader-container&quot;&gt;
 &Tab;&Tab;&lt;div class=&quot;column homepageHeader-topTasks&quot;&gt;
-&Tab;&Tab;&Tab;&lt;label class=&quot;filterContent&quot;&gt;
+&Tab;&Tab;&Tab;&lt;label class=&quot;filterContent&quot; audience-selector&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;filterContent-text&quot;&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&Tab;Wat de meeste
 &Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;select class=&quot;filterContent-select&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option&gt;Ondernemers&lt;/option&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option&gt;Starters&lt;/option&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option&gt;Ervaren ondernemers&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;select class=&quot;filterContent-select&quot; ng-model=&quot;viewModel.selectedAudienceStore.selectedAudience&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;Ondernemers&quot;&gt;Ondernemers&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;Starters&quot;&gt;Starters&lt;/option&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;option value=&quot;Ervaren ondernemers&quot;&gt;Ervaren ondernemers&lt;/option&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&lt;/select&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;filterContent-text&quot;&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&Tab;willen weten
@@ -20,50 +20,72 @@
 
 &Tab;&Tab;&Tab;&lt;/label&gt;
 
-&Tab;&Tab;&Tab;&lt;ul class=&quot;labelList&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;Een rechtsvorm kiezen
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;De VAR: onmisbaar voor zzp&apos;ers
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;In 10 stappen naar een eigen bedrijf
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;Financiering vinden
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;Een ondernemingsplan maken
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;Btw-aangifte doen voor starters
-&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
-&Tab;&Tab;&Tab;&lt;/ul&gt;
+&Tab;&Tab;&Tab;&lt;script type=&quot;text/ng-template&quot; id=&apos;/topTasks.html&apos;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;ul class=&quot;labelList&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot; ng-repeat=&quot;topTask in viewModel.topTasks track by $index&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a ng-href=&quot;{|topTask.href|}&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span ng-bind=&quot;topTask.text&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/ul&gt;
+&Tab;&Tab;&Tab;&lt;/script&gt;
+&Tab;&Tab;&Tab;&lt;div top-tasks&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;ul class=&quot;labelList&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;Een rechtsvorm kiezen
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;De VAR: onmisbaar voor zzp&apos;ers
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;In 10 stappen naar een eigen bedrijf
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;Financiering vinden
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;Een ondernemingsplan maken
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;li class=&quot;labelList-item&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;Btw-aangifte doen voor starters
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/li&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/ul&gt;
+&Tab;&Tab;&Tab;&lt;/div&gt;
 &Tab;&Tab;&lt;/div&gt;
 &Tab;&lt;/div&gt;
+
+&Tab;&lt;a href=&quot;http://verhalen.ondernemersplein.nl/artikelen/#2590/krijn-ratsma&quot; ng-href=&quot;viewModel.story.href&quot; class=&quot;headerStory&quot;&gt;
+&Tab;&Tab;&lt;h2 class=&quot;headerStory-intro&quot;&gt;Ondernemersverhaal&lt;/h2&gt;
+&Tab;&Tab;&lt;blockquote class=&quot;headerStory-blockquote&quot;&gt;
+&Tab;&Tab;&Tab;&lt;p class=&quot;headerStory-quote&quot; ng-bind=&quot;viewModel.story.quote&quot;&gt;Doe de dingen waar je zelf energie van krijgt&lt;/p&gt;
+&Tab;&Tab;&Tab;&lt;footer class=&quot;headerStory-citation&quot; ng-bind=&quot;viewModel.story.citation&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;Krijn Ratsma
+&Tab;&Tab;&Tab;&lt;/footer&gt;
+&Tab;&Tab;&lt;/blockquote&gt;
+&Tab;&lt;/a&gt;
 &lt;/div&gt;

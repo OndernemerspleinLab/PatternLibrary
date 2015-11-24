@@ -924,9 +924,9 @@
           <div class="sg-pattern">
             <h2 class="sg-pattern-head" ><a href="../../patterns/02-organisms-01-content-00-homepage-header&#x2F;02-organisms-01-content-00-homepage-header.html" class="patternLink" data-patternpartial="">homepage-header</a></h2>
             <div class="sg-pattern-body">
-              <div class="homepageHeader">
+              <div class="homepageHeader" stories-view>
 	<div class="homepageHeader-background">
-		<div class="homepageHeader-background-image" style="background-image: url('../../images/homepage/header-ondernemer-krijn-ratsma.jpg')"></div>
+		<div class="homepageHeader-background-image" style="background-image: url('../../images/homepage/header-ondernemer-krijn-ratsma.jpg')" ng-style="viewModel.imageStyle"></div>
 	</div>
 <header class="header" role="banner">
 	<div class="header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems">
@@ -947,14 +947,14 @@
 	</div>
 </header>	<div class="layoutContainer gridContainer homepageHeader-container">
 		<div class="column homepageHeader-topTasks">
-			<label class="filterContent">
+			<label class="filterContent" audience-selector>
 					<span class="filterContent-text">
 						Wat de meeste
 					</span>
-					<select class="filterContent-select">
-						<option>Ondernemers</option>
-						<option>Starters</option>
-						<option>Ervaren ondernemers</option>
+					<select class="filterContent-select" ng-model="viewModel.selectedAudienceStore.selectedAudience">
+						<option value="Ondernemers">Ondernemers</option>
+						<option value="Starters">Starters</option>
+						<option value="Ervaren ondernemers">Ervaren ondernemers</option>
 					</select>
 					<span class="filterContent-text">
 						willen weten
@@ -962,60 +962,82 @@
 
 			</label>
 
-			<ul class="labelList">
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Een rechtsvorm kiezen
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							De VAR: onmisbaar voor zzp'ers
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							In 10 stappen naar een eigen bedrijf
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Financiering vinden
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Een ondernemingsplan maken
-						</span></span>
-					</a>
-				</li>
-				<li class="labelList-item">
-					<a href="#" class="labelList-link labelList-link--white">
-						<span class="labelList-text"><span>
-							Btw-aangifte doen voor starters
-						</span></span>
-					</a>
-				</li>
-			</ul>
+			<script type="text/ng-template" id='/topTasks.html'>
+				<ul class="labelList">
+					<li class="labelList-item" ng-repeat="topTask in viewModel.topTasks track by $index">
+						<a ng-href="{|topTask.href|}" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span ng-bind="topTask.text">
+							</span></span>
+						</a>
+					</li>
+				</ul>
+			</script>
+			<div top-tasks>
+				<ul class="labelList">
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Een rechtsvorm kiezen
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								De VAR: onmisbaar voor zzp'ers
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								In 10 stappen naar een eigen bedrijf
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Financiering vinden
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Een ondernemingsplan maken
+							</span></span>
+						</a>
+					</li>
+					<li class="labelList-item">
+						<a href="#" class="labelList-link labelList-link--white">
+							<span class="labelList-text"><span>
+								Btw-aangifte doen voor starters
+							</span></span>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
+
+	<a href="http://verhalen.ondernemersplein.nl/artikelen/#2590/krijn-ratsma" ng-href="viewModel.story.href" class="headerStory">
+		<h2 class="headerStory-intro">Ondernemersverhaal</h2>
+		<blockquote class="headerStory-blockquote">
+			<p class="headerStory-quote" ng-bind="viewModel.story.quote">Doe de dingen waar je zelf energie van krijgt</p>
+			<footer class="headerStory-citation" ng-bind="viewModel.story.citation">
+				Krijn Ratsma
+			</footer>
+		</blockquote>
+	</a>
 </div>
               <div class="sg-code" style="display: none">
                 <h3 class="sg-code-head">HTML</h3>
                 <pre class="sg-code-html">
                   <code>
-                    &lt;div class=&quot;homepageHeader&quot;&gt;
+                    &lt;div class=&quot;homepageHeader&quot; stories-view&gt;
 	&lt;div class=&quot;homepageHeader-background&quot;&gt;
-		&lt;div class=&quot;homepageHeader-background-image&quot; style=&quot;background-image: url(&#39;..&#x2F;..&#x2F;images&#x2F;homepage&#x2F;header-ondernemer-krijn-ratsma.jpg&#39;)&quot;&gt;&lt;&#x2F;div&gt;
+		&lt;div class=&quot;homepageHeader-background-image&quot; style=&quot;background-image: url(&#39;..&#x2F;..&#x2F;images&#x2F;homepage&#x2F;header-ondernemer-krijn-ratsma.jpg&#39;)&quot; ng-style=&quot;viewModel.imageStyle&quot;&gt;&lt;&#x2F;div&gt;
 	&lt;&#x2F;div&gt;
 &lt;header class=&quot;header&quot; role=&quot;banner&quot;&gt;
 	&lt;div class=&quot;header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems&quot;&gt;
@@ -1036,14 +1058,14 @@
 	&lt;&#x2F;div&gt;
 &lt;&#x2F;header&gt;	&lt;div class=&quot;layoutContainer gridContainer homepageHeader-container&quot;&gt;
 		&lt;div class=&quot;column homepageHeader-topTasks&quot;&gt;
-			&lt;label class=&quot;filterContent&quot;&gt;
+			&lt;label class=&quot;filterContent&quot; audience-selector&gt;
 					&lt;span class=&quot;filterContent-text&quot;&gt;
 						Wat de meeste
 					&lt;&#x2F;span&gt;
-					&lt;select class=&quot;filterContent-select&quot;&gt;
-						&lt;option&gt;Ondernemers&lt;&#x2F;option&gt;
-						&lt;option&gt;Starters&lt;&#x2F;option&gt;
-						&lt;option&gt;Ervaren ondernemers&lt;&#x2F;option&gt;
+					&lt;select class=&quot;filterContent-select&quot; ng-model=&quot;viewModel.selectedAudienceStore.selectedAudience&quot;&gt;
+						&lt;option value=&quot;Ondernemers&quot;&gt;Ondernemers&lt;&#x2F;option&gt;
+						&lt;option value=&quot;Starters&quot;&gt;Starters&lt;&#x2F;option&gt;
+						&lt;option value=&quot;Ervaren ondernemers&quot;&gt;Ervaren ondernemers&lt;&#x2F;option&gt;
 					&lt;&#x2F;select&gt;
 					&lt;span class=&quot;filterContent-text&quot;&gt;
 						willen weten
@@ -1051,52 +1073,74 @@
 
 			&lt;&#x2F;label&gt;
 
-			&lt;ul class=&quot;labelList&quot;&gt;
-				&lt;li class=&quot;labelList-item&quot;&gt;
-					&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-						&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-							Een rechtsvorm kiezen
-						&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-					&lt;&#x2F;a&gt;
-				&lt;&#x2F;li&gt;
-				&lt;li class=&quot;labelList-item&quot;&gt;
-					&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-						&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-							De VAR: onmisbaar voor zzp&#39;ers
-						&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-					&lt;&#x2F;a&gt;
-				&lt;&#x2F;li&gt;
-				&lt;li class=&quot;labelList-item&quot;&gt;
-					&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-						&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-							In 10 stappen naar een eigen bedrijf
-						&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-					&lt;&#x2F;a&gt;
-				&lt;&#x2F;li&gt;
-				&lt;li class=&quot;labelList-item&quot;&gt;
-					&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-						&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-							Financiering vinden
-						&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-					&lt;&#x2F;a&gt;
-				&lt;&#x2F;li&gt;
-				&lt;li class=&quot;labelList-item&quot;&gt;
-					&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-						&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-							Een ondernemingsplan maken
-						&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-					&lt;&#x2F;a&gt;
-				&lt;&#x2F;li&gt;
-				&lt;li class=&quot;labelList-item&quot;&gt;
-					&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
-						&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
-							Btw-aangifte doen voor starters
-						&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
-					&lt;&#x2F;a&gt;
-				&lt;&#x2F;li&gt;
-			&lt;&#x2F;ul&gt;
+			&lt;script type=&quot;text&#x2F;ng-template&quot; id=&#39;&#x2F;topTasks.html&#39;&gt;
+				&lt;ul class=&quot;labelList&quot;&gt;
+					&lt;li class=&quot;labelList-item&quot; ng-repeat=&quot;topTask in viewModel.topTasks track by $index&quot;&gt;
+						&lt;a ng-href=&quot;{|topTask.href|}&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+							&lt;span class=&quot;labelList-text&quot;&gt;&lt;span ng-bind=&quot;topTask.text&quot;&gt;
+							&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+						&lt;&#x2F;a&gt;
+					&lt;&#x2F;li&gt;
+				&lt;&#x2F;ul&gt;
+			&lt;&#x2F;script&gt;
+			&lt;div top-tasks&gt;
+				&lt;ul class=&quot;labelList&quot;&gt;
+					&lt;li class=&quot;labelList-item&quot;&gt;
+						&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+							&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+								Een rechtsvorm kiezen
+							&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+						&lt;&#x2F;a&gt;
+					&lt;&#x2F;li&gt;
+					&lt;li class=&quot;labelList-item&quot;&gt;
+						&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+							&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+								De VAR: onmisbaar voor zzp&#39;ers
+							&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+						&lt;&#x2F;a&gt;
+					&lt;&#x2F;li&gt;
+					&lt;li class=&quot;labelList-item&quot;&gt;
+						&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+							&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+								In 10 stappen naar een eigen bedrijf
+							&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+						&lt;&#x2F;a&gt;
+					&lt;&#x2F;li&gt;
+					&lt;li class=&quot;labelList-item&quot;&gt;
+						&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+							&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+								Financiering vinden
+							&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+						&lt;&#x2F;a&gt;
+					&lt;&#x2F;li&gt;
+					&lt;li class=&quot;labelList-item&quot;&gt;
+						&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+							&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+								Een ondernemingsplan maken
+							&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+						&lt;&#x2F;a&gt;
+					&lt;&#x2F;li&gt;
+					&lt;li class=&quot;labelList-item&quot;&gt;
+						&lt;a href=&quot;#&quot; class=&quot;labelList-link labelList-link--white&quot;&gt;
+							&lt;span class=&quot;labelList-text&quot;&gt;&lt;span&gt;
+								Btw-aangifte doen voor starters
+							&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+						&lt;&#x2F;a&gt;
+					&lt;&#x2F;li&gt;
+				&lt;&#x2F;ul&gt;
+			&lt;&#x2F;div&gt;
 		&lt;&#x2F;div&gt;
 	&lt;&#x2F;div&gt;
+
+	&lt;a href=&quot;http:&#x2F;&#x2F;verhalen.ondernemersplein.nl&#x2F;artikelen&#x2F;#2590&#x2F;krijn-ratsma&quot; ng-href=&quot;viewModel.story.href&quot; class=&quot;headerStory&quot;&gt;
+		&lt;h2 class=&quot;headerStory-intro&quot;&gt;Ondernemersverhaal&lt;&#x2F;h2&gt;
+		&lt;blockquote class=&quot;headerStory-blockquote&quot;&gt;
+			&lt;p class=&quot;headerStory-quote&quot; ng-bind=&quot;viewModel.story.quote&quot;&gt;Doe de dingen waar je zelf energie van krijgt&lt;&#x2F;p&gt;
+			&lt;footer class=&quot;headerStory-citation&quot; ng-bind=&quot;viewModel.story.citation&quot;&gt;
+				Krijn Ratsma
+			&lt;&#x2F;footer&gt;
+		&lt;&#x2F;blockquote&gt;
+	&lt;&#x2F;a&gt;
 &lt;&#x2F;div&gt;
                   </code>
                 </pre>
