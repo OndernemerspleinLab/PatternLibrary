@@ -31,8 +31,8 @@
 		@include noUnderline;
 		display: block;
 		padding: 0.7rem 0.8rem;
-		color: getColor(grijs light);
-		fill: getColor(grijs light);
+		color: getColor(wit);
+		fill: getColor(wit);
 		position: relative;
 		@include zIndex(tabs normal);
 
@@ -62,8 +62,8 @@
 				fill: getColor(wit);
 			}
 			@include mqGreaterThan(medium) {
-				color: getColor(grijs light);
-				fill: getColor(grijs light);
+				color: getColor(wit);
+				fill: getColor(wit);
 			}
 
 			@include before() {

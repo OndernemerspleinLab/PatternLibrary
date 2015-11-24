@@ -13,7 +13,7 @@
 		font-size: getFontSize(small);
 		line-height: 1;
 		flex: 0 0 auto;
-		padding: 0 $halfSpace $halfSpace $halfSpace;
+		padding: 0 $halfSpace 0.45rem $halfSpace;
 
 		background-color: getColor(grijs lightest);
 		// CRS Container
@@ -277,7 +277,7 @@
 	// Right Column
 	&--side {
 		margin-top: 0;
-		margin-bottom: 1.5em;
+		margin-bottom: 1em;
 		border-bottom: 4px solid getColor(grijs border);
 		padding-bottom: 0.5em;
 		padding-left: 0;
