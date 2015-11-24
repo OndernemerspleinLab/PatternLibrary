@@ -107,7 +107,10 @@
 			var links = [].slice.call(document.getElementsByTagName("a"));
 
 			links.forEach(function (link) {
-				link.href = link.getAttribute("href").replace(/^\//, "/PatternLibrary/	");
+				var href = link.getAttribute("href");
+				if (typeof href === "string") {
+					link.href = href.replace(/^\//, "/PatternLibrary/");
+				}
 			});
 		}());
 	</script>
