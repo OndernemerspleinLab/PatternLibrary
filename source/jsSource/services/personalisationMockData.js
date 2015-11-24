@@ -18,7 +18,7 @@ export const audiences = [
 export const topTasks = [
 	{
 		text: "Een rechtsvorm kiezen",
-		href: "#",
+		href: "../05-usability-01-starter-02-alle-rechtsvormen/05-usability-01-starter-02-alle-rechtsvormen.html",
 		audiences: [
 			"Ondernemers",
 			"Starters",
@@ -27,7 +27,7 @@ export const topTasks = [
 
 	{
 		text: "De VAR: onmisbaar voor zzp'ers",
-		href: "#",
+		href: "../05-usability-03-zzp-03-var-onmisbaar/05-usability-03-zzp-03-var-onmisbaar.html",
 		audiences: [
 			"Ondernemers",
 		],
@@ -62,7 +62,7 @@ export const topTasks = [
 
 	{
 		text: "Btw-aangifte doen voor Starters",
-		href: "#",
+		href: "../05-usability-01-starter-00-aangifte-doen/05-usability-01-starter-00-aangifte-doen.html",
 		audiences: [
 			"Ondernemers",
 			"Starters",
@@ -93,7 +93,7 @@ export const topTasks = [
 		text: "Hoe ontsla ik personeel",
 		href: "#",
 		audiences: [
-			"Ervaren ondernemers",
+			"../05-usability-02-mkb-00-omgevingsvergunning/05-usability-02-mkb-00-omgevingsvergunning.html",
 		],
 	},
 	{
