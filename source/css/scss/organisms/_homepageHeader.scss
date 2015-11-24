@@ -16,7 +16,6 @@
 			smallMedium: calcColumnWidth(2/3)
 		));
 	}
-
 	&-background {
 		position: absolute;
 		left: 0;
@@ -26,9 +25,6 @@
 		overflow: hidden;
 
 		&-image {
-			@include mqLesserThan(smallMedium) {
-				display: none;
-			}
 			position: absolute;
 			left: 0;
 			right: 0;
@@ -39,6 +35,22 @@
 			background-position: 66% 90%;
 
 			animation: zoomPhoto 10s forwards;
+			@include mqLesserThan(smallMedium) {
+				display: none;
+
+				@include after("") {
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					background-image: linear-gradient(
+						to bottom,
+						hsla(0, 100%, 100%, 0.5),
+						hsla(0, 100%, 100%, 0) 44%
+					);
+				}
+			}
 		}
 	}
 }
