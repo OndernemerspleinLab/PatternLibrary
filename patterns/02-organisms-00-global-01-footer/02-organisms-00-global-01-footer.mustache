@@ -3,3 +3,13 @@
 &Tab;{{&gt; molecules-social-follow }}
 &Tab;{{&gt; molecules-colophon }}
 &lt;/footer&gt;
+
+
+
+&lt;script type=&quot;text/ng-template&quot; id=&apos;/deadLink.html&apos;&gt;
+&Tab;&lt;div class=&quot;deadLink&quot; ng-click=&quot;viewModel.close(&apos;deadLinkAlert&apos;)&quot; ng-if=&quot;viewModel.isOpened(&apos;deadLinkAlert&apos;)&quot;&gt;&lt;strong&gt;Deze link doet het nog niet.&lt;/strong&gt;
+&Tab;&Tab;&lt;button ng-click=&quot;viewModel.close(&apos;deadLinkAlert&apos;)&quot;&gt;Ok&eacute;..&lt;/button&gt;
+&Tab;&lt;/div&gt;
+&lt;/script&gt;
+
+&lt;div dead-link&gt;&lt;/div&gt;
