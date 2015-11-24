@@ -12,7 +12,7 @@ class Story {
 	}
 	get imageStyle() {
 		return {
-			'background-image': "url('" + this.story.img + "')",
+			'background-image': `url('${this.story.img.url}')`,
 		};
 	}
 }

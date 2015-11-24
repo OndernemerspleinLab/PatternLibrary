@@ -1,4 +1,5 @@
 import {includes, negate, partial} from 'utils/functional';
+import {preloadImages} from 'utils/preloadImages';
 
 export const audiences = [
 	{
@@ -114,7 +115,10 @@ export const topTasks = [
 
 export const stories = [
 	{
-		img: '../../images/homepage/header-ondernemer-krijn-ratsma1440.jpg',
+		img: {
+			url: '../../images/homepage/header-ondernemer-krijn-ratsma1440.jpg',
+			alt: 'Ondernemer Krijn Ratsma',
+		},
 		quote: 'Doe de dingen waar je zelf energie van krijgt',
 		citation: 'Krijn Ratsma',
 		href: 'http://verhalen.ondernemersplein.nl/artikelen/#2590/krijn-ratsma',
@@ -125,7 +129,10 @@ export const stories = [
 
 
 	{
-		img: '../../images/homepage/header-starter-wouterjan-stikkel1440.jpg',
+		img: {
+			url: '../../images/homepage/header-starter-wouterjan-stikkel1440.jpg',
+			alt: 'Ondernemer Wouterjan Stikkel',
+		},
 		quote: 'Ik heb alles gefinancierd met zakgeld',
 		citation: 'Wouterjan Stikkel',
 		href: 'http://verhalen.ondernemersplein.nl/artikelen/#1533/wouterjan-stikkel',
@@ -135,7 +142,10 @@ export const stories = [
 	},
 
 	{
-		img: '../../images/homepage/header-starter-ted-griffioen1440.jpg',
+		img: {
+			url: '../../images/homepage/header-starter-ted-griffioen1440.jpg',
+			alt: 'Ondernemer Ted Griffioen',
+		},
 		quote: 'Wij kunnen onze eigen werkplek gaaf maken',
 		citation: 'Ted Griffioen',
 		href: 'http://verhalen.ondernemersplein.nl/artikelen/#2439/ted-griffioen​',
@@ -144,6 +154,9 @@ export const stories = [
 		],
 	},
 ];
+
+const images = stories.map(({img: {url}}) => url);
+preloadImages(images);
 
 const isForAudience = (audience, {audiences}) => includes(audiences, audience);
 
