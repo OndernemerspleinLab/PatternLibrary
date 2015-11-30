@@ -77,13 +77,6 @@ export const topTasks = [
 		],
 	},
 	{
-		text: "Financiering vinden",
-		href: "#",
-		audiences: [
-			"Ervaren ondernemers",
-		],
-	},
-	{
 		text: "Nieuw product vastleggen",
 		href: "#",
 		audiences: [
@@ -92,9 +85,9 @@ export const topTasks = [
 	},
 	{
 		text: "Hoe ontsla ik personeel",
-		href: "#",
+		href: "../05-usability-02-mkb-03-ontslagprocedures/05-usability-02-mkb-03-ontslagprocedures.html",
 		audiences: [
-			"../05-usability-02-mkb-00-omgevingsvergunning/05-usability-02-mkb-00-omgevingsvergunning.html",
+			"Ervaren ondernemers",
 		],
 	},
 	{
@@ -105,7 +98,7 @@ export const topTasks = [
 		],
 	},
 	{
-		text: "Uitstel van betaling en betalingsregeling",
+		text: "Exporteren",
 		href: "#",
 		audiences: [
 			"Ervaren ondernemers",
