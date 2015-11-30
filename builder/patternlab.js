@@ -1,14 +1,16 @@
 /* 
- * patternlab-node - v0.9.1 - 2015 
+ * patternlab-node - v0.15.1 - 2015 
  * 
- * [object Object], and the web community.
+ * Brian Muenzenmeyer, and the web community.
  * Licensed under the MIT license. 
  * 
  * Many thanks to Brad Frost and Dave Olsen for inspiration, encouragement, and advice. 
  *
  */
 
-var patternlab_engine = function(){
+var patternlab_engine = function () {
+  'use strict';
+
   var path = require('path'),
   fs = require('fs-extra'),
   extend = require('util')._extend,
@@ -18,13 +20,11 @@ var patternlab_engine = function(){
   of = require('./object_factory'),
   pa = require('./pattern_assembler'),
   mh = require('./media_hunter'),
-  lh = require('./lineage_hunter'),
   pe = require('./pattern_exporter'),
-  pa = require('./pattern_assembler'),
   he = require('html-entities').AllHtmlEntities,
   patternlab = {};
 
-  patternlab.package =fs.readJSONSync('./package.json');
+  patternlab.package = fs.readJSONSync('./package.json');
   patternlab.config = fs.readJSONSync('./config.json');
 
   function getVersion() {
@@ -36,7 +36,7 @@ var patternlab_engine = function(){
     console.log('===============================');
     console.log('Command Line Arguments');
     console.log('patternlab:only_patterns');
-    console.log(' > Compiles the patterns only, outputting to ./public/patterns');
+    console.log(' > Compiles the patterns only, outputting to config.patterns.public');
     console.log('patternlab:v');
     console.log(' > Retrieve the version of patternlab-node you have installed');
     console.log('patternlab:help');
@@ -54,9 +54,7 @@ var patternlab_engine = function(){
     }
   }
 
-  function buildPatterns(callback){
-    var assembler = new pa();
-
+  function buildPatterns(deletePatternDir){
     patternlab.data = fs.readJSONSync('./source/_data/data.json');
     patternlab.listitems = fs.readJSONSync('./source/_data/listitems.json');
     patternlab.header = fs.readFileSync('./source/_patternlab-files/pattern-header-footer/header.html', 'utf8');
@@ -65,147 +63,117 @@ var patternlab_engine = function(){
     patternlab.partials = {};
     patternlab.data.link = {};
 
-    diveSync('./source/_patterns', function(err, file){
+    var pattern_assembler = new pa(),
+    entity_encoder = new he(),
+    pattern_exporter = new pe(),
+    patterns_dir = './source/_patterns';
 
-      //log any errors
-      if(err){
-        console.log(err);
-        return;
-      }
+    pattern_assembler.combine_listItems(patternlab);
 
-      //extract some information
-      var abspath = file.substring(2);
-      var subdir = path.dirname(path.relative('./source/_patterns', file)).replace('\\', '/');
-      var filename = path.basename(file);
-
-      //ignore _underscored patterns, json (for now), and dotfiles
-      if(filename.charAt(0) === '_' || path.extname(filename) === '.json' || filename.charAt(0) === '.'){
-        return;
-      }
-
-      //TODO: https://github.com/pattern-lab/patternlab-node/issues/88 check for pattern parameters before we do much else. need to remove them into a data object so the rest of the filename parsing works
-      //TODO: https://github.com/pattern-lab/patternlab-node/issues/95 check for patternstylemodifiers before we do much else. need to remove these from the template for proper rendering
-
-      //make a new Pattern Object
-      currentPattern = new of.oPattern(subdir, filename);
-
-      //see if this file has a state
-      assembler.setPatternState(currentPattern, patternlab);
-
-      //look for a json file for this template
-      try {
-        var jsonFilename = abspath.substr(0, abspath.lastIndexOf(".")) + ".json";
-        currentPattern.data = fs.readJSONSync(jsonFilename);
-      }
-      catch(e) {
-
-      }
-      currentPattern.template = fs.readFileSync(abspath, 'utf8');
-
-      //find pattern lineage
-      var lineage_hunter = new lh();
-      lineage_hunter.find_lineage(currentPattern, patternlab);
-
-      //add as a partial in case this is referenced later.  convert to syntax needed by existing patterns
-      var sub = subdir.substring(subdir.indexOf('-') + 1);
-      var folderIndex = sub.indexOf(path.sep);
-      var cleanSub = sub.substring(0, folderIndex);
-
-      //add any templates found to an object of partials, so downstream templates may use them too
-      //look for the full path on nested patters, else expect it to be flat
-      var partialname = '';
-      if(cleanSub !== ''){
-        partialname = cleanSub + '-' + currentPattern.patternName;
-      } else{
-        partialname = currentPattern.patternGroup + '-' + currentPattern.patternName;
-      }
-      patternlab.partials[partialname] = currentPattern.template;
-
-      //look for a pseudo pattern by checking if there is a file containing same name, with ~ in it, ending in .json
-      var needle = currentPattern.subdir + '/' + currentPattern.fileName+ '~*.json';
-      var pseudoPatterns = glob.sync(needle, {
-        cwd: 'source/_patterns/', //relative to gruntfile
-        debug: false,
-        nodir: true,
-      });
-
-      if(pseudoPatterns.length > 0){
-        for(var i = 0; i < pseudoPatterns.length; i++){
-          //we want to do everything we normally would here, except instead head the pseudoPattern data
-          var variantFileData = fs.readJSONSync('source/_patterns/' + pseudoPatterns[i]);
-
-          //extend any existing data with variant data
-          variantFileData = extend(variantFileData, currentPattern.data);
-
-          var variantName = pseudoPatterns[i].substring(pseudoPatterns[i].indexOf('~') + 1).split('.')[0];
-          var patternVariant = new of.oPattern(subdir, currentPattern.fileName + '-' + variantName + '.mustache', variantFileData);
-
-          //see if this file has a state
-          assembler.setPatternState(patternVariant, patternlab);
-
-          //use the same template as the non-variant
-          patternVariant.template = currentPattern.template;
-
-          //find pattern lineage
-          lineage_hunter.find_lineage(patternVariant, patternlab);
-
-          //add to patternlab object so we can look these up later.
-          assembler.addPattern(patternVariant, patternlab);
+    //diveSync once to perform iterative populating of patternlab object
+    diveSync(patterns_dir, {
+      filter: function(path, dir) {
+        if(dir){
+          var remainingPath = path.replace(patterns_dir, '');
+          var isValidPath = remainingPath.indexOf('/_') === -1;
+          return isValidPath;
         }
-      }
+          return true;
+        }
+      },
+      function(err, file){
+        //log any errors
+        if(err){
+          console.log(err);
+          return;
+        }
 
-      //add to patternlab object so we can look these up later.
-      assembler.addPattern(currentPattern, patternlab);
+        pattern_assembler.process_pattern_iterative(file.substring(2), patternlab);
     });
 
-var entity_encoder = new he();
+    //diveSync again to recursively include partials, filling out the
+    //extendedTemplate property of the patternlab.patterns elements
+    diveSync(patterns_dir, {
+      filter: function(path, dir) {
+        if(dir){
+          var remainingPath = path.replace(patterns_dir, '');
+          var isValidPath = remainingPath.indexOf('/_') === -1;
+          return isValidPath;
+        }
+          return true;
+        }
+      },
+      function(err, file){
+        //log any errors
+        if(err){
+          console.log(err);
+          return;
+        }
+
+        pattern_assembler.process_pattern_recursive(file.substring(2), patternlab);
+    });
+
+    //delete the contents of config.patterns.public before writing
+    if(deletePatternDir){
+      fs.emptyDirSync(patternlab.config.patterns.public);
+    }
 
     //render all patterns last, so lineageR works
     patternlab.patterns.forEach(function(pattern, index, patterns){
+      //render the pattern, but first consolidate any data we may have
+      var allData =  JSON.parse(JSON.stringify(patternlab.data));
+      allData = pattern_assembler.merge_data(allData, pattern.jsonFileData);
 
-      //render the pattern. pass partials and data
-      if(pattern.data) { // Pass found pattern-specific JSON as data
-
-        //extend pattern data links into link for pattern link shortcuts to work. we do this locally and globally
-        pattern.data.link = extend({}, patternlab.data.link);
-
-        pattern.patternPartial = renderPattern(pattern.template, pattern.data, patternlab.partials);
-      }else{ // Pass global patternlab data
-        pattern.patternPartial = renderPattern(pattern.template, patternlab.data, patternlab.partials);
-      }
+      pattern.patternPartial = pattern_assembler.renderPattern(pattern.extendedTemplate, allData);
 
       //add footer info before writing
-      var patternFooter = renderPattern(patternlab.footer, pattern);
+      var patternFooter = pattern_assembler.renderPattern(patternlab.footer, pattern);
 
       //write the compiled template to the public patterns directory
-      fs.outputFileSync('./public/patterns/' + pattern.patternLink, patternlab.header + pattern.patternPartial + patternFooter);
+      fs.outputFileSync(patternlab.config.patterns.public + pattern.patternLink, patternlab.header + pattern.patternPartial + patternFooter);
 
       //write the mustache file too
-      fs.outputFileSync('./public/patterns/' + pattern.patternLink.replace('.html', '.mustache'), entity_encoder.encode(pattern.template));
+      fs.outputFileSync(patternlab.config.patterns.public + pattern.patternLink.replace('.html', '.mustache'), entity_encoder.encode(pattern.template));
 
       //write the encoded version too
-      fs.outputFileSync('./public/patterns/' + pattern.patternLink.replace('.html', '.escaped.html'), entity_encoder.encode(pattern.patternPartial));
+      fs.outputFileSync(patternlab.config.patterns.public + pattern.patternLink.replace('.html', '.escaped.html'), entity_encoder.encode(pattern.patternPartial));
     });
 
     //export patterns if necessary
-    var pattern_exporter = new pe();
     pattern_exporter.export_patterns(patternlab);
 
   }
 
   function buildFrontEnd(){
+    var pattern_assembler = new pa(),
+        media_hunter = new mh(),
+        styleGuideExcludes = patternlab.config.styleGuideExcludes,
+        styleguidePatterns = [];
     patternlab.buckets = [];
     patternlab.bucketIndex = [];
     patternlab.patternPaths = {};
     patternlab.viewAllPaths = {};
 
     //find mediaQueries
-    var media_hunter = new mh();
-    media_hunter.find_media_queries(patternlab);
+    media_hunter.find_media_queries('./source/css', patternlab);
+
+    // check if patterns are excluded, if not add them to styleguidePatterns
+    if (styleGuideExcludes.length) {
+        for (i = 0; i < patternlab.patterns.length; i++) {
+            var key = patternlab.patterns[i].key;
+            var typeKey = key.substring(0, key.indexOf('-'));
+            var isExcluded = (styleGuideExcludes.indexOf(typeKey) > -1);
+            if (!isExcluded) {
+                styleguidePatterns.push(patternlab.patterns[i]);
+            }
+        }
+    } else {
+        styleguidePatterns = patternlab.patterns;
+    }
 
     //build the styleguide
-    var styleguideTemplate = fs.readFileSync('./source/_patternlab-files/styleguide.mustache', 'utf8');
-    var styleguideHtml = renderPattern(styleguideTemplate, {partials: patternlab.patterns});
+    var styleguideTemplate = fs.readFileSync('./source/_patternlab-files/styleguide.mustache', 'utf8'),
+    styleguideHtml = pattern_assembler.renderPattern(styleguideTemplate, {partials: styleguidePatterns});
     fs.outputFileSync('./public/styleguide/html/styleguide.html', styleguideHtml);
 
     //build the viewall pages
@@ -213,6 +181,11 @@ var entity_encoder = new he();
     i;
 
     for (i = 0; i < patternlab.patterns.length; i++) {
+      // skip underscore-prefixed files
+      if (path.basename(patternlab.patterns[i].abspath).charAt(0) === '_') {
+        continue;
+      }
+
       var pattern = patternlab.patterns[i];
 
       // check if the current sub section is different from the previous one
@@ -224,23 +197,28 @@ var entity_encoder = new he();
         j;
 
         for (j = 0; j < patternlab.patterns.length; j++) {
-          if (patternlab.patterns[j].subdir == pattern.subdir) {
+          if (patternlab.patterns[j].subdir === pattern.subdir) {
             viewAllPatterns.push(patternlab.patterns[j]);
           }
         }
 
         var viewAllTemplate = fs.readFileSync('./source/_patternlab-files/viewall.mustache', 'utf8');
-        var viewAllHtml = renderPattern(viewAllTemplate, {partials: viewAllPatterns, patternPartial: patternPartial});
-        fs.outputFileSync('./public/patterns/' + pattern.flatPatternPath + '/index.html', viewAllHtml);
+        var viewAllHtml = pattern_assembler.renderPattern(viewAllTemplate, {partials: viewAllPatterns, patternPartial: patternPartial});
+        fs.outputFileSync(patternlab.config.patterns.public + pattern.flatPatternPath + '/index.html', viewAllHtml);
       }
     }
 
     //build the patternlab website
     var patternlabSiteTemplate = fs.readFileSync('./source/_patternlab-files/index.mustache', 'utf8');
-    
-    //loop through all patterns.to build the navigation 
+
+    //loop through all patterns.to build the navigation
     //todo: refactor this someday
     for(var i = 0; i < patternlab.patterns.length; i++){
+      // skip underscore-prefixed files
+      if (path.basename(patternlab.patterns[i].abspath).charAt(0) === '_') {
+        continue;
+      }
+
       var pattern = patternlab.patterns[i];
       var bucketName = pattern.name.replace(/\\/g, '-').split('-')[1];
 
@@ -255,7 +233,8 @@ var entity_encoder = new he();
         patternlab.viewAllPaths[bucketName] = {};
 
         //get the navItem
-        var navItemName = pattern.subdir.split('-').pop();
+        var navItemName = pattern.subdir.split('/').pop();
+        navItemName = navItemName.replace(/(\d).(-)/g, '');
 
         //get the navSubItem
         var navSubItemName = pattern.patternName.replace(/-/g, ' ');
@@ -283,7 +262,7 @@ var entity_encoder = new he();
         if(flatPatternItem){
 
           bucket.patternItems.push(navSubItem);
-          
+
           //add to patternPaths
           addToPatternPaths(bucketName, pattern);
 
@@ -310,7 +289,10 @@ var entity_encoder = new he();
         var bucket = patternlab.buckets[bucketIndex];
 
         //get the navItem
-        var navItemName = pattern.subdir.split('-').pop();
+        //if there is one or more slashes in the subdir, get everything after
+        //the last slash. if no slash, get the whole subdir string and strip
+        //any numeric + hyphen prefix
+        var navItemName = pattern.subdir.split('/').pop().replace(/^\d*\-/, '');
 
         //get the navSubItem
         var navSubItemName = pattern.patternName.replace(/-/g, ' ');
@@ -385,37 +367,29 @@ var entity_encoder = new he();
     //the patternlab site requires a lot of partials to be rendered.
     //patternNav
     var patternNavTemplate = fs.readFileSync('./source/_patternlab-files/partials/patternNav.mustache', 'utf8');
-    var patternNavPartialHtml = renderPattern(patternNavTemplate, patternlab);
+    var patternNavPartialHtml = pattern_assembler.renderPattern(patternNavTemplate, patternlab);
 
     //ishControls
     var ishControlsTemplate = fs.readFileSync('./source/_patternlab-files/partials/ishControls.mustache', 'utf8');
     patternlab.config.mqs = patternlab.mediaQueries;
-    var ishControlsPartialHtml = renderPattern(ishControlsTemplate, patternlab.config);
+    var ishControlsPartialHtml = pattern_assembler.renderPattern(ishControlsTemplate, patternlab.config);
 
     //patternPaths
     var patternPathsTemplate = fs.readFileSync('./source/_patternlab-files/partials/patternPaths.mustache', 'utf8');
-    var patternPathsPartialHtml = renderPattern(patternPathsTemplate, {'patternPaths': JSON.stringify(patternlab.patternPaths)});
+    var patternPathsPartialHtml = pattern_assembler.renderPattern(patternPathsTemplate, {'patternPaths': JSON.stringify(patternlab.patternPaths)});
 
     //viewAllPaths
     var viewAllPathsTemplate = fs.readFileSync('./source/_patternlab-files/partials/viewAllPaths.mustache', 'utf8');
-    var viewAllPathsPartialHtml = renderPattern(viewAllPathsTemplate, {'viewallpaths': JSON.stringify(patternlab.viewAllPaths)});
+    var viewAllPathsPartialHtml = pattern_assembler.renderPattern(viewAllPathsTemplate, {'viewallpaths': JSON.stringify(patternlab.viewAllPaths)});
 
     //render the patternlab template, with all partials
-    var patternlabSiteHtml = renderPattern(patternlabSiteTemplate, {}, {
+    var patternlabSiteHtml = pattern_assembler.renderPattern(patternlabSiteTemplate, {}, {
       'ishControls': ishControlsPartialHtml,
       'patternNav': patternNavPartialHtml,
       'patternPaths': patternPathsPartialHtml,
       'viewAllPaths': viewAllPathsPartialHtml
     });
     fs.outputFileSync('./public/index.html', patternlabSiteHtml);
-  }
-
-  function renderPattern(name, data, partials) {
-    if(partials) {
-      return mustache.render(name, data, partials);
-    }else{
-      return mustache.render(name, data);
-    }
   }
 
   function addToPatternPaths(bucketName, pattern){
@@ -427,16 +401,16 @@ var entity_encoder = new he();
     version: function(){
       return getVersion();
     },
-    build: function(){
-      buildPatterns();
+    build: function(deletePatternDir){
+      buildPatterns(deletePatternDir);
       buildFrontEnd();
       printDebug();
     },
     help: function(){
       help();
     },
-    build_patterns_only: function(){
-      buildPatterns();
+    build_patterns_only: function(deletePatternDir){
+      buildPatterns(deletePatternDir);
       printDebug();
     }
   };
@@ -444,4 +418,3 @@ var entity_encoder = new he();
 };
 
 module.exports = patternlab_engine;
-

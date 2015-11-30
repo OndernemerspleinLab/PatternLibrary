@@ -1,7 +1,7 @@
 /* 
- * patternlab-node - v0.9.1 - 2015 
+ * patternlab-node - v0.15.1 - 2015 
  * 
- * [object Object], and the web community.
+ * Brian Muenzenmeyer, and the web community.
  * Licensed under the MIT license. 
  * 
  * Many thanks to Brad Frost and Dave Olsen for inspiration, encouragement, and advice. 
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		var patternlab = patternlab_engine();
 
 		if(arguments.length === 0){
-			patternlab.build();
+			patternlab.build(true);
 		}
 
 		if(arg && arg === 'v'){
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 		}
 
 		if(arg && arg === "only_patterns"){
-			patternlab.build_patterns_only();
+			patternlab.build_patterns_only(true);
 		}
 
 		if(arg && arg === "help"){

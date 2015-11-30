@@ -50,10 +50,6 @@ module.exports = function(grunt, devOrProd) {
 	}
 
 	var config = {
-		clean: {
-			options: { force: true },
-			files: ['./public/patterns', './fonts/iconFont']
-		},
 		copy: {
 			main: {
 				files: [
@@ -100,5 +96,5 @@ module.exports = function(grunt, devOrProd) {
 
 	grunt.registerTask('copyToPublic', ['copy:main', 'copy:images']);
 	grunt.registerTask('buildTemplates', [replaceTask, 'patternlab', replaceNormalizeTask]);
-	grunt.registerTask('default', ['clean', 'svgFigures', 'buildTemplates', 'styles', 'scripts', 'copyToPublic']);
+	grunt.registerTask('default', ['svgFigures', 'buildTemplates', 'styles', 'scripts', 'copyToPublic']);
 };

@@ -1,7 +1,7 @@
 /* 
- * patternlab-node - v0.9.1 - 2015 
+ * patternlab-node - v0.15.1 - 2015 
  * 
- * [object Object], and the web community.
+ * Brian Muenzenmeyer, and the web community.
  * Licensed under the MIT license. 
  * 
  * Many thanks to Brad Frost and Dave Olsen for inspiration, encouragement, and advice. 
@@ -15,12 +15,20 @@
 
 		function findlineage(pattern, patternlab){
 
+			var pa = require('./pattern_assembler');
+			var pattern_assembler = new pa();
+
 			//find the {{> template-name }} within patterns
-			var matches = pattern.template.match(/{{>([ ]+)?([A-Za-z0-9-]+)(?:\:[A-Za-z0-9-]+)?(?:(| )\(.*)?([ ]+)}}/g);
+			var matches = pattern_assembler.find_pattern_partials(pattern);
 			if(matches !== null){
 				matches.forEach(function(match, index, matches){
 					//strip out the template cruft
-					var foundPattern = match.replace("{{> ", "").replace(" }}", "");
+					var foundPattern = match.replace("{{> ", "").replace(" }}", "").replace("{{>", "").replace("}}", "");
+
+					// remove any potential pattern parameters. this and the above are rather brutish but I didn't want to do a regex at the time
+					if(foundPattern.indexOf('(') > 0){
+						foundPattern = foundPattern.substring(0, foundPattern.indexOf('('));
+					}
 
 					//add if it doesnt exist
 					if (pattern.lineageIndex.indexOf(foundPattern) === -1){
