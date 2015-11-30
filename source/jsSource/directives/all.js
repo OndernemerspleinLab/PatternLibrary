@@ -5,6 +5,7 @@ import 'directives/openCloseSingleDirective';
 import 'directives/mainMenuDirective';
 import 'directives/countUpDirective';
 import 'directives/zoomTableDirective';
+import 'directives/anchorLinkDirective';
 import 'directives/seeThroughScroll/seeThroughScrollDirective';
 import 'directives/seeThroughScroll/seeThroughScrollContentDirective';
 import 'directives/personalisation/audienceSelectorDirective';
