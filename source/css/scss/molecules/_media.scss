@@ -11,6 +11,12 @@
 
 .media-text {
 	flex: 1 1 0;
+
+	a {
+		&:hover {
+			color: #333;
+		}
+	}
 }
 
 .media-figure {

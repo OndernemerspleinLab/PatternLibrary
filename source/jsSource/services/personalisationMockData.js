@@ -109,7 +109,8 @@ export const topTasks = [
 export const stories = [
 	{
 		img: {
-			url: '../../images/homepage/header-ondernemer-krijn-ratsma1440.jpg',
+			//url: '../../images/homepage/header-ondernemer-krijn-ratsma1440.jpg',
+			url: '../../images/homepage/Header-Leonie-Meutstege.jpg',
 			alt: 'Ondernemer Krijn Ratsma',
 		},
 		quote: 'Doe de dingen waar je zelf energie van krijgt',

@@ -5,10 +5,54 @@
 		<div class="main" style="margin-bottom:1rem;">
 
 			{{> organisms-homepage-themes-minimal }}
+			<style type="text/css">
+				.headingLink {
+					font-weight: bold;
+				}
+				.listBlock {
+					min-height: auto;
+				}
+				.listBlock-title {
+					border-bottom: 1px solid #e5e5e5;
+					padding-bottom: 10px;
+					margin-bottom: 10px;
+					font-weight: bold;
+				}
+				.postTitle {
+					font-weight: normal;
+				}
+			</style>
 
-			<div class="crs-wrapper">
+			<div class="crs-wrapperXXX">
 				<div class="layoutContainer gridContainer gridContainer--stretchItems">
 					<div class="column column--third blockContainer">
+						<div class="listBlock listBlock--purple">
+							<h2 class="listBlock-title h4">
+								<span class="inlineMedia">
+						            <span class="media-text">
+						                <a href="#">Evenementen en bijeenkomsten</a>
+						            </span>
+						            <svg aria-hidden="true" class="media-icon listBlock-icon">
+						              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use>
+						            </svg>
+						        </span>
+							</h2>
+							<ul class="listBlock-list linkList">
+								<li class="linkList-item">
+									<a href="#" class="interfaceLink">
+										<svg class="goIcon interfaceLink-icon" aria-hidden="true" style="height: 2.2rem;width: 2.2rem;margin-right: 0.5rem;margin-left: -0.5rem; margin-top:0; ">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-0027-reserveren-ruimte">></use>
+										</svg>
+										<span class="interfaceLink-text">
+											<span class="postTitle" style="font-size:1rem;font-style:normal;"><span class="underliner">Eigen bedrijf starten vanuit de WW</span></span>
+											<span class="postDate" style="font-size:0.9rem;"><span class="underliner">14 december 2015 van 9.30 - 17.30 uur</span></span>
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!--div class="column column--third blockContainer">
 						<div class="homeBlockMore homeBlockMore--purple">
 							<a class="interfaceLink" href="#">
 								<span class="interfaceLink-text"><span class="underliner">
@@ -17,21 +61,23 @@
 								{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
 							</a>
 						</div>
-						<div class="listBlock listBlock--purple" style="min-height:1rem">
+						<div class="listBlock listBlock--purple">
 							<ul class="listBlock-list linkList">
 								<li class="linkList-item">
 									<a href="#" class="interfaceLink">
-										<svg class="goIcon interfaceLink-icon" aria-hidden="true" style="height: 2rem;width: 2rem;margin-right: 0.5rem;margin-left: -0.5rem; margin-top:0.25rem; "><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-groep-mensen-0015">></use></svg>
+										<svg class="goIcon interfaceLink-icon" aria-hidden="true" style="height: 2.2rem;width: 2.2rem;margin-right: 0.5rem;margin-left: -0.5rem; margin-top:0; ">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-0027-reserveren-ruimte">></use>
+										</svg>
 										<span class="interfaceLink-text">
-											<span class="postTitle" style="font-size:1rem;"><span class="underliner">Eigen bedrijf starten vanuit de WW</span></span>
-											<span class="postDate"><span class="underliner">14 december 2015 van 9.30 uur tot 17.30 uur</span></span>
+											<span class="postTitle" style="font-size:1rem;font-style:normal;"><span class="underliner">Eigen bedrijf starten vanuit de WW</span></span>
+											<span class="postDate" style="font-size:0.9rem;"><span class="underliner">14 december 2015 van 9.30 - 17.30 uur</span></span>
 										</span>
 									</a>
 								</li>
 							</ul>
 						</div>
-					</div>
-					<div class="column column--third blockContainer">
+					</div-->
+					<!--div class="column column--third blockContainer">
 						<div class="homeBlockMore homeBlockMore--green">
 							<a class="interfaceLink" href="#">
 								<span class="interfaceLink-text"><span class="underliner">
@@ -40,13 +86,13 @@
 								{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
 							</a>
 						</div>
-						<div class="listBlock listBlock--green" style="min-height:1rem">
+						<div class="listBlock listBlock--green">
 							<ul class="listBlock-list linkList">
 								<li class="linkList-item">
 									<a href="#" class="interfaceLink">
 										{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
 										<span class="postTitle interfaceLink-text"><span class="underliner">
-											Wetten en regels op onderwerp
+											Bekijk alle wetten en regels op onderwerp
 										</span></span>
 									</a>
 								</li>
@@ -54,7 +100,31 @@
 									<a href="#" class="interfaceLink">
 										{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
 										<span class="postTitle interfaceLink-text"><span class="underliner">
-											Wetten en regels per sector
+											Alle wetswijzigingen
+										</span></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div-->
+					<div class="column column--third blockContainer">
+						<div class="listBlock listBlock--green">
+							<h2 class="listBlock-title h4">
+								<span class="inlineMedia">
+						            <span class="media-text">
+						                <a href="#">Wetten en regels</a>
+						            </span>
+						            <svg aria-hidden="true" class="media-icon listBlock-icon">
+						              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use>
+						            </svg>
+						        </span>
+							</h2>
+							<ul class="listBlock-list linkList">
+								<li class="linkList-item">
+									<a href="#" class="interfaceLink">
+										{{> atoms-goIcon-interfaceLink }}
+										<span class="postTitle interfaceLink-text"><span class="underliner">
+											Bekijk alle wetten en regels op onderwerp
 										</span></span>
 									</a>
 								</li>
@@ -69,7 +139,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="column column--third blockContainer">
+					<!--div class="column column--third blockContainer">
 						<div class="homeBlockMore homeBlockMore--purple">
 							<a class="interfaceLink" href="#">
 								<span class="interfaceLink-text"><span class="underliner">
@@ -78,7 +148,39 @@
 								{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
 							</a>
 						</div>
-						<div class="listBlock listBlock--purple" style="min-height:1rem">
+						<div class="listBlock listBlock--purple">
+							<ul class="listBlock-list linkList">
+								<li class="linkList-item">
+									<a href="#" class="interfaceLink">
+										{{> atoms-goIcon-interfaceLink }}
+										<span class="postTitle interfaceLink-text"><span class="underliner">
+											Inschrijven bij de KvK
+										</span></span>
+									</a>
+								</li>
+								<li class="linkList-item">
+									<a href="#" class="interfaceLink">
+										{{> atoms-goIcon-interfaceLink }}
+										<span class="postTitle interfaceLink-text"><span class="underliner">
+											VAR aanvragen
+										</span></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div-->
+					<div class="column column--third blockContainer">
+						<div class="listBlock listBlock--purple">
+							<h2 class="listBlock-title h4">
+								<span class="inlineMedia">
+						            <span class="media-text">
+						                <a href="#">Snel regelen</a>
+						            </span>
+						            <svg aria-hidden="true" class="media-icon listBlock-icon">
+						              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-pijl-rechts-1003"></use>
+						            </svg>
+						        </span>
+							</h2>
 							<ul class="listBlock-list linkList">
 								<li class="linkList-item">
 									<a href="#" class="interfaceLink">
@@ -126,7 +228,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="crs-wrapper">
+		<div class="crs-wrapperXXX">
 			<div class="layoutContainer gridContainer gridContainer--stretchItems">
 				<div class="column column--third blockContainer" style="">
 					<div class="homeBlockMore homeBlockMore--green">
