@@ -1,12 +1,16 @@
 module.exports = function(grunt) {
+	var port = 9001;
+	var hostname = "localhost";
+	var target = ['http://', hostname, ':', port, '/?p=atoms-code-guidelines'].join("");
+
 	var config = {
 		connect: {
 			app: {
 				options: {
-					port: 9001,
+					port: port,
 					base: './public',
-					hostname: 'localhost',
-					open: true,
+					hostname: hostname,
+					open: target,
 					livereload: 35729,
 				},
 			},
@@ -16,7 +20,8 @@ module.exports = function(grunt) {
 		},
 	};
 
-	grunt.registerTask('serve', ['default', 'connect', 'watch']);
+	grunt.registerTask('instaServe', ['connect', 'watch']);
+	grunt.registerTask('serve', ['default', 'instaServe']);
 
 	grunt.config.merge(config);
 };
