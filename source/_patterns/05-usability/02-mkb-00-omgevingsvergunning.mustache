@@ -60,34 +60,50 @@
 
 					<p>Wilt u weten of u een melding moet doen of een omgevingsvergunning nodig hebt? Doe via Omgevingsloket online de <a href="https://www.omgevingsloket.nl/Zakelijk/zakelijk/home/checken?init=true&amp;clear-case=true#" class="externalLink">vergunningcheck</a>.</p>
 
-					<div class="scBlock-wrapper">
-						<div class="block block--grey scBlock">
-							<h2 class="block-title scBlock--title">
-								<span class="inlineMedia">
-					                <svg aria-hidden="true" class="scBlock--icon">
-					                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-2008-computer"></use>
-					                </svg>
-					                <span class="media-text">
-					                    Meer weten of direct aanvragen?
-					                </span>
-					            </span>
-							</h2>
-							<p class="scBlock--subTitle">Bij uw gemeente, provincie of waterschap</p>
-							<form class="scBlock--form">
-								<input id="text" type="text" placeholder="Bijvoorbeeld Rotterdam" value="Gemeente Amsterdam">
-								<svg aria-hidden="true" class="scBlock--clearIcon">
-					                <use xlink:href="#figures-sluiten"></use>
-					            </svg>
-							</form>
-						</div>
-						<div class="scBlock--result">
-							<a href="#" class="interfaceLink scBlock--resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Omgevingsvergunning aanvragen (Amsterdam)</span></span></a>
-						</div>
-						<div class="scBlock--result">
-							<a href="#" class="interfaceLink scBlock--resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Milieubeheer, gedoogbeschikking (Noord-Holland)</span></span></a>
-						</div>
-						<div class="scBlock--result">
-							<a href="#" class="interfaceLink scBlock--resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Omgevingsvergunning (Noord-Holland)</span></span></a>
+
+					<div class="scBlock" open-close-single>
+						<button class="scBlock-button" ng-click="viewModel.open('scBlock')" ng-hide="viewModel.isOpened('scBlock')">
+							<div class="block-title scBlock-title h2">
+
+								<span class="media">
+									<svg aria-hidden="true" class="media-icon scBlock-icon">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-2008-computer"></use>
+									</svg>
+									<span class="media-text scBlock-title-text">
+										Meer weten of direct aanvragen?
+									</span>
+								</span>
+							</div>
+						</button>
+						<div class="ng-hide" ng-show="viewModel.isOpened('scBlock')">
+							<div class="block block--grey scBlock-main">
+								<h2 class="block-title scBlock-title">
+									<span class="media">
+										<svg aria-hidden="true" class="scBlock-icon">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-2008-computer"></use>
+										</svg>
+										<span class="media-text scBlock-title-text">
+											Meer weten of direct aanvragen?
+										</span>
+									</span>
+								</h2>
+								<p class="scBlock-subTitle">Bij uw gemeente, provincie of waterschap</p>
+								<form class="scBlock-form">
+									<input id="text" type="text" placeholder="Bijvoorbeeld Rotterdam" value="Gemeente Amsterdam">
+									<svg aria-hidden="true" class="scBlock-clearIcon">
+										<use xlink:href="#figures-sluiten"></use>
+									</svg>
+								</form>
+							</div>
+							<div class="scBlock-result">
+								<a href="#" class="interfaceLink scBlock-resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Omgevingsvergunning aanvragen (Amsterdam)</span></span></a>
+							</div>
+							<div class="scBlock-result">
+								<a href="#" class="interfaceLink scBlock-resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Milieubeheer, gedoogbeschikking (Noord-Holland)</span></span></a>
+							</div>
+							<div class="scBlock-result">
+								<a href="#" class="interfaceLink scBlock-resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Omgevingsvergunning (Noord-Holland)</span></span></a>
+							</div>
 						</div>
 					</div>
 
@@ -118,67 +134,67 @@
 					</div>
 
 
-                    <h2 id="externe-links">Externe links</h2>
-                    <ul class="linkList">
-                        <li class="linkList-item">
-                            <a href="https://www.omgevingsloket.nl/Zakelijk/zakelijk/home?init=true" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Omgevingsloket online zakelijk</span></span></a>
-                        </li>
-                        <li class="linkList-item">
-                            <a href="http://www.infomil.nl/onderwerpen/integrale/omgevingsloket/infoblad-bedrijven/" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Infoblad voor bedrijven - Omgevingsvergunning en watervergunning (Kenniscentrum InfoMil)</span></span></a>
-                        </li>
-                        <li class="linkList-item">
-                            <a href="http://www.infomil.nl/onderwerpen/integrale/omgevingsloket" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Omgevingsloket online (Kenniscentrum InfoMil)</span></span></a>
-                        </li>
-                        <li class="linkList-item">
-                            <a href="http://www.infomil.nl/onderwerpen/integrale/omgevingsvergunning/" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Omgevingsvergunning/Wabo (Kenniscentrum InfoMil)</span></span></a>
-                        </li>
-                        <li class="linkList-item">
-                            <a href="https://www.eherkenning.nl/inloggen-met-eherkenning/" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Veilig inloggen (eHerkenning)</span></span></a>
-                        </li>
-                        <li class="linkList-item">
-                            <a href="http://www.rijksoverheid.nl/onderwerpen/omgevingswet" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Omgevingswet (Rijksoverheid)</span></span></a>
-                        </li>
-                    </ul>
+					<h2 id="externe-links">Externe links</h2>
+					<ul class="linkList">
+						<li class="linkList-item">
+							<a href="https://www.omgevingsloket.nl/Zakelijk/zakelijk/home?init=true" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Omgevingsloket online zakelijk</span></span></a>
+						</li>
+						<li class="linkList-item">
+							<a href="http://www.infomil.nl/onderwerpen/integrale/omgevingsloket/infoblad-bedrijven/" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Infoblad voor bedrijven - Omgevingsvergunning en watervergunning (Kenniscentrum InfoMil)</span></span></a>
+						</li>
+						<li class="linkList-item">
+							<a href="http://www.infomil.nl/onderwerpen/integrale/omgevingsloket" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Omgevingsloket online (Kenniscentrum InfoMil)</span></span></a>
+						</li>
+						<li class="linkList-item">
+							<a href="http://www.infomil.nl/onderwerpen/integrale/omgevingsvergunning/" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Omgevingsvergunning/Wabo (Kenniscentrum InfoMil)</span></span></a>
+						</li>
+						<li class="linkList-item">
+							<a href="https://www.eherkenning.nl/inloggen-met-eherkenning/" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Veilig inloggen (eHerkenning)</span></span></a>
+						</li>
+						<li class="linkList-item">
+							<a href="http://www.rijksoverheid.nl/onderwerpen/omgevingswet" class="interfaceLink">{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}<span class="interfaceLink-text externalLink"><span class="underliner">Omgevingswet (Rijksoverheid)</span></span></a>
+						</li>
+					</ul>
 
-                    <h2 id="wetswijzigingen">Wetswijzigingen</h2>
-                    <ul class="linkList">
-                        <li class="linkList-item">
-                            <a class="interfaceLink" href="http://www.ondernemersplein.nl/wetswijziging/nieuwe-wet-natuurbescherming/">
-                            	{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
-                            	<span class="interfaceLink-text"><span>
-	                                <span class="textLine"><span class="underliner">Nieuwe Wet Natuurbescherming</span></span>
-	                                <time class="infoText" datetime="Ingangsdatum: 1 mrt 2016">
-	                                    <span class="underliner">Ingangsdatum: 1 mrt 2016</span>
-	                                </time>
-                                </span></span>
-                            </a>
-                            <span class="wetswijziging-datum" data-url="/WetswijzigingsDatumHandler.ashx?id=tcm:106-275116"></span>
-                        </li>
-                        <li class="linkList-item">
-                            <a class="interfaceLink" href="http://www.ondernemersplein.nl/wetswijziging/verlening-milieuvergunningen-omgevingsdiensten/">
-                            	{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
-                            	<span class="interfaceLink-text"><span>
-	                                <span class="textLine"><span class="underliner">Omgevingsdiensten verlenen en handhaven milieuvergunningen</span></span>
-	                                <time class="infoText" datetime="Ingangsdatum: 1 jan 2016">
-	                                    <span class="underliner">Ingangsdatum: 1 jan 2016</span>
-	                                </time>
-                                </span></span>
-                            </a>
-                            <span class="wetswijziging-datum" data-url="/WetswijzigingsDatumHandler.ashx?id=tcm:106-386228"></span>
-                        </li>
-                        <li class="linkList-item">
-                            <a class="interfaceLink" href="http://www.ondernemersplein.nl/wetswijziging/aanpassing-omgevingsrecht/">
-                            	{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
-                            	<span class="interfaceLink-text"><span>
-	                                <span class="textLine"><span class="underliner">Omgevingsrecht wordt aangepast</span></span>
-	                                <time class="infoText" datetime="Ingangsdatum: 1 jan 2018">
-	                                    <span class="underliner">Ingangsdatum: 1 jan 2018</span>
-	                                </time>
-                                </span></span>
-                            </a>
-                            <span class="wetswijziging-datum" data-url="/WetswijzigingsDatumHandler.ashx?id=tcm:106-275626"></span>
-                        </li>
-                    </ul>
+					<h2 id="wetswijzigingen">Wetswijzigingen</h2>
+					<ul class="linkList">
+						<li class="linkList-item">
+							<a class="interfaceLink" href="http://www.ondernemersplein.nl/wetswijziging/nieuwe-wet-natuurbescherming/">
+								{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
+								<span class="interfaceLink-text"><span>
+									<span class="textLine"><span class="underliner">Nieuwe Wet Natuurbescherming</span></span>
+									<time class="infoText" datetime="Ingangsdatum: 1 mrt 2016">
+										<span class="underliner">Ingangsdatum: 1 mrt 2016</span>
+									</time>
+								</span></span>
+							</a>
+							<span class="wetswijziging-datum" data-url="/WetswijzigingsDatumHandler.ashx?id=tcm:106-275116"></span>
+						</li>
+						<li class="linkList-item">
+							<a class="interfaceLink" href="http://www.ondernemersplein.nl/wetswijziging/verlening-milieuvergunningen-omgevingsdiensten/">
+								{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
+								<span class="interfaceLink-text"><span>
+									<span class="textLine"><span class="underliner">Omgevingsdiensten verlenen en handhaven milieuvergunningen</span></span>
+									<time class="infoText" datetime="Ingangsdatum: 1 jan 2016">
+										<span class="underliner">Ingangsdatum: 1 jan 2016</span>
+									</time>
+								</span></span>
+							</a>
+							<span class="wetswijziging-datum" data-url="/WetswijzigingsDatumHandler.ashx?id=tcm:106-386228"></span>
+						</li>
+						<li class="linkList-item">
+							<a class="interfaceLink" href="http://www.ondernemersplein.nl/wetswijziging/aanpassing-omgevingsrecht/">
+								{{> atoms-goIcon(goIcon: {className: "interfaceLink-icon"}) }}
+								<span class="interfaceLink-text"><span>
+									<span class="textLine"><span class="underliner">Omgevingsrecht wordt aangepast</span></span>
+									<time class="infoText" datetime="Ingangsdatum: 1 jan 2018">
+										<span class="underliner">Ingangsdatum: 1 jan 2018</span>
+									</time>
+								</span></span>
+							</a>
+							<span class="wetswijziging-datum" data-url="/WetswijzigingsDatumHandler.ashx?id=tcm:106-275626"></span>
+						</li>
+					</ul>
 
 					{{! organisms-hoenuverder-blok }}
 					{{! molecules-bronhouder-contentfooter }}

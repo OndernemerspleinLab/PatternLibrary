@@ -35,7 +35,8 @@ input, textarea {
 }
 
 input[type=text], input[type=search], input[type=url], input[type=number], textarea {
-	-webkit-appearance: none;
+	appearance: none;
+	color: getColor(grijs darkest);
 }
 
 button, input[type="submit"] {

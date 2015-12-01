@@ -1,45 +1,57 @@
 .scBlock {
-	padding-left: 5em;
 	position: relative;
-	margin: 0;
+
+	&-main {
+		background-color: getColor(paars default);
+		color: getColor(wit);
+		margin: 0;
+	}
+
+	&-button {
+		background-color: getColor(paars default);
+		border: none;
+		@include insideMargin($halfSpace);
+		padding: 0 $halfSpace;
+	}
 
 	&-wrapper {
 		margin: 1rem 0;
 	}
 
-	&--icon {
-		fill: getColor(paars default);
+	&-icon {
+		fill: getColor(wit);
 		height: 2.2em;
 		width: 2.2em;
-		position: absolute;
-		top: 0.75em;
-		left: 0.5em;
 		display: block;
 	}
-	&--title {
-		color: getColor(paars default);
+	&-title {
+		color: getColor(wit);
 		font-size: 1.35rem;
 		margin-bottom: 0;
+
+		&-text {
+			margin-left: 0.5em;
+		}
 	}
-	&--subTitle {
+	&-subTitle {
 
 	}
-	&--form {
+	&-form {
 		position: relative;
 	}
-	&--clearIcon {
+	&-clearIcon {
 		position: absolute;
 		top: 8px;
 		right: 8px;
 		height: 1.25rem;
 		width: 1.25rem;
 	}
-	&--result {
+	&-result {
 		color: getColor(paars default);
 		background-color: getColor(paars lightest);
 		border-top: 3px solid getColor(wit);
 	}
-	&--resultLink {
+	&-resultLink {
 		color: getColor(paars default);
 		fill: getColor(paars default);
 		padding: 0.35em 0.35em 0.35em 5em;
@@ -61,19 +73,19 @@
 			width: 0.9rem;
 		}
 	}
-	&--noResult {
+	&-noResult {
 		padding: 0.35em 0.35em 0.35em 5em;
 		background-color: getColor(rood lightest);
 		border-top: 3px solid getColor(wit);
 	}
-	&--noResultText {
+	&-noResultText {
 		color: getColor(grijs darkest);
 		font-size: getFontSize(small);
 		font-style: italic;
 		display: block;
 		margin-bottom: 0.5em;
 	}
-	&--noResultLink {
+	&-noResultLink {
 		color: getColor(grijs darkest);
 		fill: getColor(grijs darkest);
 		&:hover,

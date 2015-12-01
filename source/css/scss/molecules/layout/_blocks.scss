@@ -271,8 +271,8 @@
 		top: $halfSpace;
 		bottom: $halfSpace;
 	}
-	@include insideMargin(0.5em);
-	padding: $space/4 $halfSpace;
+	@include insideMargin($halfSpace);
+	padding: 0 $halfSpace;
 
 	// Right Column
 	&--side {
