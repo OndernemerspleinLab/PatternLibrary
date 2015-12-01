@@ -12,6 +12,7 @@
 		@include insideMargin(1.5rem 1.5rem);
 		@include mqGreaterThan(smallMedium) {
 			@include insideMarginBottom(2.5rem);
+			padding-bottom: 3rem;
 		}
 
 		@include setPropWithMq(greater, width, (

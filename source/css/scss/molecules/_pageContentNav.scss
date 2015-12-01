@@ -4,15 +4,14 @@
 	margin-bottom: 1em;
 	display: block;
 	clear: both;
+	font-size: getFontSize(small);
 
 	&--title {
 		margin-top: 0;
 		margin-bottom: 0.5em;
 		font-weight: normal;
 	}
-	&--list {
-
-	}
+	&--list { }
 
 	&.block--grey {
 		.interfaceLink {

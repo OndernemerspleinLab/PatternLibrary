@@ -38,7 +38,7 @@
 				<div class="column column--twoThird">
 					<header class="article-header">
 						<h1>Alle rechtsvormen op een rij</h1>
-						{{! molecules-bronhouder-text }}
+						{{> molecules-bronhouder-text }}
 						{{> molecules-laatste-update }}
 					</header>
 
@@ -54,10 +54,37 @@
 
 
 					{{! organisms-hoenuverder-blok }}
-					{{! molecules-bronhouder-contentfooter }}
+					<div class="sourceBlock">
+						<p class="infoText infoText--afzender">
+							<span>Deze informatie is geplaatst door:</span>
+						</p>
+						<ul class="gridContainer gridContainer--singleLine u-noBullets">
+							<li class="verticalItem">
+								<img class="partnerLogo-image partnerLogo--contentBottom" src="../../images/logos/KvK_color.svg" alt="Kamer van Koophandel">
+							</li>
+						</ul>
+					</div>
 
 				</div>
 				<div class="column column--third aside">
+					<div class="blockContact blockContact--purple">
+						<h2 class="blockContact-title h3">Heeft u nog vragen?</h2>
+						<p class="blockContact-item">
+							Kamer van Koophandel
+						</p>
+					    <p class="blockContact-item">
+							<span class="inlineMedia">
+					            <svg aria-hidden="true" class="media-icon blockContact-icon">
+					              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-email-2012"></use>
+					            </svg>
+					            <span class="media-text">
+					                <a class="interfaceLink blockContact-link" href="#">
+					                	<span class="interfaceLink-text"><span class="underliner">Stuur een e-mail</span></span>
+					                </a>
+					            </span>
+					        </span>
+					    </p>
+					</div>
 					{{! organisms-side-blok-samenvatting }}
 					{{! organisms-side-blok-linklijst }}
 					{{! organisms-side-blok-linklijst-extern }}
