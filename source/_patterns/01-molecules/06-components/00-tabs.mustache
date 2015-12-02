@@ -38,14 +38,14 @@
 				</a>
 			{{/header.tabs.contentActive}}
 		</span>
-		<span open-close-single class="tab-openClose tab-link--small {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}" ng-class="{ 'is-opened': viewModel.isOpened('content') }">
+		<span open-close-single class="tab-openClose tab-link--small {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}" is-opened="viewModel.isOpened('content')">
 			<button class="tab-button" ng-click="viewModel.toggle('content')">
-				<span class="media tab-link tab-openClose-link tab-link--openClose {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}" ng-class="{ 'is-opened': viewModel.isOpened('content') }">
+				<span class="media tab-link tab-openClose-link tab-link--openClose {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}" is-opened="viewModel.isOpened('content')">
 					<svg aria-hidden="true" class="tab-icon media-figure">
 						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-inhoud"></use>
 					</svg>
 					<span class="tab-text media-text">Inhoud</span>
-					<svg class="tab-openClose-icon media-figure" ng-class="{ 'is-opened': viewModel.isOpened('content') }" aria-hidden="true">
+					<svg class="tab-openClose-icon media-figure" is-opened="viewModel.isOpened('content')" aria-hidden="true">
 	                    <use xlink:href="#figures-chevron-down"></use>
 	                </svg>
 				</span>

@@ -8,7 +8,7 @@
                 </svg>
                 <span class="menuBar-button-text">Home</span>
             </a>
-            <button ng-click="viewModel.openClose.toggle('menu')" class="menuBar-button menuBar-button--navigation menuBar-button--menu" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('menu', viewModel.sideContentUnitType)}">
+            <button ng-click="viewModel.openClose.toggle('menu')" class="menuBar-button menuBar-button--navigation menuBar-button--menu" is-opened="viewModel.openClose.isFullyOpened('menu', viewModel.sideContentUnitType)">
                 <div class="menuBar-button-inner">
                     <svg aria-hidden="true" class="menuBar-icon">
                         <use xlink:href="#figures-menu-3903"></use>
@@ -16,7 +16,7 @@
                     <span class="menuBar-button-text">Menu</span>
                 </div>
             </button>
-            <button ng-click="console.log('search');viewModel.openClose.toggle('search')" class="menuBar-button menuBar-button--navigation menuBar-button--search" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('search', viewModel.sideContentUnitType)}">
+            <button ng-click="console.log('search');viewModel.openClose.toggle('search')" class="menuBar-button menuBar-button--navigation menuBar-button--search" is-opened="viewModel.openClose.isFullyOpened('search', viewModel.sideContentUnitType)">
                 <div class="menuBar-button-inner">
                     <svg aria-hidden="true" class="menuBar-icon">
                         <use xlink:href="#figures-zoek-3907"></use>
@@ -24,7 +24,7 @@
                     <span class="menuBar-button-text">Zoeken</span>
                 </div>
             </button>
-            <button ng-click="viewModel.openClose.toggle('profile')" class="menuBar-button menuBar-button--navigation menuBar-button--profile" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('profile', viewModel.sideContentUnitType)}">
+            <button ng-click="viewModel.openClose.toggle('profile')" class="menuBar-button menuBar-button--navigation menuBar-button--profile" is-opened="viewModel.openClose.isFullyOpened('profile', viewModel.sideContentUnitType)">
                 <div class="menuBar-button-inner">
                     <svg aria-hidden="true" class="menuBar-icon">
                         <use xlink:href="#figures-user-3905"></use>
@@ -34,7 +34,7 @@
             </button>
         </div>
         <div class="menuBar-context">
-            <button ng-click="viewModel.openClose.toggle('share')"  register-element="{'type': 'button', 'unitName': 'share'}" class="menuBar-button menuBar-button--secondary menuBar-button--context menuBar-button--share" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('share')}">
+            <button ng-click="viewModel.openClose.toggle('share')"  register-element="{'type': 'button', 'unitName': 'share'}" class="menuBar-button menuBar-button--secondary menuBar-button--context menuBar-button--share" is-opened="viewModel.openClose.isFullyOpened('share')">
                 <div class="menuBar-button-inner">
                     <svg aria-hidden="true" class="menuBar-icon">
                         <use xlink:href="#figures-delen"></use>
@@ -42,7 +42,7 @@
                     <span class="menuBar-button-text">Delen</span>
                 </div>
             </button>
-            <button ng-click="viewModel.openClose.toggle('feedback')"  register-element="{'type': 'button', 'unitName': 'feedback'}" class="menuBar-button menuBar-button--secondary menuBar-button--context menuBar-button--feedback" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('feedback')}">
+            <button ng-click="viewModel.openClose.toggle('feedback')"  register-element="{'type': 'button', 'unitName': 'feedback'}" class="menuBar-button menuBar-button--secondary menuBar-button--context menuBar-button--feedback" is-opened="viewModel.openClose.isFullyOpened('feedback')">
                 <div class="menuBar-button-inner">
                     <svg aria-hidden="true" class="menuBar-icon">
                         <use xlink:href="#figures-mening"></use>
@@ -50,7 +50,7 @@
                     <span class="menuBar-button-text">Uw mening</span>
                 </div>
             </button>
-            <button ng-click="viewModel.openClose.toggle('enquete')"  register-element="{'type': 'button', 'unitName': 'enquete'}" class="menuBar-button menuBar-button--secondary menuBar-button--context menuBar-button--enquete" ng-class="{'is-opened': viewModel.openClose.isFullyOpened('enquete')}">
+            <button ng-click="viewModel.openClose.toggle('enquete')"  register-element="{'type': 'button', 'unitName': 'enquete'}" class="menuBar-button menuBar-button--secondary menuBar-button--context menuBar-button--enquete" is-opened="viewModel.openClose.isFullyOpened('enquete')">
                 <div class="menuBar-button-inner">
                     <svg aria-hidden="true" class="menuBar-icon">
                         <use xlink:href="#figures-enquete"></use>
