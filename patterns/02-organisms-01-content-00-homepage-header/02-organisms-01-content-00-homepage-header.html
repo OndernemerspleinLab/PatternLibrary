@@ -34,38 +34,41 @@
 <body class="sg-single-pattern" ng-class="{'is-menuOpened': menuOpened}">
 	<!-- Start of Pattern --><div class="homepageHeader" stories-view>
 	<div class="homepageHeader-background">
-		<div class="homepageHeader-background-image" style="background-image: url('../../images/homepage/header-ondernemer-krijn-ratsma1440.jpg')" ng-style="viewModel.imageStyle"></div>
+		<div class="homepageHeader-background-image" style="background-image: url('../../images/homepage/Header-Leonie-Meutstege.jpg')" ng-style="viewModel.imageStyle"></div>
 	</div>
-<header class="header" role="banner">
+	<header class="header" role="banner">
 	<div class="header-heading layoutContainer gridContainer gridContainer--singleLine gridContainer--alignItemsToEnd gridContainer--spaceBetweenItems">
-<div class="column logo">
+		<div class="column logo">
 	<a class="logo-link" title="Ga naar homepage" href="&#x2F;patterns&#x2F;03-templates-00-homepage&#x2F;03-templates-00-homepage.html">
 		<span class="textLine">
 			o<span class="highlight--blue">n</span>dernemers
 		</span> <span class="textLine">p<span class="highlight--blue">l</span>ein</span>
 	</a>
-</div><div class="column payOff">
+</div>
+		<div class="column payOff">
 	<p class="payOff-text payOff-text--home">
 		Van de overheid. Voor ondernemers.
 	</p>
-</div>	</div>
+</div>
+	</div>
 	<div class="brandBar">
 		<div class="layoutContainer">
 		</div>
 	</div>
-</header>	<div class="layoutContainer gridContainer homepageHeader-container">
+</header>
+	<div class="layoutContainer gridContainer homepageHeader-container">
 		<div class="column homepageHeader-topTasks">
 			<label class="filterContent" audience-selector>
-					<span class="filterContent-text">
-						Wat de meeste
+					<span class="filterContent-text h3">
+						<strong>Ik ben een</strong>
 					</span>
 					<select class="filterContent-select" ng-model="viewModel.selectedAudienceStore.selectedAudience">
-						<option value="Ondernemers">Ondernemers</option>
-						<option value="Starters">Starters</option>
-						<option value="Ervaren ondernemers">Ervaren ondernemers</option>
+						<option value="Ondernemers">...</option>
+						<option value="Starters">startende</option>
+						<option value="Ervaren ondernemers">ervaren</option>
 					</select>
-					<span class="filterContent-text">
-						willen weten
+					<span class="filterContent-text h3">
+						<strong>ondernemer</strong>
 					</span>
 
 			</label>
@@ -132,9 +135,9 @@
 	<a href="http://verhalen.ondernemersplein.nl/artikelen/#2590/krijn-ratsma" ng-href="{|viewModel.story.href|}" class="headerStory">
 		<h2 class="headerStory-intro">Ondernemersverhaal</h2>
 		<blockquote class="headerStory-blockquote">
-			<p class="headerStory-quote" ng-bind="viewModel.story.quote">Doe de dingen waar je zelf energie van krijgt</p>
+			<p class="headerStory-quote" ng-bind="viewModel.story.quote">Ik zie mijn bedrijf als een geweldige oefening</p>
 			<footer class="headerStory-citation" ng-bind="viewModel.story.citation">
-				Krijn Ratsma
+				Leonie Meutstege
 			</footer>
 		</blockquote>
 	</a>

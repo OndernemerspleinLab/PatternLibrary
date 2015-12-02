@@ -38,14 +38,14 @@
 &Tab;&Tab;&Tab;&Tab;&lt;/a&gt;
 &Tab;&Tab;&Tab;{{/header.tabs.contentActive}}
 &Tab;&Tab;&lt;/span&gt;
-&Tab;&Tab;&lt;span open-close-single class=&quot;tab-openClose tab-link--small {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}&quot; ng-class=&quot;{ &apos;is-opened&apos;: viewModel.isOpened(&apos;content&apos;) }&quot;&gt;
+&Tab;&Tab;&lt;span open-close-single class=&quot;tab-openClose tab-link--small {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}&quot; is-opened=&quot;viewModel.isOpened(&apos;content&apos;)&quot;&gt;
 &Tab;&Tab;&Tab;&lt;button class=&quot;tab-button&quot; ng-click=&quot;viewModel.toggle(&apos;content&apos;)&quot;&gt;
-&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;media tab-link tab-openClose-link tab-link--openClose {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}&quot; ng-class=&quot;{ &apos;is-opened&apos;: viewModel.isOpened(&apos;content&apos;) }&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;media tab-link tab-openClose-link tab-link--openClose {{#header.tabs.contentActive}}is-active{{/header.tabs.contentActive}}&quot; is-opened=&quot;viewModel.isOpened(&apos;content&apos;)&quot;&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&lt;svg aria-hidden=&quot;true&quot; class=&quot;tab-icon media-figure&quot;&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&Tab;&lt;use xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xlink:href=&quot;#figures-inhoud&quot;&gt;&lt;/use&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&lt;/svg&gt;
 &Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;tab-text media-text&quot;&gt;Inhoud&lt;/span&gt;
-&Tab;&Tab;&Tab;&Tab;&Tab;&lt;svg class=&quot;tab-openClose-icon media-figure&quot; ng-class=&quot;{ &apos;is-opened&apos;: viewModel.isOpened(&apos;content&apos;) }&quot; aria-hidden=&quot;true&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;svg class=&quot;tab-openClose-icon media-figure&quot; is-opened=&quot;viewModel.isOpened(&apos;content&apos;)&quot; aria-hidden=&quot;true&quot;&gt;
 &Tab;                    &lt;use xlink:href=&quot;#figures-chevron-down&quot;&gt;&lt;/use&gt;
 &Tab;                &lt;/svg&gt;
 &Tab;&Tab;&Tab;&Tab;&lt;/span&gt;

@@ -77,13 +77,6 @@ export const topTasks = [
 		],
 	},
 	{
-		text: "Financiering vinden",
-		href: "#",
-		audiences: [
-			"Ervaren ondernemers",
-		],
-	},
-	{
 		text: "Nieuw product vastleggen",
 		href: "#",
 		audiences: [
@@ -92,9 +85,9 @@ export const topTasks = [
 	},
 	{
 		text: "Hoe ontsla ik personeel",
-		href: "#",
+		href: "../05-usability-02-mkb-03-ontslagprocedures/05-usability-02-mkb-03-ontslagprocedures.html",
 		audiences: [
-			"../05-usability-02-mkb-00-omgevingsvergunning/05-usability-02-mkb-00-omgevingsvergunning.html",
+			"Ervaren ondernemers",
 		],
 	},
 	{
@@ -105,7 +98,7 @@ export const topTasks = [
 		],
 	},
 	{
-		text: "Uitstel van betaling en betalingsregeling",
+		text: "Exporteren",
 		href: "#",
 		audiences: [
 			"Ervaren ondernemers",
@@ -116,12 +109,14 @@ export const topTasks = [
 export const stories = [
 	{
 		img: {
-			url: '../../images/homepage/header-ondernemer-krijn-ratsma1440.jpg',
-			alt: 'Ondernemer Krijn Ratsma',
+			//url: '../../images/homepage/header-ondernemer-krijn-ratsma1440.jpg',
+			url: '../../images/homepage/Header-Leonie-Meutstege.jpg',
+			//alt: 'Ondernemer Krijn Ratsma',
+			alt: 'Ondernemer Leonie Meutstege',
 		},
-		quote: 'Doe de dingen waar je zelf energie van krijgt',
-		citation: 'Krijn Ratsma',
-		href: 'http://verhalen.ondernemersplein.nl/artikelen/#2590/krijn-ratsma',
+		quote: 'Ik zie mijn bedrijf als een geweldige oefening',
+		citation: 'Leonie Meutstege',
+		href: 'http://verhalen.ondernemersplein.nl/artikelen/#2501/leonie-meutstege',
 		audiences: [
 			"Ondernemers",
 		],
@@ -143,12 +138,12 @@ export const stories = [
 
 	{
 		img: {
-			url: '../../images/homepage/header-starter-ted-griffioen1440.jpg',
-			alt: 'Ondernemer Ted Griffioen',
+			url: '../../images/homepage/header-ondernemer-krijn-ratsma1440.jpg',
+			alt: 'Ondernemer Krijn Ratsma',
 		},
-		quote: 'Wij kunnen onze eigen werkplek gaaf maken',
-		citation: 'Ted Griffioen',
-		href: 'http://verhalen.ondernemersplein.nl/artikelen/#2439/ted-griffioen​',
+		quote: 'Doe de dingen waar je zelf energie van krijgt',
+		citation: 'Krijn Ratsma',
+		href: 'http://verhalen.ondernemersplein.nl/artikelen/#2590/krijn-ratsma',
 		audiences: [
 			"Ervaren ondernemers",
 		],

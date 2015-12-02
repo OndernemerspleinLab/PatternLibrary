@@ -1,0 +1,43 @@
+&lt;div class=&quot;hide-svg&quot;&gt;{{&gt; atoms-figures }}&lt;/div&gt;
+
+&lt;div class=&quot;scBlock&quot; sc-block&gt;
+&Tab;&lt;div class=&quot;scBlock-main ngAnimate-inlineBlockToBlock&quot; inline-block-to-block=&quot;viewModel.isOpened(&apos;scBlock&apos;)&quot; animation-callback=&quot;this.viewModel.resultCallback&quot;&gt;
+&Tab;&Tab;&lt;h2 class=&quot;block-title scBlock-title h3&quot;&gt;
+&Tab;&Tab;&Tab;&lt;button class=&quot;scBlock-button&quot; ng-click=&quot;viewModel.open(&apos;scBlock&apos;)&quot; ng-hide=&quot;viewModel.isOpened(&apos;scBlock&apos;)&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;media scBlock-title-media&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;{{&gt; atoms-icon(icon: { name: &quot;2008-computer&quot;, className: &quot;media-icon scBlock-icon&quot;}) }}
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;media-text scBlock-title-text&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&Tab;Meer weten of direct aanvragen?
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;{{&gt; atoms-goIcon(goIcon: { className: &quot;media-icon scBlock-goIcon&quot;}) }}
+&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;&Tab;&lt;/button&gt;
+&Tab;&Tab;&Tab;&lt;span class=&quot;media scBlock-title-media ng-hide&quot; ng-show=&quot;viewModel.isOpened(&apos;scBlock&apos;)&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;{{&gt; atoms-icon(icon: { name: &quot;2008-computer&quot;, className: &quot;scBlock-icon&quot;}) }}
+&Tab;&Tab;&Tab;&Tab;&lt;span class=&quot;media-text scBlock-title-text&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;Meer weten of direct aanvragen?
+&Tab;&Tab;&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;&Tab;&lt;/span&gt;
+&Tab;&Tab;&lt;/h2&gt;
+&Tab;&Tab;&lt;div class=&quot;scBlock-content ng-hide&quot; ng-show=&quot;viewModel.isOpened(&apos;scBlock&apos;)&quot; inline-block-to-block-block-only&gt;
+&Tab;&Tab;&Tab;&lt;p class=&quot;scBlock-subTitle&quot;&gt;Bij uw gemeente, provincie of waterschap&lt;/p&gt;
+&Tab;&Tab;&Tab;&lt;form class=&quot;scBlock-form&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;input id=&quot;text&quot; type=&quot;text&quot; placeholder=&quot;Bijvoorbeeld Rotterdam&quot; value=&quot;Gemeente Amsterdam&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;svg aria-hidden=&quot;true&quot; class=&quot;scBlock-clearIcon&quot;&gt;
+&Tab;&Tab;&Tab;&Tab;&Tab;&lt;use xlink:href=&quot;#figures-sluiten&quot;&gt;&lt;/use&gt;
+&Tab;&Tab;&Tab;&Tab;&lt;/svg&gt;
+&Tab;&Tab;&Tab;&lt;/form&gt;
+&Tab;&Tab;&lt;/div&gt;
+&Tab;&lt;/div&gt;
+&Tab;&lt;div class=&quot;scBlock-results ngAnimate-height is-hidden&quot; sc-block-results=&quot;viewModel.isOpened(&apos;scBlock&apos;)&quot;&gt;
+&Tab;&Tab;&lt;div class=&quot;scBlock-result&quot;&gt;
+&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;interfaceLink scBlock-resultLink&quot;&gt;{{&gt; atoms-goIcon-arrow-hook }}&lt;span class=&quot;interfaceLink-text externalLink&quot;&gt;&lt;span&gt;Omgevingsvergunning aanvragen (Amsterdam)&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;
+&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&lt;div class=&quot;scBlock-result&quot;&gt;
+&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;interfaceLink scBlock-resultLink&quot;&gt;{{&gt; atoms-goIcon-arrow-hook }}&lt;span class=&quot;interfaceLink-text externalLink&quot;&gt;&lt;span&gt;Milieubeheer, gedoogbeschikking (Noord-Holland)&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;
+&Tab;&Tab;&lt;/div&gt;
+&Tab;&Tab;&lt;div class=&quot;scBlock-result&quot;&gt;
+&Tab;&Tab;&Tab;&lt;a href=&quot;#&quot; class=&quot;interfaceLink scBlock-resultLink&quot;&gt;{{&gt; atoms-goIcon-arrow-hook }}&lt;span class=&quot;interfaceLink-text externalLink&quot;&gt;&lt;span&gt;Omgevingsvergunning (Noord-Holland)&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;
+&Tab;&Tab;&lt;/div&gt;
+&Tab;&lt;/div&gt;
+&lt;/div&gt;
