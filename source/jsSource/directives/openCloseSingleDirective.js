@@ -5,7 +5,7 @@ import createOpenClose from 'openClose/singleOpened';
 export const directiveName = "openCloseSingle";
 
 class OpenCloseSingle {
-	get $inject() { return ['$attrs']; }
+	static get $inject() { return ['$attrs']; }
 	constructor($attrs) {
 		const defaultOpened = $attrs[directiveName];
 		Object.assign(this, createOpenClose());
