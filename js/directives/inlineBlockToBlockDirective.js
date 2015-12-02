@@ -6,7 +6,7 @@ import {opened as openedClass} from 'constants/classNames';
 export const directiveName = "inlineBlockToBlock";
 
 class InlineBlockToBlock {
-	get $inject () { return ['$scope', '$element', '$attrs']; }
+	static get $inject() { return ['$scope', '$element', '$attrs']; }
 
 	constructor ($scope, $element, $attrs) {
 		const blockOnlyElements = [];
