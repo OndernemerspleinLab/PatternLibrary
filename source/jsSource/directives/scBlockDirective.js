@@ -7,8 +7,6 @@ import createOpenClose from 'openClose/singleOpened';
 export const directiveName = "scBlock";
 
 class ScBlock {
-	get $inject () { return ['$scope', '$element', '$attrs']; }
-
 	constructor () {
 		const resultElementCallbacks = [];
 
