@@ -1,0 +1,43 @@
+<div class="hide-svg">{{> atoms-figures }}</div>
+
+<div class="scBlock" sc-block>
+	<div class="scBlock-main ngAnimate-inlineBlockToBlock" inline-block-to-block="viewModel.isOpened('scBlock')" animation-callback="this.viewModel.resultCallback">
+		<h2 class="block-title scBlock-title h3">
+			<button class="scBlock-button" ng-click="viewModel.open('scBlock')" ng-hide="viewModel.isOpened('scBlock')">
+				<span class="media scBlock-title-media">
+					{{> atoms-icon(icon: { name: "2008-computer", className: "media-icon scBlock-icon"}) }}
+					<span class="media-text scBlock-title-text">
+						Meer weten of direct aanvragen?
+					</span>
+					{{> atoms-goIcon(goIcon: { className: "media-icon scBlock-goIcon"}) }}
+				</span>
+			</button>
+			<span class="media scBlock-title-media ng-hide" ng-show="viewModel.isOpened('scBlock')">
+				{{> atoms-icon(icon: { name: "2008-computer", className: "scBlock-icon"}) }}
+				<span class="media-text scBlock-title-text">
+					Meer weten of direct aanvragen?
+				</span>
+			</span>
+		</h2>
+		<div class="scBlock-content ng-hide" ng-show="viewModel.isOpened('scBlock')" inline-block-to-block-block-only>
+			<p class="scBlock-subTitle">Bij uw gemeente, provincie of waterschap</p>
+			<form class="scBlock-form">
+				<input id="text" type="text" placeholder="Bijvoorbeeld Rotterdam" value="Gemeente Amsterdam">
+				<svg aria-hidden="true" class="scBlock-clearIcon">
+					<use xlink:href="#figures-sluiten"></use>
+				</svg>
+			</form>
+		</div>
+	</div>
+	<div class="scBlock-results ngAnimate-height is-hidden" sc-block-results="viewModel.isOpened('scBlock')">
+		<div class="scBlock-result">
+			<a href="#" class="interfaceLink scBlock-resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Omgevingsvergunning aanvragen (Amsterdam)</span></span></a>
+		</div>
+		<div class="scBlock-result">
+			<a href="#" class="interfaceLink scBlock-resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Milieubeheer, gedoogbeschikking (Noord-Holland)</span></span></a>
+		</div>
+		<div class="scBlock-result">
+			<a href="#" class="interfaceLink scBlock-resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Omgevingsvergunning (Noord-Holland)</span></span></a>
+		</div>
+	</div>
+</div>

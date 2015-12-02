@@ -7,6 +7,8 @@ import 'directives/countUpDirective';
 import 'directives/zoomTableDirective';
 import 'directives/anchorLinkDirective';
 import 'directives/isOpenedDirective';
+import 'directives/scBlockDirective';
+import 'directives/inlineBlockToBlockDirective';
 import 'directives/seeThroughScroll/seeThroughScrollDirective';
 import 'directives/seeThroughScroll/seeThroughScrollContentDirective';
 import 'directives/personalisation/audienceSelectorDirective';

@@ -61,51 +61,7 @@
 					<p>Wilt u weten of u een melding moet doen of een omgevingsvergunning nodig hebt? Doe via Omgevingsloket online de <a href="https://www.omgevingsloket.nl/Zakelijk/zakelijk/home/checken?init=true&amp;clear-case=true#" class="externalLink">vergunningcheck</a>.</p>
 
 
-					<div class="scBlock" open-close-single>
-						<button class="scBlock-button" ng-click="viewModel.open('scBlock')" ng-hide="viewModel.isOpened('scBlock')">
-							<div class="block-title scBlock-title h2">
-
-								<span class="media">
-									<svg aria-hidden="true" class="media-icon scBlock-icon">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-2008-computer"></use>
-									</svg>
-									<span class="media-text scBlock-title-text">
-										Meer weten of direct aanvragen?
-									</span>
-								</span>
-							</div>
-						</button>
-						<div class="ng-hide" ng-show="viewModel.isOpened('scBlock')">
-							<div class="block block--grey scBlock-main">
-								<h2 class="block-title scBlock-title">
-									<span class="media">
-										<svg aria-hidden="true" class="scBlock-icon">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#figures-2008-computer"></use>
-										</svg>
-										<span class="media-text scBlock-title-text">
-											Meer weten of direct aanvragen?
-										</span>
-									</span>
-								</h2>
-								<p class="scBlock-subTitle">Bij uw gemeente, provincie of waterschap</p>
-								<form class="scBlock-form">
-									<input id="text" type="text" placeholder="Bijvoorbeeld Rotterdam" value="Gemeente Amsterdam">
-									<svg aria-hidden="true" class="scBlock-clearIcon">
-										<use xlink:href="#figures-sluiten"></use>
-									</svg>
-								</form>
-							</div>
-							<div class="scBlock-result">
-								<a href="#" class="interfaceLink scBlock-resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Omgevingsvergunning aanvragen (Amsterdam)</span></span></a>
-							</div>
-							<div class="scBlock-result">
-								<a href="#" class="interfaceLink scBlock-resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Milieubeheer, gedoogbeschikking (Noord-Holland)</span></span></a>
-							</div>
-							<div class="scBlock-result">
-								<a href="#" class="interfaceLink scBlock-resultLink">{{> atoms-goIcon-arrow-hook }}<span class="interfaceLink-text externalLink"><span>Omgevingsvergunning (Noord-Holland)</span></span></a>
-							</div>
-						</div>
-					</div>
+					{{> organisms-sc-block }}
 
 					<p>De omgevingsvergunning bestaat sinds 1 oktober 2010 en vervangt een aantal <a href="http://www.ondernemersplein.nl/regel/omgevingsvergunning-vervangen-vergunningen-uitzonderingen/" title="Omgevingsvergunning: vervangen vergunningen en uitzonderingen">vergunningen en ontheffingen</a>.</p>
 

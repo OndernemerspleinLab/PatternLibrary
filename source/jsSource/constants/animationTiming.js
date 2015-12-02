@@ -29,3 +29,8 @@ export const offScreenBottom = {
 	duration: 400,
 	easing: [200, 20],
 };
+
+export const inlineBlockToBlock = {
+	duration: 250,
+	easing: "ease-in-out",
+};

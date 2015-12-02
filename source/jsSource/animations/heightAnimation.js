@@ -1,10 +1,12 @@
 import DopApp from 'DopApp';
 import Velocity from 'velocity-animate';
 import {animation} from 'utils/ngAnimation';
-import {ngHidden as classNameFilters} from 'constants/classNames';
+import {ngHidden as ngHiddenClass, hidden as hiddenClass} from 'constants/classNames';
 import {partial} from 'utils/functional';
 import {height as selector} from 'constants/animationSelectors';
 import {height as animationTiming} from 'constants/animationTiming';
+
+const classNameFilters = [ngHiddenClass, hiddenClass];
 
 export const animateHeight = ($element, height, done) => {
 	Velocity($element, "stop");
