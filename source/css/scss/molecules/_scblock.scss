@@ -27,7 +27,6 @@
 
 	&-title {
 		color: getColor(wit);
-		font-size: 1.35rem;
 		margin-bottom: 0;
 
 		&-media  {
@@ -39,6 +38,10 @@
 			margin-right: 0.2rem;
 		    text-align: left;
 		}
+	}
+
+	&-subTitle {
+		font-size: getFontSize(small);
 	}
 
 	&-button {
@@ -83,12 +86,14 @@
 		color: getColor(paars default);
 		background-color: getColor(paars lightest);
 		margin-top: 3px;
+		font-size: getFontSize(small);
 	}
 	&-resultLink {
 		color: getColor(paars default);
 		fill: getColor(paars default);
 		padding: 0.35em 0.35em 0.35em $fullIntent;
-		display: block;
+		display: flex;
+
 		&:hover,
 		&:focus,
 		&:active {
