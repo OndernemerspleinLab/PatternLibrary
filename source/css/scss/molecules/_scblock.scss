@@ -109,6 +109,10 @@
 		.interfaceLink-icon {
 			height: 0.9rem;
 			width: 0.9rem;
+			margin: {
+				top: 0.15rem;
+				bottom: 0.15rem;
+			}
 		}
 	}
 	&-noResult {
