@@ -10,7 +10,7 @@
 		bottom: 0;
 		background-color: getColor(wit);
 
-		@include zIndex(overlay);
+		@include zIndex(dialog);
 	}
 }
 

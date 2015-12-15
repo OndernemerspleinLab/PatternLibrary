@@ -23,6 +23,10 @@ $zIndex: (
 		),
 	),
 	(
+		name: overlay,
+	),
+
+	(
 		name: menuBar,
 		subZIndex: (
 			contextContent,
@@ -44,7 +48,7 @@ $zIndex: (
 			),
 		),
 	),
-	overlay,
+	dialog,
 );
 
 // Get a property from a map

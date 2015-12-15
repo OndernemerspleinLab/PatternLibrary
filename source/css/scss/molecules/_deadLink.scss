@@ -9,7 +9,7 @@
 	top: 0;
 	left: 0;
 	padding: 5rem;
-	@include zIndex(overlay);
+	@include zIndex(dialog);
 
 
 	strong{
