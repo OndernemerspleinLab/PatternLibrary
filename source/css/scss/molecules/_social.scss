@@ -1,20 +1,5 @@
 // SOCIAL MEDIA
 
-.share-close {
-	position: absolute;
-	right: $quarterSpace;
-	top: 1.5rem;
-
-	@include mqGreaterThan(small) {
-		right: $halfSpace;
-		top: 0.75rem;
-	}
-
-	.close-icon {
-		fill: getColor(hemelblauw darkest);
-	}
-}
-
 
 // Social Base
 

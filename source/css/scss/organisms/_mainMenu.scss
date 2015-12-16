@@ -15,10 +15,7 @@
 
 	&-close {
 		@include zIndex(menuBar content buttons);
-		position: absolute;
 		left: $halfSpace;
-		top: 0;
-		background: getColor(wit);
 
 		.close-icon {
 			fill: getColor(hemelblauw darkest);

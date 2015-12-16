@@ -7,6 +7,9 @@
     width: $menuBarWidthSmall;
     height: $menuBarWidthSmall;
     padding: ($menuIconSizePaddingRatioSmall * $menuBarWidthSmall);
+	position: absolute;
+	top: 0;
+	background: getColor(wit);
 
 	@include mqGreaterThan(small) {
 		width: $menuBarWidthLarge;
@@ -25,5 +28,35 @@
 	}
 	&-text {
 		@include accHide;
+	}
+}
+
+.close-icon {
+	fill: getColor(hemelblauw darkest);
+}
+
+%overlayMenuClose {
+	position: absolute;
+	right: $halfSpace;
+	transform-origin: 50% 0%;
+}
+
+.feedback-close {
+	@extend %overlayMenuClose;
+
+	top: 0;
+}
+.enquete-close {
+	@extend %overlayMenuClose;
+
+	top: 0;
+}
+.share-close {
+	@extend %overlayMenuClose;
+	top: 1.5rem;
+	transform-origin: 50% 50%;
+
+	@include mqGreaterThan(small) {
+		top: 0.75rem;
 	}
 }
