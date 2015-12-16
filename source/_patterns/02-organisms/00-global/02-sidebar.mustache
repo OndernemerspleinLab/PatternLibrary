@@ -24,14 +24,6 @@
                     <span class="menuBar-button-text">Zoeken</span>
                 </div>
             </button>
-            <button ng-click="viewModel.openClose.toggle('profile')" class="menuBar-button menuBar-button--navigation menuBar-button--profile" is-opened="viewModel.openClose.isFullyOpened('profile', viewModel.sideContentUnitType)">
-                <div class="menuBar-button-inner">
-                    <svg aria-hidden="true" class="menuBar-icon">
-                        <use xlink:href="#figures-user-3905"></use>
-                    </svg>
-                    <span class="menuBar-button-text">Profiel</span>
-                </div>
-            </button>
         </div>
         <div class="menuBar-context">
             <button ng-click="viewModel.openClose.toggle('share')"  register-element="{'type': 'button', 'unitName': 'share'}" class="menuBar-button menuBar-button--secondary menuBar-button--context menuBar-button--share" is-opened="viewModel.openClose.isFullyOpened('share')">
@@ -80,24 +72,6 @@
             <li><a href="#">bedrijf starten</a></li>
             <li><a href="#">belastingaangifte</a></li>
         </ul>
-    </div>
-    <div id="profile" class="menuBar-sideContent ngAnimate-menuBar-sideContent is-hidden" menu-bar-side-content unit-name="profile">
-        <p class="menuBar--title">Informatie op maat</p>
-        <p>Hier kan de gebruiker zijn profiel instellen en beheren!</p>
-        <p class="menuBar--subTitle textLine">Uw favorieten</p>
-        <ul>
-            <li>Branche(s)</li>
-            <li>Regio(s)</li>
-            <li>Opgeslagen paginas</li>
-        </ul>
-        <p class="menuBar--subTitle textLine">Mogelijk voor u interessant</p>
-        <ul class="linkList">
-            <li><a href="#">ondernemersplan</a></li>
-            <li><a href="#">bedrijf starten</a></li>
-            <li><a href="#">belastingaangifte</a></li>
-        </ul>
-        <p class="menuBar--subTitle textLine">Uw berichtenbox</p>
-        <p>Koppel uw Berichtenbox aan Ondernemersplein.nl en kijk hier of er nieuwe berichten voor u zijn.</p>
     </div>
     <div id="share" class="menuBar-overlayContent ngAnimate-menuBar-overlayContent is-hidden" menu-bar-overlay-content unit-name="share">
         {{> molecules-social-share }}
