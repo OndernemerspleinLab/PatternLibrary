@@ -150,19 +150,27 @@
 
 	@include noUnderline;
 	@extend %block;
-	transition: transform 0.2s;
-	transform-origin: 50% 0%;
+	transition: color 0.2s;
 
 	@include hoverEtc {
-		transform: scale(1.025);
 		@include theme((color: foreground), $baseThemeClass, true);
+
 		.homeBlock-title {
 			color: inherit;
+		}
+
+		.homeBlock-image {
+			transform: scale(1.025);
 		}
 	}
 
 	&--autoHeight {
 		min-height: 0;
+	}
+
+	&-zoomContainer {
+		overflow: hidden;
+		transform: translateZ(0);
 	}
 
 	&-figure {
@@ -171,6 +179,7 @@
 	}
 
 	&-image {
+		transition: transform 0.2s;
 		width: 100%;
 		margin: 0;
 	}
@@ -193,20 +202,28 @@
 
 	@include noUnderline;
 	@extend %block;
-	transition: transform 0.2s;
+	transition: color 0.2s;
 	transform-origin: 50% 100%;
 
 
 	@include hoverEtc {
-		transform: scale(1.025);
 		@include theme((color: foreground), $baseThemeClass, true);
 		.promoBlock-title {
 			color: inherit;
+		}
+
+		.promoBlock-image {
+			transform: scale(1.025);
 		}
 	}
 
 	&--autoHeight {
 		min-height: 0;
+	}
+
+	&-zoomContainer {
+		overflow: hidden;
+		transform: translateZ(0);
 	}
 
 	&-figure {
@@ -215,6 +232,7 @@
 	}
 
 	&-image {
+		transition: transform 0.2s;
 		width: 100%;
 		margin: 0;
 	}
