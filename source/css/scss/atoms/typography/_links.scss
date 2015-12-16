@@ -87,8 +87,8 @@ h2, h3, h4, h5, h6 {
 
 	line-height: $lineHeight;
 	@include noUnderline;
-	color: getColor(hemelblauw default);
-	fill: getColor(hemelblauw default);
+	color: getColor(hemelblauw darkest);
+	fill: getColor(hemelblauw darkest);
 	display: inline-flex;
     align-items: flex-start;
 
