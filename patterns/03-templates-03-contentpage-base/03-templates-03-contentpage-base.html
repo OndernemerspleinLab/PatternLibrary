@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="DopApp" class="html" ng-class="{'is-menuOpened': menuOpened}">
+<html ng-app="DopApp" ng-strict-di class="html" ng-class="{'is-menuOpened': menuOpened}">
 <head>
 	<title>Pattern Lab Pattern</title>
 	<meta charset="UTF-8">
@@ -1657,12 +1657,19 @@
             </svg>
         </button>
         <p>
+            <div class="enqueteTitle">Korte enquete</div>
+        <p>
             Wij zijn benieuwd naar uw ervaringen met de website. Wilt u daarom een vragenlijst invullen? Dit duurt maximaal 5 minuten.
         </p>
-        <p>
-            <a href="#" class="btn btn--marginRight">Ja</a>
-            <a href="#" class="btn btn--marginRight">Nee</a>
-            <a href="#" class="btn">Herinner mij later</a>
+        <p><div class="interfaceLink enqueteQuestionIndicator">
+            Vraag 1 van 5</div>
+            <div>Bent u ondernemer? Of orienteert u zich op ondernemen?
+                <div>
+                    <select>
+                        <option value="ja">Ja</option>
+                    </select>
+                </div>
+            </div>
         </p>
     </div>
 </div>
@@ -1725,6 +1732,7 @@
 </div>
 					</header>
 					<p class="intro">U heeft een goed idee, maar weet niet of er wel genoeg interesse is voor uw dienst of product. Om zekerheid te krijgen, kunt u een marktonderzoek uitvoeren. U kijkt dan naar uw branche, klanten, concurrentie en omgeving. Hier vindt u informatie die u op weg helpt met een marktonderzoek.</p>
+					<iframe width="718" height="404" src="https://www.youtube.com/embed/HYD1uM1QLFY?rel=0" frameborder="0" allowfullscreen></iframe>
 					<p>Een goed idee is het halve werk. Maar om van <a href="#">uw idee</a> een bedrijf te maken, heeft u klanten nodig. Door een marktonderzoek te doen ziet u of uw plannen haalbaar zijn.</p>
 
 <h2 id="h2">H2 Van idee naar markt</h2>

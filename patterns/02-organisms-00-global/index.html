@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="DopApp" class="html" ng-class="{'is-menuOpened': menuOpened}">
+<html ng-app="DopApp" ng-strict-di class="html" ng-class="{'is-menuOpened': menuOpened}">
   <head id="patternlab-head">
     <title>Pattern Lab Sub-type Style Guide</title>
     <meta charset="UTF-8">
@@ -2938,12 +2938,19 @@
             </svg>
         </button>
         <p>
+            <div class="enqueteTitle">Korte enquete</div>
+        <p>
             Wij zijn benieuwd naar uw ervaringen met de website. Wilt u daarom een vragenlijst invullen? Dit duurt maximaal 5 minuten.
         </p>
-        <p>
-            <a href="#" class="btn btn--marginRight">Ja</a>
-            <a href="#" class="btn btn--marginRight">Nee</a>
-            <a href="#" class="btn">Herinner mij later</a>
+        <p><div class="interfaceLink enqueteQuestionIndicator">
+            Vraag 1 van 5</div>
+            <div>Bent u ondernemer? Of orienteert u zich op ondernemen?
+                <div>
+                    <select>
+                        <option value="ja">Ja</option>
+                    </select>
+                </div>
+            </div>
         </p>
     </div>
 </div>
@@ -4575,12 +4582,19 @@
             &lt;&#x2F;svg&gt;
         &lt;&#x2F;button&gt;
         &lt;p&gt;
+            &lt;div class=&quot;enqueteTitle&quot;&gt;Korte enquete&lt;&#x2F;div&gt;
+        &lt;p&gt;
             Wij zijn benieuwd naar uw ervaringen met de website. Wilt u daarom een vragenlijst invullen? Dit duurt maximaal 5 minuten.
         &lt;&#x2F;p&gt;
-        &lt;p&gt;
-            &lt;a href=&quot;#&quot; class=&quot;btn btn--marginRight&quot;&gt;Ja&lt;&#x2F;a&gt;
-            &lt;a href=&quot;#&quot; class=&quot;btn btn--marginRight&quot;&gt;Nee&lt;&#x2F;a&gt;
-            &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Herinner mij later&lt;&#x2F;a&gt;
+        &lt;p&gt;&lt;div class=&quot;interfaceLink enqueteQuestionIndicator&quot;&gt;
+            Vraag 1 van 5&lt;&#x2F;div&gt;
+            &lt;div&gt;Bent u ondernemer? Of orienteert u zich op ondernemen?
+                &lt;div&gt;
+                    &lt;select&gt;
+                        &lt;option value=&quot;ja&quot;&gt;Ja&lt;&#x2F;option&gt;
+                    &lt;&#x2F;select&gt;
+                &lt;&#x2F;div&gt;
+            &lt;&#x2F;div&gt;
         &lt;&#x2F;p&gt;
     &lt;&#x2F;div&gt;
 &lt;&#x2F;div&gt;
