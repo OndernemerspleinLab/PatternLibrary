@@ -320,12 +320,13 @@
 	background: getColor(hemelblauw lightest);
 	outline: 4px solid hsla(0, 0%, 0%, 0.05);
 	border-left: $menuBarWidthSmall solid transparent;
-	width: 32rem;
+	width: 38rem;
 	max-width: 90vw;
 	max-height: calc(100vh - 2rem);
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	padding: 1rem;
+	margin-right: 4rem;
 
 	@include zIndex(menuBar contextContent);
 
@@ -345,4 +346,18 @@
 		left: 50%;
 		margin-left: negative(map-get($maxPageWidth, rem) / 2);
 	}
+
+	& p{
+		padding-right:3.5em;
+	}
+}
+
+.enqueteTitle{
+	font-weight: bold;
+	color: getColor(hemelblauw darkest);
+	font-size: getFontSize(h3 all);
+}
+
+.enqueteQuestionIndicator{
+	font-weight: bold;
 }
